@@ -135,10 +135,8 @@ export function QuoteWizard({
   // Submit mutation
   const submitMutation = useMutation({
     mutationFn: async (data: any) => {
-      return await apiRequest("/api/property-offers", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      const response = await apiRequest("POST", "/api/property-offers", data);
+      return await response.json();
     },
     onSuccess: (data) => {
       console.log("Offer submitted successfully:", data);
