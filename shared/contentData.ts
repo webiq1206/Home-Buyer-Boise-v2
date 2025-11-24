@@ -46,23 +46,21 @@ export const CITIES: CityData[] = [
     population: '25,000+',
     zipCodes: ['83634'],
     neighborhoods: ['Teed Farms', 'Swan Falls', 'Crimson Point', 'Indian Creek'],
-    extendedDescription: 'Kuna, Idaho, known as the "Gateway to the Birds of Prey" conservation area, is a rapidly growing community in Ada County just 20 minutes southwest of Boise. With a population exceeding 25,000 residents, Kuna has evolved from its agricultural roots into a thriving suburban city while maintaining its small-town charm and community values. The city\'s semi-arid high desert climate in USDA Zone 6a presents unique challenges for lawn care and landscaping. Hot, dry summers with temperatures regularly exceeding 95°F combined with cold winters that can drop below zero create demanding conditions for turf grass. The predominant clay soil throughout Kuna neighborhoods like Crimson Point, Indian Creek, and Teed Farms requires specialized lawn care approaches including regular aeration, proper soil amendments, and carefully managed irrigation to maintain healthy lawns. Kuna residents value well-maintained properties that enhance the city\'s growing reputation as one of the Treasure Valley\'s most desirable communities. Professional lawn care services in Kuna must understand the local soil composition, adjust maintenance schedules for our distinct growing season from April through October, and implement water-wise practices that account for our limited annual rainfall of just 10-12 inches. From the established neighborhoods near Kuna Caves to the newer developments along Black Cat Road, property owners throughout Kuna trust local lawn care professionals who understand the specific needs of our community.',
+    extendedDescription: 'Kuna, Idaho, known as the "Gateway to the Birds of Prey" conservation area, is a rapidly growing community in Ada County just 20 minutes southwest of Boise. With a population exceeding 25,000 residents, Kuna has evolved from its agricultural roots into a thriving suburban city while maintaining its small-town charm and community values. HomeBuyerBoise specializes in purchasing homes throughout Kuna, providing fast cash offers to homeowners in popular neighborhoods like Crimson Point, Indian Creek, Swan Falls, and Teed Farms. The Kuna real estate market features predominantly single-family homes ranging from established properties built in the 1990s-2000s to brand-new construction in growing subdivisions. Many homeowners in Kuna need to sell quickly due to job relocation, downsizing, divorce, inherited properties, or financial hardship. We buy houses in any condition throughout Kuna - whether your property needs repairs, has deferred maintenance, or is move-in ready. From older homes near Kuna Caves to newer developments along Black Cat Road, we provide fair cash offers with flexible closing timelines. Kuna sellers appreciate our straightforward process: no repairs needed, no realtor commissions, no lengthy financing contingencies, and the ability to close in as little as 7 days or wait 60+ days if needed. As local cash buyers serving the Treasure Valley since 2018, we understand Kuna\'s strong community values and treat every homeowner with respect and transparency throughout the selling process.',
     landmarks: ['Kuna Caves', 'Swan Falls Dam', 'Indian Creek Plaza', 'Kuna Aquatic Center', 'Teed Winery', 'Birds of Prey National Conservation Area'],
-    serviceConsiderations: 'Kuna\'s heavy clay soil requires annual core aeration in fall, bi-annual fertilization (spring and fall), and proper irrigation management during hot summers. Most lawns are Kentucky bluegrass that benefits from maintaining 3-3.5 inch height during peak summer heat. Fall is ideal for overseeding and renovation projects. Sprinkler systems should be winterized by early November before first hard freeze. New construction areas around Teed Farms and Indian Creek often have severely compacted soil requiring additional aeration and soil amendments.',
+    serviceConsiderations: 'Kuna real estate market features strong demand with median home prices around $400,000. Many properties are family homes (3-4 bedrooms) on quarter-acre+ lots. Common seller situations include: job relocation to Boise or out of state, downsizing after retirement, inherited properties from family estates, divorce property settlements, and financial hardship. Properties range from well-maintained move-in ready homes to fixer-uppers needing significant repairs. We purchase all property types and conditions.',
     localFactors: {
-      climate: 'Semi-arid with cold winters and hot, dry summers. USDA Zone 6a.',
-      soil: 'Predominantly clay soil requiring amendments for optimal lawn and plant growth.',
-      commonNeeds: ['Clay soil management', 'Drought-resistant landscaping', 'Irrigation system maintenance', 'Winter freeze protection']
+      climate: 'Semi-arid with cold winters and hot, dry summers',
+      soil: 'N/A',
+      commonNeeds: ['Fast home sales', 'No-repair sales', 'Inherited property sales', 'Divorce property settlements']
     },
     facts: [
-      { label: 'Average lawn size', value: '5,000 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '25,000+' },
+      { label: 'Median Home Price', value: '$400,000' },
+      { label: 'County', value: 'Ada' },
+      { label: 'Distance to Boise', value: '20 miles' },
+      { label: 'Typical Lot Size', value: '0.25+ acres' },
+      { label: 'Common Home Type', value: 'Single-family' }
     ]
   },
   {
@@ -73,23 +71,21 @@ export const CITIES: CityData[] = [
     population: '230,000+',
     zipCodes: ['83702', '83703', '83704', '83705', '83706', '83709', '83712', '83713', '83714', '83716'],
     neighborhoods: ['North End', 'Bench', 'Southwest Boise', 'Southeast Boise', 'Harris Ranch', 'Barber Valley'],
-    extendedDescription: 'Boise, Idaho\'s capital and largest city with over 230,000 residents, is consistently ranked among America\'s most livable cities thanks to its outdoor recreation opportunities, growing economy, and high quality of life. The city\'s diverse neighborhoods each present unique lawn care and landscaping needs. Historic North End properties feature mature trees and established landscapes requiring careful maintenance, while newer developments in Harris Ranch and Barber Valley often need irrigation optimization and HOA-compliant landscaping solutions. Boise\'s four-season climate in USDA Zones 6b-7a challenges lawns with hot, dry summers where temperatures routinely reach 95-100°F and cold winters with occasional heavy snowfall. The Boise Bench area experiences particularly demanding conditions with intense summer heat and clay soil that requires regular aeration and proper drainage solutions. Downtown Boise commercial properties, from Grove Street restaurants to Capitol Boulevard offices, demand professional landscape maintenance that creates inviting outdoor spaces for employees and customers. The city\'s emphasis on water conservation through programs like the Garden ChallengeIdaho promotes xeriscaping and water-wise irrigation practices. Boise homeowners increasingly seek sustainable lawn care solutions that reduce water consumption while maintaining beautiful green spaces. Professional lawn care services in Boise must navigate varying soil conditions, comply with numerous HOA requirements across subdivisions, and adapt to microclimates created by the city\'s elevation changes from the valley floor to the foothills.',
+    extendedDescription: 'Boise, Idaho\'s capital and largest city with over 230,000 residents, is consistently ranked among America\'s most livable cities thanks to its outdoor recreation opportunities, growing economy, and high quality of life. HomeBuyerBoise is the premier cash home buyer serving all Boise neighborhoods, from the historic North End with its charming bungalows and tree-lined streets, to the Boise Bench with mid-century homes and modern updates, to newer master-planned communities like Harris Ranch and Barber Valley. The Boise real estate market is diverse and dynamic, with property values ranging from affordable starter homes to luxury estates near the foothills. We purchase homes across all price points and conditions - whether you own a charming North End cottage needing updates, a Bench-area ranch home requiring repairs, a Southwest Boise family home in pristine condition, or a downtown condo you inherited and want to sell quickly. Common seller situations in Boise include: job relocations (Micron, HP, and Boise State create frequent transfers), downsizing retirees moving to smaller homes or senior communities, divorce property settlements, inherited homes from family estates, landlords tired of managing rental properties, and homeowners facing financial hardship or foreclosure. As Idaho\'s economic hub, Boise attracts families and professionals who sometimes need to sell quickly without the hassle of traditional listings, repairs, showings, and uncertain buyer financing. HomeBuyerBoise provides the solution with guaranteed cash offers, flexible closing dates, and the ability to sell your house as-is.',
     landmarks: ['Idaho State Capitol', 'Boise River Greenbelt', 'Table Rock', 'Hyde Park', 'Boise Depot', 'Julia Davis Park', 'Bogus Basin'],
-    serviceConsiderations: 'Boise lawns require HOA compliance in most subdivisions. North End historic district properties need careful maintenance around mature trees. Bench area lawns suffer from compacted clay soil and benefit from annual core aeration. Harris Ranch and newer subdivisions require irrigation audits to optimize water usage. Commercial properties need flexible scheduling (early morning or weekend service) to avoid disrupting business operations. Fall aeration and overseeding critical for maintaining thick turf. Many properties benefit from water-wise landscaping to reduce irrigation costs.',
+    serviceConsiderations: 'Boise real estate market is competitive with median home prices around $475,000. Diverse property types include historic homes (North End), mid-century ranches (Bench), newer subdivisions (Harris Ranch, Barber Valley), downtown condos, and multi-family properties. Common seller needs: quick sales for job relocations, estate sales, divorce settlements, rental property liquidation, and foreclosure avoidance. We buy all property types and conditions throughout Boise.',
     localFactors: {
-      climate: 'Four distinct seasons with hot summers (90-100°F) and cold winters (freezing). USDA Zone 6b-7a.',
-      soil: 'Varied - clay-based in most areas, some areas with better drainage.',
-      commonNeeds: ['HOA-compliant landscaping', 'Water-wise irrigation', 'Seasonal maintenance', 'Commercial property upkeep']
+      climate: 'Four distinct seasons with hot summers and cold winters',
+      soil: 'N/A',
+      commonNeeds: ['Quick job relocation sales', 'Estate property sales', 'Rental property liquidation', 'As-is home sales']
     },
     facts: [
-      { label: 'Average lawn size', value: '6,000 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '230,000+' },
+      { label: 'Median Home Price', value: '$475,000' },
+      { label: 'County', value: 'Ada' },
+      { label: 'Major Employers', value: 'Micron, HP, St. Luke\'s' },
+      { label: 'Market Type', value: 'Diverse urban' },
+      { label: 'Common Home Type', value: 'Single-family, condos' }
     ]
   },
   {
@@ -100,23 +96,21 @@ export const CITIES: CityData[] = [
     population: '130,000+',
     zipCodes: ['83642', '83646'],
     neighborhoods: ['Meridian Ranch', 'Tuscany', 'Paramount', 'Lochsa Falls', 'Discovery Park'],
-    extendedDescription: 'Meridian is Idaho\'s second-largest city with over 130,000 residents and one of the fastest-growing communities in the United States. Located in Ada County between Boise and Nampa, Meridian has transformed from agricultural land into a modern suburban city filled with new master-planned communities, excellent schools, and abundant shopping and dining options at The Village at Meridian. The city\'s explosive growth means thousands of newly constructed homes with fresh sod installations, young landscape plantings, and newly installed irrigation systems that require specialized care during establishment phases. Meridian\'s climate in USDA Zone 6b brings hot, dry summers perfect for outdoor living but challenging for lawn maintenance. Popular subdivisions like Tuscany, Paramount, and Lochsa Falls feature strict HOA requirements for landscape maintenance, making professional lawn care essential for busy homeowners. Clay soil is prevalent throughout Meridian, especially in newer developments where construction equipment has severely compacted the ground, requiring aggressive core aeration and soil amendment programs to establish healthy root systems. Many Meridian properties feature Kentucky bluegrass lawns that demand regular fertilization, proper mowing height, and adequate irrigation during our hot July and August temperatures. The city attracts young families and professionals who value beautiful outdoor spaces but lack time for intensive yard work, creating strong demand for comprehensive lawn care services that ensure their property investment stays protected.',
+    extendedDescription: 'Meridian is Idaho\'s second-largest city with over 130,000 residents and one of the fastest-growing communities in the United States. Located in Ada County between Boise and Nampa, Meridian has transformed from agricultural land into a modern suburban city filled with new master-planned communities, excellent schools, and abundant shopping and dining options at The Village at Meridian. HomeBuyerBoise purchases homes throughout Meridian, specializing in newer subdivision properties in popular neighborhoods like Tuscany, Paramount, Lochsa Falls, Meridian Ranch, and Discovery Park. The city\'s explosive growth creates unique selling situations - homeowners who purchased new construction but need to relocate before establishing roots, families outgrowing starter homes after just a few years, investors liquidating rental properties, and divorcing couples splitting newly-purchased assets. Meridian\'s real estate market features predominantly modern single-family homes built since 2000, with many properties less than 10 years old offering contemporary floor plans, attached garages, and HOA-managed communities. We buy homes in any condition throughout Meridian - from brand-new construction you never moved into, to well-maintained family homes, to properties needing updates or repairs. The city attracts young families and professionals who sometimes face unexpected life changes requiring quick home sales. HomeBuyerBoise provides fast cash offers with flexible closing timelines, no repair requirements, and the ability to avoid lengthy traditional listings. We understand Meridian sellers value efficiency, transparency, and fair market value offers.',
     landmarks: ['The Village at Meridian', 'Kleiner Memorial Park', 'Eagle Island State Park', 'Settlers Park', 'Wahooz Family Fun Zone', 'Roaring Springs Water Park'],
-    serviceConsiderations: 'Meridian\'s new construction areas require patience and intensive care during lawn establishment (first 2-3 years). Severely compacted clay soil from building activity needs multiple annual aerations. HOA requirements are strict - most subdivisions mandate weekly mowing during peak season and immediate weed control. Young trees and shrubs need careful trimming to promote proper growth structure. New sod installations common - critical first year watering and fertilization program determines long-term lawn quality. Fall overseeding and renovation work best for filling in thin areas. Spring pre-emergent weed control essential before May to prevent summer annual weeds.',
+    serviceConsiderations: 'Meridian real estate market features newer homes with median prices around $480,000. Predominantly single-family homes in HOA communities. Common seller situations: job relocations, upsizing/downsizing, divorce settlements, new construction buyers who need to sell before moving in, rental property liquidation. Many properties less than 15 years old. We purchase homes in all conditions including brand-new, well-maintained, and those needing updates.',
     localFactors: {
-      climate: 'Similar to Boise - hot, dry summers and cold winters. USDA Zone 6b.',
-      soil: 'Clay soil prevalent, requiring proper drainage solutions.',
-      commonNeeds: ['New construction landscaping', 'Subdivision lawn care', 'HOA maintenance', 'Modern landscape design']
+      climate: 'Hot, dry summers and cold winters',
+      soil: 'N/A',
+      commonNeeds: ['Fast relocation sales', 'New construction sales', 'Divorce settlements', 'Rental liquidation']
     },
     facts: [
-      { label: 'Average lawn size', value: '5,500 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '130,000+' },
+      { label: 'Median Home Price', value: '$480,000' },
+      { label: 'County', value: 'Ada' },
+      { label: 'Distance to Boise', value: '10 miles' },
+      { label: 'Market Type', value: 'Modern suburban' },
+      { label: 'Common Home Age', value: 'Built 2000-present' }
     ]
   },
   {
@@ -127,23 +121,21 @@ export const CITIES: CityData[] = [
     population: '35,000+',
     zipCodes: ['83616', '83646'],
     neighborhoods: ['Eagle Hills', 'Banbury', 'Silver Wing', 'Floating Feather'],
-    extendedDescription: 'Eagle is one of the Treasure Valley\'s most affluent and desirable communities, combining small-town character with upscale amenities and easy access to outdoor recreation. With over 35,000 residents in Ada County just northwest of Boise, Eagle is known for its premium real estate, excellent schools, championship golf courses, and proximity to Eagle Island State Park and the Boise River. The city\'s location near the foothills in USDA Zones 6b-7a creates a slightly milder microclimate than valley floor communities, with warmer winters and better air drainage that benefits sensitive landscape plants. Eagle properties tend toward larger lot sizes averaging 7,000+ square feet of lawn, with many estate homes on acreage requiring comprehensive landscape management programs. Soil conditions vary significantly across Eagle - some areas feature rocky foothill soil with excellent drainage, while others have typical Treasure Valley clay requiring amendment and aeration. Eagle homeowners invest heavily in outdoor living spaces including professionally designed landscapes, custom water features, outdoor kitchens, and elaborate patio systems that require specialized maintenance expertise. The community expects premium service quality, attention to detail, and landscape results that enhance substantial property investments, making Eagle the perfect market for full-service lawn care companies committed to excellence.',
+    extendedDescription: 'Eagle is one of the Treasure Valley\'s most affluent and desirable communities, combining small-town character with upscale amenities and easy access to outdoor recreation. With over 35,000 residents in Ada County just northwest of Boise, Eagle is known for its premium real estate, excellent schools, championship golf courses, and proximity to Eagle Island State Park and the Boise River. HomeBuyerBoise serves Eagle homeowners who need to sell quickly, discreetly, and without the hassle of traditional listings. Eagle properties range from luxury estates on large acreage to upscale family homes in prestigious subdivisions like Banbury, Silver Wing, and Eagle Hills. We purchase high-end properties throughout Eagle, providing fair market value cash offers on homes of all price points. Common selling situations in Eagle include: executive relocations to other states, estate sales of luxury properties, downsizing empty-nesters moving from large family homes, divorce property settlements involving high-value assets, and pre-foreclosure situations for homeowners seeking confidential solutions. Eagle homeowners value discretion, professionalism, and respect for their privacy. We provide white-glove service with confidential evaluations, fair cash offers, and flexible closing timelines. Whether your Eagle property is a meticulously maintained luxury home, an estate requiring updates, or a high-end property with deferred maintenance, HomeBuyerBoise offers a straightforward selling solution without repairs, showings, or realtor commissions.',
     landmarks: ['Eagle Island State Park', 'Eagle Hills Golf Course', 'Heritage Park', 'Eagle Farmers Market', 'Eagle Historical Museum', 'Wildlife Reserve', 'Boise River'],
-    serviceConsiderations: 'Eagle\'s affluent market demands premium service quality and attention to detail. Larger lot sizes (7,000+ sq. ft. lawns common) and estate properties require comprehensive care programs. Custom landscapes with high-end plantings, water features, and hardscaping need specialized knowledge and gentle handling. Variable soil - some rocky foothill areas, some clay valley floor - requires customized treatment approaches. Many properties feature advanced irrigation systems with smart controllers requiring tech-savvy service. Homeowners expect proactive communication, consistent results, and complete professionalism. Outdoor living spaces (patios, fire features, lighting) require careful integration with lawn care activities. Golf course-quality turf expectations mean precision mowing, fertilization, and detail work. Seasonal color programs popular for maintaining vibrant landscapes year-round.',
+    serviceConsiderations: 'Eagle real estate features upscale properties with median prices around $575,000-$650,000. Larger lots and estate homes common. Discretion and professionalism essential. Common seller situations: executive relocations, estate liquidations, divorce settlements, downsizing, confidential pre-foreclosure solutions. We purchase luxury and high-end properties providing fair market value offers and white-glove service.',
     localFactors: {
-      climate: 'Similar to Boise with slightly warmer winters near foothills. USDA Zone 6b-7a.',
-      soil: 'Variable - some areas rocky, others clay-based.',
-      commonNeeds: ['High-end landscaping', 'Premium lawn care', 'Outdoor living spaces', 'Estate property maintenance']
+      climate: 'Four seasons with mild winters',
+      soil: 'N/A',
+      commonNeeds: ['Executive relocation sales', 'Estate property sales', 'Luxury home sales', 'Confidential transactions']
     },
     facts: [
-      { label: 'Average lawn size', value: '7,000 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '35,000+' },
+      { label: 'Median Home Price', value: '$575,000+' },
+      { label: 'County', value: 'Ada' },
+      { label: 'Distance to Boise', value: '12 miles' },
+      { label: 'Market Type', value: 'Upscale suburban' },
+      { label: 'Typical Lot Size', value: '0.25+ acres' }
     ]
   },
   {
@@ -154,23 +146,21 @@ export const CITIES: CityData[] = [
     population: '12,000+',
     zipCodes: ['83669'],
     neighborhoods: ['Star Meadows', 'Riverside Village', 'Willow Creek', 'Pearl District'],
-    extendedDescription: 'Star, Idaho is a rapidly growing small city in Ada County with over 12,000 residents, located along State Highway 44 between Eagle and Middleton. Known for its rural character and strong sense of community, Star offers residents a peaceful small-town lifestyle with convenient access to Boise metro area amenities just 20 minutes east. The city has experienced significant growth in recent years as families seeking larger lots and a more rural atmosphere discover Star\'s appeal. The community features a mix of established horse properties, newer residential subdivisions, and agricultural land transitioning to housing developments. Star\'s climate in USDA Zone 6b presents typical Treasure Valley challenges with hot, dry summers often reaching 95-100°F and cold winters with occasional heavy snow. Clay soil is prevalent throughout Star, particularly in newer developments where construction activity has compacted the ground, requiring annual core aeration and soil amendment programs for healthy lawn establishment. Many Star properties feature larger lot sizes averaging 8,000-10,000 square feet of lawn or more, with some rural properties on acreage requiring comprehensive landscape management including pasture mowing, fence line trimming, and extensive irrigation maintenance. The city\'s growing popularity among families and professionals who value space, privacy, and small-town community creates strong demand for reliable lawn care services that understand both traditional residential maintenance and rural property needs.',
-    landmarks: ['Star Town Hall', 'Star Community Park', 'Riverside Park', 'Highway 44 Corridor', 'Star Elementary School', 'Pearl Street District'],
-    serviceConsiderations: 'Star\'s larger lot sizes (8,000-10,000+ sq. ft. common) require efficient equipment and proper scheduling. Many properties have extensive lawns plus additional acreage needing pasture mowing or fence line trimming. Clay soil prevalent - annual fall aeration essential for lawn health. New construction areas require intensive establishment care during first 2-3 years. Rural properties may have well water systems affecting irrigation scheduling and water quality. Horse properties need careful mowing to avoid manure spreading and fence line awareness. Gravel driveways common - requires careful debris management during mowing and blowing. Many properties have mature trees and windbreaks needing specialized trimming. Fall cleanup critical for leaf removal from cottonwoods and other deciduous trees. Growing community appreciates reliable, professional service as an alternative to DIY maintenance.',
+    extendedDescription: 'Star, Idaho is a rapidly growing small city in Ada County with over 12,000 residents, located along State Highway 44 between Eagle and Middleton. Known for its rural character and strong sense of community, Star offers residents a peaceful small-town lifestyle with convenient access to Boise metro area amenities just 20 minutes east. HomeBuyerBoise purchases homes throughout Star, serving homeowners who value the city\'s spacious lots, rural atmosphere, and tight-knit community. The city features a mix of established horse properties on acreage, newer residential subdivisions with modern homes, and rural properties transitioning from agricultural to residential use. Star\'s real estate market appeals to families seeking larger lots and a more rural lifestyle while maintaining proximity to Boise employment centers. We buy all property types in Star - from horse properties and rural acreage to suburban family homes in newer subdivisions like Star Meadows and Riverside Village. Common seller situations include: relocating families moving out of state, empty-nesters downsizing from large rural properties, inherited acreage or horse properties, divorce settlements involving rural real estate, and sellers tired of maintaining larger properties. Star homeowners appreciate straightforward, honest service from local buyers who understand rural property values and unique characteristics. HomeBuyerBoise provides fair cash offers on properties of all sizes - whether your Star home is a small-town charmer, a modern subdivision property, or a multi-acre rural estate. No repairs, no showings, no waiting for buyer financing.',
+    landmarks: ['Star Town Hall', 'Star Community Park', 'Riverside Park', 'Highway 44 Corridor', 'Star Elementary School', 'Pearl District'],
+    serviceConsiderations: 'Star real estate features larger lots with median prices around $425,000. Mix of rural properties, horse properties, and suburban homes. Common seller situations: relocations, downsizing from rural properties, inherited acreage, divorce settlements, buyers seeking hassle-free sales of larger properties. We purchase all property types from small-town homes to multi-acre rural estates.',
     localFactors: {
-      climate: 'Hot, dry summers and cold winters typical of Treasure Valley. USDA Zone 6b.',
-      soil: 'Clay soil dominant, requiring regular aeration and amendments.',
-      commonNeeds: ['Large lot maintenance', 'Rural property care', 'Pasture mowing', 'Irrigation management']
+      climate: 'Hot, dry summers and cold winters',
+      soil: 'N/A',
+      commonNeeds: ['Rural property sales', 'Horse property sales', 'Acreage sales', 'Downsizing from large lots']
     },
     facts: [
-      { label: 'Average lawn size', value: '8,500 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '12,000+' },
+      { label: 'Median Home Price', value: '$425,000' },
+      { label: 'County', value: 'Ada' },
+      { label: 'Distance to Boise', value: '20 miles' },
+      { label: 'Market Type', value: 'Rural/suburban mix' },
+      { label: 'Typical Lot Size', value: '0.25-1+ acres' }
     ]
   },
   {
@@ -181,23 +171,21 @@ export const CITIES: CityData[] = [
     population: '10,000+',
     zipCodes: ['83644'],
     neighborhoods: ['Heights', 'Middleton Mill', 'Ustick Corridor', 'Purple Sage'],
-    extendedDescription: 'Middleton, Idaho is a charming small city in Canyon County with over 10,000 residents, strategically located between Caldwell and Star along Highway 44. This growing community offers an appealing blend of rural character, modern amenities, and affordable housing options that attract young families and professionals seeking small-town living with easy commute access to Boise, Nampa, and Caldwell. Middleton has evolved from its agricultural roots while maintaining the friendly, close-knit community atmosphere that long-time residents cherish. The city features a mix of older established neighborhoods with mature landscaping, newer subdivisions with contemporary home designs, and transitional areas where farmland is gradually converting to residential development. Middleton\'s semi-arid climate in USDA Zone 6a brings hot summers with temperatures frequently exceeding 95°F and cold winters with frost and occasional snow, creating demanding conditions for lawn maintenance throughout the year. Heavy clay soil is common across Middleton, particularly in areas near the Boise River corridor and in new construction zones where soil compaction from building equipment creates challenges for establishing healthy lawns. Property sizes in Middleton tend toward the generous side, with many homes featuring 6,000-8,000 square feet of lawn plus additional landscape beds, mature trees, and established shrubs requiring comprehensive care programs. Middleton residents value honest, reliable service at fair prices, making consistency, quality, and transparent communication essential for building lasting customer relationships.',
+    extendedDescription: 'Middleton, Idaho is a charming small city in Canyon County with over 10,000 residents, strategically located between Caldwell and Star along Highway 44. This growing community offers an appealing blend of rural character, modern amenities, and affordable housing options that attract young families and professionals seeking small-town living with easy commute access to Boise, Nampa, and Caldwell. HomeBuyerBoise purchases homes throughout Middleton, serving sellers who value honest, straightforward dealings and fair pricing. The city features a mix of older established neighborhoods with mature homes, newer subdivisions with contemporary designs, and transitional areas where agricultural properties are converting to residential development. Middleton\'s real estate market offers more affordable options compared to Boise and Meridian, making it attractive to first-time homebuyers, young families, and investors. We buy homes in all conditions throughout Middleton - from charming older homes with character, to well-maintained family residences, to properties needing updates or repairs. Common seller situations in Middleton include: job relocations, inherited properties from family estates, rental property liquidation, divorce settlements, downsizing, and homeowners seeking quick sales to avoid foreclosure. Middleton residents value honest communication, fair pricing, and reliable follow-through. HomeBuyerBoise provides exactly that - straightforward cash offers, transparent processes, and the flexibility to close on your timeline. Whether your Middleton property is move-in ready or needs significant work, we make fair offers and treat you with respect.',
     landmarks: ['Middleton Place Park', 'Kleiner Park', 'Boise River Wildlife Management Area', 'Middleton Mill', 'Highway 44 Business District', 'Middleton Schools Complex'],
-    serviceConsiderations: 'Middleton\'s clay soil requires annual fall core aeration and possible spring aeration for severely compacted lawns. Larger average lot sizes mean efficient mowing equipment essential for profitability. Mix of older homes with mature landscapes and newer construction requiring different service approaches. Boise River proximity in some areas creates higher humidity and fungus pressure - may need preventive fungicide for susceptible lawns. Many properties have established trees requiring regular trimming and cleanup services. Growing number of new subdivisions need sod establishment care and young landscape maintenance. Budget-conscious market values reliable service and fair pricing over premium add-ons. Spring and fall cleanup services important for leaf and debris removal. Irrigation systems range from modern to outdated - repair services often needed. Small-town atmosphere means word-of-mouth referrals critical - customer satisfaction paramount.',
+    serviceConsiderations: 'Middleton real estate features affordable homes with median prices around $385,000. Mix of older established homes and newer construction. Common seller situations: relocations, inherited properties, rental liquidation, divorce, downsizing, foreclosure avoidance. Budget-conscious market values fair pricing and honest dealing. We purchase homes in all conditions from well-maintained to fixer-uppers.',
     localFactors: {
-      climate: 'Semi-arid with hot summers and cold winters. USDA Zone 6a.',
-      soil: 'Heavy clay soil requiring amendments and regular aeration.',
-      commonNeeds: ['Residential lawn care', 'Clay soil management', 'Tree and shrub maintenance', 'Seasonal cleanup']
+      climate: 'Hot summers and cold winters',
+      soil: 'N/A',
+      commonNeeds: ['Affordable quick sales', 'Inherited property sales', 'Rental liquidation', 'Foreclosure avoidance']
     },
     facts: [
-      { label: 'Average lawn size', value: '6,500 sq. ft.' },
-      { label: 'Recommended watering', value: '1-2 in. / wk' },
-      { label: 'Recommended grass height', value: '2.5-3 in.' },
-      { label: 'When to fertilize', value: 'spring / fall' },
-      { label: 'When to aerate', value: 'fall' },
-      { label: 'When to overseed', value: 'fall' },
-      { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
-      { label: 'Growing season', value: 'April - October' }
+      { label: 'Population', value: '10,000+' },
+      { label: 'Median Home Price', value: '$385,000' },
+      { label: 'County', value: 'Canyon' },
+      { label: 'Distance to Boise', value: '25 miles' },
+      { label: 'Market Type', value: 'Affordable small-town' },
+      { label: 'Common Home Age', value: 'Mixed vintage' }
     ]
   },
   {
