@@ -232,40 +232,34 @@ export default function Home() {
           <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-3 md:space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-                The best local lawn care in Kuna
+                How to Sell Your House for Cash
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                At Lawn Care Kuna, we're dedicated to providing exceptional lawn care and landscaping services 
-                that transform your outdoor space into something beautiful. Our experienced team understands 
-                Idaho's unique climate and soil conditions, ensuring your lawn thrives year-round.
+                Our simple 3-step process makes selling your home fast and hassle-free. No agents, no fees, no stress.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
-              {services.map((service, index) => (
-                <Card key={index} className="hover-elevate" data-testid={`card-service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
+              {howItWorksSteps.map((step, index) => (
+                <Card key={index} className="hover-elevate" data-testid={`card-step-${index + 1}`}>
                   <CardHeader className="space-y-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                      <service.icon className="h-6 w-6 text-primary" />
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <CardTitle className="text-xl">{step.title}</CardTitle>
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="leading-relaxed">{service.description}</CardDescription>
+                    <CardDescription className="leading-relaxed">{step.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <ul className="space-y-2">
-                      {service.features.map((feature, i) => (
+                      {step.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2 text-sm">
                           <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <Button variant="outline" className="w-full" asChild data-testid={`button-service-${service.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <Link href={service.href}>
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -279,361 +273,142 @@ export default function Home() {
         <div className="container px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Ready to transform your lawn?
+              Ready to Sell Your House Fast?
             </h2>
             <p className="text-lg text-primary-foreground leading-relaxed">
-              Get a free consultation and quote today. We'll assess your property and provide 
-              a transparent estimate with no obligation.
+              Get your fair cash offer in 24 hours. No obligations, no pressure. 
+              See what your home is worth today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" variant="secondary" asChild data-testid="button-cta-quote">
                 <Link href="/get-quote">
-                  Get Free Quote
+                  Get My Cash Offer
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild data-testid="button-cta-services">
-                <Link href="#services">
-                  View All Services
-                </Link>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild data-testid="button-cta-phone">
+                <a href="tel:2083522011">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call (208) 352-2011
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lawn Care Services in Kuna */}
+      {/* Why Sell to Us */}
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-8">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Lawn care services in Kuna
+                Why Sell Your House to HomeBuyerBoise?
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We offer comprehensive lawn care and landscaping services designed to meet all your 
-                outdoor needs. From regular maintenance to complete landscape transformations, 
-                our team has the expertise and equipment to deliver exceptional results.
+                We make selling your house simple, fast, and stress-free. No commissions, no fees, no waiting months for a buyer.
               </p>
             </div>
 
-            {/* Two-Column Service Grid - Desktop Only */}
-            <div className="grid lg:grid-cols-2 gap-8" data-testid="service-grid">
-              {/* Lawn Care Services */}
-              <div className="space-y-6" data-testid="lawn-care-column">
-                <h3 className="text-2xl font-bold text-primary" data-testid="heading-lawn-care">Lawn Care Services</h3>
-                <ul className="space-y-4" data-testid="list-lawn-care">
-                  {[
-                    "Professional mowing and edging",
-                    "Fertilization programs",
-                    "Weed control",
-                    "Aeration and overseeding",
-                    "Seasonal cleanup",
-                    "Commercial-grade equipment"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3" data-testid={`lawn-care-item-${i}`}>
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" data-testid={`lawn-care-icon-${i}`} />
-                      <span className="text-base text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Landscaping Services */}
-              <div className="space-y-6" data-testid="landscaping-column">
-                <h3 className="text-2xl font-bold text-primary" data-testid="heading-landscaping">Landscaping Services</h3>
-                <ul className="space-y-4" data-testid="list-landscaping">
-                  {[
-                    "Patio installation",
-                    "Retaining walls",
-                    "Water features",
-                    "Outdoor lighting",
-                    "Custom design services",
-                    "Property value enhancement"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3" data-testid={`landscaping-item-${i}`}>
-                      <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" data-testid={`landscaping-icon-${i}`} />
-                      <span className="text-base text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <Button size="lg" asChild data-testid="button-all-services">
-                <Link href="/services/lawn-care">
-                  View All Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Two-Column Feature Section */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Left: Dark Green Card */}
-              <Card className="bg-primary text-primary-foreground border-primary">
-                <CardContent className="p-8 md:p-12 space-y-6">
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                    Full service lawn care in Kuna
-                  </h3>
-                  <p className="text-primary-foreground leading-relaxed">
-                    We handle everything your lawn needs to thrive. Our comprehensive approach includes:
-                  </p>
-                  <ul className="space-y-3">
-                    {[
-                      "Weekly or bi-weekly mowing service",
-                      "Professional fertilization programs",
-                      "Effective weed and pest control",
-                      "Spring and fall cleanup services",
-                      "Aeration and overseeding",
-                      "Irrigation system maintenance",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild data-testid="button-feature-quote">
-                    <Link href="/get-quote">
-                      Get Started Today
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* Right: Content */}
-              <div className="space-y-6">
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                  Why choose us for your lawn care needs
-                </h3>
-                <div className="space-y-4 text-muted-foreground">
-                  <p className="leading-relaxed">
-                    With over seven years of experience serving Kuna and the surrounding Treasure Valley, 
-                    we've built a reputation for reliability, quality, and outstanding customer service.
-                  </p>
-                  <p className="leading-relaxed">
-                    Our team is fully licensed and insured, giving you peace of mind that your property 
-                    is in professional hands. We use only the best equipment and materials to ensure 
-                    lasting results.
-                  </p>
-                  <p className="leading-relaxed">
-                    We're not just lawn care providers – we're your partners in creating and maintaining 
-                    beautiful outdoor spaces that you can be proud of.
-                  </p>
-                </div>
-                <Button variant="outline" asChild data-testid="button-feature-about">
-                  <Link href="/about">
-                    Learn More About Us
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Our approach to lawn care in Kuna
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe in doing things right. Our systematic approach ensures consistent, 
-                high-quality results that exceed your expectations.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Initial Consultation</h3>
-                    <p className="text-muted-foreground">
-                      We visit your property to assess your needs and provide a detailed, transparent quote.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Custom Plan</h3>
-                    <p className="text-muted-foreground">
-                      We create a tailored service plan that fits your lawn's specific needs and your budget.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Professional Service</h3>
-                    <p className="text-muted-foreground">
-                      Our trained team executes the plan with precision using commercial-grade equipment.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Quality Control</h3>
-                    <p className="text-muted-foreground">
-                      We inspect every job to ensure it meets our high standards before we leave.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    5
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Ongoing Care</h3>
-                    <p className="text-muted-foreground">
-                      We provide consistent, reliable service on your schedule, adjusting as seasons change.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    6
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Customer Satisfaction</h3>
-                    <p className="text-muted-foreground">
-                      Your happiness is our priority. We're not satisfied until you love your lawn.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center pt-4">
-              <Button size="lg" asChild data-testid="button-approach-contact">
-                <Link href="/contact">
-                  Get Free Estimate
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Services & Pricing */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                What lawn care feels like
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Transparent pricing for our most popular services
-              </p>
-            </div>
-
-            <Card>
-              <CardContent className="p-0">
-                <div className="divide-y">
-                  {popularServices.map((service, index) => {
-                    const slug = serviceSlugMap[service.name];
-                    const serviceTestId = `link-service-${service.name.toLowerCase().replace(/\s+/g, '-')}`;
-                    
-                    return (
-                      <div 
-                        key={index} 
-                        className="flex items-center justify-between p-4 hover-elevate"
-                        data-testid={`pricing-item-${index}`}
-                      >
-                        {slug ? (
-                          <Link 
-                            href={`/services/${slug}`}
-                            className="font-medium hover:text-primary hover:underline transition-colors"
-                            data-testid={serviceTestId}
-                          >
-                            {service.name}
-                          </Link>
-                        ) : (
-                          <span className="font-medium">{service.name}</span>
-                        )}
-                        <span className="text-muted-foreground">{service.price}</span>
+            {/* Benefits Grid */}
+            <div className="grid md:grid-cols-2 gap-8" data-testid="benefits-grid">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="hover-elevate" data-testid={`card-benefit-${index}`}>
+                  <CardContent className="pt-6 pb-6 space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 flex-shrink-0">
+                        <benefit.icon className="h-6 w-6 text-primary" />
                       </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-
-            <p className="text-center text-sm text-muted-foreground">
-              Prices vary based on property size and specific requirements. 
-              Contact us for a free, detailed quote.
-            </p>
-
-            <div className="text-center">
-              <Button size="lg" asChild data-testid="button-pricing-quote">
-                <Link href="/get-quote">
-                  Get Your Custom Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Lawn Care Kuna's Values
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                The principles that guide everything we do
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {coreValues.map((value, index) => (
-                <Card key={index} className="hover-elevate" data-testid={`card-value-${index}`}>
-                  <CardContent className="p-8 space-y-4">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary text-primary-foreground">
-                      <value.icon className="h-7 w-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">{value.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-semibold">{benefit.title}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
+
+            <div className="text-center">
+              <Button size="lg" asChild data-testid="button-learn-more">
+                <Link href="/how-it-works">
+                  Learn How It Works
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* We Buy Any Condition */}
+      <section className="py-16 md:py-24 bg-muted">
+        <div className="container px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Left: Content */}
+              <div className="space-y-6">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                  We Buy Houses in Any Condition
+                </h2>
+                <div className="space-y-4 text-muted-foreground">
+                  <p className="leading-relaxed">
+                    Don't worry about making repairs or upgrades. We buy houses as-is, regardless of condition.
+                  </p>
+                  <p className="leading-relaxed">
+                    Whether your home needs major repairs, has outdated finishes, or is move-in ready, 
+                    we'll make you a fair offer. You don't need to fix anything or even clean up.
+                  </p>
+                  <p className="leading-relaxed">
+                    We're local Boise investors who understand the market and can close quickly on your timeline.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" asChild data-testid="button-condition-quote">
+                    <Link href="/get-quote">
+                      Get My Offer
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="outline" asChild data-testid="button-condition-about">
+                    <Link href="/about">
+                      Learn About Us
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right: Card with Conditions We Buy */}
+              <Card className="bg-card border-border">
+                <CardContent className="p-8 md:p-10 space-y-6">
+                  <h3 className="text-xl md:text-2xl font-bold">
+                    Situations We Help With
+                  </h3>
+                  <ul className="space-y-3">
+                    {[
+                      "Foreclosure or pre-foreclosure",
+                      "Inherited property",
+                      "Divorce settlement",
+                      "Job relocation",
+                      "Downsizing or retirement",
+                      "Problem tenants",
+                      "Major repairs needed",
+                      "Behind on payments",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Testimonials */}
       <section className="py-16 md:py-24">
@@ -641,10 +416,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                What Our Customers Say
+                What Our Clients Say
               </h2>
               <p className="text-lg text-muted-foreground">
-                Trusted by homeowners across Kuna and the Treasure Valley
+                Trusted by homeowners across Boise and the Treasure Valley
               </p>
             </div>
             <Suspense fallback={<div className="h-64 flex items-center justify-center"><div className="animate-pulse text-muted-foreground">Loading testimonials...</div></div>}>
@@ -660,10 +435,10 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                We Serve the Entire Treasure Valley
+                Buying Houses Across the Treasure Valley
               </h2>
               <p className="text-lg text-muted-foreground">
-                Professional lawn care services across Southwest Idaho
+                Cash home buyers serving Boise, Meridian, Nampa, and surrounding areas
               </p>
             </div>
             <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="animate-pulse text-muted-foreground">Loading map...</div></div>}>
