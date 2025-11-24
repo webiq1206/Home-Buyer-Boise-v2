@@ -1,244 +1,359 @@
-# Lawn Care Kuna Design Guidelines
+# HomeBuyerBoise Design Guidelines
 
 ## Design Approach
 
-**Clean, Modern, Approachable** - Professional lawn care and landscaping services with a fresh, trustworthy aesthetic inspired by the actual lawncarekuna.com brand.
+**Modern, Trustworthy, Fintech-Inspired** - Professional cash home buyer service with a clean, premium aesthetic inspired by Stessa and Fundrise, combined with the organizational clarity of the original LawnCareKuna design.
 
 **Core Principles:**
-- Fresh, clean design with approachable professionalism
-- Generous whitespace and modern layouts
-- Trust-building through straightforward presentation
-- Easy navigation through extensive service catalog
-- Bright, optimistic feel that conveys quality care
+- Modern fintech/proptech aesthetic - premium but approachable
+- Large, confident typography with generous spacing
+- Trust-building through clarity, transparency, and professionalism
+- Clean cards and section-based layouts
+- Calm, reassuring feel that conveys expertise and reliability
+- 100% more polished than typical "we buy houses" sites
 
 ---
 
 ## Color Palette
 
-### Brand Colors (from lawncarekuna.com)
+### Brand Colors (Fintech-Inspired)
 
-**Primary Green:** `hsl(145, 50%, 35%)` - Forest green for buttons, accents, CTAs
-- Hex: #2D6B3F
-- Usage: Primary buttons, links, accents, logo accent
-- Conveys: Growth, nature, trust, professionalism
+**Primary Deep Blue:** `hsl(214, 84%, 35%)` - Trustworthy deep blue for CTAs and accents
+- Hex: #0E4DA4
+- Usage: Primary buttons, CTAs, key accents, links
+- Conveys: Trust, stability, professionalism, financial security
 
-**Light Mint Background:** `hsl(145, 40%, 95%)` - Pale seafoam for section backgrounds
-- Hex: #E5F5EC
-- Usage: Alternating sections, subtle backgrounds, cards
-- Conveys: Freshness, cleanliness, breathing room
-
-**Dark Forest Green:** `hsl(145, 50%, 18%)` - Deep green for overlays, dark cards
-- Hex: #1A3E2C
+**Secondary Navy:** `hsl(214, 50%, 25%)` - Rich navy for overlays and dark sections
+- Hex: #1F3D5C
 - Usage: Hero overlays, dark sections, footer backgrounds
-- Conveys: Depth, sophistication, stability
+- Conveys: Depth, expertise, premium quality
+
+**Light Blue Background:** `hsl(214, 40%, 96%)` - Pale blue for section backgrounds
+- Hex: #EFF5FA
+- Usage: Alternating sections, subtle backgrounds, elevated cards
+- Conveys: Calm, breathing room, cleanliness
+
+**Accent Gold:** `hsl(38, 70%, 55%)` - Warm gold for highlights and secondary accents
+- Hex: #D4A12A
+- Usage: Highlights, badges, subtle accents, hover states
+- Conveys: Value, premium service, warmth
 
 **Neutrals:**
 - Background: Pure white `hsl(0, 0%, 100%)`
 - Foreground: Near black `hsl(0, 0%, 8%)`
 - Borders: Light gray `hsl(0, 0%, 88%)`
 - Muted text: Medium gray `hsl(0, 0%, 40%)`
+- Dark gray: `hsl(0, 0%, 20%)` for secondary text
 
 ---
 
 ## Typography System
 
-**Font Stack:** Google Fonts
-- **Primary (Headings):** Playfair Display - Elegant serif for headlines
-- **Secondary (Body/UI):** Inter - Clean, professional sans-serif
+**Font Stack:** Modern sans-serif (SaaS/fintech style)
+- **Primary (All text):** Inter - Clean, modern, highly legible sans-serif
+- **Accent (Optional):** Playfair Display for special headlines only
 
 **Hierarchy:**
-- H1: text-5xl md:text-6xl lg:text-7xl, font-serif, tracking-tight
-- H2: text-4xl md:text-5xl, font-serif, tracking-tight
-- H3: text-2xl md:text-3xl, font-serif, font-medium
+- H1: text-5xl md:text-6xl lg:text-7xl, font-sans, font-bold, tracking-tight
+- H2: text-4xl md:text-5xl, font-sans, font-bold, tracking-tight
+- H3: text-2xl md:text-3xl, font-sans, font-semibold
 - H4: text-xl md:text-2xl, font-sans, font-semibold
 - Body Large: text-lg md:text-xl, font-sans, leading-relaxed
-- Body: text-base, font-sans, leading-relaxed
+- Body: text-base md:text-lg, font-sans, leading-relaxed
 - Small: text-sm, font-sans
+
+**Key Typography Notes:**
+- Emphasize large, confident headlines
+- Generous line-height (leading-relaxed) for readability
+- Use font-bold for H1/H2 to convey confidence
+- Body text 16-18px for premium, easy-reading experience
 
 ---
 
 ## Layout System
 
-**Spacing Primitives:** Tailwind units
-- Section spacing: py-24 md:py-32 lg:py-40 (generous editorial spacing)
+**Spacing Primitives:** Generous fintech-style spacing
+- Section spacing: py-20 md:py-28 lg:py-36 (ample editorial spacing)
 - Component padding: p-8 to p-12
-- Container: max-w-7xl with px-8 md:px-12
+- Container: max-w-7xl with px-6 md:px-8 lg:px-12
 - Content: max-w-3xl to max-w-4xl for text sections
 - Grid gaps: gap-8 md:gap-12
 
 **Grid Systems:**
-- 2-column for service cards (desktop)
-- 3-column for trust indicators
-- 4-column for service grids
+- 3-column for benefits/features (desktop)
+- 2-column for comparison tables
+- 4-column for trust indicators
 - Single column mobile-first
+- Clean card-based layouts throughout
 
 ---
 
-## Brand Assets
+## Brand Identity
 
-### Logo
-- **Primary Logo:** Horizontal logo with tree icon + "lawncare KUNA" wordmark
-- **Icon:** Simple tree icon in forest green
-- **Usage:** 
-  - Navigation: h-10 w-auto
-  - Footer: h-12 w-auto
-  - Favicon: Tree icon only
+### Taglines
+- **Primary:** "Boise's Trusted Cash Home Buyer"
+- **Supporting:** "Sell your Boise area house fast for a fair cash offer. No repairs. No fees. No agents."
 
-**File:** `attached_assets/Lawn Care Kuna Logo_1763512021933.png`
+### Service Area
+Boise metro area (Treasure Valley):
+- Boise
+- Meridian
+- Nampa
+- Caldwell
+- Eagle
+- Kuna
+- Star
+- Garden City
 
 ---
 
 ## Component Library
 
 ### Navigation
-- **Desktop:** Clean header with mega-dropdown navigation
-- Sticky header with subtle border separator
-- Logo on left (actual brand logo image)
-- Services mega-menu with organized categories
-- Phone CTA: (208) 352-2011
-- Primary CTA: "Free Consultation"
-- **Mobile:** Sheet overlay with organized service categories
+- **Desktop:** Clean header with clear navigation
+- Sticky header with subtle border
+- Logo/brand name on left
+- Navigation items: Home, How It Works, Compare, About, FAQ, Blog
+- Phone CTA: TODO: Update phone
+- Primary CTA: "Get My Cash Offer" (prominent button)
+- **Mobile:** Sheet overlay with clear navigation links
 
 ### Hero Section
-- **Cinematic hero:** 85vh on desktop, 70vh mobile
-- Dark overlay (bg-black/60) on hero images for text contrast
-- White text over dark overlay for maximum readability
-- Playfair Display headlines with generous tracking
-- Dual CTAs: Primary "Get Free Quote" + Secondary "Call Now"
-- Service area badges below CTAs
+- **Modern hero:** 70vh on desktop, 60vh mobile
+- Clean gradient overlays or solid backgrounds (not heavy dark overlays)
+- High-contrast text with large, bold headlines
+- Primary CTA: "Get My Cash Offer"
+- Secondary CTA: "How It Works"
+- Optional inline address field for quick start
+- Trust indicators below hero (years in business, homes purchased, etc.)
 
-### Service Cards
-- **2-column grid** on desktop, stacked mobile
-- Clean white cards with subtle borders
-- Forest green icon containers with light backgrounds
-- Hover elevation effect for interactivity
-- "Learn More" links in brand green
+### Benefit Cards
+- **3-column grid** on desktop, stacked mobile
+- Clean white cards with subtle borders or elevated backgrounds
+- Icons in primary blue or subtle gold
+- Short, punchy headlines
+- 2-3 sentence descriptions
+- Examples:
+  - "Sell As-Is - No Repairs or Cleaning"
+  - "No Commissions or Hidden Fees"
+  - "You Choose Your Closing Date"
+  - "Local Boise Cash Buyers"
 
-### Trust Indicators
-- **3-4 column layout** with icon + text
-- Outlined icons in brand green
-- Minimal styling, maximum clarity
-- Light borders on cards
-- Centered presentation
+### Process Steps
+- **4-step visual process** matching the offer flow:
+  - Step 1: Tell us about your property
+  - Step 2: Get a fair cash offer
+  - Step 3: Pick your closing date
+  - Step 4: Close and get paid
+- Use numbered cards or timeline layout
+- Clear, simple icons
+- Short descriptions
 
-### Quote Forms
-- Clean white cards with subtle borders
-- Generous field spacing
-- Forest green submit buttons
-- Trust messaging in small text
-- Mobile-optimized inputs
-
-### Before/After Gallery
-- Slider component with interactive handle
-- Professional project photography
-- Text overlays for labels
-- Clean, modern controls
+### Comparison Section
+- **Table or card-based comparison:**
+  - "Selling With an Agent" vs "Selling to HomeBuyerBoise"
+- Clean rows with checkmarks/x-marks or clear text
+- Highlight key differences:
+  - Repairs: Required vs Not required
+  - Commissions: ~6% vs 0%
+  - Timeline: 60-90 days vs 7-21 days (typical ranges)
+  - Showings: Many vs None
 
 ### Testimonials
-- Star ratings in complementary color
 - Clean card layout
-- Customer name + service type
-- Quote-style presentation
+- Star ratings or simple quote styling
+- Customer name + situation (e.g., "Inherited property seller")
+- Short, authentic testimonials (placeholders with TODO notes)
 
 ### Footer
-- Dark forest green background
+- Light background (not dark like lawn care site)
 - 4-column layout on desktop
-- Service links organized by category
-- Contact information prominent
-- Legal/copyright in small text
+- Quick Links, Service Areas, Resources, Contact
+- Brand description and service area list
+- Copyright: "© 2024 HomeBuyerBoise. All rights reserved."
 
 ---
 
 ## Page Layouts
 
 ### Homepage Sections
-1. Cinematic hero with dual CTAs
-2. Trust indicators (4-column grid)
-3. Editorial introduction (centered, max-w-3xl)
-4. Main services (2-column grid)
-5. Before/After gallery showcase
-6. Customer testimonials
-7. Service areas
-8. Final CTA section
-9. Footer
+1. Hero with primary CTA and optional address input
+2. Benefits section (3-column grid)
+3. Process section (4-step visual)
+4. Who We Help section (grid of situations)
+5. Comparison section (Agent vs HomeBuyerBoise)
+6. Local trust section (Boise-focused)
+7. Testimonials
+8. FAQ preview (3-5 questions)
+9. Final CTA section
+10. Footer
 
-### Service Landing Pages  
-1. Hero section (70vh) with service imagery
-2. Introduction paragraph
-3. Service grid (2-column)
-4. Benefits section
-5. Process/approach section
-6. Related services
-7. CTA section
-
-### Service Detail Pages
+### How It Works Page
 1. Hero section
-2. Service overview
-3. Detailed description
-4. Benefits list
-5. FAQ section
-6. Related services
-7. Quote form sidebar (desktop)
+2. Step-by-step process explanation
+3. Timeline or diagram
+4. Benefits of the process
+5. CTA
+
+### Compare Page
+1. Hero section
+2. Detailed comparison table
+3. Pros/cons for each option (balanced, not one-sided)
+4. When to choose HomeBuyerBoise
+5. CTA
+
+### About Page
+1. Hero section
+2. Mission/values section
+3. Local Boise/Treasure Valley expertise
+4. Team section (placeholder with TODO)
+5. Why choose us
+6. CTA
+
+### FAQ Page
+1. Hero with clear H1
+2. Accordion-style Q&A (10-20 questions)
+3. Categories or sections for organization
+4. CTA at bottom
+
+### Blog
+1. Clean list of articles
+2. Card layout with image, title, excerpt
+3. Focus on seller education topics
+4. Examples:
+   - "How to Sell Your Boise House Fast Without Making Repairs"
+   - "Selling an Inherited House in Boise: A Practical Guide"
+   - "Should You Sell Your House As-Is in Boise?"
 
 ---
 
-## Photography Treatment
+## Multi-Step Offer Flow (Opendoor-Inspired)
+
+**Primary Entry:** "Get My Cash Offer" CTA throughout site
+
+**Flow Structure:**
+1. **Property Address**
+   - Large, prominent address input with autocomplete
+   - Helper text: "We buy houses in Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City"
+   - Clean progress indicator
+
+2. **Property Details**
+   - Property type (cards: Single-family, Townhome, Condo, etc.)
+   - Beds, baths (optional)
+   - Square footage (optional)
+   - Property condition (clickable cards: Excellent, Good, Fair, Needs Work, Major Repairs)
+
+3. **Situation & Timeline**
+   - Reason for selling (cards or dropdown)
+   - Timeline to sell (cards or dropdown)
+
+4. **Market Value Estimate**
+   - If no AVM: "What do you think your house would sell for on the open market?"
+   - Accept single number or range
+   - Clean input with helpful formatting
+
+5. **Contact Info**
+   - Name (required)
+   - Phone (required)
+   - Email (required)
+   - Consent checkbox
+
+6. **Offer Range Result**
+   - Display preliminary estimated offer range
+   - Clear messaging: "This is a preliminary estimate"
+   - Explain: No commissions, no repairs, as-is purchase
+   - Next steps clearly outlined
+
+**Design Notes:**
+- Clean, modern step indicators
+- Large, easy-to-tap cards for selections
+- Generous spacing between steps
+- Mobile-first responsive design
+- Matches overall site aesthetic
+
+---
+
+## Visual Elements & Icons
+
+Use clean, simple line icons from Lucide React:
+- **Home** - Property/house
+- **DollarSign** - Cash offer
+- **Calendar** - Timeline/closing
+- **CheckCircle** - Benefits/features
+- **Users** - Local team
+- **Shield** - Trust/security
+- **MapPin** - Service areas
+- **Wrench** - No repairs needed
+- **X or XCircle** - No fees
+
+**Icon Style:**
+- Outlined, not filled
+- Consistent stroke width
+- Primary blue or subtle gold color
+- Medium size (h-6 w-6 to h-8 w-8)
+
+---
+
+## Photography & Imagery
 
 ### Style Direction
-- Professional, high-quality lawn and landscape photography
-- Natural color (not desaturated - show the green!)
-- Well-lit, optimistic imagery
-- Hero images use dark overlays for text readability
-- Before/after photos show real results
+- Professional real estate photography
+- Boise/Idaho homes and neighborhoods
+- Natural, bright lighting
+- Modern, well-maintained properties
+- Hero images: Boise area homes with mountain/city views
+- NOT heavy dark overlays - use clean gradients or solid backgrounds
 
 ### Required Images
-1. **Homepage Hero:** Beautiful maintained lawn, Idaho setting
-2. **Lawn Care:** Professional lawn mowing in action
-3. **Landscaping:** Finished hardscape/patio project
-4. **Christmas Lights:** Home decorated with lights at night
-5. **Commercial:** HOA property or commercial landscape
-6. **Before/After:** Real project transformations
+1. **Homepage Hero:** Beautiful Boise home, suburban setting
+2. **Process Section:** Clean, simple illustrations or photos
+3. **Comparison Section:** Simple icons or minimal graphics
+4. **About Page:** Boise landmarks or team photos (placeholder)
+5. **Blog:** Stock photos of homes, keys, contracts, etc.
 
 ---
 
 ## CTA Strategy
 
-**Primary CTA:** "Get Free Quote" - Forest green button, prominent
-**Secondary CTA:** "(208) 352-2011" - Click-to-call phone link
-**Tertiary:** "Learn More" links throughout
+**Primary CTA:** "Get My Cash Offer" - Deep blue button, white text, prominent
+**Secondary CTA:** "How It Works" - Outline button or text link
+**Tertiary:** "Call Us" - Click-to-call phone link with icon
 
 **Button Styling:**
-- Primary: bg-primary (forest green), white text
-- Outline: border-primary, green text, transparent bg
-- Sizes: Use Button size prop (sm, default, lg)
+- Primary: bg-primary (deep blue), white text, large padding
+- Outline: border-primary, blue text, transparent bg
+- Sizes: Use Button size prop (default, lg)
 - Hover: Automatic elevation via hover-elevate utility
-- Icons: Phone icon for call buttons
+- Icons: Phone, ArrowRight for directional CTAs
 
 ---
 
 ## Accessibility & UX
 
-- Clean, readable color contrast
-- Large, tappable mobile buttons
-- Clear focus states
+- High color contrast (WCAG AA minimum)
+- Large, tappable mobile buttons (min 44px)
+- Clear focus states on all interactive elements
 - Click-to-call phone functionality
-- Mobile-optimized forms
-- Fast page loads
+- Mobile-optimized forms with large inputs
+- Fast page loads with optimized images
 - Clear navigation hierarchy
-- Breadcrumbs on deep pages
+- Breadcrumbs where appropriate
 
 ---
 
 ## SEO Guidelines
 
-- Every page unique title: "[Service] - Lawn Care Kuna"
-- Meta descriptions for all pages
-- Service area pages: "[Service] in [City], Idaho"
-- H1 on every page
+- Every page unique title: "[Page] - HomeBuyerBoise | Boise Cash Home Buyer"
+- Meta descriptions for all pages (140-160 characters)
+- Example titles:
+  - "Sell Your House Fast in Boise | HomeBuyerBoise"
+  - "How It Works - HomeBuyerBoise | Boise Cash Home Buyer"
+  - "Sell My House Fast in Meridian, ID | HomeBuyerBoise"
+- H1 on every page with relevant keywords + location
 - Structured navigation
-- Internal linking between services
+- Internal linking between pages
 - Contact info in footer
-- Local business schema (future)
+- Local business schema (LocalBusiness + Service)
 
 ---
 
@@ -246,24 +361,62 @@
 
 - All layouts stack cleanly on mobile
 - Navigation collapses to hamburger menu
-- Touch-friendly buttons (min 44px height)
+- Touch-friendly buttons and inputs
 - Optimized images for mobile
 - Fast, responsive experience
-- Sticky header with logo
-- Easy access to phone/quote CTAs
+- Sticky header optional
+- Easy access to "Get Offer" CTA on mobile
+- Offer flow optimized for mobile completion
 
 ---
 
 ## Design Aesthetic Summary
 
-**Think:** Clean, professional, approachable lawn care company
-**NOT:** Luxury landscaping firm or ultra-premium service
+**Think:** Modern fintech/proptech platform (Stessa, Fundrise) meets local Boise expertise
+**NOT:** Generic "we buy houses" bandit sign aesthetic
 
 The design should feel:
-- **Trustworthy** - Professional but not stuffy
-- **Fresh** - Clean, modern, optimistic
-- **Accessible** - Easy to navigate and understand
-- **Local** - Idaho-focused, community-oriented
-- **Quality** - Well-crafted without being pretentious
+- **Trustworthy** - Professional, premium, transparent
+- **Modern** - Clean, SaaS-style, fintech-inspired
+- **Local** - Boise-focused, community-oriented
+- **Premium** - 100% more polished than typical cash buyer sites
+- **Calm** - Reassuring, not aggressive or salesy
+- **Clear** - Easy to understand, straightforward process
 
-The brand green conveys growth, nature, and care. The light mint backgrounds add freshness and breathing room. The overall feel is "the lawn care company you can trust" - professional expertise with friendly, approachable service.
+The deep blue conveys trust and financial stability. The light blue backgrounds add breathing room and calm. The gold accents add warmth and value. The overall feel is "the professional cash home buyer you can trust" - expertise and reliability with a modern, approachable touch.
+
+---
+
+## Key Differentiators from Lawn Care Design
+
+1. **Color Shift:** Green → Blue (trust, finance) with gold accents
+2. **Typography:** All sans-serif for modern fintech feel
+3. **Content Focus:** Lawn care → Home selling/real estate
+4. **Icons:** Nature icons → Real estate icons (home, dollar, calendar)
+5. **Tone:** Optimistic/fresh → Calm/reassuring/professional
+6. **CTA:** "Get Free Quote" → "Get My Cash Offer"
+7. **Service Areas:** Same Boise metro, different context
+8. **Photography:** Lawns/landscapes → Homes/properties
+
+---
+
+## Maintain Quality Standards
+
+**Critical:** This design must be AT LEAST as beautiful, organized, and polished as the original LawnCareKuna design.
+
+**Preserve:**
+- Section structure and spacing
+- Card layouts and visual rhythm
+- Organizational clarity
+- Typography hierarchy
+- Mobile responsiveness
+- Component quality
+
+**Evolve:**
+- Color palette (green → blue/gold)
+- Content (lawn care → home buying)
+- Visual style (nature → fintech)
+- Icons and imagery
+- Messaging and tone
+
+The final HomeBuyerBoise site should feel like a premium fintech platform, not a typical cash buyer site, while maintaining all the quality and polish of the original design.
