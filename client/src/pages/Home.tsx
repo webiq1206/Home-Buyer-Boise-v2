@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { QuoteWizard } from "@/components/QuoteWizard";
+import { HeroAddressLookup } from "@/components/HeroAddressLookup";
 import {
   Home as HomeIcon,
   Phone,
@@ -25,7 +25,7 @@ import { NearMeFAQ } from "@/components/NearMeFAQ";
 import { CommonSituations } from "@/components/CommonSituations";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import heroBackground from "@assets/Home Buyer Boise Background Image (1)_1764004682410.png";
+import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
@@ -211,9 +211,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Right Column - Quote Wizard */}
+                {/* Right Column - Address Lookup */}
                 <div className="lg:block">
-                  <QuoteWizard />
+                  <HeroAddressLookup />
                 </div>
               </div>
             </div>
