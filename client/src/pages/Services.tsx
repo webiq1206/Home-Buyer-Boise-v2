@@ -79,10 +79,10 @@ export default function Services() {
         <title>Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise</title>
         <meta 
           name="description" 
-          content="We buy houses in any condition across Boise, Meridian, Nampa, and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." 
+          content="We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, Middleton and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." 
         />
         <meta property="og:title" content="Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise" />
-        <meta property="og:description" content="We buy houses in any condition across Boise, Meridian, Nampa, and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." />
+        <meta property="og:description" content="We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, Middleton and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." />
       </Helmet>
 
       {/* Hero Section */}
@@ -99,7 +99,7 @@ export default function Services() {
                   We Buy Houses in Any Situation
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground">
-                  Whether you're facing foreclosure, going through a divorce, inherited a property, or simply need to sell fast—we provide fair cash offers and close on your timeline. Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
+                  Whether you're facing foreclosure, going through a divorce, inherited a property, or simply need to sell fast—we provide fair cash offers and close on your timeline. Serving Boise, Meridian, Eagle, Kuna, Star, and Middleton.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
                   <Button size="lg" variant="outline" asChild data-testid="button-contact">
@@ -301,7 +301,7 @@ export default function Services() {
               We buy houses throughout the greater Boise area
             </p>
             <div className="flex flex-wrap gap-3 justify-center text-sm">
-              {['Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Kuna', 'Star', 'Garden City'].map((city) => (
+              {['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton'].map((city) => (
                 <div key={city} className="px-4 py-2 bg-card border rounded-md" data-testid={`city-${city.toLowerCase()}`}>
                   {city}
                 </div>

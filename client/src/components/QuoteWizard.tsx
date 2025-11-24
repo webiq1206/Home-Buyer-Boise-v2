@@ -299,12 +299,10 @@ export function QuoteWizard({
                     <SelectContent>
                       <SelectItem value="Boise">Boise</SelectItem>
                       <SelectItem value="Meridian">Meridian</SelectItem>
-                      <SelectItem value="Nampa">Nampa</SelectItem>
-                      <SelectItem value="Caldwell">Caldwell</SelectItem>
                       <SelectItem value="Eagle">Eagle</SelectItem>
                       <SelectItem value="Kuna">Kuna</SelectItem>
                       <SelectItem value="Star">Star</SelectItem>
-                      <SelectItem value="Garden City">Garden City</SelectItem>
+                      <SelectItem value="Middleton">Middleton</SelectItem>
                     </SelectContent>
                   </Select>
                   {form1.formState.errors.city && (

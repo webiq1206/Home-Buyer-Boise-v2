@@ -441,7 +441,7 @@ export default function Home() {
                 Buying Houses Across the Treasure Valley
               </h2>
               <p className="text-lg text-muted-foreground">
-                Cash home buyers serving Boise, Meridian, Nampa, and surrounding areas
+                Cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, Middleton and surrounding Treasure Valley areas
               </p>
             </div>
             <Suspense fallback={<div className="h-96 flex items-center justify-center"><div className="animate-pulse text-muted-foreground">Loading map...</div></div>}>

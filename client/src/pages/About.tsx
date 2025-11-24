@@ -48,7 +48,7 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="HomeBuyerBoise - Professional cash home buyers serving Boise, Meridian, Nampa and Treasure Valley Idaho since 2017"
+            alt="HomeBuyerBoise - Professional cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, Middleton and Treasure Valley Idaho since 2017"
             className="w-full h-full object-cover"
           />
         </div>
@@ -69,7 +69,7 @@ export default function About() {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Since 2017, HomeBuyerBoise has been helping homeowners sell their properties quickly and hassle-free throughout the Treasure Valley. What started as a mission to help families in difficult situations has grown into a trusted cash home buying service serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
+                Since 2017, HomeBuyerBoise has been helping homeowners sell their properties quickly and hassle-free throughout the Treasure Valley. What started as a mission to help families in difficult situations has grown into a trusted cash home buying service serving Boise, Meridian, Eagle, Kuna, Star, and Middleton.
               </p>
               <p className="text-lg text-muted-foreground mb-4">
                 We understand that selling a home can be stressful—whether you're facing foreclosure, going through a divorce, dealing with an inherited property, or simply need to relocate quickly. Our team specializes in providing fair cash offers and closing on your timeline, not ours.
@@ -177,7 +177,7 @@ export default function About() {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Local Market Expertise</h3>
                       <p className="text-muted-foreground">
-                        As Treasure Valley locals, we understand the nuances of every neighborhood from Boise to Nampa. Our offers reflect accurate local market knowledge.
+                        As Treasure Valley locals, we understand the nuances of every neighborhood from Boise to Middleton. Our offers reflect accurate local market knowledge.
                       </p>
                     </div>
                   </div>
@@ -323,7 +323,7 @@ export default function About() {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Proven Track Record</h3>
                   <p className="text-muted-foreground">
-                    Hundreds of satisfied homeowners across Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City have successfully sold to us since 2017.
+                    Hundreds of satisfied homeowners across Boise, Meridian, Eagle, Kuna, Star, and Middleton have successfully sold to us since 2017.
                   </p>
                 </div>
               </div>
@@ -439,7 +439,7 @@ export default function About() {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Local Since 2017</h3>
                       <p className="text-muted-foreground">
-                        Proud to serve our local community for over 7 years. We've helped hundreds of homeowners across Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
+                        Proud to serve our local community for over 7 years. We've helped hundreds of homeowners across Boise, Meridian, Eagle, Kuna, Star, and Middleton.
                       </p>
                     </div>
                   </div>

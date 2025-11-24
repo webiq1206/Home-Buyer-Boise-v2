@@ -16,7 +16,7 @@ export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: 
   const faqs = [
     {
       question: `How fast can you buy my house in ${city}?`,
-      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city}, Meridian, Nampa, and all Treasure Valley cities. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 352-2011 for your free cash offer today.`,
+      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city} and all Treasure Valley cities. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 352-2011 for your free cash offer today.`,
     },
     {
       question: `Do you buy houses in any condition in ${city}?`,
@@ -28,7 +28,7 @@ export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: 
     },
     {
       question: `What areas do you serve in the Treasure Valley?`,
-      answer: `We buy houses throughout the entire Treasure Valley including ${city}, Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City. As local Idaho cash home buyers, we're committed to serving all these communities with fast, fair offers and flexible closing timelines.`,
+      answer: `We buy houses throughout the entire Treasure Valley including ${city}, Boise, Meridian, Eagle, Kuna, Star, and Middleton. As local Idaho cash home buyers, we're committed to serving all these communities with fast, fair offers and flexible closing timelines.`,
     },
     {
       question: `Why choose HomeBuyerBoise over listing with a realtor?`,

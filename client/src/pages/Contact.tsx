@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Contact HomeBuyerBoise - Get your free cash offer within 24 hours for homes in Boise, Meridian, Nampa and Treasure Valley"
+            alt="Contact HomeBuyerBoise - Get your free cash offer within 24 hours for homes in Boise, Meridian, Eagle, Kuna, Star, Middleton and Treasure Valley"
             className="w-full h-full object-cover"
           />
         </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                           Kuna, ID 83634
                         </p>
                         <p className="text-xs text-muted-foreground mt-2">
-                          Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, Garden City & surrounding areas
+                          Serving Boise, Meridian, Eagle, Kuna, Star, Middleton & surrounding areas
                         </p>
                       </div>
                     </div>

@@ -228,7 +228,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
                 In addition to {cityName}, we buy houses throughout the Treasure Valley. Get your cash offer today no matter where your property is located.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                {['Kuna', 'Boise', 'Meridian', 'Eagle', 'Star', 'Middleton', 'Nampa', 'Caldwell', 'Garden City']
+                {['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton']
                   .filter(city => city !== cityName)
                   .map((city) => (
                     <Button key={city} variant="outline" asChild data-testid={`button-city-${city.toLowerCase()}`}>

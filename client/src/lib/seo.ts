@@ -117,7 +117,7 @@ export function generateMetaDescription(params: ServiceSEOParams): string {
   const { serviceName, city } = params;
   
   if (params.isHomePage) {
-    return "Sell your house fast for cash in Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
+    return "Sell your house fast for cash in Boise, Meridian, Eagle, Kuna, Star, and Middleton. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
   }
   
   if (city) {
@@ -320,7 +320,7 @@ export const BUSINESS_INFO = {
     sunday: 'Closed',
   },
   founded: '2018',
-  serviceArea: ['Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Kuna', 'Star', 'Garden City'],
+  serviceArea: ['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton'],
   serviceRadius: '30 miles',
   licenses: ['Idaho Real Estate License #SP12345', 'Idaho Business License #ABC67890'],
   certifications: ['Certified Real Estate Investor', 'Cash Buyer Network Member'],
