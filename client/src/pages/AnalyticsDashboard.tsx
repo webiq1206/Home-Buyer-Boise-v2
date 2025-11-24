@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 import type { Lead } from "@shared/schema";
 import { TrendingUp, TrendingDown, DollarSign, Users, ShoppingCart, Clock, MapPin, Building } from "lucide-react";
 
@@ -73,13 +74,18 @@ export default function AnalyticsDashboard() {
   }
 
   return (
-    <div className="container py-8" data-testid="page-analytics">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Analytics Dashboard</h1>
-        <p className="text-muted-foreground">
-          Lead distribution metrics and business insights
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Analytics Dashboard | HomeBuyerBoise</title>
+      </Helmet>
+      <div className="container py-8" data-testid="page-analytics">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">Analytics Dashboard</h1>
+          <p className="text-muted-foreground">
+            Lead distribution metrics and business insights
+          </p>
+        </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
         <Card>
@@ -282,5 +288,6 @@ export default function AnalyticsDashboard() {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 }

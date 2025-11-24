@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { QuoteWizard } from "@/components/QuoteWizard";
 import { CheckCircle2, Home, Clock, DollarSign, Shield, ArrowRight, MapPin } from "lucide-react";
 import { NearMeFAQ } from "@/components/NearMeFAQ";
+import { 
+  generateLocalBusinessSchema, 
+  generateServiceSchema, 
+  generateBreadcrumbSchema,
+  injectStructuredData 
+} from "@/lib/seo";
 
 interface AreaTemplateProps {
   cityName: string;
@@ -66,6 +72,15 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
     },
   ];
 
+  // Generate structured data for SEO
+  const localBusinessSchema = generateLocalBusinessSchema(cityName);
+  const serviceSchema = generateServiceSchema(cityName);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Service Areas', url: '/areas' },
+    { name: `${cityName}, Idaho`, url: `/areas/${citySlug}` }
+  ]);
+
   return (
     <>
       <Helmet>
@@ -74,8 +89,33 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
           name="description" 
           content={`Need to sell your house fast in ${cityName}? Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. We buy houses in any condition throughout ${cityName}, Idaho.`}
         />
+        <meta name="keywords" content={`sell house fast ${cityName}, cash home buyers ${cityName}, we buy houses ${cityName} Idaho, sell my house ${cityName}, ${cityName} cash buyers, sell house for cash ${cityName}, cash for houses ${cityName}, ${cityName} house buyers`} />
+        <link rel="canonical" href={`https://homebuyerboise.com/areas/${citySlug}`} />
+        
+        {/* Open Graph / Social Meta Tags */}
         <meta property="og:title" content={`Sell Your House Fast in ${cityName} Idaho | Cash Home Buyers`} />
         <meta property="og:description" content={`Get a fair cash offer in 24 hours for your ${cityName} home. No fees, no commissions, close in 7 days.`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://homebuyerboise.com/areas/${citySlug}`} />
+        <meta property="og:image" content={`https://homebuyerboise.com/og-image-${citySlug}.jpg`} />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`Sell Your House Fast in ${cityName} Idaho`} />
+        <meta name="twitter:description" content={`Cash offer in 24 hours for your ${cityName} home. No fees, no commissions.`} />
+        <meta name="twitter:image" content={`https://homebuyerboise.com/og-image-${citySlug}.jpg`} />
+        
+        {/* Structured Data / Schema Markup */}
+        <script type="application/ld+json">
+          {injectStructuredData(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {injectStructuredData(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {injectStructuredData(breadcrumbSchema)}
+        </script>
       </Helmet>
 
       <div className="flex flex-col">

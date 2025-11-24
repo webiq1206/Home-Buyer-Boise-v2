@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 import type { LeadPurchase, Lead } from "@shared/schema";
 import { Clock, DollarSign, MapPin, Phone, Mail, Building, ShoppingCart } from "lucide-react";
 import { useState } from "react";
@@ -44,13 +45,18 @@ export default function PurchaseHistory() {
   }
 
   return (
-    <div className="container py-8" data-testid="page-purchase-history">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Purchase History</h1>
-        <p className="text-muted-foreground">
-          View all leads you've purchased and access customer contact information
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Purchase History | HomeBuyerBoise</title>
+      </Helmet>
+      <div className="container py-8" data-testid="page-purchase-history">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">Purchase History</h1>
+          <p className="text-muted-foreground">
+            View all leads you've purchased and access customer contact information
+          </p>
+        </div>
 
       <div className="grid gap-6 md:grid-cols-3 mb-8">
         <Card>
@@ -208,5 +214,6 @@ export default function PurchaseHistory() {
         </div>
       )}
     </div>
+    </>
   );
 }

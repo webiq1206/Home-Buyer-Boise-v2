@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2, XCircle, Clock, DollarSign, MapPin, Phone, Mail, Building } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 import type { Lead } from "@shared/schema";
 import { useState } from "react";
 
@@ -180,11 +181,16 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="container py-8" data-testid="page-admin-dashboard">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-        <p className="text-muted-foreground">Manage incoming leads and quote requests</p>
-      </div>
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Admin Dashboard | HomeBuyerBoise</title>
+      </Helmet>
+      <div className="container py-8" data-testid="page-admin-dashboard">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
+          <p className="text-muted-foreground">Manage incoming leads and quote requests</p>
+        </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <Card>
@@ -286,5 +292,6 @@ export default function AdminDashboard() {
         </TabsContent>
       </Tabs>
     </div>
+    </>
   );
 }
