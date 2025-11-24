@@ -2697,7 +2697,7 @@ export const PRIORITY_SERVICES: ServiceData[] = [
         answer: 'Yes! Commercial snow removal is major part of our winter business. We service: retail parking lots, office complexes, HOA common areas, apartment complexes, medical facilities, churches, and municipal properties. Commercial service includes lot clearing, stacking to maximize parking, loading zone access, ADA-compliant walkways, building entry clearing, and professional de-icing. We work around your business hours - overnight for retail, early morning for offices. Multi-property management companies receive preferred pricing.'
       },
       {
-        question: 'What cities do you provide snow removal service in?',
+        question: 'What locations do you provide snow removal service in?',
         answer: 'We provide snow removal throughout the Treasure Valley: Kuna, Boise, Meridian, Eagle, Star, and Middleton. Service radius extends roughly 20 miles from Kuna. Properties outside service area may be serviced on case-by-case basis with travel surcharge. Eagle and North Boise foothills receive more snow than valley floor - pricing reflects additional service frequency. Contact us for property-specific quote regardless of location.'
       }
     ],

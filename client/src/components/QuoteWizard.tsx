@@ -322,7 +322,7 @@ export function QuoteWizard({
               <Alert>
                 <MapPin className="h-4 w-4" />
                 <AlertDescription>
-                  We buy houses in all Treasure Valley cities. Get your no-obligation cash offer in 24 hours.
+                  We buy houses in all Treasure Valley locations. Get your no-obligation cash offer in 24 hours.
                 </AlertDescription>
               </Alert>
 

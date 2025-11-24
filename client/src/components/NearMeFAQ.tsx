@@ -16,7 +16,7 @@ export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: 
   const faqs = [
     {
       question: `How fast can you buy my house in ${city}?`,
-      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city} and all Treasure Valley cities. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 405-CASH for your free cash offer today.`,
+      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city} and all Treasure Valley locations. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 405-CASH for your free cash offer today.`,
     },
     {
       question: `Do you buy houses in any condition in ${city}?`,

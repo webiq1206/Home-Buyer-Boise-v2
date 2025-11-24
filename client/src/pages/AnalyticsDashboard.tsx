@@ -44,7 +44,8 @@ export default function AnalyticsDashboard() {
 
   // Group by service type
   const leadsByService = leads.reduce((acc, lead) => {
-    acc[lead.serviceType] = (acc[lead.serviceType] || 0) + 1;
+    const serviceType = lead.serviceType || 'unknown';
+    acc[serviceType] = (acc[serviceType] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
@@ -229,7 +230,7 @@ export default function AnalyticsDashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Top Cities</CardTitle>
+            <CardTitle>Top Locations</CardTitle>
             <CardDescription>Leads by geographic location</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
