@@ -54,28 +54,23 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">
+                  How It Works
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact & Quote
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link href="/services/lawn-care" className="text-muted-foreground hover:text-primary transition-colors">
-                  Lawn Care Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/landscaping" className="text-muted-foreground hover:text-primary transition-colors">
-                  Landscaping Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-blog-footer">
-                  Lawn Care Blog
+                <Link href="/get-quote" className="text-muted-foreground hover:text-primary transition-colors">
+                  Get Cash Offer
                 </Link>
               </li>
               <li>
@@ -91,22 +86,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Why Choose Us */}
           <div>
-            <h3 className="font-semibold text-sm mb-4">Popular Services</h3>
-            <ul className="space-y-2 text-sm">
-              {PRIORITY_SERVICES.slice(0, 8).map((service) => (
-                <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="text-muted-foreground hover:text-primary transition-colors">
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
-                <Link href="/services" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                  View All Services →
-                </Link>
-              </li>
+            <h3 className="font-semibold text-sm mb-4">Why Choose Us</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Fast Cash Offers in 24 Hours</li>
+              <li>• No Fees or Commissions</li>
+              <li>• Close on Your Timeline</li>
+              <li>• We Buy As-Is</li>
+              <li>• No Repairs Needed</li>
+              <li>• Hassle-Free Process</li>
+              <li>• Local Boise Buyers</li>
             </ul>
           </div>
 

@@ -4,128 +4,103 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Leaf,
-  Lightbulb,
+  Home as HomeIcon,
   Phone,
   CheckCircle2,
   Shield,
   Award,
   Clock,
   DollarSign,
-  Sprout,
   ArrowRight,
   Heart,
-  Target,
+  Wallet,
   Users,
   Zap,
+  FileCheck,
+  HandshakeIcon,
 } from "lucide-react";
 import { HeroQuoteSection } from "@/components/HeroQuoteSection";
 import { NearMeFAQ } from "@/components/NearMeFAQ";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import heroBackgroundPng from "@assets/Lawn Care Kuna Background Image_1763675543303.png";
-import heroBackgroundWebp from "@assets/Lawn Care Kuna Background Image_1763675543303.webp";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
 const Testimonials = lazy(() => import("@/components/Testimonials").then(mod => ({ default: mod.Testimonials })));
 
-const services = [
+const howItWorksSteps = [
   {
-    icon: Leaf,
-    title: "Lawn Care",
-    description: "Professional lawn maintenance services designed to keep your property looking its best year-round.",
-    features: ["Weekly Mowing", "Fertilization", "Weed Control", "Seasonal Cleanup"],
-    href: "/services/lawn-care",
+    icon: Phone,
+    title: "Contact Us",
+    description: "Call or fill out our form to tell us about your property. We'll schedule a quick consultation.",
+    features: ["Free Consultation", "No Obligation", "Fast Response", "Local Experts"],
+    href: "/contact",
   },
   {
-    icon: Sprout,
-    title: "Landscaping",
-    description: "Transform your outdoor space with custom landscape design and installation services.",
-    features: ["Patio Installation", "Retaining Walls", "Water Features", "Outdoor Lighting"],
-    href: "/services/landscaping",
+    icon: HomeIcon,
+    title: "Property Evaluation",
+    description: "We'll assess your property and provide a fair, no-obligation cash offer within 24 hours.",
+    features: ["Quick Assessment", "Fair Market Value", "As-Is Condition", "24-Hour Offers"],
+    href: "/how-it-works",
   },
   {
-    icon: Lightbulb,
-    title: "Christmas Lights",
-    description: "Professional holiday lighting installation to make your property shine during the festive season.",
-    features: ["Custom Design", "Professional Installation", "Maintenance", "Removal Service"],
-    href: "/services/christmas-lights",
+    icon: DollarSign,
+    title: "Get Paid & Close",
+    description: "Accept our offer and choose your closing date. We handle all the paperwork and pay cash.",
+    features: ["Close on Your Timeline", "We Pay All Fees", "No Realtor Commissions", "Cash Payment"],
+    href: "/get-quote",
   },
 ];
 
 const trustIndicators = [
   {
     icon: Award,
-    title: "Established 2017",
-    description: "Seven years of excellence serving the Treasure Valley",
+    title: "Established 2018",
+    description: "Six years buying homes in the Treasure Valley",
   },
   {
     icon: Shield,
     title: "Licensed & Insured",
-    description: "Fully licensed and insured for your protection",
+    description: "Fully licensed real estate investors",
   },
   {
-    icon: DollarSign,
-    title: "Transparent Pricing",
-    description: "Free consultations with honest, upfront pricing",
+    icon: Wallet,
+    title: "No Fees or Commissions",
+    description: "We pay all closing costs and fees",
   },
   {
     icon: Clock,
-    title: "Reliable Service",
-    description: "Consistent, professional care you can count on",
+    title: "Close on Your Timeline",
+    description: "Fast closings or take your time - you choose",
   },
 ];
 
-const coreValues = [
+const benefits = [
   {
-    icon: Heart,
-    title: "Quality First",
-    description: "We never compromise on quality. Every job is done right the first time with attention to detail.",
+    icon: DollarSign,
+    title: "Fair Cash Offers",
+    description: "We provide competitive cash offers based on current market values, with no hidden fees or deductions.",
   },
   {
-    icon: Shield,
-    title: "Integrity",
-    description: "Honest pricing, transparent communication, and ethical business practices you can trust.",
+    icon: FileCheck,
+    title: "No Repairs Needed",
+    description: "Sell your house as-is. No need to spend time or money on repairs, cleaning, or staging.",
   },
   {
-    icon: Target,
-    title: "Customer Focus",
-    description: "Your satisfaction is our priority. We listen, deliver, and exceed expectations.",
+    icon: HandshakeIcon,
+    title: "Simple Process",
+    description: "Skip the complexity of traditional home sales. We handle all paperwork and make it hassle-free.",
   },
   {
     icon: Zap,
-    title: "Excellence",
-    description: "Continuous improvement and dedication to being the best in lawn care services.",
+    title: "Fast Closings",
+    description: "Need to sell quickly? We can close in as little as 7 days or work with your preferred timeline.",
   },
-];
-
-// Map service display names to their URL slugs
-const serviceSlugMap: Record<string, string> = {
-  "Lawn Mowing": "lawn-mowing",
-  "Lawn Aeration": "aeration",
-  "Fertilization": "fertilization",
-  "Weed Control": "weed-control",
-  "Spring Cleanup": "spring-cleanup",
-  "Fall Cleanup": "fall-cleanup",
-  "Patio Installation": "patio-installation",
-  "Retaining Walls": "retaining-walls",
-};
-
-const popularServices = [
-  { name: "Lawn Mowing", price: "Starting at $50" },
-  { name: "Lawn Aeration", price: "Starting at $85" },
-  { name: "Fertilization", price: "Starting at $75" },
-  { name: "Weed Control", price: "Starting at $65" },
-  { name: "Spring Cleanup", price: "Starting at $120" },
-  { name: "Fall Cleanup", price: "Starting at $120" },
-  { name: "Patio Installation", price: "Custom Quote" },
-  { name: "Retaining Walls", price: "Custom Quote" },
 ];
 
 export default function Home() {
   const seoParams = { 
-    serviceName: "Lawn Care", 
+    serviceName: "Cash Home Buyer", 
     serviceSlug: "home", 
     isHomePage: true 
   };
@@ -182,67 +157,76 @@ export default function Home() {
       </Helmet>
 
       <div className="flex flex-col pb-20">
-        {/* Combined Hero and Trust Section with Seamless Background */}
-        <div className="relative overflow-hidden">
-          {/* Shared Background Image */}
-          <div className="absolute inset-0 z-0">
-            <picture>
-              <source srcSet={heroBackgroundWebp} type="image/webp" />
-              <img 
-                src={heroBackgroundPng} 
-                alt="Professional lawn care background with decorative leaves"
-                className="w-full h-full object-cover"
-                width="1920"
-                height="900"
-                loading="eager"
-                {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
-              />
-            </picture>
-          </div>
-
-          {/* Content Container */}
-          <div className="relative z-10">
-            {/* Hero Section with Integrated Quote Feature */}
-            <HeroQuoteSection 
-              label="Kuna Lawn Care"
-              heading="Professional Lawn Care in Kuna"
-              subheading="Top-Rated Local Lawn & Landscaping Services Since 2017"
-              defaultCity="Kuna"
-              backgroundAlt="Professional lawn care services with lush green lawn in Kuna Idaho"
-            />
-
-            {/* Trust Indicators */}
-            <section className="py-12 md:py-16 lg:py-20">
-              <div className="container px-4 md:px-8">
-                <div className="max-w-4xl mx-auto space-y-8 md:space-y-12">
-                  <div className="text-center space-y-3 md:space-y-4">
-                    <h2 className="text-2xl sm:text-2xl md:text-3xl font-bold tracking-tight">
-                      Why Kuna trusts us with their lawns
-                    </h2>
-                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                      Professional lawn care backed by experience, licensing, and a commitment to your satisfaction
-                    </p>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                    {trustIndicators.map((indicator, index) => (
-                      <Card key={index} className="text-center bg-white/95 backdrop-blur-sm" data-testid={`card-trust-${index}`}>
-                        <CardContent className="pt-5 pb-5 md:pt-6 md:pb-6 space-y-2 md:space-y-3 px-4 md:px-6">
-                          <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10">
-                            <indicator.icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                          </div>
-                          <h3 className="font-semibold text-sm md:text-base">{indicator.title}</h3>
-                          <p className="text-xs md:text-sm text-muted-foreground leading-snug">{indicator.description}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
+        {/* Hero Section with Navy Gradient */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70">
+          <div className="absolute inset-0 bg-grid-white/5"></div>
+          
+          <div className="container px-4 md:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                <Shield className="h-4 w-4 text-white" />
+                <span className="text-sm font-medium text-white">Licensed & Insured Cash Home Buyers</span>
               </div>
-            </section>
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                Sell Your Boise House
+                <br />
+                <span className="text-accent">Fast for Cash</span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+                Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. Close on your timeline.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 h-12 text-base"
+                  onClick={() => window.location.href = "/get-quote"}
+                  data-testid="button-get-offer"
+                >
+                  Get My Cash Offer
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 h-12 px-8 text-base"
+                  asChild
+                  data-testid="button-learn-more"
+                >
+                  <a href="tel:2083522011">
+                    <Phone className="mr-2 h-5 w-5" />
+                    (208) 352-2011
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-      {/* The Best Local Lawn Care Section */}
+        {/* Trust Indicators */}
+        <section className="py-12 md:py-16 bg-muted/30">
+          <div className="container px-4 md:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {trustIndicators.map((indicator, index) => (
+                  <Card key={index} className="text-center" data-testid={`card-trust-${index}`}>
+                    <CardContent className="pt-5 pb-5 md:pt-6 md:pb-6 space-y-2 md:space-y-3 px-4 md:px-6">
+                      <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10">
+                        <indicator.icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+                      </div>
+                      <h3 className="font-semibold text-sm md:text-base">{indicator.title}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground leading-snug">{indicator.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+      {/* How It Works Section */}
       <section className="py-12 md:py-16 lg:py-24">
         <div className="container px-4 md:px-8">
           <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
