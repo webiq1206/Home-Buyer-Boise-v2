@@ -117,7 +117,7 @@ export function generateMetaDescription(params: ServiceSEOParams): string {
   const { serviceName, city } = params;
   
   if (params.isHomePage) {
-    return "Sell your house fast for cash in Boise, Meridian, Eagle, Kuna, Star, and Middleton. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
+    return "Sell your house fast for cash in Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, and Caldwell. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
   }
   
   if (city) {
@@ -326,6 +326,24 @@ export const CITY_SEO_DATA = {
     climate: 'semi-arid climate with distinct seasons',
     coordinates: { lat: 43.7077, lng: -116.6185 },
   },
+  Nampa: {
+    population: '100,200',
+    founded: '1886',
+    zipCodes: ['83651', '83686', '83687'],
+    neighborhoods: ['Centennial', 'Southridge', 'Deer Flat', 'Greenhurst', 'Painted Ridge'],
+    landmarks: ['Ford Idaho Center', 'Lake Lowell', 'Nampa Civic Center', 'Northwest Nazarene University'],
+    climate: 'semi-arid climate with hot summers and cold winters',
+    coordinates: { lat: 43.5407, lng: -116.5635 },
+  },
+  Caldwell: {
+    population: '59,996',
+    founded: '1883',
+    zipCodes: ['83605', '83607'],
+    neighborhoods: ['Indian Creek', 'Purple Sage', 'Ustick West', 'Deer Flat'],
+    landmarks: ['College of Idaho', 'Caldwell Event Center', 'Indian Creek Plaza', 'Canyon Hill'],
+    climate: 'semi-arid with hot, dry summers and cold winters',
+    coordinates: { lat: 43.6629, lng: -116.6874 },
+  },
 };
 
 /**
@@ -353,7 +371,7 @@ export const BUSINESS_INFO = {
     sunday: 'Closed',
   },
   founded: '2018',
-  serviceArea: ['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton'],
+  serviceArea: ['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton', 'Nampa', 'Caldwell'],
   serviceRadius: '30 miles',
   licenses: ['Idaho Real Estate License #SP12345', 'Idaho Business License #ABC67890'],
   certifications: ['Certified Real Estate Investor', 'Cash Buyer Network Member'],
