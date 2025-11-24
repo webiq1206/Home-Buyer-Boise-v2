@@ -24,7 +24,7 @@ import { HeroQuoteSection } from "@/components/HeroQuoteSection";
 import { NearMeFAQ } from "@/components/NearMeFAQ";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import heroBackground from "@assets/2_1763997500316.png";
+import heroBackground from "@assets/Home Buyer Boise Background Image (1)_1764004682410.png";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
@@ -159,9 +159,20 @@ export default function Home() {
       </Helmet>
 
       <div className="flex flex-col pb-20">
-        {/* Hero Section with Navy Gradient */}
-        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70">
-          <div className="absolute inset-0 bg-grid-white/5"></div>
+        {/* Hero Section with Background Image */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={heroBackground} 
+              alt="HomeBuyerBoise - Cash home buyers serving Boise and Treasure Valley Idaho"
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+          
+          {/* Dark Overlay to ensure text readability */}
+          <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary/95 via-primary/90 to-primary/85"></div>
           
           <div className="container px-4 md:px-8 relative z-10">
             <div className="max-w-7xl mx-auto">
