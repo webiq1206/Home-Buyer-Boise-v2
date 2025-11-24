@@ -44,18 +44,13 @@ export default function About() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBackground} 
-            alt="HomeBuyerBoise - Professional cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, Middleton and Treasure Valley Idaho since 2017"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">About HomeBuyerBoise</h1>
-            <p className="text-lg text-muted-foreground">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background">
+        <div className="container px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              About HomeBuyerBoise
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground">
               Trusted cash home buyers helping homeowners across the Treasure Valley since 2017
             </p>
           </div>

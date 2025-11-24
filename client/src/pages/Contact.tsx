@@ -8,18 +8,13 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBackground} 
-            alt="Contact HomeBuyerBoise - Get your free cash offer within 24 hours for homes in Boise, Meridian, Eagle, Kuna, Star, Middleton and Treasure Valley"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">Contact Us</h1>
-            <p className="text-lg text-muted-foreground">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background">
+        <div className="container px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Contact Us
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground">
               Get your free, no-obligation cash offer in less than 24 hours
             </p>
           </div>
