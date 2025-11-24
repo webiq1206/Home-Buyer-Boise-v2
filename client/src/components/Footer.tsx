@@ -1,7 +1,8 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Home } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { CITIES } from "@shared/contentData";
 import { SERVICES } from "@shared/servicesData";
+import logoImage from "@assets/Home Buyer Boise Logo_1764014379793.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,12 +13,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Home className="h-7 w-7 text-primary" />
-              <div className="flex flex-col">
-                <span className="text-lg font-bold text-primary leading-tight">HomeBuyer</span>
-                <span className="text-xs font-semibold text-primary/70 leading-tight -mt-0.5">BOISE</span>
-              </div>
+            <div className="mb-4">
+              <img src={logoImage} alt="Home Buyer Boise" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Trusted Cash Home Buyers Serving the Boise Metro Area
