@@ -1,4 +1,4 @@
-import { type Quote, type InsertQuote, type GalleryPhoto, type InsertGalleryPhoto, type Testimonial, type InsertTestimonial, type BlogPost, type InsertBlogPost, type User, type UpsertUser, type Lead, type InsertLead, type LeadPurchase, type InsertLeadPurchase, type Notification, type InsertNotification } from "@shared/schema";
+import { type Quote, type InsertQuote, type PropertyOffer, type InsertPropertyOffer, type GalleryPhoto, type InsertGalleryPhoto, type Testimonial, type InsertTestimonial, type BlogPost, type InsertBlogPost, type User, type UpsertUser, type Lead, type InsertLead, type LeadPurchase, type InsertLeadPurchase, type Notification, type InsertNotification } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { BLOG_POSTS } from "@shared/blogContent";
 
@@ -6,6 +6,12 @@ export interface IStorage {
   createQuote(quote: InsertQuote): Promise<Quote>;
   getAllQuotes(): Promise<Quote[]>;
   getQuoteById(id: string): Promise<Quote | undefined>;
+  
+  // Property Offer methods (cash home buying)
+  createPropertyOffer(offer: InsertPropertyOffer): Promise<PropertyOffer>;
+  getAllPropertyOffers(): Promise<PropertyOffer[]>;
+  getPropertyOfferById(id: string): Promise<PropertyOffer | undefined>;
+  updatePropertyOffer(id: string, data: Partial<PropertyOffer>): Promise<PropertyOffer | undefined>;
   
   createGalleryPhoto(photo: InsertGalleryPhoto): Promise<GalleryPhoto>;
   getAllGalleryPhotos(): Promise<GalleryPhoto[]>;
@@ -57,6 +63,7 @@ export interface IStorage {
 
 export class MemStorage implements IStorage {
   private quotes: Map<string, Quote>;
+  private propertyOffers: Map<string, PropertyOffer>;
   private galleryPhotos: Map<string, GalleryPhoto>;
   private testimonials: Map<string, Testimonial>;
   private blogPosts: Map<string, BlogPost>;
@@ -67,6 +74,7 @@ export class MemStorage implements IStorage {
 
   constructor() {
     this.quotes = new Map();
+    this.propertyOffers = new Map();
     this.galleryPhotos = new Map();
     this.testimonials = new Map();
     this.blogPosts = new Map();
@@ -269,6 +277,86 @@ export class MemStorage implements IStorage {
 
   async getQuoteById(id: string): Promise<Quote | undefined> {
     return this.quotes.get(id);
+  }
+
+  // Property Offer methods (cash home buying)
+  async createPropertyOffer(insertOffer: InsertPropertyOffer): Promise<PropertyOffer> {
+    const id = randomUUID();
+    const now = new Date();
+    
+    // Create the property offer with proper null handling
+    const propertyOffer: PropertyOffer = {
+      // Required fields
+      id,
+      name: insertOffer.name,
+      email: insertOffer.email,
+      phone: insertOffer.phone,
+      city: insertOffer.city,
+      state: insertOffer.state ?? "Idaho",
+      propertyType: insertOffer.propertyType,
+      condition: insertOffer.condition,
+      consentToContact: insertOffer.consentToContact,
+      status: insertOffer.status ?? "pending",
+      createdAt: now,
+      updatedAt: now,
+      
+      // Optional fields - preserve undefined/null as-is
+      address: insertOffer.address ?? null,
+      street: insertOffer.street ?? null,
+      zip: insertOffer.zip ?? null,
+      fullAddress: insertOffer.fullAddress ?? null,
+      beds: insertOffer.beds ?? null,
+      baths: insertOffer.baths ?? null,
+      squareFeet: insertOffer.squareFeet ?? null,
+      reasonForSelling: insertOffer.reasonForSelling ?? null,
+      timeline: insertOffer.timeline ?? null,
+      desiredClosingDate: insertOffer.desiredClosingDate ?? null,
+      estimatedMarketValue: insertOffer.estimatedMarketValue ?? null,
+      avmSource: insertOffer.avmSource ?? null,
+      avmConfidence: insertOffer.avmConfidence ?? null,
+      avmFetchedAt: null,
+      avmRaw: insertOffer.avmRaw ?? null,
+      avmFailureReason: insertOffer.avmFailureReason ?? null,
+      estimatedRepairs: insertOffer.estimatedRepairs ?? null,
+      offerLow: insertOffer.offerLow ?? null,
+      offerHigh: insertOffer.offerHigh ?? null,
+      anchorOffer: insertOffer.anchorOffer ?? null,
+      calculationInputs: insertOffer.calculationInputs ?? null,
+      consentToText: insertOffer.consentToText ?? null,
+      consentToEmail: insertOffer.consentToEmail ?? null,
+      contactedAt: null,
+      offerMadeAt: null,
+      acceptedAt: null,
+      scheduledClosingDate: insertOffer.scheduledClosingDate ?? null,
+      message: insertOffer.message ?? null,
+      notes: insertOffer.notes ?? null,
+    };
+    
+    this.propertyOffers.set(id, propertyOffer);
+    return propertyOffer;
+  }
+
+  async getAllPropertyOffers(): Promise<PropertyOffer[]> {
+    return Array.from(this.propertyOffers.values());
+  }
+
+  async getPropertyOfferById(id: string): Promise<PropertyOffer | undefined> {
+    return this.propertyOffers.get(id);
+  }
+
+  async updatePropertyOffer(id: string, data: Partial<PropertyOffer>): Promise<PropertyOffer | undefined> {
+    const existing = this.propertyOffers.get(id);
+    if (!existing) return undefined;
+    
+    const updated: PropertyOffer = {
+      ...existing,
+      ...data,
+      id: existing.id, // Prevent ID override
+      createdAt: existing.createdAt, // Prevent createdAt override
+      updatedAt: new Date(),
+    };
+    this.propertyOffers.set(id, updated);
+    return updated;
   }
 
   // Gallery photo methods

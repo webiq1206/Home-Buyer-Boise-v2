@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -7,1032 +7,696 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Loader2, MapPin, CheckCircle2, Calendar, DollarSign, Package, Info, ChevronDown, AlertCircle } from "lucide-react";
-import { IntelligentPropertyCalculator } from "@/components/IntelligentPropertyCalculator";
+import { Loader2, MapPin, CheckCircle2, Home, Info, DollarSign, Clock } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
-import { ServiceFieldsRenderer, validateServiceData } from "@/components/ServiceFieldsRenderer";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { SERVICE_FIELD_CONFIGS, requiresPropertySize } from "@shared/serviceFieldConfig";
-import { SERVICE_PRICING_GUIDANCE_MAP, CITIES } from "@shared/contentData";
+import { offerSubmissionSchema } from "@shared/schema";
 
-// Step 1: Basic Property Info
+// Step 1: Property Address
 const step1Schema = z.object({
-  address: z.string().optional(),
-  city: z.string().min(1, "Please select your location"),
-  propertyType: z.enum(["residential", "commercial", "hoa"]).optional(),
+  address: z.string().min(5, "Please enter a valid address"),
+  city: z.string().min(1, "Please select your city"),
+  state: z.string().default("Idaho"),
+  zip: z.string().optional(),
 });
 
-// Step 2: Service Selection
+// Step 2: Property Details
 const step2Schema = z.object({
-  selectedServices: z.array(z.string()).min(1, "Please select at least one service"),
+  propertyType: z.enum(["single-family", "townhome", "condo", "duplex", "multi-unit", "land"]),
+  beds: z.union([z.string(), z.number()]).optional(),
+  baths: z.union([z.string(), z.number()]).optional(),
+  squareFeet: z.union([z.string(), z.number()]).optional(),
+  condition: z.enum(["excellent", "good", "fair", "needs_work", "major_repairs"]),
 });
 
-// Step 3: Contact Info
+// Step 3: Situation & Timeline
 const step3Schema = z.object({
-  name: z.string().min(2, "Please enter your name"),
+  reasonForSelling: z.enum(["relocating", "inherited", "divorce", "tired_landlord", "foreclosure", "downsizing", "other"]).optional(),
+  timeline: z.enum(["asap", "0-30days", "30-60days", "60+days", "exploring"]).optional(),
+  message: z.string().optional(),
+});
+
+// Step 4: Contact Information
+const step4Schema = z.object({
+  name: z.string().min(2, "Please enter your full name"),
   email: z.string().email("Please enter a valid email"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  preferredDate: z.string().optional(),
-  message: z.string().optional(),
+  consentToContact: z.boolean().refine(val => val === true, "You must consent to be contacted"),
+  consentToText: z.boolean().optional(),
+  consentToEmail: z.boolean().optional(),
 });
 
 type Step1Data = z.infer<typeof step1Schema>;
 type Step2Data = z.infer<typeof step2Schema>;
 type Step3Data = z.infer<typeof step3Schema>;
+type Step4Data = z.infer<typeof step4Schema>;
 
-interface QuoteLineItem {
-  serviceId: string;
-  serviceName: string;
-  basePrice: number;
-  adjustedPrice: number;
-  description: string;
-  calculationExplanation?: string;
-}
-
-interface QuoteData {
-  lineItems: QuoteLineItem[];
-  subtotal: number;
-  tax?: number;
-  total: number;
-  aiAnalysis?: any;
+interface OfferData {
+  estimatedValue: number;
+  offerLow: number;
+  offerHigh: number;
+  anchorOffer: number;
 }
 
 interface QuoteWizardProps {
   onClose?: () => void;
-  preselectedService?: string;
   preselectedCity?: string;
-  defaultService?: string;
   defaultCity?: string;
   defaultAddress?: string;
 }
 
 export function QuoteWizard({ 
   onClose, 
-  preselectedService, 
   preselectedCity,
-  defaultService,
   defaultCity,
   defaultAddress 
 }: QuoteWizardProps) {
   const [step, setStep] = useState(1);
-  const [mapOpen, setMapOpen] = useState(false);
-  const [quoteData, setQuoteData] = useState<QuoteData | null>(null);
-  const [serviceData, setServiceData] = useState<Record<string, Record<string, any>>>({});
-  const [calculatedPropertySize, setCalculatedPropertySize] = useState<number | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [offerData, setOfferData] = useState<OfferData | null>(null);
   const formRef = useRef<HTMLDivElement>(null);
-  const isInitialMount = useRef(true);
   const { toast } = useToast();
 
   // Step forms
   const form1 = useForm<Step1Data>({
     resolver: zodResolver(step1Schema),
     defaultValues: {
-      city: defaultCity || preselectedCity || "Kuna",
+      city: defaultCity || preselectedCity || "Boise",
       address: defaultAddress || "",
-      propertyType: "residential",
+      state: "Idaho",
+      zip: "",
     },
   });
 
   const form2 = useForm<Step2Data>({
     resolver: zodResolver(step2Schema),
     defaultValues: {
-      selectedServices: preselectedService || defaultService ? [preselectedService || defaultService!] : [],
+      propertyType: "single-family",
+      beds: "",
+      baths: "",
+      squareFeet: "",
+      condition: "good",
     },
   });
 
   const form3 = useForm<Step3Data>({
     resolver: zodResolver(step3Schema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      preferredDate: "",
+      reasonForSelling: undefined,
+      timeline: undefined,
       message: "",
     },
   });
 
-  // Watch selected services to show/hide map tool
-  const selectedServices = form2.watch("selectedServices") || [];
-  const needsPropertySize = requiresPropertySize(selectedServices);
+  const form4 = useForm<Step4Data>({
+    resolver: zodResolver(step4Schema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      consentToContact: false,
+      consentToText: false,
+      consentToEmail: false,
+    },
+  });
 
-  // Auto-select preselected service on mount
-  useEffect(() => {
-    if (preselectedService || defaultService) {
-      const serviceToSelect = preselectedService || defaultService!;
-      form2.setValue("selectedServices", [serviceToSelect]);
-    }
-  }, [preselectedService, defaultService]);
-
-  // Scroll to top of form when step changes (but not on initial page load)
-  useEffect(() => {
-    if (isInitialMount.current) {
-      // Skip scroll on initial mount
-      isInitialMount.current = false;
-      return;
-    }
-    
-    // Only scroll when user navigates between steps
+  // Scroll to top on step change
+  const scrollToTop = () => {
     if (formRef.current) {
-      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }, [step]);
+  };
 
-  // Quote generation mutation
-  const getQuoteMutation = useMutation({
+  // Submit mutation
+  const submitMutation = useMutation({
     mutationFn: async (data: any) => {
-      const res = await apiRequest("POST", "/api/quotes/calculate", data);
-      return await res.json();
+      return await apiRequest("/api/property-offers", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
     },
     onSuccess: (data) => {
-      setQuoteData(data);
-      setStep(4);
-      setErrorMessage(null);
-      // Popup disabled per user request - quote results are already visible on page
-      // toast({
-      //   title: "Quote Generated!",
-      //   description: `Your itemized quote is ready: $${data.total?.toLocaleString() || '0'}`,
-      // });
-    },
-    onError: (error: any) => {
-      console.error("Quote calculation error:", error);
-      setErrorMessage(error?.message || "Failed to generate quote. Please try again.");
-      // Popup disabled per user request - error will be shown inline on the form
-      // toast({
-      //   title: "Error Generating Quote",
-      //   description: error?.message || "Failed to generate quote. Please try again.",
-      //   variant: "destructive",
-      // });
-    },
-  });
-
-  // Final submission mutation
-  const submitQuoteMutation = useMutation({
-    mutationFn: async (data: any) => {
-      // First, save the quote
-      const quoteRes = await apiRequest("POST", "/api/quotes", data);
-      const quoteResult = await quoteRes.json();
-      
-      // Wait 4 seconds before creating lead to avoid Resend rate limit
-      // Quote emails: T=0s (admin), T=2s (customer)
-      // Lead email: T=4s (admin lead notification)
-      // This ensures 2+ seconds between each email
-      await new Promise(resolve => setTimeout(resolve, 4000));
-      
-      // Then, create a lead from the quote
-      // Note: The backend will automatically calculate pricing via POST /api/leads route
-      try {
-        const leadData = {
-          quoteId: quoteResult.id,
-          name: data.name,
-          email: data.email,
-          phone: data.phone || "",
-          address: data.address,
-          city: data.city,
-          propertyType: data.propertyType || "residential",
-          serviceType: data.serviceType || (data.selectedServices && data.selectedServices[0]) || "lawn-care",
-          selectedServices: data.selectedServices || [],
-          frequency: data.frequency || "one-time",
-          finalQuote: data.quote?.toString() || quoteData?.total?.toString() || "0",
-          lineItems: data.lineItems || [],
-          serviceData: data.serviceData || {},
-          message: data.message || "",
-        };
-        
-        await apiRequest("POST", "/api/leads", leadData);
-      } catch (leadError) {
-        console.error("Failed to create lead:", leadError);
-        // Don't fail the whole submission if lead creation fails
-      }
-      
-      return quoteResult;
-    },
-    onSuccess: () => {
-      setErrorMessage(null);
-      // Popup disabled per user request - quote submission is already visible on page
-      // toast({
-      //   title: "Quote Request Submitted!",
-      //   description: "We'll contact you shortly to confirm your service.",
-      // });
-    },
-    onError: (error: any) => {
-      console.error("Quote submission error:", error);
-      setErrorMessage(error?.message || "Failed to submit quote request. Please try again.");
-      // Popup disabled per user request - error will be shown inline on the form
-      // toast({
-      //   title: "Submission Failed",
-      //   description: error?.message || "Failed to submit quote request.",
-      //   variant: "destructive",
-      // });
-    },
-  });
-
-  // Step handlers
-  const handleStep1Submit = (data: Step1Data) => {
-    // Auto-populate property size for all services if calculated from address
-    if (calculatedPropertySize) {
-      const updatedServiceData: Record<string, Record<string, any>> = { ...serviceData };
-      
-      // Find services that need property size and auto-populate
-      selectedServices.forEach(serviceId => {
-        const config = SERVICE_FIELD_CONFIGS.find(c => c.serviceId === serviceId);
-        if (config?.fields?.some((f: any) => f.name === 'propertySize')) {
-          if (!updatedServiceData[serviceId]) {
-            updatedServiceData[serviceId] = {};
-          }
-          // Only set if not already manually set
-          if (!updatedServiceData[serviceId].propertySize) {
-            updatedServiceData[serviceId].propertySize = calculatedPropertySize;
-          }
-        }
+      console.log("Offer submitted successfully:", data);
+      setOfferData({
+        estimatedValue: parseFloat(data.estimatedMarketValue || "0"),
+        offerLow: parseFloat(data.offerLow || "0"),
+        offerHigh: parseFloat(data.offerHigh || "0"),
+        anchorOffer: parseFloat(data.anchorOffer || "0"),
       });
-      
-      setServiceData(updatedServiceData);
-    }
-    
+      setStep(5);
+      scrollToTop();
+      toast({
+        title: "Success!",
+        description: "Your property information has been submitted. We'll contact you within 24 hours with a cash offer.",
+      });
+    },
+    onError: (error: any) => {
+      console.error("Submission error:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to submit. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  // Step navigation handlers
+  const handleStep1Next = form1.handleSubmit((data) => {
     setStep(2);
-  };
+    scrollToTop();
+  });
 
-  const handleStep2Submit = (data: Step2Data) => {
-    // Validate service-specific data
-    const validation = validateServiceData(data.selectedServices, serviceData);
-    if (!validation.valid) {
-      setErrorMessage(validation.errors[0]);
-      // Popup disabled per user request - validation errors shown inline in the form
-      // toast({
-      //   title: "Missing Information",
-      //   description: validation.errors[0],
-      //   variant: "destructive",
-      // });
-      console.warn("Validation failed:", validation.errors[0]);
-      return;
-    }
-    setErrorMessage(null);
+  const handleStep2Next = form2.handleSubmit((data) => {
     setStep(3);
-  };
+    scrollToTop();
+  });
 
-  const handleStep3Submit = async (data: Step3Data) => {
-    // Build submission payload
+  const handleStep3Next = form3.handleSubmit((data) => {
+    setStep(4);
+    scrollToTop();
+  });
+
+  const handleFinalSubmit = form4.handleSubmit((contactData) => {
     const step1Data = form1.getValues();
     const step2Data = form2.getValues();
+    const step3Data = form3.getValues();
 
-    // Extract property size from serviceData if available (using Number.isFinite guard)
-    let extractedPropertySize: number | undefined = undefined;
-    for (const serviceId of step2Data.selectedServices) {
-      const serviceInfo = serviceData[serviceId];
-      const size = serviceInfo?.propertySize;
-      
-      // Only use if it's a valid finite number
-      if (typeof size === 'number' && Number.isFinite(size) && size > 0) {
-        extractedPropertySize = size;
-        break;
-      }
-    }
-
-    // Build payload - only include propertySize if we have a valid number
-    const fullData: any = {
-      // Customer info
-      name: data.name,
-      email: data.email,
-      phone: data.phone || "",
+    const fullSubmission = {
+      // Address
+      address: step1Data.address,
+      city: step1Data.city,
+      state: step1Data.state || "Idaho",
+      zip: step1Data.zip,
+      fullAddress: `${step1Data.address}, ${step1Data.city}, ${step1Data.state} ${step1Data.zip || ""}`.trim(),
       
       // Property details
-      address: step1Data.address || "",
-      city: step1Data.city,
-      propertyType: step1Data.propertyType || "residential",
+      propertyType: step2Data.propertyType,
+      beds: step2Data.beds ? Number(step2Data.beds) : undefined,
+      baths: step2Data.baths ? Number(step2Data.baths) : undefined,
+      squareFeet: step2Data.squareFeet ? Number(step2Data.squareFeet) : undefined,
+      condition: step2Data.condition,
       
-      // Service details
-      serviceType: step2Data.selectedServices[0], // Primary service
-      selectedServices: step2Data.selectedServices,
-      serviceData: serviceData,
-      frequency: "one-time", // Can be made dynamic later
+      // Situation
+      reasonForSelling: step3Data.reasonForSelling,
+      timeline: step3Data.timeline,
+      message: step3Data.message,
       
-      // Scheduling
-      scheduledDate: data.preferredDate ? new Date(data.preferredDate).toISOString() : undefined,
-      message: data.message || `Multi-service quote request for: ${step2Data.selectedServices.join(", ")}`,
+      // Contact
+      name: contactData.name,
+      email: contactData.email,
+      phone: contactData.phone,
+      consentToContact: contactData.consentToContact,
+      consentToText: contactData.consentToText || false,
+      consentToEmail: contactData.consentToEmail || false,
+      
+      // Status
       status: "pending",
     };
 
-    // Only add propertySize if we extracted a valid number
-    if (extractedPropertySize !== undefined) {
-      fullData.propertySize = extractedPropertySize;
+    submitMutation.mutate(fullSubmission);
+  });
+
+  const handleBack = () => {
+    if (step > 1) {
+      setStep(step - 1);
+      scrollToTop();
     }
-
-    // Generate quote first
-    await getQuoteMutation.mutateAsync(fullData);
-    
-    // Then submit with quote data
-    const submissionData = {
-      ...fullData,
-      aiAnalysis: quoteData?.aiAnalysis,
-      baseCost: quoteData?.subtotal || 0,
-      adjustedCost: quoteData?.subtotal || 0,
-      finalQuote: quoteData?.total || 0,
-      lineItems: quoteData?.lineItems || [],
-    };
-
-    submitQuoteMutation.mutate(submissionData);
-  };
-
-  const handleServiceDataChange = (serviceId: string, fieldName: string, value: any) => {
-    // Update the field for the specific service only
-    setServiceData(prev => ({
-      ...prev,
-      [serviceId]: {
-        ...(prev[serviceId] || {}),
-        [fieldName]: value,
-      },
-    }));
-  };
-
-  const handleMeasurementComplete = (measurements: {
-    lawnSqFt: number;
-    lotPerimeterFt?: number;
-    lawnPerimeterFt?: number;
-    rooflineWithOverhangFt?: number;
-    estimatedHedgeFt?: number;
-  }) => {
-    // Generic mapping using SERVICE_FIELD_CONFIGS - no hard-coded service IDs
-    selectedServices.forEach(serviceId => {
-      const config = SERVICE_FIELD_CONFIGS.find(c => c.serviceId === serviceId);
-      if (!config) return;
-
-      // Find the field that needs auto-population
-      const measurementField = config.fields.find(f => 
-        f.unit === 'linear feet' || f.unit === 'sq ft'
-      );
-      
-      if (!measurementField) return;
-
-      // Map measurement based on field unit and service type
-      if (measurementField.unit === 'sq ft' && measurements.lawnSqFt) {
-        handleServiceDataChange(serviceId, measurementField.name, measurements.lawnSqFt);
-      } else if (measurementField.unit === 'linear feet') {
-        // Determine which linear measurement to use based on service type
-        let linearValue: number | undefined;
-        
-        if (serviceId.includes('fence')) {
-          linearValue = measurements.lotPerimeterFt;
-        } else if (serviceId.includes('christmas') || serviceId.includes('light')) {
-          linearValue = measurements.rooflineWithOverhangFt;
-        } else if (serviceId.includes('hedge')) {
-          linearValue = measurements.estimatedHedgeFt;
-        } else if (serviceId.includes('edging')) {
-          linearValue = measurements.lawnPerimeterFt;
-        } else if (serviceId.includes('retaining')) {
-          linearValue = measurements.lotPerimeterFt;
-        }
-        
-        if (linearValue) {
-          handleServiceDataChange(serviceId, measurementField.name, linearValue);
-        }
-      }
-    });
-
-    setMapOpen(false);
-    // Popup disabled per user request - measurements are applied silently
-    // toast({
-    //   title: "Measurements Applied",
-    //   description: "Property measurements have been calculated and applied to your services.",
-    // });
-  };
-
-  // Determine measurement type based on selected services
-  const getMeasurementType = (): 'area' | 'linear' | 'both' | null => {
-    const hasAreaService = selectedServices.some(id => {
-      const config = SERVICE_FIELD_CONFIGS.find(c => c.serviceId === id);
-      return config?.requiresPropertySize;
-    });
-
-    const hasLinearService = selectedServices.some(id => {
-      const config = SERVICE_FIELD_CONFIGS.find(c => c.serviceId === id);
-      return config?.fields.some(f => f.name === "linearFeet");
-    });
-
-    if (hasAreaService && hasLinearService) return 'both';
-    if (hasAreaService) return 'area';
-    if (hasLinearService) return 'linear';
-    return null;
-  };
-
-  const toggleService = (serviceId: string) => {
-    const current = form2.getValues("selectedServices") || [];
-    const updated = current.includes(serviceId)
-      ? current.filter(id => id !== serviceId)
-      : [...current, serviceId];
-    form2.setValue("selectedServices", updated);
   };
 
   return (
-    <div ref={formRef} className="max-w-4xl mx-auto p-4">
-      {/* Inline Error Display */}
-      {errorMessage && (
-        <Alert variant="destructive" className="mb-6" data-testid="inline-error-message">
-          <AlertCircle className="h-4 w-4" />
-          <AlertDescription>{errorMessage}</AlertDescription>
-        </Alert>
-      )}
-
-      {/* Progress Steps */}
-      <div className="mb-8">
-        <div className="flex items-center justify-center gap-2 sm:gap-4">
-          {[1, 2, 3].map((s) => (
-            <div key={s} className="flex items-center gap-1 sm:gap-2">
-              <div
-                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm sm:text-base ${
-                  s < step ? "bg-primary text-primary-foreground" : 
-                  s === step ? "bg-primary text-primary-foreground" : 
-                  "bg-muted text-muted-foreground"
-                }`}
-                data-testid={`step-indicator-${s}`}
-              >
-                {s < step ? <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" /> : s}
-              </div>
-              <span className={`text-xs sm:text-sm font-medium hidden sm:inline ${s <= step ? "text-foreground" : "text-muted-foreground"}`}>
-                {s === 1 ? "Property" : s === 2 ? "Services" : "Quote"}
-              </span>
-              {s < 3 && <div className="w-8 sm:w-12 h-0.5 bg-muted" />}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Step 1: Property Details */}
-      {step === 1 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-primary" />
-              Property Details
-            </CardTitle>
-            <CardDescription>Tell us about your property</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={form1.handleSubmit(handleStep1Submit)} className="space-y-6">
-              <div>
-                <Label htmlFor="address">
-                  Street Address <span className="text-muted-foreground text-sm font-normal">(Optional)</span>
-                </Label>
-                <AddressAutocomplete
-                  id="address"
-                  value={form1.watch("address") || ""}
-                  onChange={(value) => form1.setValue("address", value)}
-                  city={form1.watch("city")}
-                  placeholder="123 Main St"
-                  data-testid="input-address"
-                  onPropertySizeCalculated={(sqft) => {
-                    setCalculatedPropertySize(sqft);
-                  }}
-                  onAddressSelect={(result) => {
-                    // Helper function to normalize city names
-                    const normalizeCity = (cityName: string): string => {
-                      return cityName
-                        .trim()
-                        .toLowerCase()
-                        .replace(/\s+(city|town|village)$/i, '') // Remove common suffixes
-                        .trim();
-                    };
-
-                    // Helper function to find matching city in CITIES array
-                    // useExact: if true, only exact matches are allowed (prevents street name false positives)
-                    const findMatchingCity = (cityName: string, useExact: boolean = false) => {
-                      const normalized = normalizeCity(cityName);
-                      return CITIES.find(c => {
-                        const cityNormalized = normalizeCity(c.name);
-                        if (useExact) {
-                          // Exact match only (for fallback label parsing)
-                          return cityNormalized === normalized;
-                        } else {
-                          // Flexible matching for structured address fields
-                          return cityNormalized === normalized || 
-                                 normalized.includes(cityNormalized) ||
-                                 cityNormalized.includes(normalized);
-                        }
-                      });
-                    };
-                    
-                    // Extract city from Nominatim result and auto-populate the city dropdown
-                    let extractedCity: string | undefined;
-                    let cityMatch: typeof CITIES[0] | undefined;
-                    
-                    // 1. Try from result.raw.address (Nominatim format)
-                    if (result.raw?.address) {
-                      const rawCity = result.raw.address.city || result.raw.address.town || result.raw.address.village;
-                      if (rawCity) {
-                        cityMatch = findMatchingCity(rawCity);
-                        if (cityMatch) {
-                          extractedCity = rawCity;
-                        }
-                      }
-                    }
-                    
-                    // 2. Try from result.raw directly (some providers)
-                    if (!cityMatch && result.raw) {
-                      const rawCity = result.raw.city || result.raw.town || result.raw.village;
-                      if (rawCity) {
-                        cityMatch = findMatchingCity(rawCity);
-                        if (cityMatch) {
-                          extractedCity = rawCity;
-                        }
-                      }
-                    }
-                    
-                    // 3. Try parsing from the label - scan all tokens (fallback)
-                    if (!cityMatch && result.label) {
-                      // Label format: "2283, East Kuna Road, Kuna, Ada County, Idaho..."
-                      const parts = result.label.split(',').map(p => p.trim());
-                      // Scan through all parts to find a matching city
-                      // Use exact matching to avoid false positives (e.g., "West Meridian Road" shouldn't match "Meridian")
-                      for (const part of parts) {
-                        const match = findMatchingCity(part, true); // true = exact match only
-                        if (match) {
-                          cityMatch = match;
-                          extractedCity = part;
-                          break;
-                        }
-                      }
-                    }
-                    
-                    if (cityMatch) {
-                      // Set the city in the form using the canonical city name
-                      form1.setValue("city", cityMatch.name);
-                    }
-                  }}
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="city">Location</Label>
-                <select
-                  id="city"
-                  className="w-full rounded-md border border-input bg-background px-3 py-2"
-                  {...form1.register("city")}
-                  defaultValue={form1.getValues("city")}
-                  data-testid="select-city"
-                >
-                  {CITIES.map((city) => (
-                    <option key={city.slug} value={city.name}>{city.name}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <Label htmlFor="propertyType">Property Type <span className="text-muted-foreground text-sm font-normal">(Optional)</span></Label>
-                <RadioGroup
-                  value={form1.watch("propertyType") || "residential"}
-                  onValueChange={(value: any) => form1.setValue("propertyType", value)}
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-4"
-                >
-                  <Label
-                    htmlFor="residential"
-                    className="flex items-center gap-2 rounded-md border border-input p-4 cursor-pointer hover-elevate"
-                  >
-                    <RadioGroupItem value="residential" id="residential" data-testid="radio-residential" />
-                    <span>Residential</span>
-                  </Label>
-                  <Label
-                    htmlFor="commercial"
-                    className="flex items-center gap-2 rounded-md border border-input p-4 cursor-pointer hover-elevate"
-                  >
-                    <RadioGroupItem value="commercial" id="commercial" data-testid="radio-commercial" />
-                    <span>Commercial</span>
-                  </Label>
-                  <Label
-                    htmlFor="hoa"
-                    className="flex items-center gap-2 rounded-md border border-input p-4 cursor-pointer hover-elevate"
-                  >
-                    <RadioGroupItem value="hoa" id="hoa" data-testid="radio-hoa" />
-                    <span>HOA</span>
-                  </Label>
-                </RadioGroup>
-              </div>
-
-              <Button type="submit" className="w-full" size="lg" data-testid="button-continue-step1">
-                Continue to Services
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Step 2: Service Selection */}
-      {step === 2 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Package className="w-5 h-5 text-primary" />
-              Select Services
-            </CardTitle>
-            <CardDescription>Choose one or more services (select multiple to get an itemized quote)</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={form2.handleSubmit(handleStep2Submit)} className="space-y-6">
-              {/* Service Categories with Accordions */}
-              <Accordion type="multiple" className="w-full">
-                {[
-                  { category: "lawn", title: "Lawn Care Services" },
-                  { category: "hardscape", title: "Hardscape & Patio" },
-                  { category: "irrigation", title: "Irrigation & Sprinklers" },
-                  { category: "lighting", title: "Lighting Services" },
-                  { category: "trees", title: "Tree Services" },
-                  { category: "seasonal", title: "Seasonal Services" },
-                ].map(({ category, title }) => {
-                  const categoryServices = SERVICE_FIELD_CONFIGS.filter(c => c.category === category);
-                  if (categoryServices.length === 0) return null;
-
-                  return (
-                    <AccordionItem key={category} value={category} data-testid={`accordion-${category}`}>
-                      <AccordionTrigger className="text-sm font-medium uppercase tracking-wide hover:no-underline">
-                        {title}
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="grid gap-3 sm:grid-cols-2 pt-2">
-                          {categoryServices.map((service) => {
-                            const isSelected = selectedServices.includes(service.serviceId);
-                            const pricingData = SERVICE_PRICING_GUIDANCE_MAP.get(service.serviceId);
-                            const hasPricing = !!pricingData;
-                            
-                            return (
-                              <div
-                                key={service.serviceId}
-                                className={`rounded-md border ${
-                                  isSelected ? "border-primary bg-primary/5" : "border-input"
-                                }`}
-                              >
-                                <Label
-                                  htmlFor={`service-${service.serviceId}`}
-                                  className="flex items-start gap-3 p-4 cursor-pointer hover-elevate"
-                                >
-                                  <Checkbox
-                                    id={`service-${service.serviceId}`}
-                                    checked={isSelected}
-                                    onCheckedChange={() => toggleService(service.serviceId)}
-                                    data-testid={`checkbox-service-${service.serviceId}`}
-                                  />
-                                  <div className="flex-1">
-                                    <div className="font-medium">{service.serviceName}</div>
-                                  </div>
-                                </Label>
-                                
-                                {hasPricing && (
-                                  <div className="px-4 pb-3">
-                                    <Collapsible>
-                                      <CollapsibleTrigger 
-                                        className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                                        data-testid={`pricing-toggle-${service.serviceId}`}
-                                        asChild
-                                      >
-                                        <button type="button" className="flex items-center gap-1">
-                                          <ChevronDown className="w-3 h-3" />
-                                          <span>Typical Pricing</span>
-                                        </button>
-                                      </CollapsibleTrigger>
-                                      <CollapsibleContent className="mt-2">
-                                        <p className="text-xs text-muted-foreground leading-relaxed">
-                                          {pricingData.pricingGuidance}
-                                        </p>
-                                      </CollapsibleContent>
-                                    </Collapsible>
-                                  </div>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  );
-                })}
-              </Accordion>
-
-              {/* Intelligent Property Calculator (service-aware) */}
-              {getMeasurementType() && (
-                <div className="space-y-2">
-                  <Button
-                    type="button"
-                    variant="default"
-                    className="w-full"
-                    onClick={() => setMapOpen(true)}
-                    data-testid="button-open-calculator"
-                  >
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {getMeasurementType() === 'linear' 
-                      ? 'Measure Linear Features'
-                      : getMeasurementType() === 'both'
-                      ? 'Calculate Property Size'
-                      : 'Calculate Property Size'
-                    }
-                  </Button>
-                  <p className="text-sm text-muted-foreground text-center">
-                    {getMeasurementType() === 'linear' 
-                      ? 'Trace roof lines, fence lines, or other linear features'
-                      : getMeasurementType() === 'both'
-                      ? 'Auto-calculate lawn area from address and measure linear features'
-                      : 'Enter your address to get automatic property measurements'
-                    }
-                  </p>
-                </div>
-              )}
-
-              {/* Service-Specific Fields */}
-              {selectedServices.length > 0 && (
-                <ServiceFieldsRenderer
-                  selectedServices={selectedServices}
-                  serviceData={serviceData}
-                  onChange={handleServiceDataChange}
-                />
-              )}
-
-              {form2.formState.errors.selectedServices && (
-                <p className="text-sm text-destructive">{form2.formState.errors.selectedServices.message}</p>
-              )}
-
-              <div className="flex gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => setStep(1)}
-                  className="flex-1"
-                  data-testid="button-back-step2"
-                >
-                  Back
-                </Button>
-                <Button
-                  type="submit"
-                  className="flex-1"
-                  disabled={selectedServices.length === 0}
-                  data-testid="button-continue-step2"
-                >
-                  Continue to Quote
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Step 3: Contact Info */}
-      {step === 3 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-primary" />
-              Quote Information
-            </CardTitle>
-            <CardDescription>How can we reach you?</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={form3.handleSubmit(handleStep3Submit)} className="space-y-6">
-              <div>
-                <Label htmlFor="name">Full Name</Label>
-                <Input
-                  id="name"
-                  {...form3.register("name")}
-                  placeholder="John Doe"
-                  data-testid="input-name"
-                />
-                {form3.formState.errors.name && (
-                  <p className="text-sm text-destructive mt-1">{form3.formState.errors.name.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  {...form3.register("email")}
-                  placeholder="john@example.com"
-                  data-testid="input-email"
-                />
-                {form3.formState.errors.email && (
-                  <p className="text-sm text-destructive mt-1">{form3.formState.errors.email.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="phone">Phone</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  {...form3.register("phone")}
-                  placeholder="(208) 352-2011"
-                  data-testid="input-phone"
-                />
-                {form3.formState.errors.phone && (
-                  <p className="text-sm text-destructive mt-1">{form3.formState.errors.phone.message}</p>
-                )}
-              </div>
-
-              <div>
-                <Label htmlFor="preferredDate">Preferred Start Date <span className="text-muted-foreground text-sm font-normal">(Optional)</span></Label>
-                <Input
-                  id="preferredDate"
-                  type="date"
-                  {...form3.register("preferredDate")}
-                  data-testid="input-preferred-date"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="message">Additional Notes <span className="text-muted-foreground text-sm font-normal">(Optional)</span></Label>
-                <Input
-                  id="message"
-                  {...form3.register("message")}
-                  placeholder="Any special requests or details..."
-                  data-testid="input-message"
-                />
-              </div>
-
-              <div className="flex gap-3">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={() => setStep(2)}
-                  className="flex-1"
-                  data-testid="button-back-step3"
-                >
-                  Back
-                </Button>
-                <Button
-                  type="submit"
-                  className="flex-1"
-                  disabled={getQuoteMutation.isPending || submitQuoteMutation.isPending}
-                  data-testid="button-submit-quote"
-                >
-                  {getQuoteMutation.isPending || submitQuoteMutation.isPending ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Generating Quote...
-                    </>
-                  ) : (
-                    "Get My Quote"
-                  )}
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Step 4: Quote Results */}
-      {step === 4 && quoteData && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <DollarSign className="w-5 h-5 text-primary" />
-              Your Itemized Quote
-            </CardTitle>
-            <CardDescription>Here's your personalized pricing breakdown</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Line Items */}
-            <div className="space-y-3">
-              {quoteData.lineItems.map((item, index) => (
+    <div ref={formRef} className="w-full max-w-3xl mx-auto">
+      <Card className="shadow-lg">
+        <CardHeader>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              {[1, 2, 3, 4].map((s) => (
                 <div
-                  key={index}
-                  className="p-4 rounded-md border border-border"
-                  data-testid={`quote-line-item-${index}`}
+                  key={s}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
+                    s < step
+                      ? "bg-primary text-primary-foreground"
+                      : s === step
+                      ? "bg-primary text-primary-foreground ring-4 ring-primary/20"
+                      : "bg-muted text-muted-foreground"
+                  }`}
                 >
-                  <div className="flex justify-between items-start">
-                    <div className="flex-1">
-                      <div className="font-medium">{item.serviceName}</div>
-                      <div className="text-sm text-muted-foreground">{item.description}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-semibold text-lg">${item.adjustedPrice.toLocaleString()}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Collapsible Calculation Explanation */}
-                  {item.calculationExplanation && (
-                    <Collapsible className="mt-3">
-                      <CollapsibleTrigger className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid={`calculation-toggle-${index}`}>
-                        <ChevronDown className="h-4 w-4 transition-transform data-[state=open]:rotate-180" />
-                        <span>How is this calculated?</span>
-                      </CollapsibleTrigger>
-                      <CollapsibleContent className="mt-2 pl-6">
-                        <div className="text-sm text-muted-foreground bg-muted/30 p-3 rounded-md border border-border/50">
-                          {item.calculationExplanation}
-                        </div>
-                      </CollapsibleContent>
-                    </Collapsible>
-                  )}
+                  {s < step ? <CheckCircle2 className="h-5 w-5" /> : s}
                 </div>
               ))}
             </div>
-
-            {/* Estimated Total */}
-            <div className="border-t border-border pt-4 space-y-2">
-              <div className="flex justify-between items-center text-xl font-bold">
-                <span>Estimated Total</span>
-                <span className="text-primary" data-testid="text-quote-total">${quoteData.total.toLocaleString()}</span>
+            <span className="text-sm text-muted-foreground">Step {step} of 4</span>
+          </div>
+          <CardTitle className="text-2xl">
+            {step === 1 && "Property Address"}
+            {step === 2 && "Property Details"}
+            {step === 3 && "Your Situation"}
+            {step === 4 && "Contact Information"}
+            {step === 5 && "Your Cash Offer Range"}
+          </CardTitle>
+          <CardDescription>
+            {step === 1 && "Tell us where your property is located"}
+            {step === 2 && "Help us understand your property"}
+            {step === 3 && "Tell us about your timeline and needs"}
+            {step === 4 && "How can we reach you with an offer?"}
+            {step === 5 && "Based on the information you provided"}
+          </CardDescription>
+        </CardHeader>
+        
+        <CardContent className="space-y-6">
+          {/* Step 1: Address */}
+          {step === 1 && (
+            <form onSubmit={handleStep1Next} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="address">Property Address *</Label>
+                <AddressAutocomplete
+                  id="address"
+                  value={form1.watch("address")}
+                  onChange={(value) => form1.setValue("address", value)}
+                  city={form1.watch("city")}
+                  placeholder="123 Main Street"
+                  data-testid="input-address"
+                />
+                {form1.formState.errors.address && (
+                  <p className="text-sm text-destructive">{form1.formState.errors.address.message}</p>
+                )}
               </div>
-              <p className="text-xs text-muted-foreground italic">
-                * This is an estimated price based on typical property conditions. Final pricing will be confirmed after site assessment.
-              </p>
-            </div>
 
-            {/* Pricing Guidance for Selected Services */}
-            {selectedServices.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  Typical Pricing for Your Services
-                </h3>
-                {selectedServices.map((serviceId) => {
-                  const pricingData = SERVICE_PRICING_GUIDANCE_MAP.get(serviceId);
-                  if (!pricingData) return null;
-                  
-                  return (
-                    <div
-                      key={serviceId}
-                      className="p-4 rounded-md bg-muted/30 border border-border/50"
-                      data-testid={`pricing-guidance-${serviceId}`}
-                    >
-                      <div className="font-medium text-sm mb-1">{pricingData.name}</div>
-                      <div className="text-sm text-muted-foreground">{pricingData.pricingGuidance}</div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="city">City *</Label>
+                  <Select
+                    value={form1.watch("city")}
+                    onValueChange={(value) => form1.setValue("city", value)}
+                  >
+                    <SelectTrigger id="city" data-testid="select-city">
+                      <SelectValue placeholder="Select city" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Boise">Boise</SelectItem>
+                      <SelectItem value="Meridian">Meridian</SelectItem>
+                      <SelectItem value="Nampa">Nampa</SelectItem>
+                      <SelectItem value="Caldwell">Caldwell</SelectItem>
+                      <SelectItem value="Eagle">Eagle</SelectItem>
+                      <SelectItem value="Kuna">Kuna</SelectItem>
+                      <SelectItem value="Star">Star</SelectItem>
+                      <SelectItem value="Garden City">Garden City</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {form1.formState.errors.city && (
+                    <p className="text-sm text-destructive">{form1.formState.errors.city.message}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="zip">ZIP Code</Label>
+                  <Input
+                    id="zip"
+                    {...form1.register("zip")}
+                    placeholder="83702"
+                    data-testid="input-zip"
+                  />
+                </div>
+              </div>
+
+              <Alert>
+                <MapPin className="h-4 w-4" />
+                <AlertDescription>
+                  We buy houses in all Treasure Valley cities. Get your no-obligation cash offer in 24 hours.
+                </AlertDescription>
+              </Alert>
+
+              <div className="flex justify-end gap-3 pt-4">
+                <Button type="submit" size="lg" data-testid="button-next-step1">
+                  Continue
+                </Button>
+              </div>
+            </form>
+          )}
+
+          {/* Step 2: Property Details */}
+          {step === 2 && (
+            <form onSubmit={handleStep2Next} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="propertyType">Property Type *</Label>
+                <Select
+                  value={form2.watch("propertyType")}
+                  onValueChange={(value: any) => form2.setValue("propertyType", value)}
+                >
+                  <SelectTrigger id="propertyType" data-testid="select-property-type">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="single-family">Single Family Home</SelectItem>
+                    <SelectItem value="townhome">Townhome</SelectItem>
+                    <SelectItem value="condo">Condo</SelectItem>
+                    <SelectItem value="duplex">Duplex</SelectItem>
+                    <SelectItem value="multi-unit">Multi-Unit (3+)</SelectItem>
+                    <SelectItem value="land">Land/Lot</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="beds">Bedrooms</Label>
+                  <Input
+                    id="beds"
+                    type="number"
+                    {...form2.register("beds")}
+                    placeholder="3"
+                    data-testid="input-beds"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="baths">Bathrooms</Label>
+                  <Input
+                    id="baths"
+                    type="number"
+                    step="0.5"
+                    {...form2.register("baths")}
+                    placeholder="2"
+                    data-testid="input-baths"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="squareFeet">Square Feet</Label>
+                  <Input
+                    id="squareFeet"
+                    type="number"
+                    {...form2.register("squareFeet")}
+                    placeholder="1500"
+                    data-testid="input-sqft"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label>Property Condition *</Label>
+                <RadioGroup
+                  value={form2.watch("condition")}
+                  onValueChange={(value: any) => form2.setValue("condition", value)}
+                  className="space-y-3"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="excellent" id="excellent" data-testid="radio-excellent" />
+                    <Label htmlFor="excellent" className="font-normal cursor-pointer">
+                      Excellent - Move-in ready, recently updated
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="good" id="good" data-testid="radio-good" />
+                    <Label htmlFor="good" className="font-normal cursor-pointer">
+                      Good - Well-maintained, minor cosmetic updates needed
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="fair" id="fair" data-testid="radio-fair" />
+                    <Label htmlFor="fair" className="font-normal cursor-pointer">
+                      Fair - Some repairs and updates needed
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="needs_work" id="needs_work" data-testid="radio-needs-work" />
+                    <Label htmlFor="needs_work" className="font-normal cursor-pointer">
+                      Needs Work - Significant repairs required
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="major_repairs" id="major_repairs" data-testid="radio-major-repairs" />
+                    <Label htmlFor="major_repairs" className="font-normal cursor-pointer">
+                      Major Repairs - Extensive renovation needed
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+
+              <Alert>
+                <Home className="h-4 w-4" />
+                <AlertDescription>
+                  Don't worry about the condition - we buy houses in any condition. No repairs needed!
+                </AlertDescription>
+              </Alert>
+
+              <div className="flex justify-between gap-3 pt-4">
+                <Button type="button" variant="outline" onClick={handleBack} data-testid="button-back-step2">
+                  Back
+                </Button>
+                <Button type="submit" size="lg" data-testid="button-next-step2">
+                  Continue
+                </Button>
+              </div>
+            </form>
+          )}
+
+          {/* Step 3: Situation & Timeline */}
+          {step === 3 && (
+            <form onSubmit={handleStep3Next} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="reasonForSelling">Why are you selling?</Label>
+                <Select
+                  value={form3.watch("reasonForSelling")}
+                  onValueChange={(value: any) => form3.setValue("reasonForSelling", value)}
+                >
+                  <SelectTrigger id="reasonForSelling" data-testid="select-reason">
+                    <SelectValue placeholder="Select a reason (optional)" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="relocating">Relocating for Work</SelectItem>
+                    <SelectItem value="inherited">Inherited Property</SelectItem>
+                    <SelectItem value="divorce">Divorce Settlement</SelectItem>
+                    <SelectItem value="tired_landlord">Tired of Being a Landlord</SelectItem>
+                    <SelectItem value="foreclosure">Facing Foreclosure</SelectItem>
+                    <SelectItem value="downsizing">Downsizing/Retirement</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="timeline">When do you need to close?</Label>
+                <Select
+                  value={form3.watch("timeline")}
+                  onValueChange={(value: any) => form3.setValue("timeline", value)}
+                >
+                  <SelectTrigger id="timeline" data-testid="select-timeline">
+                    <SelectValue placeholder="Select timeline (optional)" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="asap">As Soon As Possible</SelectItem>
+                    <SelectItem value="0-30days">Within 30 Days</SelectItem>
+                    <SelectItem value="30-60days">30-60 Days</SelectItem>
+                    <SelectItem value="60+days">60+ Days</SelectItem>
+                    <SelectItem value="exploring">Just Exploring Options</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message">Additional Details (Optional)</Label>
+                <Textarea
+                  id="message"
+                  {...form3.register("message")}
+                  placeholder="Any additional information about your property or situation..."
+                  className="min-h-[100px]"
+                  data-testid="textarea-message"
+                />
+              </div>
+
+              <Alert>
+                <Clock className="h-4 w-4" />
+                <AlertDescription>
+                  We can close in as little as 7 days, or work with your preferred timeline.
+                </AlertDescription>
+              </Alert>
+
+              <div className="flex justify-between gap-3 pt-4">
+                <Button type="button" variant="outline" onClick={handleBack} data-testid="button-back-step3">
+                  Back
+                </Button>
+                <Button type="submit" size="lg" data-testid="button-next-step3">
+                  Continue
+                </Button>
+              </div>
+            </form>
+          )}
+
+          {/* Step 4: Contact Information */}
+          {step === 4 && (
+            <form onSubmit={handleFinalSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name *</Label>
+                <Input
+                  id="name"
+                  {...form4.register("name")}
+                  placeholder="John Smith"
+                  data-testid="input-name"
+                />
+                {form4.formState.errors.name && (
+                  <p className="text-sm text-destructive">{form4.formState.errors.name.message}</p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    {...form4.register("email")}
+                    placeholder="john@example.com"
+                    data-testid="input-email"
+                  />
+                  {form4.formState.errors.email && (
+                    <p className="text-sm text-destructive">{form4.formState.errors.email.message}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    {...form4.register("phone")}
+                    placeholder="(208) 555-0123"
+                    data-testid="input-phone"
+                  />
+                  {form4.formState.errors.phone && (
+                    <p className="text-sm text-destructive">{form4.formState.errors.phone.message}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="space-y-3 pt-4 border-t">
+                <div className="flex items-start space-x-3">
+                  <Checkbox
+                    id="consentToContact"
+                    checked={form4.watch("consentToContact")}
+                    onCheckedChange={(checked) => form4.setValue("consentToContact", checked as boolean)}
+                    data-testid="checkbox-consent"
+                  />
+                  <Label htmlFor="consentToContact" className="text-sm font-normal leading-relaxed cursor-pointer">
+                    I consent to being contacted by HomeBuyerBoise regarding my cash offer request. *
+                  </Label>
+                </div>
+                {form4.formState.errors.consentToContact && (
+                  <p className="text-sm text-destructive">{form4.formState.errors.consentToContact.message}</p>
+                )}
+
+                <div className="flex items-start space-x-3">
+                  <Checkbox
+                    id="consentToText"
+                    checked={form4.watch("consentToText")}
+                    onCheckedChange={(checked) => form4.setValue("consentToText", checked as boolean)}
+                    data-testid="checkbox-text"
+                  />
+                  <Label htmlFor="consentToText" className="text-sm font-normal leading-relaxed cursor-pointer">
+                    I consent to receiving text messages
+                  </Label>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <Checkbox
+                    id="consentToEmail"
+                    checked={form4.watch("consentToEmail")}
+                    onCheckedChange={(checked) => form4.setValue("consentToEmail", checked as boolean)}
+                    data-testid="checkbox-email"
+                  />
+                  <Label htmlFor="consentToEmail" className="text-sm font-normal leading-relaxed cursor-pointer">
+                    I consent to receiving email communications
+                  </Label>
+                </div>
+              </div>
+
+              <Alert>
+                <Info className="h-4 w-4" />
+                <AlertDescription>
+                  Your information is secure. We'll use it only to provide your cash offer and answer your questions.
+                </AlertDescription>
+              </Alert>
+
+              <div className="flex justify-between gap-3 pt-4">
+                <Button type="button" variant="outline" onClick={handleBack} data-testid="button-back-step4">
+                  Back
+                </Button>
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  disabled={submitMutation.isPending}
+                  data-testid="button-submit"
+                >
+                  {submitMutation.isPending ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    "Get My Cash Offer"
+                  )}
+                </Button>
+              </div>
+            </form>
+          )}
+
+          {/* Step 5: Offer Preview (Success) */}
+          {step === 5 && offerData && (
+            <div className="space-y-6">
+              <div className="text-center space-y-4 py-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
+                  <CheckCircle2 className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Thank You!</h3>
+                <p className="text-muted-foreground">
+                  We've received your property information. A member of our team will contact you within 24 hours with a detailed cash offer.
+                </p>
+              </div>
+
+              {offerData.anchorOffer > 0 && (
+                <Card className="bg-primary/5 border-primary/20">
+                  <CardContent className="pt-6">
+                    <div className="text-center space-y-2">
+                      <p className="text-sm text-muted-foreground">Estimated Offer Range</p>
+                      <div className="flex items-center justify-center gap-3">
+                        <DollarSign className="h-6 w-6 text-primary" />
+                        <p className="text-3xl font-bold text-primary">
+                          ${offerData.offerLow.toLocaleString()} - ${offerData.offerHigh.toLocaleString()}
+                        </p>
+                      </div>
+                      <p className="text-xs text-muted-foreground pt-2">
+                        This is a preliminary range. We'll provide a detailed offer after a brief property assessment.
+                      </p>
                     </div>
-                  );
-                })}
+                  </CardContent>
+                </Card>
+              )}
+
+              <div className="space-y-3 text-sm text-muted-foreground">
+                <h4 className="font-semibold text-foreground">What happens next?</h4>
+                <ol className="list-decimal list-inside space-y-2 pl-2">
+                  <li>A local cash buyer specialist will contact you within 24 hours</li>
+                  <li>We'll schedule a brief property walk-through (optional)</li>
+                  <li>Receive your final cash offer with no obligations</li>
+                  <li>Choose your closing date - as fast as 7 days or on your timeline</li>
+                </ol>
               </div>
-            )}
 
-            {/* Quote Validity & Important Terms */}
-            <div className="space-y-4 border-t border-border pt-4">
-              <h3 className="text-sm font-semibold">Important Information</h3>
-              
-              <Alert className="bg-muted/50 border-border">
-                <Info className="h-4 w-4" />
-                <AlertDescription className="text-sm space-y-2">
-                  <p className="font-medium">Quote Validity & Terms:</p>
-                  <ul className="list-disc list-inside space-y-1 text-xs">
-                    <li><strong>Quote Valid:</strong> This estimate is valid for 30 days from today</li>
-                    <li><strong>Not a Contract:</strong> This quote is an estimate only and does not constitute a binding agreement until confirmed in writing</li>
-                    <li><strong>Final Pricing:</strong> Actual pricing will be confirmed after our site assessment based on specific property conditions</li>
-                    <li><strong>Site Assessment:</strong> We'll visit your property to verify measurements and identify any site-specific factors</li>
-                  </ul>
-                </AlertDescription>
-              </Alert>
-
-              <Alert className="bg-muted/50 border-border">
-                <Info className="h-4 w-4" />
-                <AlertDescription className="text-sm space-y-2">
-                  <p className="font-medium">What's Included:</p>
-                  <ul className="list-disc list-inside space-y-1 text-xs">
-                    <li>All labor and equipment for the selected services</li>
-                    <li>Lawn mowing services include trimming, blowing, and clipping removal</li>
-                    <li>Debris removal and disposal (where applicable)</li>
-                    <li>Professional-grade materials and supplies</li>
-                  </ul>
-                </AlertDescription>
-              </Alert>
-
-              <Alert className="bg-muted/50 border-border">
-                <Info className="h-4 w-4" />
-                <AlertDescription className="text-sm space-y-2">
-                  <p className="font-medium">Potential Additional Costs:</p>
-                  <ul className="list-disc list-inside space-y-1 text-xs">
-                    <li>Excessive overgrowth or neglected properties may require additional labor</li>
-                    <li>Difficult terrain, steep slopes, or limited accessibility</li>
-                    <li>Tree/stump removal for trees larger than estimated</li>
-                    <li>Damage to underground utilities (sprinkler lines, etc.) not marked prior to service</li>
-                    <li>Weather delays or seasonal conditions requiring specialized equipment</li>
-                  </ul>
-                </AlertDescription>
-              </Alert>
+              {onClose && (
+                <div className="flex justify-center pt-4">
+                  <Button onClick={onClose} variant="outline" data-testid="button-close">
+                    Close
+                  </Button>
+                </div>
+              )}
             </div>
-
-            <div className="text-center space-y-2">
-              <p className="text-sm font-medium">Next Steps:</p>
-              <p className="text-sm text-muted-foreground">
-                We'll contact you within 24 hours to schedule a free site assessment and finalize your quote
-              </p>
-            </div>
-
-            {onClose && (
-              <Button onClick={onClose} className="w-full" size="lg" data-testid="button-close-quote">
-                Close
-              </Button>
-            )}
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Intelligent Property Calculator */}
-      <IntelligentPropertyCalculator
-        isOpen={mapOpen}
-        onClose={() => setMapOpen(false)}
-        onMeasurementComplete={handleMeasurementComplete}
-        initialAddress={form1.watch("address") || ""}
-        measurementType={getMeasurementType() || 'area'}
-        cityContext={form1.watch("city") || ""}
-      />
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { quoteSubmissionSchema, type InsertQuote } from "@shared/schema";
+import { quoteSubmissionSchema, offerSubmissionSchema, type InsertQuote, type InsertPropertyOffer } from "@shared/schema";
 import { calculateIntelligentQuote, SERVICE_RATES } from "./services/pricing";
+import { calculateOfferRange } from "./services/offerCalculator";
 import { sendQuoteNotification } from "./email";
 import { z } from "zod";
 import { quoteCacheMiddleware } from "./middleware/quoteCache";
@@ -84,6 +85,132 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ message: "Failed to fetch user" });
     }
   });
+
+  // Property Offer Routes (Cash Home Buying)
+  app.post("/api/property-offers", async (req, res) => {
+    try {
+      console.log("[Property Offer] Received submission:", JSON.stringify(req.body, null, 2));
+      
+      // Validate using offer submission schema
+      const validatedData = offerSubmissionSchema.parse(req.body);
+      
+      // Always calculate offer range (use defaults if needed)
+      // Use estimated market value or calculate a simple estimate based on city
+      const estimatedValue = validatedData.estimatedMarketValue 
+        ? (typeof validatedData.estimatedMarketValue === 'string' 
+            ? parseFloat(validatedData.estimatedMarketValue) 
+            : validatedData.estimatedMarketValue)
+        : 300000; // Default estimate for Boise area
+      
+      const squareFeet = validatedData.squareFeet
+        ? (typeof validatedData.squareFeet === 'string'
+            ? parseInt(validatedData.squareFeet)
+            : validatedData.squareFeet)
+        : undefined;
+      
+      const beds = validatedData.beds
+        ? (typeof validatedData.beds === 'string'
+            ? parseInt(validatedData.beds)
+            : validatedData.beds)
+        : undefined;
+      
+      const baths = validatedData.baths
+        ? (typeof validatedData.baths === 'string'
+            ? parseFloat(validatedData.baths)
+            : validatedData.baths)
+        : undefined;
+      
+      const offerCalculation = calculateOfferRange({
+        estimatedMarketValue: estimatedValue,
+        condition: validatedData.condition as any,
+        squareFeet,
+        beds,
+        baths,
+        timeline: validatedData.timeline,
+        reasonForSelling: validatedData.reasonForSelling,
+      });
+      
+      console.log("[Property Offer] Calculated offer:", offerCalculation);
+      
+      // Prepare data for storage - convert to proper decimal format
+      const propertyOfferData: any = {
+        // Contact info
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: validatedData.phone,
+        
+        // Address
+        address: validatedData.address || undefined,
+        city: validatedData.city,
+        state: validatedData.state || "Idaho",
+        zip: validatedData.zip || undefined,
+        fullAddress: validatedData.fullAddress || undefined,
+        street: validatedData.street || undefined,
+        
+        // Property details
+        propertyType: validatedData.propertyType,
+        beds: validatedData.beds ? (typeof validatedData.beds === 'string' ? parseInt(validatedData.beds) : validatedData.beds) : undefined,
+        baths: validatedData.baths ? (typeof validatedData.baths === 'string' ? parseFloat(validatedData.baths) : validatedData.baths) : undefined,
+        squareFeet: validatedData.squareFeet ? (typeof validatedData.squareFeet === 'string' ? parseInt(validatedData.squareFeet) : validatedData.squareFeet) : undefined,
+        condition: validatedData.condition,
+        
+        // Situation
+        reasonForSelling: validatedData.reasonForSelling || undefined,
+        timeline: validatedData.timeline || undefined,
+        message: validatedData.message || undefined,
+        
+        // Offer calculation results - store as decimal strings with proper formatting
+        estimatedMarketValue: offerCalculation.arv.toFixed(2),
+        estimatedRepairs: offerCalculation.estimatedRepairs.toFixed(2),
+        offerLow: offerCalculation.offerLow.toFixed(2),
+        offerHigh: offerCalculation.offerHigh.toFixed(2),
+        anchorOffer: offerCalculation.anchorOffer.toFixed(2),
+        calculationInputs: offerCalculation.calculationInputs,
+        
+        // Consent
+        consentToContact: validatedData.consentToContact,
+        consentToText: validatedData.consentToText ?? false,
+        consentToEmail: validatedData.consentToEmail ?? false,
+        
+        // Status
+        status: "pending",
+      };
+      
+      // Store the offer
+      const createdOffer = await storage.createPropertyOffer(propertyOfferData);
+      
+      console.log("[Property Offer] Created offer:", createdOffer.id);
+      
+      // Return the created offer
+      res.json(createdOffer);
+      
+    } catch (error: any) {
+      console.error("[Property Offer] Submission error:", error);
+      
+      if (error.name === "ZodError") {
+        return res.status(400).json({ 
+          message: "Invalid property offer data", 
+          errors: error.errors 
+        });
+      }
+      
+      res.status(500).json({ 
+        message: error.message || "Failed to submit property offer" 
+      });
+    }
+  });
+
+  // Get all property offers (admin only - for future use)
+  app.get("/api/property-offers", isAuthenticated, requireRole(["admin"]), async (req, res) => {
+    try {
+      const offers = await storage.getAllPropertyOffers();
+      res.json(offers);
+    } catch (error) {
+      console.error("Error fetching property offers:", error);
+      res.status(500).json({ message: "Failed to fetch property offers" });
+    }
+  });
+
   // Validation schema for quote calculation (flexible - only require essential fields)
   const calculateQuoteSchema = z.object({
     address: z.string().optional(),
