@@ -14,6 +14,7 @@ import {
   Shield,
   TrendingDown
 } from "lucide-react";
+import exclamationBackground from "@assets/Exclamation Points_1764013365811.png";
 
 interface Situation {
   icon: ReactNode;
@@ -77,8 +78,19 @@ const situations: Situation[] = [
 
 export function CommonSituations() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20">
-      <div className="container px-4">
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Exclamation Points Background */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={exclamationBackground} 
+          alt=""
+          className="w-full h-full object-cover opacity-30"
+          loading="lazy"
+        />
+      </div>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 z-[1] bg-background/70"></div>
+      <div className="container px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">

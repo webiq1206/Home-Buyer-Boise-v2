@@ -26,6 +26,8 @@ import { CommonSituations } from "@/components/CommonSituations";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
+import starsBackground from "@assets/Stars_1764013365816.png";
+import smileyBackground from "@assets/Smiley Face_1764013365816.png";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
@@ -221,8 +223,19 @@ export default function Home() {
         </section>
 
         {/* Trust Indicators */}
-        <section className="py-12 md:py-16 bg-muted/30">
-          <div className="container px-4 md:px-8">
+        <section className="relative py-12 md:py-16 overflow-hidden">
+          {/* Stars Background */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={starsBackground} 
+              alt=""
+              className="w-full h-full object-cover opacity-30"
+              loading="lazy"
+            />
+          </div>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 z-[1] bg-background/70"></div>
+          <div className="container px-4 md:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {trustIndicators.map((indicator, index) => (
@@ -429,8 +442,19 @@ export default function Home() {
 
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4 md:px-8">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Smiley Face Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={smileyBackground} 
+            alt=""
+            className="w-full h-full object-cover opacity-30"
+            loading="lazy"
+          />
+        </div>
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 z-[1] bg-background/70"></div>
+        <div className="container px-4 md:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
