@@ -381,11 +381,8 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
       <body>
         <div class="email-wrapper">
           <div class="header">
-            <div class="logo-container">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="HomeBuyerBoise Icon" class="icon">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" class="logo">
-            </div>
-            <h1>New Quote Request</h1>
+            <h1>HomeBuyerBoise</h1>
+            <h2 style="margin: 10px 0 0 0; font-size: 20px; font-weight: 400;">New Cash Offer Request</h2>
             <p>AI-Powered Quote System</p>
           </div>
           
@@ -501,9 +498,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
 
           <div class="footer">
             <p class="footer-brand">HomeBuyerBoise</p>
-            <p class="footer-tagline">Kuna, Idaho's Most Trusted Lawn Care & Landscaping Service</p>
-            <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
-            <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
+            <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
+            <p class="footer-contact">Email: <a href="mailto:hello@homebuyerboise.com">hello@homebuyerboise.com</a></p>
+            <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
           </div>
         </div>
       </body>
@@ -522,22 +519,19 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
       <body>
         <div class="email-wrapper">
           <div class="header">
-            <div class="logo-container">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="HomeBuyerBoise Icon" class="icon">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" class="logo">
-            </div>
-            <h1>Thank You for Your Request</h1>
-            <p>We're excited to help transform your outdoor space!</p>
+            <h1>HomeBuyerBoise</h1>
+            <h2 style="margin: 10px 0 0 0; font-size: 20px; font-weight: 400;">Thank You for Your Request</h2>
+            <p>We're excited to help you sell your home!</p>
           </div>
           
           <div class="content">
             <p class="greeting">Hi ${customerName},</p>
             
-            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing HomeBuyerBoise for your ${serviceType.toLowerCase()} needs. We've received your quote request and our team is reviewing the details.</p>
+            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing HomeBuyerBoise. We've received your cash offer request and our team is reviewing the details of your property.</p>
 
             <div class="highlight-box">
               <p><strong>What happens next?</strong></p>
-              <p style="margin: 10px 0 0 0;">Our team will contact you within 24 hours with a detailed quote tailored to your property's specific needs. We'll answer any questions and help you schedule your service at a time that works best for you.</p>
+              <p style="margin: 10px 0 0 0;">Our team will contact you within 24 hours with a cash offer for your property. We'll answer any questions and work with you to close on your timeline.</p>
             </div>
 
             <div class="section">
@@ -623,23 +617,24 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
 
           <div class="footer">
             <p class="footer-brand">HomeBuyerBoise</p>
-            <p class="footer-tagline">Kuna, Idaho's Most Trusted Lawn Care & Landscaping Service</p>
-            <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
+            <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
+            <p class="footer-contact">Email: <a href="mailto:hello@homebuyerboise.com">hello@homebuyerboise.com</a></p>
             <p class="footer-contact">Phone: (208) 405-CASH</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
-            <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
-            <p style="font-size: 12px; color: #9ca3af; margin: 15px 0 0 0;">Serving Kuna, Boise, Meridian, Nampa, Caldwell, Eagle, Star & Middleton</p>
+            <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
+            <p style="font-size: 12px; color: #9ca3af; margin: 15px 0 0 0;">Serving Boise, Meridian, Eagle, Kuna, Star & Middleton</p>
           </div>
         </div>
       </body>
       </html>
     `;
 
-    // Send email to business owner
-    console.log('[EMAIL] Sending admin notification to:', fromEmail);
+    // Send email to business owners (both admin addresses)
+    const adminEmails = ['admin@timberandlove.co', 'connect@buymyhouse.co'];
+    console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     const adminResult = await resend.emails.send({
       from: `HomeBuyerBoise <${fromEmail}>`,
-      to: fromEmail,
+      to: adminEmails,
       subject: `New Quote Request - ${customerName} (${city})`,
       html: ownerEmailHtml,
       replyTo: customerEmail
