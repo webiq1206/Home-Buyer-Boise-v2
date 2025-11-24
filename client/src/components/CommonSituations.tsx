@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,11 +16,11 @@ import {
 } from "lucide-react";
 
 interface Situation {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   description: string;
   feature: string;
-  featureIcon: React.ReactNode;
+  featureIcon: ReactNode;
   link: string;
 }
 
