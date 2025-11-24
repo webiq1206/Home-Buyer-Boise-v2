@@ -199,6 +199,56 @@ export const CITIES: CityData[] = [
       { label: 'When to blow out sprinklers', value: 'Oct / Nov' },
       { label: 'Growing season', value: 'April - October' }
     ]
+  },
+  {
+    slug: 'nampa',
+    name: 'Nampa',
+    county: 'canyon',
+    isPrimary: false,
+    population: '100,000+',
+    zipCodes: ['83651', '83686', '83687'],
+    neighborhoods: ['Centennial', 'Southridge', 'Deer Flat', 'Greenhurst', 'Painted Ridge'],
+    extendedDescription: 'Nampa is Idaho\'s third-largest city with over 100,000 residents, located in Canyon County just west of Meridian. As a major hub of the Treasure Valley, Nampa offers affordable housing options, growing employment opportunities, and a strong sense of community. The city features diverse neighborhoods ranging from historic downtown areas to modern suburban developments. Nampa\'s real estate market appeals to first-time homebuyers, growing families, and investors seeking rental properties. With ongoing development and infrastructure improvements, Nampa continues to grow as an integral part of the Boise metropolitan area.',
+    landmarks: ['Nampa Civic Center', 'Lake Lowell', 'Ford Idaho Center', 'Nampa Recreation Center', 'Warhawk Air Museum', 'Northwest Nazarene University'],
+    serviceConsiderations: 'Nampa offers diverse property types from historic homes to new construction. Affordable housing market attracts first-time buyers and investors. Growing employment centers and retail development drive housing demand.',
+    localFactors: {
+      climate: 'Semi-arid with hot summers and cold winters. USDA Zone 6a.',
+      soil: 'Clay soil common throughout area.',
+      commonNeeds: ['Affordable housing', 'First-time buyer properties', 'Investment opportunities', 'Growing neighborhoods']
+    },
+    facts: [
+      { label: 'Population', value: '100,000+' },
+      { label: 'Median Home Price', value: '$375,000' },
+      { label: 'County', value: 'Canyon' },
+      { label: 'Distance to Boise', value: '20 miles' },
+      { label: 'Market Type', value: 'Affordable suburban' },
+      { label: 'Growth Rate', value: 'Rapid' }
+    ]
+  },
+  {
+    slug: 'caldwell',
+    name: 'Caldwell',
+    county: 'canyon',
+    isPrimary: false,
+    population: '60,000+',
+    zipCodes: ['83605', '83607'],
+    neighborhoods: ['Indian Creek', 'Purple Sage', 'Ustick West', 'Deer Flat'],
+    extendedDescription: 'Caldwell is Canyon County\'s seat with over 60,000 residents, located west of Nampa in the Treasure Valley. Known for its agricultural heritage, affordable housing, and growing economy, Caldwell offers family-friendly neighborhoods and strong community values. The city features a revitalized downtown, excellent schools including the College of Idaho, and expanding retail and employment centers. Caldwell\'s real estate market provides opportunities for homebuyers seeking affordability combined with good schools and community amenities. As the western anchor of the Treasure Valley, Caldwell continues to attract families and businesses.',
+    landmarks: ['College of Idaho', 'Caldwell Event Center', 'Indian Creek Plaza', 'Canyon Hill', 'Memorial Park', 'Caldwell Downtown District'],
+    serviceConsiderations: 'Caldwell features affordable family homes with good school access. Mix of established and new neighborhoods. Growing west Treasure Valley market with development opportunities.',
+    localFactors: {
+      climate: 'Semi-arid with hot, dry summers and cold winters. USDA Zone 6a.',
+      soil: 'Clay soil predominant.',
+      commonNeeds: ['Family housing', 'Affordability', 'School proximity', 'Community amenities']
+    },
+    facts: [
+      { label: 'Population', value: '60,000+' },
+      { label: 'Median Home Price', value: '$360,000' },
+      { label: 'County', value: 'Canyon' },
+      { label: 'Distance to Boise', value: '25 miles' },
+      { label: 'Market Type', value: 'Affordable family' },
+      { label: 'Growth Rate', value: 'Steady' }
+    ]
   }
 ];
 
