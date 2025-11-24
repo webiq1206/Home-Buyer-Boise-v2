@@ -99,7 +99,10 @@ export function AddressAutocomplete({
       });
       
       setSuggestions(formattedResults);
-      setOpen(formattedResults.length > 0);
+      if (formattedResults.length > 0) {
+        console.log('[AddressAutocomplete] Opening popover with', formattedResults.length, 'suggestions');
+        setOpen(true);
+      }
     } catch (error) {
       console.error("[AddressAutocomplete] Error fetching address suggestions:", error);
       setSuggestions([]);
@@ -311,8 +314,10 @@ export function AddressAutocomplete({
         </div>
       </PopoverAnchor>
       <PopoverContent 
-        className="w-[400px] p-0" 
+        className="w-[var(--radix-popover-content-available-width)] max-w-[400px] p-0 z-[9999]" 
         align="start"
+        side="bottom"
+        sideOffset={4}
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <Command>
