@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +14,15 @@ import type { PropertyData } from "@/lib/adaCountyAssessor";
 export default function SavingsCalculator() {
   const [, setLocation] = useLocation();
   const [address, setAddress] = useState("");
+  
+  // Read address from URL query parameter on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const addressParam = params.get('address');
+    if (addressParam) {
+      setAddress(addressParam);
+    }
+  }, []);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [suggestion, setSuggestion] = useState<string | null>(null);
