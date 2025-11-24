@@ -301,7 +301,7 @@ export const CITY_SEO_DATA = {
 export const BUSINESS_INFO = {
   name: 'HomeBuyerBoise',
   legalName: 'HomeBuyerBoise LLC',
-  phone: '(208) 352-2011',
+  phone: '(208) 405-CASH',
   email: 'hello@homebuyerboise.com',
   address: {
     street: '150 N Capitol Blvd Suite 1',

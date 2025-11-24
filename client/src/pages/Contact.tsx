@@ -43,8 +43,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Phone</h3>
-                        <a href="tel:2083522011" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
-                          (208) 352-2011
+                        <a href="tel:2084052274" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
+                          (208) 405-CASH
                         </a>
                         <p className="text-xs text-muted-foreground mt-1">
                           Call us for immediate assistance

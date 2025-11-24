@@ -22,9 +22,9 @@ export function Footer() {
               Trusted Cash Home Buyers Serving the Boise Metro Area
             </p>
             <div className="space-y-2">
-              <a href="tel:2083522011" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-phone-footer">
+              <a href="tel:2084052274" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-phone-footer">
                 <Phone className="h-4 w-4" />
-                <span>(208) 352-2011</span>
+                <span>(208) 405-CASH</span>
               </a>
               <a href="mailto:hello@homebuyerboise.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
                 <Mail className="h-4 w-4" />

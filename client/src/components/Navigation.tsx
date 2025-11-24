@@ -104,8 +104,8 @@ export function Navigation() {
               asChild 
               data-testid="button-phone-desktop"
             >
-              <a href="tel:2083522011">
-                (208) 352-2011
+              <a href="tel:2084052274">
+                (208) 405-CASH
               </a>
             </Button>
 

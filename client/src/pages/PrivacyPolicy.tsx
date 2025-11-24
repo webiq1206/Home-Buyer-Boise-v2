@@ -223,7 +223,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>Email:</strong> <a href="mailto:hello@homebuyerboise.com" className="text-primary hover:underline" data-testid="link-privacy-email">hello@homebuyerboise.com</a></p>
-                  <p><strong>Phone:</strong> <a href="tel:2083522011" className="text-primary hover:underline" data-testid="link-privacy-phone">(208) 352-2011</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:2084052274" className="text-primary hover:underline" data-testid="link-privacy-phone">(208) 405-CASH</a></p>
                   <p><strong>Subject Line:</strong> "Privacy Policy Inquiry"</p>
                 </div>
                 <p className="text-muted-foreground">
