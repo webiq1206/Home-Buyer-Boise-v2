@@ -1116,7 +1116,7 @@ ${urls.map(url => `  <url>
 
   // Robots.txt
   app.get("/robots.txt", (req, res) => {
-    const robotsTxt = `# Lawn Care Kuna - Robots.txt
+    const robotsTxt = `# HomeBuyerBoise - Robots.txt
 User-agent: *
 Allow: /
 Disallow: /api/

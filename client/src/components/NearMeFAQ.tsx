@@ -12,31 +12,31 @@ interface NearMeFAQProps {
   serviceName?: string;
 }
 
-export function NearMeFAQ({ city = "Kuna", serviceName = "lawn care" }: NearMeFAQProps) {
+export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: NearMeFAQProps) {
   const faqs = [
     {
-      question: `Where can I find local ${serviceName} in ${city}?`,
-      answer: `Lawn Care Kuna provides professional ${serviceName} services throughout ${city} and the entire Treasure Valley. We're locally based and serve all neighborhoods in ${city}, including surrounding areas. When you need reliable ${serviceName} close to home, call us at (208) 352-2011 for immediate service.`,
+      question: `How fast can you buy my house in ${city}?`,
+      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city}, Meridian, Nampa, and all Treasure Valley cities. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 352-2011 for your free cash offer today.`,
     },
     {
-      question: `How quickly can you provide ${serviceName} in my area?`,
-      answer: `As a local ${city}-based company, we can typically schedule ${serviceName} services within 24-48 hours for most areas in ${city} and the Treasure Valley. For urgent needs, we offer same-day service availability. Contact us today for fast, reliable service in your neighborhood.`,
+      question: `Do you buy houses in any condition in ${city}?`,
+      answer: `Yes! We buy houses in any condition throughout ${city} and the Treasure Valley. Whether your home needs major repairs, has foundation issues, outdated interiors, or is move-in ready - we'll make you a fair cash offer. You don't need to fix anything or even clean. We buy as-is.`,
     },
     {
-      question: `Do you offer free quotes for ${serviceName} in ${city}?`,
-      answer: `Yes! We provide completely free, no-obligation quotes for all ${serviceName} services in ${city} and surrounding areas. Use our online quote tool or call (208) 352-2011 to get an instant estimate for your property.`,
+      question: `How do I get a cash offer for my ${city} home?`,
+      answer: `Getting your cash offer is simple! Fill out our online form or call (208) 352-2011. Tell us about your property and situation. We'll research comparable sales and present you with a fair, no-obligation cash offer within 24 hours - often the same day.`,
     },
     {
       question: `What areas do you serve in the Treasure Valley?`,
-      answer: `We proudly serve ${city}, Boise, Meridian, Eagle, Star, and Middleton - covering the entire Treasure Valley within a 25-mile radius. As your local ${serviceName} experts, we're committed to serving all these communities with licensed, insured professionals.`,
+      answer: `We buy houses throughout the entire Treasure Valley including ${city}, Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City. As local Idaho cash home buyers, we're committed to serving all these communities with fast, fair offers and flexible closing timelines.`,
     },
     {
-      question: `Why choose Lawn Care Kuna for ${serviceName}?`,
-      answer: `When you need trusted ${serviceName} in ${city}, choose a local company with proven results. We've been serving ${city} since 2017 with 4.9-star ratings, licensed professionals, and guaranteed satisfaction. Unlike national chains, we're your neighbors - we understand ${city}'s unique climate, soil conditions, and local needs.`,
+      question: `Why choose HomeBuyerBoise over listing with a realtor?`,
+      answer: `When you need to sell fast in ${city}, cash buyers offer major advantages: no realtor commissions (save 5-6%), no repairs or cleaning needed, no showings or open houses, close in days not months, and we pay all closing costs. You receive your offer amount minus nothing - what we offer is what you get at closing.`,
     },
     {
-      question: `How much does ${serviceName} cost in ${city}?`,
-      answer: `${serviceName.charAt(0).toUpperCase() + serviceName.slice(1)} pricing in ${city} varies based on property size, current lawn condition, and service frequency. Most residential properties start at $50-$85. Get an exact quote for your specific location using our instant online quoting tool or by calling (208) 352-2011.`,
+      question: `Are there any fees when selling to HomeBuyerBoise?`,
+      answer: `Absolutely zero fees! Unlike traditional sales where you pay 5-6% realtor commissions plus 2-3% closing costs, we cover everything. No commissions, no closing costs, no inspection fees, no appraisal fees. The cash offer we present is exactly what you'll receive at closing - 100% of it.`,
     },
   ];
 
@@ -48,7 +48,7 @@ export function NearMeFAQ({ city = "Kuna", serviceName = "lawn care" }: NearMeFA
           <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
         </div>
         <CardDescription className="text-base">
-          Common questions about finding {serviceName} near you in {city}
+          Common questions about selling your house for cash in {city}
         </CardDescription>
       </CardHeader>
       <CardContent>

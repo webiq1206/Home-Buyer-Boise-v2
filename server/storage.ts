@@ -160,7 +160,7 @@ export class MemStorage implements IStorage {
         serviceType: "lawn-care",
         city: "kuna",
         rating: "5",
-        testimonial: "Lawn Care Kuna has been taking care of our yard for 2 years now. Always on time, professional, and our lawn has never looked better!",
+        testimonial: "HomeBuyerBoise has been taking care of our yard for 2 years now. Always on time, professional, and our lawn has never looked better!",
         createdAt: new Date(),
       },
       {

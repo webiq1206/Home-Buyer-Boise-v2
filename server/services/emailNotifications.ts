@@ -154,7 +154,7 @@ export async function sendEmail(to: string, subject: string, htmlBody: string): 
     const { client: resend, fromEmail } = await getUncachableResendClient();
 
     await resend.emails.send({
-      from: `Lawn Care Kuna <${fromEmail}>`,
+      from: `HomeBuyerBoise <${fromEmail}>`,
       to,
       subject,
       html: htmlBody
@@ -197,7 +197,7 @@ export async function sendNewLeadNotification(leadData: {
       <div class="email-wrapper">
         <div class="header">
           <div style="margin-bottom: 20px;">
-            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="Lawn Care Kuna" style="max-width: 300px; height: auto;">
+            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" style="max-width: 300px; height: auto;">
           </div>
           <h1>New Lead Available</h1>
           <p>Lead Distribution Platform</p>
@@ -254,7 +254,7 @@ export async function sendNewLeadNotification(leadData: {
         </div>
 
         <div class="footer">
-          <p class="footer-brand">Lawn Care Kuna</p>
+          <p class="footer-brand">HomeBuyerBoise</p>
           <p class="footer-tagline">Lead Distribution Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
@@ -296,7 +296,7 @@ export async function sendLeadPurchasedNotification(leadData: {
       <div class="email-wrapper">
         <div class="header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
           <div style="margin-bottom: 20px;">
-            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="Lawn Care Kuna" style="max-width: 300px; height: auto;">
+            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" style="max-width: 300px; height: auto;">
           </div>
           <h1>Lead Purchased</h1>
           <p>Transaction Notification</p>
@@ -365,7 +365,7 @@ export async function sendLeadPurchasedNotification(leadData: {
         </div>
 
         <div class="footer">
-          <p class="footer-brand">Lawn Care Kuna</p>
+          <p class="footer-brand">HomeBuyerBoise</p>
           <p class="footer-tagline">Lead Distribution Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
@@ -402,7 +402,7 @@ export async function sendLeadPurchaseConfirmation(purchaserEmail: string, leadD
       <div class="email-wrapper">
         <div class="header">
           <div style="margin-bottom: 20px;">
-            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="Lawn Care Kuna" style="max-width: 300px; height: auto;">
+            <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" style="max-width: 300px; height: auto;">
           </div>
           <h1>Purchase Confirmed</h1>
           <p>Your lead is ready to contact</p>
@@ -467,7 +467,7 @@ export async function sendLeadPurchaseConfirmation(purchaserEmail: string, leadD
         </div>
 
         <div class="footer">
-          <p class="footer-brand">Lawn Care Kuna</p>
+          <p class="footer-brand">HomeBuyerBoise</p>
           <p class="footer-tagline">Lead Distribution Platform</p>
           <p style="font-size: 12px; color: #6b7280; margin: 15px 0;">Questions about your purchase? Contact us anytime.</p>
         </div>

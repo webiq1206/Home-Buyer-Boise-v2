@@ -16,7 +16,7 @@ export function HeroQuoteSection({
   subheading,
   defaultService,
   defaultCity,
-  backgroundAlt = "Professional lawn care services in Kuna Idaho",
+  backgroundAlt = "HomeBuyerBoise - Cash home buyers serving Boise and Treasure Valley Idaho",
   backgroundImage,
 }: HeroQuoteSectionProps) {
   // Normalize city to lowercase for QuoteWizard compatibility (Select uses lowercase values)

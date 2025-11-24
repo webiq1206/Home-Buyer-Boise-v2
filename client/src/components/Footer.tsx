@@ -1,7 +1,6 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin } from "lucide-react";
-import logoUrl from "@assets/Lawn Care Kuna Logo_1763734387982.png";
-import { PRIORITY_SERVICES, CITIES } from "@shared/contentData";
+import { Phone, Mail, MapPin, Home } from "lucide-react";
+import { CITIES } from "@shared/contentData";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,15 +11,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <img 
-              src={logoUrl} 
-              alt="HomeBuyerBoise - Professional Cash Home Buyers in Boise, Idaho" 
-              className="h-8 w-auto mb-4"
-              width="160"
-              height="32"
-              loading="lazy"
-              data-testid="logo-footer"
-            />
+            <div className="flex items-center gap-2 mb-4">
+              <Home className="h-7 w-7 text-primary" />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-primary leading-tight">HomeBuyer</span>
+                <span className="text-xs font-semibold text-primary/70 leading-tight -mt-0.5">BOISE</span>
+              </div>
+            </div>
             <p className="text-sm text-muted-foreground mb-4">
               Trusted Cash Home Buyers Serving the Boise Metro Area
             </p>
@@ -54,7 +51,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">
                   How It Works
                 </Link>
               </li>

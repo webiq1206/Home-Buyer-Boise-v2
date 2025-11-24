@@ -9,11 +9,11 @@ export default function TermsOfService() {
   return (
     <div className="flex flex-col">
       <Helmet>
-        <title>Terms of Service | Lawn Care Kuna</title>
-        <meta name="description" content="Review the terms and conditions for Lawn Care Kuna's professional lawn care and landscaping services. Clear, fair terms for residential and commercial customers." />
+        <title>Terms of Service | HomeBuyerBoise</title>
+        <meta name="description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services. Clear, fair terms for residential and commercial customers." />
         <link rel="canonical" href="https://lawncarekuna.com/terms-of-service" />
-        <meta property="og:title" content="Terms of Service | Lawn Care Kuna" />
-        <meta property="og:description" content="Review the terms and conditions for Lawn Care Kuna's professional lawn care and landscaping services." />
+        <meta property="og:title" content="Terms of Service | HomeBuyerBoise" />
+        <meta property="og:description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services." />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -23,7 +23,7 @@ export default function TermsOfService() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Terms of Service for Lawn Care Kuna professional lawn care services"
+            alt="Terms of Service for HomeBuyerBoise professional cash home buying services"
             className="w-full h-full object-cover"
           />
         </div>
@@ -31,7 +31,7 @@ export default function TermsOfService() {
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground" data-testid="heading-terms-of-service">Terms of Service</h1>
             <p className="text-lg text-muted-foreground">
-              Clear, fair terms for our lawn care and landscaping services
+              Clear, fair terms for our cash home buying services
             </p>
             <p className="text-sm text-muted-foreground" data-testid="text-last-updated">
               Last Updated: {lastUpdated}
@@ -48,7 +48,7 @@ export default function TermsOfService() {
             {/* Introduction */}
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground">
-                Welcome to Lawn Care Kuna. These Terms of Service govern your use of our services and website. By engaging our services or using our website, you agree to these terms. Please read them carefully.
+                Welcome to HomeBuyerBoise. These Terms of Service govern your use of our services and website. By engaging our services or using our website, you agree to these terms. Please read them carefully.
               </p>
             </div>
 
@@ -64,10 +64,10 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  By requesting a quote, scheduling a service, or engaging Lawn Care Kuna for any lawn care or landscaping work, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                  By requesting a quote, scheduling a service, or engaging HomeBuyerBoise for any lawn care or landscaping work, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
                 </p>
                 <p className="text-muted-foreground">
-                  These terms constitute a legally binding agreement between you (the "Customer" or "you") and Lawn Care Kuna (the "Company," "we," or "us").
+                  These terms constitute a legally binding agreement between you (the "Customer" or "you") and HomeBuyerBoise (the "Company," "we," or "us").
                 </p>
               </CardContent>
             </Card>
@@ -84,10 +84,10 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Lawn Care Kuna provides professional lawn care and landscaping services to residential and commercial properties in the Treasure Valley, Idaho, including but not limited to:
+                  HomeBuyerBoise provides professional cash home buying services to residential and commercial properties in the Treasure Valley, Idaho, including but not limited to:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-                  <li><strong>Lawn Care Services:</strong> Lawn mowing, edging, trimming, fertilization, aeration, dethatching, overseeding, and weed control</li>
+                  <li><strong>Cash Home Buying Services:</strong> Purchasing homes in any condition, providing fair cash offers, flexible closing timelines, and handling all paperwork</li>
                   <li><strong>Landscaping Services:</strong> Landscape design, installation, mulch installation, hedge trimming, tree trimming, and seasonal cleanup</li>
                   <li><strong>Hardscaping Services:</strong> Patio installation, retaining walls, fire pit installation, and pond installation</li>
                   <li><strong>Irrigation Services:</strong> Sprinkler system installation, irrigation repair, irrigation maintenance, and sprinkler blowouts</li>
@@ -195,7 +195,7 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  Lawn Care Kuna carries general liability insurance and workers' compensation coverage. However, our liability is limited as follows:
+                  HomeBuyerBoise carries general liability insurance and workers' compensation coverage. However, our liability is limited as follows:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                   <li><strong>Normal Wear and Tear:</strong> We are not responsible for normal wear, aging, or deterioration of plants, lawns, or landscaping materials</li>
@@ -307,7 +307,7 @@ export default function TermsOfService() {
                   We value our customer relationships and strive to resolve any concerns promptly and fairly. If you have a dispute or complaint:
                 </p>
                 <ol className="list-decimal list-inside space-y-2 text-muted-foreground ml-4">
-                  <li>Contact us directly at (208) 352-2011 or hello@lawncarekuna.com to discuss the issue</li>
+                  <li>Contact us directly at (208) 352-2011 or hello@homebuyerboise.com to discuss the issue</li>
                   <li>We will investigate and respond within 7 business days</li>
                   <li>If the issue cannot be resolved informally, we agree to attempt mediation before pursuing legal action</li>
                 </ol>
@@ -352,9 +352,9 @@ export default function TermsOfService() {
                   If you have questions about these Terms of Service, please contact us:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Lawn Care Kuna</strong></p>
+                  <p><strong>HomeBuyerBoise</strong></p>
                   <p><strong>Phone:</strong> <a href="tel:2083522011" className="text-primary hover:underline" data-testid="link-terms-phone">(208) 352-2011</a></p>
-                  <p><strong>Email:</strong> <a href="mailto:hello@lawncarekuna.com" className="text-primary hover:underline" data-testid="link-terms-email">hello@lawncarekuna.com</a></p>
+                  <p><strong>Email:</strong> <a href="mailto:hello@homebuyerboise.com" className="text-primary hover:underline" data-testid="link-terms-email">hello@homebuyerboise.com</a></p>
                   <p><strong>Service Areas:</strong> Kuna, Boise, Meridian, Eagle, Star, Middleton, and surrounding Treasure Valley communities</p>
                 </div>
               </CardContent>
@@ -363,7 +363,7 @@ export default function TermsOfService() {
             {/* Footer Note */}
             <div className="bg-muted/30 rounded-lg p-6">
               <p className="text-sm text-muted-foreground text-center">
-                By engaging Lawn Care Kuna for services, you acknowledge that you have read, understood, and agree to these Terms of Service. These terms are effective as of the date services are requested or scheduled.
+                By engaging HomeBuyerBoise for services, you acknowledge that you have read, understood, and agree to these Terms of Service. These terms are effective as of the date services are requested or scheduled.
               </p>
             </div>
           </div>

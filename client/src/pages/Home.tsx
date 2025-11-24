@@ -453,7 +453,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <NearMeFAQ city="Kuna" serviceName="lawn care" />
+            <NearMeFAQ city="Boise" serviceName="cash home buying" />
           </div>
         </div>
       </section>
@@ -466,7 +466,7 @@ export default function Home() {
               Ready to get started?
             </h2>
             <p className="text-xl text-primary-foreground leading-relaxed">
-              Schedule your free consultation today and discover why we're Kuna's most trusted lawn care company.
+              Get your free cash offer today and discover why we're the Treasure Valley's most trusted home buyers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" variant="secondary" asChild data-testid="button-final-cta-quote">

@@ -78,7 +78,7 @@ export function ServiceAreaMap() {
                     className="cursor-pointer group focus-visible:outline-none" 
                     tabIndex={0} 
                     role="button" 
-                    aria-label={`View ${city.name} lawn care services`}
+                    aria-label={`View ${city.name} cash home buying services`}
                     onClick={() => handleCityClick(city.slug)}
                     onKeyDown={(e) => handleCityKeyDown(e, city.slug)}
                     data-testid={`map-city-${city.slug}`}

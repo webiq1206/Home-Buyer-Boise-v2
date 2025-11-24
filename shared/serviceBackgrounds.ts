@@ -7,13 +7,13 @@ export interface ServiceBackgroundConfig {
 
 // Import all custom service backgrounds
 import christmasLightsBackground from "@assets/Christmas Light Installation Services in Kuna_1763675561175.png";
-import hedgeTrimmingBackground from "@assets/Professional Hedge Trimming Services - Professional Bush Trimming Services - Lawn Care Kuna_1763675561175.png";
-import aerationBackground from "@assets/Professional Lawn Aeration Services - Lawn Care Kuna_1763675561175.png";
-import fertilizationBackground from "@assets/Professional Lawn Fertilization Services - Lawn Care Kuna_1763675561176.png";
-import leafRemovalBackground from "@assets/Professional Leaf Removal Services - Lawn Care Kuna_1763675561176.png";
-import snowRemovalBackground from "@assets/Professional Snow Removal Services - Lawn Care Kuna_1763675561176.png";
-import sprinklerBlowoutBackground from "@assets/Professional Sprinkler Blowout Services - Lawn Care Kuna_1763675561176.png";
-import defaultBackground from "@assets/Lawn Care Kuna Background Image_1763675543303.png";
+import hedgeTrimmingBackground from "@assets/Professional Hedge Trimming Services - Professional Bush Trimming Services - HomeBuyerBoise_1763675561175.png";
+import aerationBackground from "@assets/Professional Lawn Aeration Services - HomeBuyerBoise_1763675561175.png";
+import fertilizationBackground from "@assets/Professional Lawn Fertilization Services - HomeBuyerBoise_1763675561176.png";
+import leafRemovalBackground from "@assets/Professional Leaf Removal Services - HomeBuyerBoise_1763675561176.png";
+import snowRemovalBackground from "@assets/Professional Snow Removal Services - HomeBuyerBoise_1763675561176.png";
+import sprinklerBlowoutBackground from "@assets/Professional Sprinkler Blowout Services - HomeBuyerBoise_1763675561176.png";
+import defaultBackground from "@assets/HomeBuyerBoise Background Image_1763675543303.png";
 
 // Service slug to background image mapping
 export const SERVICE_BACKGROUNDS: ServiceBackgroundConfig = {

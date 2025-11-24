@@ -23,25 +23,12 @@ const PageLoader = () => (
 const Home = lazy(() => import("@/pages/Home"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
+const Services = lazy(() => import("@/pages/Services"));
+const Pricing = lazy(() => import("@/pages/Pricing"));
+const GetQuote = lazy(() => import("@/pages/GetQuote"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
-// Service Landing Pages
-const LawnCare = lazy(() => import("@/pages/services/LawnCare"));
-const Landscaping = lazy(() => import("@/pages/services/Landscaping"));
-const ChristmasLights = lazy(() => import("@/pages/services/ChristmasLights"));
-const FenceInstallation = lazy(() => import("@/pages/services/FenceInstallation"));
-const PondInstallation = lazy(() => import("@/pages/services/PondInstallation"));
-const IrrigationInstallation = lazy(() => import("@/pages/services/IrrigationInstallation"));
-
-// Dynamic Service Route (handles all service pages automatically)
-const DynamicServiceRoute = lazy(() => import("@/components/DynamicServiceRoute"));
-
-// Commercial Pages
-const HOAServices = lazy(() => import("@/pages/commercial/HOAServices"));
-const Commercial = lazy(() => import("@/pages/commercial/Commercial"));
-const MunicipalServices = lazy(() => import("@/pages/commercial/MunicipalServices"));
-
-// Area Pages
+// Area Pages - Treasure Valley Cities
 const Kuna = lazy(() => import("@/pages/areas/Kuna"));
 const Boise = lazy(() => import("@/pages/areas/Boise"));
 const Meridian = lazy(() => import("@/pages/areas/Meridian"));
@@ -49,16 +36,12 @@ const Eagle = lazy(() => import("@/pages/areas/Eagle"));
 const Star = lazy(() => import("@/pages/areas/Star"));
 const Middleton = lazy(() => import("@/pages/areas/Middleton"));
 
-// Additional Pages
-const Pricing = lazy(() => import("@/pages/Pricing"));
-const Blog = lazy(() => import("@/pages/Blog"));
-const BlogPost = lazy(() => import("@/pages/BlogPost"));
-const GetQuote = lazy(() => import("@/pages/GetQuote"));
-const Services = lazy(() => import("@/pages/Services"));
+// Legal Pages
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
+
+// Admin Pages
 const AdminDashboard = lazy(() => import("@/pages/AdminDashboard"));
-const SubcontractorPortal = lazy(() => import("@/pages/SubcontractorPortal"));
 const PurchaseHistory = lazy(() => import("@/pages/PurchaseHistory"));
 const AnalyticsDashboard = lazy(() => import("@/pages/AnalyticsDashboard"));
 
@@ -77,29 +60,10 @@ function Router() {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/services" component={Services} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/get-quote" component={GetQuote} />
 
-            {/* Service Landing Pages */}
-            <Route path="/services/lawn-care" component={LawnCare} />
-            <Route path="/services/landscaping" component={Landscaping} />
-            <Route path="/services/christmas-lights" component={ChristmasLights} />
-            <Route path="/services/fence-installation" component={FenceInstallation} />
-            <Route path="/services/pond-installation" component={PondInstallation} />
-            <Route path="/services/irrigation-installation" component={IrrigationInstallation} />
-
-            {/* Dynamic Service Routes - Handles ALL services in contentData.ts automatically */}
-            {/* Pattern: /services/:serviceSlug/:citySlug? */}
-            {/* Examples: /services/aeration, /services/aeration/kuna, /services/lawn-mowing */}
-            <Route path="/services/:serviceSlug/:citySlug?" component={DynamicServiceRoute} />
-
-            {/* Commercial Pages */}
-            <Route path="/commercial/hoa-services" component={HOAServices} />
-            <Route path="/commercial/hoa-services/:city" component={HOAServices} />
-            <Route path="/commercial" component={Commercial} />
-            <Route path="/commercial/municipal-services" component={MunicipalServices} />
-            <Route path="/commercial/commercial-lawn-care" component={HOAServices} />
-            <Route path="/commercial/commercial-services" component={HOAServices} />
-
-            {/* Service Areas */}
+            {/* Service Areas - Treasure Valley Cities */}
             <Route path="/areas/kuna" component={Kuna} />
             <Route path="/areas/boise" component={Boise} />
             <Route path="/areas/meridian" component={Meridian} />
@@ -107,19 +71,14 @@ function Router() {
             <Route path="/areas/star" component={Star} />
             <Route path="/areas/middleton" component={Middleton} />
 
-            {/* Additional Pages */}
-            <Route path="/pricing" component={Pricing} />
-            <Route path="/get-quote" component={GetQuote} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/blog/:slug" component={BlogPost} />
+            {/* Legal Pages */}
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/terms-of-service" component={TermsOfService} />
 
-            {/* Lead Distribution System */}
+            {/* Admin Pages */}
             <Route path="/admin/dashboard" component={AdminDashboard} />
             <Route path="/admin/analytics" component={AnalyticsDashboard} />
-            <Route path="/subcontractor/portal" component={SubcontractorPortal} />
-            <Route path="/subcontractor/purchases" component={PurchaseHistory} />
+            <Route path="/admin/purchases" component={PurchaseHistory} />
 
             {/* 404 */}
             <Route component={NotFound} />

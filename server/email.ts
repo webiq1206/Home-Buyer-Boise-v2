@@ -382,8 +382,8 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
         <div class="email-wrapper">
           <div class="header">
             <div class="logo-container">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="Lawn Care Kuna Icon" class="icon">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="Lawn Care Kuna" class="logo">
+              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="HomeBuyerBoise Icon" class="icon">
+              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" class="logo">
             </div>
             <h1>New Quote Request</h1>
             <p>AI-Powered Quote System</p>
@@ -500,7 +500,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           </div>
 
           <div class="footer">
-            <p class="footer-brand">Lawn Care Kuna</p>
+            <p class="footer-brand">HomeBuyerBoise</p>
             <p class="footer-tagline">Kuna, Idaho's Most Trusted Lawn Care & Landscaping Service</p>
             <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
             <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
@@ -523,8 +523,8 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
         <div class="email-wrapper">
           <div class="header">
             <div class="logo-container">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="Lawn Care Kuna Icon" class="icon">
-              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="Lawn Care Kuna" class="logo">
+              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-icon.png" alt="HomeBuyerBoise Icon" class="icon">
+              <img src="https://lawncarekuna.com/attached_assets/lawn-care-kuna-logo.png" alt="HomeBuyerBoise" class="logo">
             </div>
             <h1>Thank You for Your Request</h1>
             <p>We're excited to help transform your outdoor space!</p>
@@ -533,7 +533,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           <div class="content">
             <p class="greeting">Hi ${customerName},</p>
             
-            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing Lawn Care Kuna for your ${serviceType.toLowerCase()} needs. We've received your quote request and our team is reviewing the details.</p>
+            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing HomeBuyerBoise for your ${serviceType.toLowerCase()} needs. We've received your quote request and our team is reviewing the details.</p>
 
             <div class="highlight-box">
               <p><strong>What happens next?</strong></p>
@@ -622,7 +622,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           </div>
 
           <div class="footer">
-            <p class="footer-brand">Lawn Care Kuna</p>
+            <p class="footer-brand">HomeBuyerBoise</p>
             <p class="footer-tagline">Kuna, Idaho's Most Trusted Lawn Care & Landscaping Service</p>
             <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
             <p class="footer-contact">Phone: (208) 352-2011</p>
@@ -638,7 +638,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
     // Send email to business owner
     console.log('[EMAIL] Sending admin notification to:', fromEmail);
     const adminResult = await resend.emails.send({
-      from: `Lawn Care Kuna <${fromEmail}>`,
+      from: `HomeBuyerBoise <${fromEmail}>`,
       to: fromEmail,
       subject: `New Quote Request - ${customerName} (${city})`,
       html: ownerEmailHtml,
@@ -653,9 +653,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
     if (customerEmail) {
       console.log('[EMAIL] Sending customer confirmation to:', customerEmail);
       const customerResult = await resend.emails.send({
-        from: `Lawn Care Kuna <${fromEmail}>`,
+        from: `HomeBuyerBoise <${fromEmail}>`,
         to: customerEmail,
-        subject: `Your Quote Request Received - Lawn Care Kuna`,
+        subject: `Your Quote Request Received - HomeBuyerBoise`,
         html: customerEmailHtml
       });
       console.log('[EMAIL] Customer email sent, result:', customerResult);

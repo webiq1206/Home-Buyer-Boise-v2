@@ -9,11 +9,11 @@ export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col">
       <Helmet>
-        <title>Privacy Policy | Lawn Care Kuna</title>
-        <meta name="description" content="Learn how Lawn Care Kuna protects your privacy and handles your personal information. We're committed to safeguarding your data and providing transparent information practices." />
+        <title>Privacy Policy | HomeBuyerBoise</title>
+        <meta name="description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information. We're committed to safeguarding your data and providing transparent information practices." />
         <link rel="canonical" href="https://lawncarekuna.com/privacy-policy" />
-        <meta property="og:title" content="Privacy Policy | Lawn Care Kuna" />
-        <meta property="og:description" content="Learn how Lawn Care Kuna protects your privacy and handles your personal information." />
+        <meta property="og:title" content="Privacy Policy | HomeBuyerBoise" />
+        <meta property="og:description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information." />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Privacy Policy for Lawn Care Kuna professional services"
+            alt="Privacy Policy for HomeBuyerBoise professional services"
             className="w-full h-full object-cover"
           />
         </div>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
             {/* Introduction */}
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground">
-                At Lawn Care Kuna, we are committed to protecting your privacy and handling your personal information with care and respect. This Privacy Policy explains how we collect, use, share, and protect your information when you use our website or services.
+                At HomeBuyerBoise, we are committed to protecting your privacy and handling your personal information with care and respect. This Privacy Policy explains how we collect, use, share, and protect your information when you use our website or services.
               </p>
             </div>
 
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                   <li><strong>Quote Processing:</strong> To prepare and deliver accurate service quotes based on your property and needs</li>
-                  <li><strong>Service Delivery:</strong> To schedule, perform, and complete the lawn care and landscaping services you request</li>
+                  <li><strong>Service Delivery:</strong> To schedule, perform, and complete the cash home buying services you request</li>
                   <li><strong>Communication:</strong> To respond to your inquiries, provide service updates, and send appointment reminders</li>
                   <li><strong>Payment Processing:</strong> To process payments and maintain billing records for services rendered</li>
                   <li><strong>Service Improvement:</strong> To understand customer needs and improve our service offerings</li>
@@ -222,7 +222,7 @@ export default function PrivacyPolicy() {
                   If you have questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please contact us:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>Email:</strong> <a href="mailto:hello@lawncarekuna.com" className="text-primary hover:underline" data-testid="link-privacy-email">hello@lawncarekuna.com</a></p>
+                  <p><strong>Email:</strong> <a href="mailto:hello@homebuyerboise.com" className="text-primary hover:underline" data-testid="link-privacy-email">hello@homebuyerboise.com</a></p>
                   <p><strong>Phone:</strong> <a href="tel:2083522011" className="text-primary hover:underline" data-testid="link-privacy-phone">(208) 352-2011</a></p>
                   <p><strong>Subject Line:</strong> "Privacy Policy Inquiry"</p>
                 </div>

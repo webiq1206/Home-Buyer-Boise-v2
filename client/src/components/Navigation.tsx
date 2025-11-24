@@ -10,13 +10,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, Home as HomeIcon, DollarSign, FileText, HelpCircle, Building2, ArrowRight } from "lucide-react";
-import logoUrlPng from "@assets/Lawn Care Kuna Logo_1763734387982.png";
-import logoUrlWebp from "@assets/Lawn Care Kuna Logo_400x100.webp";
+import { Menu, Home, DollarSign, FileText, HelpCircle, Building2, ArrowRight } from "lucide-react";
 
 // Cash home buying pages - simple navigation structure
 const mainPages = [
-  { name: "How It Works", href: "/how-it-works", icon: HelpCircle },
+  { name: "How It Works", href: "/pricing", icon: HelpCircle },
   { name: "Get Cash Offer", href: "/get-quote", icon: DollarSign },
   { name: "About Us", href: "/about", icon: Building2 },
   { name: "Contact", href: "/contact", icon: FileText },
@@ -29,19 +27,14 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/95">
       <nav className="container flex h-20 items-center justify-between gap-4 px-8 md:px-12">
-        <Link href="/" className="flex items-center flex-shrink-0">
-          <picture>
-            <source srcSet={logoUrlWebp} type="image/webp" />
-            <img 
-              src={logoUrlPng} 
-              alt="HomeBuyerBoise - Professional Cash Home Buyers in Boise, Idaho" 
-              className="h-10 w-auto"
-              width="200"
-              height="40"
-              loading="eager"
-              data-testid="logo-image"
-            />
-          </picture>
+        <Link href="/" className="flex items-center flex-shrink-0" data-testid="link-home-logo">
+          <div className="flex items-center gap-2">
+            <Home className="h-7 w-7 text-primary" />
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-primary leading-tight">HomeBuyer</span>
+              <span className="text-xs font-semibold text-primary/70 leading-tight -mt-0.5">BOISE</span>
+            </div>
+          </div>
         </Link>
 
         <div className="flex-1"></div>
@@ -64,12 +57,12 @@ export function Navigation() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/how-it-works">
+                <Link href="/pricing">
                   <span
                     className={`px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
-                      location === "/how-it-works" ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                      location === "/pricing" ? "text-primary" : "text-foreground/80 hover:text-foreground"
                     }`}
-                    data-testid="nav-how-it-works"
+                    data-testid="nav-pricing"
                   >
                     How It Works
                   </span>
@@ -148,8 +141,8 @@ export function Navigation() {
                   </div>
                 </Link>
 
-                <Link href="/how-it-works" onClick={() => setMobileOpen(false)}>
-                  <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-how-it-works-mobile">
+                <Link href="/pricing" onClick={() => setMobileOpen(false)}>
+                  <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-pricing-mobile">
                     How It Works
                   </div>
                 </Link>
