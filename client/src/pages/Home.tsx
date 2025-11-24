@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { QuoteWizard } from "@/components/QuoteWizard";
 import {
   Home as HomeIcon,
   Phone,
@@ -163,44 +164,45 @@ export default function Home() {
           <div className="absolute inset-0 bg-grid-white/5"></div>
           
           <div className="container px-4 md:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                <Shield className="h-4 w-4 text-white" />
-                <span className="text-sm font-medium text-white">Licensed & Insured Cash Home Buyers</span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
-                Sell Your Boise House
-                <br />
-                <span className="text-accent">Fast for Cash</span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-                Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. Close on your timeline.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-                <Button 
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 h-12 text-base"
-                  onClick={() => window.location.href = "/get-quote"}
-                  data-testid="button-get-offer"
-                >
-                  Get My Cash Offer
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 h-12 px-8 text-base"
-                  asChild
-                  data-testid="button-learn-more"
-                >
-                  <a href="tel:2083522011">
-                    <Phone className="mr-2 h-5 w-5" />
-                    (208) 352-2011
-                  </a>
-                </Button>
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Column - Hero Content */}
+                <div className="text-center lg:text-left space-y-6 md:space-y-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                    <Shield className="h-4 w-4 text-white" />
+                    <span className="text-sm font-medium text-white">Licensed & Insured Cash Home Buyers</span>
+                  </div>
+                  
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                    Sell Your Boise House
+                    <br />
+                    <span className="text-accent">Fast for Cash</span>
+                  </h1>
+                  
+                  <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto lg:mx-0">
+                    Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. Close on your timeline.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-4">
+                    <Button 
+                      size="lg" 
+                      variant="outline" 
+                      className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 h-12 px-8 text-base"
+                      asChild
+                      data-testid="button-phone"
+                    >
+                      <a href="tel:2083522011">
+                        <Phone className="mr-2 h-5 w-5" />
+                        (208) 352-2011
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Right Column - Quote Wizard */}
+                <div className="lg:block">
+                  <QuoteWizard />
+                </div>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { QuoteWizard } from "@/components/QuoteWizard";
 import { 
   Home,
   Clock,
@@ -87,28 +88,32 @@ export default function Services() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4 md:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-              How We Help
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              We Buy Houses in Any Situation
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Whether you're facing foreclosure, going through a divorce, inherited a property, or simply need to sell fast—we provide fair cash offers and close on your timeline. Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <Button size="lg" asChild data-testid="button-get-quote">
-                <Link href="/get-quote">
-                  Get Your Cash Offer
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild data-testid="button-contact">
-                <Link href="/contact">
-                  Contact Us
-                </Link>
-              </Button>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Content */}
+              <div className="text-center lg:text-left space-y-6">
+                <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
+                  How We Help
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                  We Buy Houses in Any Situation
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  Whether you're facing foreclosure, going through a divorce, inherited a property, or simply need to sell fast—we provide fair cash offers and close on your timeline. Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                  <Button size="lg" variant="outline" asChild data-testid="button-contact">
+                    <Link href="/contact">
+                      Contact Us
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right Column - Quote Wizard */}
+              <div className="lg:block">
+                <QuoteWizard />
+              </div>
             </div>
           </div>
         </div>
