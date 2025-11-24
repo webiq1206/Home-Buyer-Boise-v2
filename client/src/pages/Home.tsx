@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { HeroQuoteSection } from "@/components/HeroQuoteSection";
 import { NearMeFAQ } from "@/components/NearMeFAQ";
+import { CommonSituations } from "@/components/CommonSituations";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import heroBackground from "@assets/Home Buyer Boise Background Image (1)_1764004682410.png";
@@ -281,6 +282,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Common Situations We Help With */}
+      <CommonSituations />
 
       {/* Full-Width Dark CTA */}
       <section className="py-16 bg-primary text-primary-foreground">

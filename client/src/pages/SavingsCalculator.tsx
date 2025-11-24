@@ -20,6 +20,9 @@ export default function SavingsCalculator() {
   const [selectedProperty, setSelectedProperty] = useState<PropertyData | null>(null);
   const [properties, setProperties] = useState<PropertyData[]>([]);
   const [homeValue, setHomeValue] = useState(0); // Start at 0 - only set after property lookup
+  const [showManualEntry, setShowManualEntry] = useState(false);
+  const [manualValue, setManualValue] = useState("");
+  const [manualDisplayValue, setManualDisplayValue] = useState("");
 
   // ENHANCED savings calculations - showing MUCH MORE savings to make cash offers appealing
   // Commission increased from 6% to 7.5% (more realistic with buyer agent concessions)
@@ -47,6 +50,47 @@ export default function SavingsCalculator() {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
+  };
+
+  const formatNumber = (num: number) => {
+    return new Intl.NumberFormat('en-US').format(num);
+  };
+
+  const handleManualValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    if (value === '') {
+      setManualValue("");
+      setManualDisplayValue('');
+      return;
+    }
+    const numValue = parseInt(value);
+    setManualValue(value);
+    setManualDisplayValue(formatNumber(numValue));
+  };
+
+  const handleManualEntry = () => {
+    if (!manualValue || parseInt(manualValue) < 50000) {
+      setError("Please enter a valid home value (minimum $50,000)");
+      return;
+    }
+
+    const value = parseInt(manualValue);
+    
+    // Create a minimal PropertyData object for manual entry
+    const manualProperty: PropertyData = {
+      parcel: "MANUAL-ENTRY",
+      address: address || "Manual Entry",
+      city: address.toUpperCase().includes("NAMPA") ? "Nampa" : 
+            address.toUpperCase().includes("CALDWELL") ? "Caldwell" :
+            address.toUpperCase().includes("MIDDLETON") ? "Middleton" : "Unknown",
+      buildingSqFt: Math.round(value / 250), // Reverse estimate
+    };
+
+    setSelectedProperty(manualProperty);
+    setHomeValue(value);
+    setShowManualEntry(false);
+    setError(null);
+    setSuggestion(null);
   };
 
   const handleAddressLookup = async () => {
@@ -86,6 +130,8 @@ export default function SavingsCalculator() {
       } else {
         setError(result.error || "Property not found");
         setSuggestion(result.suggestion || null);
+        // Show manual entry option when lookup fails
+        setShowManualEntry(true);
       }
     } catch (err) {
       console.error('[SavingsCalculator] Lookup error:', err);
@@ -346,6 +392,48 @@ export default function SavingsCalculator() {
                               </div>
                             </Button>
                           ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Manual Entry Option */}
+                    {showManualEntry && !selectedProperty && (
+                      <div className="p-6 bg-muted/30 border border-border rounded-lg">
+                        <div className="mb-4">
+                          <h3 className="font-semibold text-lg mb-2">Enter Your Home Value Manually</h3>
+                          <p className="text-sm text-muted-foreground">
+                            Property lookup isn't available for this location. Please enter your estimated home value to see your potential savings.
+                          </p>
+                        </div>
+                        <div className="flex gap-3">
+                          <div className="flex-1">
+                            <div className="relative">
+                              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl font-bold text-muted-foreground">
+                                $
+                              </span>
+                              <Input
+                                type="text"
+                                value={manualDisplayValue}
+                                onChange={handleManualValueChange}
+                                onKeyDown={(e) => e.key === 'Enter' && handleManualEntry()}
+                                className="text-2xl font-bold h-14 pl-10 pr-4"
+                                placeholder="300,000"
+                                data-testid="input-manual-value"
+                              />
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-2">
+                              Enter an approximate value - this helps us calculate your savings
+                            </p>
+                          </div>
+                          <Button 
+                            onClick={handleManualEntry}
+                            disabled={!manualValue || parseInt(manualValue) < 50000}
+                            size="lg"
+                            className="h-14 px-8"
+                            data-testid="button-manual-entry"
+                          >
+                            Calculate Savings
+                          </Button>
                         </div>
                       </div>
                     )}
