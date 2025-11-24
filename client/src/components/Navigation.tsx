@@ -110,6 +110,19 @@ export function Navigation() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/savings-calculator">
+                  <span
+                    className={`px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
+                      location === "/savings-calculator" ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                    }`}
+                    data-testid="nav-calculator"
+                  >
+                    Calculator
+                  </span>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <Link href="/about">
                   <span
                     className={`px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
@@ -214,6 +227,12 @@ export function Navigation() {
                   <Link href="/pricing" onClick={() => setMobileOpen(false)}>
                     <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-pricing-mobile">
                       How It Works
+                    </div>
+                  </Link>
+
+                  <Link href="/savings-calculator" onClick={() => setMobileOpen(false)}>
+                    <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-calculator-mobile">
+                      Savings Calculator
                     </div>
                   </Link>
 
