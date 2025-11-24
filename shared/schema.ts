@@ -1,9 +1,138 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, jsonb, decimal, boolean, index } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, timestamp, jsonb, decimal, boolean, index, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-// Detailed quote requests with AI analysis
+// Enums for property offers
+export const propertyTypeEnum = z.enum(["single-family", "townhome", "condo", "duplex", "multi-unit", "land"]);
+export const propertyConditionEnum = z.enum(["excellent", "good", "fair", "needs_work", "major_repairs"]);
+export const reasonForSellingEnum = z.enum(["relocating", "inherited", "divorce", "tired_landlord", "foreclosure", "downsizing", "other"]);
+export const timelineEnum = z.enum(["asap", "0-30days", "30-60days", "60+days", "exploring"]);
+export const avmSourceEnum = z.enum(["zillow", "estated", "attom", "user_input", "none"]);
+export const avmConfidenceEnum = z.enum(["high", "medium", "low", "none"]);
+
+// Property offers for cash home buying
+export const propertyOffers = pgTable("property_offers", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  
+  // Contact info
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  
+  // Property details
+  address: text("address"),
+  street: text("street"),
+  city: text("city").notNull(),
+  state: text("state").notNull().default("Idaho"),
+  zip: text("zip"),
+  fullAddress: text("full_address"),
+  
+  // Property characteristics
+  propertyType: text("property_type").notNull(), // single-family, townhome, condo, duplex, multi-unit, land
+  beds: integer("beds"),
+  baths: integer("baths"),
+  squareFeet: integer("square_feet"),
+  condition: text("condition").notNull(), // excellent, good, fair, needs_work, major_repairs
+  
+  // Seller situation
+  reasonForSelling: text("reason_for_selling"), // relocating, inherited, divorce, tired_landlord, foreclosure, downsizing, other
+  timeline: text("timeline"), // asap, 0-30days, 30-60days, 60+days, exploring
+  desiredClosingDate: timestamp("desired_closing_date"),
+  
+  // Valuation & Offer
+  estimatedMarketValue: decimal("estimated_market_value", { precision: 12, scale: 2 }), // ARV from API or user input
+  avmSource: text("avm_source"), // zillow, estated, attom, user_input, none
+  avmConfidence: text("avm_confidence"), // high, medium, low, none
+  avmFetchedAt: timestamp("avm_fetched_at"),
+  avmRaw: jsonb("avm_raw"), // raw API response for debugging
+  avmFailureReason: text("avm_failure_reason"), // error message if AVM fetch failed
+  
+  estimatedRepairs: decimal("estimated_repairs", { precision: 10, scale: 2 }), // calculated or provided
+  offerLow: decimal("offer_low", { precision: 12, scale: 2 }), // calculated offer range
+  offerHigh: decimal("offer_high", { precision: 12, scale: 2 }), // calculated offer range
+  anchorOffer: decimal("anchor_offer", { precision: 12, scale: 2 }), // middle of range
+  calculationInputs: jsonb("calculation_inputs"), // stores all inputs used for calculation
+  
+  // Consent & Communication - explicitly set by user, no defaults
+  consentToContact: boolean("consent_to_contact").notNull(),
+  consentToText: boolean("consent_to_text"),
+  consentToEmail: boolean("consent_to_email"),
+  
+  // Status
+  status: text("status").notNull().default("pending"), // pending, contacted, offer_made, accepted, declined, closed
+  contactedAt: timestamp("contacted_at"),
+  offerMadeAt: timestamp("offer_made_at"),
+  acceptedAt: timestamp("accepted_at"),
+  scheduledClosingDate: timestamp("scheduled_closing_date"),
+  
+  // Additional
+  message: text("message"),
+  notes: text("notes"), // internal notes
+  
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+}, (table) => ({
+  statusIdx: index("property_offers_status_idx").on(table.status),
+  cityIdx: index("property_offers_city_idx").on(table.city),
+  createdAtIdx: index("property_offers_created_at_idx").on(table.createdAt),
+}));
+
+export const insertPropertyOfferSchema = createInsertSchema(propertyOffers).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  contactedAt: true,
+  offerMadeAt: true,
+  acceptedAt: true,
+  avmFetchedAt: true,
+}).extend({
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  name: z.string().min(2, "Please enter your full name"),
+  city: z.string().min(1, "Please select your city"),
+  propertyType: propertyTypeEnum,
+  condition: propertyConditionEnum,
+  reasonForSelling: reasonForSellingEnum.optional(),
+  timeline: timelineEnum.optional(),
+  avmSource: avmSourceEnum.optional(),
+  avmConfidence: avmConfidenceEnum.optional(),
+  state: z.string().default("Idaho"),
+  consentToContact: z.boolean(), // Required, no default - must be explicitly provided
+});
+
+// Schema for offer submissions from the wizard
+export const offerSubmissionSchema = insertPropertyOfferSchema.extend({
+  estimatedMarketValue: z.union([z.string(), z.number()]).optional(),
+  estimatedRepairs: z.union([z.string(), z.number()]).optional(),
+  offerLow: z.union([z.string(), z.number()]).optional(),
+  offerHigh: z.union([z.string(), z.number()]).optional(),
+  anchorOffer: z.union([z.string(), z.number()]).optional(),
+  calculationInputs: z.any().optional(),
+  status: z.string().optional(),
+  address: z.string().optional(),
+  street: z.string().optional(),
+  zip: z.string().optional(),
+  fullAddress: z.string().optional(),
+  beds: z.union([z.string(), z.number()]).optional(),
+  baths: z.union([z.string(), z.number()]).optional(),
+  squareFeet: z.union([z.string(), z.number()]).optional(),
+  message: z.string().optional(),
+  notes: z.string().optional(),
+  desiredClosingDate: z.union([z.string(), z.date()]).optional(),
+  scheduledClosingDate: z.union([z.string(), z.date()]).optional(),
+  avmRaw: z.any().optional(),
+  avmFailureReason: z.string().optional(),
+  consentToText: z.boolean().optional(),
+  consentToEmail: z.boolean().optional(),
+});
+
+export type InsertPropertyOffer = z.infer<typeof insertPropertyOfferSchema>;
+export type OfferSubmission = z.infer<typeof offerSubmissionSchema>;
+export type PropertyOffer = typeof propertyOffers.$inferSelect;
+
+// Legacy quotes table - KEEP for backward compatibility during migration
+// This will be removed after all references are updated to propertyOffers
 export const quotes = pgTable("quotes", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   // Customer info
@@ -21,7 +150,7 @@ export const quotes = pgTable("quotes", {
   serviceType: text("service_type").notNull(),
   frequency: text("frequency"), // one-time, weekly, bi-weekly, monthly
   selectedServices: text("selected_services").array(), // array of service IDs
-  serviceData: jsonb("service_data"), // service-specific measurements {serviceId: {linearFeet: 200, zones: 6, etc.}}
+  serviceData: jsonb("service_data"), // service-specific measurements
   
   // AI Analysis
   aiAnalysis: jsonb("ai_analysis"), // terrain, obstacles, complexity assessment
@@ -47,32 +176,22 @@ export const insertQuoteSchema = createInsertSchema(quotes).omit({
   id: true,
   createdAt: true,
   acceptedAt: true,
-}).extend({
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  name: z.string().min(2, "Please enter your full name"),
-  serviceType: z.string().min(1, "Please select a service type"),
-  propertyType: z.string().min(1, "Please select a property type"),
-  city: z.string().min(1, "Please select your city"),
 });
 
-// Schema for quote submissions from the wizard (includes AI-generated fields)
 export const quoteSubmissionSchema = insertQuoteSchema.extend({
-  // Make AI-generated fields optional with proper types
   aiAnalysis: z.any().optional(),
   complexityScore: z.union([z.string(), z.number()]).optional(),
   baseCost: z.union([z.string(), z.number()]).optional(),
   adjustedCost: z.union([z.string(), z.number()]).optional(),
   finalQuote: z.union([z.string(), z.number()]).optional(),
   lineItems: z.any().optional(),
-  serviceData: z.any().optional(), // service-specific measurements
+  serviceData: z.any().optional(),
   status: z.string().optional(),
   scheduledDate: z.union([z.string(), z.date()]).optional(),
   frequency: z.string().optional(),
   selectedServices: z.array(z.string()).optional(),
   address: z.string().optional(),
   message: z.string().optional(),
-  // Allow propertySize as string or number (will be normalized)
   propertySize: z.union([z.string(), z.number()]).optional(),
 });
 
@@ -80,13 +199,14 @@ export type InsertQuote = z.infer<typeof insertQuoteSchema>;
 export type QuoteSubmission = z.infer<typeof quoteSubmissionSchema>;
 export type Quote = typeof quotes.$inferSelect;
 
-// Gallery Photos Schema
+// Gallery Photos Schema (before/after home photos, property examples)
 export const galleryPhotos = pgTable("gallery_photos", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  serviceType: text("service_type").notNull(),
+  category: text("category").notNull(), // before_after, property_examples, testimonial_photos
   city: text("city").notNull(),
-  beforeImageUrl: text("before_image_url").notNull(),
-  afterImageUrl: text("after_image_url").notNull(),
+  beforeImageUrl: text("before_image_url"),
+  afterImageUrl: text("after_image_url"),
+  imageUrl: text("image_url"), // single image for non-before/after
   title: text("title").notNull(),
   description: text("description"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -104,7 +224,7 @@ export type InsertGalleryPhoto = z.infer<typeof insertGalleryPhotoSchema>;
 export const testimonials = pgTable("testimonials", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   customerName: text("customer_name").notNull(),
-  serviceType: text("service_type").notNull(),
+  situation: text("situation").notNull(), // e.g., "Inherited property seller", "Quick relocation"
   city: text("city").notNull(),
   rating: text("rating").notNull(), // 1-5
   testimonial: text("testimonial").notNull(),
@@ -154,7 +274,7 @@ export const sessions = pgTable(
   })
 );
 
-// Users table (extends Replit Auth with lead distribution fields)
+// Users table
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   email: varchar("email").unique(),
@@ -162,12 +282,12 @@ export const users = pgTable("users", {
   lastName: varchar("last_name"),
   profileImageUrl: varchar("profile_image_url"),
   
-  // Lead distribution specific fields
+  // Contact info
   phone: text("phone"),
-  role: text("role").notNull().default("subcontractor"), // admin or subcontractor
+  
+  // Role
+  role: text("role").notNull().default("viewer"), // admin, acquisitions_manager, analyst, viewer
   company: text("company"),
-  licenseNumber: text("license_number"),
-  insuranceExpiry: timestamp("insurance_expiry"),
   
   // Agreement acceptance
   agreementAccepted: boolean("agreement_accepted").default(false),
@@ -191,52 +311,70 @@ export const upsertUserSchema = createInsertSchema(users).omit({
 export type UpsertUser = z.infer<typeof upsertUserSchema>;
 export type User = typeof users.$inferSelect;
 
-// Leads Schema (extends quotes)
+// Leads Schema - for CRM/lead distribution system
 export const leads = pgTable("leads", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   
-  // Link to original quote
+  // Link to original quote OR property offer
   quoteId: varchar("quote_id").references(() => quotes.id),
+  propertyOfferId: varchar("property_offer_id").references(() => propertyOffers.id),
   
-  // Lead details (copied from quote for denormalization)
+  // Lead details (copied for denormalization)
   name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
   address: text("address"),
   city: text("city").notNull(),
   propertyType: text("property_type").notNull(),
-  serviceType: text("service_type").notNull(),
+  condition: text("condition"),
+  
+  // Legacy fields (for quotes)
+  serviceType: text("service_type"),
   selectedServices: text("selected_services").array(),
-  frequency: text("frequency"), // one-time or recurring
+  frequency: text("frequency"),
   finalQuote: decimal("final_quote", { precision: 10, scale: 2 }),
   lineItems: jsonb("line_items"),
   serviceData: jsonb("service_data"),
+  
+  // New fields (for property offers)
+  anchorOffer: decimal("anchor_offer", { precision: 12, scale: 2 }),
+  estimatedMarketValue: decimal("estimated_market_value", { precision: 12, scale: 2 }),
+  offerLow: decimal("offer_low", { precision: 12, scale: 2 }),
+  offerHigh: decimal("offer_high", { precision: 12, scale: 2 }),
+  
   message: text("message"),
   
-  // Lead pricing
+  // Lead pricing - REQUIRED for lead marketplace functionality
   baseLeadPrice: decimal("base_lead_price", { precision: 10, scale: 2 }).notNull(),
   currentLeadPrice: decimal("current_lead_price", { precision: 10, scale: 2 }).notNull(),
-  priceReductionRate: decimal("price_reduction_rate", { precision: 5, scale: 2 }).default("1.50"), // 1.5% daily
+  priceReductionRate: decimal("price_reduction_rate", { precision: 5, scale: 2 }).notNull().default("1.50"), // 1.5% daily
   lastPriceUpdate: timestamp("last_price_update").defaultNow(),
   
   // Lead status
-  status: text("status").notNull().default("pending_admin"), // pending_admin, available, purchased, declined_admin
+  status: text("status").notNull().default("pending_admin"),
   adminReviewedBy: varchar("admin_reviewed_by").references(() => users.id),
   adminReviewedAt: timestamp("admin_reviewed_at"),
   adminDeclined: boolean("admin_declined").default(false),
   
-  // Purchase tracking
+  // Assignment & Purchase tracking
+  assignedTo: varchar("assigned_to").references(() => users.id),
+  assignedAt: timestamp("assigned_at"),
   purchasedBy: varchar("purchased_by").references(() => users.id),
   purchasedAt: timestamp("purchased_at"),
   purchasePrice: decimal("purchase_price", { precision: 10, scale: 2 }),
   stripePaymentIntentId: text("stripe_payment_intent_id"),
+  
+  // Follow-up tracking
+  lastContactedAt: timestamp("last_contacted_at"),
+  nextFollowUpDate: timestamp("next_follow_up_date"),
+  notes: text("notes"),
   
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 }, (table) => ({
   statusIdx: index("leads_status_idx").on(table.status),
   cityIdx: index("leads_city_idx").on(table.city),
-  serviceTypeIdx: index("leads_service_type_idx").on(table.serviceType),
+  assignedToIdx: index("leads_assigned_to_idx").on(table.assignedTo),
   statusCityIdx: index("leads_status_city_idx").on(table.status, table.city),
   priceIdx: index("leads_current_price_idx").on(table.currentLeadPrice),
 }));
@@ -246,25 +384,21 @@ export const insertLeadSchema = createInsertSchema(leads).omit({
   createdAt: true,
   updatedAt: true,
   lastPriceUpdate: true,
-}).extend({
-  // Make pricing fields optional since backend calculates them
-  baseLeadPrice: z.string().optional(),
-  currentLeadPrice: z.string().optional(),
 });
 
 export type Lead = typeof leads.$inferSelect;
 export type InsertLead = z.infer<typeof insertLeadSchema>;
 
-// Lead Purchases Schema (transaction history)
+// Lead Purchases Schema
 export const leadPurchases = pgTable("lead_purchases", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  leadId: varchar("lead_id").notNull().unique().references(() => leads.id), // UNIQUE: one purchase per lead
+  leadId: varchar("lead_id").notNull().unique().references(() => leads.id),
   userId: varchar("user_id").notNull().references(() => users.id),
   purchasePrice: decimal("purchase_price", { precision: 10, scale: 2 }).notNull(),
   stripePaymentIntentId: text("stripe_payment_intent_id").notNull(),
   stripeChargeId: text("stripe_charge_id"),
   
-  // Refund tracking (for no-refund policy enforcement)
+  // Refund tracking
   refunded: boolean("refunded").default(false),
   refundReason: text("refund_reason"),
   refundedAt: timestamp("refunded_at"),
@@ -286,10 +420,12 @@ export type InsertLeadPurchase = z.infer<typeof insertLeadPurchaseSchema>;
 export const notifications = pgTable("notifications", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   userId: varchar("user_id").notNull().references(() => users.id),
-  type: text("type").notNull(), // new_lead, lead_purchased, lead_price_drop, admin_new_quote
+  type: text("type").notNull(),
   title: text("title").notNull(),
   message: text("message").notNull(),
   leadId: varchar("lead_id").references(() => leads.id),
+  quoteId: varchar("quote_id").references(() => quotes.id),
+  propertyOfferId: varchar("property_offer_id").references(() => propertyOffers.id),
   
   // Status
   read: boolean("read").default(false),
