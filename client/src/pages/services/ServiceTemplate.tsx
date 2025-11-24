@@ -234,18 +234,33 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
               <p className="text-center text-muted-foreground mb-8">
                 We provide {service.name.toLowerCase()} services throughout the Boise metro area:
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {CITIES.map((city) => (
                   <Link
                     key={city.slug}
                     href={`/areas/${city.slug}`}
                     data-testid={`link-city-${city.slug}`}
                   >
-                    <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all">
-                      <CardContent className="pt-6 text-center">
-                        <MapPin className="h-5 w-5 mx-auto mb-2 text-primary" />
-                        <h3 className="font-semibold">{city.name}</h3>
-                        <p className="text-xs text-muted-foreground">Idaho</p>
+                    <Card className="hover-elevate active-elevate-2 cursor-pointer transition-all duration-300 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent relative overflow-hidden group">
+                      {/* Decorative corner accent */}
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-[2rem] transition-all duration-300 group-hover:from-primary/20" />
+                      
+                      <CardContent className="pt-5 pb-5 text-center relative">
+                        {/* Icon */}
+                        <div className="mb-3">
+                          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mx-auto shadow-sm border border-primary/10">
+                            <MapPin className="h-5 w-5 text-primary" strokeWidth={2.5} />
+                          </div>
+                        </div>
+                        
+                        {/* City Name */}
+                        <h3 className="font-bold text-base mb-1 text-foreground">{city.name}</h3>
+                        <p className="text-xs text-muted-foreground font-medium">Idaho</p>
+                        
+                        {/* Arrow indicator */}
+                        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ArrowRight className="h-4 w-4 mx-auto text-primary" />
+                        </div>
                       </CardContent>
                     </Card>
                   </Link>
