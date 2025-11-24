@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { CheckCircle2, Phone, MapPin, DollarSign, FileText, Key, Clock } from "lucide-react";
+import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 export default function HowItWorks() {
   const steps = [
@@ -71,8 +72,11 @@ export default function HowItWorks() {
 
       <div className="flex flex-col">
         {/* Hero Section */}
-        <section className="relative py-24 md:py-32 bg-gradient-to-br from-primary via-primary/90 to-primary/70">
-          <div className="absolute inset-0 bg-grid-white/5"></div>
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+          </div>
+          <div className="absolute inset-0 z-[1] bg-primary/70"></div>
           
           <div className="container px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">

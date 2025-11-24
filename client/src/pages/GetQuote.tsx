@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, CheckCircle2 } from "lucide-react";
+import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 export default function GetQuote() {
   const [_, setLocation] = useLocation();
@@ -37,8 +38,12 @@ export default function GetQuote() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/10 via-background to-background">
-      <div className="py-12 px-4">
+    <div className="relative min-h-screen overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-40" loading="lazy" />
+      </div>
+      <div className="absolute inset-0 z-[1] bg-background/70"></div>
+      <div className="py-12 px-4 relative z-10">
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">

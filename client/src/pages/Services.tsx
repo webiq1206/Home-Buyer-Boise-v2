@@ -17,6 +17,7 @@ import {
   ArrowRight,
   CheckCircle2
 } from "lucide-react";
+import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 const situations = [
   {
@@ -86,8 +87,12 @@ export default function Services() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-8">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-background/60"></div>
+        <div className="container px-4 md:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Content */}

@@ -2,14 +2,18 @@ import { QuoteWizard } from "@/components/QuoteWizard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
-import heroBackground from "@assets/3_1763997500317.png";
+import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 export default function Contact() {
   return (
     <div className="flex flex-col">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background">
-        <div className="container px-4">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-background/60"></div>
+        <div className="container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
               Contact Us
