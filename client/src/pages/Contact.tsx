@@ -2,7 +2,7 @@ import { QuoteWizard } from "@/components/QuoteWizard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
-import heroBackground from "@assets/Untitled design_1763639882299.png";
+import heroBackground from "@assets/3_1763997500317.png";
 
 export default function Contact() {
   return (
@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Contact HomeBuyerBoise for fast cash home offers in Boise, Idaho"
+            alt="Contact HomeBuyerBoise - Get your free cash offer within 24 hours for homes in Boise, Meridian, Nampa and Treasure Valley"
             className="w-full h-full object-cover"
           />
         </div>

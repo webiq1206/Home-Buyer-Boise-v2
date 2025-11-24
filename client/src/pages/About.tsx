@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Shield, Heart, Award, Users, Home, Clock, DollarSign, TrendingUp, MapPin, Handshake, BarChart3 } from "lucide-react";
 import { generateSEOMetadata } from "@/lib/seo";
 import { generateOrganizationSchema, generateLocalBusinessSchema } from "@/lib/schema";
-import heroBackground from "@assets/Untitled design_1763639882299.png";
+import heroBackground from "@assets/1_1763997500315.png";
 
 export default function About() {
   const seoData = generateSEOMetadata({
@@ -48,7 +48,7 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="About HomeBuyerBoise - Cash home buyers serving Boise metro area"
+            alt="HomeBuyerBoise - Professional cash home buyers serving Boise, Meridian, Nampa and Treasure Valley Idaho since 2017"
             className="w-full h-full object-cover"
           />
         </div>

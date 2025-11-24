@@ -23,6 +23,7 @@ import { HeroQuoteSection } from "@/components/HeroQuoteSection";
 import { NearMeFAQ } from "@/components/NearMeFAQ";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import heroBackground from "@assets/2_1763997500316.png";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
