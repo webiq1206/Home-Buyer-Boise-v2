@@ -157,33 +157,31 @@ export default function Home() {
       </Helmet>
 
       <div className="flex flex-col pb-20">
-        {/* Hero Section with Modern Gradient */}
-        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-blue-50 via-blue-100 to-teal-50">
-          {/* Subtle decorative elements */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(14,77,164,0.08),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(45,212,191,0.08),transparent_50%)]"></div>
+        {/* Hero Section with Navy Gradient */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70">
+          <div className="absolute inset-0 bg-grid-white/5"></div>
           
           <div className="container px-4 md:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20">
-                <Shield className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Licensed & Insured Cash Home Buyers</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                <Shield className="h-4 w-4 text-white" />
+                <span className="text-sm font-medium text-white">Licensed & Insured Cash Home Buyers</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
                 Sell Your Boise House
                 <br />
-                <span className="bg-gradient-to-r from-primary to-teal-600 bg-clip-text text-transparent">Fast for Cash</span>
+                <span className="text-accent">Fast for Cash</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
                 Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. Close on your timeline.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-12 text-base shadow-lg shadow-primary/25"
+                  className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 h-12 text-base"
                   onClick={() => window.location.href = "/get-quote"}
                   data-testid="button-get-offer"
                 >
@@ -193,7 +191,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-primary/30 bg-background/50 backdrop-blur-sm hover:bg-background/80 h-12 px-8 text-base"
+                  className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 h-12 px-8 text-base"
                   asChild
                   data-testid="button-learn-more"
                 >
