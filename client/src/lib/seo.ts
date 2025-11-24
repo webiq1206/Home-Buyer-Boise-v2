@@ -222,21 +222,36 @@ export function generateLogoAltTag(params: ServiceSEOParams): string {
 /**
  * Generate complete SEO metadata object for a page
  */
-export function generateSEOMetadata(params: ServiceSEOParams): SEOMetaData {
+export function generateSEOMetadata(params: ServiceSEOParams & { 
+  customCanonical?: string;
+  customOgImage?: string;
+}): SEOMetaData {
   const title = generatePageTitle(params);
   const description = generateMetaDescription(params);
   const keywords = generateKeywords(params);
   
   // Environment-aware canonical URL
   const baseUrl = getBaseUrl();
-  let canonical = baseUrl;
+  let canonical = params.customCanonical || baseUrl;
   
-  if (!params.isHomePage) {
+  if (!params.isHomePage && !params.customCanonical) {
     if (params.citySlug) {
-      // Use city slug for URL-safe canonical (handles multi-word cities)
-      canonical = `${baseUrl}/services/${params.serviceSlug}/${params.citySlug}`;
+      // City pages use /areas/city-slug format
+      canonical = `${baseUrl}/areas/${params.citySlug}`;
+    } else if (params.serviceSlug) {
+      canonical = `${baseUrl}/${params.serviceSlug}`;
+    }
+  }
+  
+  // Determine OG image based on page type
+  let ogImage = params.customOgImage;
+  if (!ogImage) {
+    if (params.citySlug) {
+      ogImage = `${baseUrl}/og-image-${params.citySlug}.jpg`;
+    } else if (params.serviceSlug) {
+      ogImage = `${baseUrl}/og-image-${params.serviceSlug}.jpg`;
     } else {
-      canonical = `${baseUrl}/services/${params.serviceSlug}`;
+      ogImage = `${baseUrl}/og-image-home.jpg`;
     }
   }
   
@@ -248,7 +263,7 @@ export function generateSEOMetadata(params: ServiceSEOParams): SEOMetaData {
     canonical,
     ogTitle: title,
     ogDescription: description,
-    ogImage: `${baseUrl}/og-image-${params.serviceSlug || 'home'}.jpg`,
+    ogImage,
     twitterCard: 'summary_large_image',
   };
 }
@@ -293,6 +308,24 @@ export const CITY_SEO_DATA = {
     climate: 'semi-arid with distinct four seasons',
     coordinates: { lat: 43.6954, lng: -116.3540 },
   },
+  Star: {
+    population: '11,117',
+    founded: '1905',
+    zipCodes: ['83669'],
+    neighborhoods: ['Floating Feather', 'Star Ranch', 'Star Pointe', 'Crossfield'],
+    landmarks: ['Star Community Park', 'Willow Creek Park', 'Happy Day Farms'],
+    climate: 'semi-arid climate with hot summers and cold winters',
+    coordinates: { lat: 43.6921, lng: -116.4935 },
+  },
+  Middleton: {
+    population: '9,480',
+    founded: '1863',
+    zipCodes: ['83644'],
+    neighborhoods: ['Purple Sage', 'Heights', 'Country Club Estates', 'Middleton Mill'],
+    landmarks: ['Middleton Mill', 'Middleton Place', 'Lake Lowell'],
+    climate: 'semi-arid climate with distinct seasons',
+    coordinates: { lat: 43.7077, lng: -116.6185 },
+  },
 };
 
 /**
@@ -329,3 +362,163 @@ export const BUSINESS_INFO = {
   reviewCount: 189,
   yearlyServicesCompleted: 85,
 };
+
+/**
+ * Generate LocalBusiness + RealEstateAgent Schema.org structured data
+ * Helps Google understand our business type and display rich results
+ */
+export function generateLocalBusinessSchema(city?: string) {
+  const baseUrl = getBaseUrl();
+  const cityData = city ? CITY_SEO_DATA[city as keyof typeof CITY_SEO_DATA] : undefined;
+  const coordinates = cityData?.coordinates || CITY_SEO_DATA.Boise.coordinates;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['LocalBusiness', 'RealEstateAgent'],
+    '@id': `${baseUrl}#organization`,
+    name: BUSINESS_INFO.name,
+    legalName: BUSINESS_INFO.legalName,
+    description: `Professional cash home buyers serving ${city || 'the Boise metro area'}. We buy houses in any condition with fair cash offers in 24 hours. No fees, no commissions, close on your timeline.`,
+    url: baseUrl,
+    telephone: BUSINESS_INFO.phone,
+    email: BUSINESS_INFO.email,
+    priceRange: '$$',
+    image: `${baseUrl}/og-image-home.jpg`,
+    logo: `${baseUrl}/logo.png`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.city,
+      addressRegion: BUSINESS_INFO.address.state,
+      postalCode: BUSINESS_INFO.address.zip,
+      addressCountry: BUSINESS_INFO.address.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: coordinates.lat,
+      longitude: coordinates.lng,
+    },
+    areaServed: BUSINESS_INFO.serviceArea.map(area => ({
+      '@type': 'City',
+      name: area,
+      '@id': `https://www.wikidata.org/wiki/${area === 'Boise' ? 'Q39061' : area}`,
+    })),
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '09:00',
+        closes: '15:00',
+      },
+    ],
+    sameAs: [
+      'https://www.facebook.com/homebuyerboise',
+      'https://www.instagram.com/homebuyerboise',
+      'https://www.linkedin.com/company/homebuyerboise',
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: BUSINESS_INFO.rating,
+      reviewCount: BUSINESS_INFO.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    foundingDate: BUSINESS_INFO.founded,
+    slogan: 'Sell Your House Fast for Cash',
+    paymentAccepted: 'Cash, Wire Transfer, Certified Check',
+    currenciesAccepted: 'USD',
+  };
+}
+
+/**
+ * Generate Service schema for city-specific cash home buying services
+ */
+export function generateServiceSchema(city: string) {
+  const baseUrl = getBaseUrl();
+  const cityData = CITY_SEO_DATA[city as keyof typeof CITY_SEO_DATA];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${baseUrl}/areas/${city.toLowerCase()}#service`,
+    name: `Cash Home Buying in ${city}`,
+    description: `Fast cash offers for homes in ${city}, Idaho. We buy houses in any condition with no fees or commissions. Close on your timeline.`,
+    provider: {
+      '@id': `${baseUrl}#organization`,
+    },
+    areaServed: {
+      '@type': 'City',
+      name: city,
+      '@id': `${baseUrl}/areas/${city.toLowerCase()}`,
+    },
+    serviceType: 'Real Estate Investment',
+    category: 'Cash Home Buyer',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      price: '0',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '0',
+        priceCurrency: 'USD',
+        description: 'No fees or commissions - 100% free service',
+      },
+    },
+    termsOfService: `${baseUrl}/terms-of-service`,
+    serviceOutput: 'Cash Offer within 24 hours',
+    slogan: `Sell Your House Fast in ${city}`,
+  };
+}
+
+/**
+ * Generate FAQ schema for rich results in search
+ */
+export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
+  const baseUrl = getBaseUrl();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${baseUrl}#faq`,
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Generate Breadcrumb schema for better navigation in search results
+ */
+export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url: string }>) {
+  const baseUrl = getBaseUrl();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: `${baseUrl}${crumb.url}`,
+    })),
+  };
+}
+
+/**
+ * Inject structured data script into page head
+ */
+export function injectStructuredData(schema: any): string {
+  return JSON.stringify(schema, null, 0);
+}
