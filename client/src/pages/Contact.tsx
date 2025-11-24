@@ -12,7 +12,7 @@ export default function Contact() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Contact Lawn Care Kuna for professional lawn care services in Idaho"
+            alt="Contact HomeBuyerBoise for fast cash home offers in Boise, Idaho"
             className="w-full h-full object-cover"
           />
         </div>
@@ -20,7 +20,7 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Contact Us</h1>
             <p className="text-lg text-muted-foreground">
-              Get your free, no-obligation quote or reach out with any questions
+              Get your free, no-obligation cash offer in less than 24 hours
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                 <div>
                   <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
                   <p className="text-muted-foreground mb-6">
-                    We'd love to hear from you. Fill out the form or contact us directly.
+                    Ready to sell your house fast? Fill out the form or contact us directly for your cash offer.
                   </p>
                 </div>
 
@@ -52,7 +52,7 @@ export default function Contact() {
                           (208) 352-2011
                         </a>
                         <p className="text-xs text-muted-foreground mt-1">
-                          Click to call us directly
+                          Call us for immediate assistance
                         </p>
                       </div>
                     </div>
@@ -67,8 +67,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
-                        <a href="mailto:hello@lawncarekuna.com" className="text-muted-foreground hover:text-primary transition-colors break-all" data-testid="link-email">
-                          hello@lawncarekuna.com
+                        <a href="mailto:hello@homebuyerboise.com" className="text-muted-foreground hover:text-primary transition-colors break-all" data-testid="link-email">
+                          hello@homebuyerboise.com
                         </a>
                         <p className="text-xs text-muted-foreground mt-1">
                           We respond within 24 hours
@@ -85,13 +85,13 @@ export default function Contact() {
                         <MapPin className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">Address</h3>
+                        <h3 className="font-semibold mb-1">Service Area</h3>
                         <p className="text-sm text-muted-foreground">
                           2283 N Coopers Hawk Ave<br />
                           Kuna, ID 83634
                         </p>
                         <p className="text-xs text-muted-foreground mt-2">
-                          Serving Kuna, Boise, Meridian, Eagle, Star, Middleton & surrounding areas
+                          Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, Garden City & surrounding areas
                         </p>
                       </div>
                     </div>
@@ -107,8 +107,8 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Business Hours</h3>
                         <div className="text-sm text-muted-foreground space-y-1">
-                          <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
-                          <p>Saturday: 8:00 AM - 4:00 PM</p>
+                          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                          <p>Saturday: 9:00 AM - 3:00 PM</p>
                           <p>Sunday: Closed</p>
                         </div>
                       </div>
@@ -130,9 +130,9 @@ export default function Contact() {
       <section className="py-16">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Visit Us</h2>
+            <h2 className="text-3xl font-bold">Our Location</h2>
             <p className="text-muted-foreground">
-              Located in Kuna, Idaho. Serving the entire Treasure Valley area.
+              Based in Kuna, Idaho. We buy houses throughout the Treasure Valley area.
             </p>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <iframe
@@ -143,7 +143,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lawn Care Kuna Location - 2283 N Coopers Hawk Ave, Kuna, ID 83634"
+                title="HomeBuyerBoise Location - 2283 N Coopers Hawk Ave, Kuna, ID 83634"
                 data-testid="map-location"
               />
             </div>
@@ -193,27 +193,27 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   1
                 </div>
-                <h3 className="font-semibold text-lg mb-2">We Review Your Request</h3>
+                <h3 className="font-semibold text-lg mb-2">Property Review</h3>
                 <p className="text-sm text-muted-foreground">
-                  We'll review your quote request and property details within a few hours
+                  We review your property details and research comparable sales in your area
                 </p>
               </div>
               <div>
                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   2
                 </div>
-                <h3 className="font-semibold text-lg mb-2">We Contact You</h3>
+                <h3 className="font-semibold text-lg mb-2">Cash Offer Presented</h3>
                 <p className="text-sm text-muted-foreground">
-                  We'll reach out via phone or email within 24 hours to discuss your needs
+                  Receive your fair, no-obligation cash offer within 24 hours—no waiting
                 </p>
               </div>
               <div>
                 <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                   3
                 </div>
-                <h3 className="font-semibold text-lg mb-2">You Receive Your Quote</h3>
+                <h3 className="font-semibold text-lg mb-2">Close on Your Timeline</h3>
                 <p className="text-sm text-muted-foreground">
-                  We provide a detailed, transparent quote with no hidden fees or obligations
+                  Accept the offer and close in as little as 7 days, or take more time if needed
                 </p>
               </div>
             </div>

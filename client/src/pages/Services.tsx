@@ -3,96 +3,85 @@ import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  Scissors, 
-  Sprout, 
-  Droplets, 
-  Shield, 
-  Trees, 
-  Fence, 
-  Sparkles,
-  Mountain,
-  Waves,
-  Flame,
-  Lightbulb,
-  Building2,
-  ArrowRight
+  Home,
+  Clock,
+  Heart,
+  Users,
+  TrendingDown,
+  Briefcase,
+  PiggyBank,
+  MapPin,
+  Shield,
+  DollarSign,
+  ArrowRight,
+  CheckCircle2
 } from "lucide-react";
-import { PRIORITY_SERVICES } from "@shared/contentData";
 
-// Service icons mapping
-const serviceIcons: Record<string, React.ElementType> = {
-  'lawn-mowing': Scissors,
-  'aeration': Sprout,
-  'fertilization': Droplets,
-  'weed-control': Shield,
-  'lawn-maintenance': Scissors,
-  'hedge-trimming': Trees,
-  'seasonal-cleanup': Trees,
-  'landscaping': Trees,
-  'fence-installation': Fence,
-  'patio-installation': Mountain,
-  'pond-installation': Waves,
-  'irrigation-installation': Droplets,
-  'christmas-lights': Sparkles,
-};
+const situations = [
+  {
+    icon: Clock,
+    title: "Foreclosure Prevention",
+    description: "Facing foreclosure? We can close quickly before the auction date, helping you avoid foreclosure on your credit and potentially walk away with cash."
+  },
+  {
+    icon: Heart,
+    title: "Divorce or Separation",
+    description: "Going through a divorce? We make selling the marital home simple and fast, allowing both parties to move forward without the stress of traditional selling."
+  },
+  {
+    icon: Users,
+    title: "Inherited Property",
+    description: "Inherited a house you don't want? We buy inherited properties as-is, handling all the paperwork and letting you settle the estate without hassle."
+  },
+  {
+    icon: Briefcase,
+    title: "Job Relocation",
+    description: "Transferred to a new city? Close in as little as 7 days so you can start your new job without worrying about your old house sitting on the market."
+  },
+  {
+    icon: TrendingDown,
+    title: "Tired Landlord",
+    description: "Tired of dealing with tenants, repairs, and property management? Sell your rental property fast and eliminate the landlord headaches."
+  },
+  {
+    icon: Home,
+    title: "Major Repairs Needed",
+    description: "House needs significant repairs you can't afford? We buy houses in any condition—no need to fix anything before selling."
+  },
+  {
+    icon: PiggyBank,
+    title: "Downsizing",
+    description: "Kids moved out and house too big? Sell quickly without the long traditional process and move into your ideal space sooner."
+  },
+  {
+    icon: MapPin,
+    title: "Out-of-State Ownership",
+    description: "Own property in Idaho but live elsewhere? We handle everything remotely so you can sell without making multiple trips."
+  },
+];
 
-// Default icon if not found
-const DefaultIcon = Trees;
+const benefits = [
+  "Close in as little as 7 days",
+  "No realtor commissions or fees",
+  "We buy houses in any condition",
+  "No repairs or cleaning required",
+  "No showings or open houses",
+  "We handle all paperwork",
+  "Cash payment at closing",
+  "Flexible closing timeline",
+];
 
 export default function Services() {
-  // Organize services by category
-  const lawnCareServices = PRIORITY_SERVICES.filter(s => s.category === 'lawn-care');
-  const landscapingServices = PRIORITY_SERVICES.filter(s => s.category.startsWith('landscaping-'));
-  const christmasServices = PRIORITY_SERVICES.filter(s => s.category === 'christmas-lights');
-  const commercialServices = [
-    {
-      slug: 'commercial',
-      name: 'Commercial Lawn Care',
-      category: 'commercial',
-      shortDescription: 'Professional landscape maintenance for businesses, offices, and retail centers'
-    },
-    {
-      slug: 'commercial/hoa-services',
-      name: 'HOA Services',
-      category: 'commercial',
-      shortDescription: 'Comprehensive landscape management for homeowner associations'
-    },
-  ];
-
-  const ServiceCard = ({ service }: { service: { slug: string; name: string; shortDescription: string } }) => {
-    const Icon = serviceIcons[service.slug] || DefaultIcon;
-    
-    return (
-      <Link href={`/services/${service.slug}`}>
-        <Card className="hover-elevate transition-all duration-200 cursor-pointer h-full" data-testid={`service-card-${service.slug}`}>
-          <CardHeader>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                <Icon className="h-6 w-6" />
-              </div>
-              <div className="flex-1">
-                <CardTitle className="text-lg mb-2">{service.name}</CardTitle>
-                <CardDescription className="line-clamp-2">
-                  {service.shortDescription}
-                </CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-        </Card>
-      </Link>
-    );
-  };
-
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Professional Lawn Care & Landscaping Services | Lawn Care Kuna</title>
+        <title>Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise</title>
         <meta 
           name="description" 
-          content="Comprehensive lawn care and landscaping services in Kuna, Boise, and Meridian, Idaho. From weekly mowing to landscape design, irrigation, hardscaping, and Christmas lights - we do it all." 
+          content="We buy houses in any condition across Boise, Meridian, Nampa, and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." 
         />
-        <meta property="og:title" content="Professional Lawn Care & Landscaping Services | Lawn Care Kuna" />
-        <meta property="og:description" content="Comprehensive lawn care and landscaping services in Kuna, Boise, and Meridian, Idaho. From weekly mowing to landscape design, irrigation, hardscaping, and Christmas lights - we do it all." />
+        <meta property="og:title" content="Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise" />
+        <meta property="og:description" content="We buy houses in any condition across Boise, Meridian, Nampa, and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." />
       </Helmet>
 
       {/* Hero Section */}
@@ -100,18 +89,18 @@ export default function Services() {
         <div className="container px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-2">
-              Our Services
+              How We Help
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Complete Lawn Care & Landscaping Solutions
+              We Buy Houses in Any Situation
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              From routine lawn maintenance to complete landscape transformations, we provide professional services throughout Idaho's Treasure Valley. Serving Kuna, Boise, Meridian, Eagle, Star, and Middleton with reliable, high-quality results.
+              Whether you're facing foreclosure, going through a divorce, inherited a property, or simply need to sell fast—we provide fair cash offers and close on your timeline. Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
               <Button size="lg" asChild data-testid="button-get-quote">
                 <Link href="/get-quote">
-                  Get Free Estimate
+                  Get Your Cash Offer
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -125,107 +114,172 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Lawn Care Services */}
+      {/* Situations We Help With */}
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-8">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Lawn Care Services
+                Situations We Help With
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Keep your lawn healthy, green, and beautiful year-round with our professional lawn care services tailored to Idaho's unique climate and soil conditions.
+                No matter your situation, we provide fast, fair cash offers that help you move forward
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {lawnCareServices.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Landscaping Services */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Landscaping & Installation Services
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Transform your outdoor spaces with professional landscaping, hardscaping, irrigation, and specialty installations designed to enhance your property's beauty and value.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {landscapingServices.map((service) => (
-                <ServiceCard key={service.slug} service={service} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Christmas Lights */}
-      {christmasServices.length > 0 && (
-        <section className="py-16 md:py-24">
-          <div className="container px-4 md:px-8">
-            <div className="max-w-6xl mx-auto space-y-12">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                  Holiday Lighting Services
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Make your home shine this holiday season with professional Christmas light installation and removal services. We handle everything from design to takedown.
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {christmasServices.map((service) => (
-                  <ServiceCard key={service.slug} service={service} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Commercial Services */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-8">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Commercial & HOA Services
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Professional landscape maintenance solutions for businesses, property managers, and homeowner associations. Reliable service that keeps your commercial properties looking their best.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {commercialServices.map((service) => (
-                <Link key={service.slug} href={`/${service.slug}`}>
-                  <Card className="hover-elevate transition-all duration-200 cursor-pointer h-full" data-testid={`service-card-${service.slug}`}>
+              {situations.map((situation) => {
+                const Icon = situation.icon;
+                return (
+                  <Card key={situation.title} className="hover-elevate transition-all duration-200" data-testid={`situation-card-${situation.title.toLowerCase().replace(/\s+/g, '-')}`}>
                     <CardHeader>
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                          <Building2 className="h-6 w-6" />
+                          <Icon className="h-6 w-6" />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="text-lg mb-2">{service.name}</CardTitle>
-                          <CardDescription className="line-clamp-2">
-                            {service.shortDescription}
+                          <CardTitle className="text-lg mb-2">{situation.title}</CardTitle>
+                          <CardDescription>
+                            {situation.description}
                           </CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                   </Card>
-                </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container px-4 md:px-8">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                How It Works
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Our simple 3-step process gets you from offer to cash in hand
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  1
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Submit Property Info</h3>
+                <p className="text-sm text-muted-foreground">
+                  Fill out our simple form with your property address and details. Takes less than 60 seconds.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  2
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Get Your Cash Offer</h3>
+                <p className="text-sm text-muted-foreground">
+                  Receive a fair, no-obligation cash offer within 24 hours based on current market data.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                  3
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Close on Your Schedule</h3>
+                <p className="text-sm text-muted-foreground">
+                  Choose your closing date—as fast as 7 days or take more time. Get cash at closing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-16 md:py-24">
+        <div className="container px-4 md:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Why Homeowners Choose Us
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {benefits.map((benefit) => (
+                <div key={benefit} className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
+                  </div>
+                  <div className="text-lg">{benefit}</div>
+                </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Types We Buy */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container px-4 md:px-8">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+                Property Types We Buy
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                We purchase all types of residential properties in any condition
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="hover-elevate">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Home className="h-5 w-5 text-primary" />
+                    Single-Family Homes
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    We buy single-family houses in any condition, any location across the Treasure Valley.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-elevate">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Home className="h-5 w-5 text-primary" />
+                    Townhomes & Condos
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Townhomes, condos, and multi-family properties. We handle HOA requirements.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-elevate">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Home className="h-5 w-5 text-primary" />
+                    Multi-Unit Properties
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Duplexes, triplexes, and small apartment buildings. Even with tenants in place.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -239,15 +293,13 @@ export default function Services() {
               Serving Idaho's Treasure Valley
             </h2>
             <p className="text-lg text-muted-foreground">
-              We proudly provide professional lawn care and landscaping services to homeowners and businesses throughout the greater Boise area.
+              We buy houses throughout the greater Boise area
             </p>
             <div className="flex flex-wrap gap-3 justify-center text-sm">
-              {['Kuna', 'Boise', 'Meridian', 'Eagle', 'Star', 'Middleton'].map((city) => (
-                <Link key={city} href={`/areas/${city.toLowerCase()}`}>
-                  <div className="px-4 py-2 bg-card border rounded-md hover-elevate cursor-pointer" data-testid={`city-link-${city.toLowerCase()}`}>
-                    {city}
-                  </div>
-                </Link>
+              {['Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Kuna', 'Star', 'Garden City'].map((city) => (
+                <div key={city} className="px-4 py-2 bg-card border rounded-md" data-testid={`city-${city.toLowerCase()}`}>
+                  {city}
+                </div>
               ))}
             </div>
           </div>
@@ -259,15 +311,15 @@ export default function Services() {
         <div className="container px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Ready to Transform Your Outdoor Space?
+              Ready to Sell Your House Fast?
             </h2>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
-              Get a free, no-obligation estimate for any of our services. We'll assess your property and provide a detailed quote tailored to your specific needs.
+              Get a fair, no-obligation cash offer in less than 24 hours. No fees, no commissions, no hassle.
             </p>
             <div className="flex flex-wrap gap-4 justify-center pt-4">
               <Button size="lg" variant="secondary" asChild data-testid="button-cta-quote">
                 <Link href="/get-quote">
-                  Get Free Estimate
+                  Get Your Cash Offer
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

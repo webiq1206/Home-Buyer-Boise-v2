@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Shield, Heart, Award, Users, Wrench, FileCheck, GraduationCap, TrendingUp, MapPin, Leaf, Handshake, BarChart3 } from "lucide-react";
+import { CheckCircle2, Shield, Heart, Award, Users, Home, Clock, DollarSign, TrendingUp, MapPin, Handshake, BarChart3 } from "lucide-react";
 import { generateSEOMetadata } from "@/lib/seo";
 import { generateOrganizationSchema, generateLocalBusinessSchema } from "@/lib/schema";
 import heroBackground from "@assets/Untitled design_1763639882299.png";
@@ -42,20 +42,21 @@ export default function About() {
           {JSON.stringify(localBusinessSchema)}
         </script>
       </Helmet>
+
       {/* Hero */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="About Lawn Care Kuna - Professional lawn care company serving Idaho since 2017"
+            alt="About HomeBuyerBoise - Cash home buyers serving Boise metro area"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">About Lawn Care Kuna</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">About HomeBuyerBoise</h1>
             <p className="text-lg text-muted-foreground">
-              Professional lawn care and landscaping services serving the Treasure Valley since 2017
+              Trusted cash home buyers helping homeowners across the Treasure Valley since 2017
             </p>
           </div>
         </div>
@@ -68,35 +69,67 @@ export default function About() {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Since 2017, Lawn Care Kuna has been providing professional lawn care and landscaping services to homeowners and businesses throughout the Treasure Valley. What started as a local lawn mowing service has grown into a comprehensive landscaping company offering everything from basic lawn maintenance to complex hardscaping projects.
+                Since 2017, HomeBuyerBoise has been helping homeowners sell their properties quickly and hassle-free throughout the Treasure Valley. What started as a mission to help families in difficult situations has grown into a trusted cash home buying service serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
               </p>
               <p className="text-lg text-muted-foreground mb-4">
-                We understand Idaho's unique climate challenges - from scorching summer heat to freezing winter temperatures. Our team has the local expertise to ensure your lawn and landscape thrives year-round in our high-desert climate.
+                We understand that selling a home can be stressful—whether you're facing foreclosure, going through a divorce, dealing with an inherited property, or simply need to relocate quickly. Our team specializes in providing fair cash offers and closing on your timeline, not ours.
               </p>
               <p className="text-lg text-muted-foreground">
-                Today, we proudly serve residential and commercial properties across Kuna, Boise, Meridian, Eagle, Star, and Middleton, maintaining our commitment to honest service, quality workmanship, and customer satisfaction.
+                Today, we've helped hundreds of homeowners transition to their next chapter with dignity, speed, and financial fairness. We're proud to be a locally-owned solution serving our Treasure Valley neighbors when they need it most.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Credentials & Certifications */}
+      {/* Why We're Different */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Credentials & Certifications</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center">Why We're Different</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="hover-elevate transition-all duration-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="h-6 w-6 text-primary" />
+                      <DollarSign className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">7+ Years Experience</h3>
+                      <h3 className="font-semibold text-lg mb-2">Fair Cash Offers</h3>
                       <p className="text-muted-foreground">
-                        Serving the Treasure Valley since 2017, we've completed thousands of successful lawn care and landscaping projects across residential and commercial properties.
+                        We provide competitive cash offers based on current market conditions, property condition, and recent sales data. No lowball offers—just honest, transparent pricing.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-elevate transition-all duration-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Close on Your Timeline</h3>
+                      <p className="text-muted-foreground">
+                        Need to close in 7 days? 30 days? 90 days? We work on your schedule. Whether you need to move quickly or need more time, we adapt to your situation.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover-elevate transition-all duration-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Home className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">Buy As-Is</h3>
+                      <p className="text-muted-foreground">
+                        We buy houses in any condition. No repairs needed, no cleaning required, no staging. We handle everything—you just bring the keys to closing.
                       </p>
                     </div>
                   </div>
@@ -110,9 +143,9 @@ export default function About() {
                       <Shield className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Fully Licensed & Insured</h3>
+                      <h3 className="font-semibold text-lg mb-2">No Fees or Commissions</h3>
                       <p className="text-muted-foreground">
-                        We carry comprehensive general liability insurance and workers' compensation coverage to protect your property and our team on every job.
+                        Unlike traditional sales, there are no realtor commissions, no closing costs, no inspection fees. The offer we make is the amount you receive at closing.
                       </p>
                     </div>
                   </div>
@@ -123,12 +156,12 @@ export default function About() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="h-6 w-6 text-primary" />
+                      <TrendingUp className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Professional Training</h3>
+                      <h3 className="font-semibold text-lg mb-2">7+ Years Experience</h3>
                       <p className="text-muted-foreground">
-                        Our team undergoes continuous safety training and professional development. We stay current with industry best practices and Idaho-specific landscaping techniques.
+                        Since 2017, we've successfully purchased hundreds of properties across the Treasure Valley. We understand Idaho's real estate market and close deals efficiently.
                       </p>
                     </div>
                   </div>
@@ -139,44 +172,12 @@ export default function About() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Wrench className="h-6 w-6 text-primary" />
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Commercial-Grade Equipment</h3>
+                      <h3 className="font-semibold text-lg mb-2">Local Market Expertise</h3>
                       <p className="text-muted-foreground">
-                        We invest in professional-grade mowers, aerators, and landscaping equipment to deliver efficient, high-quality results that exceed residential-grade tools.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover-elevate transition-all duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <FileCheck className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Industry Affiliations</h3>
-                      <p className="text-muted-foreground">
-                        Members of professional landscaping associations. We follow industry standards and maintain relationships with local nurseries and suppliers.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="hover-elevate transition-all duration-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Award className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Safety Certified</h3>
-                      <p className="text-muted-foreground">
-                        Our crews are trained in proper safety protocols for equipment operation, chemical application, and job site safety to ensure a secure work environment.
+                        As Treasure Valley locals, we understand the nuances of every neighborhood from Boise to Nampa. Our offers reflect accurate local market knowledge.
                       </p>
                     </div>
                   </div>
@@ -187,8 +188,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      {/* Our Core Values */}
+      <section className="py-16 md:py-24">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
@@ -200,9 +201,9 @@ export default function About() {
                       <Heart className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Honesty & Integrity</h3>
+                      <h3 className="font-semibold text-lg mb-2">Integrity & Transparency</h3>
                       <p className="text-muted-foreground">
-                        We value ourselves in staying honest and fair towards our customers. No hidden charges or gotchas - just transparent, straightforward service.
+                        We believe in complete transparency. Our cash offers are straightforward with no hidden fees, surprise deductions, or last-minute changes. What we offer is what you get.
                       </p>
                     </div>
                   </div>
@@ -213,12 +214,12 @@ export default function About() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Award className="h-6 w-6 text-primary" />
+                      <Handshake className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Quality Service</h3>
+                      <h3 className="font-semibold text-lg mb-2">Compassionate Service</h3>
                       <p className="text-muted-foreground">
-                        We provide the highest level of customer service and expertise with relentlessly consistent lawn care and landscaping services.
+                        We understand that selling your home often comes during challenging times. We treat every homeowner with respect, empathy, and professionalism.
                       </p>
                     </div>
                   </div>
@@ -234,7 +235,7 @@ export default function About() {
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Customer First</h3>
                       <p className="text-muted-foreground">
-                        Your satisfaction is our priority. We listen to your needs and work diligently to exceed your expectations on every project.
+                        Your situation, your timeline, your needs come first. We're here to provide solutions that work for you, not pressure you into decisions.
                       </p>
                     </div>
                   </div>
@@ -245,12 +246,12 @@ export default function About() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Wrench className="h-6 w-6 text-primary" />
+                      <Award className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Professional Standards</h3>
+                      <h3 className="font-semibold text-lg mb-2">Professional Excellence</h3>
                       <p className="text-muted-foreground">
-                        Our professional crews use commercial-grade equipment and follow industry best practices to deliver superior results.
+                        We maintain high standards in every transaction—from our initial offer to closing day. Professional, reliable, and efficient service every time.
                       </p>
                     </div>
                   </div>
@@ -262,7 +263,7 @@ export default function About() {
       </section>
 
       {/* What Sets Us Apart */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center">What Sets Us Apart</h2>
@@ -270,9 +271,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Local Idaho Expertise</h3>
+                  <h3 className="font-semibold text-lg mb-1">Local Treasure Valley Buyers</h3>
                   <p className="text-muted-foreground">
-                    We understand the Treasure Valley's unique climate, from USDA hardiness zones to seasonal timing for services. Our team knows exactly what works in Idaho's high-desert environment.
+                    We're not a national franchise or out-of-state investor. We're local Idahoans who know the Boise metro market inside and out, ensuring fair and accurate offers.
                   </p>
                 </div>
               </div>
@@ -280,9 +281,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Comprehensive Services</h3>
+                  <h3 className="font-semibold text-lg mb-1">Any Situation, Any Condition</h3>
                   <p className="text-muted-foreground">
-                    From basic lawn mowing to complex landscaping projects, we handle it all. One trusted partner for all your outdoor needs.
+                    Foreclosure, divorce, inherited property, relocation, downsizing, or simply want to avoid the hassle of traditional selling—we buy houses in any situation.
                   </p>
                 </div>
               </div>
@@ -290,9 +291,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Fully Insured & Reliable</h3>
+                  <h3 className="font-semibold text-lg mb-1">Fast & Reliable Process</h3>
                   <p className="text-muted-foreground">
-                    We carry general liability insurance and workers compensation coverage. Your property and our team are protected.
+                    Get your cash offer within 24 hours. Close in as little as 7 days, or take up to 90 days if you need more time. We're flexible and work around your schedule.
                   </p>
                 </div>
               </div>
@@ -300,9 +301,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Residential & Commercial</h3>
+                  <h3 className="font-semibold text-lg mb-1">No Hassle, No Repairs Required</h3>
                   <p className="text-muted-foreground">
-                    We serve both homeowners and commercial clients including HOAs, property management companies, and municipal contracts.
+                    Skip the cleaning, repairs, staging, open houses, and endless showings. Sell your house as-is and move on with your life stress-free.
                   </p>
                 </div>
               </div>
@@ -310,9 +311,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Professional Crew</h3>
+                  <h3 className="font-semibold text-lg mb-1">Real Cash Buyers</h3>
                   <p className="text-muted-foreground">
-                    Our uniformed, professional crews use commercial-grade equipment to deliver consistent, high-quality results on every job.
+                    We have the funds ready to close. No waiting for loan approvals or financing contingencies. When we make an offer, we can close.
                   </p>
                 </div>
               </div>
@@ -320,9 +321,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Flexible Contracts</h3>
+                  <h3 className="font-semibold text-lg mb-1">Proven Track Record</h3>
                   <p className="text-muted-foreground">
-                    We offer monthly, seasonal, and annual contracts to fit your needs. No long-term commitment required.
+                    Hundreds of satisfied homeowners across Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City have successfully sold to us since 2017.
                   </p>
                 </div>
               </div>
@@ -331,18 +332,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* Service Guarantee */}
+      {/* Our Guarantee */}
       <section className="py-16 md:py-24">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Our Service Guarantee</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center">Our Guarantee</h2>
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">100% Satisfaction Guarantee</h3>
+                  <h3 className="font-semibold text-lg mb-1">Fair & Honest Offers</h3>
                   <p className="text-muted-foreground">
-                    We stand behind our work with a complete satisfaction guarantee. If you're not happy with our service, we'll make it right at no additional charge. We don't consider the job done until you're thrilled with the results.
+                    We provide competitive cash offers based on current market data, comparable sales, and property condition. Our offers reflect real market value, not lowball tactics.
                   </p>
                 </div>
               </div>
@@ -350,9 +351,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Hardscaping Project Warranty</h3>
+                  <h3 className="font-semibold text-lg mb-1">No Obligation Consultation</h3>
                   <p className="text-muted-foreground">
-                    All hardscaping installations including patios, retaining walls, and fire pits come with a workmanship warranty. We use quality materials and professional installation techniques to ensure long-lasting results.
+                    Request your free cash offer with absolutely no obligation. Review our offer, take your time, and only proceed if it makes sense for your situation.
                   </p>
                 </div>
               </div>
@@ -360,9 +361,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Free Service Calls</h3>
+                  <h3 className="font-semibold text-lg mb-1">Zero Fees or Commissions</h3>
                   <p className="text-muted-foreground">
-                    If you're not satisfied with a completed service, we'll return to address your concerns at no extra cost. Your complete satisfaction is our priority, and we'll work until we get it right.
+                    We cover all closing costs. No realtor commissions (typically 5-6%), no inspection fees, no appraisal costs, no repair expenses. You keep the full offer amount.
                   </p>
                 </div>
               </div>
@@ -370,9 +371,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">No-Obligation Free Consultations</h3>
+                  <h3 className="font-semibold text-lg mb-1">Transparent Process</h3>
                   <p className="text-muted-foreground">
-                    Every project starts with a free, no-pressure consultation and quote. We'll assess your property, discuss your needs, and provide a detailed estimate with no obligation to proceed.
+                    Every step is clearly explained. You'll know exactly what to expect from initial offer through closing. No surprises, no hidden terms, no confusing paperwork.
                   </p>
                 </div>
               </div>
@@ -380,9 +381,9 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Transparent Pricing - No Hidden Fees</h3>
+                  <h3 className="font-semibold text-lg mb-1">Close on Your Schedule</h3>
                   <p className="text-muted-foreground">
-                    Our quotes are clear and comprehensive. You'll know exactly what you're paying for before we start, with no surprise charges or hidden fees. What we quote is what you pay.
+                    Need to close quickly? We can close in 7-14 days. Need more time? Take 60-90 days. The timeline is entirely up to you.
                   </p>
                 </div>
               </div>
@@ -393,29 +394,29 @@ export default function About() {
                 <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Quality Guarantee</h3>
+                <h3 className="font-semibold text-lg mb-2">Fair Pricing</h3>
                 <p className="text-sm text-muted-foreground">
-                  100% satisfaction guaranteed on all services. We don't consider the job done until you're happy.
+                  Competitive cash offers based on real market data and honest evaluation
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-primary" />
+                  <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Consistent Service</h3>
+                <h3 className="font-semibold text-lg mb-2">Fast Process</h3>
                 <p className="text-sm text-muted-foreground">
-                  Relentlessly consistent lawn care services. You can count on us week after week, season after season.
+                  Get your offer in 24 hours, close in as little as 7 days
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
+                  <DollarSign className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Professional Approach</h3>
+                <h3 className="font-semibold text-lg mb-2">No Fees</h3>
                 <p className="text-sm text-muted-foreground">
-                  Professional crews, commercial equipment, and attention to detail on every property we service.
+                  Zero commissions, closing costs, or hidden fees—keep 100% of the offer
                 </p>
               </div>
             </div>
@@ -427,7 +428,7 @@ export default function About() {
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">Community Involvement</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center">Serving the Treasure Valley</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="hover-elevate transition-all duration-200">
                 <CardContent className="p-6">
@@ -436,9 +437,9 @@ export default function About() {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Serving Treasure Valley Since 2017</h3>
+                      <h3 className="font-semibold text-lg mb-2">Local Since 2017</h3>
                       <p className="text-muted-foreground">
-                        Proud to serve our local community for over 7 years. We've built lasting relationships with homeowners and businesses across Kuna, Boise, Meridian, Eagle, Star, and Middleton.
+                        Proud to serve our local community for over 7 years. We've helped hundreds of homeowners across Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City.
                       </p>
                     </div>
                   </div>
@@ -452,9 +453,9 @@ export default function About() {
                       <Heart className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Local Family-Owned Business</h3>
+                      <h3 className="font-semibold text-lg mb-2">Locally Owned & Operated</h3>
                       <p className="text-muted-foreground">
-                        As a locally owned and operated company, we're invested in our community's success. Your neighbors are our neighbors, and we take pride in beautifying our shared community.
+                        As a local Idaho business, we're invested in our community's success. We treat every homeowner like a neighbor because they are.
                       </p>
                     </div>
                   </div>
@@ -468,9 +469,9 @@ export default function About() {
                       <Handshake className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Supporting Local Suppliers</h3>
+                      <h3 className="font-semibold text-lg mb-2">Helping Idaho Families</h3>
                       <p className="text-muted-foreground">
-                        We partner with local nurseries, suppliers, and contractors whenever possible, keeping dollars in our local economy and supporting Idaho businesses.
+                        We specialize in helping homeowners navigate challenging situations with dignity and fair treatment. Every transaction is handled with care and respect.
                       </p>
                     </div>
                   </div>
@@ -481,12 +482,12 @@ export default function About() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Leaf className="h-6 w-6 text-primary" />
+                      <BarChart3 className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">Environmental Responsibility</h3>
+                      <h3 className="font-semibold text-lg mb-2">Market Expertise</h3>
                       <p className="text-muted-foreground">
-                        We practice responsible lawn care with proper fertilization timing, water-efficient irrigation, and sustainable landscaping practices that protect Idaho's environment.
+                        Deep knowledge of Treasure Valley real estate trends, neighborhoods, and values ensures you receive competitive, data-driven offers.
                       </p>
                     </div>
                   </div>
@@ -497,79 +498,24 @@ export default function About() {
         </div>
       </section>
 
-      {/* By The Numbers */}
-      <section className="py-16 md:py-24 bg-accent">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">By The Numbers</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <BarChart3 className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">7+</div>
-                <p className="text-sm text-muted-foreground font-medium">Years Serving Idaho</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-                <p className="text-sm text-muted-foreground font-medium">Satisfied Customers</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">6</div>
-                <p className="text-sm text-muted-foreground font-medium">Locations in Service Area</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Wrench className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">20+</div>
-                <p className="text-sm text-muted-foreground font-medium">Services Offered</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100%</div>
-                <p className="text-sm text-muted-foreground font-medium">Licensed & Insured</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-primary" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">A+</div>
-                <p className="text-sm text-muted-foreground font-medium">Rating Commitment</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">
-              Experience the Lawn Care Kuna Difference
+              Ready to Get Your Cash Offer?
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Join hundreds of satisfied customers across the Treasure Valley. Get your free quote today.
+            <p className="text-lg text-primary-foreground/90">
+              Get a fair, no-obligation cash offer for your house in less than 24 hours
             </p>
-            <Button size="lg" asChild data-testid="button-get-quote">
-              <Link href="/contact">
-                Get Your Free Quote
-              </Link>
-            </Button>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button size="lg" variant="secondary" asChild data-testid="button-get-offer">
+                <Link href="/get-quote">Get Your Cash Offer</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" data-testid="button-contact">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
