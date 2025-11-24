@@ -127,11 +127,11 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-3xl font-bold">Our Location</h2>
             <p className="text-muted-foreground">
-              Based in Kuna, Idaho. We buy houses throughout the Treasure Valley area.
+              Based in Boise, Idaho. We buy houses throughout the Treasure Valley area.
             </p>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps?q=2283+N+Coopers+Hawk+Ave,+Kuna,+ID+83634&output=embed"
+                src="https://www.google.com/maps?q=3024+W+Fairview+Ave,+Boise,+ID+83702&output=embed"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
@@ -150,7 +150,7 @@ export default function Contact() {
                 data-testid="button-get-directions"
               >
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=2283+N+Coopers+Hawk+Ave,+Kuna,+ID+83634"
+                  href="https://www.google.com/maps/dir/?api=1&destination=3024+W+Fairview+Ave,+Boise,+ID+83702"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -165,7 +165,7 @@ export default function Contact() {
                 data-testid="button-leave-review"
               >
                 <a
-                  href="https://share.google/qS8UCGzYV6EcS3iUP"
+                  href="https://share.google/zfTGJIl2GpbrtQ7iR"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
