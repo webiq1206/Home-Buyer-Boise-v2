@@ -178,22 +178,175 @@ export type Service = typeof SERVICES[number];
 export const SERVICE_CONTENT = {
   "sell-house-fast": {
     heroSubtitle: "Get a fair cash offer in 24 hours. Close in as little as 7 days or take your time - you choose the timeline.",
-    intro: "When you need to sell your house fast in the Boise metro area, HomeBuyerBoise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours.",
+    intro: "When you need to sell your house fast in the Boise metro area, HomeBuyerBoise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
     whyChoose: [
       "Cash offer in 24 hours or less",
       "Close in 7 days or on your timeline",
       "No repairs or cleaning required",
       "We pay all closing costs",
-      "No realtor fees or commissions",
+      "No realtor fees or commissions (save 6%)",
       "Direct sale - no showings or open houses",
+      "No buyer financing contingencies",
+      "Avoid months of uncertainty",
+      "Local Boise company since 2018",
+      "Close on YOUR schedule",
     ],
     situations: [
-      { title: "Job Relocation", description: "Moving for work and need to sell quickly" },
-      { title: "Financial Hardship", description: "Behind on payments and need immediate relief" },
-      { title: "Divorce", description: "Need to split assets and move forward" },
-      { title: "Downsizing", description: "Ready to simplify without the hassle" },
+      { title: "Job Relocation", description: "Moving for work and need to sell quickly. Start your new position without worrying about an unsold house back in Boise." },
+      { title: "Financial Hardship", description: "Behind on payments and need immediate relief. Sell before foreclosure and protect your credit while getting a fresh start." },
+      { title: "Divorce", description: "Need to split assets and move forward. Avoid arguments about repairs and get a fast, fair settlement for both parties." },
+      { title: "Downsizing", description: "Ready to simplify without the hassle. Empty nesters can skip repairs to worn carpet and outdated kitchens from decades of family life." },
+      { title: "Inherited Property", description: "Don't want to deal with estate clean-out or probate delays. Sell the inherited home quickly and split proceeds among heirs." },
+      { title: "Problem Rental", description: "Tired of landlord headaches and difficult tenants. Exit the rental business fast, even with tenants still in place." },
+    ],
+    detailedProcess: [
+      {
+        step: 1,
+        title: "Contact Us",
+        description: "Fill out our simple online form or call (208) 405-CASH. Provide basic information about your property including address, condition, and your timeline. This takes less than 60 seconds.",
+        timeline: "60 seconds"
+      },
+      {
+        step: 2,
+        title: "Property Assessment",
+        description: "We'll schedule a quick property walkthrough at your convenience (or provide offer sight-unseen if you prefer). Our assessment focuses on location, size, condition, and current market comparables - not nitpicking every minor flaw.",
+        timeline: "30 minutes"
+      },
+      {
+        step: 3,
+        title: "Receive Your Cash Offer",
+        description: "Within 24 hours, you'll receive a fair, no-obligation cash offer via email or phone. We'll explain exactly how we calculated the offer with full transparency. No pressure to accept - take your time to review.",
+        timeline: "24 hours"
+      },
+      {
+        step: 4,
+        title: "Accept & Choose Closing Date",
+        description: "If you accept our offer, YOU choose the closing date. Need to close in 7 days? Done. Need 30-60 days to coordinate your move? No problem. We work on your timeline, not ours.",
+        timeline: "Your choice"
+      },
+      {
+        step: 5,
+        title: "Simple Paperwork",
+        description: "Our local title company handles all paperwork. We use reputable local title companies you can trust. Review and sign documents at your convenience - in person or remotely.",
+        timeline: "1-2 hours"
+      },
+      {
+        step: 6,
+        title: "Close & Get Paid",
+        description: "On closing day, ownership transfers and you receive your cash. Funds are typically wired directly to your account or provided via cashier's check. Walk away with cash in hand.",
+        timeline: "Same day"
+      },
+      {
+        step: 7,
+        title: "Move Out On Your Schedule",
+        description: "Need extra time to move? We can arrange flexible move-out terms. Some sellers move before closing, others need a few days after. We accommodate your needs.",
+        timeline: "Flexible"
+      }
     ],
     process: "Our process is simple: contact us, receive your cash offer within 24 hours, choose your closing date, and get paid. No waiting for buyer financing, no deal falling through at the last minute.",
+    faqs: [
+      {
+        question: "How fast can you really close?",
+        answer: "Our fastest closings have been 5 days from initial contact to funded. Realistically, most closings occur in 7-14 days. The timeline depends primarily on title work and your preferred closing date. We can close faster if needed, or wait 30-60+ days if you need more time to coordinate your move."
+      },
+      {
+        question: "Do I have to fix anything before selling?",
+        answer: "Absolutely not. We buy houses in completely as-is condition. Foundation cracks, roof leaks, outdated kitchens, overgrown yards - we buy it all. You don't spend a penny on repairs, cleaning, or staging. We handle all repairs and updates after we purchase."
+      },
+      {
+        question: "How do you determine your offer price?",
+        answer: "We analyze recent comparable sales in your neighborhood, assess your home's condition, factor in needed repairs, and calculate holding costs and resale expenses. Our offer reflects fair market value minus the costs we'll incur to repair and resell. We provide full transparency in how we calculated your offer."
+      },
+      {
+        question: "Are there any fees or commissions?",
+        answer: "Zero. We pay all closing costs including title fees, escrow fees, and transfer taxes. You don't pay realtor commissions (saving 6% right there). The offer we make is the cash you receive at closing. No deductions, no surprises, no hidden fees."
+      },
+      {
+        question: "What if I'm behind on mortgage payments?",
+        answer: "We can still help. We'll calculate your exact mortgage payoff amount (including any arrears) and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash. Even if you're facing foreclosure, selling to us can help you avoid the credit damage."
+      },
+      {
+        question: "Can you buy my house if it has code violations or liens?",
+        answer: "Yes. We regularly purchase properties with code violations, tax liens, IRS liens, and other title issues. We'll research the liens, calculate payoff amounts, and factor those into our offer. We handle all lien payoffs at closing so you walk away clean."
+      },
+      {
+        question: "What areas do you serve?",
+        answer: "We buy houses throughout the Treasure Valley including Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, and Caldwell. We also purchase properties in surrounding Ada County and Canyon County communities."
+      },
+      {
+        question: "How is selling to you different from listing with a realtor?",
+        answer: "Speed, certainty, and convenience. Realtors require you to repair and stage your home, then wait 30-90+ days hoping a buyer gets financing approval. With us, you skip all repairs, avoid showings, get a cash offer in 24 hours, and close on your timeline with 100% certainty. Plus you save the 6% realtor commission."
+      },
+      {
+        question: "Do I have to accept your offer?",
+        answer: "Not at all. Our cash offers come with zero obligation and zero pressure. Request your offer, take time to review it, compare it to other options, and make the best decision for your situation. We're here to provide information and solutions, not pressure."
+      },
+      {
+        question: "What condition of houses do you buy?",
+        answer: "Any condition. We've purchased everything from pristine move-in ready homes to properties with fire damage, foundation issues, hoarding situations, and complete tear-downs. If it's real estate in the Treasure Valley, we'll make you an offer."
+      },
+      {
+        question: "Can you help if I'm going through divorce?",
+        answer: "Absolutely. We work with many divorcing couples who need to sell quickly and split proceeds. We provide neutral third-party purchase, fair market offers, and fast closings so both parties can move forward. We can work with your attorneys to ensure proper asset division."
+      },
+      {
+        question: "What if I inherited a house I don't want?",
+        answer: "We specialize in inherited property sales. We can purchase during probate (with court approval), handle estate clean-outs, work with out-of-state heirs, and provide fair offers that benefit all beneficiaries. Many inherited homes sell to us as-is without any family member having to travel to Boise."
+      },
+      {
+        question: "Are you a legitimate company or a scam?",
+        answer: "We're a legitimate Idaho LLC that's been buying houses in Boise since 2018. We're licensed, insured, and use reputable local title companies for all closings. You can verify our business status with Idaho Secretary of State. We have real reviews, real track records, and real local presence."
+      },
+      {
+        question: "What happens after I sell to you?",
+        answer: "After closing, the house is ours and becomes our responsibility. We typically invest in repairs and updates, then resell to a new homeowner or keep as a rental. Your responsibility ends at closing - no call-backs for repairs or issues. You walk away with cash and move forward."
+      },
+      {
+        question: "Can I sell my rental property with tenants still in it?",
+        answer: "Yes. We buy occupied rental properties regularly. Whether your tenants are current on rent, behind on payments, or you're in eviction proceedings, we can still purchase. We handle all tenant issues after closing so you're completely free from landlord responsibilities."
+      }
+    ],
+    successStories: [
+      {
+        title: "Kuna Family Avoided Foreclosure",
+        location: "Kuna, ID",
+        situation: "Behind on mortgage after job loss, foreclosure notice received",
+        solution: "Closed in 9 days, paid off mortgage including arrears, homeowners received $12,000 cash and avoided foreclosure",
+        quote: "HomeBuyerBoise saved our credit and gave us a fresh start. We were 4 months behind and facing foreclosure. They closed in 9 days and we walked away with cash instead of a foreclosure on our record."
+      },
+      {
+        title: "Meridian Relocation Sale",
+        location: "Meridian, ID",
+        situation: "Job transfer to Seattle with only 3 weeks notice, couldn't wait for traditional sale",
+        solution: "Closed in 12 days, seller moved to Seattle without house stress, avoided carrying two mortgages",
+        quote: "My company transferred me to Seattle with 3 weeks notice. I couldn't afford to carry two mortgages while waiting for my Meridian house to sell. HomeBuyerBoise gave me a fair offer and closed before I started my new job."
+      },
+      {
+        title: "Boise Divorce Settlement",
+        location: "Boise, ID (North End)",
+        situation: "Divorcing couple couldn't agree on repairs, needed quick sale to finalize divorce",
+        solution: "Purchased as-is in 14 days, split proceeds fairly, both parties moved on with their lives",
+        quote: "We were arguing about every repair the listing agent recommended. HomeBuyerBoise bought our North End home as-is and we split the proceeds fairly. It let us finalize our divorce and both move forward."
+      }
+    ],
+    comparisonData: {
+      traditional: {
+        timeline: "60-90+ days",
+        repairs: "Required ($10,000-$30,000 typical)",
+        commissions: "6% (~$18,000 on $300k home)",
+        closingCosts: "$5,000-$8,000",
+        certainty: "Deals fall through 20% of the time",
+        convenience: "Showings, open houses, constant availability"
+      },
+      cashOffer: {
+        timeline: "7-14 days (you choose)",
+        repairs: "$0 - we buy as-is",
+        commissions: "$0 - no realtors",
+        closingCosts: "$0 - we pay them",
+        certainty: "100% - cash guaranteed",
+        convenience: "One showing, no disruption"
+      }
+    },
     cta: "Ready to sell your house fast? Get your cash offer today.",
   },
   "we-buy-houses": {

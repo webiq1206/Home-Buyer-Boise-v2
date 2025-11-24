@@ -2,7 +2,13 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, Phone, MapPin, Plane, DollarSign, HeartCrack, Home, Clock, Tag, Calendar, TrendingUp, type LucideIcon } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { ArrowRight, CheckCircle, Phone, MapPin, Plane, DollarSign, HeartCrack, Home, Clock, Tag, Calendar, TrendingUp, Quote, Star, Check, X, type LucideIcon } from "lucide-react";
 import { CITIES } from "@shared/contentData";
 import { SERVICE_CONTENT } from "@shared/servicesData";
 import type { Service } from "@shared/servicesData";
@@ -140,6 +146,67 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
           </div>
         </section>
 
+        {/* Success Stories */}
+        {content.successStories && content.successStories.length > 0 && (
+          <section className="py-16 bg-gradient-to-br from-muted/20 via-background to-muted/10">
+            <div className="container px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12">
+                  <Badge className="mb-4">Real Results</Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories from the Treasure Valley</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Real homeowners, real situations, real solutions
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  {content.successStories.map((story, index) => (
+                    <Card 
+                      key={index}
+                      className="hover-elevate transition-all duration-300 border-primary/20 bg-gradient-to-br from-background to-secondary/10 relative overflow-hidden"
+                      data-testid={`success-story-${index}`}
+                    >
+                      {/* Quote decoration */}
+                      <div className="absolute top-4 right-4 opacity-5">
+                        <Quote className="h-16 w-16 text-primary" />
+                      </div>
+
+                      <CardContent className="pt-6 pb-6 relative">
+                        {/* Location Badge */}
+                        <Badge variant="secondary" className="mb-4 bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))] border-[hsl(var(--gold))]/30">
+                          <MapPin className="h-3 w-3 mr-1" />
+                          {story.location}
+                        </Badge>
+
+                        {/* Title */}
+                        <h3 className="font-bold text-lg mb-3 text-foreground">{story.title}</h3>
+
+                        {/* Situation */}
+                        <div className="mb-3">
+                          <p className="text-sm font-semibold text-muted-foreground mb-1">Situation:</p>
+                          <p className="text-sm text-muted-foreground">{story.situation}</p>
+                        </div>
+
+                        {/* Solution */}
+                        <div className="mb-4">
+                          <p className="text-sm font-semibold text-primary mb-1">Solution:</p>
+                          <p className="text-sm text-foreground">{story.solution}</p>
+                        </div>
+
+                        {/* Quote */}
+                        <div className="pt-4 border-t border-border/50">
+                          <Quote className="h-4 w-4 text-primary/40 mb-2" />
+                          <p className="text-sm italic text-muted-foreground leading-relaxed">"{story.quote}"</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Common Situations */}
         <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
           <div className="container px-4">
@@ -212,17 +279,173 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
           </div>
         </section>
 
-        {/* Process Details */}
-        <section className="py-16 bg-muted/30">
-          <div className="container px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">Our Process</h2>
-              <p className="text-lg leading-relaxed text-muted-foreground mb-8" data-testid="text-process">
-                {content.process}
-              </p>
+        {/* Detailed Process Timeline */}
+        {content.detailedProcess && (
+          <section className="py-16 bg-gradient-to-b from-background to-muted/30">
+            <div className="container px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <Badge className="mb-4">Our Process</Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    From first contact to closing, here's our simple 7-step process
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {content.detailedProcess.map((step, index) => (
+                    <Card 
+                      key={index}
+                      className="hover-elevate transition-all duration-300 border-primary/20 bg-gradient-to-r from-secondary/20 via-background to-background relative overflow-hidden group"
+                      data-testid={`process-step-${index}`}
+                    >
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary to-primary/50" />
+                      
+                      <CardContent className="pt-6 pb-6 pl-8">
+                        <div className="grid md:grid-cols-[auto_1fr_auto] gap-4 md:gap-8 items-start">
+                          {/* Step Number */}
+                          <div className="flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg border-4 border-background">
+                              <span className="text-2xl font-bold text-white">{step.step}</span>
+                            </div>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1">
+                            <h3 className="font-bold text-xl mb-2 text-foreground">{step.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                          </div>
+
+                          {/* Timeline Badge */}
+                          <div className="md:text-right">
+                            <Badge variant="secondary" className="bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))] border-[hsl(var(--gold))]/30">
+                              <Clock className="h-3 w-3 mr-1" />
+                              {step.timeline}
+                            </Badge>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                  <p className="text-lg font-semibold mb-4">Total Timeline: As Fast as 7 Days or As Long as You Need</p>
+                  <Button size="lg" asChild>
+                    <Link href="/get-quote">
+                      Get Started Now
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
+
+        {/* Simple Process Fallback (for services without detailed process) */}
+        {!content.detailedProcess && (
+          <section className="py-16 bg-muted/30">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold mb-8 text-center">Our Process</h2>
+                <p className="text-lg leading-relaxed text-muted-foreground mb-8" data-testid="text-process">
+                  {content.process}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Comparison Table */}
+        {content.comparisonData && (
+          <section className="py-16 bg-gradient-to-br from-muted/20 to-background">
+            <div className="container px-4">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                  <Badge className="mb-4">The Difference</Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Cash Offer vs. Traditional Listing</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    See how selling to us compares to listing with a realtor
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Traditional Sale */}
+                  <Card className="border-2 border-muted/50">
+                    <CardContent className="pt-6 pb-6">
+                      <div className="text-center mb-6">
+                        <div className="w-12 h-12 rounded-full bg-muted/50 flex items-center justify-center mx-auto mb-3">
+                          <Home className="h-6 w-6 text-muted-foreground" />
+                        </div>
+                        <h3 className="font-bold text-xl text-muted-foreground">Traditional Listing</h3>
+                      </div>
+
+                      <div className="space-y-3">
+                        {[
+                          { label: "Timeline", value: content.comparisonData.traditional.timeline, negative: true },
+                          { label: "Repairs", value: content.comparisonData.traditional.repairs, negative: true },
+                          { label: "Commissions", value: content.comparisonData.traditional.commissions, negative: true },
+                          { label: "Closing Costs", value: content.comparisonData.traditional.closingCosts, negative: true },
+                          { label: "Certainty", value: content.comparisonData.traditional.certainty, negative: true },
+                          { label: "Convenience", value: content.comparisonData.traditional.convenience, negative: true },
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start gap-2 pb-3 border-b border-border/30">
+                            <X className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+                            <div className="flex-1">
+                              <p className="font-semibold text-sm text-foreground">{item.label}</p>
+                              <p className="text-sm text-muted-foreground">{item.value}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Cash Offer */}
+                  <Card className="border-2 border-primary/50 bg-gradient-to-br from-primary/5 to-background shadow-lg">
+                    <CardContent className="pt-6 pb-6">
+                      <div className="text-center mb-6">
+                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                          <DollarSign className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="font-bold text-xl text-primary">Cash Offer from Us</h3>
+                      </div>
+
+                      <div className="space-y-3">
+                        {[
+                          { label: "Timeline", value: content.comparisonData.cashOffer.timeline },
+                          { label: "Repairs", value: content.comparisonData.cashOffer.repairs },
+                          { label: "Commissions", value: content.comparisonData.cashOffer.commissions },
+                          { label: "Closing Costs", value: content.comparisonData.cashOffer.closingCosts },
+                          { label: "Certainty", value: content.comparisonData.cashOffer.certainty },
+                          { label: "Convenience", value: content.comparisonData.cashOffer.convenience },
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-start gap-2 pb-3 border-b border-primary/10">
+                            <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                            <div className="flex-1">
+                              <p className="font-semibold text-sm text-foreground">{item.label}</p>
+                              <p className="text-sm text-primary font-medium">{item.value}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="mt-8 text-center">
+                  <Button size="lg" asChild>
+                    <Link href="/savings-calculator">
+                      Calculate Your Savings
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Service Areas */}
         <section className="py-16">
@@ -269,6 +492,56 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
             </div>
           </div>
         </section>
+
+        {/* Comprehensive FAQs */}
+        {content.faqs && content.faqs.length > 0 && (
+          <section className="py-16 bg-gradient-to-b from-background to-muted/20">
+            <div className="container px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <Badge className="mb-4">FAQ</Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                  <p className="text-lg text-muted-foreground">
+                    Everything you need to know about {service.name.toLowerCase()}
+                  </p>
+                </div>
+
+                <Accordion type="single" collapsible className="w-full space-y-4">
+                  {content.faqs.map((faq, index) => (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`}
+                      className="border border-border/50 rounded-lg px-6 bg-card hover:border-primary/30 transition-colors"
+                      data-testid={`faq-${index}`}
+                    >
+                      <AccordionTrigger className="text-left hover:no-underline py-4">
+                        <span className="font-semibold text-base pr-4">{faq.question}</span>
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground leading-relaxed pb-4 pt-2">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+
+                <div className="mt-12 text-center">
+                  <p className="text-muted-foreground mb-4">Still have questions?</p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button variant="outline" asChild>
+                      <a href="tel:2084052274">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call (208) 405-CASH
+                      </a>
+                    </Button>
+                    <Button variant="outline" asChild>
+                      <Link href="/contact">Contact Us Online</Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Final CTA */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/5">
