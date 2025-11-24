@@ -90,62 +90,62 @@ export class MemStorage implements IStorage {
     const sampleGalleryPhotos: GalleryPhoto[] = [
       {
         id: randomUUID(),
-        serviceType: "lawn-care",
+        category: "property_examples",
         city: "kuna",
-        beforeImageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-        afterImageUrl: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800",
-        title: "Overgrown Lawn Transformation",
-        description: "Complete lawn restoration with mowing, edging, and fertilization in Kuna",
+        beforeImageUrl: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800",
+        afterImageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800",
+        title: "Kuna Family Home Purchase",
+        description: "Purchased this 3-bedroom family home in Kuna as-is for cash, closed in 12 days",
         createdAt: new Date(),
       },
       {
         id: randomUUID(),
-        serviceType: "lawn-care",
+        category: "property_examples",
         city: "boise",
-        beforeImageUrl: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800",
-        afterImageUrl: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800",
-        title: "Lawn Aeration & Overseeding",
-        description: "Transformed a patchy, thin lawn into thick, healthy turf through professional aeration and overseeding in Boise",
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        serviceType: "lawn-care",
-        city: "meridian",
-        beforeImageUrl: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
-        afterImageUrl: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
-        title: "Professional Lawn Edging",
-        description: "Crisp, clean edges along sidewalks and driveways with professional edging service in Meridian",
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        serviceType: "lawn-care",
-        city: "nampa",
-        beforeImageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-        afterImageUrl: "https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?w=800",
-        title: "Spring Cleanup & Revival",
-        description: "Complete spring cleanup with debris removal and fertilization to revitalize lawn after Idaho winter in Nampa",
-        createdAt: new Date(),
-      },
-      {
-        id: randomUUID(),
-        serviceType: "landscaping",
-        city: "boise",
-        beforeImageUrl: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+        beforeImageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
         afterImageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
-        title: "Backyard Patio Installation",
-        description: "Custom paver patio with retaining wall in Boise",
+        title: "Boise North End Cottage",
+        description: "Fast cash purchase of charming North End cottage needing updates, seller relocated for work",
         createdAt: new Date(),
       },
       {
         id: randomUUID(),
-        serviceType: "christmas-lights",
+        category: "property_examples",
         city: "meridian",
-        beforeImageUrl: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800",
-        afterImageUrl: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=800",
-        title: "Holiday Light Installation",
-        description: "Professional Christmas light installation in Meridian",
+        beforeImageUrl: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800",
+        afterImageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800",
+        title: "Meridian Subdivision Home",
+        description: "Purchased modern Meridian home for divorcing couple, quick closing on their timeline",
+        createdAt: new Date(),
+      },
+      {
+        id: randomUUID(),
+        category: "property_examples",
+        city: "nampa",
+        beforeImageUrl: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800",
+        afterImageUrl: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800",
+        title: "Nampa Fixer-Upper Purchase",
+        description: "Cash purchase of inherited property needing repairs, no contingencies or appraisal needed",
+        createdAt: new Date(),
+      },
+      {
+        id: randomUUID(),
+        category: "property_examples",
+        city: "eagle",
+        beforeImageUrl: "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=800",
+        afterImageUrl: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800",
+        title: "Eagle Estate Property",
+        description: "Purchased upscale Eagle property for downsizing empty-nesters, confidential and professional",
+        createdAt: new Date(),
+      },
+      {
+        id: randomUUID(),
+        category: "property_examples",
+        city: "star",
+        beforeImageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
+        afterImageUrl: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800",
+        title: "Star Rural Property",
+        description: "Cash purchase of horse property with tenant issues, handled eviction and closed quickly",
         createdAt: new Date(),
       },
     ];
@@ -157,37 +157,55 @@ export class MemStorage implements IStorage {
       {
         id: randomUUID(),
         customerName: "Sarah M.",
-        serviceType: "lawn-care",
+        situation: "Inherited property seller",
         city: "kuna",
         rating: "5",
-        testimonial: "HomeBuyerBoise has been taking care of our yard for 2 years now. Always on time, professional, and our lawn has never looked better!",
+        testimonial: "After inheriting my parents' house in Kuna, I needed to sell quickly. HomeBuyerBoise made a fair offer and closed in just 10 days. No repairs, no stress, just a smooth transaction.",
         createdAt: new Date(),
       },
       {
         id: randomUUID(),
         customerName: "Mike R.",
-        serviceType: "landscaping",
+        situation: "Job relocation",
         city: "boise",
         rating: "5",
-        testimonial: "They installed a beautiful patio in our backyard. The crew was professional and the work quality exceeded our expectations.",
+        testimonial: "When my job relocated me to Seattle on short notice, I needed to sell fast. They gave me a cash offer the same day and we closed in two weeks. Couldn't have asked for an easier process.",
         createdAt: new Date(),
       },
       {
         id: randomUUID(),
         customerName: "Jennifer K.",
-        serviceType: "christmas-lights",
+        situation: "Divorce settlement",
         city: "meridian",
         rating: "5",
-        testimonial: "Best Christmas light installation service in the valley! They made our home look amazing for the holidays.",
+        testimonial: "Going through a divorce was hard enough. HomeBuyerBoise handled our house sale with discretion and professionalism. Fair price, quick closing, and they took care of everything.",
         createdAt: new Date(),
       },
       {
         id: randomUUID(),
         customerName: "David L.",
-        serviceType: "lawn-care",
+        situation: "Foreclosure avoidance",
         city: "nampa",
         rating: "5",
-        testimonial: "Reliable, affordable, and great results. We've recommended them to all our neighbors!",
+        testimonial: "I was behind on my mortgage and facing foreclosure. They worked with my timeline, paid off the loan, and helped me avoid damaging my credit. True lifesavers!",
+        createdAt: new Date(),
+      },
+      {
+        id: randomUUID(),
+        customerName: "Amanda T.",
+        situation: "Downsizing",
+        city: "eagle",
+        rating: "5",
+        testimonial: "After our kids moved out, we wanted to downsize. HomeBuyerBoise bought our large family home as-is, so we didn't have to deal with repairs or staging. Quick and painless!",
+        createdAt: new Date(),
+      },
+      {
+        id: randomUUID(),
+        customerName: "Robert C.",
+        situation: "Problem tenant",
+        city: "star",
+        rating: "5",
+        testimonial: "Had a rental property with terrible tenants I couldn't evict. Sold it to HomeBuyerBoise tenant and all. They handled the eviction and I walked away with cash in hand.",
         createdAt: new Date(),
       },
     ];
@@ -377,9 +395,9 @@ export class MemStorage implements IStorage {
   }
 
   async getGalleryPhotosByService(serviceType: string): Promise<GalleryPhoto[]> {
-    return Array.from(this.galleryPhotos.values()).filter(
-      photo => photo.serviceType === serviceType
-    );
+    // For cash home buying, we show all property examples regardless of category
+    // The serviceType parameter is kept for API compatibility but not used for filtering
+    return Array.from(this.galleryPhotos.values());
   }
 
   // Testimonial methods
@@ -399,9 +417,9 @@ export class MemStorage implements IStorage {
   }
 
   async getTestimonialsByService(serviceType: string): Promise<Testimonial[]> {
-    return Array.from(this.testimonials.values()).filter(
-      t => t.serviceType === serviceType
-    );
+    // For cash home buying, we show all testimonials regardless of situation
+    // The serviceType parameter is kept for API compatibility but not used for filtering
+    return Array.from(this.testimonials.values());
   }
 
   // Blog post methods
