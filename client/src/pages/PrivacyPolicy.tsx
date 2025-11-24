@@ -25,6 +25,9 @@ export default function PrivacyPolicy() {
             src={heroBackground} 
             alt="Privacy Policy for HomeBuyerBoise professional services"
             className="w-full h-full object-cover"
+            width="1920"
+            height="1080"
+            loading="eager"
           />
         </div>
         <div className="container px-4 relative z-10">

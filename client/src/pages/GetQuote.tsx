@@ -40,7 +40,7 @@ export default function GetQuote() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-40" loading="lazy" />
+        <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-40" width="1920" height="1080" loading="eager" />
       </div>
       <div className="absolute inset-0 z-[1] bg-background/70"></div>
       <div className="py-12 px-4 relative z-10">

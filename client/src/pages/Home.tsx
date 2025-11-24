@@ -170,6 +170,8 @@ export default function Home() {
               src={heroBackground} 
               alt="HomeBuyerBoise - Cash home buyers serving Boise and Treasure Valley Idaho"
               className="w-full h-full object-cover"
+              width="1920"
+              height="1080"
               loading="eager"
             />
           </div>
@@ -230,6 +232,8 @@ export default function Home() {
               src={starsBackground} 
               alt=""
               className="w-full h-full object-cover opacity-30"
+              width="1920"
+              height="1080"
               loading="lazy"
             />
           </div>
@@ -449,6 +453,8 @@ export default function Home() {
             src={smileyBackground} 
             alt=""
             className="w-full h-full object-cover opacity-60"
+            width="1920"
+            height="1080"
             loading="lazy"
           />
         </div>

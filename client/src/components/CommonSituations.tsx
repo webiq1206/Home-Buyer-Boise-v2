@@ -85,6 +85,8 @@ export function CommonSituations() {
           src={exclamationBackground} 
           alt=""
           className="w-full h-full object-cover opacity-30"
+          width="1920"
+          height="1080"
           loading="lazy"
         />
       </div>

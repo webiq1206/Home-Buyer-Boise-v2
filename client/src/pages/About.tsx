@@ -46,7 +46,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
         </div>
         <div className="absolute inset-0 z-[1] bg-background/60"></div>
         <div className="container px-4 relative z-10">

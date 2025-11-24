@@ -25,6 +25,9 @@ export default function TermsOfService() {
             src={heroBackground} 
             alt="Terms of Service for HomeBuyerBoise professional cash home buying services"
             className="w-full h-full object-cover"
+            width="1920"
+            height="1080"
+            loading="eager"
           />
         </div>
         <div className="container px-4 relative z-10">
