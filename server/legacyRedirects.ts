@@ -79,7 +79,7 @@ export function specificLegacyRedirects(req: Request, res: Response, next: NextF
   // Check direct path mappings first
   if (directPathMappings[path] || directPathMappings[normalizedPath]) {
     const newPath = directPathMappings[path] || directPathMappings[normalizedPath];
-    return res.redirect(301, `https://lawncarekuna.com${newPath}`);
+    return res.redirect(301, `https://homebuyerboise.com${newPath}`);
   }
   
   // Pattern 1: Root-level service pages (e.g., /lawn-mowing/, /christmas-light-installation/)
@@ -89,7 +89,7 @@ export function specificLegacyRedirects(req: Request, res: Response, next: NextF
     const newServiceSlug = serviceNameMappings[oldServiceSlug];
     
     if (newServiceSlug) {
-      return res.redirect(301, `https://lawncarekuna.com/services/${newServiceSlug}`);
+      return res.redirect(301, `https://homebuyerboise.com/services/${newServiceSlug}`);
     }
   }
   
@@ -101,11 +101,11 @@ export function specificLegacyRedirects(req: Request, res: Response, next: NextF
     
     // If city exists in new site, redirect to /areas/:city
     if (newCitySlug) {
-      return res.redirect(301, `https://lawncarekuna.com/areas/${newCitySlug}`);
+      return res.redirect(301, `https://homebuyerboise.com/areas/${newCitySlug}`);
     }
     // If city no longer serviced (e.g., garden-city), redirect to homepage
     if (newCitySlug === null && oldCitySlug in citySlugMappings) {
-      return res.redirect(301, 'https://lawncarekuna.com/');
+      return res.redirect(301, 'https://homebuyerboise.com/');
     }
   }
   
@@ -120,7 +120,7 @@ export function specificLegacyRedirects(req: Request, res: Response, next: NextF
     
     // If both city and service exist, redirect to /services/:service/:city
     if (newCitySlug && newServiceSlug) {
-      return res.redirect(301, `https://lawncarekuna.com/services/${newServiceSlug}/${newCitySlug}`);
+      return res.redirect(301, `https://homebuyerboise.com/services/${newServiceSlug}/${newCitySlug}`);
     }
     
     // If only service exists (city no longer serviced), redirect to service page

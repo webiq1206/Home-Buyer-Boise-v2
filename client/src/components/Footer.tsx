@@ -14,7 +14,7 @@ export function Footer() {
           <div>
             <img 
               src={logoUrl} 
-              alt="Lawn Care Kuna - Professional Lawn Care and Landscaping Services in Kuna Idaho" 
+              alt="HomeBuyerBoise - Professional Cash Home Buyers in Boise, Idaho" 
               className="h-8 w-auto mb-4"
               width="160"
               height="32"
@@ -22,24 +22,24 @@ export function Footer() {
               data-testid="logo-footer"
             />
             <p className="text-sm text-muted-foreground mb-4">
-              Most Trusted Lawn Care Services in Kuna, Idaho
+              Trusted Cash Home Buyers Serving the Boise Metro Area
             </p>
             <div className="space-y-2">
               <a href="tel:2083522011" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-phone-footer">
                 <Phone className="h-4 w-4" />
                 <span>(208) 352-2011</span>
               </a>
-              <a href="mailto:hello@lawncarekuna.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
+              <a href="mailto:hello@homebuyerboise.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
                 <Mail className="h-4 w-4" />
-                <span>hello@lawncarekuna.com</span>
+                <span>hello@homebuyerboise.com</span>
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>2283 N Coopers Hawk Ave, Kuna, ID 83634</span>
+                <span>150 N Capitol Blvd Suite 1, Boise, ID 83702</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Serving Kuna, Boise, Meridian, Eagle, Star & Middleton</span>
+                <span>Serving Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star & Garden City</span>
               </div>
             </div>
           </div>
@@ -127,16 +127,16 @@ export function Footer() {
 
         <div className="border-t mt-8 pt-8 text-sm text-muted-foreground space-y-2">
           <p className="text-xs">
-            <strong>Legal Disclaimer:</strong> Lawn Care Kuna reserves the right to subcontract services as needed to ensure quality service delivery.
+            <strong>Legal Disclaimer:</strong> HomeBuyerBoise is a professional real estate investment company. All offers are subject to property inspection and market analysis.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© {currentYear} Lawn Care Kuna. All rights reserved. Serving Idahoans since 2017.</p>
+            <p>© {currentYear} HomeBuyerBoise. All rights reserved. Serving the Treasure Valley since 2018.</p>
             <div className="flex gap-4 text-xs">
-              <span>Fully Insured</span>
+              <span>Licensed & Insured</span>
               <span>•</span>
-              <span>No Hidden Fees</span>
+              <span>No Fees or Commissions</span>
               <span>•</span>
-              <span>Free Quotes</span>
+              <span>Free Cash Offers</span>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* LIGHT MODE - Lawn Care Kuna Brand Palette */
+/* LIGHT MODE - HomeBuyerBoise Brand Palette (Fintech-Inspired) */
 :root {
   --button-outline: rgba(0,0,0, .08);
   --badge-outline: rgba(0,0,0, .04);
@@ -68,59 +68,63 @@ html, body {
   --card-foreground: 0 0% 8%;
   --card-border: 0 0% 91%;
   
-  /* Sidebar light mint accents */
-  --sidebar: 145 40% 96%;
+  /* Sidebar light blue accents */
+  --sidebar: 214 40% 96%;
   --sidebar-foreground: 0 0% 8%;
-  --sidebar-border: 145 20% 85%;
-  --sidebar-primary: 145 50% 35%;
+  --sidebar-border: 214 30% 85%;
+  --sidebar-primary: 214 84% 35%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 145 40% 92%;
+  --sidebar-accent: 214 40% 92%;
   --sidebar-accent-foreground: 0 0% 8%;
-  --sidebar-ring: 145 50% 35%;
+  --sidebar-ring: 214 84% 35%;
   
   /* Popover clean white */
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 8%;
   --popover-border: 0 0% 88%;
   
-  /* Forest green primary (actual brand color) */
-  --primary: 145 50% 35%;
+  /* Deep blue primary (trustworthy fintech blue) */
+  --primary: 214 84% 35%;
   --primary-foreground: 0 0% 100%;
   
-  /* Light mint secondary */
-  --secondary: 145 40% 93%;
+  /* Light blue secondary */
+  --secondary: 214 40% 93%;
   --secondary-foreground: 0 0% 8%;
   
-  /* Muted light mint backgrounds */
-  --muted: 145 40% 95%;
+  /* Muted light blue backgrounds */
+  --muted: 214 40% 95%;
   --muted-foreground: 0 0% 40%;
   
-  /* Subtle mint accent */
-  --accent: 145 40% 94%;
+  /* Subtle blue accent */
+  --accent: 214 40% 94%;
   --accent-foreground: 0 0% 8%;
   
-  /* Dark forest green accent (for overlays/cards) */
-  --brass: 145 50% 18%;
-  --brass-foreground: 0 0% 100%;
+  /* Rich navy accent (for overlays/hero sections) */
+  --navy: 214 50% 25%;
+  --navy-foreground: 0 0% 100%;
+  
+  /* Warm gold accent for highlights */
+  --gold: 38 70% 55%;
+  --gold-foreground: 0 0% 8%;
   
   /* Destructive unchanged */
   --destructive: 0 72% 42%;
   --destructive-foreground: 0 72% 98%;
   
   --input: 0 0% 85%;
-  --ring: 145 50% 35%;
+  --ring: 214 84% 35%;
   
-  /* Charts with green-based palette */
-  --chart-1: 145 50% 35%;
-  --chart-2: 145 40% 55%;
-  --chart-3: 145 30% 25%;
-  --chart-4: 165 35% 45%;
-  --chart-5: 125 35% 40%;
+  /* Charts with blue-based palette */
+  --chart-1: 214 84% 35%;
+  --chart-2: 214 60% 55%;
+  --chart-3: 214 50% 25%;
+  --chart-4: 200 70% 45%;
+  --chart-5: 38 70% 55%;
   
-  /* Typography */
-  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-headings: 'Montserrat', system-ui, -apple-system, sans-serif;
+  /* Typography - Modern fintech sans-serif */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-headings: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Menlo', 'Monaco', monospace;
   
   --radius: .5rem;
@@ -160,11 +164,14 @@ html, body {
   --destructive-border: hsl(var(--destructive));
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   
-  --brass-border: hsl(var(--brass));
-  --brass-border: hsl(from hsl(var(--brass)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --navy-border: hsl(var(--navy));
+  --navy-border: hsl(from hsl(var(--navy)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  
+  --gold-border: hsl(var(--gold));
+  --gold-border: hsl(from hsl(var(--gold)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-/* DARK MODE - Lawn Care Kuna Dark Theme */
+/* DARK MODE - HomeBuyerBoise Dark Theme */
 .dark {
   --button-outline: rgba(255,255,255, .08);
   --badge-outline: rgba(255,255,255, .04);
@@ -173,61 +180,65 @@ html, body {
   --elevate-2: rgba(255,255,255, .07);
   
   /* Deep backgrounds */
-  --background: 145 15% 8%;
+  --background: 214 20% 8%;
   --foreground: 0 0% 96%;
-  --border: 145 10% 18%;
-  --card: 145 15% 10%;
+  --border: 214 15% 18%;
+  --card: 214 20% 10%;
   --card-foreground: 0 0% 96%;
-  --card-border: 145 10% 15%;
+  --card-border: 214 15% 15%;
   
-  /* Sidebar deep forest tones */
-  --sidebar: 145 15% 11%;
+  /* Sidebar deep blue tones */
+  --sidebar: 214 20% 11%;
   --sidebar-foreground: 0 0% 96%;
-  --sidebar-border: 145 10% 16%;
-  --sidebar-primary: 145 45% 45%;
+  --sidebar-border: 214 15% 16%;
+  --sidebar-primary: 214 70% 55%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 145 10% 16%;
+  --sidebar-accent: 214 15% 16%;
   --sidebar-accent-foreground: 0 0% 96%;
-  --sidebar-ring: 145 45% 45%;
+  --sidebar-ring: 214 70% 55%;
   
   /* Popover */
-  --popover: 145 15% 13%;
+  --popover: 214 20% 13%;
   --popover-foreground: 0 0% 96%;
-  --popover-border: 145 10% 18%;
+  --popover-border: 214 15% 18%;
   
-  /* Lighter green for dark mode visibility */
-  --primary: 145 45% 45%;
+  /* Lighter blue for dark mode visibility */
+  --primary: 214 70% 55%;
   --primary-foreground: 0 0% 100%;
   
-  /* Dark mint secondary */
-  --secondary: 145 10% 18%;
+  /* Dark blue secondary */
+  --secondary: 214 15% 18%;
   --secondary-foreground: 0 0% 96%;
   
   /* Muted dark tones */
-  --muted: 145 10% 16%;
+  --muted: 214 15% 16%;
   --muted-foreground: 0 0% 68%;
   
   /* Subtle dark accent */
-  --accent: 145 10% 16%;
+  --accent: 214 15% 16%;
   --accent-foreground: 0 0% 96%;
   
-  /* Very dark forest green for overlays */
-  --brass: 145 50% 25%;
-  --brass-foreground: 0 0% 100%;
+  /* Deep navy for overlays */
+  --navy: 214 50% 30%;
+  --navy-foreground: 0 0% 100%;
+  
+  /* Warm gold for dark mode */
+  --gold: 38 65% 60%;
+  --gold-foreground: 0 0% 8%;
   
   /* Destructive */
   --destructive: 0 68% 48%;
   --destructive-foreground: 0 68% 98%;
   
-  --input: 145 10% 28%;
-  --ring: 145 45% 45%;
+  --input: 214 15% 28%;
+  --ring: 214 70% 55%;
   
   /* Charts for dark mode */
-  --chart-1: 145 45% 50%;
-  --chart-2: 145 35% 60%;
-  --chart-3: 145 25% 40%;
-  --chart-4: 165 35% 55%;
-  --chart-5: 125 35% 50%;
+  --chart-1: 214 70% 60%;
+  --chart-2: 214 50% 70%;
+  --chart-3: 214 40% 45%;
+  --chart-4: 200 60% 60%;
+  --chart-5: 38 65% 60%;
   
   /* Softer dark mode shadows */
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.25);
@@ -261,8 +272,11 @@ html, body {
   --destructive-border: hsl(var(--destructive));
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   
-  --brass-border: hsl(var(--brass));
-  --brass-border: hsl(from hsl(var(--brass)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --navy-border: hsl(var(--navy));
+  --navy-border: hsl(from hsl(var(--navy)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  
+  --gold-border: hsl(var(--gold));
+  --gold-border: hsl(from hsl(var(--gold)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 @layer base {
@@ -272,19 +286,19 @@ html, body {
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
   }
   
-  /* Montserrat all text with weight 500 */
+  /* Inter for all text with weight 400-600 range */
   * {
-    font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
-    font-weight: 500 !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-weight: 400 !important;
   }
   
-  /* All headings use Montserrat weight 500 */
+  /* Headings use Inter with semibold/bold for fintech confidence */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-headings) !important;
-    font-weight: 500 !important;
+    font-weight: 700 !important;
   }
   
   h1 {
@@ -296,19 +310,23 @@ html, body {
   }
   
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-2xl md:text-3xl font-semibold;
+    font-weight: 600 !important;
   }
   
   h4 {
-    @apply text-xl md:text-2xl;
+    @apply text-xl md:text-2xl font-semibold;
+    font-weight: 600 !important;
   }
   
   h5 {
-    @apply text-lg md:text-xl;
+    @apply text-lg md:text-xl font-semibold;
+    font-weight: 600 !important;
   }
   
   h6 {
-    @apply text-base md:text-lg;
+    @apply text-base md:text-lg font-semibold;
+    font-weight: 600 !important;
   }
   
   p {

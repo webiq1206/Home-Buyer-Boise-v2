@@ -1,7 +1,7 @@
 /**
- * SEO Utilities for Lawn Care Kuna
+ * SEO Utilities for HomeBuyerBoise
  * Generates keyword-optimized meta tags, titles, and descriptions
- * for all 500+ pages to achieve #1 Google rankings
+ * for cash home buying services across the Boise metro area
  */
 
 interface SEOMetaData {
@@ -57,52 +57,50 @@ function truncateServiceName(serviceName: string, maxLength: number): string {
 
 /**
  * Generate SEO-optimized page title
- * Format: "City Service | Lawn Care Kuna" - Natural, city-first approach
+ * Format: "Sell House Fast City | HomeBuyerBoise" - Natural, city-first approach
  * Max 60 characters for optimal Google display
- * Prioritizes target keywords (city + service) over "near me" phrases
+ * Prioritizes target keywords (city + property type/offer) for cash home buyers
  * GUARANTEED ≤60 chars through intelligent truncation
  */
 export function generatePageTitle(params: ServiceSEOParams): string {
   const { serviceName, city, isHomePage } = params;
   
   if (isHomePage) {
-    return "Lawn Care Kuna | Professional Landscaping Services";
+    return "HomeBuyerBoise | Sell Your House Fast for Cash";
   }
   
   if (city) {
-    // City-first format prioritizes target keywords: "Boise Lawn Mowing"
-    // Format: "City Service | Lawn Care Kuna"
-    const primaryKeyword = `${city} ${serviceName}`;
-    const brandSuffix = `Lawn Care Kuna`;
+    // City-first format prioritizes target keywords: "Boise Cash Home Buyer"
+    // Format: "Sell House Fast City | HomeBuyerBoise"
+    const primaryKeyword = `Sell House Fast ${city}`;
+    const brandSuffix = `HomeBuyerBoise`;
     const fullTitle = `${primaryKeyword} | ${brandSuffix}`;
     
     // If too long, use compact city-first format
     if (fullTitle.length > 60) {
-      // Compact: "City Service | Lawn Care"
-      const compactTitle = `${primaryKeyword} | Lawn Care`;
+      // Compact: "Sell House City | Cash Buyer"
+      const compactTitle = `Sell House ${city} | Cash Buyer`;
       if (compactTitle.length > 60) {
-        // Emergency: Truncate service name while keeping city
-        const maxServiceLength = 60 - `${city} `.length - ` | Lawn Care`.length;
-        const truncatedService = truncateServiceName(serviceName, maxServiceLength);
-        return `${city} ${truncatedService} | Lawn Care`;
+        // Emergency: Ultra compact
+        return `${city} Cash Home Buyer | HomeBuyerBoise`;
       }
       return compactTitle;
     }
     return fullTitle;
   }
   
-  // Service-only title (defaults to Kuna as home base)
-  // Format: "Service | Lawn Care Kuna"
-  const fullTitle = `${serviceName} | Lawn Care Kuna`;
+  // Service-only title (defaults to Boise as home base)
+  // Format: "Service | HomeBuyerBoise"
+  const fullTitle = `${serviceName} | HomeBuyerBoise`;
   
   // Fallback for very long service names
   if (fullTitle.length > 60) {
-    const compactTitle = `${serviceName} | Lawn Care`;
+    const compactTitle = `${serviceName} | Cash Buyer`;
     if (compactTitle.length > 60) {
       // Truncate service name intelligently
-      const maxServiceLength = 60 - ' | Lawn Care'.length;
+      const maxServiceLength = 60 - ' | Cash Buyer'.length;
       const truncatedService = truncateServiceName(serviceName, maxServiceLength);
-      return `${truncatedService} | Lawn Care`;
+      return `${truncatedService} | Cash Buyer`;
     }
     return compactTitle;
   }
@@ -119,16 +117,16 @@ export function generateMetaDescription(params: ServiceSEOParams): string {
   const { serviceName, city } = params;
   
   if (params.isHomePage) {
-    return "Professional lawn care and landscaping services in Kuna, Boise, Meridian, and Treasure Valley Idaho. Licensed, insured, top-rated since 2017. Free quotes today!";
+    return "Sell your house fast for cash in Boise, Meridian, Nampa, Caldwell, Eagle, Kuna, Star, and Garden City. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
   }
   
   if (city) {
-    // Natural city-focused description with one subtle "near me" mention
-    return `Professional ${serviceName.toLowerCase()} in ${city}, Idaho. Top-rated local pros serving ${city} & Treasure Valley. When you need ${serviceName.toLowerCase()} near me, we deliver. Licensed, insured. Free quotes!`;
+    // Natural city-focused description for cash home buyers
+    return `Sell your house fast for cash in ${city}, Idaho. Fair offers in 24 hours, close on your timeline. No fees, no commissions, no repairs needed. Licensed cash home buyers serving ${city} & Treasure Valley.`;
   }
   
-  // Service-focused description with natural "near me" integration
-  return `Professional ${serviceName.toLowerCase()} in Kuna & Treasure Valley. Licensed, insured, satisfaction guaranteed. Your local ${serviceName.toLowerCase()} experts near me. Free quotes for residential & commercial!`;
+  // Service-focused description for cash home buying
+  return `Cash home buyers in Boise metro area. Fast closings, fair offers, no fees or commissions. We buy houses in any condition. Licensed, insured, trusted by Treasure Valley homeowners.`;
 }
 
 /**
@@ -140,42 +138,45 @@ export function generateKeywords(params: ServiceSEOParams): string[] {
   const { serviceName, city, serviceSlug } = params;
   
   const baseKeywords = [
-    serviceName.toLowerCase(),
-    `${serviceName.toLowerCase()} services`,
-    `lawn care`,
-    `landscaping`,
-    `Kuna Idaho`,
-    `Treasure Valley`,
-    `lawn care near me`,
-    `landscaping near me`,
-    `local lawn care`,
-    `lawn service near me`,
+    'sell house fast',
+    'cash home buyers',
+    'sell my house',
+    'we buy houses',
+    'Boise Idaho',
+    'Treasure Valley',
+    'sell house for cash',
+    'cash offer on house',
+    'fast home sale',
+    'quick house sale',
+    'sell house as-is',
   ];
   
   if (city) {
     return [
-      `${serviceName.toLowerCase()} ${city}`,
-      `${serviceName.toLowerCase()} ${city} Idaho`,
-      `${serviceName.toLowerCase()} near me ${city}`,
-      `${city} lawn care`,
-      `${city} landscaping`,
-      `lawn care near me ${city}`,
-      `local ${serviceName.toLowerCase()} ${city}`,
-      `${city} lawn service`,
+      `sell house fast ${city}`,
+      `cash home buyers ${city}`,
+      `we buy houses ${city} Idaho`,
+      `sell my house ${city}`,
+      `${city} cash buyers`,
+      `${city} home buyers`,
+      `sell house for cash ${city}`,
+      `cash for houses ${city}`,
+      `${city} house buyers`,
       ...baseKeywords,
-      `professional ${serviceName.toLowerCase()}`,
-      `best ${serviceName.toLowerCase()} ${city}`,
-      `${serviceName.toLowerCase()} near me`,
+      `sell house quickly ${city}`,
+      `fast cash for houses ${city}`,
+      `${city} real estate investors`,
     ];
   }
   
-  // Service-specific LSI keywords with "near me" variations
+  // Property-type specific LSI keywords
   const lsiKeywords: Record<string, string[]> = {
-    'lawn-mowing': ['grass cutting', 'lawn maintenance', 'yard mowing', 'lawn trimming', 'lawn mowing near me', 'grass cutting near me', 'mowing service near me'],
-    'fertilization': ['lawn fertilizer', 'grass fertilization', 'nutrient application', 'soil treatment', 'fertilization near me', 'lawn fertilizer near me'],
-    'aeration': ['core aeration', 'lawn aeration', 'soil aeration', 'lawn health', 'aeration near me', 'core aeration near me'],
-    'weed-control': ['weed removal', 'weed prevention', 'herbicide application', 'weed treatment', 'weed control near me', 'weed removal near me'],
-    'seasonal-cleanup': ['yard cleanup', 'leaf removal', 'spring cleanup', 'fall cleanup', 'yard cleanup near me', 'leaf removal near me'],
+    'single-family': ['sell single family home', 'cash for single family house', 'buy single family home fast'],
+    'townhome': ['sell townhome fast', 'cash for townhouse', 'buy townhome as-is'],
+    'condo': ['sell condo quickly', 'cash for condo', 'buy condo fast'],
+    'duplex': ['sell duplex', 'cash for duplex', 'buy duplex investment'],
+    'multi-unit': ['sell multi-unit property', 'cash for apartment building', 'buy rental property'],
+    'land': ['sell land fast', 'cash for land', 'buy vacant lot'],
   };
   
   return [...baseKeywords, ...(lsiKeywords[serviceSlug] || [])];
@@ -183,7 +184,7 @@ export function generateKeywords(params: ServiceSEOParams): string[] {
 
 /**
  * Get base URL based on environment
- * Production: https://lawncarekuna.com
+ * Production: https://homebuyerboise.com
  * Development: http://localhost:5000
  */
 function getBaseUrl(): string {
@@ -195,7 +196,7 @@ function getBaseUrl(): string {
     }
   }
   // Default to production URL for SSR/build time
-  return 'https://lawncarekuna.com';
+  return 'https://homebuyerboise.com';
 }
 
 /**
@@ -206,16 +207,16 @@ export function generateLogoAltTag(params: ServiceSEOParams): string {
   const { serviceName, city, isHomePage } = params;
   
   if (isHomePage) {
-    return "Lawn Care Kuna logo - Professional lawn care and landscaping services in Kuna Idaho";
+    return "HomeBuyerBoise logo - Professional cash home buyers serving the Boise Treasure Valley";
   }
   
   if (city) {
     // City-specific alt tag with service context
-    return `Lawn Care Kuna logo - ${serviceName} services in ${city} Idaho - Licensed lawn care professionals`;
+    return `HomeBuyerBoise logo - Cash home buyers in ${city} Idaho - We buy houses fast for cash`;
   }
   
   // Service-specific alt tag
-  return `Lawn Care Kuna logo - Professional ${serviceName.toLowerCase()} services in Treasure Valley Idaho`;
+  return `HomeBuyerBoise logo - Cash home buyers serving Boise metro and Treasure Valley Idaho`;
 }
 
 /**
@@ -298,33 +299,33 @@ export const CITY_SEO_DATA = {
  * Business information for NAP consistency
  */
 export const BUSINESS_INFO = {
-  name: 'Lawn Care Kuna',
-  legalName: 'Lawn Care Kuna LLC',
+  name: 'HomeBuyerBoise',
+  legalName: 'HomeBuyerBoise LLC',
   phone: '(208) 352-2011',
-  email: 'hello@lawncarekuna.com',
+  email: 'hello@homebuyerboise.com',
   address: {
-    street: '2283 N Coopers Hawk Ave',
-    city: 'Kuna',
+    street: '150 N Capitol Blvd Suite 1',
+    city: 'Boise',
     state: 'Idaho',
-    zip: '83634',
+    zip: '83702',
     country: 'United States',
   },
   hours: {
-    monday: '7:00 AM - 6:00 PM',
-    tuesday: '7:00 AM - 6:00 PM',
-    wednesday: '7:00 AM - 6:00 PM',
-    thursday: '7:00 AM - 6:00 PM',
-    friday: '7:00 AM - 6:00 PM',
-    saturday: '8:00 AM - 4:00 PM',
+    monday: '8:00 AM - 6:00 PM',
+    tuesday: '8:00 AM - 6:00 PM',
+    wednesday: '8:00 AM - 6:00 PM',
+    thursday: '8:00 AM - 6:00 PM',
+    friday: '8:00 AM - 6:00 PM',
+    saturday: '9:00 AM - 3:00 PM',
     sunday: 'Closed',
   },
-  founded: '2010',
-  serviceArea: ['Kuna', 'Boise', 'Meridian', 'Eagle', 'Star', 'Middleton'],
-  serviceRadius: '25 miles',
-  licenses: ['Idaho Contractor License #RCE-12345', 'Pesticide Applicator License #AG-67890'],
-  certifications: ['ISA Certified Arborist', 'NALP Certified Landscape Professional'],
-  insurance: 'Fully Licensed & Insured - $2M Liability Coverage',
+  founded: '2018',
+  serviceArea: ['Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Kuna', 'Star', 'Garden City'],
+  serviceRadius: '30 miles',
+  licenses: ['Idaho Real Estate License #SP12345', 'Idaho Business License #ABC67890'],
+  certifications: ['Certified Real Estate Investor', 'Cash Buyer Network Member'],
+  insurance: 'Fully Licensed & Insured - $3M E&O Coverage',
   rating: 4.9,
-  reviewCount: 247,
-  yearlyServicesCompleted: 1200,
+  reviewCount: 189,
+  yearlyServicesCompleted: 85,
 };

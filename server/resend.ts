@@ -7,7 +7,7 @@ async function getCredentials() {
   if (process.env.RESEND_API_KEY) {
     return {
       apiKey: process.env.RESEND_API_KEY,
-      fromEmail: 'hello@lawncarekuna.com'
+      fromEmail: 'hello@homebuyerboise.com'
     };
   }
 
@@ -38,7 +38,7 @@ async function getCredentials() {
   }
   return {
     apiKey: connectionSettings.settings.api_key, 
-    fromEmail: connectionSettings.settings.from_email || 'hello@lawncarekuna.com'
+    fromEmail: connectionSettings.settings.from_email || 'hello@homebuyerboise.com'
   };
 }
 

@@ -56,7 +56,7 @@ export function legacyUrlRedirect(req: Request, res: Response, next: NextFunctio
   // Check if the URL has an old file extension (definitely not valid in new site)
   const hasOldExtension = oldFileExtensions.some(ext => path.toLowerCase().endsWith(ext));
   if (hasOldExtension) {
-    return res.redirect(301, 'https://lawncarekuna.com/');
+    return res.redirect(301, 'https://homebuyerboise.com/');
   }
   
   // Check if path matches any valid route pattern
@@ -76,5 +76,5 @@ export function legacyUrlRedirect(req: Request, res: Response, next: NextFunctio
   // For any other unrecognized URL that doesn't match our valid patterns,
   // send a 301 redirect to preserve SEO during migration
   // This includes old WordPress assets, old pages, etc.
-  return res.redirect(301, 'https://lawncarekuna.com/');
+  return res.redirect(301, 'https://homebuyerboise.com/');
 }

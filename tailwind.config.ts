@@ -75,10 +75,15 @@ export default {
           foreground: "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
           border: "var(--sidebar-accent-border)"
         },
-        brass: {
-          DEFAULT: "hsl(var(--brass) / <alpha-value>)",
-          foreground: "hsl(var(--brass-foreground) / <alpha-value>)",
-          border: "var(--brass-border)",
+        navy: {
+          DEFAULT: "hsl(var(--navy) / <alpha-value>)",
+          foreground: "hsl(var(--navy-foreground) / <alpha-value>)",
+          border: "var(--navy-border)",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold) / <alpha-value>)",
+          foreground: "hsl(var(--gold-foreground) / <alpha-value>)",
+          border: "var(--gold-border)",
         },
         status: {
           online: "rgb(34 197 94)",
@@ -88,8 +93,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        serif: ["Georgia", "serif"],
         mono: ["Menlo", "Monaco", "monospace"],
       },
       keyframes: {
