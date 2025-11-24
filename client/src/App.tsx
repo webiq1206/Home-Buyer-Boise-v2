@@ -35,6 +35,17 @@ const CashOffer = lazy(() => import("@/pages/services/CashOffer"));
 const SellAsIs = lazy(() => import("@/pages/services/SellAsIs"));
 const InheritedProperty = lazy(() => import("@/pages/services/InheritedProperty"));
 const AvoidForeclosure = lazy(() => import("@/pages/services/AvoidForeclosure"));
+const SellHouseDivorce = lazy(() => import("@/pages/services/SellHouseDivorce"));
+const RelocationSale = lazy(() => import("@/pages/services/RelocationSale"));
+const ProblemTenants = lazy(() => import("@/pages/services/ProblemTenants"));
+const ProbateSale = lazy(() => import("@/pages/services/ProbateSale"));
+const TaxLiens = lazy(() => import("@/pages/services/TaxLiens"));
+const Downsizing = lazy(() => import("@/pages/services/Downsizing"));
+const FireWaterDamage = lazy(() => import("@/pages/services/FireWaterDamage"));
+const HoarderHouse = lazy(() => import("@/pages/services/HoarderHouse"));
+const ExpiredListing = lazy(() => import("@/pages/services/ExpiredListing"));
+const BehindMortgage = lazy(() => import("@/pages/services/BehindMortgage"));
+const CodeViolations = lazy(() => import("@/pages/services/CodeViolations"));
 
 // Area Pages - Treasure Valley Cities
 const Kuna = lazy(() => import("@/pages/areas/Kuna"));
@@ -43,6 +54,8 @@ const Meridian = lazy(() => import("@/pages/areas/Meridian"));
 const Eagle = lazy(() => import("@/pages/areas/Eagle"));
 const Star = lazy(() => import("@/pages/areas/Star"));
 const Middleton = lazy(() => import("@/pages/areas/Middleton"));
+const Nampa = lazy(() => import("@/pages/areas/Nampa"));
+const Caldwell = lazy(() => import("@/pages/areas/Caldwell"));
 
 // Legal Pages
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
@@ -78,6 +91,17 @@ function Router() {
             <Route path="/services/sell-as-is" component={SellAsIs} />
             <Route path="/services/inherited-property" component={InheritedProperty} />
             <Route path="/services/avoid-foreclosure" component={AvoidForeclosure} />
+            <Route path="/services/sell-house-divorce" component={SellHouseDivorce} />
+            <Route path="/services/relocation-sale" component={RelocationSale} />
+            <Route path="/services/problem-tenants" component={ProblemTenants} />
+            <Route path="/services/probate-sale" component={ProbateSale} />
+            <Route path="/services/tax-liens" component={TaxLiens} />
+            <Route path="/services/downsizing" component={Downsizing} />
+            <Route path="/services/fire-water-damage" component={FireWaterDamage} />
+            <Route path="/services/hoarder-house" component={HoarderHouse} />
+            <Route path="/services/expired-listing" component={ExpiredListing} />
+            <Route path="/services/behind-mortgage" component={BehindMortgage} />
+            <Route path="/services/code-violations" component={CodeViolations} />
 
             {/* Service Areas - Treasure Valley Cities */}
             <Route path="/areas/kuna" component={Kuna} />
@@ -86,6 +110,8 @@ function Router() {
             <Route path="/areas/eagle" component={Eagle} />
             <Route path="/areas/star" component={Star} />
             <Route path="/areas/middleton" component={Middleton} />
+            <Route path="/areas/nampa" component={Nampa} />
+            <Route path="/areas/caldwell" component={Caldwell} />
 
             {/* Legal Pages */}
             <Route path="/privacy-policy" component={PrivacyPolicy} />
