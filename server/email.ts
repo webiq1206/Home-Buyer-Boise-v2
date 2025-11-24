@@ -381,7 +381,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
       <body>
         <div class="email-wrapper">
           <div class="header">
-            <h1>HomeBuyerBoise</h1>
+            <div style="margin-bottom: 20px;">
+              <img src="https://homebuyerboise.com/attached_assets/Home Buyer Boise Logo_1764014379793.png" alt="Home Buyer Boise" style="max-width: 400px; height: auto;">
+            </div>
             <h2 style="margin: 10px 0 0 0; font-size: 20px; font-weight: 400;">New Cash Offer Request</h2>
             <p>AI-Powered Quote System</p>
           </div>
@@ -519,7 +521,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
       <body>
         <div class="email-wrapper">
           <div class="header">
-            <h1>HomeBuyerBoise</h1>
+            <div style="margin-bottom: 20px;">
+              <img src="https://homebuyerboise.com/attached_assets/Home Buyer Boise Logo_1764014379793.png" alt="Home Buyer Boise" style="max-width: 400px; height: auto;">
+            </div>
             <h2 style="margin: 10px 0 0 0; font-size: 20px; font-weight: 400;">Thank You for Your Request</h2>
             <p>We're excited to help you sell your home!</p>
           </div>

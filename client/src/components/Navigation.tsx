@@ -13,6 +13,7 @@ import {
 import { Menu, Home, DollarSign, FileText, HelpCircle, Building2, ArrowRight, MapPin } from "lucide-react";
 import { SERVICES } from "@shared/servicesData";
 import { CITIES } from "@shared/contentData";
+import logoImage from "@assets/Home Buyer Boise Logo_1764014379793.png";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -22,13 +23,7 @@ export function Navigation() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/95">
       <nav className="container flex h-20 items-center justify-between gap-4 px-8 md:px-12">
         <Link href="/" className="flex items-center flex-shrink-0" data-testid="link-home-logo">
-          <div className="flex items-center gap-2">
-            <Home className="h-7 w-7 text-primary" />
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary leading-tight">HomeBuyer</span>
-              <span className="text-xs font-semibold text-primary/70 leading-tight -mt-0.5">BOISE</span>
-            </div>
-          </div>
+          <img src={logoImage} alt="Home Buyer Boise" className="h-12 w-auto" />
         </Link>
 
         <div className="flex-1"></div>
