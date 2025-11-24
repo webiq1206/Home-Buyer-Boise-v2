@@ -626,7 +626,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
             <p class="footer-tagline">Kuna, Idaho's Most Trusted Lawn Care & Landscaping Service</p>
             <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
             <p class="footer-contact">Phone: (208) 405-CASH</p>
-            <p class="footer-contact">Address: 2283 N Coopers Hawk Ave, Kuna, ID 83634</p>
+            <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
             <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
             <p style="font-size: 12px; color: #9ca3af; margin: 15px 0 0 0;">Serving Kuna, Boise, Meridian, Nampa, Caldwell, Eagle, Star & Middleton</p>
           </div>

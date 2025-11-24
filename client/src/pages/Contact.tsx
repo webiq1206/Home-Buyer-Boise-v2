@@ -82,8 +82,8 @@ export default function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Service Area</h3>
                         <p className="text-sm text-muted-foreground">
-                          2283 N Coopers Hawk Ave<br />
-                          Kuna, ID 83634
+                          3024 W Fairview Ave<br />
+                          Boise, ID 83702
                         </p>
                         <p className="text-xs text-muted-foreground mt-2">
                           Serving Boise, Meridian, Eagle, Kuna, Star, Middleton & surrounding areas
@@ -138,7 +138,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="HomeBuyerBoise Location - 2283 N Coopers Hawk Ave, Kuna, ID 83634"
+                title="HomeBuyerBoise Location - 3024 W Fairview Ave, Boise, ID 83702"
                 data-testid="map-location"
               />
             </div>

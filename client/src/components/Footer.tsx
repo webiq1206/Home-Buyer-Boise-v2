@@ -32,7 +32,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>150 N Capitol Blvd Suite 1, Boise, ID 83702</span>
+                <span>3024 W Fairview Ave, Boise, ID 83702</span>
               </div>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />

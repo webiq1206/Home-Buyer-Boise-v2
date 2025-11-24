@@ -304,7 +304,7 @@ export const BUSINESS_INFO = {
   phone: '(208) 405-CASH',
   email: 'hello@homebuyerboise.com',
   address: {
-    street: '150 N Capitol Blvd Suite 1',
+    street: '3024 W Fairview Ave',
     city: 'Boise',
     state: 'Idaho',
     zip: '83702',
