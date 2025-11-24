@@ -26,6 +26,7 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const Services = lazy(() => import("@/pages/Services"));
 const Pricing = lazy(() => import("@/pages/Pricing"));
 const GetQuote = lazy(() => import("@/pages/GetQuote"));
+const HowItWorks = lazy(() => import("@/pages/HowItWorks"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 // Service Pages
@@ -83,6 +84,7 @@ function Router() {
             <Route path="/services" component={Services} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/get-quote" component={GetQuote} />
+            <Route path="/how-it-works" component={HowItWorks} />
 
             {/* Service Pages - High-Value Keywords */}
             <Route path="/services/sell-house-fast" component={SellHouseFast} />
