@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { QuoteWizard } from "@/components/QuoteWizard";
+import { CITIES } from "@/../../shared/contentData";
 import { 
   Home,
   Clock,
@@ -306,10 +307,12 @@ export default function Services() {
               We buy houses throughout the greater Boise area
             </p>
             <div className="flex flex-wrap gap-3 justify-center text-sm">
-              {['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton'].map((city) => (
-                <div key={city} className="px-4 py-2 bg-card border rounded-md" data-testid={`city-${city.toLowerCase()}`}>
-                  {city}
-                </div>
+              {CITIES.map((city) => (
+                <Link key={city.slug} href={`/areas/${city.slug}`}>
+                  <div className="px-4 py-2 bg-card border rounded-md hover-elevate active-elevate-2 cursor-pointer transition-colors" data-testid={`city-${city.slug}`}>
+                    {city.name}
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
