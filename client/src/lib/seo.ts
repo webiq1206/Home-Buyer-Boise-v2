@@ -480,6 +480,68 @@ export function generateServiceSchema(city: string) {
 /**
  * Generate FAQ schema for rich results in search
  */
+/**
+ * Generate Service schema for service-specific pages (not city-specific)
+ * Covers all service areas in the Treasure Valley
+ */
+export function generateServicePageSchema(serviceName: string, serviceDescription: string, serviceSlug: string) {
+  const baseUrl = getBaseUrl();
+  const cities = Object.keys(CITY_SEO_DATA);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${baseUrl}/services/${serviceSlug}#service`,
+    name: serviceName,
+    description: serviceDescription,
+    provider: {
+      '@id': `${baseUrl}#organization`,
+    },
+    areaServed: cities.map(city => ({
+      '@type': 'City',
+      name: city,
+      addressRegion: 'ID',
+      addressCountry: 'US',
+    })),
+    serviceType: 'Real Estate Investment',
+    category: 'Cash Home Buyer',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+      price: '0',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '0',
+        priceCurrency: 'USD',
+        description: 'No fees or commissions - 100% free service',
+      },
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Cash Home Buying Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Fast Cash Offer',
+            description: 'Receive a fair cash offer within 24 hours',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Flexible Closing',
+            description: 'Close in as little as 7 days or on your timeline',
+          },
+        },
+      ],
+    },
+  };
+}
+
 export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
   const baseUrl = getBaseUrl();
 

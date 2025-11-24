@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Home } from "lucide-react";
 import { CITIES } from "@shared/contentData";
+import { SERVICES } from "@shared/servicesData";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-muted border-t">
       <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -83,17 +84,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Why Choose Us */}
+          {/* Services */}
           <div>
-            <h3 className="font-semibold text-sm mb-4">Why Choose Us</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Fast Cash Offers in 24 Hours</li>
-              <li>• No Fees or Commissions</li>
-              <li>• Close on Your Timeline</li>
-              <li>• We Buy As-Is</li>
-              <li>• No Repairs Needed</li>
-              <li>• Hassle-Free Process</li>
-              <li>• Local Boise Buyers</li>
+            <h3 className="font-semibold text-sm mb-4">Our Services</h3>
+            <ul className="space-y-2 text-sm">
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="text-muted-foreground hover:text-primary transition-colors">
+                    {service.shortName}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -104,10 +105,23 @@ export function Footer() {
               {CITIES.map((city) => (
                 <li key={city.slug}>
                   <Link href={`/areas/${city.slug}`} className="text-muted-foreground hover:text-primary transition-colors">
-                    {city.name}, Idaho
+                    {city.name}, ID
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Why Choose Us */}
+          <div>
+            <h3 className="font-semibold text-sm mb-4">Why Choose Us</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• 24-Hour Cash Offers</li>
+              <li>• No Fees or Commissions</li>
+              <li>• Close on Your Timeline</li>
+              <li>• We Buy As-Is</li>
+              <li>• No Repairs Needed</li>
+              <li>• Local Boise Buyers</li>
             </ul>
           </div>
         </div>

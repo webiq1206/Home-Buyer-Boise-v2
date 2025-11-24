@@ -28,6 +28,14 @@ const Pricing = lazy(() => import("@/pages/Pricing"));
 const GetQuote = lazy(() => import("@/pages/GetQuote"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
+// Service Pages
+const SellHouseFast = lazy(() => import("@/pages/services/SellHouseFast"));
+const WeBuyHouses = lazy(() => import("@/pages/services/WeBuyHouses"));
+const CashOffer = lazy(() => import("@/pages/services/CashOffer"));
+const SellAsIs = lazy(() => import("@/pages/services/SellAsIs"));
+const InheritedProperty = lazy(() => import("@/pages/services/InheritedProperty"));
+const AvoidForeclosure = lazy(() => import("@/pages/services/AvoidForeclosure"));
+
 // Area Pages - Treasure Valley Cities
 const Kuna = lazy(() => import("@/pages/areas/Kuna"));
 const Boise = lazy(() => import("@/pages/areas/Boise"));
@@ -62,6 +70,14 @@ function Router() {
             <Route path="/services" component={Services} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/get-quote" component={GetQuote} />
+
+            {/* Service Pages - High-Value Keywords */}
+            <Route path="/services/sell-house-fast" component={SellHouseFast} />
+            <Route path="/services/we-buy-houses" component={WeBuyHouses} />
+            <Route path="/services/cash-offer" component={CashOffer} />
+            <Route path="/services/sell-as-is" component={SellAsIs} />
+            <Route path="/services/inherited-property" component={InheritedProperty} />
+            <Route path="/services/avoid-foreclosure" component={AvoidForeclosure} />
 
             {/* Service Areas - Treasure Valley Cities */}
             <Route path="/areas/kuna" component={Kuna} />

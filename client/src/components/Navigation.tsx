@@ -10,15 +10,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, Home, DollarSign, FileText, HelpCircle, Building2, ArrowRight } from "lucide-react";
-
-// Cash home buying pages - simple navigation structure
-const mainPages = [
-  { name: "How It Works", href: "/pricing", icon: HelpCircle },
-  { name: "Get Cash Offer", href: "/get-quote", icon: DollarSign },
-  { name: "About Us", href: "/about", icon: Building2 },
-  { name: "Contact", href: "/contact", icon: FileText },
-];
+import { Menu, Home, DollarSign, FileText, HelpCircle, Building2, ArrowRight, MapPin } from "lucide-react";
+import { SERVICES } from "@shared/servicesData";
+import { CITIES } from "@shared/contentData";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -54,6 +48,52 @@ export function Navigation() {
                     Home
                   </span>
                 </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium" data-testid="nav-services-trigger">
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {SERVICES.map((service) => (
+                      <li key={service.slug}>
+                        <Link href={`/services/${service.slug}`}>
+                          <NavigationMenuLink asChild>
+                            <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover-elevate active-elevate-2" data-testid={`nav-service-${service.slug}`}>
+                              <div className="text-sm font-medium leading-none">{service.name}</div>
+                              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                {service.metaDescription.substring(0, 80)}...
+                              </p>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium" data-testid="nav-areas-trigger">
+                  Areas
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[300px] gap-3 p-4">
+                    {CITIES.map((city) => (
+                      <li key={city.slug}>
+                        <Link href={`/areas/${city.slug}`}>
+                          <NavigationMenuLink asChild>
+                            <div className="flex items-center gap-2 select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover-elevate active-elevate-2" data-testid={`nav-area-${city.slug}`}>
+                              <MapPin className="h-4 w-4 text-primary" />
+                              <div className="text-sm font-medium">{city.name}, ID</div>
+                            </div>
+                          </NavigationMenuLink>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -134,21 +174,49 @@ export function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[85vw] sm:w-[400px] overflow-y-auto">
               <nav className="flex flex-col gap-1 mt-8">
-                {/* Home */}
                 <Link href="/" onClick={() => setMobileOpen(false)}>
                   <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-home-mobile">
                     Home
                   </div>
                 </Link>
 
-                <Link href="/pricing" onClick={() => setMobileOpen(false)}>
-                  <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-pricing-mobile">
-                    How It Works
+                {/* Services Section */}
+                <div className="mt-6">
+                  <div className="px-4 py-2 text-xs font-semibold text-muted-foreground">
+                    SERVICES
                   </div>
-                </Link>
+                  {SERVICES.map((service) => (
+                    <Link key={service.slug} href={`/services/${service.slug}`} onClick={() => setMobileOpen(false)}>
+                      <div className="px-4 py-2 text-sm rounded-md hover-elevate active-elevate-2 transition-colors" data-testid={`link-service-${service.slug}-mobile`}>
+                        {service.name}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Service Areas Section */}
+                <div className="mt-6">
+                  <div className="px-4 py-2 text-xs font-semibold text-muted-foreground">
+                    SERVICE AREAS
+                  </div>
+                  {CITIES.map((city) => (
+                    <Link key={city.slug} href={`/areas/${city.slug}`} onClick={() => setMobileOpen(false)}>
+                      <div className="px-4 py-2 text-sm rounded-md hover-elevate active-elevate-2 transition-colors flex items-center gap-2" data-testid={`link-area-${city.slug}-mobile`}>
+                        <MapPin className="h-3 w-3" />
+                        {city.name}, ID
+                      </div>
+                    </Link>
+                  ))}
+                </div>
 
                 {/* Main Pages */}
                 <div className="mt-6 pt-6 border-t space-y-0.5">
+                  <Link href="/pricing" onClick={() => setMobileOpen(false)}>
+                    <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-pricing-mobile">
+                      How It Works
+                    </div>
+                  </Link>
+
                   <Link href="/about" onClick={() => setMobileOpen(false)}>
                     <div className="px-4 py-3 text-base font-medium rounded-md hover-elevate active-elevate-2 transition-colors" data-testid="link-about-mobile">
                       About
@@ -167,7 +235,7 @@ export function Navigation() {
                       window.location.href = "/get-quote";
                       setMobileOpen(false);
                     }}
-                    data-testid="button-quote-mobile"
+                    data-testid="button-quote-mobile-final"
                   >
                     Get Cash Offer
                   </Button>
