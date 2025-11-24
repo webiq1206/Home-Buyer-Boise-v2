@@ -2,13 +2,29 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, Phone, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, MapPin, Plane, DollarSign, HeartCrack, Home, Clock, Tag, Calendar, TrendingUp, type LucideIcon } from "lucide-react";
 import { CITIES } from "@shared/contentData";
 import { SERVICE_CONTENT } from "@shared/servicesData";
 import type { Service } from "@shared/servicesData";
 import { generateSEOMetadata, BUSINESS_INFO } from "@/lib/seo";
 import { generateServicePageSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import { Link } from "wouter";
+
+// Icon mapping for situation cards
+const SITUATION_ICONS: Record<string, LucideIcon> = {
+  "Job Relocation": Plane,
+  "Company Relocation": Plane,
+  "Financial Hardship": DollarSign,
+  "Divorce": HeartCrack,
+  "Downsizing": Home,
+  "Any Condition": Home,
+  "Any Situation": CheckCircle,
+  "Any Timeline": Clock,
+  "Any Price Range": Tag,
+  "Short Notice Transfer": Calendar,
+  "Already Moved": MapPin,
+  "Can't Wait for Traditional Sale": TrendingUp,
+};
 
 interface ServiceTemplateProps {
   service: Service;
@@ -125,19 +141,72 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
         </section>
 
         {/* Common Situations */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-b from-muted/30 to-background">
           <div className="container px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold mb-12 text-center">Common Situations We Help With</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {content.situations.map((situation, index) => (
-                  <Card key={index} data-testid={`situation-card-${index}`}>
-                    <CardContent className="pt-6">
-                      <h3 className="font-semibold mb-2">{situation.title}</h3>
-                      <p className="text-sm text-muted-foreground">{situation.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                {content.situations.map((situation, index) => {
+                  const IconComponent = SITUATION_ICONS[situation.title] || Home;
+                  
+                  // Customize trust footer per scenario
+                  const trustCues: Record<string, { icon: LucideIcon; text: string }> = {
+                    "Job Relocation": { icon: Clock, text: "Close in 7-14 days" },
+                    "Company Relocation": { icon: Clock, text: "Fast closings available" },
+                    "Financial Hardship": { icon: DollarSign, text: "No upfront fees" },
+                    "Divorce": { icon: CheckCircle, text: "Confidential process" },
+                    "Downsizing": { icon: Calendar, text: "Flexible timeline" },
+                    "Any Condition": { icon: Home, text: "Buy as-is guaranteed" },
+                    "Any Situation": { icon: CheckCircle, text: "No judgment zone" },
+                    "Any Timeline": { icon: Clock, text: "You pick closing date" },
+                    "Any Price Range": { icon: Tag, text: "All offers considered" },
+                    "Short Notice Transfer": { icon: Clock, text: "7-day closings" },
+                    "Already Moved": { icon: MapPin, text: "Remote closings OK" },
+                    "Can't Wait for Traditional Sale": { icon: TrendingUp, text: "No listing needed" },
+                  };
+                  
+                  const trustCue = trustCues[situation.title] || { icon: Clock, text: "Fast & reliable" };
+                  const TrustIcon = trustCue.icon;
+                  
+                  return (
+                    <Card 
+                      key={index} 
+                      className="hover-elevate transition-all duration-300 border-primary/30 bg-gradient-to-br from-secondary/30 via-background to-primary/8 relative overflow-hidden group"
+                      data-testid={`situation-card-${index}`}
+                    >
+                      {/* Decorative corner accent */}
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-[3rem] transition-all duration-300 group-hover:from-primary/30" />
+                      
+                      <CardContent className="pt-6 pb-5 relative flex flex-col h-full">
+                        {/* Gold Scenario Badge */}
+                        <Badge variant="secondary" className="absolute top-3 left-3 text-[10px] font-semibold px-2 py-0.5 bg-[hsl(var(--gold))] text-[hsl(var(--gold-foreground))] border-[hsl(var(--gold-border))] shadow-sm">
+                          Seller Scenario
+                        </Badge>
+                        
+                        {/* Icon */}
+                        <div className="mb-4 mt-6">
+                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/8 flex items-center justify-center shadow-sm border border-primary/10">
+                            <IconComponent className="h-7 w-7 text-primary" strokeWidth={2.5} />
+                          </div>
+                        </div>
+                        
+                        {/* Title */}
+                        <h3 className="font-bold text-xl mb-2 text-foreground leading-tight">{situation.title}</h3>
+                        
+                        {/* Description */}
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">{situation.description}</p>
+                        
+                        {/* Trust Footer - Customized per scenario */}
+                        <div className="pt-3 border-t border-border/50">
+                          <p className="text-xs text-muted-foreground font-medium flex items-center gap-1.5">
+                            <TrustIcon className="h-3 w-3 text-primary" />
+                            {trustCue.text}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </div>
