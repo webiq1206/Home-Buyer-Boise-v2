@@ -59,6 +59,9 @@ const Middleton = lazy(() => import("@/pages/areas/Middleton"));
 const Nampa = lazy(() => import("@/pages/areas/Nampa"));
 const Caldwell = lazy(() => import("@/pages/areas/Caldwell"));
 
+// Service + City Combination Page (dynamic)
+const ServiceCityPage = lazy(() => import("@/pages/services/ServiceCityPage"));
+
 // Legal Pages
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
@@ -87,6 +90,11 @@ function Router() {
             <Route path="/get-quote" component={GetQuote} />
             <Route path="/how-it-works" component={HowItWorks} />
             <Route path="/savings-calculator" component={SavingsCalculator} />
+
+            {/* Service + City Combination Pages - MUST come before generic service pages */}
+            <Route path="/services/:serviceSlug/:citySlug">
+              {(params) => <ServiceCityPage serviceSlug={params.serviceSlug} citySlug={params.citySlug} />}
+            </Route>
 
             {/* Service Pages - High-Value Keywords */}
             <Route path="/services/sell-house-fast" component={SellHouseFast} />
