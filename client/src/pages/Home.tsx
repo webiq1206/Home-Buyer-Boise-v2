@@ -175,7 +175,7 @@ export default function Home() {
           </div>
           
           {/* Dark Overlay to ensure text readability */}
-          <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary/95 via-primary/90 to-primary/85"></div>
+          <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary/70 via-primary/65 to-primary/60"></div>
           
           <div className="container px-4 md:px-8 relative z-10">
             <div className="max-w-7xl mx-auto">
