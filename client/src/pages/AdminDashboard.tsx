@@ -82,7 +82,16 @@ export default function AdminDashboard() {
     });
   };
 
-  const LeadCard = ({ lead, showActions = false }: { lead: Lead; showActions?: boolean }) => (
+  const calculateProfit = (lead: Lead) => {
+    const rv = lead.estimatedMarketValue ? parseFloat(lead.estimatedMarketValue.toString()) : 0;
+    const offer = lead.anchorOffer ? parseFloat(lead.anchorOffer.toString()) : 0;
+    const repairs = lead.estimatedRepairs ? parseFloat(lead.estimatedRepairs.toString()) : 0;
+    return rv - offer - repairs;
+  };
+
+  const LeadCard = ({ lead, showActions = false }: { lead: Lead; showActions?: boolean }) => {
+    const profit = calculateProfit(lead);
+    return (
     <Card key={lead.id} className="overflow-hidden" data-testid={`card-lead-${lead.id}`}>
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-4">
@@ -100,19 +109,38 @@ export default function AdminDashboard() {
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-2 gap-4 text-sm">
+        <div className="grid grid-cols-3 gap-4 text-sm">
           <div className="flex items-center gap-2">
             <DollarSign className="h-4 w-4 text-muted-foreground" />
             <div>
-              <p className="font-medium">Quote: {formatCurrency(lead.finalQuote)}</p>
-              <p className="text-muted-foreground">Lead Price: {formatCurrency(lead.currentLeadPrice)}</p>
+              <p className="font-medium text-xs text-muted-foreground">RV</p>
+              <p className="font-semibold">{formatCurrency(lead.estimatedMarketValue?.toString())}</p>
             </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <div>
+              <p className="font-medium text-xs text-muted-foreground">Offer</p>
+              <p className="font-semibold">{formatCurrency(lead.anchorOffer?.toString())}</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <div>
+              <p className="font-medium text-xs text-muted-foreground">Est. Profit</p>
+              <p className="font-semibold text-green-600">{formatCurrency(profit.toString())}</p>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4 text-sm border-t pt-3">
+          <div>
+            <p className="text-xs text-muted-foreground">Lead Price</p>
+            <p className="font-semibold">{formatCurrency(lead.currentLeadPrice)}</p>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4 text-muted-foreground" />
             <div>
               <p className="font-medium">{formatDate(lead.createdAt)}</p>
-              <p className="text-muted-foreground text-xs">{lead.frequency || "one-time"}</p>
             </div>
           </div>
         </div>
@@ -164,13 +192,14 @@ export default function AdminDashboard() {
               data-testid={`button-decline-${lead.id}`}
             >
               <XCircle className="mr-2 h-4 w-4" />
-              Decline (Send to Subcontractors)
+              Decline (Send to Investors)
             </Button>
           </div>
         )}
       </CardContent>
     </Card>
-  );
+    );
+  };
 
   if (isLoading) {
     return (

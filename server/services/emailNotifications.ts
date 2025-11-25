@@ -176,14 +176,22 @@ export async function sendNewLeadNotification(leadData: {
   serviceType: string;
   finalQuote: string;
   address?: string;
+  estimatedMarketValue?: string;
+  anchorOffer?: string;
+  estimatedRepairs?: string;
 }): Promise<void> {
   const { fromEmail } = await getUncachableResendClient();
   
-  // Format finalQuote with proper rounding and defensive check for missing values
-  const formattedQuote = formatQuoteForDisplay(leadData.finalQuote, true); // show "Pending" if invalid
+  // Format values for display
+  const formattedQuote = formatQuoteForDisplay(leadData.finalQuote, true);
+  const rv = leadData.estimatedMarketValue ? `$${parseFloat(leadData.estimatedMarketValue).toLocaleString()}` : 'N/A';
+  const offer = leadData.anchorOffer ? `$${parseFloat(leadData.anchorOffer).toLocaleString()}` : 'N/A';
+  const profit = leadData.estimatedMarketValue && leadData.anchorOffer && leadData.estimatedRepairs 
+    ? `$${(parseFloat(leadData.estimatedMarketValue) - parseFloat(leadData.anchorOffer) - parseFloat(leadData.estimatedRepairs)).toLocaleString()}`
+    : 'N/A';
   const quoteForSubject = formattedQuote === 'Pending' ? 'Quote Pending' : `$${formattedQuote}`;
   
-  const subject = `New Lead Available - ${leadData.name} (${leadData.city}) - ${quoteForSubject}`;
+  const subject = `New Wholesale Lead - ${leadData.name} (${leadData.city}) - RV: ${rv}`;
   
   const htmlBody = `
     <!DOCTYPE html>
@@ -242,8 +250,20 @@ export async function sendNewLeadNotification(leadData: {
                 <td class="value">${leadData.serviceType}</td>
               </tr>
               <tr>
-                <td class="label">Estimated Value:</td>
-                <td class="value" style="font-size: 20px; font-weight: 600; color: #166534;">${formattedQuote === 'Pending' ? formattedQuote : `$${formattedQuote}`}</td>
+                <td class="label">RV (Estimated Market Value):</td>
+                <td class="value" style="font-size: 18px; font-weight: 600; color: #166534;">${rv}</td>
+              </tr>
+              <tr>
+                <td class="label">Estimated Offer Price:</td>
+                <td class="value" style="font-size: 18px; font-weight: 600; color: #1e40af;">${offer}</td>
+              </tr>
+              <tr>
+                <td class="label">Estimated Repairs:</td>
+                <td class="value">${leadData.estimatedRepairs ? `$${parseFloat(leadData.estimatedRepairs).toLocaleString()}` : 'N/A'}</td>
+              </tr>
+              <tr>
+                <td class="label">Estimated Profit:</td>
+                <td class="value" style="font-size: 18px; font-weight: 600; color: #059669;">${profit}</td>
               </tr>
             </table>
           </div>

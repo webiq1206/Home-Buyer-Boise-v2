@@ -664,6 +664,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
           serviceType: leadData.serviceType,
           finalQuote: lead.finalQuote || "0",
           address: leadData.address || undefined,
+          estimatedMarketValue: lead.estimatedMarketValue?.toString(),
+          anchorOffer: lead.anchorOffer?.toString(),
+          estimatedRepairs: lead.estimatedRepairs?.toString(),
         });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);

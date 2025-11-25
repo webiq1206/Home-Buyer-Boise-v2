@@ -339,6 +339,7 @@ export const leads = pgTable("leads", {
   // New fields (for property offers)
   anchorOffer: decimal("anchor_offer", { precision: 12, scale: 2 }),
   estimatedMarketValue: decimal("estimated_market_value", { precision: 12, scale: 2 }),
+  estimatedRepairs: decimal("estimated_repairs", { precision: 10, scale: 2 }),
   offerLow: decimal("offer_low", { precision: 12, scale: 2 }),
   offerHigh: decimal("offer_high", { precision: 12, scale: 2 }),
   
