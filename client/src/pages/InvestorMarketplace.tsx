@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,9 +7,14 @@ import { useAuth } from "@/hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import type { Lead } from "@shared/schema";
 import { Clock, DollarSign, MapPin, Building, ShoppingCart, AlertCircle } from "lucide-react";
+import { StripeLeadPayment } from "@/components/StripeLeadPayment";
+import { useToast } from "@/hooks/use-toast";
 
 export default function InvestorMarketplace() {
   const { isAuthenticated, user } = useAuth();
+  const { toast } = useToast();
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
 
   const { data: leads = [], isLoading } = useQuery<Lead[]>({
     queryKey: ["/api/leads", { availableOnly: true }],
@@ -250,7 +256,10 @@ export default function InvestorMarketplace() {
                       <Button
                         className="flex-1"
                         data-testid={`button-purchase-${lead.id}`}
-                        disabled
+                        onClick={() => {
+                          setSelectedLead(lead);
+                          setIsPaymentOpen(true);
+                        }}
                       >
                         <ShoppingCart className="mr-2 h-4 w-4" />
                         Purchase Lead - {formatCurrency(lead.currentLeadPrice)}
@@ -261,6 +270,26 @@ export default function InvestorMarketplace() {
               );
             })}
           </div>
+        )}
+
+        {/* Stripe Payment Modal */}
+        {selectedLead && (
+          <StripeLeadPayment
+            lead={selectedLead}
+            isOpen={isPaymentOpen}
+            onClose={() => {
+              setIsPaymentOpen(false);
+              setSelectedLead(null);
+            }}
+            onSuccess={() => {
+              setIsPaymentOpen(false);
+              setSelectedLead(null);
+              toast({
+                title: "Lead Purchased Successfully",
+                description: "You now have access to the full lead details. Check your email for confirmation.",
+              });
+            }}
+          />
         )}
       </div>
     </>
