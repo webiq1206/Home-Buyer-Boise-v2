@@ -10,8 +10,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Calendar, Clock, ChevronLeft, ChevronRight, Share2, Home, Phone, CheckCircle } from "lucide-react";
+import { Calendar, Clock, ChevronLeft, ChevronRight, Share2, Home, Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import heroBackground from "@assets/Exclamation Points_1764090286437.png";
+import ctaBackground from "@assets/Super Hero_1764090286440.png";
 
 interface BlogPostData {
   id: string;
@@ -72,13 +74,13 @@ export default function BlogPost() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
-        <div className="container py-12">
+        <div className="container py-20">
           <div className="max-w-4xl mx-auto animate-pulse">
-            <div className="h-8 bg-slate-200 dark:bg-slate-800 rounded w-3/4 mb-4" />
-            <div className="h-4 bg-slate-200 dark:bg-slate-800 rounded w-1/2 mb-8" />
-            <div className="space-y-4">
+            <div className="h-10 bg-[#EFF5FA] rounded w-3/4 mb-6" />
+            <div className="h-6 bg-[#EFF5FA] rounded w-1/2 mb-12" />
+            <div className="space-y-6">
               {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="h-4 bg-slate-200 dark:bg-slate-800 rounded" />
+                <div key={i} className="h-5 bg-[#EFF5FA] rounded" />
               ))}
             </div>
           </div>
@@ -90,15 +92,15 @@ export default function BlogPost() {
   if (error || !post) {
     return (
       <div className="min-h-screen bg-background">
-        <div className="container py-12">
+        <div className="container py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
-            <p className="text-muted-foreground mb-8">
+            <h1 className="text-4xl font-bold mb-6">Article Not Found</h1>
+            <p className="text-muted-foreground text-lg mb-10">
               The article you're looking for doesn't exist or has been moved.
             </p>
             <Link href="/blog">
-              <Button>
-                <ChevronLeft className="mr-2 h-4 w-4" />
+              <Button size="lg" className="bg-[#0E4DA4] hover:bg-[#0E4DA4]/90">
+                <ChevronLeft className="mr-2 h-5 w-5" />
                 Back to Blog
               </Button>
             </Link>
@@ -196,49 +198,60 @@ export default function BlogPost() {
       </Helmet>
 
       <article className="min-h-screen bg-background" data-testid="page-blog-post">
-        {/* Hero Section */}
-        <header className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 md:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnoiIHN0cm9rZT0icmdiYSgyMDAsIDE3MCwgMTAwLCAwLjEpIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] opacity-20"></div>
+        {/* Hero Section - Brand Blue Gradient */}
+        <header className="relative min-h-[45vh] md:min-h-[55vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0E4DA4] to-[#1F3D5C]">
+          <div className="absolute inset-0 overflow-hidden">
+            <img 
+              src={heroBackground} 
+              alt="" 
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
+              width={1920}
+              height={1080}
+              loading="eager"
+              style={{ objectPosition: 'center 40%' }}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E4DA4]/70 via-[#0E4DA4]/40 to-[#0E4DA4]/80" />
           
-          <div className="container relative z-10">
+          <div className="container relative z-10 py-16 md:py-24">
             <div className="max-w-4xl mx-auto">
               {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm text-slate-400 mb-6" aria-label="Breadcrumb">
+              <nav className="flex items-center gap-2 text-sm text-white/70 mb-8" aria-label="Breadcrumb">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 <ChevronRight className="h-4 w-4" />
                 <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
                 <ChevronRight className="h-4 w-4" />
-                <span className="text-slate-300 truncate max-w-xs">{post.title}</span>
+                <span className="text-white/90 truncate max-w-xs">{post.category}</span>
               </nav>
 
-              <Badge className="mb-4 bg-amber-500/20 text-amber-300 border-amber-500/30">
+              <Badge className="mb-6 bg-[#D4A12A]/20 text-[#D4A12A] border-[#D4A12A]/40 text-sm px-4 py-1">
                 {post.category}
               </Badge>
               
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="text-post-title">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight tracking-tight" data-testid="text-post-title">
                 {post.title}
               </h1>
               
-              <p className="text-lg text-slate-300 mb-8 max-w-3xl">
+              <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl leading-relaxed">
                 {post.excerpt}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+              <div className="flex flex-wrap items-center gap-6 text-base text-white/80">
                 <span className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-5 w-5 text-[#D4A12A]" />
                   {formatDate(post.publishedAt)}
                 </span>
                 <span className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-5 w-5 text-[#D4A12A]" />
                   {estimateReadTime(post.content)} min read
                 </span>
-                <span className="text-slate-300">
+                <span className="text-white">
                   By {post.author}
                 </span>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-slate-400 hover:text-white"
+                  className="text-white/80 hover:text-white hover:bg-white/10"
                   onClick={handleShare}
                   data-testid="button-share"
                 >
@@ -251,32 +264,35 @@ export default function BlogPost() {
         </header>
 
         {/* Main Content */}
-        <div className="container py-12">
-          <div className="max-w-4xl mx-auto">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-4 gap-12">
-              {/* Sidebar - Table of Contents for larger screens */}
+              {/* Sidebar - Quick Links for larger screens */}
               <aside className="hidden lg:block lg:col-span-1">
                 <div className="sticky top-24">
-                  <Card>
-                    <CardContent className="p-4">
-                      <h3 className="font-semibold mb-3 text-sm">Quick Links</h3>
-                      <div className="space-y-2 text-sm">
-                        <Link href="/get-quote" className="block text-amber-600 hover:text-amber-700 font-medium">
+                  <Card className="border-2 border-[#0E4DA4]/10">
+                    <CardContent className="p-6">
+                      <h3 className="font-bold mb-4 text-[#0E4DA4]">Quick Links</h3>
+                      <div className="space-y-3">
+                        <Link href="/get-quote" className="flex items-center gap-2 text-[#D4A12A] hover:text-[#D4A12A]/80 font-semibold transition-colors">
+                          <ArrowRight className="h-4 w-4" />
                           Get Your Cash Offer
                         </Link>
-                        <Link href="/how-it-works" className="block text-muted-foreground hover:text-foreground">
+                        <Link href="/how-it-works" className="flex items-center gap-2 text-muted-foreground hover:text-[#0E4DA4] transition-colors">
+                          <ArrowRight className="h-4 w-4" />
                           How It Works
                         </Link>
-                        <Link href="/about" className="block text-muted-foreground hover:text-foreground">
+                        <Link href="/about" className="flex items-center gap-2 text-muted-foreground hover:text-[#0E4DA4] transition-colors">
+                          <ArrowRight className="h-4 w-4" />
                           About Us
                         </Link>
                       </div>
                       
-                      <div className="border-t mt-4 pt-4">
-                        <p className="text-xs text-muted-foreground mb-2">Tags</p>
-                        <div className="flex flex-wrap gap-1">
+                      <div className="border-t mt-6 pt-6">
+                        <p className="text-sm font-semibold text-[#0E4DA4] mb-3">Tags</p>
+                        <div className="flex flex-wrap gap-2">
                           {post.tags.slice(0, 5).map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
+                            <Badge key={tag} variant="outline" className="text-xs border-[#0E4DA4]/30 text-[#0E4DA4]">
                               {tag}
                             </Badge>
                           ))}
@@ -292,26 +308,26 @@ export default function BlogPost() {
                 {/* Article Body */}
                 <div 
                   className="prose prose-lg dark:prose-invert max-w-none
-                    prose-headings:font-bold prose-headings:text-foreground
-                    prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-amber-200 dark:prose-h2:border-amber-900
-                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                    prose-h4:text-lg prose-h4:mt-6 prose-h4:mb-3
-                    prose-p:text-muted-foreground prose-p:leading-relaxed
-                    prose-a:text-amber-600 prose-a:no-underline hover:prose-a:underline
-                    prose-strong:text-foreground
-                    prose-ul:my-6 prose-li:text-muted-foreground
+                    prose-headings:font-bold prose-headings:text-foreground prose-headings:tracking-tight
+                    prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-6 prose-h2:pb-4 prose-h2:border-b-2 prose-h2:border-[#0E4DA4]/20
+                    prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-5 prose-h3:text-[#1F3D5C]
+                    prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4
+                    prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:text-lg
+                    prose-a:text-[#0E4DA4] prose-a:font-medium prose-a:no-underline hover:prose-a:underline hover:prose-a:text-[#D4A12A]
+                    prose-strong:text-foreground prose-strong:font-bold
+                    prose-ul:my-6 prose-li:text-muted-foreground prose-li:text-lg
                     prose-ol:my-6
-                    prose-blockquote:border-l-amber-500 prose-blockquote:bg-amber-50 dark:prose-blockquote:bg-amber-950/30 prose-blockquote:py-1 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-                    prose-table:border prose-table:border-border prose-th:bg-muted prose-th:p-3 prose-td:p-3 prose-td:border-t"
+                    prose-blockquote:border-l-4 prose-blockquote:border-[#D4A12A] prose-blockquote:bg-[#EFF5FA] prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic prose-blockquote:text-[#1F3D5C]
+                    prose-table:border prose-table:border-border prose-th:bg-[#EFF5FA] prose-th:p-4 prose-th:text-[#0E4DA4] prose-td:p-4 prose-td:border-t"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                   data-testid="content-post-body"
                 />
 
                 {/* FAQ Section */}
                 {post.faqs && post.faqs.length > 0 && (
-                  <section className="mt-16 pt-8 border-t">
-                    <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                      <span className="w-1 h-8 bg-amber-500 rounded-full"></span>
+                  <section className="mt-20 pt-10 border-t-2 border-[#0E4DA4]/10">
+                    <h2 className="text-3xl font-bold mb-8 flex items-center gap-4 text-[#1F3D5C]">
+                      <span className="w-1.5 h-10 bg-[#D4A12A] rounded-full"></span>
                       Frequently Asked Questions
                     </h2>
                     <Accordion type="single" collapsible className="space-y-4">
@@ -319,12 +335,12 @@ export default function BlogPost() {
                         <AccordionItem 
                           key={index} 
                           value={`faq-${index}`}
-                          className="border rounded-lg px-4 data-[state=open]:bg-amber-50 dark:data-[state=open]:bg-amber-950/20"
+                          className="border-2 border-[#0E4DA4]/10 rounded-xl px-6 data-[state=open]:bg-[#EFF5FA] data-[state=open]:border-[#0E4DA4]/20"
                         >
-                          <AccordionTrigger className="text-left font-medium hover:no-underline" data-testid={`accordion-faq-${index}`}>
+                          <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline text-[#1F3D5C] py-5" data-testid={`accordion-faq-${index}`}>
                             {faq.question}
                           </AccordionTrigger>
-                          <AccordionContent className="text-muted-foreground">
+                          <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-5">
                             {faq.answer}
                           </AccordionContent>
                         </AccordionItem>
@@ -333,67 +349,78 @@ export default function BlogPost() {
                   </section>
                 )}
 
-                {/* CTA Section */}
-                <section className="mt-16">
-                  <Card className="bg-gradient-to-br from-amber-500 to-amber-600 text-white border-0 overflow-hidden">
-                    <CardContent className="p-8 md:p-12">
-                      <div className="flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex-shrink-0">
-                          <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center">
-                            <Home className="h-10 w-10" />
-                          </div>
-                        </div>
-                        <div className="flex-1 text-center md:text-left">
-                          <h3 className="text-2xl md:text-3xl font-bold mb-3">
-                            Ready to Sell Your House Fast?
-                          </h3>
-                          <p className="text-amber-100 mb-6">
-                            Get a fair, no-obligation cash offer on your Boise area home today. 
-                            We buy houses in any condition - no repairs, no fees, no hassle.
-                          </p>
-                          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <Link href="/get-quote">
-                              <Button size="lg" variant="secondary" className="w-full sm:w-auto text-amber-600 hover:text-amber-700" data-testid="button-cta-quote">
-                                Get Your Cash Offer
-                                <ChevronRight className="ml-2 h-5 w-5" />
-                              </Button>
-                            </Link>
-                            <Link href="tel:208-314-2458">
-                              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10" data-testid="button-cta-call">
-                                <Phone className="mr-2 h-5 w-5" />
-                                (208) 314-2458
-                              </Button>
-                            </Link>
-                          </div>
+                {/* CTA Section - Brand Blue */}
+                <section className="mt-20 relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0E4DA4] to-[#1F3D5C]">
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                    <img 
+                      src={ctaBackground} 
+                      alt="" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-50"
+                      width={1920}
+                      height={1080}
+                      loading="lazy"
+                      style={{ objectPosition: 'center center' }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#0E4DA4]/60 via-[#0E4DA4]/30 to-[#0E4DA4]/70" />
+                  
+                  <div className="relative z-10 p-10 md:p-14">
+                    <div className="flex flex-col md:flex-row items-center gap-10">
+                      <div className="flex-shrink-0">
+                        <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center">
+                          <Home className="h-12 w-12 text-white" />
                         </div>
                       </div>
+                      <div className="flex-1 text-center md:text-left">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-tight">
+                          Ready to Sell Your House Fast?
+                        </h3>
+                        <p className="text-white/90 text-lg mb-8 leading-relaxed">
+                          Get a fair, no-obligation cash offer on your Boise area home today. 
+                          We buy houses in any condition - no repairs, no fees, no hassle.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                          <Link href="/get-quote">
+                            <Button size="lg" className="w-full sm:w-auto bg-[#D4A12A] hover:bg-[#D4A12A]/90 text-white text-lg px-8 py-6 h-auto" data-testid="button-cta-quote">
+                              Get Your Cash Offer
+                              <ChevronRight className="ml-2 h-5 w-5" />
+                            </Button>
+                          </Link>
+                          <Link href="tel:208-314-2458">
+                            <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10 text-lg px-8 py-6 h-auto" data-testid="button-cta-call">
+                              <Phone className="mr-2 h-5 w-5" />
+                              (208) 314-2458
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
 
-                      {/* Trust Indicators */}
-                      <div className="mt-8 pt-6 border-t border-white/20">
-                        <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-amber-100">
-                          <span className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            No Fees or Commissions
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            Close in 7-14 Days
-                          </span>
-                          <span className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4" />
-                            We Buy As-Is
-                          </span>
-                        </div>
+                    {/* Trust Indicators */}
+                    <div className="mt-10 pt-8 border-t border-white/20">
+                      <div className="flex flex-wrap justify-center md:justify-start gap-8 text-base text-white/90">
+                        <span className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-[#D4A12A]" />
+                          No Fees or Commissions
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-[#D4A12A]" />
+                          Close in 7-14 Days
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-[#D4A12A]" />
+                          We Buy As-Is
+                        </span>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </section>
 
                 {/* Back to Blog */}
-                <div className="mt-12 pt-8 border-t">
+                <div className="mt-14 pt-10 border-t-2 border-[#0E4DA4]/10">
                   <Link href="/blog">
-                    <Button variant="outline">
-                      <ChevronLeft className="mr-2 h-4 w-4" />
+                    <Button variant="outline" size="lg" className="border-[#0E4DA4]/30 text-[#0E4DA4] hover:bg-[#0E4DA4]/10">
+                      <ChevronLeft className="mr-2 h-5 w-5" />
                       Back to All Articles
                     </Button>
                   </Link>
