@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar, Clock, ChevronRight, Search, BookOpen, TrendingUp, Home, Scale, Users, ArrowRight, Shield } from "lucide-react";
+import { Calendar, Clock, Search, BookOpen, TrendingUp, Home, Scale, Users, ArrowRight } from "lucide-react";
 import heroBackground from "@assets/Stars (2)_1764090286439.png";
 import ctaBackground from "@assets/Smiley Face_1764090286439.png";
 
@@ -206,39 +206,34 @@ export default function Blog() {
                   {/* Featured Post - First Post */}
                   {filteredPosts.length > 0 && (
                     <Link href={`/blog/${filteredPosts[0].slug}`}>
-                      <Card className="mb-12 overflow-hidden hover-elevate cursor-pointer group" data-testid="card-featured-post">
-                        <div className="grid md:grid-cols-2 gap-0">
-                          <div className="bg-primary p-10 md:p-14 flex items-center justify-center min-h-[280px]">
-                            <div className="text-center">
-                              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                                <span className="text-sm font-medium text-white">Featured Article</span>
-                              </div>
-                              <Home className="h-24 w-24 text-white/70 mx-auto" />
-                            </div>
-                          </div>
-                          <div className="p-10 md:p-14 flex flex-col justify-center">
-                            <Badge variant="secondary" className="mb-5 w-fit">
+                      <Card className="mb-12 overflow-hidden hover-elevate cursor-pointer group border-l-4 border-l-primary" data-testid="card-featured-post">
+                        <div className="p-8 md:p-10">
+                          <div className="flex flex-wrap items-center gap-3 mb-4">
+                            <Badge variant="default" className="bg-primary">
+                              Featured
+                            </Badge>
+                            <Badge variant="secondary">
                               {filteredPosts[0].category}
                             </Badge>
-                            <h2 className="text-2xl md:text-3xl font-bold mb-5 group-hover:text-primary transition-colors leading-tight tracking-tight">
-                              {filteredPosts[0].title}
-                            </h2>
-                            <p className="text-muted-foreground text-lg mb-6 line-clamp-3 leading-relaxed">
-                              {filteredPosts[0].excerpt}
-                            </p>
-                            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                              <span className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4 text-primary" />
-                                {formatDate(filteredPosts[0].publishedAt)}
-                              </span>
-                              <span className="flex items-center gap-2">
-                                <Clock className="h-4 w-4 text-primary" />
-                                {estimateReadTime(filteredPosts[0].excerpt)} min read
-                              </span>
-                            </div>
-                            <div className="mt-6 flex items-center text-primary font-semibold group-hover:text-accent transition-colors">
+                          </div>
+                          <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors leading-tight tracking-tight">
+                            {filteredPosts[0].title}
+                          </h2>
+                          <p className="text-muted-foreground text-lg mb-6 line-clamp-3 leading-relaxed">
+                            {filteredPosts[0].excerpt}
+                          </p>
+                          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+                            <span className="flex items-center gap-2">
+                              <Calendar className="h-4 w-4 text-primary" />
+                              {formatDate(filteredPosts[0].publishedAt)}
+                            </span>
+                            <span className="flex items-center gap-2">
+                              <Clock className="h-4 w-4 text-primary" />
+                              {estimateReadTime(filteredPosts[0].excerpt)} min read
+                            </span>
+                            <span className="flex items-center text-primary font-semibold group-hover:text-accent transition-colors ml-auto">
                               Read Article <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                            </div>
+                            </span>
                           </div>
                         </div>
                       </Card>
@@ -246,32 +241,29 @@ export default function Blog() {
                   )}
 
                   {/* Rest of Posts */}
-                  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {filteredPosts.slice(1).map((post) => (
                       <Link key={post.id} href={`/blog/${post.slug}`}>
                         <Card className="h-full hover-elevate cursor-pointer group" data-testid={`card-post-${post.slug}`}>
-                          <div className="h-40 bg-muted flex items-center justify-center">
-                            <Home className="h-14 w-14 text-primary/30 group-hover:text-primary/50 transition-colors" />
-                          </div>
                           <CardHeader className="pb-3">
-                            <Badge variant="outline" className="w-fit mb-3 text-xs">
+                            <Badge variant="outline" className="w-fit mb-2 text-xs">
                               {post.category}
                             </Badge>
-                            <CardTitle className="text-xl group-hover:text-primary transition-colors line-clamp-2 leading-tight tracking-tight">
+                            <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2 leading-tight tracking-tight">
                               {post.title}
                             </CardTitle>
                           </CardHeader>
                           <CardContent>
-                            <CardDescription className="line-clamp-2 mb-5 text-base leading-relaxed">
+                            <CardDescription className="line-clamp-3 mb-4 text-sm leading-relaxed">
                               {post.excerpt}
                             </CardDescription>
-                            <div className="flex items-center justify-between text-sm text-muted-foreground">
-                              <span className="flex items-center gap-2">
-                                <Calendar className="h-4 w-4" />
+                            <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t">
+                              <span className="flex items-center gap-1.5">
+                                <Calendar className="h-3.5 w-3.5" />
                                 {formatDate(post.publishedAt)}
                               </span>
-                              <span className="flex items-center gap-2">
-                                <Clock className="h-4 w-4" />
+                              <span className="flex items-center gap-1.5">
+                                <Clock className="h-3.5 w-3.5" />
                                 {estimateReadTime(post.excerpt)} min
                               </span>
                             </div>
