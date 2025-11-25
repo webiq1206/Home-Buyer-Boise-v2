@@ -26,6 +26,8 @@ Allow: /about
 Allow: /contact
 Allow: /privacy-policy
 Allow: /terms-of-service
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 # Sitemap location
 Sitemap: https://homebuyerboise.com/sitemap.xml
