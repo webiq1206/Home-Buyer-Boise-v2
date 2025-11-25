@@ -123,8 +123,8 @@ export default function InvestorMarketplace() {
             </Card>
             <Card>
               <CardHeader className="pb-2">
-                <CardDescription>Total Market Value</CardDescription>
-                <CardTitle className="text-3xl" data-testid="stat-total-rv">
+                <CardDescription>Total ARV</CardDescription>
+                <CardTitle className="text-3xl" data-testid="stat-total-arv">
                   {formatCurrency(
                     leads.reduce((sum, l) => sum + parseFloat(l.estimatedMarketValue?.toString() || "0"), 0).toFixed(2)
                   )}
@@ -181,7 +181,7 @@ export default function InvestorMarketplace() {
                     {/* Financial Metrics Grid */}
                     <div className="grid grid-cols-4 gap-3 text-sm">
                       <div className="bg-slate-50 dark:bg-slate-900 rounded-md p-3">
-                        <p className="text-xs font-medium text-muted-foreground">RV</p>
+                        <p className="text-xs font-medium text-muted-foreground">ARV</p>
                         <p className="font-semibold text-lg" data-testid={`text-rv-${lead.id}`}>
                           {formatCurrency(lead.estimatedMarketValue?.toString() || null)}
                         </p>

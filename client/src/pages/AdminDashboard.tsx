@@ -100,7 +100,7 @@ export default function AdminDashboard() {
               {lead.name}
             </CardTitle>
             <CardDescription className="mt-1">
-              {lead.serviceType.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())} in {lead.city}
+              {(lead.serviceType || "cash-offer").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())} in {lead.city}
             </CardDescription>
           </div>
           <Badge variant={lead.status === "pending_admin" ? "default" : lead.status === "purchased" ? "secondary" : "outline"} data-testid={`badge-status-${lead.id}`}>
@@ -113,15 +113,15 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-2">
             <DollarSign className="h-4 w-4 text-muted-foreground" />
             <div>
-              <p className="font-medium text-xs text-muted-foreground">RV</p>
-              <p className="font-semibold">{formatCurrency(lead.estimatedMarketValue?.toString())}</p>
+              <p className="font-medium text-xs text-muted-foreground">ARV</p>
+              <p className="font-semibold">{formatCurrency(lead.estimatedMarketValue?.toString() || null)}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <DollarSign className="h-4 w-4 text-muted-foreground" />
             <div>
               <p className="font-medium text-xs text-muted-foreground">Offer</p>
-              <p className="font-semibold">{formatCurrency(lead.anchorOffer?.toString())}</p>
+              <p className="font-semibold">{formatCurrency(lead.anchorOffer?.toString() || null)}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">

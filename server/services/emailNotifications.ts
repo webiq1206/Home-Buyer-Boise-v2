@@ -191,7 +191,7 @@ export async function sendNewLeadNotification(leadData: {
     : 'N/A';
   const quoteForSubject = formattedQuote === 'Pending' ? 'Quote Pending' : `$${formattedQuote}`;
   
-  const subject = `New Wholesale Lead - ${leadData.name} (${leadData.city}) - RV: ${rv}`;
+  const subject = `New Wholesale Lead - ${leadData.name} (${leadData.city}) - ARV: ${rv}`;
   
   const htmlBody = `
     <!DOCTYPE html>
@@ -250,7 +250,7 @@ export async function sendNewLeadNotification(leadData: {
                 <td class="value">${leadData.serviceType}</td>
               </tr>
               <tr>
-                <td class="label">RV (Estimated Market Value):</td>
+                <td class="label">ARV (After Repair Value):</td>
                 <td class="value" style="font-size: 18px; font-weight: 600; color: #166534;">${rv}</td>
               </tr>
               <tr>
