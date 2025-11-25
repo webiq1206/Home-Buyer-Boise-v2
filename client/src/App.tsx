@@ -70,6 +70,7 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const AdminDashboard = lazy(() => import("@/pages/AdminDashboard"));
 const PurchaseHistory = lazy(() => import("@/pages/PurchaseHistory"));
 const AnalyticsDashboard = lazy(() => import("@/pages/AnalyticsDashboard"));
+const InvestorMarketplace = lazy(() => import("@/pages/InvestorMarketplace"));
 
 function Router() {
   useAnalytics();
@@ -133,6 +134,9 @@ function Router() {
             <Route path="/admin/dashboard" component={AdminDashboard} />
             <Route path="/admin/analytics" component={AnalyticsDashboard} />
             <Route path="/admin/purchases" component={PurchaseHistory} />
+            
+            {/* Investor Pages */}
+            <Route path="/investor/marketplace" component={InvestorMarketplace} />
 
             {/* 404 */}
             <Route component={NotFound} />
