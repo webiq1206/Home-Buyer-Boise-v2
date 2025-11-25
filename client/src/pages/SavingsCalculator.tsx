@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,15 +14,6 @@ import type { PropertyData } from "@/lib/adaCountyAssessor";
 export default function SavingsCalculator() {
   const [, setLocation] = useLocation();
   const [address, setAddress] = useState("");
-  
-  // Read address from URL query parameter on mount
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const addressParam = params.get('address');
-    if (addressParam) {
-      setAddress(addressParam);
-    }
-  }, []);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [suggestion, setSuggestion] = useState<string | null>(null);
@@ -102,8 +93,9 @@ export default function SavingsCalculator() {
     setSuggestion(null);
   };
 
-  const handleAddressLookup = async () => {
-    if (!address.trim()) {
+  // Core lookup function that can be called with an address parameter
+  const triggerAddressLookup = async (lookupAddress: string) => {
+    if (!lookupAddress.trim()) {
       setError("Please enter an address");
       return;
     }
@@ -116,12 +108,12 @@ export default function SavingsCalculator() {
 
     try {
       // Detect county from address
-      const county = getCountyFromCity(address);
-      console.log('[SavingsCalculator] Looking up address:', address, 'in county:', county);
+      const county = getCountyFromCity(lookupAddress);
+      console.log('[SavingsCalculator] Looking up address:', lookupAddress, 'in county:', county);
 
       const result = await queryAssessor({
         county,
-        address: address.trim(),
+        address: lookupAddress.trim(),
         enableFallback: true,
       });
 
@@ -149,6 +141,22 @@ export default function SavingsCalculator() {
       setLoading(false);
     }
   };
+
+  // Handler for button click that uses current address state
+  const handleAddressLookup = () => {
+    triggerAddressLookup(address);
+  };
+
+  // Read address from URL query parameter on mount and auto-trigger lookup
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const addressParam = params.get('address');
+    if (addressParam) {
+      setAddress(addressParam);
+      // Auto-trigger lookup after setting address
+      triggerAddressLookup(addressParam);
+    }
+  }, []);
 
   const selectProperty = (property: PropertyData) => {
     setSelectedProperty(property);
@@ -299,12 +307,12 @@ export default function SavingsCalculator() {
         </section>
 
         {/* Calculator Section */}
-        <section className="py-16 md:py-20 -mt-20 relative z-10">
+        <section className="py-16 md:py-20 -mt-12 relative z-10">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
               {/* Address Lookup Card */}
               <Card className="mb-12 shadow-xl border-primary/20">
-                <CardContent className="p-8">
+                <CardContent className="p-6 md:p-8 pt-8 md:pt-10">
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-3">
                       <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0">
