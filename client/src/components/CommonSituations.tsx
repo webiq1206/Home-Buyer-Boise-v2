@@ -84,14 +84,15 @@ export function CommonSituations() {
         <img 
           src={superheroBackground} 
           alt=""
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'left bottom' }}
           width="1920"
           height="1080"
           loading="lazy"
         />
       </div>
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 z-[1] bg-background/70"></div>
+      {/* Light overlay for text readability */}
+      <div className="absolute inset-0 z-[1] bg-white/40"></div>
       <div className="container px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

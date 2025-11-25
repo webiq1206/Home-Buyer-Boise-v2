@@ -231,14 +231,15 @@ export default function Home() {
             <img 
               src={starsBackground} 
               alt=""
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center center' }}
               width="1920"
               height="1080"
               loading="lazy"
             />
           </div>
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 z-[1] bg-background/70"></div>
+          {/* Light overlay for text readability */}
+          <div className="absolute inset-0 z-[1] bg-white/40"></div>
           <div className="container px-4 md:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -452,14 +453,15 @@ export default function Home() {
           <img 
             src={smileyBackground} 
             alt=""
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'right center' }}
             width="1920"
             height="1080"
             loading="lazy"
           />
         </div>
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 z-[1] bg-background/50"></div>
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 z-[1] bg-white/40"></div>
         <div className="container px-4 md:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 space-y-4">
