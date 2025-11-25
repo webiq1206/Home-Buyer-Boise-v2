@@ -30,7 +30,7 @@ export interface IStorage {
   upsertUser(user: UpsertUser): Promise<User>;
   getUserByEmail(email: string): Promise<User | undefined>;
   updateUser(id: string, data: Partial<User>): Promise<User | undefined>;
-  getAllSubcontractors(): Promise<User[]>;
+  getAllInvestors(): Promise<User[]>;
   getAllAdmins(): Promise<User[]>;
   
   // Lead methods
@@ -258,7 +258,7 @@ export class MemStorage implements IStorage {
         firstName: "Test",
         lastName: "Subcontractor",
         phone: null,
-        role: "subcontractor",
+        role: "investor",
         company: null,
         profileImageUrl: null,
         agreementAccepted: true,
@@ -509,8 +509,8 @@ export class MemStorage implements IStorage {
     return updated;
   }
 
-  async getAllSubcontractors(): Promise<User[]> {
-    return Array.from(this.users.values()).filter(u => u.role === "subcontractor" && u.isActive);
+  async getAllInvestors(): Promise<User[]> {
+    return Array.from(this.users.values()).filter(u => u.role === "investor" && u.isActive);
   }
 
   async getAllAdmins(): Promise<User[]> {

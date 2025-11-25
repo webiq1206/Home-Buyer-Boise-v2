@@ -793,7 +793,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Admin declines a lead (makes available to subcontractors) - requires admin role
+  // Admin declines a lead (makes available to investors) - requires admin role
   app.post("/api/leads/:id/decline", isAuthenticated, requireRole(["admin"]), async (req: any, res) => {
     try {
       const userId = req.user.claims.sub;
@@ -803,9 +803,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ error: "Lead not found" });
       }
       
-      // Notify all subcontractors
-      const subcontractors = await storage.getAllSubcontractors();
-      for (const sub of subcontractors) {
+      // Notify all investors
+      const investors = await storage.getAllInvestors();
+      for (const sub of investors) {
         await storage.createNotification({
           userId: sub.id,
           type: "new_lead",
@@ -822,8 +822,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Subcontractor purchases a lead - requires subcontractor role
-  app.post("/api/leads/:id/purchase", isAuthenticated, requireRole(["subcontractor"]), async (req: any, res) => {
+  // Subcontractor purchases a lead - requires investor role
+  app.post("/api/leads/:id/purchase", isAuthenticated, requireRole(["investor"]), async (req: any, res) => {
     try {
       const userId = req.user.claims.sub;
       const { paymentIntentId } = req.body;

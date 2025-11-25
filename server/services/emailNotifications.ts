@@ -200,7 +200,7 @@ export async function sendNewLeadNotification(leadData: {
             <img src="https://homebuyerboise.com/attached_assets/Home Buyer Boise Logo_1764014379793.png" alt="Home Buyer Boise" style="max-width: 400px; height: auto;">
           </div>
           <h1>New Lead Available</h1>
-          <p>Lead Distribution Platform</p>
+          <p>Wholesaling Platform</p>
         </div>
         
         <div class="content">
@@ -208,7 +208,7 @@ export async function sendNewLeadNotification(leadData: {
           
           <div class="highlight-box">
             <p><strong>48-Hour Priority Window</strong></p>
-            <p style="margin: 10px 0 0 0;">You have first right of refusal for the next 48 hours. After that, this lead will become available to your network of subcontractors.</p>
+            <p style="margin: 10px 0 0 0;">You have first right of refusal for the next 48 hours. After that, this lead will become available to your network of investors.</p>
           </div>
 
           <div class="section">
@@ -255,7 +255,7 @@ export async function sendNewLeadNotification(leadData: {
 
         <div class="footer">
           <p class="footer-brand">HomeBuyerBoise</p>
-          <p class="footer-tagline">Lead Distribution Platform</p>
+          <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
         </div>
@@ -360,13 +360,13 @@ export async function sendLeadPurchasedNotification(leadData: {
 
           <div class="highlight-box">
             <p><strong>Transaction Complete</strong></p>
-            <p style="margin: 10px 0 0 0;">The lead has been transferred to the subcontractor. They now have full access to customer contact information and are responsible for following up.</p>
+            <p style="margin: 10px 0 0 0;">The lead has been transferred to the investor. They now have full access to customer contact information and are responsible for following up.</p>
           </div>
         </div>
 
         <div class="footer">
           <p class="footer-brand">HomeBuyerBoise</p>
-          <p class="footer-tagline">Lead Distribution Platform</p>
+          <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
         </div>
@@ -468,7 +468,7 @@ export async function sendLeadPurchaseConfirmation(purchaserEmail: string, leadD
 
         <div class="footer">
           <p class="footer-brand">HomeBuyerBoise</p>
-          <p class="footer-tagline">Lead Distribution Platform</p>
+          <p class="footer-tagline">Wholesaling Platform</p>
           <p style="font-size: 12px; color: #6b7280; margin: 15px 0;">Questions about your purchase? Contact us anytime.</p>
         </div>
       </div>

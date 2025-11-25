@@ -37,8 +37,8 @@ export async function runDailyPriceReduction() {
           console.log(`[CRON] Reduced lead ${lead.id} price: $${currentPrice} → $${newPrice.toFixed(2)}`);
           
           // Optional: Create notification for price drop
-          const subcontractors = await storage.getAllSubcontractors();
-          for (const sub of subcontractors) {
+          const investors = await storage.getAllInvestors();
+          for (const sub of investors) {
             await storage.createNotification({
               userId: sub.id,
               type: "lead_price_drop",

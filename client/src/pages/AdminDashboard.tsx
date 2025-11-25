@@ -51,7 +51,7 @@ export default function AdminDashboard() {
       queryClient.invalidateQueries({ queryKey: ["/api/leads"] });
       toast({
         title: "Lead Declined",
-        description: "Lead is now available for subcontractors.",
+        description: "Lead is now available for investors.",
       });
     },
     onError: (error: Error) => {
@@ -271,7 +271,7 @@ export default function AdminDashboard() {
           {declinedLeads.length === 0 ? (
             <Card>
               <CardContent className="py-8 text-center text-muted-foreground">
-                No leads available for subcontractors
+                No leads available for investors
               </CardContent>
             </Card>
           ) : (
