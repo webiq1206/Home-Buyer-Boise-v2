@@ -66,6 +66,10 @@ const ServiceCityPage = lazy(() => import("@/pages/services/ServiceCityPage"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 
+// Blog Pages
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+
 // Admin Pages
 const AdminDashboard = lazy(() => import("@/pages/AdminDashboard"));
 const PurchaseHistory = lazy(() => import("@/pages/PurchaseHistory"));
@@ -129,6 +133,10 @@ function Router() {
             {/* Legal Pages */}
             <Route path="/privacy-policy" component={PrivacyPolicy} />
             <Route path="/terms-of-service" component={TermsOfService} />
+
+            {/* Blog Pages */}
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:slug" component={BlogPost} />
 
             {/* Admin Pages */}
             <Route path="/admin/dashboard" component={AdminDashboard} />
