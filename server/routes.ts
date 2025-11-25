@@ -630,7 +630,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { basePrice, currentPrice } = calculateLeadPrice({
         finalQuote: leadData.finalQuote ? parseFloat(leadData.finalQuote) : 0,
         frequency: leadData.frequency || "one-time",
-        serviceType: leadData.serviceType,
+        serviceType: leadData.serviceType || "cash-offer",
       });
       
       // Create the lead
@@ -661,7 +661,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           email: leadData.email,
           phone: leadData.phone || "",
           city: leadData.city,
-          serviceType: leadData.serviceType,
+          serviceType: leadData.serviceType || "cash-offer",
           finalQuote: lead.finalQuote || "0",
           address: leadData.address || undefined,
           estimatedMarketValue: lead.estimatedMarketValue?.toString(),
@@ -899,7 +899,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             email: lead.email,
             phone: lead.phone || "",
             city: lead.city,
-            serviceType: lead.serviceType,
+            serviceType: lead.serviceType || "cash-offer",
             finalQuote: lead.finalQuote || "0",
             address: lead.address || undefined,
           },
@@ -917,7 +917,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             email: lead.email,
             phone: lead.phone || "",
             city: lead.city,
-            serviceType: lead.serviceType,
+            serviceType: lead.serviceType || "cash-offer",
             finalQuote: lead.finalQuote || "0",
             address: lead.address || undefined,
           });
