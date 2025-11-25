@@ -28,7 +28,7 @@ Allow: /privacy-policy
 Allow: /terms-of-service
 
 # Sitemap location
-Sitemap: https://www.homebuyerboise.com/sitemap.xml
+Sitemap: https://homebuyerboise.com/sitemap.xml
 
 # Crawl delay for polite crawling
 Crawl-delay: 0
