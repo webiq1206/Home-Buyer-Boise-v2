@@ -10,40 +10,19 @@ function roundToNearestFive(price: number): number {
 }
 
 // Calculate lead price based on quote details
+// Wholesaling leads are priced at 0.5% of the estimated offer price
 export function calculateLeadPrice(params: {
   finalQuote: number;
   frequency: string;
   serviceType: string;
 }): { basePrice: number; currentPrice: number } {
-  const { finalQuote, frequency, serviceType } = params;
+  const { finalQuote } = params;
 
-  let basePrice: number;
+  // Calculate base price as 0.5% of the estimated offer price
+  let basePrice = finalQuote * 0.005;
 
-  if (frequency === "one-time") {
-    // One-time services: 10% of quote
-    basePrice = finalQuote * 0.10;
-  } else {
-    // Recurring services: cost of one service visit
-    // Estimate based on service type
-    const recurringPrices: Record<string, number> = {
-      "lawn-mowing": 45,
-      "lawn-care": 50,
-      "fertilization": 60,
-      "aeration": 75,
-      "weed-control": 55,
-      "tree-trimming": 85,
-      "hedge-trimming": 65,
-      "landscaping": 80,
-      "mulching": 70,
-      "seasonal-cleanup": 90,
-      "christmas-lights": 150,
-    };
-
-    basePrice = recurringPrices[serviceType] || 60; // Default to $60
-  }
-
-  // Ensure minimum price of $10, round to nearest $5
-  basePrice = Math.max(10, basePrice);
+  // Ensure minimum price of $25, round to nearest $5
+  basePrice = Math.max(25, basePrice);
   basePrice = roundToNearestFive(basePrice);
 
   return {
@@ -92,14 +71,14 @@ export async function updateLeadPrices(): Promise<Lead[]> {
       if (updated) {
         updatedLeads.push(updated);
 
-        // Notify subcontractors of price drop
-        const subcontractors = await storage.getAllSubcontractors();
-        for (const sub of subcontractors) {
+        // Notify investors of price drop
+        const investors = await storage.getAllInvestors();
+        for (const investor of investors) {
           await storage.createNotification({
-            userId: sub.id,
+            userId: investor.id,
             type: "lead_price_drop",
             title: "Lead Price Reduced",
-            message: `${lead.serviceType} lead in ${lead.city} now $${newPrice.toFixed(2)} (was $${currentPrice.toFixed(2)})`,
+            message: `Wholesale lead in ${lead.city} now $${newPrice.toFixed(2)} (was $${currentPrice.toFixed(2)})`,
             leadId: lead.id,
           });
         }
