@@ -10,7 +10,7 @@ function roundToNearestFive(price: number): number {
 }
 
 // Calculate lead price based on quote details
-// Wholesaling leads are priced at 0.5% of the estimated offer price
+// Wholesaling leads are priced at 0.005% of the estimated offer price
 export function calculateLeadPrice(params: {
   finalQuote: number;
   frequency: string;
@@ -18,8 +18,8 @@ export function calculateLeadPrice(params: {
 }): { basePrice: number; currentPrice: number } {
   const { finalQuote } = params;
 
-  // Calculate base price as 0.5% of the estimated offer price
-  let basePrice = finalQuote * 0.005;
+  // Calculate base price as 0.005% of the estimated offer price
+  let basePrice = finalQuote * 0.00005;
 
   // Ensure minimum price of $25, round to nearest $5
   basePrice = Math.max(25, basePrice);
@@ -41,7 +41,7 @@ export async function updateLeadPrices(): Promise<Lead[]> {
 
     const currentPrice = parseFloat(lead.currentLeadPrice);
     const basePrice = parseFloat(lead.baseLeadPrice);
-    const reductionRate = parseFloat(lead.priceReductionRate || "1.50");
+    const reductionRate = parseFloat(lead.priceReductionRate || "5.00");
 
     // Calculate days since last price update
     const lastUpdate = new Date(lead.lastPriceUpdate || lead.createdAt);
@@ -50,7 +50,7 @@ export async function updateLeadPrices(): Promise<Lead[]> {
 
     if (daysSinceUpdate < 1) continue; // Don't update if less than a day
 
-    // Calculate new price (reduce by 1-2% daily)
+    // Calculate new price (reduce by 5% daily)
     const reductionAmount = currentPrice * (reductionRate / 100);
     let newPrice = currentPrice - reductionAmount;
 

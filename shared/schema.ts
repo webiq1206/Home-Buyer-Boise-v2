@@ -348,7 +348,7 @@ export const leads = pgTable("leads", {
   // Lead pricing - REQUIRED for lead marketplace functionality
   baseLeadPrice: decimal("base_lead_price", { precision: 10, scale: 2 }).notNull(),
   currentLeadPrice: decimal("current_lead_price", { precision: 10, scale: 2 }).notNull(),
-  priceReductionRate: decimal("price_reduction_rate", { precision: 5, scale: 2 }).notNull().default("1.50"), // 1.5% daily
+  priceReductionRate: decimal("price_reduction_rate", { precision: 5, scale: 2 }).notNull().default("5.00"), // 5% daily
   lastPriceUpdate: timestamp("last_price_update").defaultNow(),
   
   // Lead status
