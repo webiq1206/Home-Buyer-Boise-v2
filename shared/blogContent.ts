@@ -1737,27 +1737,3 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>You want to avoid agent commissions and closing costs</li>
       </ul>
 
-      <h2>Get Your Cash Offer</h2>
-
-      <p>Understanding current market conditions is the first step. The next step is knowing what your home is actually worth to different types of buyers. Get a no-obligation cash offer from HomeBuyerBoise:</p>
-
-      <ul>
-        <li><a href="/get-quote">Request your free offer online</a></li>
-        <li>Call (208) 314-2458</li>
-      </ul>
-
-      <p>Compare our offer to estimated net proceeds from a traditional sale. Then make an informed decision that's right for your situation.</p>
-    `,
-    faqs: [
-      {
-        question: "Is now a good time to sell in Boise?",
-        answer: "The market is still favorable for sellers with significant equity. While not as hot as 2021-2022, demand remains solid and most sellers achieve good results with properly priced homes. If you need to sell, conditions are reasonable."
-      },
-      {
-        question: "Have Boise home prices dropped from the peak?",
-        answer: "Yes, median prices are down 10-15% from the 2022 peak. However, they remain dramatically higher than pre-pandemic levels. Most homeowners who bought before 2022 have substantial equity despite the decline from peak."
-      },
-      {
-        question: "How long does it take to sell a house in Boise now?",
-        answer: "Traditional sales average 35-50 days on market in current conditions. Well-priced, move-in ready homes sell faster; homes needing work or overpriced take longer. Cash sales close in 7-14 days regardless of market conditions."
-      },
