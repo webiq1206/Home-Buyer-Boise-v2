@@ -27,7 +27,7 @@ import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/se
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 import starsBackground from "@assets/Stars_1764013365816.png";
-import smileyBackground from "@assets/Smiley Face_1764013365816.png";
+import smileyBackground from "@assets/Smiley Face small_1764092666035.png";
 
 // Lazy load heavy components for better initial page load
 const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap").then(mod => ({ default: mod.ServiceAreaMap })));
