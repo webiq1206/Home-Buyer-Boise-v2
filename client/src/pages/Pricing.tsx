@@ -1,7 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, DollarSign, Home, Clock, X } from "lucide-react";
 import { Link } from "wouter";
+import { generateLocalBusinessSchema } from "@/lib/seo";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 const processSteps = [
   {
@@ -58,8 +61,41 @@ const benefits = [
 ];
 
 export default function Pricing() {
+  const localBusinessSchema = generateLocalBusinessSchema();
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Pricing", url: "/pricing" },
+  ]);
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Pricing - Zero Fees, Zero Commissions | HomeBuyerBoise</title>
+        <meta name="description" content="Sell your house with zero fees and zero commissions. See how much you save selling to HomeBuyerBoise compared to a traditional real estate sale. We pay all closing costs." />
+        <meta name="keywords" content="sell house no fees, no commission home sale, cash home buyer pricing, save money selling house, closing costs paid" />
+        <link rel="canonical" href="https://homebuyerboise.com/pricing" />
+        
+        <meta property="og:title" content="Pricing - Save Thousands Selling to HomeBuyerBoise" />
+        <meta property="og:description" content="Zero fees, zero commissions. See exactly how much you save compared to a traditional sale." />
+        <meta property="og:url" content="https://homebuyerboise.com/pricing" />
+        <meta property="og:type" content="website" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pricing - Zero Fees | HomeBuyerBoise" />
+        <meta name="twitter:description" content="Keep 100% of our offer. No realtor fees, no closing costs." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
+      
       {/* Hero */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 via-background to-background">
         <div className="container px-4">

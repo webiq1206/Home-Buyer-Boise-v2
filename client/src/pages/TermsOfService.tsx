@@ -11,7 +11,7 @@ export default function TermsOfService() {
       <Helmet>
         <title>Terms of Service | HomeBuyerBoise</title>
         <meta name="description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services. Clear, fair terms for residential and commercial customers." />
-        <link rel="canonical" href="https://lawncarekuna.com/terms-of-service" />
+        <link rel="canonical" href="https://homebuyerboise.com/terms-of-service" />
         <meta property="og:title" content="Terms of Service | HomeBuyerBoise" />
         <meta property="og:description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services." />
         <meta property="og:type" content="website" />

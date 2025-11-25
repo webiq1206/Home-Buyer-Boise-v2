@@ -1,6 +1,7 @@
 /**
- * JSON-LD Schema Markup Generators
+ * JSON-LD Schema Markup Generators for HomeBuyerBoise
  * Creates structured data for Google rich snippets and search features
+ * Optimized for cash home buying / real estate investor business
  */
 
 import { BUSINESS_INFO, CITY_SEO_DATA } from './seo';
@@ -12,20 +13,37 @@ interface SchemaContext {
 }
 
 /**
- * Generate LocalBusiness schema for homepage and location pages
+ * Get base URL for schema markup
+ */
+function getBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    if (window.location.hostname === 'localhost' || window.location.hostname.includes('replit')) {
+      return window.location.origin;
+    }
+  }
+  return 'https://homebuyerboise.com';
+}
+
+/**
+ * Generate LocalBusiness + RealEstateAgent schema for homepage and location pages
+ * Uses dual-type for better SEO coverage in real estate searches
  */
 export function generateLocalBusinessSchema(city?: string): SchemaContext {
-  const coordinates = city ? CITY_SEO_DATA[city as keyof typeof CITY_SEO_DATA]?.coordinates : CITY_SEO_DATA.Kuna.coordinates;
+  const baseUrl = getBaseUrl();
+  const coordinates = city 
+    ? CITY_SEO_DATA[city as keyof typeof CITY_SEO_DATA]?.coordinates 
+    : CITY_SEO_DATA.Boise.coordinates;
   
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'RealEstateAgent'],
+    '@id': `${baseUrl}#organization`,
     name: BUSINESS_INFO.name,
     legalName: BUSINESS_INFO.legalName,
-    description: `Professional lawn care and landscaping services in ${city || 'Kuna'} and the Treasure Valley, Idaho. ${BUSINESS_INFO.yearlyServicesCompleted}+ happy customers annually.`,
-    image: 'https://lawncarekuna.com/images/logo.png',
-    '@id': 'https://lawncarekuna.com',
-    url: 'https://lawncarekuna.com',
+    description: `Professional cash home buyers serving ${city || 'the Boise metro area'}. We buy houses in any condition with fair cash offers in 24 hours. No fees, no commissions, close on your timeline.`,
+    image: `${baseUrl}/og-image-home.jpg`,
+    logo: `${baseUrl}/logo.png`,
+    url: baseUrl,
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
     address: {
@@ -41,17 +59,26 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
       latitude: coordinates.lat,
       longitude: coordinates.lng,
     },
-    openingHoursSpecification: Object.entries(BUSINESS_INFO.hours).map(([day, hours]) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: day.charAt(0).toUpperCase() + day.slice(1),
-      opens: hours === 'Closed' ? undefined : hours.split(' - ')[0],
-      closes: hours === 'Closed' ? undefined : hours.split(' - ')[1],
-    })).filter(spec => spec.opens),
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '09:00',
+        closes: '15:00',
+      },
+    ],
     priceRange: '$$',
     areaServed: BUSINESS_INFO.serviceArea.map(area => ({
       '@type': 'City',
       name: area,
-      '@id': `https://lawncarekuna.com/areas/${area.toLowerCase()}`,
+      addressRegion: 'ID',
+      addressCountry: 'US',
     })),
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -61,35 +88,40 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
       worstRating: 1,
     },
     foundingDate: BUSINESS_INFO.founded,
-    slogan: 'Kuna\'s Most Trusted Lawn Care Service',
-    paymentAccepted: 'Cash, Credit Card, Check, Venmo, PayPal',
+    slogan: 'Sell Your House Fast for Cash in Boise',
+    paymentAccepted: 'Cash, Wire Transfer, Certified Check',
     currenciesAccepted: 'USD',
+    sameAs: [
+      'https://www.facebook.com/homebuyerboise',
+      'https://www.instagram.com/homebuyerboise',
+      'https://www.linkedin.com/company/homebuyerboise',
+    ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Lawn Care Services',
+      name: 'Cash Home Buying Services',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Lawn Mowing & Edging',
-            description: 'Professional grass cutting and trimming services',
+            name: 'Fast Cash Offers',
+            description: 'Receive a fair cash offer for your home within 24 hours',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Fertilization',
-            description: 'Seasonal lawn fertilization and nutrient application',
+            name: 'Sell As-Is',
+            description: 'Sell your house in any condition with no repairs needed',
           },
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Core Aeration',
-            description: 'Professional core aeration for healthier lawns',
+            name: 'Flexible Closing',
+            description: 'Close in as little as 7 days or on your timeline',
           },
         },
       ],
@@ -101,13 +133,16 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
  * Generate Service schema for individual service pages
  */
 export function generateServiceSchema(serviceName: string, serviceDescription: string, city?: string): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: serviceName,
     description: serviceDescription,
     provider: {
-      '@type': 'LocalBusiness',
+      '@type': ['LocalBusiness', 'RealEstateAgent'],
+      '@id': `${baseUrl}#organization`,
       name: BUSINESS_INFO.name,
       telephone: BUSINESS_INFO.phone,
       email: BUSINESS_INFO.email,
@@ -126,13 +161,22 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
     } : BUSINESS_INFO.serviceArea.map(area => ({
       '@type': 'City',
       name: area,
+      addressRegion: 'ID',
+      addressCountry: 'US',
     })),
-    serviceType: serviceName,
+    serviceType: 'Real Estate Investment',
+    category: 'Cash Home Buyer',
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'USD',
-      priceRange: '$$',
+      price: '0',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '0',
+        priceCurrency: 'USD',
+        description: 'No fees or commissions - 100% free service',
+      },
     },
   };
 }
@@ -141,6 +185,8 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
  * Generate BreadcrumbList schema for navigation
  */
 export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url: string }>): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -148,7 +194,7 @@ export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url:
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      item: `https://lawncarekuna.com${crumb.url}`,
+      item: `${baseUrl}${crumb.url}`,
     })),
   };
 }
@@ -157,14 +203,17 @@ export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url:
  * Generate Organization schema for brand identity
  */
 export function generateOrganizationSchema(): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${baseUrl}#organization`,
     name: BUSINESS_INFO.name,
     legalName: BUSINESS_INFO.legalName,
-    url: 'https://lawncarekuna.com',
-    logo: 'https://lawncarekuna.com/images/logo.png',
-    description: 'Professional lawn care and landscaping services serving the Treasure Valley since 2010. Licensed, insured, and committed to excellence.',
+    url: baseUrl,
+    logo: `${baseUrl}/logo.png`,
+    description: 'Professional cash home buyers serving the Boise Treasure Valley since 2018. We buy houses in any condition with fair cash offers. Licensed, insured, and committed to helping homeowners sell fast.',
     foundingDate: BUSINESS_INFO.founded,
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
@@ -177,7 +226,9 @@ export function generateOrganizationSchema(): SchemaContext {
       addressCountry: BUSINESS_INFO.address.country,
     },
     sameAs: [
-      'https://share.google/qS8UCGzYV6EcS3iUP',
+      'https://www.facebook.com/homebuyerboise',
+      'https://www.instagram.com/homebuyerboise',
+      'https://www.linkedin.com/company/homebuyerboise',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -198,9 +249,12 @@ export function generateReviewSchema(reviews: Array<{
   text: string;
   date: string;
 }>): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${baseUrl}#organization`,
     name: BUSINESS_INFO.name,
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -239,6 +293,69 @@ export function generateFAQSchema(faqs: Array<{ question: string; answer: string
         text: faq.answer,
       },
     })),
+  };
+}
+
+/**
+ * Generate WebPage schema for individual pages
+ */
+export function generateWebPageSchema(params: {
+  name: string;
+  description: string;
+  url: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${baseUrl}${params.url}#webpage`,
+    url: `${baseUrl}${params.url}`,
+    name: params.name,
+    description: params.description,
+    isPartOf: {
+      '@id': `${baseUrl}#website`,
+    },
+    about: {
+      '@id': `${baseUrl}#organization`,
+    },
+    breadcrumb: params.breadcrumbs ? {
+      '@type': 'BreadcrumbList',
+      itemListElement: params.breadcrumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: `${baseUrl}${crumb.url}`,
+      })),
+    } : undefined,
+  };
+}
+
+/**
+ * Generate WebSite schema for the overall site
+ */
+export function generateWebSiteSchema(): SchemaContext {
+  const baseUrl = getBaseUrl();
+  
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${baseUrl}#website`,
+    url: baseUrl,
+    name: BUSINESS_INFO.name,
+    description: 'Professional cash home buyers serving the Boise Treasure Valley. Fast cash offers, flexible closing, no fees or commissions.',
+    publisher: {
+      '@id': `${baseUrl}#organization`,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 }
 

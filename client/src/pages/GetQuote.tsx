@@ -1,12 +1,21 @@
+import { Helmet } from "react-helmet-async";
 import { QuoteWizard } from "@/components/QuoteWizard";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, CheckCircle2 } from "lucide-react";
+import { generateLocalBusinessSchema } from "@/lib/seo";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 export default function GetQuote() {
+  const localBusinessSchema = generateLocalBusinessSchema();
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Get Quote", url: "/get-quote" },
+  ]);
   const [_, setLocation] = useLocation();
   const [prefilledData, setPrefilledData] = useState<{
     address?: string;
@@ -38,17 +47,44 @@ export default function GetQuote() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-40" width="1920" height="1080" loading="eager" />
-      </div>
-      <div className="absolute inset-0 z-[1] bg-background/70"></div>
-      <div className="py-12 px-4 relative z-10">
-        <div className="container max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Get Your Instant Quote
-            </h1>
+    <>
+      <Helmet>
+        <title>Get Your Free Cash Offer | HomeBuyerBoise</title>
+        <meta name="description" content="Get a fair, no-obligation cash offer for your home in minutes. Our AI-powered system provides accurate, transparent pricing. Sell your house fast in Boise, Meridian, Eagle, Kuna, and the Treasure Valley." />
+        <meta name="keywords" content="get cash offer for house, sell house fast quote, free home offer, cash home buyer quote Boise" />
+        <link rel="canonical" href="https://homebuyerboise.com/get-quote" />
+        
+        <meta property="og:title" content="Get Your Free Cash Offer | HomeBuyerBoise" />
+        <meta property="og:description" content="Get a fair, no-obligation cash offer in minutes. No repairs needed, close on your timeline." />
+        <meta property="og:url" content="https://homebuyerboise.com/get-quote" />
+        <meta property="og:type" content="website" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Get Your Free Cash Offer" />
+        <meta name="twitter:description" content="Sell your house fast for cash. Free, no-obligation quote in minutes." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
+      
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-40" width="1920" height="1080" loading="eager" />
+        </div>
+        <div className="absolute inset-0 z-[1] bg-background/70"></div>
+        <div className="py-12 px-4 relative z-10">
+          <div className="container max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Get Your Instant Quote
+              </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our AI-powered quoting system provides accurate, transparent pricing in under 2 minutes.
               No waiting for callbacks—get instant results!
@@ -95,5 +131,6 @@ export default function GetQuote() {
         </div>
       </div>
     </div>
+    </>
   );
 }

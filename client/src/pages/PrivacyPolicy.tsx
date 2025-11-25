@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | HomeBuyerBoise</title>
         <meta name="description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information. We're committed to safeguarding your data and providing transparent information practices." />
-        <link rel="canonical" href="https://lawncarekuna.com/privacy-policy" />
+        <link rel="canonical" href="https://homebuyerboise.com/privacy-policy" />
         <meta property="og:title" content="Privacy Policy | HomeBuyerBoise" />
         <meta property="og:description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information." />
         <meta property="og:type" content="website" />

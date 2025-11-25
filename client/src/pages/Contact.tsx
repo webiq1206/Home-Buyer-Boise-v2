@@ -1,12 +1,53 @@
+import { Helmet } from "react-helmet-async";
 import { QuoteWizard } from "@/components/QuoteWizard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { generateSEOMetadata, BUSINESS_INFO, generateLocalBusinessSchema } from "@/lib/seo";
+import { generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 
 export default function Contact() {
+  const seoData = generateSEOMetadata({
+    serviceName: "Contact Us",
+    serviceSlug: "contact",
+    isHomePage: false,
+  });
+
+  const localBusinessSchema = generateLocalBusinessSchema();
+  const organizationSchema = generateOrganizationSchema();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
+
   return (
     <div className="flex flex-col">
+      <Helmet>
+        <title>Contact Us - Get Your Cash Offer Today | HomeBuyerBoise</title>
+        <meta name="description" content="Contact HomeBuyerBoise for a free, no-obligation cash offer on your house. Call (208) 405-CASH or fill out our form. We buy houses in Boise, Meridian, Eagle, Kuna, and throughout the Treasure Valley." />
+        <meta name="keywords" content="contact cash home buyer Boise, sell house fast Boise contact, get cash offer for house, Treasure Valley home buyer contact" />
+        <link rel="canonical" href="https://homebuyerboise.com/contact" />
+        
+        <meta property="og:title" content="Contact HomeBuyerBoise - Get Your Cash Offer" />
+        <meta property="og:description" content="Ready to sell your house fast? Contact us for a free, no-obligation cash offer within 24 hours." />
+        <meta property="og:url" content="https://homebuyerboise.com/contact" />
+        <meta property="og:type" content="website" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact HomeBuyerBoise" />
+        <meta name="twitter:description" content="Get your free cash offer today. We buy houses in any condition." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      </Helmet>
       {/* Hero */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
