@@ -14,7 +14,7 @@ import {
   Shield,
   TrendingDown
 } from "lucide-react";
-import exclamationBackground from "@assets/Exclamation Points_1764013365811.png";
+import superheroBackground from "@assets/Super Hero_1764092731439.png";
 
 interface Situation {
   icon: ReactNode;
@@ -79,10 +79,10 @@ const situations: Situation[] = [
 export function CommonSituations() {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
-      {/* Exclamation Points Background */}
+      {/* Super Hero Background */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={exclamationBackground} 
+          src={superheroBackground} 
           alt=""
           className="w-full h-full object-cover opacity-30"
           width="1920"
