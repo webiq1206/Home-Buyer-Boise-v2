@@ -11,7 +11,7 @@ export default function InvestorMarketplace() {
   const { isAuthenticated, user } = useAuth();
 
   const { data: leads = [], isLoading } = useQuery<Lead[]>({
-    queryKey: ["/api/leads/available"],
+    queryKey: ["/api/leads", { availableOnly: true }],
     enabled: isAuthenticated && user?.role === "investor",
   });
 
@@ -183,13 +183,13 @@ export default function InvestorMarketplace() {
                       <div className="bg-slate-50 dark:bg-slate-900 rounded-md p-3">
                         <p className="text-xs font-medium text-muted-foreground">RV</p>
                         <p className="font-semibold text-lg" data-testid={`text-rv-${lead.id}`}>
-                          {formatCurrency(lead.estimatedMarketValue?.toString())}
+                          {formatCurrency(lead.estimatedMarketValue?.toString() || null)}
                         </p>
                       </div>
                       <div className="bg-blue-50 dark:bg-blue-950 rounded-md p-3">
                         <p className="text-xs font-medium text-muted-foreground">Offer</p>
                         <p className="font-semibold text-lg" data-testid={`text-offer-${lead.id}`}>
-                          {formatCurrency(lead.anchorOffer?.toString())}
+                          {formatCurrency(lead.anchorOffer?.toString() || null)}
                         </p>
                       </div>
                       <div className="bg-green-50 dark:bg-green-950 rounded-md p-3">
@@ -250,6 +250,7 @@ export default function InvestorMarketplace() {
                       <Button
                         className="flex-1"
                         data-testid={`button-purchase-${lead.id}`}
+                        disabled
                       >
                         <ShoppingCart className="mr-2 h-4 w-4" />
                         Purchase Lead - {formatCurrency(lead.currentLeadPrice)}
