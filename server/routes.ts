@@ -12,6 +12,7 @@ import { PRIORITY_SERVICES, CITIES } from "@shared/contentData";
 import { sendNewLeadNotification, sendLeadPurchasedNotification, sendLeadPurchaseConfirmation } from "./services/emailNotifications";
 import { setupAuth, isAuthenticated, requireRole } from "./replitAuth";
 import { parseAndRoundQuote, normalizeLineItemsForEmail } from "@shared/utils";
+import { getUncachableStripeClient, getStripePublishableKey } from "./stripeClient";
 
 // Create service name and description maps for email normalization
 const SERVICE_NAME_MAP: Record<string, string> = Object.entries(SERVICE_RATES).reduce(
@@ -825,6 +826,105 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get Stripe publishable key for frontend
+  app.get("/api/stripe/publishable-key", async (req, res) => {
+    try {
+      const publishableKey = await getStripePublishableKey();
+      res.json({ publishableKey });
+    } catch (error) {
+      console.error("Error getting Stripe publishable key:", error);
+      res.status(500).json({ error: "Failed to get Stripe configuration" });
+    }
+  });
+
+  // Create payment intent for lead purchase
+  app.post("/api/leads/:id/create-payment-intent", isAuthenticated, requireRole(["investor"]), async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      
+      // Get authenticated user
+      const user = await storage.getUser(userId);
+      if (!user) {
+        return res.status(401).json({ error: "User not found" });
+      }
+      
+      // Verify agreement accepted
+      if (!user.agreementAccepted) {
+        return res.status(403).json({ error: "Legal agreement must be accepted first" });
+      }
+      
+      const lead = await storage.getLeadById(req.params.id);
+      if (!lead) {
+        return res.status(404).json({ error: "Lead not found" });
+      }
+      
+      if (lead.status !== "available") {
+        return res.status(400).json({ error: "Lead is not available for purchase" });
+      }
+      
+      // Check if lead already purchased
+      const existingPurchase = await storage.getLeadPurchaseByLeadId(lead.id);
+      if (existingPurchase) {
+        return res.status(400).json({ error: "Lead already purchased" });
+      }
+      
+      // Get current lead price in cents
+      const priceInCents = Math.round(parseFloat(lead.currentLeadPrice) * 100);
+      
+      // Create payment intent
+      const stripe = await getUncachableStripeClient();
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: priceInCents,
+        currency: 'usd',
+        metadata: {
+          leadId: lead.id,
+          userId: userId,
+          city: lead.city,
+          propertyType: lead.propertyType,
+        },
+        description: `Lead purchase: ${lead.propertyType} in ${lead.city}`,
+        automatic_payment_methods: {
+          enabled: true,
+        },
+      });
+      
+      console.log(`Payment intent created for lead ${lead.id}: ${paymentIntent.id}`);
+      
+      res.json({
+        clientSecret: paymentIntent.client_secret,
+        paymentIntentId: paymentIntent.id,
+        amount: priceInCents,
+        lead: {
+          id: lead.id,
+          city: lead.city,
+          propertyType: lead.propertyType,
+          currentPrice: lead.currentLeadPrice,
+        },
+      });
+    } catch (error) {
+      console.error("Error creating payment intent:", error);
+      res.status(500).json({ error: "Failed to create payment intent" });
+    }
+  });
+
+  // Verify payment intent status
+  app.get("/api/stripe/payment-intent/:id", isAuthenticated, async (req: any, res) => {
+    try {
+      const stripe = await getUncachableStripeClient();
+      const paymentIntent = await stripe.paymentIntents.retrieve(req.params.id);
+      
+      res.json({
+        id: paymentIntent.id,
+        status: paymentIntent.status,
+        amount: paymentIntent.amount,
+        metadata: paymentIntent.metadata,
+      });
+    } catch (error) {
+      console.error("Error retrieving payment intent:", error);
+      res.status(500).json({ error: "Failed to retrieve payment intent" });
+    }
+  });
+
   // Subcontractor purchases a lead - requires investor role
   app.post("/api/leads/:id/purchase", isAuthenticated, requireRole(["investor"]), async (req: any, res) => {
     try {
@@ -858,6 +958,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const existingPurchase = await storage.getLeadPurchaseByLeadId(lead.id);
       if (existingPurchase) {
         return res.status(400).json({ error: "Lead already purchased" });
+      }
+      
+      // Verify payment intent was successful
+      const stripe = await getUncachableStripeClient();
+      const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+      
+      if (paymentIntent.status !== 'succeeded') {
+        return res.status(400).json({ 
+          error: "Payment not completed", 
+          paymentStatus: paymentIntent.status 
+        });
+      }
+      
+      // Verify payment intent metadata matches this lead
+      if (paymentIntent.metadata.leadId !== lead.id) {
+        return res.status(400).json({ error: "Payment intent does not match this lead" });
       }
       
       // Process purchase
