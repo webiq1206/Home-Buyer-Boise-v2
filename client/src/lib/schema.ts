@@ -41,8 +41,8 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
     name: BUSINESS_INFO.name,
     legalName: BUSINESS_INFO.legalName,
     description: `Professional cash home buyers serving ${city || 'the Boise metro area'}. We buy houses in any condition with fair cash offers in 24 hours. No fees, no commissions, close on your timeline.`,
-    image: `${baseUrl}/og-image-home.jpg`,
-    logo: `${baseUrl}/logo.png`,
+    image: `${baseUrl}/og-image.png`,
+    logo: `${baseUrl}/og-image.png`,
     url: baseUrl,
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
@@ -95,6 +95,7 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
       'https://www.facebook.com/homebuyerboise',
       'https://www.instagram.com/homebuyerboise',
       'https://www.linkedin.com/company/homebuyerboise',
+      'https://x.com/homebuyerboise',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -229,6 +230,7 @@ export function generateOrganizationSchema(): SchemaContext {
       'https://www.facebook.com/homebuyerboise',
       'https://www.instagram.com/homebuyerboise',
       'https://www.linkedin.com/company/homebuyerboise',
+      'https://x.com/homebuyerboise',
     ],
     contactPoint: {
       '@type': 'ContactPoint',

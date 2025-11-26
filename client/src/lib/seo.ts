@@ -430,6 +430,7 @@ export function generateLocalBusinessSchema(city?: string) {
       'https://www.facebook.com/homebuyerboise',
       'https://www.instagram.com/homebuyerboise',
       'https://www.linkedin.com/company/homebuyerboise',
+      'https://x.com/homebuyerboise',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
