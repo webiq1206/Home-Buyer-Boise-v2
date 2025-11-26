@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Home, MapPin } from "lucide-react";
+import { Home } from "lucide-react";
+import { AddressAutocomplete } from "./AddressAutocomplete";
 
 export function HeroAddressLookup() {
   const [address, setAddress] = useState("");
@@ -35,19 +35,16 @@ export function HeroAddressLookup() {
             </div>
           </div>
 
-          {/* Address Input Form */}
+          {/* Address Input Form with Autocomplete */}
           <form onSubmit={handleLookup} className="space-y-4">
-            <div className="relative">
-              <Input
-                type="text"
-                placeholder="123 Main St, Boise, ID"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                className="h-14 pl-12 pr-4 text-base border-border/50 focus:border-primary"
-                data-testid="input-hero-address"
-              />
-              <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            </div>
+            <AddressAutocomplete
+              value={address}
+              onChange={setAddress}
+              placeholder="123 Main St, Boise, ID"
+              city="Boise"
+              className="h-14 pl-4 pr-4 text-base border-border/50 focus:border-primary"
+              data-testid="input-hero-address"
+            />
 
             <Button
               type="submit"
