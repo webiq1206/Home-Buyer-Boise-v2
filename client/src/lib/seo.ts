@@ -243,17 +243,8 @@ export function generateSEOMetadata(params: ServiceSEOParams & {
     }
   }
   
-  // Determine OG image based on page type
-  let ogImage = params.customOgImage;
-  if (!ogImage) {
-    if (params.citySlug) {
-      ogImage = `${baseUrl}/og-image-${params.citySlug}.jpg`;
-    } else if (params.serviceSlug) {
-      ogImage = `${baseUrl}/og-image-${params.serviceSlug}.jpg`;
-    } else {
-      ogImage = `${baseUrl}/og-image-home.jpg`;
-    }
-  }
+  // Use consistent OG image (heart logo) for all pages
+  const ogImage = params.customOgImage || `${baseUrl}/og-image.png`;
   
   // Open Graph defaults to meta tags
   return {
@@ -401,8 +392,8 @@ export function generateLocalBusinessSchema(city?: string) {
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
     priceRange: '$$',
-    image: `${baseUrl}/og-image-home.jpg`,
-    logo: `${baseUrl}/logo.png`,
+    image: `${baseUrl}/og-image.png`,
+    logo: `${baseUrl}/og-image.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS_INFO.address.street,
