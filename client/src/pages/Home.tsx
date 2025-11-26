@@ -232,7 +232,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <img 
               src={starsBackground} 
-              alt=""
+              alt="Five star rating background representing HomeBuyerBoise customer satisfaction"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center center' }}
               width="1920"
@@ -454,7 +454,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img 
             src={smileyBackground} 
-            alt=""
+            alt="Happy customer testimonial background for HomeBuyerBoise reviews"
             className="w-full h-full object-cover"
             style={{ objectPosition: 'right center' }}
             width="1920"

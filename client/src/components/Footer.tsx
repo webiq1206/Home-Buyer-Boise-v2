@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { SiFacebook, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
 import { CITIES } from "@shared/contentData";
 import { SERVICES } from "@shared/servicesData";
 import logoImage from "@assets/Home Buyer Boise Logo_1764014379793.png";
@@ -36,6 +37,49 @@ export function Footer() {
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>Serving Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa & Caldwell</span>
               </div>
+            </div>
+            {/* Social Media Links */}
+            <div className="flex gap-4 mt-4">
+              <a 
+                href="https://facebook.com/homebuyerboise" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow HomeBuyerBoise on Facebook"
+                data-testid="link-facebook"
+              >
+                <SiFacebook className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://instagram.com/homebuyerboise" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow HomeBuyerBoise on Instagram"
+                data-testid="link-instagram"
+              >
+                <SiInstagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/homebuyerboise" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow HomeBuyerBoise on LinkedIn"
+                data-testid="link-linkedin"
+              >
+                <SiLinkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://x.com/homebuyerboise" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow HomeBuyerBoise on X (Twitter)"
+                data-testid="link-twitter"
+              >
+                <SiX className="h-5 w-5" />
+              </a>
             </div>
           </div>
 

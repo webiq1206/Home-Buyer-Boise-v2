@@ -66,7 +66,7 @@ export function generatePageTitle(params: ServiceSEOParams): string {
   const { serviceName, city, isHomePage } = params;
   
   if (isHomePage) {
-    return "HomeBuyerBoise | Sell Your House Fast for Cash";
+    return "HomeBuyerBoise | Sell Your Boise House Fast for Cash";
   }
   
   if (city) {
@@ -117,7 +117,7 @@ export function generateMetaDescription(params: ServiceSEOParams): string {
   const { serviceName, city } = params;
   
   if (params.isHomePage) {
-    return "Sell your house fast for cash in Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, and Caldwell. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
+    return "Sell your house fast for cash in Boise & Treasure Valley. No fees, no commissions, close on your timeline. Fair cash offers in 24 hours.";
   }
   
   if (city) {
