@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,21 @@ interface AddressResult {
   y: number;
 }
 
+const IDAHO_CITIES = [
+  "Boise, ID",
+  "Meridian, ID", 
+  "Nampa, ID",
+  "Caldwell, ID",
+  "Eagle, ID",
+  "Star, ID",
+  "Kuna, ID",
+  "Middleton, ID",
+  "Garden City, ID",
+  "Mountain Home, ID",
+];
+
+const resultCache = new Map<string, AddressResult[]>();
+
 export function HeroAddressLookup() {
   const [address, setAddress] = useState("");
   const [, setLocation] = useLocation();
@@ -21,20 +36,45 @@ export function HeroAddressLookup() {
   const debounceRef = useRef<NodeJS.Timeout>();
   const provider = useRef(new OpenStreetMapProvider());
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
-  const fetchSuggestions = async (query: string) => {
+  const getLocalSuggestions = useCallback((query: string): AddressResult[] => {
+    const lowerQuery = query.toLowerCase();
+    return IDAHO_CITIES
+      .filter(city => city.toLowerCase().includes(lowerQuery))
+      .map(city => ({ label: city, x: 0, y: 0 }));
+  }, []);
+
+  const fetchSuggestions = useCallback(async (query: string) => {
     if (!query.trim() || query.length < 3) {
       setSuggestions([]);
+      setShowSuggestions(false);
       return;
+    }
+
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    abortControllerRef.current = new AbortController();
+
+    const cacheKey = query.toLowerCase().trim();
+    if (resultCache.has(cacheKey)) {
+      const cached = resultCache.get(cacheKey)!;
+      setSuggestions(cached);
+      setShowSuggestions(cached.length > 0);
+      return;
+    }
+
+    const localResults = getLocalSuggestions(query);
+    if (localResults.length > 0) {
+      setSuggestions(localResults);
+      setShowSuggestions(true);
     }
 
     setIsLoading(true);
     try {
-      const searchQuery = `${query}, Boise, Idaho`;
-      console.log('[HeroAddressLookup] Searching for:', searchQuery);
-      
+      const searchQuery = `${query}, Idaho`;
       const results = await provider.current.search({ query: searchQuery });
-      console.log('[HeroAddressLookup] Found results:', results.length);
       
       const formattedResults = results.slice(0, 5).map((result: any) => ({
         label: result.label,
@@ -42,17 +82,18 @@ export function HeroAddressLookup() {
         y: result.y,
       }));
       
+      resultCache.set(cacheKey, formattedResults);
+      
       setSuggestions(formattedResults);
-      if (formattedResults.length > 0) {
-        setShowSuggestions(true);
+      setShowSuggestions(formattedResults.length > 0);
+    } catch (error: any) {
+      if (error.name !== 'AbortError') {
+        console.error("[HeroAddressLookup] Error fetching suggestions:", error);
       }
-    } catch (error) {
-      console.error("[HeroAddressLookup] Error fetching suggestions:", error);
-      setSuggestions([]);
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [getLocalSuggestions]);
 
   useEffect(() => {
     if (debounceRef.current) {
@@ -61,14 +102,14 @@ export function HeroAddressLookup() {
 
     debounceRef.current = setTimeout(() => {
       fetchSuggestions(address);
-    }, 300);
+    }, 150);
 
     return () => {
       if (debounceRef.current) {
         clearTimeout(debounceRef.current);
       }
     };
-  }, [address]);
+  }, [address, fetchSuggestions]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -84,7 +125,7 @@ export function HeroAddressLookup() {
   const handleSelectAddress = (result: AddressResult) => {
     const addressParts = result.label.split(',');
     let streetAddress = addressParts.length >= 2 
-      ? addressParts.slice(0, 2).map(p => p.trim()).join(' ')
+      ? addressParts.slice(0, 2).map(p => p.trim()).join(', ')
       : result.label;
     
     setAddress(streetAddress);
