@@ -164,7 +164,7 @@ export default function Home() {
       <div className="flex flex-col pb-20">
         {/* Hero Section with Background Image */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden">
-          {/* Background Image */}
+          {/* Background Image - LCP element with priority loading */}
           <div className="absolute inset-0 z-0">
             <img 
               src={heroBackground} 
@@ -173,6 +173,8 @@ export default function Home() {
               width="1920"
               height="1080"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
           

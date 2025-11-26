@@ -11,9 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload Inter font with display=swap for non-render-blocking loading -->
+    <!-- Preload critical fonts inline for faster FCP -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Critical CSS for initial render (above the fold) -->
+    <style>
+      /* Critical CSS - prevents layout shift and speeds up FCP */
+      *,*::before,*::after{box-sizing:border-box}
+      html,body{margin:0;padding:0;overflow-x:hidden}
+      body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:#141414}
+      #root{min-height:100vh}
+      /* Hero section placeholder to prevent CLS */
+      .hero-placeholder{min-height:100vh;background:linear-gradient(135deg,hsl(214 84% 35%/0.7),hsl(214 84% 35%/0.6))}
+    </style>
     
     <!-- Default meta tags for crawlers (overridden by React Helmet on each page) -->
     <title>HomeBuyerBoise | Cash Home Buyers in Boise, Idaho</title>

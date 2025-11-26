@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font loading optimization - ensure text is visible during font load */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  src: local('Inter');
+}
+
 /* Make Leaflet zoom controls more visible and user-friendly */
 .leaflet-control-zoom {
   border: 2px solid hsl(var(--primary)) !important;
