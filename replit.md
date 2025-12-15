@@ -1,7 +1,15 @@
-# Lawn Care Kuna Website
+# Home Buyer Boise Website
 
 ## Overview
-The Lawn Care Kuna website is a professional online platform for a local Idaho business offering lawn care, landscaping, and Christmas light installation services. Its primary goal is to provide comprehensive service information, facilitate quote requests, and enhance local SEO. Key capabilities include an AI-powered intelligent quoting system, an interactive property measurement tool, a complete lead distribution platform, and a rich content management system for service details, project galleries, testimonials, and educational blogs. The site powers 500+ SEO-optimized location pages with unique, city-specific metadata designed to rank #1 in local search results for each service area.
+Home Buyer Boise (homebuyerboise.com) is a professional cash home buying platform serving the Boise metro area and Treasure Valley. The site features a fintech-inspired design (deep blue #0E4DA4 and gold #D4A12A) and serves as a lead generation platform for cash home buying services. **CRITICAL: All leads are routed to connect@buymyhouse.co and admin@timberandlove.com for manual evaluation - NO automated estimates are provided.**
+
+## Branding
+- **Business Name**: Home Buyer Boise (display text with spaces)
+- **Domain**: homebuyerboise.com (URLs without spaces)
+- **Phone**: (208) 405-2275
+- **Primary Email**: connect@buymyhouse.co
+- **Lead Notification Emails**: connect@buymyhouse.co AND admin@timberandlove.com
+- **Address**: 3024 W Fairview Ave, Boise, Idaho 83702
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -9,55 +17,55 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### UI/UX Decisions
-- **Design System**: Mobile-first responsive design, Montserrat font, Primary Forest Green, Light Mint backgrounds, pure white.
+- **Design System**: Mobile-first responsive design, fintech-inspired with deep blue (#0E4DA4) primary and gold (#D4A12A) accent colors.
 - **Component Library**: shadcn/ui (Radix UI primitives) with custom Tailwind CSS.
-- **Visuals**: Service-specific hero backgrounds, consistent typography, redesigned mobile navigation with sticky bottom bar.
-- **Content Layout**: Clean, modern look with simplified layouts, alternating backgrounds, two-column quote forms, and scannable content sections with proper heading hierarchy.
-- **Interactive Elements**: Interactive FAQ accordions, an interactive property measurement tool, and a site-wide search function with autocomplete.
-- **Accessibility**: WCAG AA compliant with visible focus states (2px outlines), 4.5:1 color contrast ratios, proper ARIA labels, keyboard navigation support, and semantic HTML throughout.
+- **Visuals**: Service-specific hero backgrounds with descriptive SEO alt tags, consistent typography.
+- **Content Layout**: Clean, modern look with simplified layouts, alternating backgrounds, and scannable content sections with proper heading hierarchy.
+- **Interactive Elements**: Interactive FAQ accordions, multi-step quote wizard, and property value calculator.
+- **Accessibility**: WCAG AA compliant with visible focus states, proper color contrast, ARIA labels, keyboard navigation, and semantic HTML.
 
 ### Technical Implementations
 - **Frontend Framework**: React 18 with TypeScript.
-- **Routing**: Wouter for client-side routing, using dynamic `/services/:serviceSlug/:citySlug?` routes with route-level code splitting.
+- **Routing**: Wouter for client-side routing with dynamic service and area routes.
 - **State Management**: TanStack Query for server state, React Hook Form with Zod for forms.
-- **Performance Optimization**: Route-level code splitting dramatically reduces initial JS bundle size for faster mobile performance.
-- **Multi-Service Quote System**: A 4-step intelligent wizard supporting multiple service selections, service-aware field rendering, itemized pricing, and robust validation.
-- **Intelligent Property Calculator**: Production-ready automated property measurement system querying Ada County Assessor parcel database API via schoolsitelocator.com MapServer. Features include address normalization, multi-county support, fuzzy city matching, robust address parsing, multiple property selection, enhanced error messages, city context integration, auto-population, clean state management, comprehensive linear measurements, service-specific auto-population, intelligent estimation, and manual adjustment.
-- **SEO Optimization**: E-E-A-T optimized, city-specific pages (2000+ words), site-wide internal linking, SEO-optimized headings and FAQs. Includes `robots.txt`, `sitemap.xml`, and `llms.txt`. Features city-specific metadata, URL-safe canonicals, smart title generation, and crawler-friendly defaults.
-- **Image Performance Optimization**: All background images include width/height attributes (1920×1080) to prevent Cumulative Layout Shift (CLS). Above-the-fold hero backgrounds use `loading="eager"` for optimal Largest Contentful Paint (LCP). Below-the-fold decorative backgrounds use `loading="lazy"` to save bandwidth. vite-plugin-image-optimizer installed for automatic WebP conversion and compression during production builds.
-- **Dynamic Content**: Navigation and footer automatically display all services and service areas from `contentData.ts`.
-- **Mega Menu Navigation**: Organized into 4 balanced service columns using MENU_GROUPS configuration:
-  1. **Lawn Care**: 8 services including mowing, aeration, fertilization, weed control
-  2. **Landscaping**: 6 services including patio installation, retaining walls, hedge trimming
-  3. **Seasonal & Specialty**: 7 services including spring/fall cleanup, snow removal, Christmas lights, tree services
-  4. **Irrigation & Lighting**: 6 services including sprinkler systems, irrigation repair/maintenance, landscape lighting
-  - Desktop: 4-column grid mega menu (900px wide) with category icons
-  - Mobile: Same grouping structure with collapsible categories
-  - Icons: Scissors (Lawn Care), TreeDeciduous (Landscaping), Snowflake (Seasonal), Droplets (Irrigation)
-- **Mobile Navigation**: Sticky bottom navigation with quick access to services, quotes, and scheduling.
-- **Site-Wide Search**: Real-time autocomplete search in header for services, areas, and main pages.
-- **Lead Distribution System**: A B2B lead marketplace with admin dashboard, subcontractor portal, privacy protection, automated lead pricing, legal agreement flow, and in-app notifications. Integrates with Stripe for payments.
-- **Blog System**: Implemented with category organization, posts seeded from `shared/blogContent.ts`, and a category-organized blog page UI with responsive grid and detailed post cards.
-- **Customer Email Enhancements**: Comprehensive estimate information display in customer and admin quote emails, including full quote details, brand assets, and detailed breakdowns. Advanced data normalization and service deduplication are implemented for clarity.
-- **Professional Email Templates**: Overhauled email templates with actual Lawn Care Kuna logo, production URLs, removed emojis, added complete contact information, and implemented quote value normalization (rounding up to the nearest $5).
-- **Popup-Free Quote Flow**: Replaced all toast notifications with inline error alerts for a non-disruptive quote experience. Enhanced quote wizard with per-service pricing dropdowns and comprehensive legal protection and transparency.
+- **Lead Capture Flow**: Multi-step QuoteWizard collects property information and routes leads to email for manual evaluation. NO automated pricing or offers displayed.
+- **Property Calculator**: Ada/Canyon County assessor data integration for property measurements.
+- **SEO Optimization**: 
+  - Comprehensive internal linking between service and area pages
+  - Descriptive alt tags on all images
+  - NAP (Name, Address, Phone) consistency via BUSINESS_INFO constant
+  - City-specific metadata and schema markup
+  - E-E-A-T trust signals throughout
+- **Image Performance**: All hero images include width/height attributes, above-fold images use `loading="eager"`, below-fold use `loading="lazy"`.
+- **Email System**: Dual notifications to connect@buymyhouse.co AND admin@timberandlove.com with comprehensive lead details.
+
+### Key Files
+- `client/src/lib/seo.ts` - BUSINESS_INFO constant for NAP consistency, SEO data
+- `client/src/lib/schema.ts` - JSON-LD schema generation
+- `client/src/components/QuoteWizard.tsx` - Lead capture form (no automated estimates)
+- `server/email.ts` - Email notification system
+- `shared/servicesData.ts` - Service situations and content
+- `client/src/pages/services/ServiceTemplate.tsx` - Service page template
+- `client/src/pages/areas/AreaTemplate.tsx` - Area page template
 
 ### System Design Choices
 - **Backend Framework**: Express.js with TypeScript.
 - **API Design**: RESTful endpoints with JSON responses.
 - **Data Validation**: Shared Zod schemas for client and server.
-- **Storage Layer**: Uses an in-memory `MemStorage` via an `IStorage` interface, designed for future database migration.
-- **Content Management**: All service and geographic data centralized in `shared/contentData.ts`.
+- **Storage Layer**: PostgreSQL via Neon serverless driver.
 - **Build System**: Vite for frontend, esbuild for backend, strict TypeScript.
-- **Database Schema**: Drizzle ORM configured for PostgreSQL via Neon serverless driver, schema defined in `shared/schema.ts` for a `quotes` table.
+- **Database Schema**: Drizzle ORM with schema in `shared/schema.ts`.
+
+## Service Areas
+Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, Caldwell
 
 ## External Dependencies
 
 ### UI/UX & Components
 - **Radix UI**: Headless accessible components (via shadcn/ui).
-- **class-variance-authority**: For component variant management.
-- **embla-carousel-react**: Carousel functionality.
+- **class-variance-authority**: Component variant management.
 - **lucide-react**: Icon library.
+- **Leaflet**: Interactive maps.
 
 ### Form & State Management
 - **react-hook-form**: Form state and validation.
@@ -66,7 +74,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Styling
 - **Tailwind CSS**: Utility-first CSS framework.
-- **tailwind-merge & clsx**: For merging CSS classes.
+- **tailwind-merge & clsx**: Class merging utilities.
 
 ### Data & Validation
 - **zod**: Schema validation library.
@@ -75,5 +83,5 @@ Preferred communication style: Simple, everyday language.
 
 ### Utilities
 - **date-fns**: Date manipulation.
-- **nanoid**: Unique ID generation.
 - **wouter**: Lightweight client-side routing.
+- **resend**: Email delivery.

@@ -343,8 +343,8 @@ export const CITY_SEO_DATA = {
 export const BUSINESS_INFO = {
   name: 'Home Buyer Boise',
   legalName: 'Home Buyer Boise LLC',
-  phone: '(208) 405-CASH',
-  email: 'hello@homebuyerboise.com',
+  phone: '(208) 405-2275',
+  email: 'connect@buymyhouse.co',
   address: {
     street: '3024 W Fairview Ave',
     city: 'Boise',
