@@ -178,7 +178,7 @@ export type Service = typeof SERVICES[number];
 export const SERVICE_CONTENT = {
   "sell-house-fast": {
     heroSubtitle: "Get a fair cash offer in 24 hours. Close in as little as 7 days or take your time - you choose the timeline.",
-    intro: "When you need to sell your house fast in the Boise metro area, HomeBuyerBoise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
+    intro: "When you need to sell your house fast in the Boise metro area, Home Buyer Boise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
     whyChoose: [
       "Cash offer in 24 hours or less",
       "Close in 7 days or on your timeline",
@@ -312,21 +312,21 @@ export const SERVICE_CONTENT = {
         location: "Kuna, ID",
         situation: "Behind on mortgage after job loss, foreclosure notice received",
         solution: "Closed in 9 days, paid off mortgage including arrears, homeowners received $12,000 cash and avoided foreclosure",
-        quote: "HomeBuyerBoise saved our credit and gave us a fresh start. We were 4 months behind and facing foreclosure. They closed in 9 days and we walked away with cash instead of a foreclosure on our record."
+        quote: "Home Buyer Boise saved our credit and gave us a fresh start. We were 4 months behind and facing foreclosure. They closed in 9 days and we walked away with cash instead of a foreclosure on our record."
       },
       {
         title: "Meridian Relocation Sale",
         location: "Meridian, ID",
         situation: "Job transfer to Seattle with only 3 weeks notice, couldn't wait for traditional sale",
         solution: "Closed in 12 days, seller moved to Seattle without house stress, avoided carrying two mortgages",
-        quote: "My company transferred me to Seattle with 3 weeks notice. I couldn't afford to carry two mortgages while waiting for my Meridian house to sell. HomeBuyerBoise gave me a fair offer and closed before I started my new job."
+        quote: "My company transferred me to Seattle with 3 weeks notice. I couldn't afford to carry two mortgages while waiting for my Meridian house to sell. Home Buyer Boise gave me a fair offer and closed before I started my new job."
       },
       {
         title: "Boise Divorce Settlement",
         location: "Boise, ID (North End)",
         situation: "Divorcing couple couldn't agree on repairs, needed quick sale to finalize divorce",
         solution: "Purchased as-is in 14 days, split proceeds fairly, both parties moved on with their lives",
-        quote: "We were arguing about every repair the listing agent recommended. HomeBuyerBoise bought our North End home as-is and we split the proceeds fairly. It let us finalize our divorce and both move forward."
+        quote: "We were arguing about every repair the listing agent recommended. Home Buyer Boise bought our North End home as-is and we split the proceeds fairly. It let us finalize our divorce and both move forward."
       }
     ],
     comparisonData: {
@@ -351,7 +351,7 @@ export const SERVICE_CONTENT = {
   },
   "we-buy-houses": {
     heroSubtitle: "We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, and Middleton. No fees, no repairs, fair cash offers.",
-    intro: "HomeBuyerBoise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+    intro: "Home Buyer Boise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
     whyChoose: [
       "Buy houses in any condition",
       "No contingencies or financing delays",
@@ -378,7 +378,7 @@ export const SERVICE_CONTENT = {
     faqs: [
       {
         question: "Are 'We Buy Houses' companies legitimate?",
-        answer: "Yes, reputable cash home buyers like HomeBuyerBoise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references."
+        answer: "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references."
       },
       {
         question: "How do 'We Buy Houses' companies make money?",
@@ -394,7 +394,7 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "Do I have to pay any fees to sell to you?",
-        answer: "Absolutely not. There are zero fees when selling to HomeBuyerBoise. We pay all closing costs, there are no realtor commissions (saving you 6%), and no hidden charges. The offer we make is the amount you receive at closing."
+        answer: "Absolutely not. There are zero fees when selling to Home Buyer Boise. We pay all closing costs, there are no realtor commissions (saving you 6%), and no hidden charges. The offer we make is the amount you receive at closing."
       },
       {
         question: "How quickly can you close?",
@@ -405,7 +405,7 @@ export const SERVICE_CONTENT = {
         answer: "We buy houses throughout the Treasure Valley including Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, and Caldwell. We also serve surrounding Ada County and Canyon County communities within a 30-mile radius of Boise."
       },
       {
-        question: "What makes HomeBuyerBoise different from other house buyers?",
+        question: "What makes Home Buyer Boise different from other house buyers?",
         answer: "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We've been buying homes since 2018 with a 4.9-star rating from over 189 reviews. We're transparent, fair, and treat every homeowner with respect."
       }
     ],
@@ -415,7 +415,7 @@ export const SERVICE_CONTENT = {
         location: "Eagle, ID",
         situation: "Family inherited property with 30 years of belongings, couldn't agree on clean-out responsibilities",
         solution: "Purchased property with all contents included, closed in 18 days, heirs split proceeds evenly",
-        quote: "We inherited dad's Eagle home but none of us lived nearby and couldn't agree on who would clean it out. HomeBuyerBoise bought it with everything inside. Huge weight lifted off our shoulders."
+        quote: "We inherited dad's Eagle home but none of us lived nearby and couldn't agree on who would clean it out. Home Buyer Boise bought it with everything inside. Huge weight lifted off our shoulders."
       },
       {
         title: "Star Tired Landlord",
@@ -429,7 +429,7 @@ export const SERVICE_CONTENT = {
         location: "Middleton, ID",
         situation: "Property needed $50,000+ in repairs, traditional buyers kept making low-ball offers",
         solution: "Fair as-is offer based on actual condition, closed in 12 days, seller avoided repair costs",
-        quote: "Traditional buyers wanted me to fix the roof, HVAC, and foundation before they'd even make an offer. HomeBuyerBoise gave me a fair price for as-is condition. Saved me months and tens of thousands."
+        quote: "Traditional buyers wanted me to fix the roof, HVAC, and foundation before they'd even make an offer. Home Buyer Boise gave me a fair price for as-is condition. Saved me months and tens of thousands."
       }
     ],
     comparisonData: {
@@ -454,7 +454,7 @@ export const SERVICE_CONTENT = {
   },
   "cash-offer": {
     heroSubtitle: "Receive a fair, no-obligation cash offer on your Boise area home within 24 hours. No pressure, no games, just a honest offer.",
-    intro: "Getting a cash offer for your house doesn't have to be complicated. At HomeBuyerBoise, we provide straightforward, fair cash offers based on your home's market value and condition. Our offers come with no strings attached - no obligation to accept, no pressure, just information to help you make the best decision.",
+    intro: "Getting a cash offer for your house doesn't have to be complicated. At Home Buyer Boise, we provide straightforward, fair cash offers based on your home's market value and condition. Our offers come with no strings attached - no obligation to accept, no pressure, just information to help you make the best decision.",
     whyChoose: [
       "Fair market-based offers",
       "24-hour response time",
@@ -518,7 +518,7 @@ export const SERVICE_CONTENT = {
         location: "Kuna, ID",
         situation: "Seller received listing agent estimate but wanted to compare with cash offer",
         solution: "Provided detailed cash offer breakdown, seller chose cash for certainty and speed",
-        quote: "I got quotes from a realtor and HomeBuyerBoise. When I factored in commissions, repairs they wanted, and 3 months of waiting - the cash offer made more sense. Closed in 10 days."
+        quote: "I got quotes from a realtor and Home Buyer Boise. When I factored in commissions, repairs they wanted, and 3 months of waiting - the cash offer made more sense. Closed in 10 days."
       },
       {
         title: "Star Quick Decision",
@@ -550,7 +550,7 @@ export const SERVICE_CONTENT = {
   },
   "sell-as-is": {
     heroSubtitle: "Sell your house exactly as-is without spending a dime on repairs, cleaning, or staging. We buy houses in any condition.",
-    intro: "Selling a house as-is means you don't have to fix anything. Foundation cracks? We'll buy it. Outdated kitchen? We'll buy it. Fire damage or hoarding situation? We'll buy it. At HomeBuyerBoise, we specialize in purchasing homes that need work - properties that traditional buyers would pass on.",
+    intro: "Selling a house as-is means you don't have to fix anything. Foundation cracks? We'll buy it. Outdated kitchen? We'll buy it. Fire damage or hoarding situation? We'll buy it. At Home Buyer Boise, we specialize in purchasing homes that need work - properties that traditional buyers would pass on.",
     whyChoose: [
       "Absolutely no repairs required",
       "No cleaning or staging needed",
@@ -614,7 +614,7 @@ export const SERVICE_CONTENT = {
         location: "Meridian, ID",
         situation: "1970s home with significant foundation settling, quotes for repair exceeded $45,000",
         solution: "Purchased as-is, no foundation repair required, closed in 12 days",
-        quote: "Three contractors quoted $45,000+ to fix my foundation. Traditional buyers wouldn't even look. HomeBuyerBoise bought it as-is and I didn't spend a penny on repairs."
+        quote: "Three contractors quoted $45,000+ to fix my foundation. Traditional buyers wouldn't even look. Home Buyer Boise bought it as-is and I didn't spend a penny on repairs."
       },
       {
         title: "Boise Hoarder House",
@@ -646,7 +646,7 @@ export const SERVICE_CONTENT = {
   },
   "inherited-property": {
     heroSubtitle: "Inherited a house you don't want or need? Sell it quickly without repairs, clean-out, or dealing with probate complications.",
-    intro: "Inheriting a house can be overwhelming, especially when it comes with an outdated property, probate complications, or sentimental items to sort through. HomeBuyerBoise helps families navigate inherited property sales with compassion and efficiency. We can purchase your inherited home quickly, often handling probate timelines and family situations with sensitivity.",
+    intro: "Inheriting a house can be overwhelming, especially when it comes with an outdated property, probate complications, or sentimental items to sort through. Home Buyer Boise helps families navigate inherited property sales with compassion and efficiency. We can purchase your inherited home quickly, often handling probate timelines and family situations with sensitivity.",
     whyChoose: [
       "Experience with probate sales",
       "Handle properties with multiple heirs",
@@ -710,7 +710,7 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (North End)",
         situation: "Three siblings inherited 1950s home with 40 years of belongings, two lived out of state",
         solution: "Purchased with all contents, closed during probate with court approval, proceeds split three ways",
-        quote: "Mom lived in her North End home for 40 years. The thought of cleaning it out was overwhelming. HomeBuyerBoise bought it with everything inside and handled probate requirements. We could focus on grieving, not logistics."
+        quote: "Mom lived in her North End home for 40 years. The thought of cleaning it out was overwhelming. Home Buyer Boise bought it with everything inside and handled probate requirements. We could focus on grieving, not logistics."
       },
       {
         title: "Canyon County Probate Sale",
@@ -742,7 +742,7 @@ export const SERVICE_CONTENT = {
   },
   "avoid-foreclosure": {
     heroSubtitle: "Facing foreclosure? Sell your house fast and protect your credit. Confidential assistance with fair cash offers.",
-    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. HomeBuyerBoise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.",
+    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.",
     whyChoose: [
       "Stop foreclosure proceedings",
       "Protect your credit score",
@@ -806,14 +806,14 @@ export const SERVICE_CONTENT = {
         location: "Meridian, ID",
         situation: "Medical bills led to 6 months behind on mortgage, foreclosure auction scheduled in 3 weeks",
         solution: "Closed in 11 days before auction, paid off mortgage and arrears, family received $8,000 in remaining equity",
-        quote: "We had 3 weeks until auction and thought we'd lose everything. HomeBuyerBoise closed in 11 days, paid off our mortgage, and we walked away with $8,000 instead of a foreclosure on our record."
+        quote: "We had 3 weeks until auction and thought we'd lose everything. Home Buyer Boise closed in 11 days, paid off our mortgage, and we walked away with $8,000 instead of a foreclosure on our record."
       },
       {
         title: "Nampa Job Loss Recovery",
         location: "Nampa, ID",
         situation: "Job loss and unemployment, 4 months behind on payments, couldn't catch up",
         solution: "Sold quickly, mortgage paid off, owner avoided foreclosure and protected credit for future home purchase",
-        quote: "After losing my job, I couldn't catch up on payments. Selling to HomeBuyerBoise protected my credit so I can buy again once I'm back on my feet. They treated me with dignity during a really hard time."
+        quote: "After losing my job, I couldn't catch up on payments. Selling to Home Buyer Boise protected my credit so I can buy again once I'm back on my feet. They treated me with dignity during a really hard time."
       }
     ],
     comparisonData: {
@@ -838,7 +838,7 @@ export const SERVICE_CONTENT = {
   },
   "sell-house-divorce": {
     heroSubtitle: "Going through divorce? Sell your house quickly for fair market value and split proceeds equitably. Simple, fast, stress-free.",
-    intro: "Divorce is emotionally difficult enough without the stress of selling a house. HomeBuyerBoise provides a straightforward solution for divorcing couples in the Boise metro area. We buy your house quickly for cash, allowing you to split proceeds fairly and move forward with your separate lives. No arguments about repairs, no waiting for traditional buyers, no prolonging the process.",
+    intro: "Divorce is emotionally difficult enough without the stress of selling a house. Home Buyer Boise provides a straightforward solution for divorcing couples in the Boise metro area. We buy your house quickly for cash, allowing you to split proceeds fairly and move forward with your separate lives. No arguments about repairs, no waiting for traditional buyers, no prolonging the process.",
     whyChoose: [
       "Quick sale ends property disputes",
       "Fair market value offers",
@@ -902,14 +902,14 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (Bench)",
         situation: "Divorcing couple couldn't agree on $20,000 in recommended repairs, sale stalled for months",
         solution: "Purchased as-is, closed in 16 days, proceeds split 50/50, both parties moved forward",
-        quote: "Our listing agent said we needed $20,000 in repairs but we couldn't agree on what to fix. HomeBuyerBoise bought it as-is and we split the proceeds. Finally got our divorce finalized."
+        quote: "Our listing agent said we needed $20,000 in repairs but we couldn't agree on what to fix. Home Buyer Boise bought it as-is and we split the proceeds. Finally got our divorce finalized."
       },
       {
         title: "Eagle Contested Property",
         location: "Eagle, ID",
         situation: "One spouse moved to California, couldn't coordinate showings, house sat empty for 5 months",
         solution: "One showing, remote closing for out-of-state spouse, fast cash for both to start new lives",
-        quote: "With my ex in California and me in Eagle, coordinating a traditional sale was impossible. HomeBuyerBoise did one showing and we both signed remotely. Clean break for both of us."
+        quote: "With my ex in California and me in Eagle, coordinating a traditional sale was impossible. Home Buyer Boise did one showing and we both signed remotely. Clean break for both of us."
       }
     ],
     comparisonData: {
@@ -934,7 +934,7 @@ export const SERVICE_CONTENT = {
   },
   "relocation-sale": {
     heroSubtitle: "Relocating for work? Sell your Boise house fast without stress. Cash offer in 24 hours, close before you move.",
-    intro: "Job relocation is exciting but stressful. The last thing you need is a house that won't sell while you're trying to start your new position in another city. HomeBuyerBoise specializes in helping relocating professionals sell their homes quickly. Get a fair cash offer, close on your timeline, and focus on your career move instead of real estate headaches.",
+    intro: "Job relocation is exciting but stressful. The last thing you need is a house that won't sell while you're trying to start your new position in another city. Home Buyer Boise specializes in helping relocating professionals sell their homes quickly. Get a fair cash offer, close on your timeline, and focus on your career move instead of real estate headaches.",
     whyChoose: [
       "Close before your move date",
       "No showings while you're packing",
@@ -998,14 +998,14 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (Southeast)",
         situation: "Software engineer transferred to Houston with 3 weeks notice, couldn't afford two mortgages",
         solution: "Closed in 9 days before starting new job, avoided carrying two mortgages, smooth transition",
-        quote: "HP transferred me to Houston with 3 weeks notice. I couldn't afford mortgages in both cities. HomeBuyerBoise closed in 9 days and I started my new job with a clean slate."
+        quote: "HP transferred me to Houston with 3 weeks notice. I couldn't afford mortgages in both cities. Home Buyer Boise closed in 9 days and I started my new job with a clean slate."
       },
       {
         title: "Military PCS to Fort Bragg",
         location: "Meridian, ID",
         situation: "Military family received PCS orders, 6 weeks to relocate across country",
         solution: "Purchased home in 14 days, family focused on military move instead of house sale stress",
-        quote: "PCS orders don't wait for houses to sell. With two kids and a cross-country move to coordinate, HomeBuyerBoise handled the house so we could focus on our family's transition."
+        quote: "PCS orders don't wait for houses to sell. With two kids and a cross-country move to coordinate, Home Buyer Boise handled the house so we could focus on our family's transition."
       }
     ],
     comparisonData: {
@@ -1030,7 +1030,7 @@ export const SERVICE_CONTENT = {
   },
   "problem-tenants": {
     heroSubtitle: "Tired of landlord problems? Sell your rental property even with problem tenants. We handle evictions and buy occupied.",
-    intro: "Being a landlord isn't for everyone. If you're dealing with problem tenants, non-payment, property damage, or simply tired of midnight repair calls, HomeBuyerBoise offers an exit strategy. We buy rental properties in any condition, even with tenants still occupying the property. Get out of the landlord business today.",
+    intro: "Being a landlord isn't for everyone. If you're dealing with problem tenants, non-payment, property damage, or simply tired of midnight repair calls, Home Buyer Boise offers an exit strategy. We buy rental properties in any condition, even with tenants still occupying the property. Get out of the landlord business today.",
     whyChoose: [
       "Buy properties with tenants in place",
       "Handle eviction process if needed",
@@ -1094,14 +1094,14 @@ export const SERVICE_CONTENT = {
         location: "Caldwell, ID",
         situation: "Fourplex with 3 non-paying tenants, $8,000 in back rent owed, significant property damage",
         solution: "Purchased with all tenants in place, handled evictions, owner escaped landlord stress",
-        quote: "I had 3 of 4 units not paying rent, holes in every wall, and was losing money every month. HomeBuyerBoise bought the whole property and I never had to deal with those tenants again."
+        quote: "I had 3 of 4 units not paying rent, holes in every wall, and was losing money every month. Home Buyer Boise bought the whole property and I never had to deal with those tenants again."
       },
       {
         title: "Boise Long-Distance Landlord",
         location: "Boise, ID (Bench)",
         situation: "Owner lived in Seattle, couldn't manage property effectively, tenant stopped paying rent",
         solution: "Purchased remotely, handled eviction, owner never traveled to Boise",
-        quote: "Managing a rental from Seattle was impossible. When my tenant stopped paying, I couldn't deal with it anymore. HomeBuyerBoise bought it, handled eviction, and I signed everything remotely. Relief."
+        quote: "Managing a rental from Seattle was impossible. When my tenant stopped paying, I couldn't deal with it anymore. Home Buyer Boise bought it, handled eviction, and I signed everything remotely. Relief."
       }
     ],
     comparisonData: {
@@ -1126,7 +1126,7 @@ export const SERVICE_CONTENT = {
   },
   "probate-sale": {
     heroSubtitle: "Selling probate property in Boise? We work with executors and attorneys to simplify estate sales. Fair cash offers.",
-    intro: "Probate property sales can be complex, involving court approvals, attorney oversight, and family dynamics. HomeBuyerBoise has extensive experience purchasing probate properties in Idaho. We work respectfully with executors, estate attorneys, and family members to provide fair cash offers and navigate the legal requirements efficiently.",
+    intro: "Probate property sales can be complex, involving court approvals, attorney oversight, and family dynamics. Home Buyer Boise has extensive experience purchasing probate properties in Idaho. We work respectfully with executors, estate attorneys, and family members to provide fair cash offers and navigate the legal requirements efficiently.",
     whyChoose: [
       "Experience with Idaho probate law",
       "Work with estate attorneys",
@@ -1190,14 +1190,14 @@ export const SERVICE_CONTENT = {
         location: "Garden City, ID",
         situation: "Executor managing complicated estate with four beneficiaries in different states",
         solution: "Provided court-ready documentation, closed 10 days after probate approval, proceeds distributed to all heirs",
-        quote: "As executor with four siblings in four states, selling mom's house seemed impossible. HomeBuyerBoise understood probate, provided proper documentation, and made the process manageable. All four of us received our shares without conflict."
+        quote: "As executor with four siblings in four states, selling mom's house seemed impossible. Home Buyer Boise understood probate, provided proper documentation, and made the process manageable. All four of us received our shares without conflict."
       },
       {
         title: "Nampa Estate Simplification",
         location: "Nampa, ID",
         situation: "Elderly estate with property needing $30,000+ in repairs, executor overwhelmed",
         solution: "Purchased as-is, no repairs required, simple probate sale closed within month of approval",
-        quote: "Dad's Nampa house needed everything - roof, HVAC, flooring. I couldn't afford repairs as executor and didn't want to manage contractors. HomeBuyerBoise bought it as-is and the estate still received fair value."
+        quote: "Dad's Nampa house needed everything - roof, HVAC, flooring. I couldn't afford repairs as executor and didn't want to manage contractors. Home Buyer Boise bought it as-is and the estate still received fair value."
       }
     ],
     comparisonData: {
@@ -1222,7 +1222,7 @@ export const SERVICE_CONTENT = {
   },
   "tax-liens": {
     heroSubtitle: "House has tax liens or IRS debt? We buy properties with liens and pay them off at closing. Get out from under tax debt.",
-    intro: "Tax liens and IRS debt can make selling your house seem impossible. Traditional buyers can't get financing when properties have liens. HomeBuyerBoise specializes in purchasing homes with tax liens, IRS liens, and property tax debt. We pay off the liens at closing and you walk away free from tax debt.",
+    intro: "Tax liens and IRS debt can make selling your house seem impossible. Traditional buyers can't get financing when properties have liens. Home Buyer Boise specializes in purchasing homes with tax liens, IRS liens, and property tax debt. We pay off the liens at closing and you walk away free from tax debt.",
     whyChoose: [
       "Buy houses with tax liens",
       "Pay off liens at closing",
@@ -1286,14 +1286,14 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (Vista)",
         situation: "Homeowner with $47,000 IRS lien and $12,000 in back property taxes, couldn't sell traditionally",
         solution: "Purchased property, paid off all liens at closing, owner received remaining equity and clean slate",
-        quote: "The IRS lien scared away every traditional buyer. HomeBuyerBoise paid off my $47,000 federal lien and back taxes. I walked away with $23,000 and no more IRS debt. Life-changing."
+        quote: "The IRS lien scared away every traditional buyer. Home Buyer Boise paid off my $47,000 federal lien and back taxes. I walked away with $23,000 and no more IRS debt. Life-changing."
       },
       {
         title: "Meridian Property Tax Arrears",
         location: "Meridian, ID",
         situation: "Widow fell behind on property taxes during medical crisis, faced tax sale",
         solution: "Closed before tax sale deadline, all arrears paid, preserved homeowner's credit",
-        quote: "After my husband passed, I couldn't keep up with property taxes. HomeBuyerBoise paid off three years of back taxes and I avoided the tax sale. They were kind during a terrible time."
+        quote: "After my husband passed, I couldn't keep up with property taxes. Home Buyer Boise paid off three years of back taxes and I avoided the tax sale. They were kind during a terrible time."
       }
     ],
     comparisonData: {
@@ -1318,7 +1318,7 @@ export const SERVICE_CONTENT = {
   },
   "downsizing": {
     heroSubtitle: "Ready to downsize your Boise home? Sell your large family home fast without repairs or staging. Start your next chapter.",
-    intro: "Empty nesters and retirees across Boise are discovering the freedom of downsizing. HomeBuyerBoise helps you sell your large family home quickly so you can move into a smaller, more manageable property. No need to repair the worn carpet from decades of kids, update the kitchen, or stage rooms that haven't been used in years.",
+    intro: "Empty nesters and retirees across Boise are discovering the freedom of downsizing. Home Buyer Boise helps you sell your large family home quickly so you can move into a smaller, more manageable property. No need to repair the worn carpet from decades of kids, update the kitchen, or stage rooms that haven't been used in years.",
     whyChoose: [
       "No repairs to old family home",
       "No staging empty bedrooms",
@@ -1382,14 +1382,14 @@ export const SERVICE_CONTENT = {
         location: "Eagle, ID",
         situation: "Retired couple in 4,000 sq ft home with 40 years of belongings, wanted to move to 55+ community",
         solution: "Purchased with timeline flexibility, couple took 45 days to find perfect smaller home, left most contents for us to handle",
-        quote: "Our Eagle home was perfect for raising kids but too much for just the two of us. HomeBuyerBoise let us take our time finding our retirement condo, then handled everything we left behind. Seamless transition."
+        quote: "Our Eagle home was perfect for raising kids but too much for just the two of us. Home Buyer Boise let us take our time finding our retirement condo, then handled everything we left behind. Seamless transition."
       },
       {
         title: "Boise Senior Transition",
         location: "Boise, ID (North End)",
         situation: "Elderly widow moving to assisted living, family needed funds quickly for care costs",
         solution: "Closed in 14 days, funds covered first year of assisted living, family avoided rushed estate sale",
-        quote: "Mom needed assisted living immediately. HomeBuyerBoise bought her home in two weeks, which funded her care. The alternative was a stressful estate sale while worrying about her health."
+        quote: "Mom needed assisted living immediately. Home Buyer Boise bought her home in two weeks, which funded her care. The alternative was a stressful estate sale while worrying about her health."
       }
     ],
     comparisonData: {
@@ -1414,7 +1414,7 @@ export const SERVICE_CONTENT = {
   },
   "fire-water-damage": {
     heroSubtitle: "House damaged by fire or water? Sell it as-is without repairs. We buy damaged homes and handle insurance claims.",
-    intro: "Fire and water damage can leave homeowners overwhelmed. Whether from a kitchen fire, flood, burst pipe, or smoke damage, repairing the damage is expensive and time-consuming. HomeBuyerBoise buys fire and water damaged homes across the Boise metro area. Sell as-is and move forward without the restoration headache.",
+    intro: "Fire and water damage can leave homeowners overwhelmed. Whether from a kitchen fire, flood, burst pipe, or smoke damage, repairing the damage is expensive and time-consuming. Home Buyer Boise buys fire and water damaged homes across the Boise metro area. Sell as-is and move forward without the restoration headache.",
     whyChoose: [
       "Buy fire-damaged properties",
       "Purchase water-damaged homes",
@@ -1478,14 +1478,14 @@ export const SERVICE_CONTENT = {
         location: "Nampa, ID",
         situation: "Kitchen fire with smoke damage throughout, insurance offered repair but family didn't want to rebuild",
         solution: "Purchased as-is, family kept insurance settlement and received additional cash from sale",
-        quote: "Our kitchen fire left smoke damage in every room. Insurance would pay to repair, but we couldn't face living there again. HomeBuyerBoise bought it as-is, and between insurance and the sale, we moved into a better home."
+        quote: "Our kitchen fire left smoke damage in every room. Insurance would pay to repair, but we couldn't face living there again. Home Buyer Boise bought it as-is, and between insurance and the sale, we moved into a better home."
       },
       {
         title: "Caldwell Flood Damage",
         location: "Caldwell, ID",
         situation: "Basement flood from burst pipe while owner was traveling, mold developed before discovery",
         solution: "Purchased with mold damage, no remediation required, closed in 16 days",
-        quote: "A pipe burst while I was on vacation. By the time I got back, mold was everywhere. Nobody would buy it. HomeBuyerBoise took it as-is and I didn't have to deal with remediation."
+        quote: "A pipe burst while I was on vacation. By the time I got back, mold was everywhere. Nobody would buy it. Home Buyer Boise took it as-is and I didn't have to deal with remediation."
       }
     ],
     comparisonData: {
@@ -1510,7 +1510,7 @@ export const SERVICE_CONTENT = {
   },
   "hoarder-house": {
     heroSubtitle: "Need to sell a hoarder house? We buy hoarded properties with compassion. Clean-out assistance available.",
-    intro: "Hoarding situations are sensitive and overwhelming for families. Whether you're dealing with a loved one's estate or your own situation, HomeBuyerBoise provides compassionate, judgment-free service for hoarder house sales in Boise. We can assist with clean-out or purchase the property with everything inside.",
+    intro: "Hoarding situations are sensitive and overwhelming for families. Whether you're dealing with a loved one's estate or your own situation, Home Buyer Boise provides compassionate, judgment-free service for hoarder house sales in Boise. We can assist with clean-out or purchase the property with everything inside.",
     whyChoose: [
       "Compassionate, judgment-free service",
       "Buy houses with contents inside",
@@ -1574,14 +1574,14 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (North End)",
         situation: "Four siblings inherited parents' hoarded home, hadn't been cleaned in 20 years, siblings scattered across country",
         solution: "Purchased with all contents, family didn't have to coordinate clean-out from different states",
-        quote: "None of us could face cleaning out mom and dad's house. Forty years of memories and twenty years of hoarding. HomeBuyerBoise bought it with everything inside. We kept the meaningful items and walked away."
+        quote: "None of us could face cleaning out mom and dad's house. Forty years of memories and twenty years of hoarding. Home Buyer Boise bought it with everything inside. We kept the meaningful items and walked away."
       },
       {
         title: "Meridian Elderly Parent Transition",
         location: "Meridian, ID",
         situation: "Daughter needed to move father with hoarding disorder to assisted living, couldn't manage property clean-out",
         solution: "Discreet purchase, father's dignity preserved, funds used for quality care facility",
-        quote: "Dad's hoarding got worse after mom passed. Moving him to assisted living meant selling the house, but cleaning it out seemed impossible. HomeBuyerBoise handled everything with such compassion."
+        quote: "Dad's hoarding got worse after mom passed. Moving him to assisted living meant selling the house, but cleaning it out seemed impossible. Home Buyer Boise handled everything with such compassion."
       }
     ],
     comparisonData: {
@@ -1606,7 +1606,7 @@ export const SERVICE_CONTENT = {
   },
   "expired-listing": {
     heroSubtitle: "Listing expired and house won't sell? Get a guaranteed cash offer. No more price reductions, showings, or waiting.",
-    intro: "If your listing expired and your house didn't sell, you know the frustration of showings, open houses, and price reductions that led nowhere. HomeBuyerBoise provides the solution: a guaranteed cash offer with certain closing. No more waiting for buyers to get financing, no more deals falling through, no more price negotiations.",
+    intro: "If your listing expired and your house didn't sell, you know the frustration of showings, open houses, and price reductions that led nowhere. Home Buyer Boise provides the solution: a guaranteed cash offer with certain closing. No more waiting for buyers to get financing, no more deals falling through, no more price negotiations.",
     whyChoose: [
       "Guaranteed cash offer - no contingencies",
       "No more showings or open houses",
@@ -1670,14 +1670,14 @@ export const SERVICE_CONTENT = {
         location: "Star, ID",
         situation: "Home listed for 9 months with 3 price reductions and 2 failed deals, seller exhausted",
         solution: "Cash offer accepted, closed in 12 days, no more showings or uncertainty",
-        quote: "After 9 months, 3 price drops, and 2 failed deals, I was done. HomeBuyerBoise made an offer Friday and we closed in 12 days. Should have called them first."
+        quote: "After 9 months, 3 price drops, and 2 failed deals, I was done. Home Buyer Boise made an offer Friday and we closed in 12 days. Should have called them first."
       },
       {
         title: "Meridian Inspection Failure",
         location: "Meridian, ID",
         situation: "Two traditional buyers backed out after inspection found foundation issues, owner couldn't afford repairs",
         solution: "Purchased as-is including foundation issues, no inspection contingency",
-        quote: "Two buyers ran after their inspectors found foundation cracks. I couldn't afford the $40,000 fix. HomeBuyerBoise bought it anyway and dealt with the foundation themselves."
+        quote: "Two buyers ran after their inspectors found foundation cracks. I couldn't afford the $40,000 fix. Home Buyer Boise bought it anyway and dealt with the foundation themselves."
       }
     ],
     comparisonData: {
@@ -1702,7 +1702,7 @@ export const SERVICE_CONTENT = {
   },
   "behind-mortgage": {
     heroSubtitle: "Behind on mortgage payments? Sell before foreclosure starts. Catch up on payments or pay off your loan completely.",
-    intro: "If you've missed mortgage payments but aren't in foreclosure yet, you have options. HomeBuyerBoise can help you sell your house quickly, pay off your mortgage, and potentially walk away with cash - all before foreclosure proceedings begin. Protect your credit and your financial future.",
+    intro: "If you've missed mortgage payments but aren't in foreclosure yet, you have options. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and potentially walk away with cash - all before foreclosure proceedings begin. Protect your credit and your financial future.",
     whyChoose: [
       "Sell before foreclosure filing",
       "Protect your credit score",
@@ -1766,14 +1766,14 @@ export const SERVICE_CONTENT = {
         location: "Kuna, ID",
         situation: "Medical bills depleted savings, fell 4 months behind on mortgage, foreclosure imminent",
         solution: "Sold before foreclosure filing, mortgage paid off, family preserved credit for future home purchase",
-        quote: "A medical emergency wiped out our savings. We fell behind fast. HomeBuyerBoise helped us sell before foreclosure hit our credit. Now we're renting while we recover, but we can buy again someday."
+        quote: "A medical emergency wiped out our savings. We fell behind fast. Home Buyer Boise helped us sell before foreclosure hit our credit. Now we're renting while we recover, but we can buy again someday."
       },
       {
         title: "Boise Job Loss Recovery",
         location: "Boise, ID (West)",
         situation: "Software layoff, unemployment exhausted, 3 months behind and unable to catch up",
         solution: "Quick sale, mortgage satisfied, owner avoided foreclosure and received modest equity",
-        quote: "After being laid off, I burned through savings trying to keep up. When I realized I couldn't, HomeBuyerBoise helped me sell, pay off the mortgage, and walk away with $12,000 instead of a foreclosure."
+        quote: "After being laid off, I burned through savings trying to keep up. When I realized I couldn't, Home Buyer Boise helped me sell, pay off the mortgage, and walk away with $12,000 instead of a foreclosure."
       }
     ],
     comparisonData: {
@@ -1798,7 +1798,7 @@ export const SERVICE_CONTENT = {
   },
   "code-violations": {
     heroSubtitle: "House has code violations? We buy properties with municipal violations, unpermitted work, and compliance issues.",
-    intro: "Code violations from the city can make selling your house nearly impossible. Traditional buyers can't get financing on properties with open violations or unpermitted work. HomeBuyerBoise specializes in purchasing homes with code compliance issues across Boise and the Treasure Valley. We handle violations after closing.",
+    intro: "Code violations from the city can make selling your house nearly impossible. Traditional buyers can't get financing on properties with open violations or unpermitted work. Home Buyer Boise specializes in purchasing homes with code compliance issues across Boise and the Treasure Valley. We handle violations after closing.",
     whyChoose: [
       "Buy houses with open violations",
       "Purchase properties with unpermitted work",
@@ -1862,14 +1862,14 @@ export const SERVICE_CONTENT = {
         location: "Boise, ID (Bench)",
         situation: "Previous owner added unpermitted accessory dwelling unit, current owner facing $500/day fines",
         solution: "Purchased before fines accumulated, handled permitting process, owner escaped liability",
-        quote: "I inherited a house with an unpermitted mother-in-law suite. Boise started threatening $500/day fines. HomeBuyerBoise bought it fast and dealt with the permits themselves."
+        quote: "I inherited a house with an unpermitted mother-in-law suite. Boise started threatening $500/day fines. Home Buyer Boise bought it fast and dealt with the permits themselves."
       },
       {
         title: "Nampa Garage Conversion",
         location: "Nampa, ID",
         situation: "Garage converted to bedroom years ago without permits, couldn't sell traditionally",
         solution: "Purchased as-is, handled compliance, seller avoided reconstruction costs",
-        quote: "A previous owner turned the garage into a bedroom. Three traditional buyers couldn't get financing because of it. HomeBuyerBoise bought it anyway and the violation became their problem."
+        quote: "A previous owner turned the garage into a bedroom. Three traditional buyers couldn't get financing because of it. Home Buyer Boise bought it anyway and the violation became their problem."
       }
     ],
     comparisonData: {

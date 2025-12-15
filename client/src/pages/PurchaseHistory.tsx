@@ -48,7 +48,7 @@ export default function PurchaseHistory() {
     <>
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />
-        <title>Purchase History | HomeBuyerBoise</title>
+        <title>Purchase History | Home Buyer Boise</title>
       </Helmet>
       <div className="container py-8" data-testid="page-purchase-history">
         <div className="mb-8">

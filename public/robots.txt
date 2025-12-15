@@ -1,4 +1,4 @@
-# HomeBuyerBoise - Robots.txt
+# Home Buyer Boise - Robots.txt
 # Professional cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, and Middleton, Idaho
 
 User-agent: *

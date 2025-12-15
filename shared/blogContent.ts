@@ -1,4 +1,4 @@
-// Blog Content Data for HomeBuyerBoise
+// Blog Content Data for Home Buyer Boise
 // 57 SEO-optimized blog posts for cash home buying in the Boise metro area
 // Each post: 1,800-2,400 words, complete with FAQs, schema markup support, and internal linking
 
@@ -23,10 +23,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "sell-my-house-fast-boise-complete-guide",
     title: "Sell My House Fast in Boise: The Complete 2025 Homeowner's Guide",
-    seoTitle: "Sell My House Fast Boise | Complete 2025 Guide | HomeBuyerBoise",
+    seoTitle: "Sell My House Fast Boise | Complete 2025 Guide | Home Buyer Boise",
     metaDescription: "Need to sell your house fast in Boise? Learn how to get a fair cash offer in 24 hours, close in 7-14 days, and avoid costly repairs. Local Idaho experts explain your options.",
     excerpt: "Discover how Boise homeowners are selling their houses in as little as 7 days for cash. This comprehensive guide covers everything you need to know about fast home sales in Idaho's capital city.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["sell house fast", "boise real estate", "cash home buyer", "quick sale", "idaho homes"],
     publishedAt: "2025-01-15T08:00:00.000Z",
@@ -41,12 +41,12 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding the Fast Home Sale Process in Boise</h2>
       
       <h3>What Does "Sell Fast" Actually Mean?</h3>
-      <p>When we talk about selling a house fast in the Treasure Valley, we're typically referring to closing a sale within 7-30 days rather than the standard 90-120 day timeline. This accelerated process is possible through several methods, but the most reliable is working with a professional cash home buyer like <a href="/about">HomeBuyerBoise</a>.</p>
+      <p>When we talk about selling a house fast in the Treasure Valley, we're typically referring to closing a sale within 7-30 days rather than the standard 90-120 day timeline. This accelerated process is possible through several methods, but the most reliable is working with a professional cash home buyer like <a href="/about">Home Buyer Boise</a>.</p>
 
       <p>Cash buyers eliminate the two biggest delays in traditional real estate transactions: buyer financing approval and property inspection contingencies. Since cash buyers don't need mortgage approval from a bank, they can close as soon as title work is complete—often within two weeks.</p>
 
       <h3>The Step-by-Step Fast Sale Timeline</h3>
-      <p>Here's what a typical fast sale looks like when you work with HomeBuyerBoise:</p>
+      <p>Here's what a typical fast sale looks like when you work with Home Buyer Boise:</p>
 
       <p><strong>Day 1: Initial Contact and Information Gathering</strong></p>
       <p>You reach out through our <a href="/get-quote">free quote request form</a> or call us directly. We'll ask basic questions about your property: address, approximate size, current condition, and your timeline for selling. This conversation typically takes 10-15 minutes.</p>
@@ -78,12 +78,12 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Exterior painting: $3,000-$6,000</li>
       </ul>
 
-      <p>When you sell to HomeBuyerBoise, none of these repairs are necessary. We buy houses in any condition and handle all renovations ourselves after closing.</p>
+      <p>When you sell to Home Buyer Boise, none of these repairs are necessary. We buy houses in any condition and handle all renovations ourselves after closing.</p>
 
       <h3>Zero Fees or Commissions</h3>
       <p>In a traditional sale, you'll pay 5-6% of the sale price in real estate agent commissions. On a $400,000 Boise home, that's $20,000-$24,000 gone before you see any proceeds. Add in typical closing costs of 2-3%, and you're losing $28,000-$36,000 to transaction expenses.</p>
 
-      <p>Cash sales to professional buyers like HomeBuyerBoise eliminate these costs entirely. We pay all closing costs and never charge any fees. The offer we make is the amount you receive at closing.</p>
+      <p>Cash sales to professional buyers like Home Buyer Boise eliminate these costs entirely. We pay all closing costs and never charge any fees. The offer we make is the amount you receive at closing.</p>
 
       <h3>Certainty and Reliability</h3>
       <p>Perhaps the most underrated benefit of a cash sale is certainty. Traditional sales fall through at an alarming rate—national statistics show 20-25% of real estate contracts fail to close. Common reasons include:</p>
@@ -142,7 +142,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>This is the most common concern we hear, and it's completely valid. The truth is that a cash offer will typically be below full retail value—but that's not the complete picture. When you factor in the costs you're avoiding (repairs, commissions, carrying costs, and uncertainty), many sellers find they net a similar amount while gaining speed and certainty.</p>
 
       <h3>"Is This a Scam?"</h3>
-      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like HomeBuyerBoise have verifiable track records, provide references from past sellers, use licensed title companies for closings, and never ask for money upfront. We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.</p>
+      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, and never ask for money upfront. We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.</p>
 
       <h3>"What If I Change My Mind?"</h3>
       <p>Our offers come with no obligations. Until you sign a purchase agreement, you're free to explore other options or decide not to sell. Even after signing, Idaho law provides certain protections and cooling-off periods.</p>
@@ -164,7 +164,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Neighborhoods We Serve Throughout the Boise Metro</h2>
 
-      <p>HomeBuyerBoise purchases homes throughout the Treasure Valley, including:</p>
+      <p>Home Buyer Boise purchases homes throughout the Treasure Valley, including:</p>
       <ul>
         <li><a href="/areas/boise">Boise</a> - North End, Bench, Vista, Southeast Boise</li>
         <li><a href="/areas/meridian">Meridian</a> - Idaho's fastest-growing city</li>
@@ -186,7 +186,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Close on your timeline—as fast as 7 days or whenever works for you</li>
       </ol>
 
-      <p>Every situation is unique, and a fast cash sale isn't right for everyone. But understanding your options empowers you to make the best decision for your circumstances. Contact HomeBuyerBoise today to get started.</p>
+      <p>Every situation is unique, and a fast cash sale isn't right for everyone. But understanding your options empowers you to make the best decision for your circumstances. Contact Home Buyer Boise today to get started.</p>
     `,
     faqs: [
       {
@@ -214,10 +214,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "we-buy-houses-boise-how-it-works",
     title: "We Buy Houses Boise: How Cash Home Buying Actually Works",
-    seoTitle: "We Buy Houses Boise | How Cash Sales Work | HomeBuyerBoise",
+    seoTitle: "We Buy Houses Boise | How Cash Sales Work | Home Buyer Boise",
     metaDescription: "Learn exactly how 'We Buy Houses' companies work in Boise. Understand the process, pricing, and what to expect when selling to a cash home buyer in Idaho.",
     excerpt: "Curious about 'We Buy Houses' companies in Boise? This guide explains exactly how the cash home buying process works, what to expect, and how to identify legitimate buyers.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["we buy houses", "cash buyer", "boise", "home selling process", "real estate investing"],
     publishedAt: "2025-01-12T08:00:00.000Z",
@@ -225,14 +225,14 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>What Are "We Buy Houses" Companies?</h2>
       <p>"We Buy Houses" companies are real estate investment firms that purchase properties directly from homeowners using cash. Unlike traditional home sales where you list with an agent and wait for retail buyers, these companies make quick offers and can close within days rather than months.</p>
 
-      <p>In the Boise metro area, companies like HomeBuyerBoise have been serving homeowners for years, providing an alternative to the traditional real estate process when speed and convenience matter most.</p>
+      <p>In the Boise metro area, companies like Home Buyer Boise have been serving homeowners for years, providing an alternative to the traditional real estate process when speed and convenience matter most.</p>
 
       <h3>The Business Model Explained</h3>
       <p>Understanding how cash buyers operate helps you evaluate whether this option makes sense for your situation. Here's the straightforward explanation:</p>
 
       <p>Cash home buyers are real estate investors. They purchase properties below retail market value, renovate or repair them as needed, and then either sell them to traditional buyers or hold them as rental properties. The difference between what they pay you and what they eventually sell or rent for covers their renovation costs, holding costs, and profit margin.</p>
 
-      <p>This business model only works when the numbers make sense for both parties. Legitimate cash buyers like HomeBuyerBoise are transparent about this—we're not pretending to offer full retail value. What we offer instead is speed, certainty, and convenience that has real financial value for sellers in the right situations.</p>
+      <p>This business model only works when the numbers make sense for both parties. Legitimate cash buyers like Home Buyer Boise are transparent about this—we're not pretending to offer full retail value. What we offer instead is speed, certainty, and convenience that has real financial value for sellers in the right situations.</p>
 
       <h2>Step-by-Step: The Cash Home Buying Process</h2>
 
@@ -251,7 +251,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>This conversation typically takes 10-15 minutes. A legitimate buyer will ask questions but should never pressure you to make immediate decisions.</p>
 
       <h3>Step 2: Property Research</h3>
-      <p>After initial contact, the cash buyer researches your property. At HomeBuyerBoise, we analyze:</p>
+      <p>After initial contact, the cash buyer researches your property. At Home Buyer Boise, we analyze:</p>
       <ul>
         <li>Ada or Canyon County Assessor records</li>
         <li>Recent comparable sales in your neighborhood</li>
@@ -276,7 +276,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>A professional walkthrough typically takes 20-45 minutes. You don't need to clean or prepare the house—we're evaluating it as-is.</p>
 
       <h3>Step 4: Cash Offer Presentation</h3>
-      <p>After the walkthrough, you receive a detailed written offer. At HomeBuyerBoise, our offers include:</p>
+      <p>After the walkthrough, you receive a detailed written offer. At Home Buyer Boise, our offers include:</p>
       <ul>
         <li>The purchase price</li>
         <li>Explanation of how we arrived at the number</li>
@@ -305,7 +305,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>How Cash Offers Are Calculated</h2>
 
-      <p>Understanding offer calculations helps you evaluate whether a cash offer is fair. Here's how professional buyers like HomeBuyerBoise determine their offers:</p>
+      <p>Understanding offer calculations helps you evaluate whether a cash offer is fair. Here's how professional buyers like Home Buyer Boise determine their offers:</p>
 
       <h3>After Repair Value (ARV)</h3>
       <p>First, we determine what your home would sell for if it were in perfect, move-in ready condition. This involves analyzing recent sales of comparable homes in your area, adjusting for differences in features, location, and condition.</p>
@@ -421,7 +421,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>The right choice depends on your priorities. If maximizing price is paramount and you have time, a traditional sale might be best. If speed and certainty matter more, a cash sale could be ideal.</p>
 
-      <h2>Getting Started with HomeBuyerBoise</h2>
+      <h2>Getting Started with Home Buyer Boise</h2>
 
       <p>If you're considering selling your Boise area home for cash, we'd love to provide a no-obligation offer. Our process is simple:</p>
 
@@ -461,16 +461,16 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "cash-offer-vs-traditional-sale-comparison",
     title: "Cash Offer vs. Traditional Sale: Which Is Right for Your Boise Home?",
-    seoTitle: "Cash Offer vs Traditional Sale Boise | Complete Comparison | HomeBuyerBoise",
+    seoTitle: "Cash Offer vs Traditional Sale Boise | Complete Comparison | Home Buyer Boise",
     metaDescription: "Compare cash offers with traditional home sales in Boise. Understand the pros, cons, costs, and timelines to make the best decision for your situation.",
     excerpt: "Should you accept a cash offer or list your Boise home traditionally? This comprehensive comparison helps you understand the real costs, timelines, and benefits of each approach.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash offer", "traditional sale", "home selling comparison", "boise real estate", "selling options"],
     publishedAt: "2025-01-10T08:00:00.000Z",
     content: `
       <h2>The Big Picture: Two Very Different Approaches</h2>
-      <p>Selling your home is one of the most significant financial decisions you'll make. In the Boise real estate market, you have two primary paths: accepting a cash offer from an investor like HomeBuyerBoise, or listing traditionally with a real estate agent. Each approach has distinct advantages, costs, and considerations.</p>
+      <p>Selling your home is one of the most significant financial decisions you'll make. In the Boise real estate market, you have two primary paths: accepting a cash offer from an investor like Home Buyer Boise, or listing traditionally with a real estate agent. Each approach has distinct advantages, costs, and considerations.</p>
 
       <p>This guide provides an honest, detailed comparison to help you make the best decision for your unique situation. Neither approach is universally "better"—the right choice depends on your priorities, timeline, and circumstances.</p>
 
@@ -548,7 +548,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Certainty and Risk</h2>
 
       <h3>Cash Sale Certainty</h3>
-      <p>One of the most undervalued aspects of cash sales is certainty. When you accept a cash offer from HomeBuyerBoise:</p>
+      <p>One of the most undervalued aspects of cash sales is certainty. When you accept a cash offer from Home Buyer Boise:</p>
       <ul>
         <li>No financing contingency—we don't need bank approval</li>
         <li>No appraisal contingency—we buy regardless of appraisal value</li>
@@ -654,7 +654,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Here's a strategy many Boise homeowners use: get a cash offer first, then decide.</p>
 
-      <p>Requesting a cash offer from HomeBuyerBoise is free and puts no obligation on you. Once you know what a cash buyer will pay, you can make an informed comparison. If the cash offer is close enough to what you'd net from a traditional sale, the speed and certainty might be worth it. If the gap is too large, you can pursue the traditional route knowing you tried the faster option first.</p>
+      <p>Requesting a cash offer from Home Buyer Boise is free and puts no obligation on you. Once you know what a cash buyer will pay, you can make an informed comparison. If the cash offer is close enough to what you'd net from a traditional sale, the speed and certainty might be worth it. If the gap is too large, you can pursue the traditional route knowing you tried the faster option first.</p>
 
       <p>Contact us today to <a href="/get-quote">request your free cash offer</a> and start making an informed decision about your Boise home.</p>
     `,
@@ -669,7 +669,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How long do I have to decide on a cash offer?",
-        answer: "At HomeBuyerBoise, our offers are typically valid for 7-10 days, giving you time to consider your options without pressure. We can extend this if you need more time for your decision."
+        answer: "At Home Buyer Boise, our offers are typically valid for 7-10 days, giving you time to consider your options without pressure. We can extend this if you need more time for your decision."
       },
       {
         question: "Do you provide proof that you can actually pay cash?",
@@ -684,10 +684,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "sell-house-as-is-boise-guide",
     title: "How to Sell a House As-Is in Boise Without Making Repairs",
-    seoTitle: "Sell House As-Is Boise | No Repairs Needed | HomeBuyerBoise",
+    seoTitle: "Sell House As-Is Boise | No Repairs Needed | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house as-is without making costly repairs. Discover who buys as-is homes, what to expect, and how to get a fair cash offer.",
     excerpt: "Can you really sell your Boise home without making repairs? Yes! Learn how as-is sales work, who buys these properties, and how to get the best offer for your home in any condition.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["sell as-is", "no repairs", "boise homes", "cash buyer", "property condition"],
     publishedAt: "2025-01-08T08:00:00.000Z",
@@ -713,7 +713,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Who Buys Houses As-Is in Boise?</h2>
 
       <h3>Professional Cash Home Buyers</h3>
-      <p>Companies like <a href="/about">HomeBuyerBoise</a> specialize in purchasing as-is properties. We're real estate investors who renovate homes as our business, so we're equipped to handle whatever condition your property is in. We have contractor relationships, understand renovation costs, and have the capital to take on projects that would overwhelm most buyers.</p>
+      <p>Companies like <a href="/about">Home Buyer Boise</a> specialize in purchasing as-is properties. We're real estate investors who renovate homes as our business, so we're equipped to handle whatever condition your property is in. We have contractor relationships, understand renovation costs, and have the capital to take on projects that would overwhelm most buyers.</p>
 
       <h3>Individual Investors</h3>
       <p>Some individual real estate investors also buy as-is properties, though they typically have more limited resources than professional buying companies. They may be looking for their first flip or a rental property to renovate.</p>
@@ -764,7 +764,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>The As-Is Selling Process</h2>
 
       <h3>Step 1: Contact a Cash Buyer</h3>
-      <p>Reach out to HomeBuyerBoise through our <a href="/get-quote">online form</a> or by calling (208) 314-2458. Be honest about your property's condition—it helps us make an accurate offer quickly.</p>
+      <p>Reach out to Home Buyer Boise through our <a href="/get-quote">online form</a> or by calling (208) 314-2458. Be honest about your property's condition—it helps us make an accurate offer quickly.</p>
 
       <h3>Step 2: Property Evaluation</h3>
       <p>We'll research your property using county records and may schedule a brief walkthrough. During the walkthrough, we assess the scope of repairs needed to bring the property to market-ready condition.</p>
@@ -787,7 +787,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Legal issues affecting the property</li>
       </ul>
 
-      <p>The good news: when selling to cash buyers like HomeBuyerBoise, disclosure is straightforward. We expect properties to have issues—that's our business model. We simply need to know what we're buying so we can price our offer appropriately.</p>
+      <p>The good news: when selling to cash buyers like Home Buyer Boise, disclosure is straightforward. We expect properties to have issues—that's our business model. We simply need to know what we're buying so we can price our offer appropriately.</p>
 
       <h2>Pricing Reality for As-Is Sales</h2>
 
@@ -839,7 +839,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>What If There Are Surprises After You Buy?</h3>
       <p>That's our risk, not yours. Once we close, we own the property and all its issues. You're done and free to move on.</p>
 
-      <h2>Why Choose HomeBuyerBoise for Your As-Is Sale?</h2>
+      <h2>Why Choose Home Buyer Boise for Your As-Is Sale?</h2>
 
       <p>We've built our business buying as-is properties in the Treasure Valley. Our advantages include:</p>
       <ul>
@@ -866,7 +866,7 @@ export const BLOG_POSTS: BlogPostData[] = [
     faqs: [
       {
         question: "Do I really not have to make any repairs before selling?",
-        answer: "Correct. When you sell to HomeBuyerBoise, you make zero repairs. We buy properties exactly as they are—from minor cosmetic issues to major structural problems. You don't even need to clean."
+        answer: "Correct. When you sell to Home Buyer Boise, you make zero repairs. We buy properties exactly as they are—from minor cosmetic issues to major structural problems. You don't even need to clean."
       },
       {
         question: "Will selling as-is affect my offer price significantly?",
@@ -889,10 +889,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "how-long-to-sell-house-boise",
     title: "How Long Does It Take to Sell a House in Boise? 2025 Timeline Guide",
-    seoTitle: "How Long to Sell House Boise | 2025 Timeline | HomeBuyerBoise",
+    seoTitle: "How Long to Sell House Boise | 2025 Timeline | Home Buyer Boise",
     metaDescription: "Learn realistic timelines for selling a house in Boise, Idaho. Compare traditional sales (90-120 days) with cash sales (7-14 days) and understand what affects timing.",
     excerpt: "Wondering how long it takes to sell a house in Boise? This guide breaks down realistic timelines for traditional sales versus cash sales, plus factors that speed up or slow down the process.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["selling timeline", "boise real estate", "days on market", "quick sale", "home selling"],
     publishedAt: "2025-01-05T08:00:00.000Z",
@@ -948,7 +948,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Cash Sale Timeline: 7-14 Days</h2>
 
-      <p>Selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> dramatically compresses the timeline:</p>
+      <p>Selling to a cash buyer like <a href="/about">Home Buyer Boise</a> dramatically compresses the timeline:</p>
 
       <h3>Day 1: Initial Contact</h3>
       <p>You reach out through our <a href="/get-quote">website</a>, phone, or email. We gather basic property information and schedule any needed follow-up.</p>
@@ -981,7 +981,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Major issues:</strong> Very limited buyer pool, may not qualify for conventional financing</li>
       </ul>
 
-      <p>Cash buyers like HomeBuyerBoise purchase in any condition, so property condition doesn't affect our timeline—only our offer price.</p>
+      <p>Cash buyers like Home Buyer Boise purchase in any condition, so property condition doesn't affect our timeline—only our offer price.</p>
 
       <h3>Location</h3>
       <p>Location within the Boise metro affects traditional sale speed:</p>
@@ -1092,10 +1092,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "avoid-foreclosure-boise-options",
     title: "How to Avoid Foreclosure in Boise: Your Complete Options Guide",
-    seoTitle: "Avoid Foreclosure Boise Idaho | Complete Guide | HomeBuyerBoise",
+    seoTitle: "Avoid Foreclosure Boise Idaho | Complete Guide | Home Buyer Boise",
     metaDescription: "Facing foreclosure in Boise? Learn all your options: loan modification, forbearance, short sale, cash sale, and more. Local Idaho experts explain how to protect your home and credit.",
     excerpt: "If you're behind on mortgage payments in Boise, you have options. This comprehensive guide explains every foreclosure alternative and how to choose the right path for your situation.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["foreclosure", "avoid foreclosure", "boise", "mortgage help", "distressed property"],
     publishedAt: "2025-01-03T08:00:00.000Z",
@@ -1157,7 +1157,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p><strong>Cons:</strong> Requires lender approval (can take months), credit impact (though less than foreclosure), potential deficiency liability.</p>
 
       <h3>Option 6: Cash Sale Before Foreclosure</h3>
-      <p><strong>What it is:</strong> Selling your home quickly to a cash buyer like <a href="/about">HomeBuyerBoise</a> to pay off the mortgage and avoid foreclosure.</p>
+      <p><strong>What it is:</strong> Selling your home quickly to a cash buyer like <a href="/about">Home Buyer Boise</a> to pay off the mortgage and avoid foreclosure.</p>
       <p><strong>Best for:</strong> Homeowners with equity who need to sell quickly to prevent foreclosure.</p>
       <p><strong>Pros:</strong> Fast closing (7-14 days), avoids foreclosure entirely, may walk away with cash, minimal credit impact.</p>
       <p><strong>Cons:</strong> Requires sufficient equity to cover mortgage balance, cash offers are below retail value.</p>
@@ -1222,7 +1222,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Help Today</h2>
 
-      <p>At HomeBuyerBoise, we've helped many Treasure Valley homeowners avoid foreclosure through fast cash sales. We understand the stress you're under and work quickly to provide solutions.</p>
+      <p>At Home Buyer Boise, we've helped many Treasure Valley homeowners avoid foreclosure through fast cash sales. We understand the stress you're under and work quickly to provide solutions.</p>
 
       <ul>
         <li><a href="/get-quote">Request a free cash offer</a> within 24 hours</li>
@@ -1258,10 +1258,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "sell-inherited-house-boise",
     title: "How to Sell an Inherited House in Boise: Complete Probate Guide",
-    seoTitle: "Sell Inherited House Boise | Probate Guide | HomeBuyerBoise",
+    seoTitle: "Sell Inherited House Boise | Probate Guide | Home Buyer Boise",
     metaDescription: "Inherited a house in Boise? Learn how to navigate probate, understand your options, and sell an inherited property quickly. Local Idaho experts guide you through the process.",
     excerpt: "Inheriting a home in Boise comes with emotional and practical challenges. This guide walks you through probate, taxes, and selling options—including how to sell an inherited house quickly for cash.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["inherited property", "probate", "estate sale", "boise", "inherited house"],
     publishedAt: "2025-01-01T08:00:00.000Z",
@@ -1302,7 +1302,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>If probate is nearly complete, transfer to heirs can happen first</li>
       </ul>
 
-      <p>We recommend consulting with a probate attorney to understand your specific situation. At HomeBuyerBoise, we've worked with many estate sales and can coordinate with your attorney throughout the process.</p>
+      <p>We recommend consulting with a probate attorney to understand your specific situation. At Home Buyer Boise, we've worked with many estate sales and can coordinate with your attorney throughout the process.</p>
 
       <h2>Your Options for an Inherited Boise Home</h2>
 
@@ -1336,7 +1336,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Option 4: Sell for Cash</h3>
-      <p>A cash sale to a company like <a href="/about">HomeBuyerBoise</a> offers advantages for inherited properties:</p>
+      <p>A cash sale to a company like <a href="/about">Home Buyer Boise</a> offers advantages for inherited properties:</p>
       <ul>
         <li>Sell the home as-is, with all contents</li>
         <li>No repairs, cleaning, or staging required</li>
@@ -1386,7 +1386,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Hire an Estate Sale Company</h3>
       <p>These professionals sell valuable items and donate or dispose of the rest. They typically charge 25-35% of sale proceeds.</p>
 
-      <h3>Sell to HomeBuyerBoise</h3>
+      <h3>Sell to Home Buyer Boise</h3>
       <p>We buy inherited homes with all contents included. Take what you want, leave everything else. We handle all cleanout and disposal after closing—no additional cost to you.</p>
 
       <h2>Multiple Heirs: Managing Shared Inheritance</h2>
@@ -1402,7 +1402,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Disagreement</h3>
       <p>When heirs disagree, options include mediation, forced sale (partition action), or one heir buying others out. A fast cash sale often appeals to heirs who disagree about keeping or renovating because it provides certain value quickly.</p>
 
-      <h2>How HomeBuyerBoise Helps with Inherited Properties</h2>
+      <h2>How Home Buyer Boise Helps with Inherited Properties</h2>
 
       <p>We specialize in purchasing inherited homes throughout the Treasure Valley. Our approach:</p>
 
@@ -1435,7 +1435,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Do I have to clean out the house before selling?",
-        answer: "Not if you sell to HomeBuyerBoise. We buy inherited homes with all contents included. Take what's valuable or sentimental to you, and leave everything else. We handle cleanout after closing at no cost to you."
+        answer: "Not if you sell to Home Buyer Boise. We buy inherited homes with all contents included. Take what's valuable or sentimental to you, and leave everything else. We handle cleanout after closing at no cost to you."
       },
       {
         question: "How do you handle sales when there are multiple heirs?",
@@ -1454,10 +1454,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-divorce-boise",
     title: "Selling Your House During Divorce in Boise: A Complete Guide",
-    seoTitle: "Sell House During Divorce Boise | Complete Guide | HomeBuyerBoise",
+    seoTitle: "Sell House During Divorce Boise | Complete Guide | Home Buyer Boise",
     metaDescription: "Going through divorce in Boise and need to sell your house? Learn about your options, how to divide proceeds, and why a fast cash sale may help you move forward.",
     excerpt: "Divorce is difficult enough without the stress of selling a home. Learn how Boise couples navigate property division, selling options, and how a quick sale can help both parties move forward.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["divorce", "selling house", "property division", "boise", "marriage dissolution"],
     publishedAt: "2024-12-28T08:00:00.000Z",
@@ -1505,7 +1505,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Why Divorcing Couples Choose Cash Sales</h2>
 
-      <p>A cash sale to a company like <a href="/about">HomeBuyerBoise</a> offers unique advantages for divorcing couples:</p>
+      <p>A cash sale to a company like <a href="/about">Home Buyer Boise</a> offers unique advantages for divorcing couples:</p>
 
       <h3>Speed</h3>
       <p>Traditional sales take 90-120 days. During divorce, this means months of continued joint responsibility, potential conflict, and delayed resolution. Cash sales close in 7-14 days, allowing both parties to move forward faster.</p>
@@ -1554,7 +1554,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Protecting Yourself During the Sale</h2>
 
       <h3>Get Independent Valuations</h3>
-      <p>Don't rely solely on one party's estimate of value. Get an independent appraisal or multiple cash offers to understand fair market value. At HomeBuyerBoise, we encourage you to get competitive offers.</p>
+      <p>Don't rely solely on one party's estimate of value. Get an independent appraisal or multiple cash offers to understand fair market value. At Home Buyer Boise, we encourage you to get competitive offers.</p>
 
       <h3>Document Everything</h3>
       <p>Keep records of all property-related expenses, communications about the sale, and agreements made. This protects you if disputes arise later.</p>
@@ -1616,10 +1616,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "boise-real-estate-market-update-2025",
     title: "Boise Real Estate Market 2025: What Sellers Need to Know",
-    seoTitle: "Boise Real Estate Market 2025 | Seller's Guide | HomeBuyerBoise",
+    seoTitle: "Boise Real Estate Market 2025 | Seller's Guide | Home Buyer Boise",
     metaDescription: "Get the latest on Boise's 2025 real estate market. Understand current prices, trends, and what they mean if you're thinking about selling your Idaho home.",
     excerpt: "The Boise real estate market has evolved significantly since the pandemic boom. Here's what's happening in 2025 and how current conditions affect your home selling options.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["boise market", "real estate trends", "home prices", "2025 market", "idaho real estate"],
     publishedAt: "2024-12-25T08:00:00.000Z",
@@ -1689,7 +1689,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>However, understand that the days of multiple offers in the first weekend are generally over. Plan for 30-60 days on market and be prepared for buyer negotiations on price and repairs.</p>
 
       <h3>Cash Sale: Increasingly Attractive in Current Conditions</h3>
-      <p>The changed market has made cash sales from companies like <a href="/about">HomeBuyerBoise</a> relatively more attractive than during the peak:</p>
+      <p>The changed market has made cash sales from companies like <a href="/about">Home Buyer Boise</a> relatively more attractive than during the peak:</p>
 
       <ul>
         <li><strong>Certainty matters more:</strong> When buyers have options and aren't desperate, sales fall through more often. Cash sale certainty has more value.</li>
@@ -1740,7 +1740,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your Cash Offer</h2>
 
-      <p>Understanding current market conditions is the first step. The next step is knowing what your home is actually worth to different types of buyers. Get a no-obligation cash offer from HomeBuyerBoise:</p>
+      <p>Understanding current market conditions is the first step. The next step is knowing what your home is actually worth to different types of buyers. Get a no-obligation cash offer from Home Buyer Boise:</p>
 
       <ul>
         <li><a href="/get-quote">Request your free offer online</a></li>
@@ -1778,10 +1778,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-foundation-problems-boise",
     title: "Selling a House with Foundation Problems in Boise: Complete Guide for Idaho Homeowners",
-    seoTitle: "Sell House with Foundation Problems Boise | Cash Buyers | HomeBuyerBoise",
+    seoTitle: "Sell House with Foundation Problems Boise | Cash Buyers | Home Buyer Boise",
     metaDescription: "Need to sell a house with foundation issues in Boise? Learn about repair costs, disclosure requirements, and how to get a fair cash offer for your home as-is.",
     excerpt: "Foundation problems can make selling your Boise home feel impossible. Learn your options for selling a house with foundation issues, from costly repairs to as-is cash sales.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["foundation problems", "structural issues", "sell house as-is", "boise real estate", "cash home buyer"],
     publishedAt: "2024-12-01T08:00:00.000Z",
@@ -1856,7 +1856,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Failure to disclose known foundation problems can result in legal liability. Even if you sell the house successfully, the buyer can sue you later if they discover undisclosed issues. Idaho courts have consistently held sellers responsible for concealing known defects.</p>
 
-      <p>The good news is that disclosure doesn't necessarily kill a sale—it just means buyers know what they're getting. Some buyers are specifically looking for properties with issues they can address, especially investors and cash buyers like <a href="/about">HomeBuyerBoise</a>.</p>
+      <p>The good news is that disclosure doesn't necessarily kill a sale—it just means buyers know what they're getting. Some buyers are specifically looking for properties with issues they can address, especially investors and cash buyers like <a href="/about">Home Buyer Boise</a>.</p>
 
       <h2>Your Options for Selling a House with Foundation Problems</h2>
 
@@ -1913,7 +1913,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Less competition may mean lower offers</li>
       </ul>
 
-      <p>For many homeowners with foundation problems, selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> offers the best combination of speed, certainty, and net proceeds when you factor in avoided repair costs and commissions.</p>
+      <p>For many homeowners with foundation problems, selling to a cash buyer like <a href="/about">Home Buyer Boise</a> offers the best combination of speed, certainty, and net proceeds when you factor in avoided repair costs and commissions.</p>
 
       <h2>Why Traditional Buyers Struggle with Foundation Issues</h2>
       
@@ -1931,9 +1931,9 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Buyer Fear</h3>
       <p>Most buyers are simply scared of foundation issues. Even when problems are manageable, the fear of the unknown and potential future costs drives buyers away. They'd rather pay more for a problem-free home than take on perceived risk.</p>
 
-      <h2>How HomeBuyerBoise Handles Foundation Problem Properties</h2>
+      <h2>How Home Buyer Boise Handles Foundation Problem Properties</h2>
       
-      <p>At HomeBuyerBoise, we specialize in buying homes with issues that make traditional sales difficult. Here's how our process works for homes with foundation problems:</p>
+      <p>At Home Buyer Boise, we specialize in buying homes with issues that make traditional sales difficult. Here's how our process works for homes with foundation problems:</p>
 
       <h3>Property Evaluation</h3>
       <p>We assess your property based on current condition, repair needs, and after-repair value. Our experience with foundation issues throughout the Treasure Valley means we can accurately estimate repair costs without requiring you to obtain expensive engineering reports first.</p>
@@ -1973,7 +1973,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Is your offer contingent on anything?</li>
       </ul>
 
-      <p>A legitimate cash buyer will answer these questions transparently. At HomeBuyerBoise, we're happy to provide references, explain our process, and answer any questions you have before you make any decisions.</p>
+      <p>A legitimate cash buyer will answer these questions transparently. At Home Buyer Boise, we're happy to provide references, explain our process, and answer any questions you have before you make any decisions.</p>
 
       <h2>Making Your Decision</h2>
       
@@ -1988,12 +1988,12 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Whatever you decide, don't let foundation problems trap you in a home you need to sell. Options exist—the key is understanding them and choosing the one that best fits your circumstances.</p>
 
-      <p>Contact <a href="/about">HomeBuyerBoise</a> today to explore your options and get a no-obligation cash offer for your Boise area home.</p>
+      <p>Contact <a href="/about">Home Buyer Boise</a> today to explore your options and get a no-obligation cash offer for your Boise area home.</p>
     `,
     faqs: [
       {
         question: "Do I need to fix foundation problems before selling my Boise home?",
-        answer: "No, you don't need to repair foundation issues before selling. While repairs may increase your sale price on the traditional market, you can sell as-is to cash buyers like HomeBuyerBoise. We purchase homes with foundation problems in any condition and handle all repairs after closing."
+        answer: "No, you don't need to repair foundation issues before selling. While repairs may increase your sale price on the traditional market, you can sell as-is to cash buyers like Home Buyer Boise. We purchase homes with foundation problems in any condition and handle all repairs after closing."
       },
       {
         question: "How much do foundation repairs typically cost in Boise?",
@@ -2009,17 +2009,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can I sell a house with foundation issues?",
-        answer: "Selling traditionally with disclosed foundation problems often takes 3-6 months or longer due to the limited buyer pool. Selling to a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days regardless of the foundation condition."
+        answer: "Selling traditionally with disclosed foundation problems often takes 3-6 months or longer due to the limited buyer pool. Selling to a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days regardless of the foundation condition."
       }
     ]
   },
   {
     slug: "selling-house-with-mold-boise",
     title: "How to Sell a House with Mold in Boise: Your Complete Idaho Guide",
-    seoTitle: "Sell House with Mold Boise | Mold Remediation Options | HomeBuyerBoise",
+    seoTitle: "Sell House with Mold Boise | Mold Remediation Options | Home Buyer Boise",
     metaDescription: "Selling a house with mold in Boise? Learn about remediation costs, Idaho disclosure requirements, and how cash buyers can help you sell as-is quickly.",
     excerpt: "Mold can make selling your Boise home challenging. This guide covers remediation costs, disclosure requirements, and your options for selling a house with mold problems.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["mold problems", "mold remediation", "sell house as-is", "boise real estate", "property condition"],
     publishedAt: "2024-12-03T08:00:00.000Z",
@@ -2177,9 +2177,9 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Inspection Contingency Problems</h3>
       <p>Even if you disclose known mold, buyers typically conduct their own inspection. Their inspector may find additional issues, leading to renegotiation or deal cancellation. The uncertainty makes selling stressful and unpredictable.</p>
 
-      <h2>Selling Your Mold-Affected Home to HomeBuyerBoise</h2>
+      <h2>Selling Your Mold-Affected Home to Home Buyer Boise</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we regularly purchase homes with mold problems throughout the Treasure Valley. Here's how our process helps homeowners in difficult situations:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we regularly purchase homes with mold problems throughout the Treasure Valley. Here's how our process helps homeowners in difficult situations:</p>
 
       <h3>As-Is Purchase</h3>
       <p>We buy your home in its current condition. You don't need to spend money on remediation, testing, or repairs. We have experienced contractors who handle all necessary work after closing.</p>
@@ -2208,7 +2208,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Getting Your Cash Offer</h2>
       
-      <p>Ready to explore your options? Getting a cash offer from HomeBuyerBoise is simple and free:</p>
+      <p>Ready to explore your options? Getting a cash offer from Home Buyer Boise is simple and free:</p>
 
       <ol>
         <li><a href="/get-quote">Request your free offer online</a> or call (208) 314-2458</li>
@@ -2230,7 +2230,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Consider your health:</strong> If you or family members are experiencing symptoms, getting out quickly may be worth more than maximizing sale price.</li>
       </ul>
 
-      <p>Whatever you decide, don't let mold problems trap you in a home you need to sell. Solutions exist—contact <a href="/about">HomeBuyerBoise</a> today to learn about your options.</p>
+      <p>Whatever you decide, don't let mold problems trap you in a home you need to sell. Solutions exist—contact <a href="/about">Home Buyer Boise</a> today to learn about your options.</p>
     `,
     faqs: [
       {
@@ -2243,7 +2243,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I sell my house with mold as-is?",
-        answer: "Yes, you can sell a house with mold as-is to cash buyers like HomeBuyerBoise. We purchase homes with mold problems in any condition and handle all remediation after closing. This avoids upfront remediation costs and the difficulty of finding traditional buyers for mold-affected homes."
+        answer: "Yes, you can sell a house with mold as-is to cash buyers like Home Buyer Boise. We purchase homes with mold problems in any condition and handle all remediation after closing. This avoids upfront remediation costs and the difficulty of finding traditional buyers for mold-affected homes."
       },
       {
         question: "Will a bank finance a house with mold?",
@@ -2251,17 +2251,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How long does it take to sell a house with mold?",
-        answer: "Selling traditionally with disclosed mold can take 4-6 months or longer due to the very limited buyer pool. Many mold-affected homes never sell on the traditional market. Cash buyers like HomeBuyerBoise can close in 7-14 days regardless of mold condition."
+        answer: "Selling traditionally with disclosed mold can take 4-6 months or longer due to the very limited buyer pool. Many mold-affected homes never sell on the traditional market. Cash buyers like Home Buyer Boise can close in 7-14 days regardless of mold condition."
       }
     ]
   },
   {
     slug: "selling-fire-damaged-house-boise",
     title: "Selling a Fire-Damaged House in Boise: Insurance, Repairs, and Cash Sale Options",
-    seoTitle: "Sell Fire Damaged House Boise | Insurance Claims | HomeBuyerBoise",
+    seoTitle: "Sell Fire Damaged House Boise | Insurance Claims | Home Buyer Boise",
     metaDescription: "Need to sell a fire-damaged house in Boise? Learn about insurance claims, repair costs, and how to sell your property as-is for cash without rebuilding.",
     excerpt: "After a house fire in Boise, you have options. Learn about navigating insurance claims, repair decisions, and selling your fire-damaged property as-is for cash.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["fire damage", "house fire", "insurance claims", "sell house as-is", "boise real estate"],
     publishedAt: "2024-12-05T08:00:00.000Z",
@@ -2425,9 +2425,9 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Land Value Provides a Floor</h3>
       <p>Even severely damaged homes sit on valuable land. In desirable Boise neighborhoods, land alone can be worth $100,000-$300,000 or more. This provides a baseline value regardless of the structure's condition.</p>
 
-      <h2>The HomeBuyerBoise Approach to Fire-Damaged Properties</h2>
+      <h2>The Home Buyer Boise Approach to Fire-Damaged Properties</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we have experience purchasing fire-damaged homes throughout the Treasure Valley. Here's how we help homeowners in difficult situations:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we have experience purchasing fire-damaged homes throughout the Treasure Valley. Here's how we help homeowners in difficult situations:</p>
 
       <h3>Fast, Fair Evaluation</h3>
       <p>We assess your property quickly, providing a cash offer within 24-48 hours. We understand fire damage and can accurately estimate restoration costs without requiring you to obtain expensive contractor bids.</p>
@@ -2466,12 +2466,12 @@ export const BLOG_POSTS: BlogPostData[] = [
       
       <p>A house fire disrupts every aspect of life. While you can't undo the damage, you can control how you move forward. Whether you choose to rebuild, repair and sell, or sell as-is, the goal is the same: to get your life back on track as quickly and smoothly as possible.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've helped many Treasure Valley families move on after fire damage. We understand this isn't just a transaction—it's about helping you close a difficult chapter and start fresh. Contact us today to explore your options.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many Treasure Valley families move on after fire damage. We understand this isn't just a transaction—it's about helping you close a difficult chapter and start fresh. Contact us today to explore your options.</p>
     `,
     faqs: [
       {
         question: "Can I sell my fire-damaged house before the insurance claim is settled?",
-        answer: "Yes, you can sell your fire-damaged property before your insurance claim settles. The claim typically stays with you as the policyholder, not with the property. Cash buyers like HomeBuyerBoise regularly purchase properties with pending claims, and you keep your insurance proceeds separately from the sale."
+        answer: "Yes, you can sell your fire-damaged property before your insurance claim settles. The claim typically stays with you as the policyholder, not with the property. Cash buyers like Home Buyer Boise regularly purchase properties with pending claims, and you keep your insurance proceeds separately from the sale."
       },
       {
         question: "How much is a fire-damaged house worth in Boise?",
@@ -2479,7 +2479,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Do I need to clean up fire damage before selling?",
-        answer: "No, when selling to a cash buyer like HomeBuyerBoise, you don't need to clean up, remove debris, or make any repairs. We purchase fire-damaged properties in any condition and handle all cleanup and restoration after closing."
+        answer: "No, when selling to a cash buyer like Home Buyer Boise, you don't need to clean up, remove debris, or make any repairs. We purchase fire-damaged properties in any condition and handle all cleanup and restoration after closing."
       },
       {
         question: "How long does it take to sell a fire-damaged house?",
@@ -2494,10 +2494,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-bad-roof-boise",
     title: "Selling a House with Roof Problems in Boise: Costs, Challenges, and Solutions",
-    seoTitle: "Sell House with Bad Roof Boise | Roof Problems | HomeBuyerBoise",
+    seoTitle: "Sell House with Bad Roof Boise | Roof Problems | Home Buyer Boise",
     metaDescription: "Need to sell a Boise house with roof problems? Learn about replacement costs, buyer financing challenges, and how to sell as-is to cash buyers.",
     excerpt: "A bad roof can complicate selling your Boise home. Learn about repair costs, why traditional buyers struggle to finance, and your options for selling a house with roof problems.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["roof problems", "roof replacement", "sell house as-is", "boise real estate", "home repairs"],
     publishedAt: "2024-12-07T08:00:00.000Z",
@@ -2691,9 +2691,9 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>In this example, net proceeds are similar—but the cash sale involves no upfront investment, no contractor management, no uncertainty, and closes in weeks rather than months.</p>
 
-      <h2>Why HomeBuyerBoise Buys Homes with Roof Problems</h2>
+      <h2>Why Home Buyer Boise Buys Homes with Roof Problems</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, buying homes that need roof work is part of our business model. Here's why we can help:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, buying homes that need roof work is part of our business model. Here's why we can help:</p>
 
       <h3>Experience with Renovation</h3>
       <p>We work with trusted local contractors who provide competitive pricing on roof replacements. Our volume allows us to get work done efficiently and at better rates than individual homeowners typically receive.</p>
@@ -2728,12 +2728,12 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Consider your timeline:</strong> Roof replacement adds 2-4 weeks before you can even list, plus typical selling time.</li>
       </ul>
 
-      <p>Contact <a href="/about">HomeBuyerBoise</a> today to get your no-obligation cash offer and understand all your options for selling your Boise home with roof problems.</p>
+      <p>Contact <a href="/about">Home Buyer Boise</a> today to get your no-obligation cash offer and understand all your options for selling your Boise home with roof problems.</p>
     `,
     faqs: [
       {
         question: "Can I sell my house with a bad roof in Boise?",
-        answer: "Yes, you can sell a house with roof problems in Boise. However, traditional buyers using financing will face challenges since most lenders require sound roofs. Selling to a cash buyer like HomeBuyerBoise avoids these obstacles—we purchase homes with roof issues as-is."
+        answer: "Yes, you can sell a house with roof problems in Boise. However, traditional buyers using financing will face challenges since most lenders require sound roofs. Selling to a cash buyer like Home Buyer Boise avoids these obstacles—we purchase homes with roof issues as-is."
       },
       {
         question: "How much does a new roof cost in Boise?",
@@ -2749,17 +2749,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How fast can I sell a house with roof problems?",
-        answer: "Selling traditionally with disclosed roof problems can take 4-6 months or more due to the limited buyer pool and financing challenges. Selling to a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days regardless of roof condition."
+        answer: "Selling traditionally with disclosed roof problems can take 4-6 months or more due to the limited buyer pool and financing challenges. Selling to a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days regardless of roof condition."
       }
     ]
   },
   {
     slug: "selling-house-with-outdated-systems-boise",
     title: "Selling a House with Outdated Plumbing, Electrical, and HVAC in Boise",
-    seoTitle: "Sell House with Old Systems Boise | Outdated Plumbing Electrical | HomeBuyerBoise",
+    seoTitle: "Sell House with Old Systems Boise | Outdated Plumbing Electrical | Home Buyer Boise",
     metaDescription: "Selling a Boise home with outdated plumbing, electrical, or HVAC? Learn about update costs, inspection issues, and how to sell as-is to cash buyers.",
     excerpt: "Outdated home systems can complicate selling in Boise. Learn about the challenges of selling with old plumbing, electrical, and HVAC systems—and your options for selling as-is.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["outdated systems", "old plumbing", "electrical problems", "hvac issues", "sell house as-is"],
     publishedAt: "2024-12-09T08:00:00.000Z",
@@ -2961,9 +2961,9 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Below full retail value</li>
       </ul>
 
-      <h2>The HomeBuyerBoise Advantage for Older Homes</h2>
+      <h2>The Home Buyer Boise Advantage for Older Homes</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we specialize in purchasing older homes with outdated systems. Here's why this works:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we specialize in purchasing older homes with outdated systems. Here's why this works:</p>
 
       <h3>Accurate Cost Estimates</h3>
       <p>We work with trusted contractors throughout the Treasure Valley and know actual costs for system updates. Our offers fairly reflect what updates will actually cost—no lowballing based on inflated estimates.</p>
@@ -2998,12 +2998,12 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Energy and time:</strong> Do you want to manage contractor projects?</li>
       </ul>
 
-      <p>For many owners of older Boise homes, a cash sale provides the easiest path forward—fair value for your home without the expense and hassle of major system updates. Contact <a href="/about">HomeBuyerBoise</a> today to explore your options.</p>
+      <p>For many owners of older Boise homes, a cash sale provides the easiest path forward—fair value for your home without the expense and hassle of major system updates. Contact <a href="/about">Home Buyer Boise</a> today to explore your options.</p>
     `,
     faqs: [
       {
         question: "Can I sell my house with outdated electrical wiring?",
-        answer: "Yes, you can sell a house with outdated electrical, including knob and tube wiring. However, traditional buyers may face insurance and financing challenges. Selling to a cash buyer like HomeBuyerBoise eliminates these obstacles—we buy homes with outdated systems as-is."
+        answer: "Yes, you can sell a house with outdated electrical, including knob and tube wiring. However, traditional buyers may face insurance and financing challenges. Selling to a cash buyer like Home Buyer Boise eliminates these obstacles—we buy homes with outdated systems as-is."
       },
       {
         question: "How much does it cost to update old plumbing in Boise?",
@@ -3026,10 +3026,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-hoarder-house-boise",
     title: "Selling a Hoarder House in Boise: A Compassionate Guide for Families",
-    seoTitle: "Sell Hoarder House Boise | Discreet Cash Sales | HomeBuyerBoise",
+    seoTitle: "Sell Hoarder House Boise | Discreet Cash Sales | Home Buyer Boise",
     metaDescription: "Need to sell a hoarder house in Boise? Learn about cleanout costs, discreet sale options, and how to sell as-is with compassion for difficult situations.",
     excerpt: "Selling a hoarder property requires sensitivity and practical solutions. Learn about cleanout costs, condition concerns, and discreet cash sale options for Boise families.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["hoarder house", "estate sale", "cleanout services", "sell house as-is", "discreet sale"],
     publishedAt: "2024-12-11T08:00:00.000Z",
@@ -3186,7 +3186,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Neighborhood awareness of the situation</li>
         <li>Public record of condition issues</li>
       </ul>
-      <p>A direct sale to HomeBuyerBoise happens privately. No listing photos, no public showings, no neighborhood gossip.</p>
+      <p>A direct sale to Home Buyer Boise happens privately. No listing photos, no public showings, no neighborhood gossip.</p>
 
       <h3>Emotional Relief</h3>
       <p>Sorting through a hoarded home is emotionally exhausting. Every item can trigger memories, guilt, or conflict. Selling as-is and walking away can provide relief and allow the family to move forward without weeks or months of painful sorting.</p>
@@ -3194,9 +3194,9 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Family Harmony</h3>
       <p>When multiple family members are involved, decisions about what to keep, donate, or discard often create conflict. Selling everything as-is removes these decisions and potential arguments.</p>
 
-      <h2>How HomeBuyerBoise Handles Hoarder Properties</h2>
+      <h2>How Home Buyer Boise Handles Hoarder Properties</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we approach hoarder properties with understanding and professionalism:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we approach hoarder properties with understanding and professionalism:</p>
 
       <h3>Non-Judgmental Evaluation</h3>
       <p>We've seen every level of hoarding situation. We're here to help, not judge. Our property visits are professional and confidential.</p>
@@ -3233,12 +3233,12 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Selling the property doesn't erase the person or their memory. It simply allows everyone to move forward. Sometimes the most loving thing you can do is let go of the physical items while keeping the memories in your heart.</p>
 
-      <p>Contact <a href="/about">HomeBuyerBoise</a> today for a confidential conversation about your situation. We're here to help.</p>
+      <p>Contact <a href="/about">Home Buyer Boise</a> today for a confidential conversation about your situation. We're here to help.</p>
     `,
     faqs: [
       {
         question: "Do I have to clean out a hoarder house before selling?",
-        answer: "No, when selling to HomeBuyerBoise, you can leave everything. We purchase properties with all contents included and handle all cleanup after closing. Take any personal items you want and leave the rest for us to manage."
+        answer: "No, when selling to Home Buyer Boise, you can leave everything. We purchase properties with all contents included and handle all cleanup after closing. Take any personal items you want and leave the rest for us to manage."
       },
       {
         question: "How much does it cost to clean out a hoarder house in Boise?",
@@ -3246,11 +3246,11 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I sell a hoarder house without anyone seeing inside?",
-        answer: "Yes, selling directly to HomeBuyerBoise is completely discreet. There are no public listings, no showing photos, and no tours by strangers. Our evaluation and closing process is private and confidential."
+        answer: "Yes, selling directly to Home Buyer Boise is completely discreet. There are no public listings, no showing photos, and no tours by strangers. Our evaluation and closing process is private and confidential."
       },
       {
         question: "How quickly can I sell a hoarder property?",
-        answer: "Selling to a cash buyer like HomeBuyerBoise, you can close in as little as 7 days. Traditional sales after cleanout and renovation typically take 4-6 months or longer. Many families choose the fast option to move on quickly from a difficult situation."
+        answer: "Selling to a cash buyer like Home Buyer Boise, you can close in as little as 7 days. Traditional sales after cleanout and renovation typically take 4-6 months or longer. Many families choose the fast option to move on quickly from a difficult situation."
       },
       {
         question: "Will hidden damage affect my cash offer?",
@@ -3261,10 +3261,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-termite-damage-boise",
     title: "Selling a House with Termite Damage in Boise: Treatment, Disclosure, and Options",
-    seoTitle: "Sell House with Termite Damage Boise | Wood Pest Problems | HomeBuyerBoise",
+    seoTitle: "Sell House with Termite Damage Boise | Wood Pest Problems | Home Buyer Boise",
     metaDescription: "Need to sell a house with termite damage in Boise? Learn about treatment costs, Idaho disclosure requirements, and how to sell as-is to cash buyers.",
     excerpt: "Termite damage can complicate selling your Boise home. Learn about treatment options, repair costs, disclosure requirements, and your options for selling as-is.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["termite damage", "wood pest", "pest inspection", "sell house as-is", "property condition"],
     publishedAt: "2024-12-13T08:00:00.000Z",
@@ -3438,9 +3438,9 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Below full retail value</li>
       </ul>
 
-      <h2>How HomeBuyerBoise Handles Termite Properties</h2>
+      <h2>How Home Buyer Boise Handles Termite Properties</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, termite damage doesn't scare us away. Here's our approach:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, termite damage doesn't scare us away. Here's our approach:</p>
 
       <h3>Accurate Damage Assessment</h3>
       <p>We have experience evaluating termite damage and know the difference between minor and major structural issues. Our offers reflect actual repair costs, not inflated worst-case estimates.</p>
@@ -3478,7 +3478,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Risk tolerance:</strong> Even with clearance, some buyers walk away</li>
       </ul>
 
-      <p>Contact <a href="/about">HomeBuyerBoise</a> today to explore your options for selling your Boise home with termite issues.</p>
+      <p>Contact <a href="/about">Home Buyer Boise</a> today to explore your options for selling your Boise home with termite issues.</p>
     `,
     faqs: [
       {
@@ -3499,17 +3499,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can I sell a house with termite damage?",
-        answer: "Selling traditionally after treatment and repair typically takes 3-6 months or longer. Selling as-is to a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days regardless of termite condition."
+        answer: "Selling traditionally after treatment and repair typically takes 3-6 months or longer. Selling as-is to a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days regardless of termite condition."
       }
     ]
   },
   {
     slug: "selling-house-needs-major-repairs-boise",
     title: "Selling a House That Needs Major Repairs in Boise: The Complete Guide",
-    seoTitle: "Sell House Needs Major Repairs Boise | Fixer-Upper Options | HomeBuyerBoise",
+    seoTitle: "Sell House Needs Major Repairs Boise | Fixer-Upper Options | Home Buyer Boise",
     metaDescription: "Need to sell a Boise house that needs major repairs? Learn about repair costs, financing challenges, and how to sell your fixer-upper as-is for cash.",
     excerpt: "Selling a house that needs extensive work can feel overwhelming. Learn about your options for selling a fixer-upper in Boise without spending thousands on repairs.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["major repairs", "fixer-upper", "handyman special", "sell house as-is", "cash home buyer"],
     publishedAt: "2024-12-15T08:00:00.000Z",
@@ -3703,9 +3703,9 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>In this example, the cash sale actually nets more money—plus avoids months of work, risk, and stress.</p>
 
-      <h2>Why HomeBuyerBoise Specializes in Fixer-Uppers</h2>
+      <h2>Why Home Buyer Boise Specializes in Fixer-Uppers</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we built our business around purchasing homes that need work. Here's why we're a good fit for major repair situations:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we built our business around purchasing homes that need work. Here's why we're a good fit for major repair situations:</p>
 
       <h3>Renovation Experience</h3>
       <p>We've renovated hundreds of homes in the Treasure Valley. We know actual repair costs, have relationships with reliable contractors, and can accurately assess what work is truly needed.</p>
@@ -3745,12 +3745,12 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Do you have 6-12 months before you need to close?</li>
       </ul>
 
-      <p>If you answered "no" to any of these, a cash sale may be your best option. Contact <a href="/about">HomeBuyerBoise</a> today to explore your options.</p>
+      <p>If you answered "no" to any of these, a cash sale may be your best option. Contact <a href="/about">Home Buyer Boise</a> today to explore your options.</p>
     `,
     faqs: [
       {
         question: "Can I sell my house if it needs major repairs?",
-        answer: "Yes, you can sell a house needing major repairs. While traditional buyers with financing face obstacles, cash buyers like HomeBuyerBoise purchase homes in any condition. We handle all repairs after closing, allowing you to sell without investing in renovations."
+        answer: "Yes, you can sell a house needing major repairs. While traditional buyers with financing face obstacles, cash buyers like Home Buyer Boise purchase homes in any condition. We handle all repairs after closing, allowing you to sell without investing in renovations."
       },
       {
         question: "How much should I spend on repairs before selling?",
@@ -3766,17 +3766,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can I sell a house that needs major repairs?",
-        answer: "Selling traditionally after repairs takes 6-12 months or more. Selling as-is on the open market can take 4-6 months with limited buyer interest. Selling to a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days."
+        answer: "Selling traditionally after repairs takes 6-12 months or more. Selling as-is on the open market can take 4-6 months with limited buyer interest. Selling to a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days."
       }
     ]
   },
   {
     slug: "selling-vacant-house-boise",
     title: "Selling a Vacant House in Boise: Carrying Costs, Security, and Fast Sale Options",
-    seoTitle: "Sell Vacant House Boise | Empty Property Solutions | HomeBuyerBoise",
+    seoTitle: "Sell Vacant House Boise | Empty Property Solutions | Home Buyer Boise",
     metaDescription: "Own a vacant house in Boise? Learn about carrying costs, security risks, insurance challenges, and how to sell your empty property quickly for cash.",
     excerpt: "Vacant houses create ongoing expenses and risks. Learn about the hidden costs of owning an empty home in Boise and your options for selling quickly.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["vacant house", "empty property", "carrying costs", "property security", "fast sale"],
     publishedAt: "2024-12-17T08:00:00.000Z",
@@ -3943,9 +3943,9 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>In this example, the cash sale actually nets more while eliminating 6 months of stress, travel, and risk.</p>
 
-      <h2>Why HomeBuyerBoise Is Ideal for Vacant Properties</h2>
+      <h2>Why Home Buyer Boise Is Ideal for Vacant Properties</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we regularly purchase vacant properties throughout the Treasure Valley. Here's why we're a good fit:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we regularly purchase vacant properties throughout the Treasure Valley. Here's why we're a good fit:</p>
 
       <h3>Fast Closings</h3>
       <p>We can close in as little as 7 days, immediately ending your carrying costs and risks.</p>
@@ -3973,7 +3973,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Close on your timeline and move on</li>
       </ol>
 
-      <p>Every month you wait costs thousands. Contact <a href="/about">HomeBuyerBoise</a> today to explore your options.</p>
+      <p>Every month you wait costs thousands. Contact <a href="/about">Home Buyer Boise</a> today to explore your options.</p>
     `,
     faqs: [
       {
@@ -3986,7 +3986,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can you buy my vacant house?",
-        answer: "HomeBuyerBoise can close on vacant properties in as little as 7 days. This immediately ends your carrying costs and eliminates risks associated with empty properties. We handle everything locally, even if you live out of state."
+        answer: "Home Buyer Boise can close on vacant properties in as little as 7 days. This immediately ends your carrying costs and eliminates risks associated with empty properties. We handle everything locally, even if you live out of state."
       },
       {
         question: "Do I need to clean or repair the vacant property before selling?",
@@ -4001,10 +4001,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-code-violations-boise",
     title: "Selling a House with Code Violations in Boise: Resolution, Disclosure, and Options",
-    seoTitle: "Sell House with Code Violations Boise | Permit Issues | HomeBuyerBoise",
+    seoTitle: "Sell House with Code Violations Boise | Permit Issues | Home Buyer Boise",
     metaDescription: "Need to sell a house with code violations in Boise? Learn about violation resolution, disclosure requirements, and how to sell as-is to cash buyers.",
     excerpt: "Code violations can complicate selling your Boise home. Learn about common violations, resolution costs, disclosure requirements, and your options for selling as-is.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["code violations", "permit issues", "building codes", "sell house as-is", "property issues"],
     publishedAt: "2024-12-19T08:00:00.000Z",
@@ -4197,9 +4197,9 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Below violation-free retail value</li>
       </ul>
 
-      <h2>How HomeBuyerBoise Handles Properties with Code Violations</h2>
+      <h2>How Home Buyer Boise Handles Properties with Code Violations</h2>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we regularly purchase properties with code violations of all types. Here's our approach:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we regularly purchase properties with code violations of all types. Here's our approach:</p>
 
       <h3>Experience with Resolution</h3>
       <p>We've worked with Boise, Meridian, Nampa, and other local code departments on numerous properties. We know the resolution process and can accurately estimate costs.</p>
@@ -4224,7 +4224,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Compare your options with no obligation</li>
       </ol>
 
-      <p>Don't let code violations trap you in a property you need to sell. Contact <a href="/about">HomeBuyerBoise</a> today to explore your options.</p>
+      <p>Don't let code violations trap you in a property you need to sell. Contact <a href="/about">Home Buyer Boise</a> today to explore your options.</p>
 
       <h2>Common Scenarios We Help With</h2>
       
@@ -4243,7 +4243,7 @@ export const BLOG_POSTS: BlogPostData[] = [
     faqs: [
       {
         question: "Do I have to fix code violations before selling my house in Boise?",
-        answer: "No, you don't have to resolve violations before selling. However, traditional buyers with financing will face challenges. Selling to a cash buyer like HomeBuyerBoise allows you to sell with outstanding violations—we handle all resolution after closing."
+        answer: "No, you don't have to resolve violations before selling. However, traditional buyers with financing will face challenges. Selling to a cash buyer like Home Buyer Boise allows you to sell with outstanding violations—we handle all resolution after closing."
       },
       {
         question: "Can I get a mortgage on a house with code violations?",
@@ -4259,7 +4259,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can I sell a house with code violations?",
-        answer: "Resolving violations before traditional sale can take months. Selling as-is on the open market is difficult due to financing challenges. Selling to a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days regardless of violations."
+        answer: "Resolving violations before traditional sale can take months. Selling as-is on the open market is difficult due to financing challenges. Selling to a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days regardless of violations."
       }
     ]
   },
@@ -4269,10 +4269,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-inherited-house-boise",
     title: "Selling an Inherited House in Boise: Complete Guide to Probate, Taxes & Quick Sales",
-    seoTitle: "Selling Inherited House Boise | Probate Guide | HomeBuyerBoise",
+    seoTitle: "Selling Inherited House Boise | Probate Guide | Home Buyer Boise",
     metaDescription: "Inherited a house in Boise? Learn about Idaho probate, capital gains taxes, and how to sell quickly for cash. Expert guidance for Ada & Canyon County heirs.",
     excerpt: "Navigating the sale of an inherited property in Boise involves understanding probate, tax implications, and timing. This comprehensive guide helps heirs make informed decisions about their inherited Idaho real estate.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["inherited property", "probate sale", "boise real estate", "estate sale", "capital gains tax"],
     publishedAt: "2024-11-01T08:00:00.000Z",
@@ -4280,7 +4280,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Inherited Property Sales in Boise</h2>
       <p>Inheriting a house in Boise or the greater Treasure Valley comes with both emotional weight and practical responsibilities. While dealing with the loss of a loved one, you're suddenly faced with decisions about property taxes, maintenance, insurance, and ultimately whether to keep or sell the home. For many heirs, especially those who live out of state or already own their own home, selling makes the most sense—but the process can feel overwhelming.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've helped hundreds of families navigate inherited property sales throughout Ada and Canyon Counties. This comprehensive guide covers everything you need to know about selling an inherited house in Idaho, from probate requirements to tax implications to quick sale options.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've helped hundreds of families navigate inherited property sales throughout Ada and Canyon Counties. This comprehensive guide covers everything you need to know about selling an inherited house in Idaho, from probate requirements to tax implications to quick sale options.</p>
 
       <h2>The Idaho Probate Process Explained</h2>
 
@@ -4348,7 +4348,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Property is located far from all heirs</li>
       </ul>
 
-      <p>The court typically approves sales that are in the best interest of the estate. Cash buyers like <a href="/about">HomeBuyerBoise</a> can often expedite this process since there's no financing contingency that might cause delays.</p>
+      <p>The court typically approves sales that are in the best interest of the estate. Cash buyers like <a href="/about">Home Buyer Boise</a> can often expedite this process since there's no financing contingency that might cause delays.</p>
 
       <h2>Tax Implications of Selling Inherited Property in Idaho</h2>
 
@@ -4426,7 +4426,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Why Cash Sales Work Well for Inherited Properties</h2>
 
       <h3>Sell As-Is Without Repairs</h3>
-      <p>Cash buyers like <a href="/about">HomeBuyerBoise</a> purchase inherited properties in any condition. You don't need to:</p>
+      <p>Cash buyers like <a href="/about">Home Buyer Boise</a> purchase inherited properties in any condition. You don't need to:</p>
       <ul>
         <li>Invest in repairs or updates</li>
         <li>Clean out the house completely</li>
@@ -4470,7 +4470,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <ol>
         <li><strong>Keep the property:</strong> Rent it out or use as a second home</li>
         <li><strong>Traditional sale:</strong> List with an agent after preparing the home</li>
-        <li><strong>Cash sale:</strong> Sell as-is to a buyer like HomeBuyerBoise</li>
+        <li><strong>Cash sale:</strong> Sell as-is to a buyer like Home Buyer Boise</li>
       </ol>
 
       <h3>Step 4: Get Your Cash Offer</h3>
@@ -4498,7 +4498,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Local Market Knowledge Matters</h2>
 
-      <p><a href="/about">HomeBuyerBoise</a> has deep experience with inherited properties throughout the Treasure Valley. We understand:</p>
+      <p><a href="/about">Home Buyer Boise</a> has deep experience with inherited properties throughout the Treasure Valley. We understand:</p>
       <ul>
         <li>Ada and Canyon County property values by neighborhood</li>
         <li>Local probate court procedures and timelines</li>
@@ -4525,7 +4525,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "What if the inherited house needs major repairs?",
-        answer: "Cash buyers like HomeBuyerBoise purchase properties in any condition. You don't need to invest in repairs, updates, or even a thorough cleanout. We buy houses with deferred maintenance, outdated systems, and significant repair needs."
+        answer: "Cash buyers like Home Buyer Boise purchase properties in any condition. You don't need to invest in repairs, updates, or even a thorough cleanout. We buy houses with deferred maintenance, outdated systems, and significant repair needs."
       },
       {
         question: "How long does it take to sell an inherited property?",
@@ -4540,10 +4540,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-during-divorce-boise",
     title: "Selling Your House During Divorce in Boise: A Complete Guide to Fair, Fast Home Sales",
-    seoTitle: "Selling House During Divorce Boise | Quick Resolution | HomeBuyerBoise",
+    seoTitle: "Selling House During Divorce Boise | Quick Resolution | Home Buyer Boise",
     metaDescription: "Going through divorce in Boise? Learn how to sell your house quickly and fairly. Understand Idaho equitable distribution, timeline options, and how cash sales simplify the process.",
     excerpt: "Divorce is challenging enough without adding a complicated home sale. This guide helps Boise couples understand their options for selling the marital home quickly and equitably during divorce proceedings.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["divorce sale", "boise real estate", "equitable distribution", "quick home sale", "marital property"],
     publishedAt: "2024-11-03T08:00:00.000Z",
@@ -4551,7 +4551,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Navigating Home Sales During Boise Divorce Proceedings</h2>
       <p>When a marriage ends, the family home often becomes one of the most challenging assets to address. In Boise and throughout Idaho, divorcing couples must decide what to do with their most valuable possession while managing emotions, legal proceedings, and the practical need to move forward with separate lives.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've helped many divorcing couples sell their homes quickly and fairly. This guide provides the information you need to make informed decisions about your marital home during this difficult time.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many divorcing couples sell their homes quickly and fairly. This guide provides the information you need to make informed decisions about your marital home during this difficult time.</p>
 
       <h2>Understanding Idaho's Equitable Distribution Laws</h2>
 
@@ -4646,7 +4646,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>How Cash Sales Simplify Divorce Home Sales</h2>
 
       <h3>Speed Reduces Conflict</h3>
-      <p>A cash sale to <a href="/about">HomeBuyerBoise</a> can close in 7-14 days rather than 60-90+ days. This speed means:</p>
+      <p>A cash sale to <a href="/about">Home Buyer Boise</a> can close in 7-14 days rather than 60-90+ days. This speed means:</p>
       <ul>
         <li>Less time for disagreements to develop</li>
         <li>Fewer decisions requiring cooperation</li>
@@ -4697,7 +4697,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Working with Both Spouses</h2>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we understand the delicate dynamics of divorce sales. Our approach:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we understand the delicate dynamics of divorce sales. Our approach:</p>
 
       <h3>Equal Communication</h3>
       <p>We communicate with both parties (or their attorneys) equally. Both spouses receive the same information about our offer and process.</p>
@@ -4742,7 +4742,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>Selling your home during divorce doesn't have to add stress to an already difficult situation. <a href="/about">HomeBuyerBoise</a> offers:</p>
+      <p>Selling your home during divorce doesn't have to add stress to an already difficult situation. <a href="/about">Home Buyer Boise</a> offers:</p>
       <ul>
         <li>Fair, transparent cash offers</li>
         <li>7-14 day closing timeline</li>
@@ -4772,17 +4772,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How fast can we sell during divorce?",
-        answer: "With a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days once both parties agree. This is much faster than traditional sales, which average 60-90 days or longer, reducing the time you remain financially entangled."
+        answer: "With a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days once both parties agree. This is much faster than traditional sales, which average 60-90 days or longer, reducing the time you remain financially entangled."
       }
     ]
   },
   {
     slug: "selling-house-after-death-spouse-boise",
     title: "Selling Your House After the Death of a Spouse in Boise: A Compassionate Guide",
-    seoTitle: "Selling House After Death of Spouse Boise | Widow Guide | HomeBuyerBoise",
+    seoTitle: "Selling House After Death of Spouse Boise | Widow Guide | Home Buyer Boise",
     metaDescription: "Lost your spouse and need to sell your Boise home? This compassionate guide covers title transfer, timing considerations, tax implications, and stress-free sale options.",
     excerpt: "Losing a spouse is devastating, and dealing with the family home adds practical stress to emotional grief. This guide helps widows and widowers in Boise navigate home sales with sensitivity and clarity.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["widow", "widower", "spouse death", "boise real estate", "grieving homeowner"],
     publishedAt: "2024-11-05T08:00:00.000Z",
@@ -4790,7 +4790,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Your Home Sale Options After Losing a Spouse</h2>
       <p>The death of a spouse changes everything. Beyond the profound grief, you're suddenly facing practical decisions about finances, living arrangements, and the family home—often while still in shock. If you're considering selling your Boise home after losing your husband or wife, this guide is designed to help you understand your options and make decisions at your own pace.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we approach these situations with the compassion and patience they deserve. There's no rush. Our goal is simply to provide information so you can make the best decision for your circumstances, whenever you're ready.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we approach these situations with the compassion and patience they deserve. There's no rush. Our goal is simply to provide information so you can make the best decision for your circumstances, whenever you're ready.</p>
 
       <h2>Taking Time to Grieve</h2>
 
@@ -4834,7 +4834,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Getting Clear Title</h3>
-      <p>Before you can sell, you need clear title in your name. A title company can help identify what documents are needed. If you work with <a href="/about">HomeBuyerBoise</a>, our title company partners can guide you through this process.</p>
+      <p>Before you can sell, you need clear title in your name. A title company can help identify what documents are needed. If you work with <a href="/about">Home Buyer Boise</a>, our title company partners can guide you through this process.</p>
 
       <h2>Financial Considerations When Selling</h2>
 
@@ -4876,7 +4876,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Why Many Widows and Widowers Choose Cash Sales</h2>
 
       <h3>Sell As-Is, Without Preparation</h3>
-      <p>A cash buyer like <a href="/about">HomeBuyerBoise</a> purchases your home in current condition. You don't need to:</p>
+      <p>A cash buyer like <a href="/about">Home Buyer Boise</a> purchases your home in current condition. You don't need to:</p>
       <ul>
         <li>Make repairs or updates</li>
         <li>Deep clean or stage the home</li>
@@ -4917,7 +4917,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>There's No Wrong Answer</h3>
       <p>Whether you stay in the family home, sell it immediately, or wait a year to decide—these are all valid choices. The right answer is whatever works for you and your circumstances.</p>
 
-      <h2>What to Expect When Working with HomeBuyerBoise</h2>
+      <h2>What to Expect When Working with Home Buyer Boise</h2>
 
       <h3>A Compassionate Approach</h3>
       <p>We understand that selling after a spouse's death is different from other sales. We proceed at your pace, answer questions patiently, and never pressure you to make quick decisions.</p>
@@ -4945,7 +4945,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>We're Here When You're Ready</h2>
 
-      <p>Whether you're just starting to think about selling or you've already decided to move forward, <a href="/about">HomeBuyerBoise</a> is here to help. We'll provide a fair cash offer, explain all your options, and support you through the process with the patience and compassion this situation deserves.</p>
+      <p>Whether you're just starting to think about selling or you've already decided to move forward, <a href="/about">Home Buyer Boise</a> is here to help. We'll provide a fair cash offer, explain all your options, and support you through the process with the patience and compassion this situation deserves.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> whenever you're ready. There's no pressure, no timeline, and no expectation. We're simply here to help if and when you need us.</p>
     `,
@@ -4964,7 +4964,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "What if I can't handle preparing the house for sale?",
-        answer: "Cash buyers like HomeBuyerBoise purchase homes as-is. You don't need to make repairs, clean out belongings, or prepare the home in any way. We buy houses in current condition, which is especially helpful when you're grieving and have limited energy."
+        answer: "Cash buyers like Home Buyer Boise purchase homes as-is. You don't need to make repairs, clean out belongings, or prepare the home in any way. We buy houses in current condition, which is especially helpful when you're grieving and have limited energy."
       },
       {
         question: "Can I take time to sort through my spouse's belongings before closing?",
@@ -4975,10 +4975,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-for-job-relocation-boise",
     title: "Selling Your Boise House for Job Relocation: Beat the Clock and Avoid Two Mortgages",
-    seoTitle: "Selling House for Job Relocation Boise | Fast Sale | HomeBuyerBoise",
+    seoTitle: "Selling House for Job Relocation Boise | Fast Sale | Home Buyer Boise",
     metaDescription: "Relocating from Boise for work? Learn how to sell your house quickly to meet employer timelines, avoid paying two mortgages, and make your move stress-free.",
     excerpt: "Job relocations don't wait for your house to sell. This guide helps Boise homeowners navigate relocation sales with strategies for meeting employer deadlines and avoiding the financial strain of two homes.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["job relocation", "boise real estate", "quick home sale", "corporate transfer", "moving"],
     publishedAt: "2024-11-07T08:00:00.000Z",
@@ -4988,7 +4988,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Job relocations create unique pressure on home sales. Your new employer has a start date. Your family needs housing in the new city. And every month your Boise home sits unsold, you're potentially paying for two places to live.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we help relocating professionals sell their homes quickly and predictably, so they can focus on their new opportunities without the stress of a home hanging over their heads.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we help relocating professionals sell their homes quickly and predictably, so they can focus on their new opportunities without the stress of a home hanging over their heads.</p>
 
       <h2>Understanding Your Relocation Timeline</h2>
 
@@ -5158,7 +5158,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Step 2: Get Your Cash Offer</h3>
-      <p><a href="/get-quote">Request a cash offer from HomeBuyerBoise</a> immediately. Even if you're not sure you'll accept, knowing your number helps you plan.</p>
+      <p><a href="/get-quote">Request a cash offer from Home Buyer Boise</a> immediately. Even if you're not sure you'll accept, knowing your number helps you plan.</p>
 
       <h3>Step 3: Compare Your Options</h3>
       <p>Armed with a cash offer, you can compare:</p>
@@ -5202,7 +5202,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Move Forward?</h2>
 
-      <p>Your new job opportunity shouldn't be derailed by an unsold house. <a href="/about">HomeBuyerBoise</a> offers:</p>
+      <p>Your new job opportunity shouldn't be derailed by an unsold house. <a href="/about">Home Buyer Boise</a> offers:</p>
       <ul>
         <li>Cash offers within 24 hours</li>
         <li>Closing in 7-14 days (before most start dates)</li>
@@ -5216,7 +5216,7 @@ export const BLOG_POSTS: BlogPostData[] = [
     faqs: [
       {
         question: "How fast can I sell my house if I'm relocating from Boise?",
-        answer: "With a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days. This is fast enough to close before most job start dates, avoiding the need to pay for two homes simultaneously."
+        answer: "With a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days. This is fast enough to close before most job start dates, avoiding the need to pay for two homes simultaneously."
       },
       {
         question: "What if I need to start my new job before my house sells?",
@@ -5232,17 +5232,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "What if my home needs repairs before selling?",
-        answer: "Cash buyers like HomeBuyerBoise purchase homes as-is. You don't need to invest time or money in repairs—especially valuable when you're busy preparing for a move. We factor condition into our offer and handle repairs after closing."
+        answer: "Cash buyers like Home Buyer Boise purchase homes as-is. You don't need to invest time or money in repairs—especially valuable when you're busy preparing for a move. We factor condition into our offer and handle repairs after closing."
       }
     ]
   },
   {
     slug: "selling-house-to-avoid-foreclosure-boise",
     title: "Selling Your Boise House to Avoid Foreclosure: Protect Your Credit and Your Future",
-    seoTitle: "Sell House to Avoid Foreclosure Boise | Protect Credit | HomeBuyerBoise",
+    seoTitle: "Sell House to Avoid Foreclosure Boise | Protect Credit | Home Buyer Boise",
     metaDescription: "Facing foreclosure in Boise? Learn how to sell your house fast to pay off your mortgage, protect your credit score, and potentially walk away with equity. Idaho foreclosure prevention options explained.",
     excerpt: "Foreclosure doesn't have to be inevitable. This guide explains how Boise homeowners can sell their homes quickly to stop foreclosure, protect their credit, and preserve their financial future.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["foreclosure prevention", "boise real estate", "protect credit", "quick home sale", "mortgage help"],
     publishedAt: "2024-11-09T08:00:00.000Z",
@@ -5250,7 +5250,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Foreclosure in Idaho</h2>
       <p>When you fall behind on mortgage payments, your lender can eventually take your home through foreclosure. But foreclosure isn't instantaneous—and that window of time represents your opportunity to sell the home, pay off your mortgage, and potentially walk away with your credit and some equity intact.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we specialize in helping homeowners facing foreclosure sell their homes quickly. We understand the urgency, the stress, and the options available to you. This guide explains what you need to know about avoiding foreclosure through a fast home sale.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we specialize in helping homeowners facing foreclosure sell their homes quickly. We understand the urgency, the stress, and the options available to you. This guide explains what you need to know about avoiding foreclosure through a fast home sale.</p>
 
       <h2>The Idaho Foreclosure Process</h2>
 
@@ -5374,7 +5374,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Often doesn't close in time to stop foreclosure</li>
       </ul>
 
-      <h3>Option 3: Cash Sale to HomeBuyerBoise</h3>
+      <h3>Option 3: Cash Sale to Home Buyer Boise</h3>
       <p>Accept a cash offer and close quickly.</p>
       <p><strong>Pros:</strong></p>
       <ul>
@@ -5429,7 +5429,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Step 3: Get Your Cash Offer</h3>
-      <p><a href="/get-quote">Contact HomeBuyerBoise</a> for a fast, no-obligation cash offer. We can usually provide an offer within 24 hours.</p>
+      <p><a href="/get-quote">Contact Home Buyer Boise</a> for a fast, no-obligation cash offer. We can usually provide an offer within 24 hours.</p>
 
       <h3>Step 4: Compare and Decide</h3>
       <p>Compare the cash offer to your alternatives:</p>
@@ -5457,7 +5457,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Financial difficulties happen to good people. Job loss, medical emergencies, divorce, death of a spouse—life events beyond your control can make mortgage payments impossible. You're not a failure for facing foreclosure, and seeking solutions is exactly the right thing to do.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've helped many families in foreclosure sell their homes quickly and move forward with dignity. We approach every situation with discretion and respect.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many families in foreclosure sell their homes quickly and move forward with dignity. We approach every situation with discretion and respect.</p>
 
       <h2>Take the First Step Today</h2>
 
@@ -5491,10 +5491,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-behind-on-payments-boise",
     title: "Selling Your Boise House When You're Behind on Mortgage Payments",
-    seoTitle: "Selling House Behind on Payments Boise | Options Guide | HomeBuyerBoise",
+    seoTitle: "Selling House Behind on Payments Boise | Options Guide | Home Buyer Boise",
     metaDescription: "Behind on your mortgage in Boise? Learn your options before foreclosure begins. Discover how to sell your house quickly, protect your credit, and get back on solid ground.",
     excerpt: "Falling behind on mortgage payments is stressful, but you have options before foreclosure. This guide helps Boise homeowners understand how to sell quickly and avoid the worst consequences of default.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["behind on mortgage", "boise real estate", "mortgage default", "quick home sale", "financial hardship"],
     publishedAt: "2024-11-11T08:00:00.000Z",
@@ -5502,7 +5502,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>You're Behind on Payments—Now What?</h2>
       <p>Missing mortgage payments happens to more people than you might think. Job loss, medical emergencies, divorce, business failures, reduced income—any number of life circumstances can make keeping up with your mortgage impossible. If you're behind on your Boise home mortgage, you're not alone, and you're not without options.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we help homeowners in financial difficulty sell their homes quickly, often before foreclosure even begins. This guide explains what happens when you fall behind and what you can do about it.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we help homeowners in financial difficulty sell their homes quickly, often before foreclosure even begins. This guide explains what happens when you fall behind and what you can do about it.</p>
 
       <h2>What Happens When You Miss Mortgage Payments</h2>
 
@@ -5653,7 +5653,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Adds stress to your life</li>
       </ul>
 
-      <p>A traditional sale takes 60-90+ days. A <a href="/about">cash sale to HomeBuyerBoise</a> can close in 7-14 days.</p>
+      <p>A traditional sale takes 60-90+ days. A <a href="/about">cash sale to Home Buyer Boise</a> can close in 7-14 days.</p>
 
       <h3>No Repairs = No Additional Expense</h3>
       <p>When you're behind on mortgage payments, you certainly don't have money for repairs and updates. Traditional buyers expect homes in good condition. Cash buyers purchase as-is, requiring zero additional investment from you.</p>
@@ -5688,7 +5688,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Step 2: Get Your Cash Offer</h3>
-      <p><a href="/get-quote">Contact HomeBuyerBoise</a> for a fast, no-obligation offer. Be upfront about your situation—we've seen it all and can help most quickly when we understand the full picture.</p>
+      <p><a href="/get-quote">Contact Home Buyer Boise</a> for a fast, no-obligation offer. Be upfront about your situation—we've seen it all and can help most quickly when we understand the full picture.</p>
 
       <h3>Step 3: Compare to Alternatives</h3>
       <p>Is modification realistic? Can you catch up? Would traditional sale work in your timeline? Compare the cash offer to your actual alternatives.</p>
@@ -5717,7 +5717,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Reduces your equity</li>
       </ul>
 
-      <p><a href="/about">HomeBuyerBoise</a> is here to help, with no judgment about how you got here. We offer fast, fair cash offers that can help you move on with your life.</p>
+      <p><a href="/about">Home Buyer Boise</a> is here to help, with no judgment about how you got here. We offer fast, fair cash offers that can help you move on with your life.</p>
 
       <p><a href="/get-quote">Request your free cash offer</a> today. Even if you're not sure what to do, getting an offer gives you information to work with. There's no obligation and no pressure—just honest answers about your options.</p>
     `,
@@ -5747,10 +5747,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-rental-property-with-tenants-boise",
     title: "Selling Your Boise Rental Property with Tenants: A Complete Landlord Exit Guide",
-    seoTitle: "Sell Rental Property with Tenants Boise | Landlord Guide | HomeBuyerBoise",
+    seoTitle: "Sell Rental Property with Tenants Boise | Landlord Guide | Home Buyer Boise",
     metaDescription: "Want to sell your Boise rental property with tenants in place? Learn your options for exiting the landlord business, handling leases, and getting a fair price quickly.",
     excerpt: "Tired of being a landlord in Boise? This guide explains how to sell your rental property—even with tenants in place—while handling leases properly and getting a fair price for your investment.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["rental property", "landlord", "tenant occupied", "boise real estate", "investment property"],
     publishedAt: "2024-11-13T08:00:00.000Z",
@@ -5758,7 +5758,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When It's Time to Exit the Landlord Business</h2>
       <p>Being a landlord in Boise isn't for everyone—and sometimes circumstances change. Whether you're tired of the hassle, moving away, facing problematic tenants, or simply ready to cash out your investment, selling a rental property with tenants presents unique challenges.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we purchase rental properties throughout Ada and Canyon Counties, often with tenants still in place. This guide explains your options and helps you understand the best path forward for your situation.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we purchase rental properties throughout Ada and Canyon Counties, often with tenants still in place. This guide explains your options and helps you understand the best path forward for your situation.</p>
 
       <h2>Common Reasons Landlords Decide to Sell</h2>
 
@@ -5872,7 +5872,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Showings while tenants occupy can be problematic</li>
       </ul>
 
-      <h3>Option 3: Sell Directly to a Cash Buyer Like HomeBuyerBoise</h3>
+      <h3>Option 3: Sell Directly to a Cash Buyer Like Home Buyer Boise</h3>
       <p>Accept a cash offer and close quickly, tenants and all.</p>
       <p><strong>Pros:</strong></p>
       <ul>
@@ -5900,7 +5900,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Cash Buyers Simplify Problem Tenant Situations</h3>
-      <p>When you sell to <a href="/about">HomeBuyerBoise</a>:</p>
+      <p>When you sell to <a href="/about">Home Buyer Boise</a>:</p>
       <ul>
         <li>Typically just one property visit (not multiple showings)</li>
         <li>We're experienced with tenant-occupied properties</li>
@@ -5922,7 +5922,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>1031 Exchange Option</h3>
       <p>Want to defer taxes? A 1031 exchange lets you reinvest proceeds into another investment property and defer capital gains taxes. Requires strict timing and rules—work with a qualified intermediary.</p>
 
-      <p>Note: A cash sale to HomeBuyerBoise can still qualify for 1031 exchange treatment if you follow proper procedures.</p>
+      <p>Note: A cash sale to Home Buyer Boise can still qualify for 1031 exchange treatment if you follow proper procedures.</p>
 
       <h2>Valuing Tenant-Occupied Rental Property</h2>
 
@@ -5947,7 +5947,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Location and neighborhood desirability</li>
       </ul>
 
-      <h2>How to Sell Your Boise Rental Property to HomeBuyerBoise</h2>
+      <h2>How to Sell Your Boise Rental Property to Home Buyer Boise</h2>
 
       <h3>Step 1: Contact Us with Property Information</h3>
       <p><a href="/get-quote">Reach out</a> with basic property details:</p>
@@ -5970,7 +5970,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>After the Sale: Clean Break</h2>
 
-      <p>Once you sell to HomeBuyerBoise:</p>
+      <p>Once you sell to Home Buyer Boise:</p>
       <ul>
         <li>No more tenant calls</li>
         <li>No more maintenance responsibilities</li>
@@ -5983,14 +5983,14 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Exit the Landlord Business?</h2>
 
-      <p>Whether you have good tenants, problem tenants, or something in between, <a href="/about">HomeBuyerBoise</a> can help you sell your rental property quickly and move on.</p>
+      <p>Whether you have good tenants, problem tenants, or something in between, <a href="/about">Home Buyer Boise</a> can help you sell your rental property quickly and move on.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your property, understand your tenant situation, and provide a fair offer—typically within 24 hours. There's no pressure and no commitment—just honest information about your options.</p>
     `,
     faqs: [
       {
         question: "Can I sell my rental property with tenants still living there?",
-        answer: "Yes, you can sell with tenants in place. The lease transfers to the new owner, who becomes the landlord. Cash buyers like HomeBuyerBoise regularly purchase tenant-occupied properties and are experienced handling these situations."
+        answer: "Yes, you can sell with tenants in place. The lease transfers to the new owner, who becomes the landlord. Cash buyers like Home Buyer Boise regularly purchase tenant-occupied properties and are experienced handling these situations."
       },
       {
         question: "Do I have to wait for the lease to expire before selling?",
@@ -6013,10 +6013,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-for-medical-expenses-boise",
     title: "Selling Your Boise House to Pay for Medical Expenses: Accessing Your Home Equity Fast",
-    seoTitle: "Sell House for Medical Expenses Boise | Quick Cash | HomeBuyerBoise",
+    seoTitle: "Sell House for Medical Expenses Boise | Quick Cash | Home Buyer Boise",
     metaDescription: "Facing major medical bills in Boise? Learn how to sell your house quickly to access equity for healthcare costs. Understand your options for fast, stress-free home sales during health crises.",
     excerpt: "Medical emergencies don't wait for your house to sell. This guide helps Boise homeowners understand how to quickly access home equity when facing overwhelming healthcare costs.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["medical expenses", "healthcare costs", "boise real estate", "quick home sale", "home equity"],
     publishedAt: "2024-11-15T08:00:00.000Z",
@@ -6024,7 +6024,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When Medical Costs Exceed Your Resources</h2>
       <p>A serious illness or injury can devastate finances in ways few other life events can match. Even with insurance, cancer treatment, major surgery, extended hospitalization, or chronic disease management can cost tens or hundreds of thousands of dollars. When medical bills exceed savings, retirement accounts, and available credit, your home equity may be your largest remaining resource.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we help families facing medical crises access their home equity quickly. This guide explains your options and helps you make informed decisions during an incredibly stressful time.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we help families facing medical crises access their home equity quickly. This guide explains your options and helps you make informed decisions during an incredibly stressful time.</p>
 
       <h2>The Reality of Medical Costs</h2>
 
@@ -6076,7 +6076,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>When treatment is needed now, months of waiting isn't acceptable.</p>
 
       <h3>Cash Sale Timeline</h3>
-      <p>A cash sale to <a href="/about">HomeBuyerBoise</a>:</p>
+      <p>A cash sale to <a href="/about">Home Buyer Boise</a>:</p>
       <ul>
         <li>Offer within 24 hours</li>
         <li>Closing in 7-14 days</li>
@@ -6184,7 +6184,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Protecting Yourself During Medical Crisis Home Sales</h2>
 
       <h3>Don't Rush Decisions</h3>
-      <p>Even in urgent situations, take time to understand your options. Get a cash offer from HomeBuyerBoise—it's free and creates no obligation. Compare to other alternatives before deciding.</p>
+      <p>Even in urgent situations, take time to understand your options. Get a cash offer from Home Buyer Boise—it's free and creates no obligation. Compare to other alternatives before deciding.</p>
 
       <h3>Involve Trusted Family Members</h3>
       <p>When you're sick, decision-making is harder. Include a trusted child, sibling, or friend in the process. They can ask questions and help evaluate options when you're overwhelmed.</p>
@@ -6203,7 +6203,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>State and local assistance programs</li>
       </ul>
 
-      <h2>The HomeBuyerBoise Process for Medical Sales</h2>
+      <h2>The Home Buyer Boise Process for Medical Sales</h2>
 
       <h3>We Understand Your Situation</h3>
       <p>Medical situations require sensitivity and urgency. We approach these sales with:</p>
@@ -6257,14 +6257,14 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>We're Here to Help</h2>
 
-      <p>Facing a medical crisis is overwhelming enough without financial stress compounding it. If selling your Boise home can help you access the funds you need for treatment, <a href="/about">HomeBuyerBoise</a> is here to help.</p>
+      <p>Facing a medical crisis is overwhelming enough without financial stress compounding it. If selling your Boise home can help you access the funds you need for treatment, <a href="/about">Home Buyer Boise</a> is here to help.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll provide honest information about your options and work on whatever timeline your medical situation requires. There's no pressure—just support when you need it most.</p>
     `,
     faqs: [
       {
         question: "How quickly can I get cash for my house to pay medical bills?",
-        answer: "With a cash buyer like HomeBuyerBoise, you can receive a cash offer within 24 hours and close in as little as 7 days. This speed is critical when treatment can't wait for a traditional 3-5 month sale process."
+        answer: "With a cash buyer like Home Buyer Boise, you can receive a cash offer within 24 hours and close in as little as 7 days. This speed is critical when treatment can't wait for a traditional 3-5 month sale process."
       },
       {
         question: "Will selling my house affect my ability to get Medicaid?",
@@ -6287,10 +6287,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-moving-to-assisted-living-boise",
     title: "Selling Your Boise House When Moving to Assisted Living: A Senior Transition Guide",
-    seoTitle: "Sell House for Assisted Living Boise | Senior Guide | HomeBuyerBoise",
+    seoTitle: "Sell House for Assisted Living Boise | Senior Guide | Home Buyer Boise",
     metaDescription: "Transitioning to assisted living in Boise? Learn how to sell your house quickly to fund care costs. Complete guide for seniors and families navigating this major life change.",
     excerpt: "Moving to assisted living is a major transition. This compassionate guide helps Boise seniors and their families navigate home sales during this significant life change.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["assisted living", "senior living", "downsizing", "boise real estate", "elder care"],
     publishedAt: "2024-11-17T08:00:00.000Z",
@@ -6298,7 +6298,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When It's Time for Assisted Living</h2>
       <p>The decision to move to assisted living is rarely easy, but it's often the right choice for safety, health, and quality of life. Whether you're a senior making this transition yourself or an adult child helping a parent, selling the family home is typically part of the process.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've helped many Boise area seniors and their families navigate this transition with patience and compassion. This guide covers what you need to know about selling your home when moving to assisted living.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many Boise area seniors and their families navigate this transition with patience and compassion. This guide covers what you need to know about selling your home when moving to assisted living.</p>
 
       <h2>Understanding the Assisted Living Decision</h2>
 
@@ -6494,7 +6494,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Understand what level of care is needed and what facilities are available. Get a sense of costs and timing.</p>
 
       <h3>Step 2: Review Home Value and Equity</h3>
-      <p>Get a cash offer from <a href="/about">HomeBuyerBoise</a> to understand what funds will be available. This is free and creates no obligation.</p>
+      <p>Get a cash offer from <a href="/about">Home Buyer Boise</a> to understand what funds will be available. This is free and creates no obligation.</p>
 
       <h3>Step 3: Create a Timeline</h3>
       <p>Work backward from when care is needed:</p>
@@ -6522,14 +6522,14 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>We're Here to Help</h2>
 
-      <p>Transitioning to assisted living is one of life's most significant changes. <a href="/about">HomeBuyerBoise</a> approaches these situations with patience, understanding, and respect for what families are going through.</p>
+      <p>Transitioning to assisted living is one of life's most significant changes. <a href="/about">Home Buyer Boise</a> approaches these situations with patience, understanding, and respect for what families are going through.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> to understand your options. We'll work on whatever timeline your family needs and make the process as simple as possible during this transition.</p>
     `,
     faqs: [
       {
         question: "How quickly can I sell my parents' house when they move to assisted living?",
-        answer: "With a cash buyer like HomeBuyerBoise, you can close in as little as 7-14 days. This is important when assisted living costs start immediately and you need funds from the home sale to pay for care."
+        answer: "With a cash buyer like Home Buyer Boise, you can close in as little as 7-14 days. This is important when assisted living costs start immediately and you need funds from the home sale to pay for care."
       },
       {
         question: "Do we have to clean out all the belongings before selling?",
@@ -6552,10 +6552,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-bad-neighbors-boise",
     title: "Selling Your Boise House When You Have Bad Neighbors: Disclosure and Strategy Guide",
-    seoTitle: "Sell House with Bad Neighbors Boise | Disclosure Guide | HomeBuyerBoise",
+    seoTitle: "Sell House with Bad Neighbors Boise | Disclosure Guide | Home Buyer Boise",
     metaDescription: "Dealing with difficult neighbors in Boise? Learn how neighbor issues affect your home sale, what you must disclose, and how to sell quickly despite neighbor problems.",
     excerpt: "Bad neighbors can make selling your Boise home challenging. This guide explains your disclosure obligations, strategies for managing neighbor issues, and how to sell successfully despite difficult next-door situations.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["bad neighbors", "neighbor disputes", "boise real estate", "property disclosure", "quick home sale"],
     publishedAt: "2024-11-19T08:00:00.000Z",
@@ -6563,7 +6563,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When Neighbors Make You Want to Move</h2>
       <p>Everyone dreams of friendly neighbors who wave hello and respect boundaries. But reality doesn't always match that ideal. Whether it's constant noise, property disputes, hostile behavior, or simply incompatible lifestyles, bad neighbors can turn your Boise home into a place you desperately want to leave.</p>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we've purchased many homes from sellers dealing with difficult neighbor situations. This guide explains how neighbor problems affect your sale, what you must disclose, and strategies for selling successfully.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we've purchased many homes from sellers dealing with difficult neighbor situations. This guide explains how neighbor problems affect your sale, what you must disclose, and strategies for selling successfully.</p>
 
       <h2>Types of Neighbor Problems</h2>
 
@@ -6686,7 +6686,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Acknowledged issues priced appropriately can still attract buyers. Some buyers are less sensitive to neighbor issues than others.</p>
 
       <h3>Strategy 4: Sell to a Cash Buyer</h3>
-      <p>Cash buyers like <a href="/about">HomeBuyerBoise</a> offer significant advantages when neighbors are problematic:</p>
+      <p>Cash buyers like <a href="/about">Home Buyer Boise</a> offer significant advantages when neighbors are problematic:</p>
       <ul>
         <li>Just one property visit, not multiple showings</li>
         <li>We're experienced with all types of situations</li>
@@ -6753,7 +6753,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Sometimes Moving Is the Best Option</h3>
       <p>You can't control your neighbors. While it feels unfair to leave a home you love because of someone else's behavior, sometimes starting fresh elsewhere is the path to peace and happiness.</p>
 
-      <h2>How HomeBuyerBoise Handles Neighbor Situations</h2>
+      <h2>How Home Buyer Boise Handles Neighbor Situations</h2>
 
       <h3>No Judgment</h3>
       <p>We've seen every type of neighbor situation. We evaluate properties objectively and don't judge you for circumstances you didn't create.</p>
@@ -6783,7 +6783,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Leave the Drama Behind?</h2>
 
-      <p>Life is too short to spend dreading interactions with the people next door. If bad neighbors are making your Boise home unbearable, <a href="/about">HomeBuyerBoise</a> can help you make a fast, clean exit.</p>
+      <p>Life is too short to spend dreading interactions with the people next door. If bad neighbors are making your Boise home unbearable, <a href="/about">Home Buyer Boise</a> can help you make a fast, clean exit.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your situation honestly and provide an offer that accounts for whatever challenges you're facing. There's no judgment—just a straightforward path to a fresh start.</p>
     `,
@@ -6798,7 +6798,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I sell if I'm in a lawsuit with my neighbor?",
-        answer: "Yes, but you must disclose the litigation. This can complicate traditional sales significantly. Cash buyers like HomeBuyerBoise purchase properties with pending disputes and factor the situation into their offer."
+        answer: "Yes, but you must disclose the litigation. This can complicate traditional sales significantly. Cash buyers like Home Buyer Boise purchase properties with pending disputes and factor the situation into their offer."
       },
       {
         question: "What if my neighbor's property is an eyesore?",
@@ -6816,10 +6816,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-liens-boise",
     title: "Selling a House with Liens in Boise: Tax, Mechanic's, and Judgment Liens Explained",
-    seoTitle: "Selling House with Liens Boise | Tax & Judgment Lien Guide | HomeBuyerBoise",
+    seoTitle: "Selling House with Liens Boise | Tax & Judgment Lien Guide | Home Buyer Boise",
     metaDescription: "Learn how to sell a house with liens in Boise. Understand tax liens, mechanic's liens, and judgment liens. Get expert guidance on resolving liens to sell your Idaho home.",
     excerpt: "Discover your options for selling a Boise home with liens attached. This comprehensive guide explains the different types of liens, how they affect your sale, and strategies for resolution.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["liens", "tax liens", "judgment liens", "mechanic liens", "boise real estate", "title issues"],
     publishedAt: "2024-10-01T08:00:00.000Z",
@@ -6827,7 +6827,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Liens and How They Affect Your Boise Home Sale</h2>
       <p>Discovering liens on your property can feel overwhelming, especially when you're trying to sell your Boise home. A lien is a legal claim against your property that must typically be satisfied before you can transfer clear title to a buyer. However, having liens doesn't mean you can't sell—it just means you need to understand your options and plan accordingly.</p>
 
-      <p>In Ada and Canyon County, liens are more common than most homeowners realize. From unpaid property taxes to contractor disputes, various situations can result in liens being placed against your home. The good news is that most lien situations can be resolved, and experienced cash buyers like <a href="/about">HomeBuyerBoise</a> work with properties that have liens regularly.</p>
+      <p>In Ada and Canyon County, liens are more common than most homeowners realize. From unpaid property taxes to contractor disputes, various situations can result in liens being placed against your home. The good news is that most lien situations can be resolved, and experienced cash buyers like <a href="/about">Home Buyer Boise</a> work with properties that have liens regularly.</p>
 
       <h2>Types of Liens on Boise Properties</h2>
 
@@ -6954,7 +6954,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Selling to a Cash Buyer When You Have Liens</h2>
 
       <h3>Why Cash Buyers Are Experienced with Liens</h3>
-      <p>Professional cash buyers like <a href="/about">HomeBuyerBoise</a> regularly purchase properties with liens. We understand the process and have systems to:</p>
+      <p>Professional cash buyers like <a href="/about">Home Buyer Boise</a> regularly purchase properties with liens. We understand the process and have systems to:</p>
       <ul>
         <li>Quickly identify all liens against a property</li>
         <li>Negotiate with lien holders when appropriate</li>
@@ -6992,7 +6992,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Patience—short sales take months</li>
       </ul>
 
-      <p>While HomeBuyerBoise can be the buyer in short sale situations, you should understand that these transactions are lengthy and require lien holder cooperation.</p>
+      <p>While Home Buyer Boise can be the buyer in short sale situations, you should understand that these transactions are lengthy and require lien holder cooperation.</p>
 
       <h3>Working with IRS Liens</h3>
       <p>If you have federal tax liens and are selling, the IRS offers programs to facilitate sales:</p>
@@ -7043,7 +7043,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Sell Your House Despite Liens?</h2>
 
-      <p>Don't let liens stop you from selling your Boise area home. Whether you have tax liens, mechanic's liens, judgments, or multiple encumbrances, there are solutions available. <a href="/about">HomeBuyerBoise</a> has experience navigating complex lien situations and can help you understand your options.</p>
+      <p>Don't let liens stop you from selling your Boise area home. Whether you have tax liens, mechanic's liens, judgments, or multiple encumbrances, there are solutions available. <a href="/about">Home Buyer Boise</a> has experience navigating complex lien situations and can help you understand your options.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your property and lien situation, explain how proceeds would be distributed, and help you determine if selling to a cash buyer makes sense for your circumstances. There's no pressure—just honest information to help you make the best decision.</p>
     `,
@@ -7054,7 +7054,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Will a lien stop my home sale from closing?",
-        answer: "A lien won't automatically stop a sale, but it must be addressed before title transfers. Most liens are simply paid from sale proceeds. Problems arise when liens exceed sale proceeds or when lien holders are difficult to locate. Cash buyers like HomeBuyerBoise are experienced with these situations."
+        answer: "A lien won't automatically stop a sale, but it must be addressed before title transfers. Most liens are simply paid from sale proceeds. Problems arise when liens exceed sale proceeds or when lien holders are difficult to locate. Cash buyers like Home Buyer Boise are experienced with these situations."
       },
       {
         question: "How do I find out if there are liens on my property?",
@@ -7073,10 +7073,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "capital-gains-tax-selling-house-boise",
     title: "Capital Gains Tax When Selling Your Boise House: What Idaho Homeowners Need to Know",
-    seoTitle: "Capital Gains Tax Selling House Boise | Tax Exemptions Guide | HomeBuyerBoise",
+    seoTitle: "Capital Gains Tax Selling House Boise | Tax Exemptions Guide | Home Buyer Boise",
     metaDescription: "Understand capital gains tax when selling your Boise home. Learn about the $250K/$500K exclusion, Idaho state taxes, and strategies to minimize your tax burden.",
     excerpt: "Worried about capital gains tax on your Boise home sale? This comprehensive guide explains federal and Idaho tax implications, exemptions, and strategies for keeping more of your sale proceeds.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["capital gains tax", "home sale taxes", "boise real estate", "tax exemptions", "idaho taxes"],
     publishedAt: "2024-10-03T08:00:00.000Z",
@@ -7302,7 +7302,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Tax Implications and Cash Sales</h2>
 
       <h3>Cash Sales Don't Change Tax Treatment</h3>
-      <p>Whether you sell to a cash buyer like <a href="/about">HomeBuyerBoise</a> or through a traditional sale, the capital gains tax treatment is identical. The type of buyer doesn't affect your taxes—only the sale price and your basis matter.</p>
+      <p>Whether you sell to a cash buyer like <a href="/about">Home Buyer Boise</a> or through a traditional sale, the capital gains tax treatment is identical. The type of buyer doesn't affect your taxes—only the sale price and your basis matter.</p>
 
       <h3>Lower Sale Price Considerations</h3>
       <p>Cash offers are typically below full market value, which might mean:</p>
@@ -7316,7 +7316,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your Free Cash Offer</h2>
 
-      <p>Ready to sell your Boise home? Whether you have capital gains tax concerns or just want to understand your options, <a href="/about">HomeBuyerBoise</a> can help. We provide fair cash offers with no obligations, allowing you to make informed decisions about your sale.</p>
+      <p>Ready to sell your Boise home? Whether you have capital gains tax concerns or just want to understand your options, <a href="/about">Home Buyer Boise</a> can help. We provide fair cash offers with no obligations, allowing you to make informed decisions about your sale.</p>
 
       <p><a href="/get-quote">Request your free cash offer</a> today. We'll explain exactly what to expect from the sale and can recommend local tax professionals if your situation warrants professional advice. There's no pressure—just helpful information from local home buying experts.</p>
 
@@ -7348,10 +7348,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-without-realtor-boise",
     title: "Selling Your House Without a Realtor in Boise: FSBO Guide and Alternatives",
-    seoTitle: "Selling House Without Realtor Boise | FSBO Guide | HomeBuyerBoise",
+    seoTitle: "Selling House Without Realtor Boise | FSBO Guide | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house without a realtor. Compare FSBO vs agent vs cash buyer options. Understand the pros, cons, and costs of each approach.",
     excerpt: "Thinking about selling your Boise home without a real estate agent? This guide explores FSBO selling, its challenges, and alternatives like cash buyers that offer simplicity without commission.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["FSBO", "sell without realtor", "boise real estate", "for sale by owner", "cash buyer"],
     publishedAt: "2024-10-05T08:00:00.000Z",
@@ -7409,7 +7409,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Option 3: Sell to a Cash Buyer</h3>
-      <p>Sell directly to an investor like <a href="/about">HomeBuyerBoise</a> who pays cash with no contingencies.</p>
+      <p>Sell directly to an investor like <a href="/about">Home Buyer Boise</a> who pays cash with no contingencies.</p>
 
       <p><strong>Typical Costs:</strong></p>
       <ul>
@@ -7565,7 +7565,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>The Cash Buyer Alternative</h2>
 
       <h3>Best of Both Worlds?</h3>
-      <p>For many Boise homeowners, selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> offers advantages over both FSBO and traditional agent sales:</p>
+      <p>For many Boise homeowners, selling to a cash buyer like <a href="/about">Home Buyer Boise</a> offers advantages over both FSBO and traditional agent sales:</p>
 
       <p><strong>Speed:</strong> While FSBO sales often take longer than agent-listed homes (due to limited exposure and marketing), cash sales close in 7-14 days.</p>
 
@@ -7642,7 +7642,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>Whether you're considering FSBO, traditional sale, or a cash offer, understanding all your options helps you make the best decision. At <a href="/about">HomeBuyerBoise</a>, we provide honest cash offers with no obligation—giving you one more data point for comparison.</p>
+      <p>Whether you're considering FSBO, traditional sale, or a cash offer, understanding all your options helps you make the best decision. At <a href="/about">Home Buyer Boise</a>, we provide honest cash offers with no obligation—giving you one more data point for comparison.</p>
 
       <p><a href="/get-quote">Request your free cash offer</a> today. Even if you ultimately choose another path, knowing what a cash buyer would pay helps you evaluate your alternatives. There's no pressure and no commitment—just useful information for your home selling decision.</p>
     `,
@@ -7661,7 +7661,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "What's the difference between FSBO and selling to a cash buyer?",
-        answer: "FSBO means you handle all aspects of selling to retail buyers, potentially getting full market value but investing significant time and effort. Selling to a cash buyer like HomeBuyerBoise means accepting a below-market offer in exchange for speed, simplicity, and certainty—no marketing, showings, or repairs required."
+        answer: "FSBO means you handle all aspects of selling to retail buyers, potentially getting full market value but investing significant time and effort. Selling to a cash buyer like Home Buyer Boise means accepting a below-market offer in exchange for speed, simplicity, and certainty—no marketing, showings, or repairs required."
       },
       {
         question: "Can I list my FSBO home on the MLS in Boise?",
@@ -7672,10 +7672,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-reverse-mortgage-boise",
     title: "Selling a House with a Reverse Mortgage in Boise: Options for Homeowners and Heirs",
-    seoTitle: "Selling House with Reverse Mortgage Boise | Heirs Guide | HomeBuyerBoise",
+    seoTitle: "Selling House with Reverse Mortgage Boise | Heirs Guide | Home Buyer Boise",
     metaDescription: "Learn how to sell a Boise house with a reverse mortgage. Understand payoff requirements, heir options, and what happens when the loan comes due. Expert Idaho guidance.",
     excerpt: "Navigating the sale of a home with a reverse mortgage can be confusing. This guide explains how reverse mortgages work, what happens when you sell, and options for heirs who inherit properties with these loans.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["reverse mortgage", "HECM", "senior homeowners", "inherited property", "boise real estate"],
     publishedAt: "2024-10-07T08:00:00.000Z",
@@ -7807,7 +7807,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Why Cash Buyers Work Well for Reverse Mortgage Situations</h2>
 
       <h3>Speed</h3>
-      <p>Cash buyers like <a href="/about">HomeBuyerBoise</a> can close in 7-14 days, well within reverse mortgage resolution timelines. This speed eliminates deadline stress and potential extension requests.</p>
+      <p>Cash buyers like <a href="/about">Home Buyer Boise</a> can close in 7-14 days, well within reverse mortgage resolution timelines. This speed eliminates deadline stress and potential extension requests.</p>
 
       <h3>As-Is Purchase</h3>
       <p>We buy properties in any condition, which is particularly valuable for homes that have had deferred maintenance or have been vacant. No repairs, no cleaning, no preparation needed.</p>
@@ -7877,7 +7877,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Help with Your Reverse Mortgage Sale</h2>
 
-      <p>Navigating a reverse mortgage sale in Boise doesn't have to be overwhelming. Whether you're a homeowner looking to sell or an heir who has inherited a property with a reverse mortgage, <a href="/about">HomeBuyerBoise</a> can help simplify the process.</p>
+      <p>Navigating a reverse mortgage sale in Boise doesn't have to be overwhelming. Whether you're a homeowner looking to sell or an heir who has inherited a property with a reverse mortgage, <a href="/about">Home Buyer Boise</a> can help simplify the process.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your property, explain how the reverse mortgage affects the sale, and provide a clear path forward. Our experience with these situations means we can help you understand your options and timeline without adding to your stress.</p>
     `,
@@ -7907,10 +7907,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "closing-costs-when-selling-house-boise",
     title: "Closing Costs When Selling a House in Boise: Complete Breakdown for Sellers",
-    seoTitle: "Closing Costs Selling House Boise | Seller Fee Guide | HomeBuyerBoise",
+    seoTitle: "Closing Costs Selling House Boise | Seller Fee Guide | Home Buyer Boise",
     metaDescription: "Learn exactly what closing costs you'll pay when selling your Boise home. Detailed breakdown of seller fees, who pays what, and how to reduce your costs.",
     excerpt: "Understand every fee you'll encounter when selling your Boise home. This comprehensive guide breaks down seller closing costs in Ada and Canyon County, explaining what to expect at the closing table.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["closing costs", "seller fees", "boise real estate", "home selling costs", "title fees"],
     publishedAt: "2024-10-09T08:00:00.000Z",
@@ -7933,7 +7933,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Commissions are negotiable. Some agents offer reduced rates, especially in hot markets or for higher-priced homes. However, reducing the buyer's agent commission may make your listing less attractive to agents showing homes.</p>
 
-      <p><strong>Note:</strong> When you sell to a cash buyer like <a href="/about">HomeBuyerBoise</a>, there are no agent commissions on either side.</p>
+      <p><strong>Note:</strong> When you sell to a cash buyer like <a href="/about">Home Buyer Boise</a>, there are no agent commissions on either side.</p>
 
       <h3>Title Insurance</h3>
       <p>In Idaho, it's customary for the seller to pay for the owner's title insurance policy that protects the buyer:</p>
@@ -8090,7 +8090,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Price your home correctly and address obvious issues before listing to minimize repair request and concession negotiations.</p>
 
       <h3>Sell to a Cash Buyer</h3>
-      <p>When you sell to <a href="/about">HomeBuyerBoise</a>, you avoid most closing costs entirely:</p>
+      <p>When you sell to <a href="/about">Home Buyer Boise</a>, you avoid most closing costs entirely:</p>
       <ul>
         <li>No agent commissions (savings of $20,000+ on typical homes)</li>
         <li>We pay all closing costs (title, escrow, recording)</li>
@@ -8159,7 +8159,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Ready to understand what you'll actually pocket from your Boise home sale? Use our <a href="/savings-calculator">savings calculator</a> to estimate your net proceeds with different selling methods.</p>
 
-      <p>Or, skip the complexity entirely with a cash offer from <a href="/about">HomeBuyerBoise</a>. When we make an offer, we tell you exactly what you'll receive at closing—no commission deductions, no closing cost surprises. <a href="/get-quote">Request your free cash offer</a> today to see what your home is worth without the typical selling costs.</p>
+      <p>Or, skip the complexity entirely with a cash offer from <a href="/about">Home Buyer Boise</a>. When we make an offer, we tell you exactly what you'll receive at closing—no commission deductions, no closing cost surprises. <a href="/get-quote">Request your free cash offer</a> today to see what your home is worth without the typical selling costs.</p>
     `,
     faqs: [
       {
@@ -8176,7 +8176,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I avoid paying closing costs when selling my house?",
-        answer: "The only way to truly avoid seller closing costs is to sell to a cash buyer like HomeBuyerBoise who pays all costs. In traditional sales, you can negotiate some costs but will always pay agent commissions and title fees."
+        answer: "The only way to truly avoid seller closing costs is to sell to a cash buyer like Home Buyer Boise who pays all costs. In traditional sales, you can negotiate some costs but will always pay agent commissions and title fees."
       },
       {
         question: "How can I estimate my net proceeds from selling my Boise home?",
@@ -8187,10 +8187,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "how-much-is-my-house-worth-boise",
     title: "How Much Is My House Worth in Boise? Valuation Guide for Idaho Homeowners",
-    seoTitle: "How Much Is My House Worth Boise | Home Valuation Guide | HomeBuyerBoise",
+    seoTitle: "How Much Is My House Worth Boise | Home Valuation Guide | Home Buyer Boise",
     metaDescription: "Learn how to determine your Boise home's market value. Understand the difference between appraisals, assessments, and market value. Free valuation resources for Idaho homeowners.",
     excerpt: "Wondering what your Boise home is worth? This comprehensive guide explains different valuation methods, what affects your home's value, and how to get accurate estimates in today's Idaho market.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["home value", "property valuation", "boise real estate", "home appraisal", "market value"],
     publishedAt: "2024-10-11T08:00:00.000Z",
@@ -8418,7 +8418,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>No-obligation data point for comparison</li>
       </ul>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we provide free cash offers that help homeowners understand their options. While our offers are below retail market value (reflecting our as-is purchase and speed), they represent a real floor for your home's value.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we provide free cash offers that help homeowners understand their options. While our offers are below retail market value (reflecting our as-is purchase and speed), they represent a real floor for your home's value.</p>
 
       <h2>What Adds Value vs. What Doesn't</h2>
 
@@ -8494,7 +8494,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Request a cash offer for real market feedback</li>
       </ol>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we provide free, no-obligation cash offers on Boise area homes. While our offers are for as-is purchases (below retail value), they give you a real data point about your home's worth to investors. <a href="/get-quote">Request your free offer</a> today and add another perspective to your home valuation research.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we provide free, no-obligation cash offers on Boise area homes. While our offers are for as-is purchases (below retail value), they give you a real data point about your home's worth to investors. <a href="/get-quote">Request your free offer</a> today and add another perspective to your home valuation research.</p>
 
       <p>Whether you're planning to sell soon or just want to know your equity position, understanding your home's value is the first step in making informed real estate decisions.</p>
     `,
@@ -8517,17 +8517,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How do I get a free home valuation in Boise?",
-        answer: "Real estate agents provide free Comparative Market Analyses to potential listing clients. Online tools like Zillow, Redfin, and Realtor.com offer free instant estimates. Cash buyers like HomeBuyerBoise provide free cash offers that reflect real market feedback."
+        answer: "Real estate agents provide free Comparative Market Analyses to potential listing clients. Online tools like Zillow, Redfin, and Realtor.com offer free instant estimates. Cash buyers like Home Buyer Boise provide free cash offers that reflect real market feedback."
       }
     ]
   },
   {
     slug: "selling-house-underwater-boise",
     title: "Selling a House Underwater in Boise: Options When You Owe More Than It's Worth",
-    seoTitle: "Selling House Underwater Boise | Short Sale Options | HomeBuyerBoise",
+    seoTitle: "Selling House Underwater Boise | Short Sale Options | Home Buyer Boise",
     metaDescription: "Learn your options for selling a Boise house when you owe more than it's worth. Understand short sales, alternatives to foreclosure, and how to minimize financial damage.",
     excerpt: "Owing more than your home is worth creates difficult decisions. This guide explains your options for selling an underwater house in Boise, including short sales and foreclosure alternatives.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["underwater mortgage", "short sale", "negative equity", "foreclosure prevention", "boise real estate"],
     publishedAt: "2024-10-13T08:00:00.000Z",
@@ -8780,10 +8780,10 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Consult with a tax professional before completing a short sale to understand potential tax consequences.</p>
 
-      <h2>How HomeBuyerBoise Can Help</h2>
+      <h2>How Home Buyer Boise Can Help</h2>
 
       <h3>As a Short Sale Buyer</h3>
-      <p>If you're pursuing a short sale, <a href="/about">HomeBuyerBoise</a> may be able to purchase your property:</p>
+      <p>If you're pursuing a short sale, <a href="/about">Home Buyer Boise</a> may be able to purchase your property:</p>
       <ul>
         <li>We're experienced with short sale processes</li>
         <li>Cash purchase eliminates financing contingency concerns</li>
@@ -8831,7 +8831,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>If you're underwater on your Boise mortgage and need to sell, understanding your options is the first step. At <a href="/about">HomeBuyerBoise</a>, we've worked with homeowners in all kinds of situations, including short sales and distressed properties.</p>
+      <p>If you're underwater on your Boise mortgage and need to sell, understanding your options is the first step. At <a href="/about">Home Buyer Boise</a>, we've worked with homeowners in all kinds of situations, including short sales and distressed properties.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation consultation</a> today. We'll help you understand your property's value, calculate your equity position, and explain what options might work for your situation. There's no pressure—just honest information to help you make the best decision.</p>
     `,
@@ -8861,10 +8861,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-unpaid-property-taxes-boise",
     title: "Selling a House with Unpaid Property Taxes in Boise: Resolution Guide",
-    seoTitle: "Selling House Unpaid Property Taxes Boise | Tax Lien Guide | HomeBuyerBoise",
+    seoTitle: "Selling House Unpaid Property Taxes Boise | Tax Lien Guide | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house with unpaid property taxes. Understand tax liens, payment plans, and how to resolve back taxes before a tax sale.",
     excerpt: "Behind on property taxes in Ada or Canyon County? This guide explains how tax liens work, your options for resolution, and how to sell your property before losing it to a tax sale.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["property taxes", "tax liens", "back taxes", "ada county", "canyon county", "boise real estate"],
     publishedAt: "2024-10-15T08:00:00.000Z",
@@ -9020,7 +9020,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Sell to a Cash Buyer</h3>
-      <p>Cash buyers like <a href="/about">HomeBuyerBoise</a> regularly purchase properties with tax issues:</p>
+      <p>Cash buyers like <a href="/about">Home Buyer Boise</a> regularly purchase properties with tax issues:</p>
       <ul>
         <li>We can close quickly, often before tax situations escalate</li>
         <li>Taxes are paid from sale proceeds at closing</li>
@@ -9121,7 +9121,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Need to Sell Your Property?</h2>
 
-      <p>Don't let unpaid property taxes cost you your home. Whether you're a few months behind or facing a tax sale, there are solutions. At <a href="/about">HomeBuyerBoise</a>, we've helped many homeowners in tax-troubled situations sell their properties quickly and move forward.</p>
+      <p>Don't let unpaid property taxes cost you your home. Whether you're a few months behind or facing a tax sale, there are solutions. At <a href="/about">Home Buyer Boise</a>, we've helped many homeowners in tax-troubled situations sell their properties quickly and move forward.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your property, help you understand your tax situation, and show you how a quick sale can resolve your tax issues before they get worse. Time matters when dealing with property taxes—let's explore your options together.</p>
     `,
@@ -9151,10 +9151,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "title-issues-when-selling-house-boise",
     title: "Title Issues When Selling a House in Boise: Common Problems and Solutions",
-    seoTitle: "Title Issues Selling House Boise | Resolution Guide | HomeBuyerBoise",
+    seoTitle: "Title Issues Selling House Boise | Resolution Guide | Home Buyer Boise",
     metaDescription: "Learn about common title issues that can delay or prevent your Boise home sale. Understand liens, encumbrances, boundary disputes, and how to resolve title problems.",
     excerpt: "Title issues can derail your home sale at the worst possible moment. This comprehensive guide explains common title problems in Idaho, how they're discovered, and strategies for resolution.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["title issues", "title search", "clear title", "liens", "encumbrances", "boise real estate"],
     publishedAt: "2024-10-17T08:00:00.000Z",
@@ -9394,7 +9394,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Working with Cash Buyers on Title Issues</h2>
 
       <h3>Why Cash Buyers Navigate Title Issues More Easily</h3>
-      <p>Professional cash buyers like <a href="/about">HomeBuyerBoise</a> have advantages when dealing with title issues:</p>
+      <p>Professional cash buyers like <a href="/about">Home Buyer Boise</a> have advantages when dealing with title issues:</p>
 
       <p><strong>Experience:</strong> We regularly handle properties with title complications and know how to navigate them.</p>
 
@@ -9435,7 +9435,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Sell Despite Title Concerns?</h2>
 
-      <p>Don't let title worries prevent you from exploring your options. At <a href="/about">HomeBuyerBoise</a>, we're experienced with all types of title situations and can help you understand what you're dealing with and how to move forward.</p>
+      <p>Don't let title worries prevent you from exploring your options. At <a href="/about">Home Buyer Boise</a>, we're experienced with all types of title situations and can help you understand what you're dealing with and how to move forward.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll research your property's title situation and explain what would be needed to sell. Even complex title issues usually have solutions—let us help you find yours.</p>
     `,
@@ -9465,10 +9465,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-in-probate-boise",
     title: "Selling a House in Probate in Boise: Idaho Probate Process and Timeline",
-    seoTitle: "Selling House in Probate Boise | Idaho Probate Guide | HomeBuyerBoise",
+    seoTitle: "Selling House in Probate Boise | Idaho Probate Guide | Home Buyer Boise",
     metaDescription: "Learn how to sell a house during Idaho probate. Understand court requirements, timelines, and options for personal representatives selling estate property in Boise.",
     excerpt: "Navigating the sale of a house through probate can be overwhelming. This guide explains the Idaho probate process, court requirements for selling estate property, and how to streamline the sale.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["probate", "estate sale", "inherited property", "personal representative", "boise real estate"],
     publishedAt: "2024-10-19T08:00:00.000Z",
@@ -9683,7 +9683,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Why Cash Buyers Work Well for Probate Sales</h2>
 
       <h3>Speed</h3>
-      <p>Cash buyers like <a href="/about">HomeBuyerBoise</a> can close quickly, which is crucial when:</p>
+      <p>Cash buyers like <a href="/about">Home Buyer Boise</a> can close quickly, which is crucial when:</p>
       <ul>
         <li>Estate needs funds to pay debts</li>
         <li>Carrying costs are depleting the estate</li>
@@ -9801,7 +9801,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Sell an Estate Property?</h2>
 
-      <p>Serving as personal representative is a significant responsibility, and selling estate property adds complexity to an already challenging time. At <a href="/about">HomeBuyerBoise</a>, we've helped many personal representatives sell probate properties quickly and efficiently.</p>
+      <p>Serving as personal representative is a significant responsibility, and selling estate property adds complexity to an already challenging time. At <a href="/about">Home Buyer Boise</a>, we've helped many personal representatives sell probate properties quickly and efficiently.</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We understand probate requirements and can work within your timeline and constraints. Whether you need a fast sale to pay estate debts or simply want to minimize the burden of managing a property from afar, we're here to help you fulfill your duties as personal representative.</p>
     `,
@@ -9834,10 +9834,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "best-time-to-sell-house-boise",
     title: "Best Time to Sell a House in Boise: Seasonal Trends & Market Timing Guide",
-    seoTitle: "Best Time to Sell a House in Boise | 2024 Seasonal Guide | HomeBuyerBoise",
+    seoTitle: "Best Time to Sell a House in Boise | 2024 Seasonal Guide | Home Buyer Boise",
     metaDescription: "Discover the best time to sell your house in Boise. Learn about seasonal trends, Idaho-specific market factors, and when you'll get the highest price for your home.",
     excerpt: "Timing can significantly impact your home sale. Learn when Boise homes sell fastest, which seasons bring the best prices, and how Idaho's unique market affects your selling strategy.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["best time to sell", "boise real estate", "market timing", "seasonal trends", "idaho housing market"],
     publishedAt: "2024-09-01T08:00:00.000Z",
@@ -10025,7 +10025,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>When Cash Sales Make Sense</h3>
-      <p>If your circumstances require a quick sale, working with a cash buyer like <a href="/about">HomeBuyerBoise</a> eliminates timing concerns entirely. Cash sales can close in as little as 7-14 days regardless of season or market conditions.</p>
+      <p>If your circumstances require a quick sale, working with a cash buyer like <a href="/about">Home Buyer Boise</a> eliminates timing concerns entirely. Cash sales can close in as little as 7-14 days regardless of season or market conditions.</p>
 
       <p>The tradeoff is accepting a price below retail market value. However, when you factor in months of carrying costs, repair expenses, and the uncertainty of traditional sales, a cash offer often nets a similar amount—with guaranteed closing.</p>
 
@@ -10052,7 +10052,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get a Cash Offer Regardless of Season</h2>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we buy houses throughout the Treasure Valley in any season. Whether it's the peak of spring or the depths of winter, our cash offers remain competitive and our closing timeline stays fast.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we buy houses throughout the Treasure Valley in any season. Whether it's the peak of spring or the depths of winter, our cash offers remain competitive and our closing timeline stays fast.</p>
 
       <p><a href="/get-quote">Request your free cash offer</a> today. We'll provide a fair, no-obligation offer within 24 hours, and you can close on your timeline—whether that's next week or next month. When life doesn't wait for the "right" season, neither should you.</p>
     `,
@@ -10063,7 +10063,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Is winter a bad time to sell a house in Boise?",
-        answer: "Winter is traditionally the slowest season for real estate in Boise, but motivated buyers remain active. If you need to sell in winter, price competitively and make your home warm and inviting. Alternatively, cash buyers like HomeBuyerBoise purchase homes year-round at fair prices."
+        answer: "Winter is traditionally the slowest season for real estate in Boise, but motivated buyers remain active. If you need to sell in winter, price competitively and make your home warm and inviting. Alternatively, cash buyers like Home Buyer Boise purchase homes year-round at fair prices."
       },
       {
         question: "How does Boise's weather affect home selling?",
@@ -10082,10 +10082,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "how-long-to-close-on-house-boise",
     title: "How Long Does It Take to Close on a House in Boise? Complete Timeline Guide",
-    seoTitle: "How Long to Close on a House in Boise | Timeline Guide | HomeBuyerBoise",
+    seoTitle: "How Long to Close on a House in Boise | Timeline Guide | Home Buyer Boise",
     metaDescription: "Learn how long it takes to close on a house sale in Boise. Understand traditional vs. cash closing timelines, factors that cause delays, and how to speed up your sale.",
     excerpt: "Closing timelines in Boise vary dramatically depending on your sale type. Learn what affects your timeline and how to close faster when time matters.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["closing timeline", "home sale process", "boise real estate", "how long to close", "cash closing"],
     publishedAt: "2024-09-03T08:00:00.000Z",
@@ -10169,7 +10169,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Cash Sale Closing Timeline: 7-21 Days</h2>
 
-      <p>Selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> dramatically shortens the closing timeline. Here's why cash sales are so much faster:</p>
+      <p>Selling to a cash buyer like <a href="/about">Home Buyer Boise</a> dramatically shortens the closing timeline. Here's why cash sales are so much faster:</p>
 
       <h3>No Financing Contingency</h3>
       <p>The single biggest time-saver in a cash sale is eliminating mortgage financing. No loan application, no underwriting, no appraisal requirements, no last-minute financing failures. We have the funds available and ready.</p>
@@ -10280,7 +10280,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your Fast Cash Offer Today</h2>
 
-      <p>At <a href="/about">HomeBuyerBoise</a>, we specialize in fast, certain closings. Our typical timeline:</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we specialize in fast, certain closings. Our typical timeline:</p>
 
       <ul>
         <li><strong>24 hours:</strong> Receive your fair cash offer</li>
@@ -10293,7 +10293,7 @@ export const BLOG_POSTS: BlogPostData[] = [
     faqs: [
       {
         question: "What is the fastest you can close on a house in Boise?",
-        answer: "Cash sales can close in as little as 7 days once title is clear. Traditional sales with financing typically require 30-45 days minimum due to lender requirements. HomeBuyerBoise can often close within 10-14 days."
+        answer: "Cash sales can close in as little as 7 days once title is clear. Traditional sales with financing typically require 30-45 days minimum due to lender requirements. Home Buyer Boise can often close within 10-14 days."
       },
       {
         question: "Why do mortgage closings take 30-45 days?",
@@ -10316,10 +10316,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "what-happens-at-closing-boise",
     title: "What Happens at Closing When Selling a House in Boise: Seller's Complete Guide",
-    seoTitle: "What Happens at Closing Boise | Home Seller's Guide | HomeBuyerBoise",
+    seoTitle: "What Happens at Closing Boise | Home Seller's Guide | Home Buyer Boise",
     metaDescription: "Learn exactly what happens at closing when selling your Boise house. Step-by-step guide to closing day documents, costs, and what sellers need to know.",
     excerpt: "Closing day can feel overwhelming if you don't know what to expect. This guide walks Boise home sellers through every step of the closing process.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["closing process", "home closing", "boise real estate", "selling house", "closing costs"],
     publishedAt: "2024-09-05T08:00:00.000Z",
@@ -10477,7 +10477,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Closing with a Cash Buyer: The Simpler Alternative</h2>
 
-      <p>When you sell to a cash buyer like <a href="/about">HomeBuyerBoise</a>, closing is significantly simpler:</p>
+      <p>When you sell to a cash buyer like <a href="/about">Home Buyer Boise</a>, closing is significantly simpler:</p>
 
       <ul>
         <li><strong>Fewer documents:</strong> No mortgage paperwork means less to review and sign</li>
@@ -10491,7 +10491,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready for a Hassle-Free Closing?</h2>
 
-      <p><a href="/get-quote">Request your free cash offer</a> from HomeBuyerBoise today. We'll explain exactly what to expect, answer all your questions, and help you close on your timeline. No agents, no commissions, no complicated financing—just a straightforward sale with cash in your pocket at closing.</p>
+      <p><a href="/get-quote">Request your free cash offer</a> from Home Buyer Boise today. We'll explain exactly what to expect, answer all your questions, and help you close on your timeline. No agents, no commissions, no complicated financing—just a straightforward sale with cash in your pocket at closing.</p>
     `,
     faqs: [
       {
@@ -10519,10 +10519,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "preparing-house-for-sale-boise",
     title: "Preparing Your House for Sale in Boise: Complete Seller's Checklist",
-    seoTitle: "Preparing House for Sale Boise | Seller's Checklist | HomeBuyerBoise",
+    seoTitle: "Preparing House for Sale Boise | Seller's Checklist | Home Buyer Boise",
     metaDescription: "Get your Boise house ready to sell with this comprehensive preparation checklist. Learn staging tips, curb appeal improvements, and what buyers expect in Idaho.",
     excerpt: "A well-prepared home sells faster and for more money. Use this complete checklist to get your Boise house ready for buyers—or learn when selling as-is makes more sense.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["preparing to sell", "home staging", "curb appeal", "boise real estate", "selling checklist"],
     publishedAt: "2024-09-07T08:00:00.000Z",
@@ -10783,7 +10783,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>The As-Is Alternative</h3>
-      <p>When you sell to <a href="/about">HomeBuyerBoise</a>, none of this preparation is necessary:</p>
+      <p>When you sell to <a href="/about">Home Buyer Boise</a>, none of this preparation is necessary:</p>
       <ul>
         <li>No cleaning required—we buy in any condition</li>
         <li>No repairs needed—we handle everything</li>
@@ -10796,7 +10796,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your Free Cash Offer</h2>
 
-      <p>Not sure if you should prepare your home for a traditional sale or sell as-is? <a href="/get-quote">Request a free cash offer</a> from HomeBuyerBoise. We'll provide a fair offer based on your home's current condition—no preparation required. Compare your options and decide what's best for your situation. There's no obligation, and you might be surprised at what we offer.</p>
+      <p>Not sure if you should prepare your home for a traditional sale or sell as-is? <a href="/get-quote">Request a free cash offer</a> from Home Buyer Boise. We'll provide a fair offer based on your home's current condition—no preparation required. Compare your options and decide what's best for your situation. There's no obligation, and you might be surprised at what we offer.</p>
     `,
     faqs: [
       {
@@ -10817,17 +10817,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I sell my house without making any repairs in Boise?",
-        answer: "Yes, you can sell as-is to cash buyers like HomeBuyerBoise. We purchase homes in any condition, handling all repairs ourselves after closing. This eliminates preparation stress and costs, though cash offers are typically below retail market value."
+        answer: "Yes, you can sell as-is to cash buyers like Home Buyer Boise. We purchase homes in any condition, handling all repairs ourselves after closing. This eliminates preparation stress and costs, though cash offers are typically below retail market value."
       }
     ]
   },
   {
     slug: "home-inspection-before-selling-boise",
     title: "Home Inspection Before Selling in Boise: Should You Get a Pre-Listing Inspection?",
-    seoTitle: "Home Inspection Before Selling Boise | Pre-Listing Inspection Guide | HomeBuyerBoise",
+    seoTitle: "Home Inspection Before Selling Boise | Pre-Listing Inspection Guide | Home Buyer Boise",
     metaDescription: "Learn whether a pre-listing home inspection is worth it before selling your Boise house. Understand costs, benefits, and common issues found in Idaho homes.",
     excerpt: "A pre-listing home inspection can help or hurt your sale. Learn when it makes sense for Boise sellers and what inspectors typically find in Treasure Valley homes.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["home inspection", "pre-listing inspection", "boise real estate", "selling house", "property condition"],
     publishedAt: "2024-09-09T08:00:00.000Z",
@@ -10964,7 +10964,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you've been maintaining the property, know its condition, and have addressed issues as they arose, you may not need a formal inspection to confirm what you already know.</p>
 
       <h3>You're Selling As-Is</h3>
-      <p>If you plan to sell as-is (not making repairs regardless of what's found), a pre-listing inspection may just add costs without changing your approach. Cash buyers like <a href="/about">HomeBuyerBoise</a> don't require inspections because we buy properties in any condition.</p>
+      <p>If you plan to sell as-is (not making repairs regardless of what's found), a pre-listing inspection may just add costs without changing your approach. Cash buyers like <a href="/about">Home Buyer Boise</a> don't require inspections because we buy properties in any condition.</p>
 
       <h3>Budget Constraints</h3>
       <p>If paying for an inspection means you can't afford to address what it finds, the exercise may create stress without benefit.</p>
@@ -10996,7 +10996,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Disclose known issues, price fairly, and be ready to negotiate repair credits. This transparent approach often works well because buyers appreciate honesty.</p>
 
       <h3>Option 4: Sell to a Cash Buyer</h3>
-      <p>If inspection results reveal significant issues you can't or don't want to address, selling to a cash buyer eliminates the problem. At HomeBuyerBoise, we:</p>
+      <p>If inspection results reveal significant issues you can't or don't want to address, selling to a cash buyer eliminates the problem. At Home Buyer Boise, we:</p>
       <ul>
         <li>Buy homes in any condition</li>
         <li>Don't require inspections</li>
@@ -11027,7 +11027,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>If inspection anxiety is keeping you from selling, or if you know your home has issues you can't afford to fix, consider a cash sale instead.</p>
 
-      <p><a href="/get-quote">Request a free cash offer</a> from HomeBuyerBoise. We'll evaluate your property, make a fair offer based on current condition, and close on your timeline—typically within 7-14 days. No inspections, no negotiations over repairs, no uncertainty. Just a straightforward sale with cash at closing.</p>
+      <p><a href="/get-quote">Request a free cash offer</a> from Home Buyer Boise. We'll evaluate your property, make a fair offer based on current condition, and close on your timeline—typically within 7-14 days. No inspections, no negotiations over repairs, no uncertainty. Just a straightforward sale with cash at closing.</p>
     `,
     faqs: [
       {
@@ -11048,17 +11048,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Can I sell my house without an inspection in Boise?",
-        answer: "You're not legally required to have a pre-listing inspection, and you can sell as-is without addressing buyer inspection concerns. Cash buyers like HomeBuyerBoise purchase homes without requiring inspections, buying in any condition."
+        answer: "You're not legally required to have a pre-listing inspection, and you can sell as-is without addressing buyer inspection concerns. Cash buyers like Home Buyer Boise purchase homes without requiring inspections, buying in any condition."
       }
     ]
   },
   {
     slug: "steps-to-sell-house-boise",
     title: "Steps to Sell Your House in Boise: Complete Guide from Start to Close",
-    seoTitle: "Steps to Sell Your House in Boise | Complete Selling Guide | HomeBuyerBoise",
+    seoTitle: "Steps to Sell Your House in Boise | Complete Selling Guide | Home Buyer Boise",
     metaDescription: "Learn every step to sell your house in Boise from preparation to closing. Complete guide covering pricing, listing, showings, offers, and closing the sale.",
     excerpt: "Selling a house involves many steps. This comprehensive guide walks Boise homeowners through the entire process, from deciding to sell through receiving your closing funds.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["how to sell house", "selling steps", "boise real estate", "home selling process", "selling guide"],
     publishedAt: "2024-09-11T08:00:00.000Z",
@@ -11107,7 +11107,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p><strong>Professional Appraisal:</strong> For $400-$600, an appraiser provides an independent value opinion. This is more accurate but costs money.</p>
 
-      <p><strong>Cash Buyer Offer:</strong> <a href="/get-quote">Request a cash offer</a> from HomeBuyerBoise. Our offer reflects what investors pay for homes—a useful data point even if you list traditionally.</p>
+      <p><strong>Cash Buyer Offer:</strong> <a href="/get-quote">Request a cash offer</a> from Home Buyer Boise. Our offer reflects what investors pay for homes—a useful data point even if you list traditionally.</p>
 
       <h3>Consider Your Position</h3>
       <ul>
@@ -11331,7 +11331,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Whether you choose a traditional sale or prefer the speed and simplicity of a cash offer, understanding your options empowers you to make the best decision.</p>
 
-      <p><a href="/get-quote">Get your free cash offer</a> from HomeBuyerBoise to see what we'd pay for your home. Compare it to what you might net from a traditional sale after costs, and choose the path that works best for your situation.</p>
+      <p><a href="/get-quote">Get your free cash offer</a> from Home Buyer Boise to see what we'd pay for your home. Compare it to what you might net from a traditional sale after costs, and choose the path that works best for your situation.</p>
     `,
     faqs: [
       {
@@ -11359,10 +11359,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-quickly-boise",
     title: "Selling Your House Quickly in Boise: Speed Strategies That Actually Work",
-    seoTitle: "Selling House Quickly Boise | Fast Sale Strategies | HomeBuyerBoise",
+    seoTitle: "Selling House Quickly Boise | Fast Sale Strategies | Home Buyer Boise",
     metaDescription: "Need to sell your Boise house quickly? Learn proven strategies to speed up your sale, compare timeline options, and discover how cash buyers close in 7-14 days.",
     excerpt: "When time is critical, you need a sale strategy that works fast. Compare your options for selling quickly in Boise and learn which approach fits your timeline.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["sell house fast", "quick sale", "boise real estate", "cash buyer", "fast closing"],
     publishedAt: "2024-09-13T08:00:00.000Z",
@@ -11497,7 +11497,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Strategy 5: Local Cash Home Buyer</h2>
 
       <h3>How It Works</h3>
-      <p>Local investors like <a href="/about">HomeBuyerBoise</a> purchase homes directly for cash. We buy in any condition, handle all paperwork, and close on your timeline.</p>
+      <p>Local investors like <a href="/about">Home Buyer Boise</a> purchase homes directly for cash. We buy in any condition, handle all paperwork, and close on your timeline.</p>
 
       <h3>The Process</h3>
       <ol>
@@ -11603,18 +11603,18 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Doesn't use a legitimate title company</li>
       </ul>
 
-      <p>Legitimate buyers like HomeBuyerBoise have verifiable track records, never charge fees, use licensed title companies, and welcome your questions.</p>
+      <p>Legitimate buyers like Home Buyer Boise have verifiable track records, never charge fees, use licensed title companies, and welcome your questions.</p>
 
       <h2>Get Your Fast Cash Offer Today</h2>
 
-      <p>If speed matters for your sale, <a href="/get-quote">request your free cash offer</a> from HomeBuyerBoise. Within 24 hours, you'll know exactly what we'll pay for your home—regardless of condition.</p>
+      <p>If speed matters for your sale, <a href="/get-quote">request your free cash offer</a> from Home Buyer Boise. Within 24 hours, you'll know exactly what we'll pay for your home—regardless of condition.</p>
 
       <p>Compare our offer to your other options and decide what's best for your situation. There's no obligation, no pressure, and no cost to find out. When you're ready to move forward, we can close in as little as 7 days.</p>
     `,
     faqs: [
       {
         question: "What's the fastest way to sell a house in Boise?",
-        answer: "Selling to a cash home buyer like HomeBuyerBoise is the fastest option, with closings possible in 7-14 days. Traditional sales take 60-180 days even when aggressively priced. If speed is your priority, cash buyers offer the fastest path."
+        answer: "Selling to a cash home buyer like Home Buyer Boise is the fastest option, with closings possible in 7-14 days. Traditional sales take 60-180 days even when aggressively priced. If speed is your priority, cash buyers offer the fastest path."
       },
       {
         question: "Can I sell my house in 30 days in Boise?",
@@ -11630,17 +11630,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Do I need to clean or repair my house for a fast sale?",
-        answer: "Not when selling to a cash buyer like HomeBuyerBoise. We buy houses in any condition—dirty, damaged, outdated, or pristine. Traditional fast sales still require preparation to attract retail buyers."
+        answer: "Not when selling to a cash buyer like Home Buyer Boise. We buy houses in any condition—dirty, damaged, outdated, or pristine. Traditional fast sales still require preparation to attract retail buyers."
       }
     ]
   },
   {
     slug: "house-not-selling-boise-what-to-do",
     title: "House Not Selling in Boise? Here's What to Do When Your Listing Goes Stale",
-    seoTitle: "House Not Selling in Boise | What to Do Next | HomeBuyerBoise",
+    seoTitle: "House Not Selling in Boise | What to Do Next | Home Buyer Boise",
     metaDescription: "Is your Boise house sitting on the market with no offers? Learn why homes don't sell, how to fix common problems, and alternatives when traditional selling isn't working.",
     excerpt: "A stale listing can be frustrating and costly. Discover why Boise homes fail to sell and what options you have when your house won't move.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["house not selling", "stale listing", "boise real estate", "price reduction", "selling alternatives"],
     publishedAt: "2024-09-15T08:00:00.000Z",
@@ -11817,7 +11817,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Selling to a Cash Buyer</h3>
       <p>When traditional selling fails, cash buyers offer a way out:</p>
 
-      <p><a href="/about">HomeBuyerBoise</a> purchases homes that won't sell on the open market. We buy:</p>
+      <p><a href="/about">Home Buyer Boise</a> purchases homes that won't sell on the open market. We buy:</p>
       <ul>
         <li>Homes that need repairs you can't afford</li>
         <li>Properties with condition issues that scare retail buyers</li>
@@ -11871,7 +11871,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're tired of waiting and ready to explore alternatives:</p>
 
       <ol>
-        <li><a href="/get-quote">Request your free cash offer</a> from HomeBuyerBoise</li>
+        <li><a href="/get-quote">Request your free cash offer</a> from Home Buyer Boise</li>
         <li>We'll evaluate your property and provide an offer within 24 hours</li>
         <li>Compare our offer to your current situation and future projections</li>
         <li>Decide what's best for you—no pressure, no obligation</li>
@@ -11899,17 +11899,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Will a cash buyer purchase my house that won't sell?",
-        answer: "Yes. Cash buyers like HomeBuyerBoise specialize in properties that struggle on the open market. We buy homes in any condition, regardless of how long they've been listed or why they haven't sold. We make our own assessment and offer based on the property's potential."
+        answer: "Yes. Cash buyers like Home Buyer Boise specialize in properties that struggle on the open market. We buy homes in any condition, regardless of how long they've been listed or why they haven't sold. We make our own assessment and offer based on the property's potential."
       }
     ]
   },
   {
     slug: "accepting-cash-offer-on-house-boise",
     title: "Accepting a Cash Offer on Your Boise House: What You Need to Know",
-    seoTitle: "Accepting Cash Offer on House Boise | Complete Guide | HomeBuyerBoise",
+    seoTitle: "Accepting Cash Offer on House Boise | Complete Guide | Home Buyer Boise",
     metaDescription: "Considering a cash offer on your Boise house? Learn how to evaluate cash offers, compare to financed offers, and understand the pros and cons of selling for cash.",
     excerpt: "Cash offers are becoming more common in Boise. Learn how to evaluate them, what makes them different from financed offers, and when accepting cash is the smart choice.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash offer", "selling house", "boise real estate", "cash buyer", "home sale"],
     publishedAt: "2024-09-17T08:00:00.000Z",
@@ -11917,7 +11917,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Cash Offers in Real Estate</h2>
       <p>A cash offer means the buyer has funds available to purchase your home without needing a mortgage. This fundamentally changes the transaction—eliminating lender requirements, appraisals (as a contingency), and financing delays.</p>
 
-      <p>In the <a href="/areas/boise">Boise</a> market, cash offers come from various sources: investors like <a href="/about">HomeBuyerBoise</a>, wealthy individuals, buyers using equity from a previous home sale, or iBuyer companies. Understanding what makes a cash offer valuable helps you evaluate whether to accept one.</p>
+      <p>In the <a href="/areas/boise">Boise</a> market, cash offers come from various sources: investors like <a href="/about">Home Buyer Boise</a>, wealthy individuals, buyers using equity from a previous home sale, or iBuyer companies. Understanding what makes a cash offer valuable helps you evaluate whether to accept one.</p>
 
       <h2>Cash Offers vs. Financed Offers: Key Differences</h2>
 
@@ -12052,7 +12052,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Types of Cash Buyers in Boise</h2>
 
       <h3>Local Real Estate Investors</h3>
-      <p>Companies like <a href="/about">HomeBuyerBoise</a> are local investors who purchase, renovate, and resell or rent properties. Benefits include:</p>
+      <p>Companies like <a href="/about">Home Buyer Boise</a> are local investors who purchase, renovate, and resell or rent properties. Benefits include:</p>
       <ul>
         <li>Local market knowledge</li>
         <li>Established reputation in the community</li>
@@ -12077,7 +12077,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Less predictable than professional buyers</li>
       </ul>
 
-      <h2>The Cash Offer Process with HomeBuyerBoise</h2>
+      <h2>The Cash Offer Process with Home Buyer Boise</h2>
 
       <h3>Step 1: Request Your Offer</h3>
       <p><a href="/get-quote">Complete our simple form</a> or call us. We'll ask basic questions about your property and situation.</p>
@@ -12112,7 +12112,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your Cash Offer Today</h2>
 
-      <p><a href="/get-quote">Request your free, no-obligation cash offer</a> from HomeBuyerBoise. See exactly what we'll pay for your home, compare it to your other options, and make the informed decision that's right for you.</p>
+      <p><a href="/get-quote">Request your free, no-obligation cash offer</a> from Home Buyer Boise. See exactly what we'll pay for your home, compare it to your other options, and make the informed decision that's right for you.</p>
 
       <p>We've helped hundreds of Treasure Valley homeowners sell quickly and move forward with their lives. Whether you accept our offer or choose another path, we're here to help you understand your options.</p>
     `,
@@ -12142,10 +12142,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "negotiating-house-sale-boise",
     title: "Negotiating Your House Sale in Boise: Strategies for Sellers",
-    seoTitle: "Negotiating House Sale Boise | Seller Strategies | HomeBuyerBoise",
+    seoTitle: "Negotiating House Sale Boise | Seller Strategies | Home Buyer Boise",
     metaDescription: "Master the art of negotiating your Boise home sale. Learn counteroffer strategies, when to hold firm, when to compromise, and how to maximize your sale price.",
     excerpt: "Negotiation skills can mean thousands of dollars in your pocket. Learn proven strategies for negotiating offers, counteroffers, and inspection requests on your Boise home sale.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["negotiating home sale", "counteroffer strategies", "boise real estate", "selling house", "real estate negotiation"],
     publishedAt: "2024-09-19T08:00:00.000Z",
@@ -12365,7 +12365,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>When Not to Negotiate: Cash Buyer Alternative</h2>
 
-      <p>Traditional negotiations can be stressful and time-consuming. If you'd rather avoid the back-and-forth entirely, selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> offers a different experience:</p>
+      <p>Traditional negotiations can be stressful and time-consuming. If you'd rather avoid the back-and-forth entirely, selling to a cash buyer like <a href="/about">Home Buyer Boise</a> offers a different experience:</p>
 
       <ul>
         <li>Our offer is our offer—no extended negotiations</li>
@@ -12379,7 +12379,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Your No-Negotiation Cash Offer</h2>
 
-      <p><a href="/get-quote">Request your free cash offer</a> from HomeBuyerBoise today. We'll provide a straightforward offer with no negotiation games. Accept it or don't—the choice is yours with no pressure. Some sellers prefer the certainty of a clean cash deal over the stress of extended negotiations.</p>
+      <p><a href="/get-quote">Request your free cash offer</a> from Home Buyer Boise today. We'll provide a straightforward offer with no negotiation games. Accept it or don't—the choice is yours with no pressure. Some sellers prefer the certainty of a clean cash deal over the stress of extended negotiations.</p>
     `,
     faqs: [
       {
@@ -12400,7 +12400,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How can I avoid negotiation stress when selling my house?",
-        answer: "Selling to a cash buyer like HomeBuyerBoise eliminates most negotiation. Our offer is straightforward with no inspection or appraisal contingencies. You know exactly what you're getting with no back-and-forth negotiations that can drag on for weeks."
+        answer: "Selling to a cash buyer like Home Buyer Boise eliminates most negotiation. Our offer is straightforward with no inspection or appraisal contingencies. You know exactly what you're getting with no back-and-forth negotiations that can drag on for weeks."
       }
     ]
   },
@@ -12410,10 +12410,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "cash-home-buyers-vs-realtors-boise",
     title: "Cash Home Buyers vs. Realtors in Boise: Which Option Is Right for You?",
-    seoTitle: "Cash Home Buyers vs Realtors Boise | Comparison Guide | HomeBuyerBoise",
+    seoTitle: "Cash Home Buyers vs Realtors Boise | Comparison Guide | Home Buyer Boise",
     metaDescription: "Comparing cash home buyers vs realtors in Boise? Discover when each selling option makes sense, true costs, timelines, and which approach fits your situation.",
     excerpt: "Not sure whether to sell to a cash buyer or list with a realtor in Boise? This comprehensive comparison breaks down both options honestly so you can make the best decision for your unique situation.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash buyers vs realtors", "boise real estate", "selling options", "home selling comparison", "idaho homes"],
     publishedAt: "2024-08-15T08:00:00.000Z",
@@ -12421,7 +12421,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>The Two Main Paths to Selling Your Boise Home</h2>
       <p>When you decide to sell your Boise home, you essentially have two primary paths: listing with a real estate agent or selling directly to a cash home buyer. Both options have their place, and the right choice depends entirely on your specific circumstances, timeline, and priorities.</p>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we believe in transparency. While we're a cash home buying company, we also recognize that our service isn't the best fit for everyone. This guide provides an honest comparison so you can make an informed decision about which path makes sense for your situation.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we believe in transparency. While we're a cash home buying company, we also recognize that our service isn't the best fit for everyone. This guide provides an honest comparison so you can make an informed decision about which path makes sense for your situation.</p>
 
       <h2>Understanding the Traditional Realtor Route</h2>
 
@@ -12463,7 +12463,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding the Cash Buyer Option</h2>
 
       <h3>How Selling to a Cash Buyer Works</h3>
-      <p>When you sell to a cash home buyer like <a href="/about">HomeBuyerBoise</a>, you bypass the traditional market entirely. We evaluate your property, make a cash offer based on current condition, and can close as soon as title work is complete—often within 7-14 days.</p>
+      <p>When you sell to a cash home buyer like <a href="/about">Home Buyer Boise</a>, you bypass the traditional market entirely. We evaluate your property, make a cash offer based on current condition, and can close as soon as title work is complete—often within 7-14 days.</p>
 
       <p>The process is straightforward:</p>
       <ul>
@@ -12546,7 +12546,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p><strong>Cash Sale Scenario:</strong></p>
       <ul>
-        <li>Cash offer from HomeBuyerBoise: $340,000</li>
+        <li>Cash offer from Home Buyer Boise: $340,000</li>
         <li>Pre-sale repairs: $0</li>
         <li>Agent commissions: $0</li>
         <li>Seller closing costs: $0 (we pay them)</li>
@@ -12575,7 +12575,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>How to Choose Between Options</h2>
 
       <h3>Get Both Numbers First</h3>
-      <p>You don't have to guess. Get a cash offer from HomeBuyerBoise with no obligation. Simultaneously, consult with a local realtor about what your home might sell for on the open market and what it would cost to prepare.</p>
+      <p>You don't have to guess. Get a cash offer from Home Buyer Boise with no obligation. Simultaneously, consult with a local realtor about what your home might sell for on the open market and what it would cost to prepare.</p>
 
       <p>With both numbers in hand, you can make an informed decision based on facts rather than assumptions.</p>
 
@@ -12613,11 +12613,11 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Neither option is universally better—the right choice depends on your situation. A move-in ready home with a flexible timeline and a seller who can handle the traditional process will likely net more through a realtor. A home needing work, a seller facing time pressure, or someone who values certainty and simplicity may find a cash sale is the smarter choice.</p>
 
-      <p>The worst decision is making assumptions without getting real numbers. <a href="/get-quote">Request your free cash offer</a> from HomeBuyerBoise today—there's no obligation, and having a concrete number helps you evaluate all your options accurately.</p>
+      <p>The worst decision is making assumptions without getting real numbers. <a href="/get-quote">Request your free cash offer</a> from Home Buyer Boise today—there's no obligation, and having a concrete number helps you evaluate all your options accurately.</p>
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>Whether you decide to list with an agent or sell to us directly, we want you to make the best decision for your situation. Contact HomeBuyerBoise for a free, no-obligation cash offer. We'll provide honest guidance about whether our service makes sense for your circumstances—even if that means recommending you list with an agent instead.</p>
+      <p>Whether you decide to list with an agent or sell to us directly, we want you to make the best decision for your situation. Contact Home Buyer Boise for a free, no-obligation cash offer. We'll provide honest guidance about whether our service makes sense for your circumstances—even if that means recommending you list with an agent instead.</p>
     `,
     faqs: [
       {
@@ -12626,7 +12626,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How do I know if a cash buyer is legitimate?",
-        answer: "Legitimate cash buyers like HomeBuyerBoise have verifiable track records, provide references from past sellers, use licensed title companies for closings, never ask for money upfront, and don't pressure you to sign immediately. Check reviews, ask for proof of funds, and verify they're actually closing transactions in your area."
+        answer: "Legitimate cash buyers like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, never ask for money upfront, and don't pressure you to sign immediately. Check reviews, ask for proof of funds, and verify they're actually closing transactions in your area."
       },
       {
         question: "Can I list with a realtor and still get a cash offer?",
@@ -12638,17 +12638,17 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How quickly can I actually close with a cash buyer?",
-        answer: "With HomeBuyerBoise, we can close in as little as 7 days if you need to move fast. Most closings take 10-14 days to allow for title work. However, we're flexible—if you need 30 days or more to arrange your move, that works too. You choose the closing date."
+        answer: "With Home Buyer Boise, we can close in as little as 7 days if you need to move fast. Most closings take 10-14 days to allow for title work. However, we're flexible—if you need 30 days or more to arrange your move, that works too. You choose the closing date."
       }
     ]
   },
   {
     slug: "selling-house-meridian-idaho",
     title: "Selling Your House in Meridian, Idaho: Complete 2024 Market Guide",
-    seoTitle: "Sell House Meridian Idaho | 2024 Market Guide | HomeBuyerBoise",
+    seoTitle: "Sell House Meridian Idaho | 2024 Market Guide | Home Buyer Boise",
     metaDescription: "Selling a house in Meridian, Idaho? Get insider knowledge on Meridian neighborhoods, home values, market trends, and how to sell fast for cash in Idaho's fastest-growing city.",
     excerpt: "Meridian is Idaho's fastest-growing city with unique real estate dynamics. This comprehensive guide covers everything you need to know about selling your Meridian home, from neighborhood trends to fast cash sale options.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["meridian idaho", "sell house meridian", "meridian real estate", "treasure valley", "idaho homes"],
     publishedAt: "2024-08-17T08:00:00.000Z",
@@ -12729,7 +12729,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p><strong>Timeline:</strong> Variable—depends on seller's marketing effectiveness</p>
       <p><strong>Costs:</strong> Lower commissions but potential for pricing mistakes and legal risks</p>
 
-      <h3>Cash Sale to HomeBuyerBoise</h3>
+      <h3>Cash Sale to Home Buyer Boise</h3>
       <p>When speed, certainty, or convenience matter more than maximizing price, our <a href="/areas/meridian">Meridian cash buying service</a> offers a streamlined alternative. We buy homes throughout Meridian regardless of condition and can close in as little as 7 days.</p>
 
       <p><strong>Best for:</strong> Properties needing work, urgent timelines, sellers avoiding hassle</p>
@@ -12768,7 +12768,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>If Selling for Cash</h3>
-      <p>When selling to <a href="/about">HomeBuyerBoise</a>, no preparation is necessary. We buy your home as-is—no repairs, no cleaning, no staging. This saves both time and money while eliminating the stress of pre-sale preparation.</p>
+      <p>When selling to <a href="/about">Home Buyer Boise</a>, no preparation is necessary. We buy your home as-is—no repairs, no cleaning, no staging. This saves both time and money while eliminating the stress of pre-sale preparation.</p>
 
       <h2>Common Meridian Selling Scenarios</h2>
 
@@ -12794,7 +12794,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>If your home is in a highly-rated school zone, this is a major selling point worth emphasizing in any sale approach. Conversely, if you're in a less desirable school zone, pricing accordingly is important.</p>
 
-      <h2>Working with HomeBuyerBoise in Meridian</h2>
+      <h2>Working with Home Buyer Boise in Meridian</h2>
 
       <p>We've purchased dozens of homes throughout Meridian, from original downtown properties to newer subdivision homes. Our team knows Meridian's neighborhoods, values, and market dynamics intimately.</p>
 
@@ -12839,10 +12839,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-eagle-idaho",
     title: "Selling Your House in Eagle, Idaho: Luxury Market & Horse Property Guide",
-    seoTitle: "Sell House Eagle Idaho | Luxury & Horse Property Guide | HomeBuyerBoise",
+    seoTitle: "Sell House Eagle Idaho | Luxury & Horse Property Guide | Home Buyer Boise",
     metaDescription: "Selling a house in Eagle, Idaho? Expert guide to Eagle's luxury market, horse properties, acreage sales, and fast cash options for upscale Treasure Valley homes.",
     excerpt: "Eagle represents the Treasure Valley's premium real estate market with luxury homes, horse properties, and expansive estates. This guide covers everything Eagle homeowners need to know about selling in this unique market.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["eagle idaho", "sell house eagle", "luxury homes idaho", "horse property", "treasure valley"],
     publishedAt: "2024-08-19T08:00:00.000Z",
@@ -12924,7 +12924,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li><strong>Relocation:</strong> Job moves don't wait for luxury market timelines</li>
       </ul>
 
-      <p><a href="/about">HomeBuyerBoise</a> purchases properties throughout the price spectrum, including Eagle's luxury market. Our cash offer provides a guaranteed alternative to uncertain luxury marketing.</p>
+      <p><a href="/about">Home Buyer Boise</a> purchases properties throughout the price spectrum, including Eagle's luxury market. Our cash offer provides a guaranteed alternative to uncertain luxury marketing.</p>
 
       <h2>Selling Horse Properties in Eagle</h2>
 
@@ -12987,7 +12987,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Water Rights</h3>
       <p>Irrigation water rights affect Eagle property values significantly. Properties with good water rights for landscaping, pastures, or crops are worth more than those without. Understand your property's water rights before pricing.</p>
 
-      <h2>Working with HomeBuyerBoise in Eagle</h2>
+      <h2>Working with Home Buyer Boise in Eagle</h2>
 
       <p>We understand Eagle's unique market position. When evaluating Eagle properties, we consider:</p>
       <ul>
@@ -13032,10 +13032,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-nampa-idaho",
     title: "Selling Your House in Nampa, Idaho: Canyon County Market Guide",
-    seoTitle: "Sell House Nampa Idaho | Canyon County Guide | HomeBuyerBoise",
+    seoTitle: "Sell House Nampa Idaho | Canyon County Guide | Home Buyer Boise",
     metaDescription: "Selling a house in Nampa, Idaho? Complete guide to Nampa's affordable market, Canyon County trends, neighborhood values, and fast cash sale options for Idaho homeowners.",
     excerpt: "Nampa offers the Treasure Valley's most accessible home prices while experiencing rapid growth. This comprehensive guide helps Nampa homeowners understand their market and explore all selling options.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["nampa idaho", "sell house nampa", "canyon county", "treasure valley", "idaho homes"],
     publishedAt: "2024-08-21T08:00:00.000Z",
@@ -13108,7 +13108,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p><strong>Typical timeline:</strong> 2-4 months</p>
       <p><strong>Costs:</strong> Commission (5-6%), closing costs (2-3%), repairs, staging</p>
 
-      <h3>Cash Sale to HomeBuyerBoise</h3>
+      <h3>Cash Sale to Home Buyer Boise</h3>
       <p>Our <a href="/areas/nampa">Nampa cash buying program</a> offers an alternative when traditional sales don't fit your situation. We buy homes throughout Canyon County regardless of condition, with closings as fast as 7 days.</p>
 
       <p><strong>Best for:</strong> Properties needing work, urgent timelines, avoiding traditional sale hassles</p>
@@ -13174,7 +13174,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>If Selling for Cash</h3>
-      <p>When selling to <a href="/about">HomeBuyerBoise</a>, no preparation is necessary. Leave the property as-is—we've seen it all and buy properties in any condition. This saves both the cost and effort of pre-sale preparation.</p>
+      <p>When selling to <a href="/about">Home Buyer Boise</a>, no preparation is necessary. Leave the property as-is—we've seen it all and buy properties in any condition. This saves both the cost and effort of pre-sale preparation.</p>
 
       <h2>Nampa Market Trends to Watch</h2>
 
@@ -13187,7 +13187,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Employment Growth</h3>
       <p>Nampa is attracting its own employers, reducing dependence on Boise commuting. Properties near growing employment centers may see enhanced demand.</p>
 
-      <h2>Working with HomeBuyerBoise in Nampa</h2>
+      <h2>Working with Home Buyer Boise in Nampa</h2>
 
       <p>We've purchased numerous properties throughout Nampa and Canyon County. Our team understands:</p>
       <ul>
@@ -13231,10 +13231,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-kuna-idaho",
     title: "Selling Your House in Kuna, Idaho: Family Community & Rural Property Guide",
-    seoTitle: "Sell House Kuna Idaho | Rural & Family Home Guide | HomeBuyerBoise",
+    seoTitle: "Sell House Kuna Idaho | Rural & Family Home Guide | Home Buyer Boise",
     metaDescription: "Selling a house in Kuna, Idaho? Expert guide to Kuna's family-friendly market, rural properties, acreage sales, and fast cash options for Treasure Valley homes.",
     excerpt: "Kuna has transformed from a small farming community to one of Idaho's fastest-growing cities. This comprehensive guide helps Kuna homeowners understand their evolving market and explore all selling options.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["kuna idaho", "sell house kuna", "rural property", "treasure valley", "family homes idaho"],
     publishedAt: "2024-08-23T08:00:00.000Z",
@@ -13313,7 +13313,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p><strong>Timeline:</strong> Typically 2-4 months</p>
       <p><strong>Costs:</strong> Commission (5-6%), closing costs, repairs, staging</p>
 
-      <h3>Cash Sale to HomeBuyerBoise</h3>
+      <h3>Cash Sale to Home Buyer Boise</h3>
       <p>Our <a href="/areas/kuna">Kuna cash buying program</a> offers an alternative when speed, convenience, or property condition makes traditional sales impractical. We buy throughout Kuna regardless of condition.</p>
 
       <p><strong>Best for:</strong> Dated properties, rural homes needing work, urgent timelines</p>
@@ -13380,7 +13380,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Infrastructure Improvements</h3>
       <p>As Kuna grows, roads, schools, and services improve. Properties benefiting from these improvements may see enhanced value compared to more remote areas.</p>
 
-      <h2>Working with HomeBuyerBoise in Kuna</h2>
+      <h2>Working with Home Buyer Boise in Kuna</h2>
 
       <p>We've purchased properties throughout Kuna, from newer subdivision homes to original farmhouses, from small lots to significant acreage. Our team understands:</p>
       <ul>
@@ -13424,10 +13424,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "downsizing-home-boise-seniors",
     title: "Downsizing Your Home in Boise: A Senior's Complete Guide to Transitioning",
-    seoTitle: "Downsizing Home Boise Seniors | Transition Guide | HomeBuyerBoise",
+    seoTitle: "Downsizing Home Boise Seniors | Transition Guide | Home Buyer Boise",
     metaDescription: "Thinking about downsizing your Boise home? Complete guide for seniors on accessing home equity, simplifying life, and making smooth transitions. Local Idaho expertise.",
     excerpt: "Downsizing doesn't have to be overwhelming. This comprehensive guide helps Boise area seniors navigate the emotional and practical aspects of selling a family home and transitioning to a simpler lifestyle.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["downsizing", "seniors", "boise real estate", "retirement", "home equity"],
     publishedAt: "2024-08-25T08:00:00.000Z",
@@ -13435,7 +13435,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When It's Time to Downsize in Boise</h2>
       <p>After decades in your family home, the thought of downsizing can feel overwhelming. The house where you raised your children, celebrated holidays, and built countless memories holds more than just equity—it holds your history. Yet for many Boise area seniors, the practical realities eventually outweigh the emotional attachment.</p>
       
-      <p>At <a href="/about">HomeBuyerBoise</a>, we work with many seniors navigating this transition. This guide shares what we've learned about making the downsizing process as smooth as possible—both emotionally and practically.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, we work with many seniors navigating this transition. This guide shares what we've learned about making the downsizing process as smooth as possible—both emotionally and practically.</p>
 
       <h2>Signs It Might Be Time to Downsize</h2>
 
@@ -13556,7 +13556,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Coordinating your move with an uncertain closing date</li>
       </ul>
 
-      <h3>Cash Sale to HomeBuyerBoise</h3>
+      <h3>Cash Sale to Home Buyer Boise</h3>
       <p>For many seniors, our <a href="/services/downsizing">downsizing solutions</a> offer compelling advantages:</p>
       <ul>
         <li><strong>No repairs or preparation:</strong> Sell your home as-is without fixing anything</li>
@@ -13608,7 +13608,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Who do I trust to help me through this process?</li>
       </ul>
 
-      <h2>How HomeBuyerBoise Helps Downsizing Seniors</h2>
+      <h2>How Home Buyer Boise Helps Downsizing Seniors</h2>
 
       <p>We've helped many Treasure Valley seniors navigate downsizing with compassion and professionalism. Our approach:</p>
       <ul>
@@ -13635,7 +13635,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Do I have to clean out everything before selling to you?",
-        answer: "No. When you sell to HomeBuyerBoise, you can leave behind anything you don't want to take. Many downsizing seniors find it easier to take what they want to their new home and leave the rest for us to handle. We buy homes as-is, contents and all if needed."
+        answer: "No. When you sell to Home Buyer Boise, you can leave behind anything you don't want to take. Many downsizing seniors find it easier to take what they want to their new home and leave the rest for us to handle. We buy homes as-is, contents and all if needed."
       },
       {
         question: "Can I stay in my home after selling while I find my next place?",
@@ -13654,10 +13654,10 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "first-time-home-seller-guide-boise",
     title: "First-Time Home Seller Guide for Boise: Everything New Sellers Need to Know",
-    seoTitle: "First-Time Home Seller Guide Boise | New Seller Tips | HomeBuyerBoise",
+    seoTitle: "First-Time Home Seller Guide Boise | New Seller Tips | Home Buyer Boise",
     metaDescription: "Selling your first home in Boise? Complete guide covering timelines, costs, common mistakes, and all your selling options. Local Idaho expertise for first-time sellers.",
     excerpt: "Selling your first home can feel overwhelming. This comprehensive guide walks Boise first-time sellers through every step of the process, from preparation to closing, including options you might not know exist.",
-    author: "HomeBuyerBoise Team",
+    author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["first-time seller", "boise real estate", "selling process", "home selling tips", "idaho homes"],
     publishedAt: "2024-08-27T08:00:00.000Z",
@@ -13702,7 +13702,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p><strong>Total:</strong> Approximately 3-5 months from decision to cash in hand</p>
 
       <h3>Cash Sale Timeline: 7-30 Days</h3>
-      <p>Selling to a cash buyer like <a href="/about">HomeBuyerBoise</a> dramatically compresses the timeline:</p>
+      <p>Selling to a cash buyer like <a href="/about">Home Buyer Boise</a> dramatically compresses the timeline:</p>
       <ul>
         <li>Initial contact and property information: Day 1</li>
         <li>Property evaluation and cash offer: Days 1-3</li>
@@ -13848,7 +13848,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p><strong>Best for:</strong> Experienced sellers, those with real estate knowledge, simple transactions</p>
 
-      <h3>Option 3: Cash Sale to HomeBuyerBoise</h3>
+      <h3>Option 3: Cash Sale to Home Buyer Boise</h3>
       <p>Selling directly to a cash buyer like us eliminates the traditional market entirely.</p>
 
       <p><strong>Pros:</strong></p>
@@ -13887,7 +13887,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If speed, certainty, or convenience matter more, explore cash options.</p>
 
       <h3>Get Both Numbers</h3>
-      <p>You don't have to guess. <a href="/get-quote">Request a cash offer</a> from HomeBuyerBoise—it's free with no obligation. Simultaneously, consult with a local agent about traditional sale potential. Compare both approaches based on your specific situation.</p>
+      <p>You don't have to guess. <a href="/get-quote">Request a cash offer</a> from Home Buyer Boise—it's free with no obligation. Simultaneously, consult with a local agent about traditional sale potential. Compare both approaches based on your specific situation.</p>
 
       <h2>Preparing for Your First Sale</h2>
 
@@ -13938,22 +13938,22 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>Selling your first home is a significant decision that deserves careful consideration. At <a href="/about">HomeBuyerBoise</a>, we're happy to provide a no-obligation cash offer to help you evaluate all your options—even if you ultimately decide traditional sales make more sense for your situation.</p>
+      <p>Selling your first home is a significant decision that deserves careful consideration. At <a href="/about">Home Buyer Boise</a>, we're happy to provide a no-obligation cash offer to help you evaluate all your options—even if you ultimately decide traditional sales make more sense for your situation.</p>
 
       <p><a href="/get-quote">Request your free cash offer</a> today. Understanding what a cash buyer will pay gives you valuable perspective as you navigate your first home sale in the Boise market.</p>
     `,
     faqs: [
       {
         question: "How much does it cost to sell a house in Boise?",
-        answer: "Traditional sales typically cost 8-10% of the sale price when you include agent commissions (5-6%), closing costs (2-3%), and typical seller concessions. On a $400,000 home, expect $32,000-$40,000 in selling costs. Cash sales to HomeBuyerBoise have zero costs—we pay all closing expenses."
+        answer: "Traditional sales typically cost 8-10% of the sale price when you include agent commissions (5-6%), closing costs (2-3%), and typical seller concessions. On a $400,000 home, expect $32,000-$40,000 in selling costs. Cash sales to Home Buyer Boise have zero costs—we pay all closing expenses."
       },
       {
         question: "How long does it take to sell a house in Boise?",
-        answer: "Traditional sales in Boise typically take 3-5 months from listing to closing. This includes 2-4 weeks of preparation, 30-60 days on market, and 30-45 days under contract. Cash sales to HomeBuyerBoise can close in as little as 7-14 days."
+        answer: "Traditional sales in Boise typically take 3-5 months from listing to closing. This includes 2-4 weeks of preparation, 30-60 days on market, and 30-45 days under contract. Cash sales to Home Buyer Boise can close in as little as 7-14 days."
       },
       {
         question: "Do I need to make repairs before selling my house?",
-        answer: "For traditional sales, repairs and updates help your home compete and often yield good returns. For cash sales to HomeBuyerBoise, no repairs are needed—we buy as-is regardless of condition. The approach depends on your timeline, budget, and priorities."
+        answer: "For traditional sales, repairs and updates help your home compete and often yield good returns. For cash sales to Home Buyer Boise, no repairs are needed—we buy as-is regardless of condition. The approach depends on your timeline, budget, and priorities."
       },
       {
         question: "What's the biggest mistake first-time sellers make?",

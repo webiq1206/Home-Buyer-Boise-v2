@@ -78,12 +78,12 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise</title>
+        <title>Sell Your House Fast in Boise | Cash Home Buyers | Home Buyer Boise</title>
         <meta 
           name="description" 
           content="We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, Middleton and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." 
         />
-        <meta property="og:title" content="Sell Your House Fast in Boise | Cash Home Buyers | HomeBuyerBoise" />
+        <meta property="og:title" content="Sell Your House Fast in Boise | Cash Home Buyers | Home Buyer Boise" />
         <meta property="og:description" content="We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, Middleton and the Treasure Valley. Facing foreclosure, divorce, or inheritance? Get a fair cash offer in 24 hours." />
       </Helmet>
 

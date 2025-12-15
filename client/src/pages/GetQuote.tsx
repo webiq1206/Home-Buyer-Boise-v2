@@ -49,12 +49,12 @@ export default function GetQuote() {
   return (
     <>
       <Helmet>
-        <title>Get Your Free Cash Offer | HomeBuyerBoise</title>
+        <title>Get Your Free Cash Offer | Home Buyer Boise</title>
         <meta name="description" content="Get a fair, no-obligation cash offer for your home in minutes. Our AI-powered system provides accurate, transparent pricing. Sell your house fast in Boise, Meridian, Eagle, Kuna, and the Treasure Valley." />
         <meta name="keywords" content="get cash offer for house, sell house fast quote, free home offer, cash home buyer quote Boise" />
         <link rel="canonical" href="https://homebuyerboise.com/get-quote" />
         
-        <meta property="og:title" content="Get Your Free Cash Offer | HomeBuyerBoise" />
+        <meta property="og:title" content="Get Your Free Cash Offer | Home Buyer Boise" />
         <meta property="og:description" content="Get a fair, no-obligation cash offer in minutes. No repairs needed, close on your timeline." />
         <meta property="og:url" content="https://homebuyerboise.com/get-quote" />
         <meta property="og:type" content="website" />

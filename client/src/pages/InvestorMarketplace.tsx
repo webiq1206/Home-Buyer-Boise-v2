@@ -91,7 +91,7 @@ export default function InvestorMarketplace() {
     <>
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />
-        <title>Wholesale Leads Marketplace | HomeBuyerBoise</title>
+        <title>Wholesale Leads Marketplace | Home Buyer Boise</title>
         <meta name="description" content="Browse available wholesale property leads - First come, first serve basis." />
       </Helmet>
 

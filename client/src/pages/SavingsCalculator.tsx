@@ -106,7 +106,7 @@ export default function SavingsCalculator() {
   return (
     <>
       <Helmet>
-        <title>Get Your Cash Offer | HomeBuyerBoise</title>
+        <title>Get Your Cash Offer | Home Buyer Boise</title>
         <meta 
           name="description" 
           content="Get a fair, personalized cash offer for your Boise home. We evaluate every property individually to provide you with the best possible offer. No fees, no commissions." 
@@ -114,7 +114,7 @@ export default function SavingsCalculator() {
         <meta name="keywords" content="cash offer for house, sell house fast Boise, free home offer, cash home buyer Idaho" />
         <link rel="canonical" href="https://homebuyerboise.com/savings-calculator" />
         
-        <meta property="og:title" content="Get Your Cash Offer | HomeBuyerBoise" />
+        <meta property="og:title" content="Get Your Cash Offer | Home Buyer Boise" />
         <meta property="og:description" content="Get a fair, personalized cash offer. We evaluate every property individually." />
         <meta property="og:url" content="https://homebuyerboise.com/savings-calculator" />
         <meta property="og:type" content="website" />

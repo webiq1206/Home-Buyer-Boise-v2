@@ -9,11 +9,11 @@ export default function TermsOfService() {
   return (
     <div className="flex flex-col">
       <Helmet>
-        <title>Terms of Service | HomeBuyerBoise</title>
-        <meta name="description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services. Clear, fair terms for residential and commercial customers." />
+        <title>Terms of Service | Home Buyer Boise</title>
+        <meta name="description" content="Review the terms and conditions for Home Buyer Boise's professional cash home buying services. Clear, fair terms for residential and commercial customers." />
         <link rel="canonical" href="https://homebuyerboise.com/terms-of-service" />
-        <meta property="og:title" content="Terms of Service | HomeBuyerBoise" />
-        <meta property="og:description" content="Review the terms and conditions for HomeBuyerBoise's professional cash home buying services." />
+        <meta property="og:title" content="Terms of Service | Home Buyer Boise" />
+        <meta property="og:description" content="Review the terms and conditions for Home Buyer Boise's professional cash home buying services." />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -23,7 +23,7 @@ export default function TermsOfService() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Terms of Service for HomeBuyerBoise professional cash home buying services"
+            alt="Terms of Service for Home Buyer Boise professional cash home buying services"
             className="w-full h-full object-cover"
             width="1920"
             height="1080"
@@ -51,7 +51,7 @@ export default function TermsOfService() {
             {/* Introduction */}
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground">
-                Welcome to HomeBuyerBoise. These Terms of Service govern your use of our services and website. By engaging our services or using our website, you agree to these terms. Please read them carefully.
+                Welcome to Home Buyer Boise. These Terms of Service govern your use of our services and website. By engaging our services or using our website, you agree to these terms. Please read them carefully.
               </p>
             </div>
 
@@ -67,10 +67,10 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  By requesting a quote, scheduling a service, or engaging HomeBuyerBoise for any lawn care or landscaping work, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                  By requesting a quote, scheduling a service, or engaging Home Buyer Boise for any lawn care or landscaping work, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
                 </p>
                 <p className="text-muted-foreground">
-                  These terms constitute a legally binding agreement between you (the "Customer" or "you") and HomeBuyerBoise (the "Company," "we," or "us").
+                  These terms constitute a legally binding agreement between you (the "Customer" or "you") and Home Buyer Boise (the "Company," "we," or "us").
                 </p>
               </CardContent>
             </Card>
@@ -87,7 +87,7 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  HomeBuyerBoise provides professional cash home buying services to residential and commercial properties in the Treasure Valley, Idaho, including but not limited to:
+                  Home Buyer Boise provides professional cash home buying services to residential and commercial properties in the Treasure Valley, Idaho, including but not limited to:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                   <li><strong>Cash Home Buying Services:</strong> Purchasing homes in any condition, providing fair cash offers, flexible closing timelines, and handling all paperwork</li>
@@ -198,7 +198,7 @@ export default function TermsOfService() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  HomeBuyerBoise carries general liability insurance and workers' compensation coverage. However, our liability is limited as follows:
+                  Home Buyer Boise carries general liability insurance and workers' compensation coverage. However, our liability is limited as follows:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
                   <li><strong>Normal Wear and Tear:</strong> We are not responsible for normal wear, aging, or deterioration of plants, lawns, or landscaping materials</li>
@@ -355,7 +355,7 @@ export default function TermsOfService() {
                   If you have questions about these Terms of Service, please contact us:
                 </p>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><strong>HomeBuyerBoise</strong></p>
+                  <p><strong>Home Buyer Boise</strong></p>
                   <p><strong>Phone:</strong> <a href="tel:2084052275" className="text-primary hover:underline" data-testid="link-terms-phone">(208) 405-2275</a></p>
                   <p><strong>Email:</strong> <a href="mailto:hello@homebuyerboise.com" className="text-primary hover:underline" data-testid="link-terms-email">hello@homebuyerboise.com</a></p>
                   <p><strong>Service Areas:</strong> Kuna, Boise, Meridian, Eagle, Star, Middleton, and surrounding Treasure Valley communities</p>
@@ -366,7 +366,7 @@ export default function TermsOfService() {
             {/* Footer Note */}
             <div className="bg-muted/30 rounded-lg p-6">
               <p className="text-sm text-muted-foreground text-center">
-                By engaging HomeBuyerBoise for services, you acknowledge that you have read, understood, and agree to these Terms of Service. These terms are effective as of the date services are requested or scheduled.
+                By engaging Home Buyer Boise for services, you acknowledge that you have read, understood, and agree to these Terms of Service. These terms are effective as of the date services are requested or scheduled.
               </p>
             </div>
           </div>

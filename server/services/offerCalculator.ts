@@ -1,5 +1,5 @@
 /**
- * HomeBuyerBoise Offer Calculator
+ * Home Buyer Boise Offer Calculator
  * Calculates cash offer ranges for properties based on ARV, condition, repairs, and market factors
  */
 

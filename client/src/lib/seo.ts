@@ -1,5 +1,5 @@
 /**
- * SEO Utilities for HomeBuyerBoise
+ * SEO Utilities for Home Buyer Boise
  * Generates keyword-optimized meta tags, titles, and descriptions
  * for cash home buying services across the Boise metro area
  */
@@ -57,7 +57,7 @@ function truncateServiceName(serviceName: string, maxLength: number): string {
 
 /**
  * Generate SEO-optimized page title
- * Format: "Sell House Fast City | HomeBuyerBoise" - Natural, city-first approach
+ * Format: "Sell House Fast City | Home Buyer Boise" - Natural, city-first approach
  * Max 60 characters for optimal Google display
  * Prioritizes target keywords (city + property type/offer) for cash home buyers
  * GUARANTEED ≤60 chars through intelligent truncation
@@ -66,14 +66,14 @@ export function generatePageTitle(params: ServiceSEOParams): string {
   const { serviceName, city, isHomePage } = params;
   
   if (isHomePage) {
-    return "HomeBuyerBoise | Sell Your Boise House Fast for Cash";
+    return "Home Buyer Boise | Sell Your Boise House Fast for Cash";
   }
   
   if (city) {
     // City-first format prioritizes target keywords: "Boise Cash Home Buyer"
-    // Format: "Sell House Fast City | HomeBuyerBoise"
+    // Format: "Sell House Fast City | Home Buyer Boise"
     const primaryKeyword = `Sell House Fast ${city}`;
-    const brandSuffix = `HomeBuyerBoise`;
+    const brandSuffix = `Home Buyer Boise`;
     const fullTitle = `${primaryKeyword} | ${brandSuffix}`;
     
     // If too long, use compact city-first format
@@ -82,7 +82,7 @@ export function generatePageTitle(params: ServiceSEOParams): string {
       const compactTitle = `Sell House ${city} | Cash Buyer`;
       if (compactTitle.length > 60) {
         // Emergency: Ultra compact
-        return `${city} Cash Home Buyer | HomeBuyerBoise`;
+        return `${city} Cash Home Buyer | Home Buyer Boise`;
       }
       return compactTitle;
     }
@@ -90,8 +90,8 @@ export function generatePageTitle(params: ServiceSEOParams): string {
   }
   
   // Service-only title (defaults to Boise as home base)
-  // Format: "Service | HomeBuyerBoise"
-  const fullTitle = `${serviceName} | HomeBuyerBoise`;
+  // Format: "Service | Home Buyer Boise"
+  const fullTitle = `${serviceName} | Home Buyer Boise`;
   
   // Fallback for very long service names
   if (fullTitle.length > 60) {
@@ -207,16 +207,16 @@ export function generateLogoAltTag(params: ServiceSEOParams): string {
   const { serviceName, city, isHomePage } = params;
   
   if (isHomePage) {
-    return "HomeBuyerBoise logo - Professional cash home buyers serving the Boise Treasure Valley";
+    return "Home Buyer Boise logo - Professional cash home buyers serving the Boise Treasure Valley";
   }
   
   if (city) {
     // City-specific alt tag with service context
-    return `HomeBuyerBoise logo - Cash home buyers in ${city} Idaho - We buy houses fast for cash`;
+    return `Home Buyer Boise logo - Cash home buyers in ${city} Idaho - We buy houses fast for cash`;
   }
   
   // Service-specific alt tag
-  return `HomeBuyerBoise logo - Cash home buyers serving Boise metro and Treasure Valley Idaho`;
+  return `Home Buyer Boise logo - Cash home buyers serving Boise metro and Treasure Valley Idaho`;
 }
 
 /**
@@ -341,8 +341,8 @@ export const CITY_SEO_DATA = {
  * Business information for NAP consistency
  */
 export const BUSINESS_INFO = {
-  name: 'HomeBuyerBoise',
-  legalName: 'HomeBuyerBoise LLC',
+  name: 'Home Buyer Boise',
+  legalName: 'Home Buyer Boise LLC',
   phone: '(208) 405-CASH',
   email: 'hello@homebuyerboise.com',
   address: {

@@ -68,7 +68,7 @@ export function generateServiceCityContent(
   const serviceName = service.name;
   
   // Generate SEO-optimized metadata
-  const title = `${serviceName} in ${cityName}, Idaho | Fast Cash Home Buyers | HomeBuyerBoise`;
+  const title = `${serviceName} in ${cityName}, Idaho | Fast Cash Home Buyers | Home Buyer Boise`;
   const metaDescription = `${serviceName} in ${cityName}? Get a fair cash offer in 24 hours. We buy houses throughout ${cityName} - ${city.neighborhoods?.slice(0, 3).join(', ')}. No fees, close fast.`;
   const h1 = `${serviceName} in ${cityName}, Idaho`;
   
@@ -110,7 +110,7 @@ function generateCitySpecificIntro(service: any, city: any): string {
   const neighborhoods = city.neighborhoods?.slice(0, 4).join(', ') || 'all neighborhoods';
   const population = city.population || 'thousands of residents';
   
-  return `HomeBuyerBoise specializes in ${serviceName.toLowerCase()} throughout ${cityName}, Idaho. With ${population}, ${cityName} is ${getCityDescription(city.slug)}. We buy houses in all ${cityName} neighborhoods including ${neighborhoods}, providing fair cash offers regardless of your property's location or condition. Whether you own a newer construction home in ${cityName}'s growing subdivisions or an older property in established neighborhoods, we make selling fast and simple. ${getServiceCityContext(service.slug, city.slug)} Our local team understands ${cityName}'s unique real estate market, including property values, neighborhood characteristics, and common seller situations. We've helped dozens of ${cityName} homeowners ${getServiceAction(service.slug)} without the stress of traditional listings, repairs, or uncertain buyer financing. ${getCityMarketContext(city.slug)} As a local Idaho company, we provide personalized service with deep knowledge of ${cityName} and the surrounding Treasure Valley. Get your no-obligation cash offer today and discover why ${cityName} homeowners trust HomeBuyerBoise for ${serviceName.toLowerCase()}.`;
+  return `Home Buyer Boise specializes in ${serviceName.toLowerCase()} throughout ${cityName}, Idaho. With ${population}, ${cityName} is ${getCityDescription(city.slug)}. We buy houses in all ${cityName} neighborhoods including ${neighborhoods}, providing fair cash offers regardless of your property's location or condition. Whether you own a newer construction home in ${cityName}'s growing subdivisions or an older property in established neighborhoods, we make selling fast and simple. ${getServiceCityContext(service.slug, city.slug)} Our local team understands ${cityName}'s unique real estate market, including property values, neighborhood characteristics, and common seller situations. We've helped dozens of ${cityName} homeowners ${getServiceAction(service.slug)} without the stress of traditional listings, repairs, or uncertain buyer financing. ${getCityMarketContext(city.slug)} As a local Idaho company, we provide personalized service with deep knowledge of ${cityName} and the surrounding Treasure Valley. Get your no-obligation cash offer today and discover why ${cityName} homeowners trust Home Buyer Boise for ${serviceName.toLowerCase()}.`;
 }
 
 // City descriptions
@@ -228,7 +228,7 @@ function generateLocalSuccessStory(service: any, city: any) {
     neighborhood: neighborhood,
     situation: `${cityName} homeowner needed to ${getServiceAction(service.slug).toLowerCase()}`,
     solution: `Closed in 10 days with fair cash offer, no repairs needed`,
-    quote: `HomeBuyerBoise made selling in ${cityName} so easy. They understood our neighborhood and gave us a fair offer right away.`,
+    quote: `Home Buyer Boise made selling in ${cityName} so easy. They understood our neighborhood and gave us a fair offer right away.`,
     timeline: '10 days from contact to closing'
   };
 }

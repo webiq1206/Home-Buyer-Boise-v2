@@ -56,15 +56,15 @@ export default function HowItWorks() {
   return (
     <>
       <Helmet>
-        <title>How It Works - Sell Your House for Cash in 5 Simple Steps | HomeBuyerBoise</title>
+        <title>How It Works - Sell Your House for Cash in 5 Simple Steps | Home Buyer Boise</title>
         <meta 
           name="description" 
-          content="Learn how selling your house to HomeBuyerBoise works. Get a fair cash offer in 24 hours, choose your closing date, and get paid. No fees, no repairs, no hassle." 
+          content="Learn how selling your house to Home Buyer Boise works. Get a fair cash offer in 24 hours, choose your closing date, and get paid. No fees, no repairs, no hassle." 
         />
         <meta name="keywords" content="how to sell house for cash, cash home buying process, sell house fast Boise, home selling steps Idaho" />
         <link rel="canonical" href="https://homebuyerboise.com/how-it-works" />
         
-        <meta property="og:title" content="How It Works - Sell Your House for Cash | HomeBuyerBoise" />
+        <meta property="og:title" content="How It Works - Sell Your House for Cash | Home Buyer Boise" />
         <meta property="og:description" content="Simple 5-step process: Contact us, get assessed, receive cash offer, review, and close on your timeline." />
         <meta property="og:url" content="https://homebuyerboise.com/how-it-works" />
         <meta property="og:type" content="website" />
@@ -182,7 +182,7 @@ export default function HowItWorks() {
         <section className="py-16">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Why Sell to HomeBuyerBoise?</h2>
+              <h2 className="text-3xl font-bold mb-12 text-center">Why Sell to Home Buyer Boise?</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-3" data-testid={`benefit-${index}`}>

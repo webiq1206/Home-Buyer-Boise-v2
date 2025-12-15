@@ -574,7 +574,7 @@ export function QuoteWizard({
                     data-testid="checkbox-consent"
                   />
                   <Label htmlFor="consentToContact" className="text-sm font-normal leading-relaxed cursor-pointer">
-                    I consent to being contacted by HomeBuyerBoise via phone, text, and email regarding my cash offer request. *
+                    I consent to being contacted by Home Buyer Boise via phone, text, and email regarding my cash offer request. *
                   </Label>
                 </div>
                 {form4.formState.errors.consentToContact && (

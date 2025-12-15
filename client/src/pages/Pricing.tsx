@@ -71,18 +71,18 @@ export default function Pricing() {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Pricing - Zero Fees, Zero Commissions | HomeBuyerBoise</title>
-        <meta name="description" content="Sell your house with zero fees and zero commissions. See how much you save selling to HomeBuyerBoise compared to a traditional real estate sale. We pay all closing costs." />
+        <title>Pricing - Zero Fees, Zero Commissions | Home Buyer Boise</title>
+        <meta name="description" content="Sell your house with zero fees and zero commissions. See how much you save selling to Home Buyer Boise compared to a traditional real estate sale. We pay all closing costs." />
         <meta name="keywords" content="sell house no fees, no commission home sale, cash home buyer pricing, save money selling house, closing costs paid" />
         <link rel="canonical" href="https://homebuyerboise.com/pricing" />
         
-        <meta property="og:title" content="Pricing - Save Thousands Selling to HomeBuyerBoise" />
+        <meta property="og:title" content="Pricing - Save Thousands Selling to Home Buyer Boise" />
         <meta property="og:description" content="Zero fees, zero commissions. See exactly how much you save compared to a traditional sale." />
         <meta property="og:url" content="https://homebuyerboise.com/pricing" />
         <meta property="og:type" content="website" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Pricing - Zero Fees | HomeBuyerBoise" />
+        <meta name="twitter:title" content="Pricing - Zero Fees | Home Buyer Boise" />
         <meta name="twitter:description" content="Keep 100% of our offer. No realtor fees, no closing costs." />
         
         <script type="application/ld+json">
@@ -117,7 +117,7 @@ export default function Pricing() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Traditional Sale vs. Cash Offer</h2>
               <p className="text-lg text-muted-foreground">
-                See how selling to HomeBuyerBoise saves you time and money
+                See how selling to Home Buyer Boise saves you time and money
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export default function Pricing() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-primary">
                     <DollarSign className="h-5 w-5" />
-                    Sell to HomeBuyerBoise
+                    Sell to Home Buyer Boise
                   </CardTitle>
                   <CardDescription>Fast cash offer</CardDescription>
                 </CardHeader>
@@ -206,7 +206,7 @@ export default function Pricing() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose HomeBuyerBoise?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Home Buyer Boise?</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

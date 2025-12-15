@@ -24,18 +24,18 @@ export default function Contact() {
   return (
     <div className="flex flex-col">
       <Helmet>
-        <title>Contact Us - Get Your Cash Offer Today | HomeBuyerBoise</title>
-        <meta name="description" content="Contact HomeBuyerBoise for a free, no-obligation cash offer on your house. Call (208) 405-2275 or fill out our form. We buy houses in Boise, Meridian, Eagle, Kuna, and throughout the Treasure Valley." />
+        <title>Contact Us - Get Your Cash Offer Today | Home Buyer Boise</title>
+        <meta name="description" content="Contact Home Buyer Boise for a free, no-obligation cash offer on your house. Call (208) 405-2275 or fill out our form. We buy houses in Boise, Meridian, Eagle, Kuna, and throughout the Treasure Valley." />
         <meta name="keywords" content="contact cash home buyer Boise, sell house fast Boise contact, get cash offer for house, Treasure Valley home buyer contact" />
         <link rel="canonical" href="https://homebuyerboise.com/contact" />
         
-        <meta property="og:title" content="Contact HomeBuyerBoise - Get Your Cash Offer" />
+        <meta property="og:title" content="Contact Home Buyer Boise - Get Your Cash Offer" />
         <meta property="og:description" content="Ready to sell your house fast? Contact us for a free, no-obligation cash offer within 24 hours." />
         <meta property="og:url" content="https://homebuyerboise.com/contact" />
         <meta property="og:type" content="website" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact HomeBuyerBoise" />
+        <meta name="twitter:title" content="Contact Home Buyer Boise" />
         <meta name="twitter:description" content="Get your free cash offer today. We buy houses in any condition." />
         
         <script type="application/ld+json">
@@ -183,7 +183,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="HomeBuyerBoise Location - 3024 W Fairview Ave, Boise, ID 83702"
+                title="Home Buyer Boise Location - 3024 W Fairview Ave, Boise, ID 83702"
                 data-testid="map-location"
               />
             </div>

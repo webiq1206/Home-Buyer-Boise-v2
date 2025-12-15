@@ -45,7 +45,7 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow HomeBuyerBoise on Facebook"
+                aria-label="Follow Home Buyer Boise on Facebook"
                 data-testid="link-facebook"
               >
                 <SiFacebook className="h-5 w-5" />
@@ -55,7 +55,7 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow HomeBuyerBoise on Instagram"
+                aria-label="Follow Home Buyer Boise on Instagram"
                 data-testid="link-instagram"
               >
                 <SiInstagram className="h-5 w-5" />
@@ -65,7 +65,7 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow HomeBuyerBoise on LinkedIn"
+                aria-label="Follow Home Buyer Boise on LinkedIn"
                 data-testid="link-linkedin"
               >
                 <SiLinkedin className="h-5 w-5" />
@@ -75,7 +75,7 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Follow HomeBuyerBoise on X (Twitter)"
+                aria-label="Follow Home Buyer Boise on X (Twitter)"
                 data-testid="link-twitter"
               >
                 <SiX className="h-5 w-5" />
@@ -174,10 +174,10 @@ export function Footer() {
 
         <div className="border-t mt-8 pt-8 text-sm text-muted-foreground space-y-2">
           <p className="text-xs">
-            <strong>Legal Disclaimer:</strong> HomeBuyerBoise is a professional real estate investment company. All offers are subject to property inspection and market analysis.
+            <strong>Legal Disclaimer:</strong> Home Buyer Boise is a professional real estate investment company. All offers are subject to property inspection and market analysis.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© {currentYear} HomeBuyerBoise. All rights reserved. Serving the Treasure Valley since 2018.</p>
+            <p>© {currentYear} Home Buyer Boise. All rights reserved. Serving the Treasure Valley since 2018.</p>
             <div className="flex gap-4 text-xs">
               <span>Licensed & Insured</span>
               <span>•</span>

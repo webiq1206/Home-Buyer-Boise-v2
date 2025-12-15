@@ -9,11 +9,11 @@ export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col">
       <Helmet>
-        <title>Privacy Policy | HomeBuyerBoise</title>
-        <meta name="description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information. We're committed to safeguarding your data and providing transparent information practices." />
+        <title>Privacy Policy | Home Buyer Boise</title>
+        <meta name="description" content="Learn how Home Buyer Boise protects your privacy and handles your personal information. We're committed to safeguarding your data and providing transparent information practices." />
         <link rel="canonical" href="https://homebuyerboise.com/privacy-policy" />
-        <meta property="og:title" content="Privacy Policy | HomeBuyerBoise" />
-        <meta property="og:description" content="Learn how HomeBuyerBoise protects your privacy and handles your personal information." />
+        <meta property="og:title" content="Privacy Policy | Home Buyer Boise" />
+        <meta property="og:description" content="Learn how Home Buyer Boise protects your privacy and handles your personal information." />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroBackground} 
-            alt="Privacy Policy for HomeBuyerBoise professional services"
+            alt="Privacy Policy for Home Buyer Boise professional services"
             className="w-full h-full object-cover"
             width="1920"
             height="1080"
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
             {/* Introduction */}
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-muted-foreground">
-                At HomeBuyerBoise, we are committed to protecting your privacy and handling your personal information with care and respect. This Privacy Policy explains how we collect, use, share, and protect your information when you use our website or services.
+                At Home Buyer Boise, we are committed to protecting your privacy and handling your personal information with care and respect. This Privacy Policy explains how we collect, use, share, and protect your information when you use our website or services.
               </p>
             </div>
 

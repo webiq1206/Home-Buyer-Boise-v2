@@ -166,7 +166,7 @@ export class MemStorage implements IStorage {
         situation: "Inherited property seller",
         city: "kuna",
         rating: "5",
-        testimonial: "After inheriting my parents' house in Kuna, I needed to sell quickly. HomeBuyerBoise made a fair offer and closed in just 10 days. No repairs, no stress, just a smooth transaction.",
+        testimonial: "After inheriting my parents' house in Kuna, I needed to sell quickly. Home Buyer Boise made a fair offer and closed in just 10 days. No repairs, no stress, just a smooth transaction.",
         createdAt: new Date(),
       },
       {
@@ -184,7 +184,7 @@ export class MemStorage implements IStorage {
         situation: "Divorce settlement",
         city: "meridian",
         rating: "5",
-        testimonial: "Going through a divorce was hard enough. HomeBuyerBoise handled our house sale with discretion and professionalism. Fair price, quick closing, and they took care of everything.",
+        testimonial: "Going through a divorce was hard enough. Home Buyer Boise handled our house sale with discretion and professionalism. Fair price, quick closing, and they took care of everything.",
         createdAt: new Date(),
       },
       {
@@ -202,7 +202,7 @@ export class MemStorage implements IStorage {
         situation: "Downsizing",
         city: "eagle",
         rating: "5",
-        testimonial: "After our kids moved out, we wanted to downsize. HomeBuyerBoise bought our large family home as-is, so we didn't have to deal with repairs or staging. Quick and painless!",
+        testimonial: "After our kids moved out, we wanted to downsize. Home Buyer Boise bought our large family home as-is, so we didn't have to deal with repairs or staging. Quick and painless!",
         createdAt: new Date(),
       },
       {
@@ -211,7 +211,7 @@ export class MemStorage implements IStorage {
         situation: "Problem tenant",
         city: "star",
         rating: "5",
-        testimonial: "Had a rental property with terrible tenants I couldn't evict. Sold it to HomeBuyerBoise tenant and all. They handled the eviction and I walked away with cash in hand.",
+        testimonial: "Had a rental property with terrible tenants I couldn't evict. Sold it to Home Buyer Boise tenant and all. They handled the eviction and I walked away with cash in hand.",
         createdAt: new Date(),
       },
     ];

@@ -78,7 +78,7 @@ export default function AnalyticsDashboard() {
     <>
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />
-        <title>Analytics Dashboard | HomeBuyerBoise</title>
+        <title>Analytics Dashboard | Home Buyer Boise</title>
       </Helmet>
       <div className="container py-8" data-testid="page-analytics">
         <div className="mb-8">

@@ -67,12 +67,12 @@ export default function Blog() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "HomeBuyerBoise Blog",
+    "name": "Home Buyer Boise Blog",
     "description": "Expert guides on selling your house fast for cash in Boise, Idaho. Learn about cash offers, avoiding foreclosure, selling as-is, and more.",
     "url": "https://homebuyerboise.com/blog",
     "publisher": {
       "@type": "Organization",
-      "name": "HomeBuyerBoise",
+      "name": "Home Buyer Boise",
       "logo": {
         "@type": "ImageObject",
         "url": "https://homebuyerboise.com/logo.png"
@@ -83,7 +83,7 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Cash Home Buying Blog | Expert Guides | HomeBuyerBoise</title>
+        <title>Cash Home Buying Blog | Expert Guides | Home Buyer Boise</title>
         <meta
           name="description"
           content="Expert guides on selling your house fast for cash in Boise, Idaho. Learn about cash offers, avoiding foreclosure, selling inherited homes, and more from local experts."
@@ -91,7 +91,7 @@ export default function Blog() {
         <meta name="keywords" content="sell house fast Boise, cash home buyer Idaho, sell house as-is, avoid foreclosure Boise, inherited property sale" />
         <link rel="canonical" href="https://homebuyerboise.com/blog" />
         
-        <meta property="og:title" content="Cash Home Buying Blog | HomeBuyerBoise" />
+        <meta property="og:title" content="Cash Home Buying Blog | Home Buyer Boise" />
         <meta property="og:description" content="Expert guides on selling your house fast for cash in Boise, Idaho." />
         <meta property="og:url" content="https://homebuyerboise.com/blog" />
         <meta property="og:type" content="website" />

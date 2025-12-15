@@ -122,7 +122,7 @@ export default function BlogPost() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HomeBuyerBoise",
+      "name": "Home Buyer Boise",
       "logo": {
         "@type": "ImageObject",
         "url": "https://homebuyerboise.com/logo.png"
@@ -178,7 +178,7 @@ export default function BlogPost() {
   return (
     <>
       <Helmet>
-        <title>{post.seoTitle || post.title} | HomeBuyerBoise</title>
+        <title>{post.seoTitle || post.title} | Home Buyer Boise</title>
         <meta name="description" content={post.metaDescription || post.excerpt} />
         <meta name="keywords" content={post.tags.join(", ")} />
         <link rel="canonical" href={`https://homebuyerboise.com/blog/${post.slug}`} />

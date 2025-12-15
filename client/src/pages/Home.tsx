@@ -169,7 +169,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <img 
               src={heroBackground} 
-              alt="HomeBuyerBoise - Cash home buyers serving Boise and Treasure Valley Idaho"
+              alt="Home Buyer Boise - Cash home buyers serving Boise and Treasure Valley Idaho"
               className="w-full h-full object-cover"
               width="1920"
               height="1080"
@@ -232,7 +232,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <img 
               src={starsBackground} 
-              alt="Five star rating background representing HomeBuyerBoise customer satisfaction"
+              alt="Five star rating background representing Home Buyer Boise customer satisfaction"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center center' }}
               width="1920"
@@ -341,7 +341,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Why Sell Your House to HomeBuyerBoise?
+                Why Sell Your House to Home Buyer Boise?
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We make selling your house simple, fast, and stress-free. No commissions, no fees, no waiting months for a buyer.
@@ -454,7 +454,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img 
             src={smileyBackground} 
-            alt="Happy customer testimonial background for HomeBuyerBoise reviews"
+            alt="Happy customer testimonial background for Home Buyer Boise reviews"
             className="w-full h-full object-cover"
             style={{ objectPosition: 'right center' }}
             width="1920"

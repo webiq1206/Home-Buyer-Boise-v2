@@ -83,7 +83,7 @@ export function CommonSituations() {
       <div className="absolute inset-0 z-0">
         <img 
           src={superheroBackground} 
-          alt="HomeBuyerBoise helps homeowners in difficult situations sell their house fast"
+          alt="Home Buyer Boise helps homeowners in difficult situations sell their house fast"
           className="w-full h-full object-cover"
           style={{ objectPosition: 'left bottom' }}
           width="1920"

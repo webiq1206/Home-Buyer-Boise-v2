@@ -42,11 +42,11 @@ const CITY_EXTENDED_CONTENT: Record<string, {
   uniqueSellingPoints: string[];
 }> = {
   kuna: {
-    intro: `Kuna, Idaho has transformed from a small agricultural community into one of the Treasure Valley's fastest-growing cities. Located just 20 miles southwest of downtown Boise, Kuna offers homeowners the perfect blend of rural charm and suburban convenience. If you need to sell your house fast in Kuna, HomeBuyerBoise provides the fastest, most reliable cash home buying service in the area. We've been purchasing homes throughout Kuna since 2018, and we understand the unique characteristics of every Kuna neighborhood - from the established areas near downtown to the newer developments along Ten Mile Road.`,
+    intro: `Kuna, Idaho has transformed from a small agricultural community into one of the Treasure Valley's fastest-growing cities. Located just 20 miles southwest of downtown Boise, Kuna offers homeowners the perfect blend of rural charm and suburban convenience. If you need to sell your house fast in Kuna, Home Buyer Boise provides the fastest, most reliable cash home buying service in the area. We've been purchasing homes throughout Kuna since 2018, and we understand the unique characteristics of every Kuna neighborhood - from the established areas near downtown to the newer developments along Ten Mile Road.`,
     marketOverview: `The Kuna real estate market has experienced significant growth over the past decade, with home values appreciating substantially. However, selling through traditional methods can still take 60-90+ days with uncertainty around buyer financing. Many Kuna homeowners choose to sell to us when they need guaranteed results - whether they're relocating for work at nearby military bases, dealing with inherited property, or simply want to avoid the hassle of repairs and showings. Our cash offers provide certainty that traditional sales can't match.`,
     neighborhoods: ["Indian Creek", "Black Cat", "Crimson Point", "Ten Mile Creek", "Deer Flat", "Kuna West", "Downtown Kuna", "Meridian Road Corridor"],
     landmarks: ["Kuna Caves", "Swan Falls Dam", "Indian Creek Plaza", "Kuna High School", "Birds of Prey National Conservation Area", "Initial Point", "Celebration Park"],
-    whyUs: `As local Treasure Valley residents ourselves, we know Kuna isn't just another suburb - it's a tight-knit community with its own identity. When you sell to HomeBuyerBoise, you're working with neighbors who understand Kuna's agricultural heritage, the impact of rapid growth on older properties, and what makes each neighborhood unique. We don't treat Kuna homes like commodities; we understand the local market dynamics that affect your property's value.`,
+    whyUs: `As local Treasure Valley residents ourselves, we know Kuna isn't just another suburb - it's a tight-knit community with its own identity. When you sell to Home Buyer Boise, you're working with neighbors who understand Kuna's agricultural heritage, the impact of rapid growth on older properties, and what makes each neighborhood unique. We don't treat Kuna homes like commodities; we understand the local market dynamics that affect your property's value.`,
     population: "24,011",
     medianHomePrice: "$425,000",
     avgDaysOnMarket: "45 days",
@@ -61,7 +61,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   boise: {
-    intro: `As Idaho's capital and largest city, Boise offers incredible diversity in neighborhoods, property types, and price points. From the historic North End's craftsman homes to the Bench's mid-century properties, downtown's urban condos to the foothills' luxury estates - HomeBuyerBoise has purchased homes throughout every Boise neighborhood. If you need to sell your Boise house fast for cash, we provide fair offers based on deep local market knowledge accumulated over years of buying homes across the city.`,
+    intro: `As Idaho's capital and largest city, Boise offers incredible diversity in neighborhoods, property types, and price points. From the historic North End's craftsman homes to the Bench's mid-century properties, downtown's urban condos to the foothills' luxury estates - Home Buyer Boise has purchased homes throughout every Boise neighborhood. If you need to sell your Boise house fast for cash, we provide fair offers based on deep local market knowledge accumulated over years of buying homes across the city.`,
     marketOverview: `Boise's real estate market gained national attention as one of America's hottest markets, with significant price appreciation and population growth. While the market has stabilized, Boise remains highly desirable with strong buyer demand. Traditional sales still take 30-60+ days with listing agent commissions around 5-6%. For homeowners who need speed, certainty, or want to avoid repairs, our cash buying service offers a compelling alternative. We can close in as little as 7 days or work on your extended timeline.`,
     neighborhoods: ["North End", "Hyde Park", "Bench", "Downtown", "East End", "West Boise", "Southeast Boise", "Southwest Boise", "Boise Highlands", "Morris Hill", "Central Rim", "Depot Bench"],
     landmarks: ["Idaho State Capitol", "Boise River Greenbelt", "Table Rock", "Hyde Park", "Julia Davis Park", "BSU Campus", "Bogus Basin", "Camel's Back Park", "Zoo Boise", "Old Idaho Penitentiary"],
@@ -80,7 +80,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   meridian: {
-    intro: `Meridian has transformed from a small farming community into Idaho's second-largest city and one of America's fastest-growing cities. This explosive growth means many Meridian homeowners find themselves in properties that have appreciated significantly - but also face the challenge of selling in a competitive market. HomeBuyerBoise has purchased homes throughout Meridian since 2018, from original downtown properties to the newest subdivisions near Ten Mile. If you need to sell your Meridian house fast, we offer fair cash offers with guaranteed closing dates.`,
+    intro: `Meridian has transformed from a small farming community into Idaho's second-largest city and one of America's fastest-growing cities. This explosive growth means many Meridian homeowners find themselves in properties that have appreciated significantly - but also face the challenge of selling in a competitive market. Home Buyer Boise has purchased homes throughout Meridian since 2018, from original downtown properties to the newest subdivisions near Ten Mile. If you need to sell your Meridian house fast, we offer fair cash offers with guaranteed closing dates.`,
     marketOverview: `Meridian's housing market features predominantly newer construction, with many homes built in the 2000s-2020s. The average Meridian home spends about 40 days on market when listed traditionally, but this varies significantly by price point, location, and condition. Homes needing updates or repairs can sit for months. Our cash buying service is particularly valuable for Meridian sellers with properties that might struggle in the competitive resale market - we buy as-is and close fast.`,
     neighborhoods: ["Lochsa Falls", "Tuscany", "Paramount", "Meridian Ranch", "Silverstone", "Ten Mile", "Ustick Corridor", "Downtown Meridian", "Settlers Bridge", "Heritage", "Bainbridge", "Victory Commons"],
     landmarks: ["The Village at Meridian", "Julius M. Kleiner Memorial Park", "Eagle Island State Park", "Meridian Speedway", "Settlers Park", "Storey Park", "Discovery Park", "Roaring Springs Water Park", "Wahooz Family Fun Zone"],
@@ -99,7 +99,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   eagle: {
-    intro: `Eagle represents the Treasure Valley's premium residential community, known for larger lots, custom homes, and an affluent lifestyle. From the established neighborhoods near downtown Eagle to the gated communities in the foothills, Eagle properties command premium prices - but selling them can present unique challenges. HomeBuyerBoise provides discrete, professional cash buying services for Eagle homeowners who value privacy, speed, or convenience over maximum sale price. We understand Eagle's luxury market and price our offers accordingly.`,
+    intro: `Eagle represents the Treasure Valley's premium residential community, known for larger lots, custom homes, and an affluent lifestyle. From the established neighborhoods near downtown Eagle to the gated communities in the foothills, Eagle properties command premium prices - but selling them can present unique challenges. Home Buyer Boise provides discrete, professional cash buying services for Eagle homeowners who value privacy, speed, or convenience over maximum sale price. We understand Eagle's luxury market and price our offers accordingly.`,
     marketOverview: `Eagle's real estate market features higher price points and longer average days on market compared to neighboring communities. Luxury homes can sit for months waiting for the right buyer, and even mid-range Eagle properties require more marketing to reach qualified buyers. For Eagle homeowners who need to sell quickly - whether due to relocation, divorce, estate settlement, or other life changes - our cash buying service eliminates the uncertainty and extended timeline of luxury home sales.`,
     neighborhoods: ["Shadow Valley", "Banbury", "The Estates", "Floating Feather", "Eagle Hills", "Downtown Eagle", "Eagle Springs", "Dry Creek", "Hidden Springs", "Avimor", "Riverdale"],
     landmarks: ["Eagle Island State Park", "Heritage Park", "Eagle Hills Golf Course", "Downtown Eagle", "Dry Creek Trail", "Eagle Library", "Eagle Sports Complex", "Portneuf Valley Brewing"],
@@ -118,7 +118,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   star: {
-    intro: `Star, Idaho offers homeowners the best of both worlds - affordable housing prices with reasonable proximity to Boise's amenities. As one of the Treasure Valley's fastest-growing communities, Star has attracted families seeking more space at lower prices than Boise, Meridian, or Eagle. HomeBuyerBoise purchases homes throughout Star, from properties on larger acreage to newer subdivision homes. If you need to sell your Star house fast, we provide fair cash offers and can close on your timeline.`,
+    intro: `Star, Idaho offers homeowners the best of both worlds - affordable housing prices with reasonable proximity to Boise's amenities. As one of the Treasure Valley's fastest-growing communities, Star has attracted families seeking more space at lower prices than Boise, Meridian, or Eagle. Home Buyer Boise purchases homes throughout Star, from properties on larger acreage to newer subdivision homes. If you need to sell your Star house fast, we provide fair cash offers and can close on your timeline.`,
     marketOverview: `Star's real estate market features a mix of newer subdivisions and rural properties on larger lots. Home values have appreciated significantly as the city has grown, but the market can be more volatile than established communities. Properties that need updates or repairs can struggle to compete with new construction. Our cash buying service is ideal for Star sellers with older homes, properties needing work, or anyone who needs certainty and speed over maximum price.`,
     neighborhoods: ["Floating Feather", "Star Ranch", "Star Pointe", "Crossfield", "Heron Lake", "Star Creek", "Purple Sage", "Star Falls", "Meadowbrook"],
     landmarks: ["Star Community Park", "Willow Creek Park", "Happy Day Farms", "Star Library", "Star Sewer District Trail", "Star Falls Development"],
@@ -137,7 +137,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   middleton: {
-    intro: `Middleton offers homeowners an affordable alternative to the more expensive communities in Ada County. Located in Canyon County, Middleton has seen significant growth while maintaining its small-town character and agricultural heritage. HomeBuyerBoise purchases homes throughout Middleton, from downtown properties to rural homes on acreage. If you need to sell your Middleton house fast, we provide fair cash offers based on honest Canyon County market knowledge.`,
+    intro: `Middleton offers homeowners an affordable alternative to the more expensive communities in Ada County. Located in Canyon County, Middleton has seen significant growth while maintaining its small-town character and agricultural heritage. Home Buyer Boise purchases homes throughout Middleton, from downtown properties to rural homes on acreage. If you need to sell your Middleton house fast, we provide fair cash offers based on honest Canyon County market knowledge.`,
     marketOverview: `Middleton's real estate market offers more affordable options than Ada County communities, attracting first-time buyers and families seeking value. However, this also means homes can take longer to sell through traditional methods, as buyer pools are smaller. Properties needing repairs or updates can sit for months. Our cash buying service is particularly valuable for Middleton sellers who need speed and certainty.`,
     neighborhoods: ["Purple Sage", "Heights", "Country Club Estates", "Middleton Mill", "Middleton Place", "River Ranch", "Mill Creek", "Downtown Middleton"],
     landmarks: ["Middleton Mill", "Middleton Place", "Lake Lowell", "Middleton Library", "Middleton High School", "Purple Sage Golf Course"],
@@ -156,7 +156,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   nampa: {
-    intro: `Nampa is Canyon County's largest city and the third-largest city in Idaho, offering a diverse mix of historic neighborhoods, newer developments, and affordable housing options. HomeBuyerBoise has been actively purchasing homes throughout Nampa since 2018, understanding the unique dynamics of this rapidly growing community. If you need to sell your Nampa house fast, we provide fair cash offers and can close on your timeline, whether you're in downtown Nampa, near the Civic Center, or in one of the many growing subdivisions.`,
+    intro: `Nampa is Canyon County's largest city and the third-largest city in Idaho, offering a diverse mix of historic neighborhoods, newer developments, and affordable housing options. Home Buyer Boise has been actively purchasing homes throughout Nampa since 2018, understanding the unique dynamics of this rapidly growing community. If you need to sell your Nampa house fast, we provide fair cash offers and can close on your timeline, whether you're in downtown Nampa, near the Civic Center, or in one of the many growing subdivisions.`,
     marketOverview: `Nampa's real estate market offers significantly more affordable options than Ada County, making it attractive to first-time buyers and families seeking value. However, this affordability also means competition with new construction can make older homes harder to sell through traditional methods. Properties needing updates can sit for extended periods. Our cash buying service provides Nampa sellers with speed, certainty, and convenience that traditional sales cannot match.`,
     neighborhoods: ["Downtown Nampa", "Karcher Road", "Garrity Boulevard", "12th Avenue", "Nampa-Caldwell Boulevard", "Greenhurst", "Happy Valley", "Stampede", "Centennial", "Hughes", "Vista", "Ridgecrest"],
     landmarks: ["Nampa Civic Center", "Lakeview Park", "Ford Idaho Center", "Northwest Nazarene University", "Mercy Medical Center", "Nampa Gateway Center", "Wilson Springs Ponds", "Lake Lowell"],
@@ -175,7 +175,7 @@ const CITY_EXTENDED_CONTENT: Record<string, {
     ]
   },
   caldwell: {
-    intro: `Caldwell, as Canyon County's county seat, offers homeowners some of the most affordable housing in the Treasure Valley while maintaining strong community character and excellent access to regional amenities. HomeBuyerBoise actively purchases homes throughout Caldwell, from historic homes near downtown to newer developments in growing areas. If you need to sell your Caldwell house fast, we provide fair cash offers based on genuine Canyon County market knowledge.`,
+    intro: `Caldwell, as Canyon County's county seat, offers homeowners some of the most affordable housing in the Treasure Valley while maintaining strong community character and excellent access to regional amenities. Home Buyer Boise actively purchases homes throughout Caldwell, from historic homes near downtown to newer developments in growing areas. If you need to sell your Caldwell house fast, we provide fair cash offers based on genuine Canyon County market knowledge.`,
     marketOverview: `Caldwell's real estate market features the most affordable home prices in the Treasure Valley, attracting value-conscious buyers. However, the smaller buyer pool can mean longer selling times through traditional methods, especially for properties needing repairs. Our cash buying service is particularly valuable for Caldwell homeowners who need guaranteed results without the uncertainty of traditional sales.`,
     neighborhoods: ["Downtown Caldwell", "Indian Creek", "Ustick Road", "Cleveland Boulevard", "Farmway", "Middleton Road", "Purple Sage", "Lake Shore Drive", "Karcher Road"],
     landmarks: ["College of Idaho", "Caldwell Fairgrounds", "Indian Creek Plaza", "Canyon County Courthouse", "Caldwell Night Rodeo", "Deer Flat National Wildlife Refuge", "Lake Lowell"],
@@ -211,7 +211,7 @@ const CITY_FAQS: Record<string, Array<{question: string; answer: string}>> = {
     { question: "Do you buy houses in all Boise neighborhoods?", answer: "Yes, we purchase homes throughout every Boise neighborhood - North End, Hyde Park, Bench, Downtown, East End, West Boise, Southeast Boise, Southwest Boise, the foothills, and all surrounding areas. From historic craftsman homes to modern construction, we buy them all." },
     { question: "What types of Boise properties do you buy?", answer: "We buy single-family homes, townhomes, condos, duplexes, multi-family properties, and even some commercial properties in Boise. Any condition, any situation, any neighborhood." },
     { question: "How do your offers compare to listing with a Boise realtor?", answer: "Our offers are typically 85-95% of what you might get listing with a realtor, but you save 5-6% in commissions, avoid repair costs ($5,000-$30,000 typical), close faster, and have 100% certainty the deal will close. For many sellers, the net proceeds are comparable while the convenience is vastly superior." },
-    { question: "What makes HomeBuyerBoise different from other cash buyers?", answer: "We're a local Boise company, not a national franchise or algorithm-driven website. We've purchased over 200 homes in the Treasure Valley since 2018. Our team lives and works in Boise, so our offers reflect real local market knowledge, not generic formulas." },
+    { question: "What makes Home Buyer Boise different from other cash buyers?", answer: "We're a local Boise company, not a national franchise or algorithm-driven website. We've purchased over 200 homes in the Treasure Valley since 2018. Our team lives and works in Boise, so our offers reflect real local market knowledge, not generic formulas." },
     { question: "Can you help if I'm going through divorce in Boise?", answer: "Absolutely. We've helped many Boise couples sell quickly during divorce. We provide a neutral third-party sale, fair market offers, fast closings, and can work with your attorneys to ensure proper asset division. It's a way to move forward quickly." },
     { question: "Do you buy houses near Boise State University?", answer: "Yes, we actively purchase properties near BSU including the Depot Bench, Central Bench, and surrounding neighborhoods. We buy student rental properties, family homes, and investment properties throughout the BSU area." },
     { question: "What if my Boise house has a lien or title issue?", answer: "We regularly purchase properties with liens, title issues, code violations, and other complications. Our title company will research all liens and we'll calculate payoffs into our offer. You'll walk away clean with no liens following you." }
@@ -274,7 +274,7 @@ const CITY_FAQS: Record<string, Array<{question: string; answer: string}>> = {
     { question: "What if my Caldwell home is older and needs work?", answer: "We buy homes in any condition. Many Caldwell homes are older properties that need significant updating - we buy them completely as-is without requiring any repairs from you." },
     { question: "Can you help if I'm facing foreclosure in Caldwell?", answer: "Absolutely. We've helped many Canyon County homeowners avoid foreclosure. We can close quickly, pay off your mortgage, and help you walk away with cash instead of a foreclosure on your credit." },
     { question: "Do you buy houses near the College of Idaho?", answer: "Yes, we purchase properties throughout the College of Idaho area and surrounding neighborhoods. We buy rental properties, family homes, and investment properties in all Caldwell locations." },
-    { question: "How does selling to HomeBuyerBoise work in Caldwell?", answer: "Simple: contact us, we schedule a brief property visit, you receive a cash offer within 24 hours, accept and choose your closing date, sign at a local title company, and receive your cash. As quick as 7 days start to finish." }
+    { question: "How does selling to Home Buyer Boise work in Caldwell?", answer: "Simple: contact us, we schedule a brief property visit, you receive a cash offer within 24 hours, accept and choose your closing date, sign at a local title company, and receive your cash. As quick as 7 days start to finish." }
   ]
 };
 
@@ -330,7 +330,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
   return (
     <>
       <Helmet>
-        <title>Sell Your House Fast in {cityName} Idaho | Cash Home Buyers | HomeBuyerBoise</title>
+        <title>Sell Your House Fast in {cityName} Idaho | Cash Home Buyers | Home Buyer Boise</title>
         <meta 
           name="description" 
           content={`Need to sell your house fast in ${cityName}? Get a fair cash offer in 24 hours. No fees, no commissions, no repairs needed. We buy houses in any condition throughout ${cityName}, Idaho. Close in 7 days.`}
@@ -558,7 +558,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
               <div className="text-center max-w-3xl mx-auto">
                 <Badge className="mb-4">Our Benefits</Badge>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-                  Why Sell to HomeBuyerBoise in {cityName}?
+                  Why Sell to Home Buyer Boise in {cityName}?
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We make selling your {cityName} house simple, fast, and hassle-free with no fees or commissions.
@@ -729,7 +729,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
               <div className="text-center mb-12">
                 <Badge className="mb-4">Why Choose Us</Badge>
                 <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                  Why {cityName} Homeowners Trust HomeBuyerBoise
+                  Why {cityName} Homeowners Trust Home Buyer Boise
                 </h3>
                 <p className="text-lg text-muted-foreground">
                   Local expertise, fair offers, and professional service since 2018

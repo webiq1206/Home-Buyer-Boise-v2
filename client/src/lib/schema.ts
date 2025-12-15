@@ -1,5 +1,5 @@
 /**
- * JSON-LD Schema Markup Generators for HomeBuyerBoise
+ * JSON-LD Schema Markup Generators for Home Buyer Boise
  * Creates structured data for Google rich snippets and search features
  * Optimized for cash home buying / real estate investor business
  */

@@ -16,7 +16,7 @@ export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: 
   const faqs = [
     {
       question: `How fast can you buy my house in ${city}?`,
-      answer: `HomeBuyerBoise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city} and all Treasure Valley locations. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 405-CASH for your free cash offer today.`,
+      answer: `Home Buyer Boise can close on your ${city} property in as little as 7 days. We're local cash buyers serving ${city} and all Treasure Valley locations. Unlike traditional sales that take 30-60 days, we can move at your pace - whether that's a week or 90 days. Call (208) 405-CASH for your free cash offer today.`,
     },
     {
       question: `Do you buy houses in any condition in ${city}?`,
@@ -31,11 +31,11 @@ export function NearMeFAQ({ city = "Boise", serviceName = "cash home buying" }: 
       answer: `We buy houses throughout the entire Treasure Valley including ${city}, Boise, Meridian, Eagle, Kuna, Star, and Middleton. As local Idaho cash home buyers, we're committed to serving all these communities with fast, fair offers and flexible closing timelines.`,
     },
     {
-      question: `Why choose HomeBuyerBoise over listing with a realtor?`,
+      question: `Why choose Home Buyer Boise over listing with a realtor?`,
       answer: `When you need to sell fast in ${city}, cash buyers offer major advantages: no realtor commissions (save 5-6%), no repairs or cleaning needed, no showings or open houses, close in days not months, and we pay all closing costs. You receive your offer amount minus nothing - what we offer is what you get at closing.`,
     },
     {
-      question: `Are there any fees when selling to HomeBuyerBoise?`,
+      question: `Are there any fees when selling to Home Buyer Boise?`,
       answer: `Absolutely zero fees! Unlike traditional sales where you pay 5-6% realtor commissions plus 2-3% closing costs, we cover everything. No commissions, no closing costs, no inspection fees, no appraisal fees. The cash offer we present is exactly what you'll receive at closing - 100% of it.`,
     },
   ];

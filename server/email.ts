@@ -499,9 +499,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           </div>
 
           <div class="footer">
-            <p class="footer-brand">HomeBuyerBoise</p>
+            <p class="footer-brand">Home Buyer Boise</p>
             <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
-            <p class="footer-contact">Email: <a href="mailto:hello@homebuyerboise.com">hello@homebuyerboise.com</a></p>
+            <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
           </div>
         </div>
@@ -531,7 +531,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           <div class="content">
             <p class="greeting">Hi ${customerName},</p>
             
-            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing HomeBuyerBoise. We've received your cash offer request and our team is reviewing the details of your property.</p>
+            <p style="color: #4b5563; margin: 0 0 20px 0;">Thank you for choosing Home Buyer Boise. We've received your cash offer request and our team is reviewing the details of your property.</p>
 
             <div class="highlight-box">
               <p><strong>What happens next?</strong></p>
@@ -620,9 +620,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
           </div>
 
           <div class="footer">
-            <p class="footer-brand">HomeBuyerBoise</p>
+            <p class="footer-brand">Home Buyer Boise</p>
             <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
-            <p class="footer-contact">Email: <a href="mailto:hello@homebuyerboise.com">hello@homebuyerboise.com</a></p>
+            <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
             <p class="footer-contact">Phone: (208) 405-2275</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
@@ -637,7 +637,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
     const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co'];
     console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     const adminResult = await resend.emails.send({
-      from: `HomeBuyerBoise <${fromEmail}>`,
+      from: `Home Buyer Boise <${fromEmail}>`,
       to: adminEmails,
       subject: `New Quote Request - ${customerName} (${city})`,
       html: ownerEmailHtml,
@@ -652,9 +652,9 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
     if (customerEmail) {
       console.log('[EMAIL] Sending customer confirmation to:', customerEmail);
       const customerResult = await resend.emails.send({
-        from: `HomeBuyerBoise <${fromEmail}>`,
+        from: `Home Buyer Boise <${fromEmail}>`,
         to: customerEmail,
-        subject: `Your Quote Request Received - HomeBuyerBoise`,
+        subject: `Your Quote Request Received - Home Buyer Boise`,
         html: customerEmailHtml
       });
       console.log('[EMAIL] Customer email sent, result:', customerResult);

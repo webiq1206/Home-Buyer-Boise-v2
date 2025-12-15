@@ -213,7 +213,7 @@ export default function AdminDashboard() {
     <>
       <Helmet>
         <meta name="robots" content="noindex, nofollow" />
-        <title>Admin Dashboard | HomeBuyerBoise</title>
+        <title>Admin Dashboard | Home Buyer Boise</title>
       </Helmet>
       <div className="container py-8" data-testid="page-admin-dashboard">
         <div className="mb-8">

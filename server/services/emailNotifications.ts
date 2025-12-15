@@ -154,7 +154,7 @@ export async function sendEmail(to: string, subject: string, htmlBody: string): 
     const { client: resend, fromEmail } = await getUncachableResendClient();
 
     await resend.emails.send({
-      from: `HomeBuyerBoise <${fromEmail}>`,
+      from: `Home Buyer Boise <${fromEmail}>`,
       to,
       subject,
       html: htmlBody
@@ -274,7 +274,7 @@ export async function sendNewLeadNotification(leadData: {
         </div>
 
         <div class="footer">
-          <p class="footer-brand">HomeBuyerBoise</p>
+          <p class="footer-brand">Home Buyer Boise</p>
           <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
@@ -385,7 +385,7 @@ export async function sendLeadPurchasedNotification(leadData: {
         </div>
 
         <div class="footer">
-          <p class="footer-brand">HomeBuyerBoise</p>
+          <p class="footer-brand">Home Buyer Boise</p>
           <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
           <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
@@ -487,7 +487,7 @@ export async function sendLeadPurchaseConfirmation(purchaserEmail: string, leadD
         </div>
 
         <div class="footer">
-          <p class="footer-brand">HomeBuyerBoise</p>
+          <p class="footer-brand">Home Buyer Boise</p>
           <p class="footer-tagline">Wholesaling Platform</p>
           <p style="font-size: 12px; color: #6b7280; margin: 15px 0;">Questions about your purchase? Contact us anytime.</p>
         </div>

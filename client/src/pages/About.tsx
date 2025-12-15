@@ -52,7 +52,7 @@ export default function About() {
         <div className="container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-              About HomeBuyerBoise
+              About Home Buyer Boise
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Trusted cash home buyers helping homeowners across the Treasure Valley since 2017
@@ -68,7 +68,7 @@ export default function About() {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Since 2017, HomeBuyerBoise has been helping homeowners sell their properties quickly and hassle-free throughout the Treasure Valley. What started as a mission to help families in difficult situations has grown into a trusted cash home buying service serving Boise, Meridian, Eagle, Kuna, Star, and Middleton.
+                Since 2017, Home Buyer Boise has been helping homeowners sell their properties quickly and hassle-free throughout the Treasure Valley. What started as a mission to help families in difficult situations has grown into a trusted cash home buying service serving Boise, Meridian, Eagle, Kuna, Star, and Middleton.
               </p>
               <p className="text-lg text-muted-foreground mb-4">
                 We understand that selling a home can be stressful—whether you're facing foreclosure, going through a divorce, dealing with an inherited property, or simply need to relocate quickly. Our team specializes in providing fair cash offers and closing on your timeline, not ours.
