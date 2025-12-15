@@ -634,7 +634,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
     `;
 
     // Send email to business owners (both admin addresses)
-    const adminEmails = ['admin@timberandlove.co', 'connect@buymyhouse.co'];
+    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co'];
     console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     const adminResult = await resend.emails.send({
       from: `HomeBuyerBoise <${fromEmail}>`,

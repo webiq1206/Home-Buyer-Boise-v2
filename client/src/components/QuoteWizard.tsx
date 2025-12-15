@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Loader2, MapPin, CheckCircle2, Home, Info, DollarSign, Clock } from "lucide-react";
+import { Loader2, MapPin, CheckCircle2, Home, Info, DollarSign, Clock, Phone, Mail } from "lucide-react";
 import { AddressAutocomplete } from "@/components/AddressAutocomplete";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
@@ -635,6 +635,24 @@ export function QuoteWizard({
                   <li>Choose your closing date - as fast as 7 days or on your timeline</li>
                 </ol>
               </div>
+
+              <Card className="bg-muted/50 border-muted">
+                <CardContent className="pt-6">
+                  <div className="text-center space-y-2">
+                    <p className="text-sm font-semibold text-foreground">Questions? Contact us directly:</p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+                      <a href="tel:+12084052275" className="flex items-center gap-2 text-primary hover:underline" data-testid="link-phone">
+                        <Phone className="h-4 w-4" />
+                        (208) 405-2275
+                      </a>
+                      <a href="mailto:connect@buymyhouse.co" className="flex items-center gap-2 text-primary hover:underline" data-testid="link-email">
+                        <Mail className="h-4 w-4" />
+                        connect@buymyhouse.co
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
               {onClose && (
                 <div className="flex justify-center pt-4">
