@@ -13,7 +13,7 @@ import {
 import { Menu, Home, DollarSign, FileText, HelpCircle, Building2, ArrowRight, MapPin } from "lucide-react";
 import { SERVICES } from "@shared/servicesData";
 import { CITIES } from "@shared/contentData";
-import logoImage from "@assets/Home Buyer Boise Logo_1764014379793.png";
+import logoImage from "@assets/Home_Buyer_Boise_Logo_(1)_1765828584612.png";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -23,7 +23,7 @@ export function Navigation() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/95">
       <nav className="container flex h-20 items-center justify-between gap-4 px-8 md:px-12">
         <Link href="/" className="flex items-center flex-shrink-0" data-testid="link-home-logo">
-          <img src={logoImage} alt="Home Buyer Boise" className="h-10 w-auto" />
+          <img src={logoImage} alt="Home Buyer Boise - Cash Home Buyers in Boise Idaho" className="h-10 w-auto" />
         </Link>
 
         <div className="flex-1"></div>

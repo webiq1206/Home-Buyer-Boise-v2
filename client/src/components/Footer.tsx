@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { SiFacebook, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
 import { CITIES } from "@shared/contentData";
 import { SERVICES } from "@shared/servicesData";
-import logoImage from "@assets/Home Buyer Boise Logo_1764014379793.png";
+import logoImage from "@assets/Home_Buyer_Boise_Logo_(1)_1765828584612.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <img src={logoImage} alt="Home Buyer Boise" className="h-12 w-auto" />
+              <img src={logoImage} alt="Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Trusted Cash Home Buyers Serving the Boise Metro Area
@@ -25,9 +25,9 @@ export function Footer() {
                 <Phone className="h-4 w-4" />
                 <span>(208) 405-2275</span>
               </a>
-              <a href="mailto:hello@homebuyerboise.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
+              <a href="mailto:connect@buymyhouse.co" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
                 <Mail className="h-4 w-4" />
-                <span>hello@homebuyerboise.com</span>
+                <span>connect@buymyhouse.co</span>
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
