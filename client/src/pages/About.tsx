@@ -42,13 +42,12 @@ export default function About() {
           {JSON.stringify(localBusinessSchema)}
         </script>
       </Helmet>
-
       {/* Hero */}
       <section className="relative py-16 md:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={heroBackground} alt="About Home Buyer Boise - trusted cash home buyers serving the Treasure Valley since 2017" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
         </div>
-        <div className="absolute inset-0 z-[1] bg-background/60"></div>
+        <div className="absolute inset-0 z-[1] bg-background/60 pt-[40px] pb-[40px]"></div>
         <div className="container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
@@ -60,7 +59,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Story */}
       <section className="py-16 md:py-24">
         <div className="container px-4">
@@ -80,7 +78,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Why We're Different */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
@@ -186,7 +183,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Core Values */}
       <section className="py-16 md:py-24">
         <div className="container px-4">
@@ -260,7 +256,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* What Sets Us Apart */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
@@ -330,7 +325,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Guarantee */}
       <section className="py-16 md:py-24">
         <div className="container px-4">
@@ -422,7 +416,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Community Involvement */}
       <section className="py-16 md:py-24 bg-muted/30">
         <div className="container px-4">
@@ -496,7 +489,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container px-4">
