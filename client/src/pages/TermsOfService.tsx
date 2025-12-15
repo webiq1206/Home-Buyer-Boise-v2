@@ -310,7 +310,7 @@ export default function TermsOfService() {
                   We value our customer relationships and strive to resolve any concerns promptly and fairly. If you have a dispute or complaint:
                 </p>
                 <ol className="list-decimal list-inside space-y-2 text-muted-foreground ml-4">
-                  <li>Contact us directly at (208) 405-CASH or hello@homebuyerboise.com to discuss the issue</li>
+                  <li>Contact us directly at (208) 405-2275 or hello@homebuyerboise.com to discuss the issue</li>
                   <li>We will investigate and respond within 7 business days</li>
                   <li>If the issue cannot be resolved informally, we agree to attempt mediation before pursuing legal action</li>
                 </ol>
@@ -356,7 +356,7 @@ export default function TermsOfService() {
                 </p>
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>HomeBuyerBoise</strong></p>
-                  <p><strong>Phone:</strong> <a href="tel:2084052274" className="text-primary hover:underline" data-testid="link-terms-phone">(208) 405-CASH</a></p>
+                  <p><strong>Phone:</strong> <a href="tel:2084052275" className="text-primary hover:underline" data-testid="link-terms-phone">(208) 405-2275</a></p>
                   <p><strong>Email:</strong> <a href="mailto:hello@homebuyerboise.com" className="text-primary hover:underline" data-testid="link-terms-email">hello@homebuyerboise.com</a></p>
                   <p><strong>Service Areas:</strong> Kuna, Boise, Meridian, Eagle, Star, Middleton, and surrounding Treasure Valley communities</p>
                 </div>

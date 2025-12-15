@@ -161,7 +161,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
                       asChild
                       data-testid="button-call"
                     >
-                      <a href="tel:2084052274">(208) 405-CASH</a>
+                      <a href="tel:2084052275">(208) 405-2275</a>
                     </Button>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild data-testid="button-call-bottom">
-                  <a href="tel:2084052274">(208) 405-CASH</a>
+                  <a href="tel:2084052275">(208) 405-2275</a>
                 </Button>
               </div>
             </div>

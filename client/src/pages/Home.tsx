@@ -208,9 +208,9 @@ export default function Home() {
                       asChild
                       data-testid="button-phone"
                     >
-                      <a href="tel:2084052274">
+                      <a href="tel:2084052275">
                         <Phone className="mr-2 h-5 w-5" />
-                        (208) 405-CASH
+                        (208) 405-2275
                       </a>
                     </Button>
                   </div>
@@ -324,9 +324,9 @@ export default function Home() {
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild data-testid="button-cta-phone">
-                <a href="tel:2084052274">
+                <a href="tel:2084052275">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call (208) 405-CASH
+                  Call (208) 405-2275
                 </a>
               </Button>
             </div>

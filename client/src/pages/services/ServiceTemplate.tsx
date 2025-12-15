@@ -108,9 +108,9 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild data-testid="button-call">
-                  <a href="tel:2084052274">
+                  <a href="tel:2084052275">
                     <Phone className="mr-2 h-5 w-5" />
-                    (208) 405-CASH
+                    (208) 405-2275
                   </a>
                 </Button>
               </div>
@@ -528,9 +528,9 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
                   <p className="text-muted-foreground mb-4">Still have questions?</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Button variant="outline" asChild>
-                      <a href="tel:2084052274">
+                      <a href="tel:2084052275">
                         <Phone className="mr-2 h-4 w-4" />
-                        Call (208) 405-CASH
+                        Call (208) 405-2275
                       </a>
                     </Button>
                     <Button variant="outline" asChild>
@@ -565,8 +565,8 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
               <div className="mt-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
                 <span>Or call us directly:</span>
-                <a href="tel:2084052274" className="font-semibold text-primary hover:underline">
-                  (208) 405-CASH
+                <a href="tel:2084052275" className="font-semibold text-primary hover:underline">
+                  (208) 405-2275
                 </a>
               </div>
             </div>

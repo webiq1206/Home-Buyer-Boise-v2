@@ -623,7 +623,7 @@ export async function sendQuoteNotification(data: QuoteEmailData) {
             <p class="footer-brand">HomeBuyerBoise</p>
             <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
             <p class="footer-contact">Email: <a href="mailto:hello@homebuyerboise.com">hello@homebuyerboise.com</a></p>
-            <p class="footer-contact">Phone: (208) 405-CASH</p>
+            <p class="footer-contact">Phone: (208) 405-2275</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
             <p style="font-size: 12px; color: #9ca3af; margin: 15px 0 0 0;">Serving Boise, Meridian, Eagle, Kuna, Star & Middleton</p>

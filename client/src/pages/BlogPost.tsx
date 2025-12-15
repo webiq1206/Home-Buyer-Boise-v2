@@ -383,9 +383,9 @@ export default function BlogPost() {
                               asChild 
                               data-testid="button-cta-call"
                             >
-                              <a href="tel:208-405-2274">
+                              <a href="tel:2084052275">
                                 <Phone className="mr-2 h-5 w-5" />
-                                (208) 405-CASH
+                                (208) 405-2275
                               </a>
                             </Button>
                           </div>

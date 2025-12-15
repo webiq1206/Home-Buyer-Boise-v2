@@ -25,7 +25,7 @@ export default function Contact() {
     <div className="flex flex-col">
       <Helmet>
         <title>Contact Us - Get Your Cash Offer Today | HomeBuyerBoise</title>
-        <meta name="description" content="Contact HomeBuyerBoise for a free, no-obligation cash offer on your house. Call (208) 405-CASH or fill out our form. We buy houses in Boise, Meridian, Eagle, Kuna, and throughout the Treasure Valley." />
+        <meta name="description" content="Contact HomeBuyerBoise for a free, no-obligation cash offer on your house. Call (208) 405-2275 or fill out our form. We buy houses in Boise, Meridian, Eagle, Kuna, and throughout the Treasure Valley." />
         <meta name="keywords" content="contact cash home buyer Boise, sell house fast Boise contact, get cash offer for house, Treasure Valley home buyer contact" />
         <link rel="canonical" href="https://homebuyerboise.com/contact" />
         
@@ -88,8 +88,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Phone</h3>
-                        <a href="tel:2084052274" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
-                          (208) 405-CASH
+                        <a href="tel:2084052275" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-phone">
+                          (208) 405-2275
                         </a>
                         <p className="text-xs text-muted-foreground mt-1">
                           Call us for immediate assistance

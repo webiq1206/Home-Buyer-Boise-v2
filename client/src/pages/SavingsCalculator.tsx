@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Link, useLocation } from "wouter";
-import { DollarSign, TrendingUp, Calculator, Phone, ArrowRight, MapPin, Home, Loader2, AlertCircle } from "lucide-react";
+import { Phone, ArrowRight, MapPin, Home, Loader2, AlertCircle, CheckCircle2, Clock, DollarSign, Shield } from "lucide-react";
 import { queryAssessor, getCountyFromCity } from "@/lib/assessors";
 import type { PropertyData } from "@/lib/adaCountyAssessor";
 
@@ -19,81 +19,8 @@ export default function SavingsCalculator() {
   const [suggestion, setSuggestion] = useState<string | null>(null);
   const [selectedProperty, setSelectedProperty] = useState<PropertyData | null>(null);
   const [properties, setProperties] = useState<PropertyData[]>([]);
-  const [homeValue, setHomeValue] = useState(0); // Start at 0 - only set after property lookup
-  const [showManualEntry, setShowManualEntry] = useState(false);
-  const [manualValue, setManualValue] = useState("");
-  const [manualDisplayValue, setManualDisplayValue] = useState("");
 
-  // ENHANCED savings calculations - showing MUCH MORE savings to make cash offers appealing
-  // Commission increased from 6% to 7.5% (more realistic with buyer agent concessions)
-  const realtorCommission = Math.round(homeValue * 0.075);           // 7.5% commission (up from 6%)
-  const closingCosts = Math.round(homeValue * 0.025);                // 2.5% closing costs (up from 1.67%)
-  const repairsUpdates = Math.round(homeValue * 0.05);               // 5% repairs (up from 3.33%)
-  const stagingPhotosMarketing = Math.round(homeValue * 0.01);       // 1% marketing (up from 0.5%)
-  const inspectionAppraisal = Math.round(homeValue * 0.005);         // 0.5% inspections (up from 0.27%)
-  const holdingCosts = Math.round(homeValue * 0.02);                 // 2% holding costs (up from 1.33%)
-  const contingencyFees = Math.round(homeValue * 0.015);             // NEW: 1.5% contingency/misc fees
-  
-  const totalSavings = realtorCommission + closingCosts + repairsUpdates + stagingPhotosMarketing + inspectionAppraisal + holdingCosts + contingencyFees;
-
-  // Helper to calculate and format percentage
-  const formatPercentage = (amount: number) => {
-    if (homeValue === 0) return "0%";
-    const percentage = (amount / homeValue) * 100;
-    return `${percentage.toFixed(1)}%`;
-  };
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
-
-  const formatNumber = (num: number) => {
-    return new Intl.NumberFormat('en-US').format(num);
-  };
-
-  const handleManualValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9]/g, '');
-    if (value === '') {
-      setManualValue("");
-      setManualDisplayValue('');
-      return;
-    }
-    const numValue = parseInt(value);
-    setManualValue(value);
-    setManualDisplayValue(formatNumber(numValue));
-  };
-
-  const handleManualEntry = () => {
-    if (!manualValue || parseInt(manualValue) < 50000) {
-      setError("Please enter a valid home value (minimum $50,000)");
-      return;
-    }
-
-    const value = parseInt(manualValue);
-    
-    // Create a minimal PropertyData object for manual entry
-    const manualProperty: PropertyData = {
-      parcel: "MANUAL-ENTRY",
-      address: address || "Manual Entry",
-      city: address.toUpperCase().includes("NAMPA") ? "Nampa" : 
-            address.toUpperCase().includes("CALDWELL") ? "Caldwell" :
-            address.toUpperCase().includes("MIDDLETON") ? "Middleton" : "Unknown",
-      buildingSqFt: Math.round(value / 250), // Reverse estimate
-    };
-
-    setSelectedProperty(manualProperty);
-    setHomeValue(value);
-    setShowManualEntry(false);
-    setError(null);
-    setSuggestion(null);
-  };
-
-  // Core lookup function that can be called with an address parameter
+  // Core lookup function
   const triggerAddressLookup = async (lookupAddress: string) => {
     if (!lookupAddress.trim()) {
       setError("Please enter an address");
@@ -107,10 +34,7 @@ export default function SavingsCalculator() {
     setSelectedProperty(null);
 
     try {
-      // Detect county from address
       const county = getCountyFromCity(lookupAddress);
-      console.log('[SavingsCalculator] Looking up address:', lookupAddress, 'in county:', county);
-
       const result = await queryAssessor({
         county,
         address: lookupAddress.trim(),
@@ -121,39 +45,40 @@ export default function SavingsCalculator() {
         setProperties(result.properties);
         
         if (result.properties.length === 1) {
-          // Single property found - auto-select it
           selectProperty(result.properties[0]);
-        } else {
-          // Multiple properties - show selection UI
-          setError(null);
-          setSuggestion(`Found ${result.properties.length} properties. Please select one below.`);
         }
       } else {
-        setError(result.error || "Property not found");
-        setSuggestion(result.suggestion || null);
-        // Show manual entry option when lookup fails
-        setShowManualEntry(true);
+        // No property found - still allow them to proceed
+        setSelectedProperty({
+          parcel: "MANUAL",
+          address: lookupAddress,
+          city: "Idaho",
+        });
+        setSuggestion("We couldn't find your property in county records, but you can still get a personalized offer.");
       }
     } catch (err) {
-      console.error('[SavingsCalculator] Lookup error:', err);
-      setError("Unable to look up property. Please try again.");
+      console.error('[SavingsCalculator] Error:', err);
+      // Still allow proceeding with manual address
+      setSelectedProperty({
+        parcel: "MANUAL",
+        address: lookupAddress,
+        city: "Idaho",
+      });
+      setSuggestion("We couldn't look up your property, but you can still get a personalized offer.");
     } finally {
       setLoading(false);
     }
   };
 
-  // Handler for button click that uses current address state
   const handleAddressLookup = () => {
     triggerAddressLookup(address);
   };
 
-  // Read address from URL query parameter on mount and auto-trigger lookup
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const addressParam = params.get('address');
     if (addressParam) {
       setAddress(addressParam);
-      // Auto-trigger lookup after setting address
       triggerAddressLookup(addressParam);
     }
   }, []);
@@ -163,127 +88,34 @@ export default function SavingsCalculator() {
     setProperties([]);
     setSuggestion(null);
     setError(null);
-
-    // Estimate home value based on property size and city
-    const estimatedValue = estimateHomeValue(property);
-    setHomeValue(estimatedValue);
-  };
-
-  const estimateHomeValue = (property: PropertyData): number => {
-    // Guard: ensure we have property data
-    if (!property.city || !property.buildingSqFt) {
-      console.warn('[SavingsCalculator] Missing property data for estimation:', property);
-      return 400000; // Conservative Boise metro fallback
-    }
-
-    // 2025 Treasure Valley price per square foot (updated Dec 2025)
-    // Sources: Redfin, Zillow, local MLS data
-    let baseValuePerSqFt = 250; // Default for unknown areas
-
-    // Adjust by city - 2025 market values
-    const city = property.city.toUpperCase();
-    if (city.includes('EAGLE')) {
-      baseValuePerSqFt = 330; // Premium market
-    } else if (city.includes('BOISE') || city.includes('GARDEN CITY')) {
-      baseValuePerSqFt = 295; // Core urban
-    } else if (city.includes('MERIDIAN')) {
-      baseValuePerSqFt = 270; // Suburban growth
-    } else if (city.includes('STAR')) {
-      baseValuePerSqFt = 285; // Growing area
-    } else if (city.includes('KUNA')) {
-      baseValuePerSqFt = 255; // Affordable suburb
-    } else if (city.includes('NAMPA')) {
-      baseValuePerSqFt = 230; // Canyon County
-    } else if (city.includes('MIDDLETON')) {
-      baseValuePerSqFt = 240; // Canyon County
-    } else if (city.includes('CALDWELL')) {
-      baseValuePerSqFt = 210; // Most affordable
-    } else if (city.includes('MOUNTAIN HOME')) {
-      baseValuePerSqFt = 195; // Elmore County
-    }
-
-    // Calculate based on building square footage
-    const buildingSqFt = property.buildingSqFt || 1800;
-    const estimatedValue = Math.round(buildingSqFt * baseValuePerSqFt);
-
-    // Round to nearest $5,000 for cleaner presentation
-    return Math.round(estimatedValue / 5000) * 5000;
   };
 
   const handleGetOffer = () => {
-    // Guard: require selected property
-    if (!selectedProperty || homeValue === 0) {
-      setError("Please look up your property first");
+    if (!selectedProperty) {
+      setError("Please enter your property address first");
       return;
     }
 
-    // Navigate to quote form with pre-filled data
+    // Navigate to quote form with property address
     const params = new URLSearchParams({
       address: selectedProperty.address,
-      estimatedValue: homeValue.toString(),
-      savings: totalSavings.toString(),
     });
     setLocation(`/get-quote?${params.toString()}`);
   };
 
-  const costs = [
-    {
-      title: "Realtor Commission",
-      description: "7.5% split between buyer and seller agents (including concessions)",
-      amount: realtorCommission,
-      percentage: formatPercentage(realtorCommission),
-    },
-    {
-      title: "Closing Costs",
-      description: "Title insurance, escrow, transfer taxes, recording fees",
-      amount: closingCosts,
-      percentage: formatPercentage(closingCosts),
-    },
-    {
-      title: "Repairs & Updates",
-      description: "Average pre-sale improvements and buyer-requested repairs",
-      amount: repairsUpdates,
-      percentage: formatPercentage(repairsUpdates),
-    },
-    {
-      title: "Staging, Photos, Marketing",
-      description: "Professional staging, photography, online listings, open houses",
-      amount: stagingPhotosMarketing,
-      percentage: formatPercentage(stagingPhotosMarketing),
-    },
-    {
-      title: "Inspection & Appraisal Fees",
-      description: "Pre-listing inspection, buyer's inspection, appraisal fees",
-      amount: inspectionAppraisal,
-      percentage: formatPercentage(inspectionAppraisal),
-    },
-    {
-      title: "Holding Costs",
-      description: "Mortgage, insurance, utilities, maintenance while listed (avg 60-90 days)",
-      amount: holdingCosts,
-      percentage: formatPercentage(holdingCosts),
-    },
-    {
-      title: "Contingency & Misc Fees",
-      description: "HOA fees, buyer concessions, price reductions, attorney fees",
-      amount: contingencyFees,
-      percentage: formatPercentage(contingencyFees),
-    },
-  ];
-
   return (
     <>
       <Helmet>
-        <title>Savings Calculator - See What You Save Selling to Us | HomeBuyerBoise</title>
+        <title>Get Your Cash Offer | HomeBuyerBoise</title>
         <meta 
           name="description" 
-          content="Calculate exactly how much you save selling your house directly to HomeBuyerBoise vs. listing with a realtor. No commissions, no fees, no repairs needed." 
+          content="Get a fair, personalized cash offer for your Boise home. We evaluate every property individually to provide you with the best possible offer. No fees, no commissions." 
         />
-        <meta name="keywords" content="home selling savings calculator, realtor commission calculator, cash home buyer savings, sell house cost comparison" />
+        <meta name="keywords" content="cash offer for house, sell house fast Boise, free home offer, cash home buyer Idaho" />
         <link rel="canonical" href="https://homebuyerboise.com/savings-calculator" />
         
-        <meta property="og:title" content="Savings Calculator - Compare Traditional Sale vs. Cash Offer" />
-        <meta property="og:description" content="See exactly how much you save selling to us. No realtor commissions, no closing costs, no repairs." />
+        <meta property="og:title" content="Get Your Cash Offer | HomeBuyerBoise" />
+        <meta property="og:description" content="Get a fair, personalized cash offer. We evaluate every property individually." />
         <meta property="og:url" content="https://homebuyerboise.com/savings-calculator" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -296,25 +128,25 @@ export default function SavingsCalculator() {
           <div className="container px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
-                <Calculator className="h-3 w-3 mr-1" />
-                Interactive Calculator
+                <DollarSign className="h-3 w-3 mr-1" />
+                Free, No-Obligation Offer
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" data-testid="heading-hero">
-                What You Save Selling to Us
+                Get Your Personalized Cash Offer
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                Enter your address to get an instant valuation and see your potential savings
+                Every property is unique. We evaluate each home individually to give you a fair, competitive offer.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Calculator Section */}
+        {/* Property Lookup Section */}
         <section className="py-16 md:py-20 -mt-12 relative z-10">
           <div className="container px-4">
             <div className="max-w-4xl mx-auto">
               {/* Address Lookup Card */}
-              <Card className="mb-12 shadow-xl border-primary/20">
+              <Card className="mb-8 shadow-xl border-primary/20">
                 <CardContent className="p-6 md:p-8 pt-8 md:pt-10">
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center gap-3">
@@ -326,7 +158,7 @@ export default function SavingsCalculator() {
                           Enter Your Property Address
                         </Label>
                         <p className="text-sm text-muted-foreground">
-                          We'll look up your property details from county records
+                          We'll look up your property details to prepare your personalized offer
                         </p>
                       </div>
                     </div>
@@ -370,12 +202,7 @@ export default function SavingsCalculator() {
                     {error && (
                       <Alert variant="destructive">
                         <AlertCircle className="h-4 w-4" />
-                        <AlertDescription>
-                          {error}
-                          {suggestion && (
-                            <p className="mt-2 text-sm">{suggestion}</p>
-                          )}
-                        </AlertDescription>
+                        <AlertDescription>{error}</AlertDescription>
                       </Alert>
                     )}
 
@@ -405,7 +232,7 @@ export default function SavingsCalculator() {
                                   <div className="text-sm text-muted-foreground">{prop.city}, ID</div>
                                   {prop.buildingSqFt && (
                                     <div className="text-xs text-muted-foreground mt-1">
-                                      Est. {prop.buildingSqFt.toLocaleString()} sq ft
+                                      {prop.buildingSqFt.toLocaleString()} sq ft
                                     </div>
                                   )}
                                 </div>
@@ -416,74 +243,28 @@ export default function SavingsCalculator() {
                       </div>
                     )}
 
-                    {/* Manual Entry Option */}
-                    {showManualEntry && !selectedProperty && (
-                      <div className="p-6 bg-muted/30 border border-border rounded-lg">
-                        <div className="mb-4">
-                          <h3 className="font-semibold text-lg mb-2">Enter Your Home Value Manually</h3>
-                          <p className="text-sm text-muted-foreground">
-                            Property lookup isn't available for this location. Please enter your estimated home value to see your potential savings.
-                          </p>
-                        </div>
-                        <div className="flex gap-3">
-                          <div className="flex-1">
-                            <div className="relative">
-                              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl font-bold text-muted-foreground">
-                                $
-                              </span>
-                              <Input
-                                type="text"
-                                value={manualDisplayValue}
-                                onChange={handleManualValueChange}
-                                onKeyDown={(e) => e.key === 'Enter' && handleManualEntry()}
-                                className="text-2xl font-bold h-14 pl-10 pr-4"
-                                placeholder="300,000"
-                                data-testid="input-manual-value"
-                              />
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-2">
-                              Enter an approximate value - this helps us calculate your savings
-                            </p>
-                          </div>
-                          <Button 
-                            onClick={handleManualEntry}
-                            disabled={!manualValue || parseInt(manualValue) < 50000}
-                            size="lg"
-                            className="h-14 px-8"
-                            data-testid="button-manual-entry"
-                          >
-                            Calculate Savings
-                          </Button>
-                        </div>
-                      </div>
-                    )}
-
                     {/* Selected Property Display */}
                     {selectedProperty && (
                       <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg">
                         <div className="flex items-start gap-3">
-                          <Home className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <div className="flex-1">
                             <div className="font-semibold text-lg mb-1">{selectedProperty.address}</div>
                             <div className="text-sm text-muted-foreground mb-2">{selectedProperty.city}, Idaho</div>
-                            <div className="flex flex-wrap gap-4 text-sm">
-                              {selectedProperty.buildingSqFt && (
+                            {selectedProperty.buildingSqFt && (
+                              <div className="flex flex-wrap gap-4 text-sm">
                                 <div>
-                                  <span className="text-muted-foreground">Building:</span>{' '}
+                                  <span className="text-muted-foreground">Size:</span>{' '}
                                   <span className="font-semibold">{selectedProperty.buildingSqFt.toLocaleString()} sq ft</span>
                                 </div>
-                              )}
-                              {selectedProperty.lotSizeSqFt && (
-                                <div>
-                                  <span className="text-muted-foreground">Lot:</span>{' '}
-                                  <span className="font-semibold">{selectedProperty.lotSizeSqFt.toLocaleString()} sq ft</span>
-                                </div>
-                              )}
-                            </div>
-                            <div className="mt-3 pt-3 border-t border-border/50">
-                              <div className="text-sm text-muted-foreground mb-1">Estimated Value</div>
-                              <div className="text-3xl font-bold text-primary">{formatCurrency(homeValue)}</div>
-                            </div>
+                                {selectedProperty.lotSizeSqFt && (
+                                  <div>
+                                    <span className="text-muted-foreground">Lot:</span>{' '}
+                                    <span className="font-semibold">{selectedProperty.lotSizeSqFt.toLocaleString()} sq ft</span>
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -492,124 +273,110 @@ export default function SavingsCalculator() {
                 </CardContent>
               </Card>
 
-              {/* Cost Breakdown - Only show if we have a selected property AND value */}
-              {selectedProperty && homeValue > 0 && (
-                <>
-                  <Card className="shadow-lg mb-8">
-                    <CardContent className="p-8">
-                      <div className="mb-6">
-                        <h2 className="text-2xl font-bold mb-2">Traditional Sale Costs</h2>
-                        <p className="text-muted-foreground">Here's what you'd typically pay selling through a realtor:</p>
-                      </div>
-                      <div className="space-y-6">
-                        {costs.map((cost, index) => (
-                          <div 
-                            key={index} 
-                            className="flex justify-between items-start pb-6 border-b border-border/50 last:border-0 last:pb-0 transition-all duration-300 hover:bg-muted/20 hover:-mx-4 hover:px-4 hover:py-2 rounded-lg"
-                            data-testid={`cost-item-${index}`}
-                          >
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                <div className="font-bold text-lg">{cost.title}</div>
-                                <Badge variant="secondary" className="text-xs bg-[hsl(var(--gold))]/10 text-[hsl(var(--gold))] border-[hsl(var(--gold))]/30">
-                                  {cost.percentage}
-                                </Badge>
-                              </div>
-                              <div className="text-sm text-muted-foreground">{cost.description}</div>
-                            </div>
-                            <div className="text-xl font-bold text-destructive ml-4 transition-all duration-300">
-                              {formatCurrency(cost.amount)}
-                            </div>
-                          </div>
-                        ))}
-
-                        {/* Total Savings */}
-                        <div className="pt-6 border-t-2 border-primary/30">
-                          <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                              <TrendingUp className="h-8 w-8 text-primary" />
-                              <div>
-                                <div className="text-2xl font-bold">Total You Save</div>
-                                <div className="text-sm text-muted-foreground">Selling to us instead</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-5xl font-bold text-primary" data-testid="text-total-savings">
-                                {formatCurrency(totalSavings)}
-                              </div>
-                              <div className="text-lg font-semibold text-[hsl(var(--gold))] mt-1">
-                                {formatPercentage(totalSavings)} saved
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              {/* CTA Section - Shows when property is selected */}
+              {selectedProperty && (
+                <div className="space-y-6">
+                  {/* Get Offer Button */}
+                  <Card className="shadow-lg border-[hsl(var(--gold))]/30 bg-gradient-to-br from-[hsl(var(--gold))]/5 to-[hsl(var(--gold))]/10">
+                    <CardContent className="p-8 text-center">
+                      <h2 className="text-2xl font-bold mb-3">Ready for Your Personalized Offer?</h2>
+                      <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+                        Complete a quick form and our team will evaluate your property and reach out with a fair cash offer.
+                      </p>
+                      <Button 
+                        size="lg" 
+                        onClick={handleGetOffer}
+                        className="h-14 px-12 text-lg"
+                        data-testid="button-get-offer"
+                      >
+                        Get Your Free Cash Offer
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
                     </CardContent>
                   </Card>
 
-                  {/* Value Proposition */}
-                  <div className="mb-8 p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                        <DollarSign className="h-6 w-6 text-primary" strokeWidth={2.5} />
-                      </div>
-                      <div>
-                        <p className="text-lg font-semibold mb-2">
-                          You keep 100% of our offer
-                        </p>
-                        <p className="text-muted-foreground">
-                          No deductions, no surprises, no hidden fees. The cash offer we present is exactly what you'll receive at closing.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Get Offer CTA - Only show when we have a property AND value */}
+                  {/* Or Call Us */}
                   <div className="text-center">
+                    <p className="text-muted-foreground mb-3">Or speak directly with our team:</p>
                     <Button 
                       size="lg" 
-                      onClick={handleGetOffer}
-                      disabled={!selectedProperty || homeValue === 0}
-                      className="h-14 px-12 text-lg"
-                      data-testid="button-get-offer"
+                      variant="outline" 
+                      className="h-14 px-8 text-lg"
+                      asChild
+                      data-testid="button-call"
                     >
-                      Get Your Free Cash Offer
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <a href="tel:2084052275">
+                        <Phone className="mr-2 h-5 w-5" />
+                        (208) 405-2275
+                      </a>
                     </Button>
-                    <p className="mt-3 text-sm text-muted-foreground">
-                      Your property details will be pre-filled
-                    </p>
                   </div>
-                </>
+                </div>
               )}
+
+              {/* Benefits Grid - Always visible */}
+              <div className="grid md:grid-cols-3 gap-6 mt-12">
+                <Card className="text-center p-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2">Fair Cash Offers</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We evaluate every property individually to ensure you get a competitive offer
+                  </p>
+                </Card>
+                
+                <Card className="text-center p-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2">Fast Closing</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Close in as little as 7 days, or on your timeline - you choose
+                  </p>
+                </Card>
+                
+                <Card className="text-center p-6">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-bold mb-2">No Fees or Repairs</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Zero commissions, no closing costs, sell as-is with no repairs needed
+                  </p>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* Contact CTA */}
         <section className="py-16 bg-gradient-to-br from-primary to-primary/80">
           <div className="container px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                Questions About Your Savings?
+                Have Questions?
               </h2>
               <p className="text-xl text-white/90 mb-8">
-                Talk to our team to learn more about how we can help you save
+                Our team is ready to answer your questions and provide a personalized evaluation of your property.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" asChild data-testid="button-cta-quote">
                   <Link href="/get-quote">
-                    Get Your Free Cash Offer
+                    Request Your Offer
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20" asChild data-testid="button-cta-call">
-                  <a href="tel:2084052274">
+                  <a href="tel:2084052275">
                     <Phone className="mr-2 h-5 w-5" />
-                    Call (208) 405-CASH
+                    Call (208) 405-2275
                   </a>
                 </Button>
               </div>
+              <p className="mt-6 text-white/70 text-sm">
+                Email: connect@buymyhouse.co
+              </p>
             </div>
           </div>
         </section>

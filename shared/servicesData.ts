@@ -203,7 +203,7 @@ export const SERVICE_CONTENT = {
       {
         step: 1,
         title: "Contact Us",
-        description: "Fill out our simple online form or call (208) 405-CASH. Provide basic information about your property including address, condition, and your timeline. This takes less than 60 seconds.",
+        description: "Fill out our simple online form or call (208) 405-2275. Provide basic information about your property including address, condition, and your timeline. This takes less than 60 seconds.",
         timeline: "60 seconds"
       },
       {

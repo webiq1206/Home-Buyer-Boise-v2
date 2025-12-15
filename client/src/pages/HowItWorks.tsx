@@ -11,7 +11,7 @@ export default function HowItWorks() {
       number: 1,
       icon: Phone,
       title: "Contact Us",
-      description: "Call (208) 405-CASH or fill out our simple online form. Tell us about your property and situation - the conversation takes just 5 minutes.",
+      description: "Call (208) 405-2275 or fill out our simple online form. Tell us about your property and situation - the conversation takes just 5 minutes.",
       details: ["No obligation", "Completely confidential", "Available 7 days/week"]
     },
     {
@@ -91,9 +91,9 @@ export default function HowItWorks() {
                   <Link href="/get-quote">Get Your Cash Offer</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20" asChild data-testid="button-call">
-                  <a href="tel:2084052274">
+                  <a href="tel:2084052275">
                     <Phone className="mr-2 h-5 w-5" />
-                    (208) 405-CASH
+                    (208) 405-2275
                   </a>
                 </Button>
               </div>
@@ -210,9 +210,9 @@ export default function HowItWorks() {
                   <Link href="/get-quote">Request Your Cash Offer</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/30 hover:bg-white/20" asChild data-testid="button-cta-call">
-                  <a href="tel:2084052274">
+                  <a href="tel:2084052275">
                     <Phone className="mr-2 h-5 w-5" />
-                    Call (208) 405-CASH
+                    Call (208) 405-2275
                   </a>
                 </Button>
               </div>
