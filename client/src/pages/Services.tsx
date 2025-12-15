@@ -90,7 +90,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
+          <img src={heroBackground} alt="Cash home buying services in Boise and Treasure Valley Idaho" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
         </div>
         <div className="absolute inset-0 z-[1] bg-background/60"></div>
         <div className="container px-4 md:px-8 relative z-10">

@@ -74,7 +74,7 @@ export default function HowItWorks() {
         {/* Hero Section */}
         <section className="relative py-24 md:py-32 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img src={heroBackground} alt="" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
+            <img src={heroBackground} alt="How selling your house for cash works with Home Buyer Boise" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
           </div>
           <div className="absolute inset-0 z-[1] bg-primary/70"></div>
           
