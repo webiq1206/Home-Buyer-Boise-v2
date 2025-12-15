@@ -367,6 +367,14 @@ export const SERVICE_CONTENT = {
       { title: "Any Price Range", description: "We buy properties at all price points" },
     ],
     process: "We're not like other 'we buy houses' companies. We're local, licensed, and have been serving Boise families since 2018. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+    detailedProcess: [
+      { step: 1, title: "Contact Us", description: "Call (208) 405-2275 or fill out our online form. Tell us about your property and situation.", timeline: "2 minutes" },
+      { step: 2, title: "Property Walkthrough", description: "We schedule a quick visit at your convenience to assess the property. No judgment, just evaluation.", timeline: "30 minutes" },
+      { step: 3, title: "Receive Cash Offer", description: "Within 24 hours, you'll receive a fair, no-obligation cash offer with transparent pricing breakdown.", timeline: "24 hours" },
+      { step: 4, title: "Review & Accept", description: "Take your time to review. No pressure. If you accept, we proceed. If not, no hard feelings.", timeline: "Your pace" },
+      { step: 5, title: "Choose Closing Date", description: "You pick the closing date - as fast as 7 days or up to 60+ days. We work on your timeline.", timeline: "Your choice" },
+      { step: 6, title: "Get Paid & Move On", description: "Sign closing docs, receive your cash via wire or check. Walk away with cash in hand.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Are 'We Buy Houses' companies legitimate?",
@@ -462,6 +470,14 @@ export const SERVICE_CONTENT = {
       { title: "Flexibility", description: "Accept our offer or explore other options" },
     ],
     process: "We calculate your cash offer based on current market conditions, your home's location, condition, and comparable recent sales. You'll receive a detailed breakdown showing how we arrived at our offer - complete transparency, no hidden calculations.",
+    detailedProcess: [
+      { step: 1, title: "Request Your Offer", description: "Call (208) 405-2275 or submit our form. Provide basic property details and your timeline.", timeline: "2 minutes" },
+      { step: 2, title: "Quick Property Review", description: "We review property records, neighborhood comps, and may schedule a brief walkthrough.", timeline: "Same day" },
+      { step: 3, title: "Receive Detailed Offer", description: "Get your cash offer with transparent breakdown of how we calculated it. No surprises.", timeline: "24 hours" },
+      { step: 4, title: "Compare & Decide", description: "Compare our offer to other options. No obligation, no pressure to accept.", timeline: "Your pace" },
+      { step: 5, title: "Accept & Schedule Closing", description: "If our offer works, we open escrow and schedule closing on your preferred date.", timeline: "Your choice" },
+      { step: 6, title: "Close & Collect Cash", description: "Sign final documents, receive your funds. Cash in your account same day.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "How do you calculate your cash offer?",
@@ -550,6 +566,14 @@ export const SERVICE_CONTENT = {
       { title: "Hoarding Situations", description: "We handle clean-out and removal" },
     ],
     process: "We assess your property's condition, research comparable sales, and make you a fair cash offer that accounts for needed repairs. You won't spend a penny fixing things up - we handle all repairs after closing.",
+    detailedProcess: [
+      { step: 1, title: "Tell Us About Your Property", description: "Call (208) 405-2275 or submit our form. Describe your property's condition honestly - we've seen it all.", timeline: "2 minutes" },
+      { step: 2, title: "As-Is Assessment", description: "We visit to assess condition. We don't nitpick - we evaluate fairly and account for repairs in our offer.", timeline: "30 minutes" },
+      { step: 3, title: "Fair As-Is Offer", description: "Receive a cash offer that accounts for the property's current condition. No repair demands.", timeline: "24 hours" },
+      { step: 4, title: "Review Without Pressure", description: "Take time to consider. We never pressure you to accept. It's your decision.", timeline: "Your pace" },
+      { step: 5, title: "Close When Ready", description: "Accept and choose your closing date. We handle everything - you pack and go.", timeline: "7-14 days" },
+      { step: 6, title: "Walk Away With Cash", description: "Close at a local title company, receive your funds, and leave the property to us.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "What does selling as-is actually mean?",
@@ -638,6 +662,14 @@ export const SERVICE_CONTENT = {
       { title: "Overwhelming Clean-Out", description: "We can handle or assist with estate clean-out" },
     ],
     process: "We understand inherited properties often come with emotional and logistical challenges. Our team works respectfully with families, attorneys, and executors to make the sale as smooth as possible while honoring your loved one's memory.",
+    detailedProcess: [
+      { step: 1, title: "Contact Us About Estate", description: "Call (208) 405-2275. Tell us about the inherited property, probate status, and family situation.", timeline: "5 minutes" },
+      { step: 2, title: "Sensitive Property Visit", description: "We visit the property with respect for the situation. Take what you want; we'll handle the rest.", timeline: "30 minutes" },
+      { step: 3, title: "Receive Compassionate Offer", description: "We make a fair offer that accounts for probate timeline and property condition.", timeline: "24-48 hours" },
+      { step: 4, title: "Coordinate With Family", description: "Review with all heirs. We can provide documentation for probate court if needed.", timeline: "Family's pace" },
+      { step: 5, title: "Navigate Closing", description: "We work with probate attorney and court schedule. Close when legal requirements are satisfied.", timeline: "After approval" },
+      { step: 6, title: "Distribute Proceeds", description: "Funds distributed to heirs as specified. Property burden lifted from your family.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Can I sell an inherited house before probate is complete?",
@@ -726,6 +758,14 @@ export const SERVICE_CONTENT = {
       { title: "Financial Hardship", description: "Job loss, medical bills, or other financial crisis" },
     ],
     process: "Contact us immediately - timing matters in foreclosure situations. We'll assess your situation, calculate what you owe, and make a cash offer that can pay off your mortgage and potentially leave you with cash. We can often close in days, not weeks.",
+    detailedProcess: [
+      { step: 1, title: "Call Us Immediately", description: "Call (208) 405-2275 now. Tell us your situation - missed payments, notices received, auction dates.", timeline: "5 minutes" },
+      { step: 2, title: "Urgent Assessment", description: "We quickly review your property and mortgage situation. Time is critical in foreclosure.", timeline: "Same day" },
+      { step: 3, title: "Emergency Cash Offer", description: "Receive a fair cash offer designed to pay off your mortgage and stop foreclosure proceedings.", timeline: "24 hours" },
+      { step: 4, title: "Fast Decision", description: "Review the offer with anyone you need to. We move at your pace but are ready when you are.", timeline: "Your choice" },
+      { step: 5, title: "Rapid Closing", description: "We can close in as few as 5-7 days to beat auction dates. We coordinate everything.", timeline: "5-14 days" },
+      { step: 6, title: "Mortgage Paid, Credit Protected", description: "Mortgage is paid off, you receive any remaining equity, foreclosure avoided.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "How does selling avoid foreclosure?",
@@ -814,6 +854,14 @@ export const SERVICE_CONTENT = {
       { title: "One Party Moved Out", description: "Empty house sitting while divorce finalizes" },
     ],
     process: "We work with both parties (and attorneys if involved) to provide a fair cash offer that satisfies both spouses. Quick closing means you can finalize your divorce faster and both move on. We've helped dozens of divorcing couples in Boise navigate this difficult transition.",
+    detailedProcess: [
+      { step: 1, title: "Contact Us Confidentially", description: "Call (208) 405-2275. Both spouses can be involved or one can initiate. We maintain discretion.", timeline: "5 minutes" },
+      { step: 2, title: "Neutral Property Assessment", description: "We assess the property fairly. Both parties receive the same information and offer.", timeline: "30 minutes" },
+      { step: 3, title: "Fair Cash Offer", description: "Receive an offer both parties can evaluate. We work with divorce attorneys if needed.", timeline: "24 hours" },
+      { step: 4, title: "Both Parties Review", description: "Take time for both spouses and attorneys to review. We answer any questions.", timeline: "Your pace" },
+      { step: 5, title: "Coordinated Closing", description: "Both parties sign (in person or remotely). We accommodate separate signings if needed.", timeline: "7-21 days" },
+      { step: 6, title: "Proceeds Split Fairly", description: "Funds distributed as agreed in divorce settlement. Property dispute resolved.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "How do you handle divorce sales with both spouses?",
@@ -902,6 +950,14 @@ export const SERVICE_CONTENT = {
       { title: "Can't Wait for Traditional Sale", description: "Need to close before starting new job" },
     ],
     process: "We understand job relocations are time-sensitive. Submit your property info, receive your cash offer within 24 hours, and choose a closing date that works with your move. We can close in as little as 7 days if you're in a rush, or wait 30-60 days if you need time.",
+    detailedProcess: [
+      { step: 1, title: "Tell Us Your Timeline", description: "Call (208) 405-2275. Share your relocation date and timeline constraints.", timeline: "5 minutes" },
+      { step: 2, title: "Quick Property Walkthrough", description: "We schedule a brief visit at your convenience while you're packing.", timeline: "30 minutes" },
+      { step: 3, title: "Cash Offer Before You Move", description: "Receive your offer within 24 hours. Plan your finances with certainty.", timeline: "24 hours" },
+      { step: 4, title: "Align With Your Move", description: "We match your closing date to your job start date. No double mortgages.", timeline: "Your choice" },
+      { step: 5, title: "Close Before You Leave", description: "Sign closing docs in person or remotely if you've already moved.", timeline: "7-21 days" },
+      { step: 6, title: "Cash For Your New Start", description: "Receive funds to help with your new location. Focus on your new job.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "How fast can you close for a job relocation?",
@@ -990,6 +1046,14 @@ export const SERVICE_CONTENT = {
       { title: "Out-of-State Owner", description: "Managing rental from another state is difficult" },
     ],
     process: "We've purchased dozens of rental properties from tired landlords across Boise. Whether tenants are current, behind on rent, or you're in eviction proceedings, we can make you an offer. We handle all tenant issues after closing so you can walk away stress-free.",
+    detailedProcess: [
+      { step: 1, title: "Share Your Landlord Situation", description: "Call (208) 405-2275. Tell us about your rental, tenant situation, and frustrations.", timeline: "5 minutes" },
+      { step: 2, title: "Property Assessment", description: "We evaluate the property (tenant-occupied is fine). We're discreet with tenants.", timeline: "30 minutes" },
+      { step: 3, title: "Offer Despite Tenants", description: "Receive an offer that accounts for tenant situation. No eviction required first.", timeline: "24 hours" },
+      { step: 4, title: "Review & Accept", description: "Take time to evaluate. Once you accept, the landlord headaches become ours.", timeline: "Your pace" },
+      { step: 5, title: "Transfer Ownership", description: "We close and take over all landlord responsibilities including tenant issues.", timeline: "10-21 days" },
+      { step: 6, title: "Freedom From Landlording", description: "Receive your cash. Walk away from landlord stress permanently.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Can you buy my rental with tenants still living there?",
@@ -1078,6 +1142,14 @@ export const SERVICE_CONTENT = {
       { title: "Attorney Involved", description: "We work directly with estate counsel" },
     ],
     process: "Our team works with your estate attorney and follows Idaho probate procedures. We provide documentation needed for court approval and can adjust our timeline to match probate proceedings. We've successfully closed dozens of probate sales in Ada County.",
+    detailedProcess: [
+      { step: 1, title: "Contact Us As Executor", description: "Call (208) 405-2275. Tell us about the estate, probate status, and your role.", timeline: "5 minutes" },
+      { step: 2, title: "Probate-Aware Assessment", description: "We evaluate the property and review probate requirements with your attorney.", timeline: "30 minutes" },
+      { step: 3, title: "Court-Ready Offer", description: "Receive an offer formatted to meet probate court requirements.", timeline: "24-48 hours" },
+      { step: 4, title: "Attorney & Court Review", description: "Work with your probate attorney. We provide any documentation needed.", timeline: "Court schedule" },
+      { step: 5, title: "Close After Approval", description: "Once court approves, we close quickly. 7-14 days after approval.", timeline: "After approval" },
+      { step: 6, title: "Estate Settled", description: "Funds distributed per estate instructions. Property obligation resolved.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "What is probate and how does it affect selling a house?",
@@ -1166,6 +1238,14 @@ export const SERVICE_CONTENT = {
       { title: "Multiple Liens", description: "Several tax liens on property" },
     ],
     process: "We research all liens on your property, calculate total payoff amounts, and make you a cash offer. At closing, we pay off all liens and you receive the remaining proceeds. Get out from under tax debt and move forward with a clean slate.",
+    detailedProcess: [
+      { step: 1, title: "Tell Us About Your Liens", description: "Call (208) 405-2275. Share what you know about tax liens on your property.", timeline: "5 minutes" },
+      { step: 2, title: "Comprehensive Lien Research", description: "We research all liens - IRS, state, property tax - to understand the full picture.", timeline: "1-2 days" },
+      { step: 3, title: "Offer After Lien Payoff", description: "Receive an offer that accounts for paying off all liens. See what you'll net.", timeline: "24-48 hours" },
+      { step: 4, title: "Review Your Options", description: "Understand exactly how liens will be satisfied. No surprises at closing.", timeline: "Your pace" },
+      { step: 5, title: "Liens Paid At Closing", description: "We satisfy all tax liens at closing. You're released from the debt.", timeline: "14-21 days" },
+      { step: 6, title: "Clean Slate", description: "Liens satisfied, debt resolved, you receive remaining equity. Fresh start.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Can I sell a house with tax liens?",
@@ -1254,6 +1334,14 @@ export const SERVICE_CONTENT = {
       { title: "Fixed Income", description: "Lower expenses with smaller property" },
     ],
     process: "Many of our clients are empty nesters and retirees looking to simplify. We understand you may have lived in your home for decades and have emotional attachments. We provide respectful, fair offers and can close when you've found your perfect next home.",
+    detailedProcess: [
+      { step: 1, title: "Share Your Downsizing Goals", description: "Call (208) 405-2275. Tell us about your home and timeline for your next chapter.", timeline: "5 minutes" },
+      { step: 2, title: "Respectful Home Visit", description: "We visit your family home with appreciation for decades of memories.", timeline: "30-45 minutes" },
+      { step: 3, title: "Fair Offer For Your Home", description: "Receive an offer that respects your home's value. No lowball tactics.", timeline: "24 hours" },
+      { step: 4, title: "Find Your Next Home First", description: "Take time to find your smaller home. We wait until you're ready.", timeline: "Your timeline" },
+      { step: 5, title: "Flexible Closing Date", description: "Close when you've secured your new place. No rush, no pressure.", timeline: "7-90 days" },
+      { step: 6, title: "New Chapter Begins", description: "Receive your funds, start your simpler life. Leave belongings for us to handle.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Do I have to update my home before selling when downsizing?",
@@ -1342,6 +1430,14 @@ export const SERVICE_CONTENT = {
       { title: "Smoke Damage", description: "Structure intact but smoke permeated" },
     ],
     process: "We assess the damage, calculate restoration costs, and make you a fair offer based on as-is condition. If insurance is involved, we can work with settlements. You don't fix anything - we handle all repairs after purchase.",
+    detailedProcess: [
+      { step: 1, title: "Report Your Damage", description: "Call (208) 405-2275. Tell us about the fire or water damage and your situation.", timeline: "5 minutes" },
+      { step: 2, title: "Damage Assessment", description: "We safely assess the damage extent. We've seen major and minor damage - all levels.", timeline: "30-60 minutes" },
+      { step: 3, title: "As-Is Offer", description: "Receive a fair cash offer based on current damaged condition. No repairs required.", timeline: "24-48 hours" },
+      { step: 4, title: "Coordinate With Insurance", description: "If insurance is involved, we work with your settlement. Take time to review.", timeline: "Your pace" },
+      { step: 5, title: "Close On Damaged Property", description: "We close and take ownership of the damaged property. You move on.", timeline: "7-21 days" },
+      { step: 6, title: "Relief From Disaster", description: "Receive your cash. Use it for a fresh start while we handle restoration.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Do you buy houses with fire damage?",
@@ -1430,6 +1526,14 @@ export const SERVICE_CONTENT = {
       { title: "Senior Transition", description: "Moving parent from hoarded home to care" },
     ],
     process: "We approach hoarding situations with sensitivity and respect. You don't need to clean anything - we can purchase with all contents included. We understand these situations are difficult and provide confidential service with compassion.",
+    detailedProcess: [
+      { step: 1, title: "Confidential Contact", description: "Call (208) 405-2275. We handle these situations with complete discretion and compassion.", timeline: "5 minutes" },
+      { step: 2, title: "Non-Judgmental Visit", description: "We assess the property respectfully. No judgment - we've helped many similar situations.", timeline: "30-45 minutes" },
+      { step: 3, title: "All-Inclusive Offer", description: "Receive an offer for the property with all contents. We handle removal.", timeline: "24 hours" },
+      { step: 4, title: "Take Your Time", description: "Remove any items you want. We handle whatever remains after closing.", timeline: "Your pace" },
+      { step: 5, title: "Close With Contents", description: "We close and take responsibility for everything - property and contents.", timeline: "10-21 days" },
+      { step: 6, title: "Fresh Start", description: "Receive your cash. We handle clean-out professionally and respectfully.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Do I have to clean out the hoarded house before you buy it?",
@@ -1518,6 +1622,14 @@ export const SERVICE_CONTENT = {
       { title: "Need to Move", description: "Can't wait months for another listing attempt" },
     ],
     process: "We've bought dozens of homes that wouldn't sell traditionally. Often these homes just need the right buyer - a cash buyer who doesn't need financing approval. We make fair offers on expired listings and close quickly with certainty.",
+    detailedProcess: [
+      { step: 1, title: "Tell Us About Your Listing", description: "Call (208) 405-2275. Share your listing history and why you think it didn't sell.", timeline: "5 minutes" },
+      { step: 2, title: "Fresh Property Review", description: "We evaluate without the biases of previous buyers or agents.", timeline: "30 minutes" },
+      { step: 3, title: "Cash Offer - No Contingencies", description: "Receive a guaranteed cash offer. No financing contingencies that scared off buyers.", timeline: "24 hours" },
+      { step: 4, title: "Compare To Listing Price", description: "See how our offer compares. Sometimes cash in hand beats waiting forever.", timeline: "Your choice" },
+      { step: 5, title: "Finally Sell Your House", description: "Accept and close. No more showings, no more hoping for the right buyer.", timeline: "7-14 days" },
+      { step: 6, title: "Move On With Cash", description: "Listing nightmare over. Receive your cash and close this chapter.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Why didn't my house sell with a realtor?",
@@ -1606,6 +1718,14 @@ export const SERVICE_CONTENT = {
       { title: "Can't Catch Up", description: "Know you can't get current on loan" },
     ],
     process: "Contact us as soon as you realize you can't catch up on payments. The earlier you act, the more options you have. We'll calculate your payoff amount and make a fair offer. If there's equity, you may receive cash after paying off the mortgage.",
+    detailedProcess: [
+      { step: 1, title: "Call Before It Gets Worse", description: "Call (208) 405-2275. Tell us how far behind you are and your financial situation.", timeline: "5 minutes" },
+      { step: 2, title: "Calculate Your Options", description: "We review your mortgage, payoff amount, and home value to understand options.", timeline: "Same day" },
+      { step: 3, title: "Offer To Catch You Up", description: "Receive an offer that pays off your mortgage and may leave you with equity.", timeline: "24 hours" },
+      { step: 4, title: "Stop The Stress", description: "Accept and stop worrying about late notices and mounting fees.", timeline: "Your choice" },
+      { step: 5, title: "Pay Off Mortgage", description: "We close and satisfy your mortgage. No more missed payments.", timeline: "7-14 days" },
+      { step: 6, title: "Financial Relief", description: "Mortgage satisfied, stress ended, receive any remaining equity. Breathe again.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "How many payments behind triggers foreclosure?",
@@ -1694,6 +1814,14 @@ export const SERVICE_CONTENT = {
       { title: "Compliance Orders", description: "City issued orders to correct violations" },
     ],
     process: "We research all code violations on your property and factor compliance costs into our offer. You don't need to obtain permits, fix violations, or deal with the city. We buy as-is and handle all compliance issues after purchase.",
+    detailedProcess: [
+      { step: 1, title: "Tell Us About Violations", description: "Call (208) 405-2275. Share what violations you know about - municipal, permits, etc.", timeline: "5 minutes" },
+      { step: 2, title: "Violation Research", description: "We research all open violations and unpermitted work on the property.", timeline: "1-2 days" },
+      { step: 3, title: "Offer Despite Violations", description: "Receive a cash offer that accounts for bringing property into compliance.", timeline: "24-48 hours" },
+      { step: 4, title: "Review Your Options", description: "Compare to cost of fixing violations yourself. Usually selling to us makes sense.", timeline: "Your pace" },
+      { step: 5, title: "Transfer Violation Responsibility", description: "We close and assume all violation resolution responsibilities.", timeline: "14-21 days" },
+      { step: 6, title: "Free From City Hassles", description: "Receive your cash. We deal with the city, permits, and compliance.", timeline: "Same day" }
+    ],
     faqs: [
       {
         question: "Can I sell a house with open code violations?",
