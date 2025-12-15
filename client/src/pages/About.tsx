@@ -44,7 +44,7 @@ export default function About() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative py-16 md:py-32 lg:py-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={heroBackground} alt="About Home Buyer Boise - trusted cash home buyers serving the Treasure Valley since 2017" className="w-full h-full object-cover opacity-60" width="1920" height="1080" loading="eager" />
         </div>
