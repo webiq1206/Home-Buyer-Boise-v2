@@ -250,14 +250,14 @@ export function QuoteWizard({
             {step === 2 && "Property Details"}
             {step === 3 && "Your Situation"}
             {step === 4 && "Contact Information"}
-            {step === 5 && "Your Cash Offer Range"}
+            {step === 5 && "Request Received"}
           </CardTitle>
           <CardDescription>
             {step === 1 && "Tell us where your property is located"}
             {step === 2 && "Help us understand your property"}
             {step === 3 && "Tell us about your timeline and needs"}
             {step === 4 && "How can we reach you with an offer?"}
-            {step === 5 && "Based on the information you provided"}
+            {step === 5 && "We'll be in touch soon"}
           </CardDescription>
         </CardHeader>
         
@@ -625,24 +625,6 @@ export function QuoteWizard({
                 </p>
               </div>
 
-              {offerData.anchorOffer > 0 && (
-                <Card className="bg-primary/5 border-primary/20">
-                  <CardContent className="pt-6">
-                    <div className="text-center space-y-2">
-                      <p className="text-sm text-muted-foreground">Estimated Offer Range</p>
-                      <div className="flex items-center justify-center gap-3">
-                        <DollarSign className="h-6 w-6 text-primary" />
-                        <p className="text-3xl font-bold text-primary">
-                          ${offerData.offerLow.toLocaleString()} - ${offerData.offerHigh.toLocaleString()}
-                        </p>
-                      </div>
-                      <p className="text-xs text-muted-foreground pt-2">
-                        This is a preliminary range. We'll provide a detailed offer after a brief property assessment.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
 
               <div className="space-y-3 text-sm text-muted-foreground">
                 <h4 className="font-semibold text-foreground">What happens next?</h4>
