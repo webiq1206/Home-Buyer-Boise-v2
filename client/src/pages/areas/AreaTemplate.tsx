@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { TrustBadges } from "@/components/TrustBadges";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { QuoteWizard } from "@/components/QuoteWizard";
@@ -852,6 +853,16 @@ export default function AreaTemplate({ cityName, citySlug }: AreaTemplateProps) 
                     </Button>
                   ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Badges Section */}
+        <section className="py-12 bg-muted/30">
+          <div className="container px-4 md:px-8">
+            <div className="max-w-5xl mx-auto">
+              <h3 className="text-xl font-semibold text-center mb-8">Why {cityName} Homeowners Trust Us</h3>
+              <TrustBadges variant="default" cityName={cityName} />
             </div>
           </div>
         </section>

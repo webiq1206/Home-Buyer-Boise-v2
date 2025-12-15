@@ -25,6 +25,7 @@ import { NearMeFAQ } from "@/components/NearMeFAQ";
 import { CommonSituations } from "@/components/CommonSituations";
 import { generateSEOMetadata, generateLogoAltTag, BUSINESS_INFO } from "@/lib/seo";
 import { generateLocalBusinessSchema, generateOrganizationSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { TrustStats, CompanyCredentials } from "@/components/TrustBadges";
 import heroBackground from "@assets/Home Buyer Boise Background Image_1764010277862.png";
 import starsBackground from "@assets/Stars (2)_1764092697571.png";
 import smileyBackground from "@assets/Smiley Face small_1764092666035.png";
@@ -480,6 +481,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Stats Section */}
+      <TrustStats />
+
       {/* Service Area Map */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="container px-4 md:px-8">
@@ -507,6 +511,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Company Credentials / Why Trust Us */}
+      <CompanyCredentials className="bg-muted/30" />
 
       {/* Final CTA */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">

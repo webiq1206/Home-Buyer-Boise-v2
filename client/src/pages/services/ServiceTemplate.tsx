@@ -15,6 +15,7 @@ import type { Service } from "@shared/servicesData";
 import { generateSEOMetadata, BUSINESS_INFO, generateFAQSchema } from "@/lib/seo";
 import { generateServicePageSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import { Link } from "wouter";
+import { TrustBadges } from "@/components/TrustBadges";
 
 interface ServiceSuccessStory {
   title: string;
@@ -601,6 +602,16 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
             </div>
           </section>
         )}
+
+        {/* Trust Indicators */}
+        <section className="py-12 bg-muted/30">
+          <div className="container px-4">
+            <div className="max-w-5xl mx-auto">
+              <h3 className="text-xl font-semibold text-center mb-8">Trusted by Treasure Valley Homeowners</h3>
+              <TrustBadges variant="default" />
+            </div>
+          </div>
+        </section>
 
         {/* Final CTA */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/5">

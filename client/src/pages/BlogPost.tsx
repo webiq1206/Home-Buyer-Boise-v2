@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { Calendar, Clock, ChevronLeft, ChevronRight, Share2, Home, Phone, CheckCircle, ArrowRight, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { AuthorBio } from "@/components/AuthorBio";
 import heroBackground from "@assets/Exclamation Points_1764090286437.png";
 
 interface BlogPostData {
@@ -350,6 +351,12 @@ export default function BlogPost() {
                     </Accordion>
                   </section>
                 )}
+
+                {/* Author Bio Section */}
+                <section className="mt-16 pt-8 border-t">
+                  <h3 className="text-xl font-bold mb-6">About the Author</h3>
+                  <AuthorBio authorName={post.author} variant="card" showCredentials={true} />
+                </section>
 
                 {/* CTA Section - Matches Homepage Pattern */}
                 <section className="mt-16">
