@@ -12,9 +12,61 @@ import { ArrowRight, CheckCircle, Phone, MapPin, Plane, DollarSign, HeartCrack, 
 import { CITIES } from "@shared/contentData";
 import { SERVICE_CONTENT } from "@shared/servicesData";
 import type { Service } from "@shared/servicesData";
-import { generateSEOMetadata, BUSINESS_INFO } from "@/lib/seo";
+import { generateSEOMetadata, BUSINESS_INFO, generateFAQSchema } from "@/lib/seo";
 import { generateServicePageSchema, generateBreadcrumbSchema } from "@/lib/seo";
 import { Link } from "wouter";
+
+interface ServiceSuccessStory {
+  title: string;
+  location: string;
+  situation: string;
+  solution: string;
+  quote: string;
+}
+
+interface ServiceProcessStep {
+  step: number;
+  title: string;
+  description: string;
+  timeline: string;
+}
+
+interface ServiceComparisonData {
+  traditional: {
+    timeline: string;
+    repairs: string;
+    commissions: string;
+    closingCosts: string;
+    certainty: string;
+    convenience: string;
+  };
+  cashOffer: {
+    timeline: string;
+    repairs: string;
+    commissions: string;
+    closingCosts: string;
+    certainty: string;
+    convenience: string;
+  };
+}
+
+interface ServiceFAQ {
+  question: string;
+  answer: string;
+}
+
+interface ServiceContentData {
+  heroSubtitle: string;
+  intro: string;
+  whyChoose: string[];
+  situations: { title: string; description: string }[];
+  process?: string;
+  detailedProcess?: ServiceProcessStep[];
+  faqs?: ServiceFAQ[];
+  successStories?: ServiceSuccessStory[];
+  comparisonData?: ServiceComparisonData;
+  cta: string;
+}
 
 // Icon mapping for situation cards
 const SITUATION_ICONS: Record<string, LucideIcon> = {
@@ -37,7 +89,7 @@ interface ServiceTemplateProps {
 }
 
 export function ServiceTemplate({ service }: ServiceTemplateProps) {
-  const content = SERVICE_CONTENT[service.slug as keyof typeof SERVICE_CONTENT];
+  const content = SERVICE_CONTENT[service.slug as keyof typeof SERVICE_CONTENT] as ServiceContentData;
   
   if (!content) {
     throw new Error(`Service content not found for slug: ${service.slug}`);
@@ -59,6 +111,8 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
     { name: "Services", url: "/services" },
     { name: service.name, url: `/services/${service.slug}` },
   ]);
+  
+  const faqSchema = content.faqs ? generateFAQSchema(content.faqs) : null;
 
   return (
     <>
@@ -84,6 +138,11 @@ export function ServiceTemplate({ service }: ServiceTemplateProps) {
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbSchema)}
         </script>
+        {faqSchema && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchema)}
+          </script>
+        )}
       </Helmet>
 
       <div className="min-h-screen">
