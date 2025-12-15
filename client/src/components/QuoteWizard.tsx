@@ -48,8 +48,6 @@ const step4Schema = z.object({
   email: z.string().email("Please enter a valid email"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   consentToContact: z.boolean().refine(val => val === true, "You must consent to be contacted"),
-  consentToText: z.boolean().optional(),
-  consentToEmail: z.boolean().optional(),
 });
 
 type Step1Data = z.infer<typeof step1Schema>;
@@ -120,8 +118,6 @@ export function QuoteWizard({
       email: "",
       phone: "",
       consentToContact: false,
-      consentToText: false,
-      consentToEmail: false,
     },
   });
 
@@ -209,8 +205,8 @@ export function QuoteWizard({
       email: contactData.email,
       phone: contactData.phone,
       consentToContact: contactData.consentToContact,
-      consentToText: contactData.consentToText || false,
-      consentToEmail: contactData.consentToEmail || false,
+      consentToText: true,
+      consentToEmail: true,
       
       // Status
       status: "pending",
@@ -578,36 +574,12 @@ export function QuoteWizard({
                     data-testid="checkbox-consent"
                   />
                   <Label htmlFor="consentToContact" className="text-sm font-normal leading-relaxed cursor-pointer">
-                    I consent to being contacted by HomeBuyerBoise regarding my cash offer request. *
+                    I consent to being contacted by HomeBuyerBoise via phone, text, and email regarding my cash offer request. *
                   </Label>
                 </div>
                 {form4.formState.errors.consentToContact && (
                   <p className="text-sm text-destructive">{form4.formState.errors.consentToContact.message}</p>
                 )}
-
-                <div className="flex items-start space-x-3">
-                  <Checkbox
-                    id="consentToText"
-                    checked={form4.watch("consentToText")}
-                    onCheckedChange={(checked) => form4.setValue("consentToText", checked as boolean)}
-                    data-testid="checkbox-text"
-                  />
-                  <Label htmlFor="consentToText" className="text-sm font-normal leading-relaxed cursor-pointer">
-                    I consent to receiving text messages
-                  </Label>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <Checkbox
-                    id="consentToEmail"
-                    checked={form4.watch("consentToEmail")}
-                    onCheckedChange={(checked) => form4.setValue("consentToEmail", checked as boolean)}
-                    data-testid="checkbox-email"
-                  />
-                  <Label htmlFor="consentToEmail" className="text-sm font-normal leading-relaxed cursor-pointer">
-                    I consent to receiving email communications
-                  </Label>
-                </div>
               </div>
 
               <Alert>
