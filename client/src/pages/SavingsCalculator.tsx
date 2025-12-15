@@ -173,30 +173,33 @@ export default function SavingsCalculator() {
     // Guard: ensure we have property data
     if (!property.city || !property.buildingSqFt) {
       console.warn('[SavingsCalculator] Missing property data for estimation:', property);
-      return 300000; // Fallback default
+      return 400000; // Conservative Boise metro fallback
     }
 
-    // Base value on city and property characteristics
-    let baseValuePerSqFt = 200; // Default
+    // 2025 Treasure Valley price per square foot (updated Dec 2025)
+    // Sources: Redfin, Zillow, local MLS data
+    let baseValuePerSqFt = 250; // Default for unknown areas
 
-    // Adjust by city
+    // Adjust by city - 2025 market values
     const city = property.city.toUpperCase();
     if (city.includes('EAGLE')) {
-      baseValuePerSqFt = 280;
+      baseValuePerSqFt = 330; // Premium market
+    } else if (city.includes('BOISE') || city.includes('GARDEN CITY')) {
+      baseValuePerSqFt = 295; // Core urban
     } else if (city.includes('MERIDIAN')) {
-      baseValuePerSqFt = 250;
-    } else if (city.includes('BOISE')) {
-      baseValuePerSqFt = 260;
+      baseValuePerSqFt = 270; // Suburban growth
     } else if (city.includes('STAR')) {
-      baseValuePerSqFt = 240;
+      baseValuePerSqFt = 285; // Growing area
     } else if (city.includes('KUNA')) {
-      baseValuePerSqFt = 230;
+      baseValuePerSqFt = 255; // Affordable suburb
     } else if (city.includes('NAMPA')) {
-      baseValuePerSqFt = 210;
-    } else if (city.includes('CALDWELL')) {
-      baseValuePerSqFt = 200;
+      baseValuePerSqFt = 230; // Canyon County
     } else if (city.includes('MIDDLETON')) {
-      baseValuePerSqFt = 220;
+      baseValuePerSqFt = 240; // Canyon County
+    } else if (city.includes('CALDWELL')) {
+      baseValuePerSqFt = 210; // Most affordable
+    } else if (city.includes('MOUNTAIN HOME')) {
+      baseValuePerSqFt = 195; // Elmore County
     }
 
     // Calculate based on building square footage
