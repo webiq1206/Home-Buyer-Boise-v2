@@ -34,6 +34,12 @@ export interface CityData {
     commonNeeds: string[];
   };
   facts?: Array<{label: string; value: string}>;
+  marketStats?: {
+    medianPrice?: string;
+    daysOnMarket?: string;
+    priceGrowth?: string;
+  };
+  faqs?: Array<{question: string; answer: string}>;
 }
 
 // Cities we serve
