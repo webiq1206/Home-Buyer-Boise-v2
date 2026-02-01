@@ -2,126 +2,33 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { 
+  BLOG_POSTS, 
+  getBlogPostBySlug, 
+  getAllBlogSlugs,
+  getRecentBlogPosts,
+  type BlogPostData 
+} from "@/shared/blogContent";
+import { ArrowLeft, Calendar, Clock, User, Tag, Share2, ArrowRight } from "lucide-react";
 
 interface PageProps {
   params: { slug: string };
 }
 
-// Sample blog posts - in production, these would come from the database or CMS
-const blogPosts: Record<string, {
-  title: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  date: string;
-  author: string;
-}> = {
-  "how-to-sell-house-fast-boise": {
-    title: "How to Sell Your House Fast in Boise",
-    excerpt: "Learn the best strategies for selling your house quickly in the Boise real estate market.",
-    content: `
-      <p>Selling a house in Boise can be challenging, especially if you're on a tight timeline. Whether you're relocating for work, dealing with a financial hardship, or simply need to move quickly, there are several strategies you can use to sell your house fast.</p>
-      
-      <h2>1. Price It Right from the Start</h2>
-      <p>One of the most important factors in selling your house quickly is pricing it correctly from day one. Overpriced homes sit on the market longer, while competitively priced homes generate more interest and often sell faster.</p>
-      
-      <h2>2. Consider a Cash Buyer</h2>
-      <p>Cash home buyers like Home Buyer Boise can close in as little as 7 days. This is ideal if you need to sell quickly without the uncertainty of traditional financing falling through.</p>
-      
-      <h2>3. Make Necessary Repairs</h2>
-      <p>While you don't need to renovate your entire home, addressing obvious issues can help your home sell faster. However, if you're short on time or funds, selling to a cash buyer as-is is always an option.</p>
-      
-      <h2>Ready to Sell Fast?</h2>
-      <p>Contact Home Buyer Boise today for a free, no-obligation cash offer on your Boise area home. We can close on your timeline - as fast as 7 days or up to 60+ days if you need more time.</p>
-    `,
-    category: "Selling Tips",
-    date: "January 15, 2026",
-    author: "Home Buyer Boise Team",
-  },
-  "cash-offer-vs-traditional-sale": {
-    title: "Cash Offer vs Traditional Sale: Which is Right for You?",
-    excerpt: "Compare the pros and cons of accepting a cash offer versus listing your home traditionally.",
-    content: `
-      <p>When selling your home, you have two main options: accept a cash offer from an investor or list your home traditionally with a realtor. Both have their pros and cons, and the right choice depends on your situation.</p>
-      
-      <h2>Cash Offer Benefits</h2>
-      <ul>
-        <li>Close in as little as 7 days</li>
-        <li>No repairs or staging needed</li>
-        <li>No realtor commissions (save 5-6%)</li>
-        <li>No showings or open houses</li>
-        <li>Guaranteed sale - no financing fall-through</li>
-      </ul>
-      
-      <h2>Traditional Sale Benefits</h2>
-      <ul>
-        <li>Potentially higher sale price</li>
-        <li>Exposure to more buyers</li>
-        <li>Agent guidance through the process</li>
-      </ul>
-      
-      <h2>Which is Right for You?</h2>
-      <p>A cash sale is ideal if you need to sell quickly, don't want to make repairs, or want to avoid the uncertainty of a traditional sale. A traditional sale may be better if you have time to wait and want to maximize your sale price.</p>
-    `,
-    category: "Buyer Education",
-    date: "January 10, 2026",
-    author: "Home Buyer Boise Team",
-  },
-  "selling-inherited-property-idaho": {
-    title: "Selling an Inherited Property in Idaho",
-    excerpt: "A complete guide to selling inherited real estate in Idaho, including probate considerations.",
-    content: `
-      <p>Inheriting a property can be both a blessing and a burden. If you've inherited a house in Idaho and need to sell it, there are several important considerations to keep in mind.</p>
-      
-      <h2>Understanding Probate in Idaho</h2>
-      <p>Most inherited properties in Idaho must go through probate, the legal process of transferring ownership from the deceased to the heirs. This process typically takes 4-6 months.</p>
-      
-      <h2>Selling Before Probate is Complete</h2>
-      <p>In some cases, you may be able to sell the property before probate is complete with court approval. Cash buyers like Home Buyer Boise are experienced in these transactions.</p>
-      
-      <h2>Tax Considerations</h2>
-      <p>When you inherit a property, you receive a "stepped-up" basis, meaning your cost basis is the fair market value at the time of inheritance. This can significantly reduce capital gains taxes if you sell.</p>
-      
-      <h2>Need to Sell an Inherited Property?</h2>
-      <p>Home Buyer Boise specializes in purchasing inherited properties. We can help navigate the complexities of probate sales and close on your timeline.</p>
-    `,
-    category: "Legal",
-    date: "January 5, 2026",
-    author: "Home Buyer Boise Team",
-  },
-  "avoid-foreclosure-boise": {
-    title: "How to Avoid Foreclosure in Boise",
-    excerpt: "If you're facing foreclosure, here are your options for protecting your credit and equity.",
-    content: `
-      <p>Facing foreclosure is stressful, but you have options. If you're behind on your mortgage in Boise, here's what you can do to protect your credit and potentially save some equity.</p>
-      
-      <h2>Contact Your Lender</h2>
-      <p>Your first step should be contacting your lender. They may offer forbearance, loan modification, or other options to help you catch up on payments.</p>
-      
-      <h2>Sell Your Home</h2>
-      <p>If you can't catch up on payments, selling your home before foreclosure can help you avoid the damage to your credit and potentially walk away with some equity.</p>
-      
-      <h2>Cash Sale Advantages</h2>
-      <p>A cash sale to Home Buyer Boise can close in as little as 7 days, making it possible to sell before your foreclosure date. This can help you avoid the foreclosure on your credit report.</p>
-      
-      <h2>Get Help Today</h2>
-      <p>If you're facing foreclosure in Boise, contact Home Buyer Boise for a confidential consultation. We can often close fast enough to stop foreclosure proceedings.</p>
-    `,
-    category: "Financial",
-    date: "December 28, 2025",
-    author: "Home Buyer Boise Team",
-  },
-};
-
-const blogSlugs = Object.keys(blogPosts);
-
 export function generateStaticParams() {
-  return blogSlugs.map((slug) => ({ slug }));
+  return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  const post = blogPosts[params.slug];
+  const post = getBlogPostBySlug(params.slug);
   
   if (!post) {
     return {
@@ -130,64 +37,291 @@ export function generateMetadata({ params }: PageProps): Metadata {
   }
 
   return {
-    title: `${post.title} | Home Buyer Boise Blog`,
-    description: post.excerpt,
+    title: post.seoTitle || `${post.title} | Home Buyer Boise Blog`,
+    description: post.metaDescription || post.excerpt,
     alternates: {
       canonical: `https://homebuyerboise.com/blog/${params.slug}`,
+    },
+    openGraph: {
+      title: post.seoTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: [post.author],
+      tags: post.tags,
     },
   };
 }
 
+// Format date for display
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Estimate reading time
+function getReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
+// Get related posts by category
+function getRelatedPosts(currentPost: BlogPostData, count: number = 3): BlogPostData[] {
+  return BLOG_POSTS
+    .filter(post => post.slug !== currentPost.slug && post.category === currentPost.category)
+    .slice(0, count);
+}
+
 export default function BlogPostPage({ params }: PageProps) {
-  const post = blogPosts[params.slug];
+  const post = getBlogPostBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
 
+  const relatedPosts = getRelatedPosts(post);
+  const recentPosts = getRecentBlogPosts(4).filter(p => p.slug !== post.slug).slice(0, 3);
+
   return (
     <>
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-navy to-primary text-white py-16">
-          <div className="container px-4">
-            <div className="max-w-3xl">
-              <Link href="/blog" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-4">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Blog
-              </Link>
-              <div className="text-primary-foreground/80 mb-2">{post.category}</div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
-              <div className="flex items-center gap-4 text-white/80">
-                <span>{post.author}</span>
-                <span>•</span>
-                <span>{post.date}</span>
-              </div>
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-16">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              href="/blog" 
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 text-sm"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
+            
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <Badge className="bg-gold text-black">
+                {post.category}
+              </Badge>
+              <span className="text-white/70 text-sm flex items-center gap-1">
+                <Clock className="h-4 w-4" />
+                {getReadingTime(post.content)} min read
+              </span>
+            </div>
+            
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-lg text-white/90 mb-6">
+              {post.excerpt}
+            </p>
+            
+            <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
+              <span className="flex items-center gap-1">
+                <User className="h-4 w-4" />
+                {post.author}
+              </span>
+              <span className="flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                {formatDate(post.publishedAt)}
+              </span>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Content */}
-        <section className="py-16 lg:py-24">
+      {/* Tags */}
+      {post.tags && post.tags.length > 0 && (
+        <section className="py-4 border-b bg-muted/30">
           <div className="container px-4">
-            <div className="max-w-3xl mx-auto">
-              <div 
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-              
-              {/* CTA */}
-              <div className="mt-12 p-8 bg-muted rounded-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Sell Your House?</h3>
-                <p className="text-muted-foreground mb-6">
-                  Get a free, no-obligation cash offer on your Boise area home today.
-                </p>
-                <Button size="lg" asChild>
-                  <Link href="/get-quote">Get Your Cash Offer</Link>
-                </Button>
+            <div className="max-w-4xl mx-auto flex flex-wrap items-center gap-2">
+              <Tag className="h-4 w-4 text-muted-foreground" />
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="text-xs">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Content */}
+      <section className="py-12 lg:py-16">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-[1fr_280px] gap-12">
+              {/* Main Content */}
+              <article>
+                <div 
+                  className="prose prose-lg max-w-none 
+                    prose-headings:font-bold prose-headings:text-foreground
+                    prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                    prose-p:text-muted-foreground prose-p:leading-relaxed
+                    prose-ul:text-muted-foreground prose-ol:text-muted-foreground
+                    prose-li:my-1
+                    prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                    prose-strong:text-foreground
+                    prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                {/* FAQ Section */}
+                {post.faqs && post.faqs.length > 0 && (
+                  <div className="mt-12 pt-8 border-t">
+                    <h2 className="text-2xl font-bold mb-6">
+                      Frequently Asked Questions
+                    </h2>
+                    <Accordion type="single" collapsible className="w-full">
+                      {post.faqs.map((faq, index) => (
+                        <AccordionItem key={index} value={`faq-${index}`}>
+                          <AccordionTrigger className="text-left font-medium">
+                            {faq.question}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground">
+                            {faq.answer}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                )}
+                
+                {/* CTA Box */}
+                <Card className="mt-12 bg-primary/5 border-primary/20">
+                  <CardContent className="p-8 text-center">
+                    <h3 className="text-xl font-bold mb-2">Ready to Sell Your House?</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Get a free, no-obligation cash offer on your Boise area home today.
+                    </p>
+                    <Button size="lg" asChild>
+                      <Link href="/get-quote">Get Your Cash Offer</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </article>
+
+              {/* Sidebar */}
+              <aside className="space-y-8">
+                {/* About the Author */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-bold mb-3">About the Author</h3>
+                    <p className="text-sm text-muted-foreground">
+                      The {post.author} are local cash home buyers serving the Boise metro area. 
+                      We help homeowners sell their properties quickly for fair cash offers.
+                    </p>
+                    <Button variant="outline" size="sm" className="mt-4 w-full" asChild>
+                      <Link href="/about">Learn About Us</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Quick Contact */}
+                <Card className="bg-primary text-white">
+                  <CardContent className="p-6">
+                    <h3 className="font-bold mb-2">Need to Sell Fast?</h3>
+                    <p className="text-sm text-white/80 mb-4">
+                      Get a cash offer in 24 hours. Close in as little as 7 days.
+                    </p>
+                    <Button className="w-full bg-gold text-black hover:bg-gold/90" asChild>
+                      <Link href="/get-quote">Get Offer</Link>
+                    </Button>
+                    <div className="mt-3 text-center">
+                      <a href="tel:2084052275" className="text-sm text-white/80 hover:text-white">
+                        or call (208) 405-2275
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Recent Posts */}
+                {recentPosts.length > 0 && (
+                  <div>
+                    <h3 className="font-bold mb-4">Recent Articles</h3>
+                    <div className="space-y-4">
+                      {recentPosts.map((recentPost) => (
+                        <Link 
+                          key={recentPost.slug}
+                          href={`/blog/${recentPost.slug}`}
+                          className="block group"
+                        >
+                          <h4 className="text-sm font-medium group-hover:text-primary transition-colors line-clamp-2">
+                            {recentPost.title}
+                          </h4>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            {formatDate(recentPost.publishedAt)}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="py-12 lg:py-16 bg-muted/50">
+          <div className="container px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {relatedPosts.map((relatedPost) => (
+                  <Card key={relatedPost.slug} className="hover:shadow-lg transition-shadow group">
+                    <CardContent className="p-6">
+                      <Badge variant="secondary" className="text-xs mb-3">
+                        {relatedPost.category}
+                      </Badge>
+                      <h3 className="font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        <Link href={`/blog/${relatedPost.slug}`}>
+                          {relatedPost.title}
+                        </Link>
+                      </h3>
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                        {relatedPost.excerpt}
+                      </p>
+                      <Link 
+                        href={`/blog/${relatedPost.slug}`}
+                        className="text-sm text-primary font-medium flex items-center gap-1 hover:underline"
+                      >
+                        Read article <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
         </section>
+      )}
+
+      {/* Final CTA */}
+      <section className="py-12 lg:py-16 bg-primary text-white">
+        <div className="container px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Sell Your House Fast?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Skip the hassle of traditional home selling. Get a fair cash offer on your Boise area home today.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="bg-gold text-black hover:bg-gold/90 font-semibold" asChild>
+              <Link href="/get-quote">Get Your Cash Offer</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <a href="tel:2084052275">Call (208) 405-2275</a>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
