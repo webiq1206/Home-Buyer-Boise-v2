@@ -1,6 +1,6 @@
 modules = ["nodejs-20", "web", "postgresql-16"]
-run = "npm run dev"
-hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
+run = "cd next-app && npm run dev"
+hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist", ".next"]
 
 [nix]
 channel = "stable-24_05"
@@ -8,15 +8,15 @@ packages = ["imagemagick", "libwebp"]
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
-run = ["npm", "run", "start"]
+build = ["sh", "-c", "cd next-app && npm run build"]
+run = ["sh", "-c", "cd next-app && npm run start"]
 
 [[ports]]
-localPort = 5000
+localPort = 3000
 externalPort = 80
 
 [env]
-PORT = "5000"
+PORT = "3000"
 
 [workflows]
 runButton = "Project"
@@ -36,8 +36,8 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
-waitForPort = 5000
+args = "cd next-app && npm run dev"
+waitForPort = 3000
 
 [agent]
 integrations = ["javascript_mem_db:1.0.0", "javascript_openai_ai_integrations:1.0.0", "google-mail:1.0.0", "stripe:1.0.0", "javascript_log_in_with_replit:1.0.0", "resend:1.0.0"]
@@ -45,4 +45,4 @@ integrations = ["javascript_mem_db:1.0.0", "javascript_openai_ai_integrations:1.
 [userenv]
 
 [userenv.shared]
-VITE_GA_MEASUREMENT_ID = "G-9C36JWKMT1"
+NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-9C36JWKMT1"
