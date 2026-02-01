@@ -1,0 +1,30 @@
+Based on my thorough review of the codebase, your analysis is partially incorrect. Let me give you the accurate picture:
+Components That Already Have "use client" (Correctly)
+Component	Has "use client"?	Uses Hooks?
+Navigation.tsx	Yes (line 1)	useState, usePathname
+ScrollToTop.tsx	Yes (line 1)	useEffect, usePathname
+Toaster.tsx	Yes (line 1)	useToast
+Testimonials.tsx	Yes (line 1)	useState, useEffect
+ServiceAreaMap.tsx	Yes (line 1)	useRouter
+HeroAddressLookup.tsx	Yes (line 1)	useState, useEffect, useRef, useCallback, useRouter
+accordion.tsx	Yes (line 1)	Radix UI (client-side)
+Components That DON'T Need "use client" (Your List Was Wrong)
+Component	Has "use client"?	Why It's Fine
+CommonSituations.tsx	No	No hooks, just static JSX
+Footer.tsx	No	No hooks, new Date().getFullYear() works on server
+NearMeFAQ.tsx	No	No direct hooks - imports Accordion which has its own "use client"
+StickyBottomNav.tsx	No	No hooks, just static JSX with Link
+TrustBadges.tsx	No	No hooks, just static calculations
+Breadcrumbs.tsx	No	No hooks, just static JSX
+Why Your Analysis Is Incorrect
+In Next.js App Router, a component only needs "use client" if it:
+Directly uses React hooks (useState, useEffect, etc.)
+Uses browser-only APIs (window, document)
+Uses event handlers that need client-side interactivity
+Importing a client component from a server component is perfectly fine - the client boundary is established at the component level. For example, NearMeFAQ imports Accordion which has "use client", but NearMeFAQ itself doesn't need the directive because it doesn't use hooks directly.
+What Could Actually Be Causing "Invalid Hook Call" Errors
+If you're seeing these errors, the real causes are likely:
+Duplicate React instances - Check if both the root package.json and next-app/package.json have React installed, causing multiple copies
+Build cache issues - Try deleting .next folder and rebuilding
+Mismatched React versions - The root project might have a different React version than next-app
+Would you like me to help investigate the actual source of the errors, or do you have browser console output I can review?
