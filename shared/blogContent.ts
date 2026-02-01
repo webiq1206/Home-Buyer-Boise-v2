@@ -13966,3 +13966,29 @@ export const BLOG_POSTS: BlogPostData[] = [
     ]
   }
 ];
+
+// Helper functions for Next.js pages
+
+export function getAllBlogSlugs(): string[] {
+  return BLOG_POSTS.map(post => post.slug);
+}
+
+export function getBlogPostBySlug(slug: string): BlogPostData | undefined {
+  return BLOG_POSTS.find(post => post.slug === slug);
+}
+
+export function getRecentBlogPosts(count: number = 5): BlogPostData[] {
+  return [...BLOG_POSTS]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, count);
+}
+
+export function getAllBlogCategories(): string[] {
+  const categories = new Set<string>();
+  BLOG_POSTS.forEach(post => categories.add(post.category));
+  return Array.from(categories).sort();
+}
+
+export function getBlogPostsByCategory(category: string): BlogPostData[] {
+  return BLOG_POSTS.filter(post => post.category === category);
+}

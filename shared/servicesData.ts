@@ -174,6 +174,15 @@ export const SERVICES = [
 
 export type Service = typeof SERVICES[number];
 
+// Helper functions for Next.js pages
+export function getAllServiceSlugs(): string[] {
+  return SERVICES.map(service => service.slug);
+}
+
+export function getServiceBySlug(slug: string): Service | undefined {
+  return SERVICES.find(service => service.slug === slug);
+}
+
 // SEO-optimized content for each service
 export const SERVICE_CONTENT = {
   "sell-house-fast": {

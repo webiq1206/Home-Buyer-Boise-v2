@@ -2797,6 +2797,11 @@ export function getCityBySlug(slug: string): CityData | undefined {
   return CITY_SLUG_MAP.get(slug);
 }
 
+// Helper function to get all city slugs (for static generation)
+export function getAllCitySlugs(): string[] {
+  return CITIES.map(city => city.slug);
+}
+
 // Helper to get primary city slug (for canonical URLs)
 export function getPrimaryCitySlug(): string {
   return 'kuna';
@@ -2817,6 +2822,15 @@ export function getCityServiceCombo(serviceSlug: string, citySlug?: string): {
     isValid: !!service && (!citySlug || !!city)
   };
 }
+
+// Re-export blog functions from blogContent for convenience
+export { 
+  getAllBlogSlugs, 
+  getBlogPostBySlug, 
+  getRecentBlogPosts, 
+  getAllBlogCategories,
+  getBlogPostsByCategory 
+} from './blogContent';
 
 // This will be expanded to include ALL 92+ services
 // For now, we start with priority services and expand incrementally
