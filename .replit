@@ -1,48 +1,17 @@
-modules = ["nodejs-20", "web", "postgresql-16"]
-run = "cd next-app && npm run dev"
-hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist", ".next"]
+run = "npm run dev"
+entrypoint = "app/page.tsx"
+modules = ["nodejs-20:v8-20230920-bd784b9"]
+
+hidden = [".config", "package-lock.json"]
 
 [nix]
 channel = "stable-24_05"
-packages = ["imagemagick", "libwebp"]
 
 [deployment]
-deploymentTarget = "autoscale"
-build = ["sh", "-c", "cd next-app && npm run build"]
-run = ["sh", "-c", "cd next-app && npm run start"]
+run = ["sh", "-c", "npm run start"]
+deploymentTarget = "cloudrun"
+build = ["sh", "-c", "npm run build"]
 
 [[ports]]
-localPort = 3000
+localPort = 5000
 externalPort = 80
-
-[env]
-PORT = "3000"
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd next-app && npm run dev"
-waitForPort = 3000
-
-[agent]
-integrations = ["javascript_mem_db:1.0.0", "javascript_openai_ai_integrations:1.0.0", "google-mail:1.0.0", "stripe:1.0.0", "javascript_log_in_with_replit:1.0.0", "resend:1.0.0"]
-
-[userenv]
-
-[userenv.shared]
-NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-9C36JWKMT1"

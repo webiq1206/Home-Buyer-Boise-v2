@@ -5,7 +5,6 @@
 
 /**
  * Round price to nearest $1,000 for cleaner offer presentations
- * Examples: $247,500 → $248,000, $243,000 → $243,000, $248,500 → $249,000
  */
 function roundToNearestThousand(price: number): number {
   return Math.round(price / 1000) * 1000;
@@ -82,33 +81,29 @@ interface PropertyDetails {
 }
 
 interface OfferCalculation {
-  arv: number;                      // Estimated market value (after repairs)
-  estimatedRepairs: number;         // Estimated repair costs
-  holdingCosts: number;             // Carrying costs during hold period
-  closingCosts: number;             // Transaction costs (our costs)
-  buyerAgentFee: number;           // Buyer's agent commission we absorb
-  totalCosts: number;               // Sum of all costs
-  targetProfit: number;             // Desired profit margin amount
-  minimumProfit: number;            // Minimum acceptable profit
+  arv: number;
+  estimatedRepairs: number;
+  holdingCosts: number;
+  closingCosts: number;
+  buyerAgentFee: number;
+  totalCosts: number;
+  targetProfit: number;
+  minimumProfit: number;
   
-  // Offer range
-  offerLow: number;                 // Conservative offer (higher margin)
-  offerHigh: number;                // Aggressive offer (minimum margin)
-  anchorOffer: number;              // Middle/recommended offer
+  offerLow: number;
+  offerHigh: number;
+  anchorOffer: number;
   
-  // Profitability check
-  isProfitable: boolean;            // Whether deal meets minimum margin
-  profitMargin: number;             // Actual profit margin on anchor offer
-  belowMinimumViable: boolean;      // Whether offer is below minimum viable amount
-  warnings: string[];               // Any concerns about the deal
+  isProfitable: boolean;
+  profitMargin: number;
+  belowMinimumViable: boolean;
+  warnings: string[];
   
-  // Seller comparison
-  realtorCommissionSavings: number; // What seller saves vs listing with realtor
-  sellerClosingCosts: number;       // Typical seller closing costs in traditional sale
-  netAfterRealtor: number;          // What seller would net through realtor
-  netWithUs: number;                // What seller nets with our offer
+  realtorCommissionSavings: number;
+  sellerClosingCosts: number;
+  netAfterRealtor: number;
+  netWithUs: number;
   
-  // Calculation inputs (for debugging/transparency)
   calculationInputs: {
     arv: number;
     condition: string;
@@ -139,6 +134,70 @@ function calculateRepairEstimate(
 }
 
 /**
+ * Validate that an offer is profitable given our costs
+ */
+export function validateOfferProfitability(
+  offerPrice: number,
+  estimatedMarketValue: number,
+  estimatedRepairs: number,
+  squareFeet?: number
+): {
+  isProfitable: boolean;
+  profitMargin: number;
+  profitAmount: number;
+  warnings: string[];
+} {
+  const warnings: string[] = [];
+  
+  if (estimatedMarketValue <= 0 || offerPrice < 0) {
+    return {
+      isProfitable: false,
+      profitMargin: 0,
+      profitAmount: 0,
+      warnings: ['Invalid market value or offer price'],
+    };
+  }
+  
+  if (offerPrice === 0) {
+    return {
+      isProfitable: false,
+      profitMargin: 0,
+      profitAmount: 0,
+      warnings: ['Offer price is zero - deal is not viable'],
+    };
+  }
+  
+  const holdingCosts = HOLDING_COSTS_PER_MONTH * ESTIMATED_HOLDING_MONTHS;
+  const closingCosts = offerPrice * CLOSING_COSTS_RATE;
+  const buyerAgentFee = offerPrice * BUYER_AGENT_COMMISSION;
+  const totalCosts = estimatedRepairs + holdingCosts + closingCosts + buyerAgentFee;
+  
+  const profitAmount = estimatedMarketValue - offerPrice - totalCosts;
+  const profitMargin = profitAmount / estimatedMarketValue;
+  
+  const isProfitable = profitMargin >= MINIMUM_PROFIT_MARGIN && profitAmount > 0;
+  
+  if (profitAmount <= 0) {
+    warnings.push('Deal is unprofitable - costs exceed ARV');
+  } else if (profitMargin < MINIMUM_PROFIT_MARGIN) {
+    warnings.push(`Profit margin (${(profitMargin * 100).toFixed(1)}%) is below minimum (${(MINIMUM_PROFIT_MARGIN * 100).toFixed(1)}%)`);
+  } else if (profitMargin < TARGET_PROFIT_MARGIN) {
+    warnings.push(`Profit margin (${(profitMargin * 100).toFixed(1)}%) is below target (${(TARGET_PROFIT_MARGIN * 100).toFixed(1)}%)`);
+  }
+  
+  if (profitAmount > 0 && profitAmount < 10000) {
+    warnings.push(`Profit amount ($${profitAmount.toLocaleString()}) is very low - deal may not be worth pursuing`);
+  }
+  
+  return {
+    isProfitable,
+    profitMargin,
+    profitAmount: roundToNearestThousand(Math.max(0, profitAmount)),
+    warnings,
+  };
+}
+
+/**
  * Calculate comprehensive offer range for a property
  */
 export function calculateOfferRange(details: PropertyDetails): OfferCalculation {
@@ -150,58 +209,40 @@ export function calculateOfferRange(details: PropertyDetails): OfferCalculation 
 
   const arv = estimatedMarketValue;
   
-  // Calculate repair estimate
   const estimatedRepairs = calculateRepairEstimate(condition, squareFeet);
-  
-  // Calculate holding costs (utilities, taxes, insurance)
   const holdingCosts = HOLDING_COSTS_PER_MONTH * ESTIMATED_HOLDING_MONTHS;
   
-  // CRITICAL: Calculate maximum offer allowed by condition multiplier
-  // This is our absolute ceiling - we NEVER exceed this percentage of ARV
   const conditionMultiplier = CONDITION_MULTIPLIERS[condition];
   const maxOfferByCondition = arv * conditionMultiplier;
   
-  // Calculate transaction costs (closing costs + buyer agent commission)
-  // These are estimated based on expected purchase price (use condition multiplier)
   const estimatedPurchasePrice = maxOfferByCondition;
   const closingCosts = estimatedPurchasePrice * CLOSING_COSTS_RATE;
   const buyerAgentFee = estimatedPurchasePrice * BUYER_AGENT_COMMISSION;
   
-  // Total acquisition and carrying costs
   const totalCosts = estimatedRepairs + holdingCosts + closingCosts + buyerAgentFee;
   
-  // Calculate profit margins
   const targetProfit = arv * TARGET_PROFIT_MARGIN;
   const minimumProfit = arv * MINIMUM_PROFIT_MARGIN;
   
-  // Calculate offer range using cost-based approach (BEFORE applying ceiling)
-  // Formula: ARV - Repairs - Costs - Profit = Offer
-  const costBasedOfferHigh = arv - totalCosts - minimumProfit;  // Minimum profit (higher offer)
-  const costBasedOfferLow = arv - totalCosts - targetProfit;    // Target profit (lower offer)
+  const costBasedOfferHigh = arv - totalCosts - minimumProfit;
+  const costBasedOfferLow = arv - totalCosts - targetProfit;
   
-  // Apply condition multiplier ceiling BEFORE rounding
   const cappedOfferHigh = Math.min(maxOfferByCondition, costBasedOfferHigh);
   const cappedOfferLow = Math.min(maxOfferByCondition * 0.95, costBasedOfferLow);
   
-  // Round offers
   const roundedOfferHigh = roundToNearestThousand(cappedOfferHigh);
   const roundedOfferLow = roundToNearestThousand(cappedOfferLow);
   
-  // CRITICAL: Ensure rounding didn't push us above ceiling
-  // Use floor rounding for ceiling to be conservative
   const ceilingRounded = roundDownToNearestThousand(maxOfferByCondition);
   
   const offerHigh = Math.max(0, Math.min(roundedOfferHigh, ceilingRounded));
   const offerLow = Math.max(0, Math.min(roundedOfferLow, ceilingRounded));
   const anchorOffer = Math.max(0, roundToNearestThousand((offerHigh + offerLow) / 2));
   
-  // Final ceiling check after averaging (to catch any edge cases)
   const finalAnchorOffer = Math.min(anchorOffer, ceilingRounded);
   
-  // Check if deal is below minimum viable amount (warning, not override)
   const belowMinimumViable = offerHigh < MINIMUM_VIABLE_DEAL_AMOUNT;
   
-  // Validate profitability of anchor offer
   const profitValidation = validateOfferProfitability(
     finalAnchorOffer,
     arv,
@@ -209,13 +250,11 @@ export function calculateOfferRange(details: PropertyDetails): OfferCalculation 
     squareFeet
   );
   
-  // Calculate seller's comparison (what they'd net with realtor vs us)
   const realtorCommissionSavings = arv * REALTOR_COMMISSION_RATE;
   const sellerClosingCosts = arv * SELLER_CLOSING_COSTS_RATE;
   const netAfterRealtor = arv - realtorCommissionSavings - sellerClosingCosts - estimatedRepairs;
-  const netWithUs = finalAnchorOffer; // They get cash now, no repairs needed, we pay closing
+  const netWithUs = finalAnchorOffer;
   
-  // Add warning if below minimum viable
   const warnings = [...profitValidation.warnings];
   if (belowMinimumViable) {
     warnings.push(`Offer amount ($${offerHigh.toLocaleString()}) is below minimum viable deal threshold ($${MINIMUM_VIABLE_DEAL_AMOUNT.toLocaleString()})`);
@@ -231,8 +270,8 @@ export function calculateOfferRange(details: PropertyDetails): OfferCalculation 
     targetProfit: roundToNearestThousand(targetProfit),
     minimumProfit: roundToNearestThousand(minimumProfit),
     
-    offerLow: offerLow,
-    offerHigh: offerHigh,
+    offerLow,
+    offerHigh,
     anchorOffer: finalAnchorOffer,
     
     isProfitable: profitValidation.isProfitable,
@@ -267,17 +306,14 @@ export function getQuickOfferEstimate(
   estimatedMarketValue: number,
   condition: keyof typeof CONDITION_MULTIPLIERS
 ): { low: number; high: number; anchor: number } {
-  // Simplified calculation respecting condition ceiling
   const conditionMultiplier = CONDITION_MULTIPLIERS[condition];
   const maxOffer = estimatedMarketValue * conditionMultiplier;
   
-  // Create range within condition limits, with ceiling enforcement
   const ceilingRounded = roundDownToNearestThousand(maxOffer);
   const high = ceilingRounded;
   const low = Math.max(0, roundToNearestThousand(maxOffer * 0.90));
   const anchor = Math.max(0, roundToNearestThousand((high + low) / 2));
   
-  // Ensure ceiling compliance after rounding
   const finalLow = Math.min(low, ceilingRounded);
   const finalAnchor = Math.min(anchor, ceilingRounded);
   
@@ -285,120 +321,5 @@ export function getQuickOfferEstimate(
     low: finalLow,
     high: high,
     anchor: finalAnchor,
-  };
-}
-
-/**
- * Validate that an offer is profitable given our costs
- */
-export function validateOfferProfitability(
-  offerPrice: number,
-  estimatedMarketValue: number,
-  estimatedRepairs: number,
-  squareFeet?: number
-): {
-  isProfitable: boolean;
-  profitMargin: number;
-  profitAmount: number;
-  warnings: string[];
-} {
-  const warnings: string[] = [];
-  
-  // Prevent division by zero or invalid calculations
-  if (estimatedMarketValue <= 0 || offerPrice < 0) {
-    return {
-      isProfitable: false,
-      profitMargin: 0,
-      profitAmount: 0,
-      warnings: ['Invalid market value or offer price'],
-    };
-  }
-  
-  // Allow zero offers (indicate unprofitable deal) but don't validate them
-  if (offerPrice === 0) {
-    return {
-      isProfitable: false,
-      profitMargin: 0,
-      profitAmount: 0,
-      warnings: ['Offer price is zero - deal is not viable'],
-    };
-  }
-  
-  // Calculate costs
-  const holdingCosts = HOLDING_COSTS_PER_MONTH * ESTIMATED_HOLDING_MONTHS;
-  const closingCosts = offerPrice * CLOSING_COSTS_RATE;
-  const buyerAgentFee = offerPrice * BUYER_AGENT_COMMISSION;
-  const totalCosts = estimatedRepairs + holdingCosts + closingCosts + buyerAgentFee;
-  
-  // Calculate profit
-  const profitAmount = estimatedMarketValue - offerPrice - totalCosts;
-  const profitMargin = profitAmount / estimatedMarketValue;
-  
-  // Check profitability
-  const isProfitable = profitMargin >= MINIMUM_PROFIT_MARGIN && profitAmount > 0;
-  
-  if (profitAmount <= 0) {
-    warnings.push('Deal is unprofitable - costs exceed ARV');
-  } else if (profitMargin < MINIMUM_PROFIT_MARGIN) {
-    warnings.push(`Profit margin (${(profitMargin * 100).toFixed(1)}%) is below minimum (${(MINIMUM_PROFIT_MARGIN * 100).toFixed(1)}%)`);
-  } else if (profitMargin < TARGET_PROFIT_MARGIN) {
-    warnings.push(`Profit margin (${(profitMargin * 100).toFixed(1)}%) is below target (${(TARGET_PROFIT_MARGIN * 100).toFixed(1)}%)`);
-  }
-  
-  if (profitAmount > 0 && profitAmount < 10000) {
-    warnings.push(`Profit amount ($${profitAmount.toLocaleString()}) is very low - deal may not be worth pursuing`);
-  }
-  
-  return {
-    isProfitable,
-    profitMargin,
-    profitAmount: roundToNearestThousand(Math.max(0, profitAmount)),
-    warnings,
-  };
-}
-
-/**
- * Adjust offer based on seller urgency/timeline
- * Urgent sellers may accept lower offers
- */
-export function adjustOfferForTimeline(
-  baseOffer: number,
-  timeline?: string
-): number {
-  if (!timeline || baseOffer === 0) return baseOffer;
-  
-  // Sellers who need to close ASAP might accept slightly lower
-  if (timeline === 'asap' || timeline === '0-30days') {
-    return Math.max(0, roundToNearestThousand(baseOffer * 0.98)); // 2% reduction for speed
-  }
-  
-  return baseOffer;
-}
-
-/**
- * Export configuration for admin panel (future use)
- */
-export function getOfferCalculatorConfig() {
-  return {
-    conditionMultipliers: CONDITION_MULTIPLIERS,
-    repairEstimates: {
-      perSqft: REPAIR_ESTIMATES_PER_SQFT,
-      flat: REPAIR_ESTIMATES_FLAT,
-    },
-    costs: {
-      holdingCostsPerMonth: HOLDING_COSTS_PER_MONTH,
-      estimatedHoldingMonths: ESTIMATED_HOLDING_MONTHS,
-      closingCostsRate: CLOSING_COSTS_RATE,
-      sellerClosingCostsRate: SELLER_CLOSING_COSTS_RATE,
-      buyerAgentCommission: BUYER_AGENT_COMMISSION,
-      realtorCommissionRate: REALTOR_COMMISSION_RATE,
-    },
-    profitMargins: {
-      target: TARGET_PROFIT_MARGIN,
-      minimum: MINIMUM_PROFIT_MARGIN,
-    },
-    limits: {
-      minimumViableDealAmount: MINIMUM_VIABLE_DEAL_AMOUNT,
-    },
   };
 }

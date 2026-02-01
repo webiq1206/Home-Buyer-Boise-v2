@@ -25,35 +25,40 @@ Preferred communication style: Simple, everyday language.
 - **Accessibility**: WCAG AA compliant with visible focus states, proper color contrast, ARIA labels, keyboard navigation, and semantic HTML.
 
 ### Technical Implementations
-- **Frontend Framework**: React 18 with TypeScript.
-- **Routing**: Wouter for client-side routing with dynamic service and area routes.
+- **Framework**: Next.js 14 with App Router and TypeScript.
+- **Routing**: Next.js App Router with dynamic [service] and [city] routes.
 - **State Management**: TanStack Query for server state, React Hook Form with Zod for forms.
-- **Lead Capture Flow**: Multi-step QuoteWizard collects property information and routes leads to email for manual evaluation. NO automated pricing or offers displayed.
-- **Property Calculator**: Ada/Canyon County assessor data integration for property measurements.
+- **Lead Capture Flow**: Multi-step QuoteForm collects property information and routes leads to email for manual evaluation. Offer ranges are calculated using the offer calculator algorithm.
 - **SEO Optimization**: 
+  - Next.js built-in metadata API for dynamic meta tags
+  - JSON-LD structured data via lib/schema.ts
   - Comprehensive internal linking between service and area pages
   - Descriptive alt tags on all images
-  - NAP (Name, Address, Phone) consistency via BUSINESS_INFO constant
+  - NAP (Name, Address, Phone) consistency via lib/seo.ts
   - City-specific metadata and schema markup
   - E-E-A-T trust signals throughout
-- **Image Performance**: All hero images include width/height attributes, above-fold images use `loading="eager"`, below-fold use `loading="lazy"`.
-- **Email System**: Dual notifications to connect@buymyhouse.co AND admin@timberandlove.com with comprehensive lead details.
+- **Image Performance**: Next.js Image component with automatic optimization, lazy loading, and responsive sizes.
+- **Email System**: Resend integration with dual notifications to connect@buymyhouse.co AND admin@timberandlove.com.
 
 ### Key Files
-- `client/src/lib/seo.ts` - BUSINESS_INFO constant for NAP consistency, SEO data
-- `client/src/lib/schema.ts` - JSON-LD schema generation
-- `client/src/components/QuoteWizard.tsx` - Lead capture form (no automated estimates)
-- `server/email.ts` - Email notification system
+- `lib/seo.ts` - BUSINESS_INFO constant for NAP consistency, SEO data
+- `lib/schema.ts` - JSON-LD schema generation
+- `components/QuoteForm.tsx` - Lead capture form with offer calculation
+- `lib/services/email.ts` - Email notification system
+- `lib/services/offerCalculator.ts` - Cash offer range calculation algorithm
+- `lib/services/resend.ts` - Resend email client
 - `shared/servicesData.ts` - Service situations and content
-- `client/src/pages/services/ServiceTemplate.tsx` - Service page template
-- `client/src/pages/areas/AreaTemplate.tsx` - Area page template
+- `app/services/[service]/page.tsx` - Service page template
+- `app/areas/[city]/page.tsx` - Area page template
+- `app/api/offers/route.ts` - Property offer submission API
+- `app/api/contact/route.ts` - Contact form API
 
 ### System Design Choices
-- **Backend Framework**: Express.js with TypeScript.
-- **API Design**: RESTful endpoints with JSON responses.
+- **Framework**: Next.js 14 with App Router (full-stack).
+- **API Design**: Next.js API routes (app/api/) with JSON responses.
 - **Data Validation**: Shared Zod schemas for client and server.
-- **Storage Layer**: PostgreSQL via Neon serverless driver.
-- **Build System**: Vite for frontend, esbuild for backend, strict TypeScript.
+- **Storage Layer**: PostgreSQL via Neon serverless driver with Drizzle ORM.
+- **Build System**: Next.js built-in build with Turbopack for development.
 - **Database Schema**: Drizzle ORM with schema in `shared/schema.ts`.
 
 ## Service Areas
@@ -66,6 +71,7 @@ Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, Caldwell
 - **class-variance-authority**: Component variant management.
 - **lucide-react**: Icon library.
 - **Leaflet**: Interactive maps.
+- **Framer Motion**: Animations.
 
 ### Form & State Management
 - **react-hook-form**: Form state and validation.
@@ -83,5 +89,5 @@ Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, Caldwell
 
 ### Utilities
 - **date-fns**: Date manipulation.
-- **wouter**: Lightweight client-side routing.
 - **resend**: Email delivery.
+- **next-themes**: Theme management.
