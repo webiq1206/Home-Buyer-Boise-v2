@@ -29,7 +29,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: service.title,
     description: service.metaDescription,
-    keywords: service.keywords,
+    keywords: [...service.keywords],
     alternates: {
       canonical: `https://homebuyerboise.com/services/${service.slug}`,
     },
