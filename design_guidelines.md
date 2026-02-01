@@ -2,7 +2,7 @@
 
 ## Design Approach
 
-**Modern, Trustworthy, Fintech-Inspired** - Professional cash home buyer service with a clean, premium aesthetic inspired by Stessa and Fundrise, combined with the organizational clarity of the original LawnCareKuna design.
+**Modern, Trustworthy, Fintech-Inspired** - Professional cash home buyer service with a clean, premium aesthetic inspired by Stessa and Fundrise.
 
 **Core Principles:**
 - Modern fintech/proptech aesthetic - premium but approachable
@@ -402,7 +402,7 @@ The deep blue conveys trust and financial stability. The light blue backgrounds 
 
 ## Maintain Quality Standards
 
-**Critical:** This design must be AT LEAST as beautiful, organized, and polished as the original LawnCareKuna design.
+**Critical:** This design must be beautiful, organized, and polished.
 
 **Preserve:**
 - Section structure and spacing

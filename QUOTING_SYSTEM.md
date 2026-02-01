@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Lawn Care Kuna website features a LawnStarter-style intelligent quoting system that provides instant, accurate price estimates with built-in 40-50% profit margins suitable for subcontracting work. The system uses OpenAI GPT-4o-mini to analyze property complexity and generate detailed pricing breakdowns.
+The Home Buyer Boise website features an intelligent property analysis system that provides instant cash offer estimates. The system uses OpenAI GPT-4o-mini to analyze property details and generate preliminary offer ranges.
 
 ## Features
 

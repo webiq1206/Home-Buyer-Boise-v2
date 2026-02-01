@@ -269,7 +269,7 @@ export async function sendNewLeadNotification(leadData: {
           </div>
 
           <div style="text-align: center; margin: 30px 0;">
-            <a href="https://lawncarekuna.com/admin/dashboard" class="cta-button">Review Lead in Dashboard →</a>
+            <a href="https://homebuyerboise.com/admin/dashboard" class="cta-button">Review Lead in Dashboard →</a>
           </div>
         </div>
 
@@ -277,7 +277,7 @@ export async function sendNewLeadNotification(leadData: {
           <p class="footer-brand">Home Buyer Boise</p>
           <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
-          <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
+          <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
         </div>
       </div>
     </body>
@@ -388,7 +388,7 @@ export async function sendLeadPurchasedNotification(leadData: {
           <p class="footer-brand">Home Buyer Boise</p>
           <p class="footer-tagline">Wholesaling Platform</p>
           <p class="footer-contact">Email: <a href="mailto:${fromEmail}">${fromEmail}</a></p>
-          <p class="footer-contact">Web: <a href="https://lawncarekuna.com">www.lawncarekuna.com</a></p>
+          <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
         </div>
       </div>
     </body>

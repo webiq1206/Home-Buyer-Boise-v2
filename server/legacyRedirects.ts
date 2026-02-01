@@ -125,7 +125,7 @@ export function specificLegacyRedirects(req: Request, res: Response, next: NextF
     
     // If only service exists (city no longer serviced), redirect to service page
     if (newServiceSlug && (newCitySlug === null || !newCitySlug)) {
-      return res.redirect(301, `https://lawncarekuna.com/services/${newServiceSlug}`);
+      return res.redirect(301, `https://homebuyerboise.com/services/${newServiceSlug}`);
     }
   }
   
