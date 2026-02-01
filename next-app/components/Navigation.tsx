@@ -24,14 +24,15 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/95">
-      <nav className="container flex h-20 items-center justify-between gap-4 px-8 md:px-12">
+      <nav className="container flex h-16 md:h-20 items-center justify-between gap-4 px-4 md:px-8 lg:px-12">
         <Link href="/" className="flex items-center flex-shrink-0" data-testid="link-home-logo">
           <Image 
             src="/logo.png" 
             alt="Home Buyer Boise - Cash Home Buyers in Boise Idaho" 
-            width={160}
-            height={40}
-            className="h-10 w-auto" 
+            width={200}
+            height={50}
+            className="h-11 md:h-12 w-auto"
+            priority
           />
         </Link>
 

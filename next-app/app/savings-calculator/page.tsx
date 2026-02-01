@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { SavingsCalculator } from "@/components/SavingsCalculator";
+import { TrendingDown, TrendingUp, Clock, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Savings Calculator | Compare Cash Sale vs Traditional Listing",
@@ -15,74 +15,124 @@ export default function SavingsCalculatorPage() {
   return (
     <>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
+        <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-16">
           <div className="container px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Savings Calculator</h1>
-              <p className="text-xl text-white/90">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Savings Calculator</h1>
+              <p className="text-lg md:text-xl text-white/90">
                 Compare how much you could save by selling your house for cash versus listing with a realtor.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Calculator */}
-        <section className="py-16 lg:py-24">
+        {/* Why Compare */}
+        <section className="py-8 bg-muted/50 border-b">
           <div className="container px-4">
-            <div className="max-w-3xl mx-auto">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Compare Your Options</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6">
-                    Our interactive calculator helps you understand the true costs of selling your home. Compare a direct cash sale with traditional realtor listing to see your potential net proceeds.
-                  </p>
-                  <div className="bg-muted rounded-lg p-8 text-center">
-                    <p className="text-lg font-semibold mb-2">Calculator Coming Soon</p>
-                    <p className="text-muted-foreground mb-6">
-                      In the meantime, call us for a free consultation and detailed breakdown of your options.
-                    </p>
-                    <a 
-                      href="tel:2084052275" 
-                      className="text-2xl font-bold text-primary hover:underline block mb-4"
-                    >
-                      (208) 405-2275
-                    </a>
-                    <Button asChild>
-                      <Link href="/get-quote">Get Your Free Cash Offer</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center">
+                <TrendingDown className="h-8 w-8 text-primary mb-2" />
+                <p className="font-semibold">No Hidden Fees</p>
+                <p className="text-sm text-muted-foreground">See the real costs</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Clock className="h-8 w-8 text-primary mb-2" />
+                <p className="font-semibold">Time Value</p>
+                <p className="text-sm text-muted-foreground">Factor in holding costs</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <TrendingUp className="h-8 w-8 text-primary mb-2" />
+                <p className="font-semibold">Net Proceeds</p>
+                <p className="text-sm text-muted-foreground">What you actually keep</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Shield className="h-8 w-8 text-primary mb-2" />
+                <p className="font-semibold">No Obligation</p>
+                <p className="text-sm text-muted-foreground">Just information</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="mt-12 grid md:grid-cols-2 gap-8">
+        {/* Calculator Section */}
+        <section className="py-8 md:py-12 lg:py-16">
+          <div className="container px-4">
+            <div className="max-w-4xl mx-auto">
+              <SavingsCalculator />
+            </div>
+          </div>
+        </section>
+
+        {/* Info Section */}
+        <section className="py-12 lg:py-16 bg-muted/30">
+          <div className="container px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Understanding the Numbers</h2>
+              <div className="grid md:grid-cols-2 gap-8">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">Traditional Sale Costs</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• 5-6% Realtor Commission</li>
-                      <li>• 2-3% Closing Costs</li>
-                      <li>• Repair & Staging Costs</li>
-                      <li>• Holding Costs (mortgage, utilities)</li>
-                      <li>• Potential Price Reductions</li>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex justify-between">
+                        <span>Realtor Commission</span>
+                        <span className="font-medium text-foreground">5-6% of sale price</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Closing Costs</span>
+                        <span className="font-medium text-foreground">2-3% of sale price</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Repairs & Updates</span>
+                        <span className="font-medium text-foreground">$5,000 - $50,000+</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Staging & Cleaning</span>
+                        <span className="font-medium text-foreground">$2,000 - $5,000</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Buyer Concessions</span>
+                        <span className="font-medium text-foreground">1-3% typical</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Time on Market</span>
+                        <span className="font-medium text-foreground">30-180+ days</span>
+                      </li>
                     </ul>
                   </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="border-primary">
                   <CardHeader>
-                    <CardTitle className="text-lg">Cash Sale Benefits</CardTitle>
+                    <CardTitle className="text-lg text-primary">Cash Sale to Us</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• $0 Realtor Commission</li>
-                      <li>• $0 Closing Costs (we pay)</li>
-                      <li>• $0 Repair Costs (sell as-is)</li>
-                      <li>• Minimal Holding Costs (fast close)</li>
-                      <li>• Guaranteed Offer</li>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      <li className="flex justify-between">
+                        <span>Realtor Commission</span>
+                        <span className="font-medium text-green-600">$0</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Closing Costs</span>
+                        <span className="font-medium text-green-600">$0 (we pay)</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Repairs & Updates</span>
+                        <span className="font-medium text-green-600">$0 (sell as-is)</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Staging & Cleaning</span>
+                        <span className="font-medium text-green-600">$0</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Concessions</span>
+                        <span className="font-medium text-green-600">$0</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Time to Close</span>
+                        <span className="font-medium text-green-600">7-14 days</span>
+                      </li>
                     </ul>
                   </CardContent>
                 </Card>

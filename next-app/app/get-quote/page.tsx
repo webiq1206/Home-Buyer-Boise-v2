@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Clock, Shield, DollarSign, Phone } from "lucide-react";
+import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
   title: "Get a Free Cash Offer | Home Buyer Boise",
@@ -14,47 +15,28 @@ export default function GetQuotePage() {
   return (
     <>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-navy to-primary text-white py-16">
+        <section className="bg-gradient-to-br from-navy to-primary text-white py-12 md:py-16">
           <div className="container px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Get Your Free Cash Offer</h1>
-              <p className="text-xl text-white/90">
-                Fill out the form below to receive a fair, no-obligation cash offer on your property within 24 hours.
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Get Your Free Cash Offer</h1>
+              <p className="text-lg md:text-xl text-white/90">
+                Complete the form below to receive a fair, no-obligation cash offer on your property within 24 hours.
               </p>
             </div>
           </div>
         </section>
 
         {/* Form Section */}
-        <section className="py-16 lg:py-24">
+        <section className="py-8 md:py-12 lg:py-16">
           <div className="container px-4">
-            <div className="grid lg:grid-cols-3 gap-12">
-              {/* Form Placeholder */}
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+              {/* Form */}
               <div className="lg:col-span-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Property Information</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-6">
-                      Our quick quote form will be displayed here. In the meantime, call us at{" "}
-                      <a href="tel:2084052275" className="text-primary font-semibold hover:underline">
-                        (208) 405-2275
-                      </a>{" "}
-                      to get started.
-                    </p>
-                    <div className="bg-muted rounded-lg p-8 text-center">
-                      <p className="text-lg font-semibold mb-2">Quote Form Coming Soon</p>
-                      <p className="text-muted-foreground">
-                        Call or text us at (208) 405-2275 for immediate assistance
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <QuoteForm />
               </div>
 
               {/* Sidebar */}
-              <div>
+              <div className="space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle>What to Expect</CardTitle>
@@ -62,30 +44,30 @@ export default function GetQuotePage() {
                   <CardContent>
                     <ul className="space-y-4">
                       <li className="flex gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="font-semibold">Cash Offer in 24 Hours</p>
                           <p className="text-sm text-muted-foreground">We&apos;ll present you with a fair offer fast</p>
                         </div>
                       </li>
                       <li className="flex gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="font-semibold">No Obligation</p>
                           <p className="text-sm text-muted-foreground">You&apos;re free to accept or decline our offer</p>
                         </div>
                       </li>
                       <li className="flex gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="font-semibold">Sell As-Is</p>
                           <p className="text-sm text-muted-foreground">No repairs, cleaning, or staging needed</p>
                         </div>
                       </li>
                       <li className="flex gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <DollarSign className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold">No Fees</p>
+                          <p className="font-semibold">No Fees or Commissions</p>
                           <p className="text-sm text-muted-foreground">We cover all closing costs</p>
                         </div>
                       </li>
@@ -93,18 +75,32 @@ export default function GetQuotePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="mt-6">
+                <Card className="bg-muted/50">
                   <CardContent className="pt-6">
-                    <p className="font-semibold mb-2">Questions?</p>
+                    <p className="font-semibold mb-2">Prefer to Talk?</p>
                     <p className="text-muted-foreground mb-4">
                       Call us directly to speak with a local expert.
                     </p>
                     <a 
                       href="tel:2084052275" 
-                      className="text-2xl font-bold text-primary hover:underline"
+                      className="inline-flex items-center text-xl font-bold text-primary hover:underline"
                     >
+                      <Phone className="mr-2 h-5 w-5" />
                       (208) 405-2275
                     </a>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardContent className="pt-6">
+                    <h4 className="font-semibold mb-3">Why Home Buyer Boise?</h4>
+                    <ul className="text-sm text-muted-foreground space-y-2">
+                      <li>✓ Local, family-owned company</li>
+                      <li>✓ Over 500 homes purchased</li>
+                      <li>✓ Close in as fast as 7 days</li>
+                      <li>✓ We buy in any condition</li>
+                      <li>✓ Transparent, honest process</li>
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
