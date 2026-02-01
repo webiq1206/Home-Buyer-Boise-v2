@@ -1,9 +1,7 @@
 // Service-specific hero background images
 // Maps service slugs to their custom background images
 
-export interface ServiceBackgroundConfig {
-  [key: string]: string;
-}
+import type { StaticImageData } from "next/image";
 
 // Import all custom service backgrounds
 import christmasLightsBackground from "@assets/Christmas Light Installation Services in Kuna_1763675561175.png";
@@ -14,6 +12,10 @@ import leafRemovalBackground from "@assets/Professional Leaf Removal Services - 
 import snowRemovalBackground from "@assets/Professional Snow Removal Services - Home Buyer Boise_1763675561176.png";
 import sprinklerBlowoutBackground from "@assets/Professional Sprinkler Blowout Services - Home Buyer Boise_1763675561176.png";
 import defaultBackground from "@assets/Home Buyer Boise Background Image_1763675543303.png";
+
+export interface ServiceBackgroundConfig {
+  [key: string]: StaticImageData;
+}
 
 // Service slug to background image mapping
 export const SERVICE_BACKGROUNDS: ServiceBackgroundConfig = {
@@ -35,13 +37,13 @@ export const SERVICE_BACKGROUNDS: ServiceBackgroundConfig = {
 };
 
 // Default background for services without custom images
-export const DEFAULT_SERVICE_BACKGROUND = defaultBackground;
+export const DEFAULT_SERVICE_BACKGROUND: StaticImageData = defaultBackground;
 
 /**
  * Get the appropriate background image for a service
  * @param serviceSlug - The service slug (e.g., 'aeration', 'christmas-lights')
- * @returns The background image URL
+ * @returns The background image data
  */
-export function getServiceBackground(serviceSlug: string): string {
+export function getServiceBackground(serviceSlug: string): StaticImageData {
   return SERVICE_BACKGROUNDS[serviceSlug] || DEFAULT_SERVICE_BACKGROUND;
 }
