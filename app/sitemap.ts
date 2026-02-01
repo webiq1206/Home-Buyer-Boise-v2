@@ -4,9 +4,13 @@ import { getAllServiceSlugs } from "@/shared/servicesData";
 
 const baseUrl = "https://homebuyerboise.com";
 
+// Helper to get clean YYYY-MM-DD date format
+const getCleanDate = () => new Date().toISOString().split('T')[0];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const citySlugs = getAllCitySlugs();
   const serviceSlugs = getAllServiceSlugs();
+  const lastModified = getCleanDate();
   
   // Static pages
   const staticPages = [
@@ -35,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const page of staticPages) {
     routes.push({
       url: `${baseUrl}${page}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: page === "" ? "weekly" : "monthly",
       priority: page === "" ? 1 : 0.8,
     });
@@ -45,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const citySlug of citySlugs) {
     routes.push({
       url: `${baseUrl}/areas/${citySlug}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     });
@@ -55,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const serviceSlug of serviceSlugs) {
     routes.push({
       url: `${baseUrl}/services/${serviceSlug}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     });
@@ -64,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const citySlug of citySlugs) {
       routes.push({
         url: `${baseUrl}/services/${serviceSlug}/${citySlug}`,
-        lastModified: new Date(),
+        lastModified,
         changeFrequency: "monthly",
         priority: 0.7,
       });
@@ -75,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const blogSlug of blogSlugs) {
     routes.push({
       url: `${baseUrl}/blog/${blogSlug}`,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     });
