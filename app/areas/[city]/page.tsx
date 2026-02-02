@@ -12,6 +12,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { generateLocalBusinessSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { getBaseUrl } from "@/lib/seo";
 import { 
   CheckCircle, 
   MapPin, 
@@ -31,8 +33,37 @@ import {
   BadgeCheck,
   X,
   Check,
-  ArrowRight
+  ArrowRight,
+  Key,
+  Heart,
+  Plane,
+  Receipt,
+  Flame,
+  Package,
+  XCircle,
+  AlertCircle,
+  AlertTriangle,
 } from "lucide-react";
+
+// Icon mapping for services
+const SERVICE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  "Zap": Zap,
+  "Home": Home,
+  "DollarSign": DollarSign,
+  "Wrench": Wrench,
+  "Key": Key,
+  "Shield": Shield,
+  "Heart": Heart,
+  "Plane": Plane,
+  "Users": Users,
+  "FileText": FileText,
+  "Receipt": Receipt,
+  "Flame": Flame,
+  "Package": Package,
+  "XCircle": XCircle,
+  "AlertCircle": AlertCircle,
+  "AlertTriangle": AlertTriangle,
+};
 
 interface PageProps {
   params: { city: string };
@@ -46,6 +77,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const city = getCityBySlug(params.city);
+  const baseUrl = getBaseUrl();
   
   if (!city) {
     return {
@@ -53,11 +85,46 @@ export function generateMetadata({ params }: PageProps): Metadata {
     };
   }
 
+  const title = `Sell Your ${city.name} House Fast for Cash | Home Buyer Boise`;
+  const description = `Sell your ${city.name} house fast for cash. We buy houses in any condition in ${city.name}, Idaho. No repairs, no fees, close on your timeline. Get a free cash offer today!`;
+
   return {
-    title: `Sell Your ${city.name} House Fast for Cash | Home Buyer Boise`,
-    description: `Sell your ${city.name} house fast for cash. We buy houses in any condition in ${city.name}, Idaho. No repairs, no fees, close on your timeline. Get a free cash offer today!`,
+    title,
+    description,
+    keywords: [
+      `sell house fast ${city.name}`,
+      `cash home buyers ${city.name}`,
+      `we buy houses ${city.name}`,
+      `${city.name} cash buyers`,
+      `sell house for cash ${city.name}`,
+      `${city.name} house buyers`,
+      `sell my house ${city.name}`,
+      `cash for houses ${city.name}`,
+      `${city.name} Idaho real estate`,
+    ],
     alternates: {
-      canonical: `https://homebuyerboise.com/areas/${city.slug}`,
+      canonical: `${baseUrl}/areas/${city.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${baseUrl}/areas/${city.slug}`,
+      siteName: "Home Buyer Boise",
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: `Sell Your ${city.name} House Fast for Cash - Home Buyer Boise`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${baseUrl}/og-image.png`],
     },
   };
 }
@@ -165,8 +232,33 @@ export default function AreaPage({ params }: PageProps) {
     notFound();
   }
 
+  // Schema.org structured data
+  const localBusinessSchema = generateLocalBusinessSchema(city.name);
+  const faqSchema = city.faqs ? generateFAQSchema(city.faqs) : null;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Areas", url: "/areas" },
+    { name: city.name, url: `/areas/${city.slug}` },
+  ]);
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero Section with Address Form */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-20">
         <div className="container px-4">
@@ -484,16 +576,24 @@ export default function AreaPage({ params }: PageProps) {
             We help {city.name} homeowners in all situations
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {SERVICES.slice(0, 12).map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}/${city.slug}`}
-                className="bg-white rounded-lg p-4 hover:shadow-md transition-shadow border border-border group"
-              >
-                <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">{service.name}</h3>
-                <p className="text-sm text-muted-foreground">in {city.name}</p>
-              </Link>
-            ))}
+            {SERVICES.slice(0, 12).map((service) => {
+              const ServiceIcon = SERVICE_ICONS[service.icon] || Home;
+              return (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}/${city.slug}`}
+                  className="group bg-white border border-border rounded-xl p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-200"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <ServiceIcon className="h-5 w-5 text-primary" />
+                    </div>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{service.name}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground pl-11">in {city.name}</p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -533,18 +633,25 @@ export default function AreaPage({ params }: PageProps) {
             Buying Houses Throughout the Treasure Valley
           </h2>
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
-            In addition to {city.name}, we buy houses throughout the Treasure Valley. Get your cash offer today, no matter which city you're in.
+            In addition to {city.name}, we buy houses throughout the Treasure Valley. Get your cash offer today, no matter which city you&apos;re in.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {CITIES.filter((c) => c.slug !== city.slug).map((otherCity) => (
               <Link
                 key={otherCity.slug}
                 href={`/areas/${otherCity.slug}`}
-                className="bg-white rounded-lg p-4 text-center hover:shadow-md transition-shadow border border-border group"
+                className="group bg-white border border-border rounded-xl p-5 text-center hover:shadow-lg hover:border-primary/30 transition-all duration-200"
               >
-                <MapPin className="h-5 w-5 mx-auto mb-2 text-primary" />
+                <div className="flex items-center justify-center mb-3">
+                  <div className="p-2.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
                 <h3 className="font-semibold group-hover:text-primary transition-colors">{otherCity.name}</h3>
-                <p className="text-xs text-muted-foreground">{otherCity.county === "ada" ? "Ada County" : "Canyon County"}</p>
+                <p className="text-xs text-muted-foreground mt-1">{otherCity.county === "ada" ? "Ada County" : "Canyon County"}</p>
+                {otherCity.population && (
+                  <p className="text-xs text-muted-foreground mt-1">Pop. {otherCity.population}</p>
+                )}
               </Link>
             ))}
           </div>
