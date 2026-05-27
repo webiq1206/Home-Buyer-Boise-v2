@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CITIES, getCityBySlug, getAllCitySlugs, type CityData } from "@/shared/contentData";
 import { SERVICES } from "@/shared/servicesData";
 import { HeroAddressLookup } from "@/components/HeroAddressLookup";
+import { RelatedContent } from "@/components/RelatedContent";
 import {
   Accordion,
   AccordionContent,
@@ -676,6 +677,14 @@ export default function AreaPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Related Content (algorithmic) */}
+      <RelatedContent
+        sourceUrl={`/areas/${city.slug}`}
+        count={5}
+        heading={`More ${city.name} Resources`}
+        subheading={`Related services, guides, and tools for ${city.name} homeowners`}
+      />
 
       {/* Final CTA */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-navy to-primary text-white">

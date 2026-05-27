@@ -7,6 +7,7 @@ import { SERVICES, getServiceBySlug, getAllServiceSlugs, SERVICE_CONTENT } from 
 import { CITIES, getCityBySlug, getAllCitySlugs } from "@/shared/contentData";
 import { generateServiceCityContent } from "@/shared/serviceCityContent";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedContent } from "@/components/RelatedContent";
 import { TrustBadges } from "@/components/TrustBadges";
 import {
   Accordion,
@@ -600,6 +601,14 @@ export default function ServiceCityPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Related Content (algorithmic) */}
+      <RelatedContent
+        sourceUrl={`/services/${service.slug}/${city.slug}`}
+        count={5}
+        heading={`More ${city.name} Resources`}
+        subheading={`Other ways we help ${city.name} homeowners and related local services`}
+      />
 
       {/* Final CTA */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-navy to-primary text-white">

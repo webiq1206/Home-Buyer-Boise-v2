@@ -4,14 +4,18 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { SiFacebook, SiInstagram, SiLinkedin, SiX } from "react-icons/si";
 import { CITIES } from "@/shared/contentData";
 import { SERVICES } from "@/shared/servicesData";
+import graph from "@/data/internal-links.json";
+import type { LinkGraph } from "@/lib/internalLinks";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const typed = graph as unknown as LinkGraph;
+  const popularByCategory = Object.entries(typed.byCategoryTopBlog).slice(0, 4);
 
   return (
     <footer className="bg-muted border-t">
       <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Company Info */}
           <div>
             <div className="mb-4">
@@ -162,6 +166,33 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Popular Articles (auto-generated from internal link graph) */}
+          <div>
+            <h3 className="font-semibold text-sm mb-4">Popular Articles</h3>
+            <div className="space-y-4 text-sm">
+              {popularByCategory.map(([category, posts]) => (
+                <div key={category}>
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+                    {category}
+                  </p>
+                  <ul className="space-y-1">
+                    {posts.map((post) => (
+                      <li key={post.url}>
+                        <Link
+                          href={post.url}
+                          className="text-muted-foreground hover:text-primary transition-colors line-clamp-2"
+                          data-testid={`link-popular-${post.url.replace(/\//g, "-")}`}
+                        >
+                          {post.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Why Choose Us */}

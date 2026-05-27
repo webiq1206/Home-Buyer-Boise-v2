@@ -11,13 +11,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { 
-  BLOG_POSTS, 
   getBlogPostBySlug, 
   getAllBlogSlugs,
   getRecentBlogPosts,
-  type BlogPostData 
 } from "@/shared/blogContent";
-import { ArrowLeft, Calendar, Clock, User, Tag, Share2, ArrowRight } from "lucide-react";
+import { RelatedContent } from "@/components/RelatedContent";
+import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react";
 
 interface PageProps {
   params: { slug: string };
@@ -70,13 +69,6 @@ function getReadingTime(content: string): number {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
-// Get related posts by category
-function getRelatedPosts(currentPost: BlogPostData, count: number = 3): BlogPostData[] {
-  return BLOG_POSTS
-    .filter(post => post.slug !== currentPost.slug && post.category === currentPost.category)
-    .slice(0, count);
-}
-
 export default function BlogPostPage({ params }: PageProps) {
   const post = getBlogPostBySlug(params.slug);
 
@@ -84,7 +76,6 @@ export default function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(post);
   const recentPosts = getRecentBlogPosts(4).filter(p => p.slug !== post.slug).slice(0, 3);
 
   return (
@@ -267,41 +258,14 @@ export default function BlogPostPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-12 lg:py-16 bg-muted/50">
-          <div className="container px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8">Related Articles</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {relatedPosts.map((relatedPost) => (
-                  <Card key={relatedPost.slug} className="hover:shadow-lg transition-shadow group">
-                    <CardContent className="p-6">
-                      <Badge variant="secondary" className="text-xs mb-3">
-                        {relatedPost.category}
-                      </Badge>
-                      <h3 className="font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                        <Link href={`/blog/${relatedPost.slug}`}>
-                          {relatedPost.title}
-                        </Link>
-                      </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                        {relatedPost.excerpt}
-                      </p>
-                      <Link 
-                        href={`/blog/${relatedPost.slug}`}
-                        className="text-sm text-primary font-medium flex items-center gap-1 hover:underline"
-                      >
-                        Read article <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Related Content (algorithmic) */}
+      <RelatedContent
+        sourceUrl={`/blog/${params.slug}`}
+        count={3}
+        heading="Related Resources"
+        subheading="Hand-picked guides, services, and tools related to this article"
+      />
+
 
       {/* Final CTA */}
       <section className="py-12 lg:py-16 bg-primary text-white">

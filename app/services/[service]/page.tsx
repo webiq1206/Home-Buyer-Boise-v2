@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SERVICES, getServiceBySlug, getAllServiceSlugs, SERVICE_CONTENT } from "@/shared/servicesData";
 import { CITIES } from "@/shared/contentData";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedContent } from "@/components/RelatedContent";
 import { TrustBadges, TrustStats } from "@/components/TrustBadges";
 import { Testimonials } from "@/components/Testimonials";
 import {
@@ -499,6 +500,14 @@ export default function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Related Content (algorithmic) */}
+      <RelatedContent
+        sourceUrl={`/services/${service.slug}`}
+        count={5}
+        heading="Related Services & Resources"
+        subheading="More ways we can help Treasure Valley homeowners"
+      />
 
       {/* Final CTA */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-navy to-primary text-white">
