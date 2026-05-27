@@ -119,7 +119,7 @@ export default function SavingsCalculatorPage() {
                       </li>
                       <li className="flex justify-between">
                         <span>Repairs & Updates</span>
-                        <span className="font-medium text-green-600">$0 (sell as-is)</span>
+                        <span className="font-medium text-green-600">Built into offer</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Staging & Cleaning</span>
