@@ -22,6 +22,11 @@ const nextConfig = {
         destination: '/pricing',
         permanent: true,
       },
+      {
+        source: '/how-it-works/:slug*',
+        destination: '/pricing',
+        permanent: true,
+      },
     ]
   },
   // Experimental features

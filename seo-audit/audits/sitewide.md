@@ -41,11 +41,17 @@ Reference: Master SEO Audit playbook, sitewide section.
 
 ### S8: Dead internal link `/how-it-works`
 - Severity: medium
-- Symptom: `app/page.tsx` (home, in `howItWorksSteps[1].href`) and two blog post bodies linked to `/how-it-works`, which does not exist. User chose to consolidate this content onto `/pricing` rather than create a new route.
+- Symptom: `app/page.tsx` (home, in `howItWorksSteps[1].href`), two blog post bodies, and `public/llms.txt` linked to `/how-it-works`, which does not exist. User chose to consolidate this content onto `/pricing` rather than create a new route.
 - Fix:
   - Updated the homepage step href to `/pricing`.
   - Rewrote the two blog post inline references to `/pricing`.
-  - Added a permanent 301 redirect `/how-it-works -> /pricing` in `next.config.js` to preserve link equity from any external backlinks.
+  - Rewrote the `public/llms.txt` Core Pages list to point at `/pricing` (and removed the `/how-it-works` line).
+  - Added two permanent 301 redirects in `next.config.js`: `/how-it-works -> /pricing` and `/how-it-works/:slug* -> /pricing` (trailing slash and any subpath variant).
+
+### S9: Stale and contradictory facts in `public/llms.txt`
+- Severity: medium-high (LLM-facing surface, contradicted the no-automated-offer business rule)
+- Symptom: `public/llms.txt` advertised an "AI-powered valuation system" providing offers "within 24 hours" at "70 to 85 percent of estimated value", listed the wrong phone number `(208) 405-CASH (2274)`, listed the wrong email `hello@homebuyerboise.com`, and asserted "Licensed Idaho real estate investors" without verified license numbers. All four are inconsistent with current business facts and with the sitewide remediation we just completed.
+- Fix: rewrote `public/llms.txt` end to end. Correct phone `(208) 405-2275`. Correct primary email `connect@buymyhouse.co`. Removed every "AI" or "automated valuation" claim and replaced with explicit human-underwriting language matching the no-automated-offer rule. Removed the placeholder licensing claim. Aligned the FAQ block and Competitive Advantages to the same language used on `/pricing`.
 
 ## Decisions left as-is (with rationale)
 
