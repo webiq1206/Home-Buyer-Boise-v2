@@ -1,0 +1,53 @@
+Context: Manually managing internal links across all posts and pages pages is unsustainable. I want a system that handles it.
+
+Goal: Automate internal linking so every page links to at least 5
+relevant other pages on the site, and so high-authority pages get the
+most internal link equity.
+
+Requirements:
+
+1. Build a /scripts/internal-links.ts that runs at build time and:
+   - Reads all blog post frontmatter, day-page data, comparison pages,
+     tool pages, and resource pages.
+   - For each piece of content, computes semantic similarity to every
+     other piece (using tags, category, title overlap, keyword overlap).
+   - For each piece, generates a list of 5-10 best internal link
+     candidates.
+   - Outputs to /data/internal-links.json.
+
+2. RelatedContent component
+   - Renders 3 best matches at the bottom of every blog post.
+   - Renders previous/next/milestone links on every day page.
+   - Renders 5 best matches on comparison and tool pages.
+
+3. Anchor text rules
+   - Use the target page's H1 or title as anchor text by default.
+   - Allow override via frontmatter (e.g., relatedLinks: [{slug: ..., anchor: ...}]).
+   - Never use generic anchors like "click here" or "this article."
+
+4. Authority distribution
+   - Tools, statistics page, and crisis page are "money pages."
+   - Ensure these get the most internal links by giving them artificial
+     boost in the linking algorithm.
+   - High-traffic day pages (Day 1, 7, 30, 90, 365) also get boosted.
+
+5. Link audit script
+   - /scripts/audit-internal-links.ts reports:
+     - Orphan pages (pages with 0 incoming internal links)
+     - Pages with weak link equity
+     - Broken internal links
+   - Runs in CI; fails the build on broken links.
+
+6. Sitewide footer with smart category links
+   - Footer shows top 4 posts per category, automatically updated.
+   - Reduces footer maintenance.
+
+Do not:
+- Use em dashes.
+- Use random or alphabetical internal linking. The algorithm should be
+  semantically meaningful.
+- Hardcode the link structure. Everything regenerates at build time.
+
+Deliverable: Internal linking system live. Every page has at least 5
+incoming internal links. /docs/INTERNAL-LINKING.md documenting the
+algorithm.
