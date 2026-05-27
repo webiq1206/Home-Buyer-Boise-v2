@@ -14,6 +14,11 @@ export interface BlogPostData {
   tags: string[];
   publishedAt: string;
   faqs: Array<{question: string; answer: string}>;
+  // Optional per-post pinned internal links. Entries are full pathname URLs
+  // (e.g. "/services/sell-house-fast"). Strings use the target page's H1 as
+  // anchor text; objects can override the anchor. Pinned links appear first
+  // in the Related Resources block, ahead of the algorithmic candidates.
+  relatedLinks?: Array<string | { url: string; anchor?: string }>;
 }
 
 export const BLOG_POSTS: BlogPostData[] = [

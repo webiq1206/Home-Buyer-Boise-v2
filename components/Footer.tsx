@@ -10,7 +10,7 @@ import type { LinkGraph } from "@/lib/internalLinks";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const typed = graph as unknown as LinkGraph;
-  const popularByCategory = Object.entries(typed.byCategoryTopBlog).slice(0, 4);
+  const popularByCategory = Object.entries(typed.byCategoryTopBlog);
 
   return (
     <footer className="bg-muted border-t">

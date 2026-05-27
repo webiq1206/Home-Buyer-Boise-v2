@@ -40,6 +40,8 @@ export interface CityData {
     priceGrowth?: string;
   };
   faqs?: Array<{question: string; answer: string}>;
+  // Optional per-city pinned internal links. Same shape as BlogPostData.relatedLinks.
+  relatedLinks?: Array<string | { url: string; anchor?: string }>;
 }
 
 // Cities we serve

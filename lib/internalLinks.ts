@@ -25,6 +25,7 @@ export interface LinkablePage {
   parentCity?: string;
   tokens: Set<string>;
   rawTokens: string[];
+  inlineOverrides?: Array<string | { url: string; anchor?: string }>;
 }
 
 export interface LinkCandidate {
@@ -128,6 +129,7 @@ function buildPages(): LinkablePage[] {
       isMoneyPage: false,
       tokens: new Set(raw),
       rawTokens: raw,
+      inlineOverrides: post.relatedLinks,
     });
   }
 
@@ -147,6 +149,8 @@ function buildPages(): LinkablePage[] {
       parentService: service.slug,
       tokens: new Set(raw),
       rawTokens: raw,
+      inlineOverrides: (service as { relatedLinks?: LinkablePage["inlineOverrides"] })
+        .relatedLinks,
     });
   }
 
@@ -166,6 +170,7 @@ function buildPages(): LinkablePage[] {
       parentCity: city.slug,
       tokens: new Set(raw),
       rawTokens: raw,
+      inlineOverrides: city.relatedLinks,
     });
   }
 
@@ -300,17 +305,22 @@ function score(source: LinkablePage, target: LinkablePage): number {
 }
 
 function resolveOverrides(
-  sourceUrl: string,
+  source: LinkablePage,
   byUrl: Map<string, LinkablePage>
 ): LinkCandidate[] {
-  const overrides = RELATED_LINK_OVERRIDES[sourceUrl];
-  if (!overrides || overrides.length === 0) return [];
+  const inline = source.inlineOverrides || [];
+  const global = RELATED_LINK_OVERRIDES[source.url] || [];
+  const merged = [...inline, ...global];
+  if (merged.length === 0) return [];
   const out: LinkCandidate[] = [];
-  for (const entry of overrides) {
+  const seen = new Set<string>();
+  for (const entry of merged) {
     const url = typeof entry === "string" ? entry : entry.url;
     const anchorOverride = typeof entry === "string" ? undefined : entry.anchor;
     const target = byUrl.get(url);
     if (!target) continue;
+    if (seen.has(target.url)) continue;
+    seen.add(target.url);
     out.push({
       url: target.url,
       title: target.title,
@@ -331,7 +341,7 @@ export function buildLinkGraph(maxCandidates = 10): LinkGraph {
   const incoming = new Map<string, number>();
 
   for (const source of pages) {
-    const overrides = resolveOverrides(source.url, byUrl);
+    const overrides = resolveOverrides(source, byUrl);
     const overrideUrls = new Set(overrides.map((o) => o.url));
     const ranked: LinkCandidate[] = [];
 

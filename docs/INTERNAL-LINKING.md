@@ -64,22 +64,30 @@ the descriptive heading link above it and exists only as a visual cue.
 
 ## Per-source overrides
 
-`RELATED_LINK_OVERRIDES` in `lib/internalLinks.ts` lets a maintainer
-pin specific outgoing links for any source URL. Overrides are placed at
-the top of the candidate list, marked `override: true`, and shift the
-algorithmic candidates down. Each entry may be a plain target URL or
-`{ url, anchor }` to override the anchor text as well.
+Two override mechanisms are available; pinned entries are de-duplicated,
+placed at the top of the candidate list with `override: true`, and
+shift algorithmic candidates down.
 
-Example:
+**1. Inline `relatedLinks` on the content item.** This is the preferred
+way. `BlogPostData` and `CityData` expose a `relatedLinks` field; any
+`Service` entry can include the same field. Each entry is either a
+target pathname string or `{ url, anchor }` to override anchor text.
 
 ```ts
-export const RELATED_LINK_OVERRIDES = {
-  "/blog/sell-my-house-fast-boise-complete-guide": [
+{
+  slug: "sell-my-house-fast-boise-complete-guide",
+  // ...
+  relatedLinks: [
     "/services/sell-house-fast",
     { url: "/get-quote", anchor: "Request a free 24-hour cash offer" },
   ],
-};
+}
 ```
+
+**2. Global `RELATED_LINK_OVERRIDES` map in `lib/internalLinks.ts`.**
+Use this when an override should live next to the algorithm rather
+than next to the content. Same shape as the inline field, keyed by
+source URL.
 
 ## Audit thresholds
 
