@@ -393,6 +393,63 @@ export function generateArticleSchema(params: {
 }
 
 /**
+ * Generate BlogPosting schema for blog posts
+ * Uses BlogPosting type (more specific than Article) for blog content.
+ * Author is emitted as Organization until per-person author profiles exist.
+ */
+export function generateBlogPostingSchema(params: {
+  title: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  image?: string;
+  keywords?: string[];
+  articleSection?: string;
+}): SchemaContext {
+  const baseUrl = getBaseUrl();
+  const url = `${baseUrl}/blog/${params.slug}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${url}#blogposting`,
+    headline: params.title,
+    description: params.description,
+    url,
+    datePublished: params.datePublished,
+    dateModified: params.dateModified || params.datePublished,
+    author: {
+      '@type': 'Organization',
+      name: params.author || BUSINESS_INFO.name,
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${baseUrl}#organization`,
+      name: BUSINESS_INFO.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+    image: params.image || `${baseUrl}/og-image.png`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    ...(params.keywords && params.keywords.length > 0
+      ? { keywords: params.keywords.join(', ') }
+      : {}),
+    ...(params.articleSection ? { articleSection: params.articleSection } : {}),
+    isPartOf: {
+      '@id': `${baseUrl}#website`,
+    },
+  };
+}
+
+/**
  * Render schema as JSON-LD script tag
  */
 export function renderSchemaScript(schema: SchemaContext | SchemaContext[]): string {

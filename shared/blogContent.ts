@@ -438,7 +438,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Close on your timeline if you accept</li>
       </ol>
 
-      <p>Learn more about <a href="/how-it-works">how our process works</a> or contact us today to discuss your specific situation.</p>
+      <p>Learn more about <a href="/pricing">how our pricing works</a> or contact us today to discuss your specific situation.</p>
     `,
     faqs: [
       {
@@ -866,7 +866,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Email admin@timberandlove.com</li>
       </ul>
 
-      <p>Learn more about our <a href="/services/sell-as-is">as-is buying program</a> or see <a href="/how-it-works">how our process works</a>.</p>
+      <p>Learn more about our <a href="/services/sell-as-is">as-is buying program</a> or see <a href="/pricing">how our pricing works</a>.</p>
     `,
     faqs: [
       {

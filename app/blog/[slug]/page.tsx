@@ -17,6 +17,12 @@ import {
 } from "@/shared/blogContent";
 import { RelatedContent } from "@/components/RelatedContent";
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateBlogPostingSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+} from "@/lib/schema";
 
 interface PageProps {
   params: { slug: string };
@@ -78,8 +84,29 @@ export default function BlogPostPage({ params }: PageProps) {
 
   const recentPosts = getRecentBlogPosts(4).filter(p => p.slug !== post.slug).slice(0, 3);
 
+  const blogPostingSchema = generateBlogPostingSchema({
+    title: post.title,
+    description: post.metaDescription || post.excerpt,
+    slug: post.slug,
+    datePublished: post.publishedAt,
+    dateModified: (post as any).updatedAt || post.publishedAt,
+    author: post.author,
+    keywords: post.tags,
+    articleSection: post.category,
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: post.title, url: `/blog/${post.slug}` },
+  ]);
+  const schemas: Record<string, any>[] = [blogPostingSchema, breadcrumbSchema];
+  if (post.faqs && post.faqs.length > 0) {
+    schemas.push(generateFAQSchema(post.faqs));
+  }
+
   return (
     <>
+      <JsonLd data={schemas} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-16">
         <div className="container px-4">

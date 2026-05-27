@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle, Users, Home, Award } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Home Buyer Boise | Local Cash Home Buyers Since 2018",
@@ -12,8 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "About Home Buyer Boise",
+    description:
+      "Local cash home buyers serving the Treasure Valley since 2018.",
+    url: "/about",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "About", url: "/about" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About", url: "/about" },
+  ]);
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema]} />
         {/* Hero */}
         <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
           <div className="container px-4">

@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Home Buyer Boise",
@@ -9,8 +14,24 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfServicePage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Terms of Service | Home Buyer Boise",
+    description:
+      "Conditions for using the Home Buyer Boise website and services.",
+    url: "/terms-of-service",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Terms of Service", url: "/terms-of-service" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Terms of Service", url: "/terms-of-service" },
+  ]);
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema]} />
         <section className="py-16 lg:py-24">
           <div className="container px-4">
             <div className="max-w-3xl mx-auto prose prose-lg">

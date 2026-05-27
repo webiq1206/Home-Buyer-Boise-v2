@@ -14,6 +14,16 @@ const nextConfig = {
   },
   // Ensure trailing slashes match the original site (no trailing slashes)
   trailingSlash: false,
+  // 301 redirects for retired URLs (preserve link equity from old inbound links)
+  async redirects() {
+    return [
+      {
+        source: '/how-it-works',
+        destination: '/pricing',
+        permanent: true,
+      },
+    ]
+  },
   // Experimental features
   experimental: {
     // Server actions are stable in Next.js 14

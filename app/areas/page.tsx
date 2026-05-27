@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { CITIES } from "@/shared/contentData";
 import { getBaseUrl } from "@/lib/seo";
 import { MapPin, ArrowRight, Users, DollarSign } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export function generateMetadata(): Metadata {
   const baseUrl = getBaseUrl();
@@ -53,8 +58,24 @@ export default function AreasPage() {
   const adaCountyCities = CITIES.filter(city => city.county === "ada");
   const canyonCountyCities = CITIES.filter(city => city.county === "canyon");
 
+  const webPageSchema = generateWebPageSchema({
+    name: "Areas We Serve | Cash Home Buyers in Treasure Valley",
+    description:
+      "We buy houses throughout the Treasure Valley including Boise, Meridian, Eagle, Kuna, Star, Middleton, Nampa, and Caldwell.",
+    url: "/areas",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Areas", url: "/areas" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Areas", url: "/areas" },
+  ]);
+
   return (
     <>
+      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
         <div className="container px-4">

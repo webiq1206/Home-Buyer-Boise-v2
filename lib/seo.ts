@@ -364,7 +364,7 @@ export const BUSINESS_INFO = {
   founded: '2018',
   serviceArea: ['Boise', 'Meridian', 'Eagle', 'Kuna', 'Star', 'Middleton', 'Nampa', 'Caldwell'],
   serviceRadius: '30 miles',
-  licenses: ['Idaho Real Estate License #SP12345', 'Idaho Business License #ABC67890'],
+  // licenses field intentionally omitted until verified Idaho license numbers are provided
   certifications: ['Certified Real Estate Investor', 'Cash Buyer Network Member'],
   insurance: 'Fully Licensed & Insured - $3M E&O Coverage',
   rating: 4.9,

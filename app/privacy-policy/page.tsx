@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Home Buyer Boise",
@@ -9,8 +14,24 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Privacy Policy | Home Buyer Boise",
+    description:
+      "How Home Buyer Boise collects, uses, and protects your personal information.",
+    url: "/privacy-policy",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Privacy Policy", url: "/privacy-policy" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Privacy Policy", url: "/privacy-policy" },
+  ]);
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema]} />
         <section className="py-16 lg:py-24">
           <div className="container px-4">
             <div className="max-w-3xl mx-auto prose prose-lg">

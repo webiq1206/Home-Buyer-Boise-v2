@@ -4,6 +4,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateLocalBusinessSchema,
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Home Buyer Boise | Call (208) 405-2275",
@@ -14,8 +20,25 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Contact Home Buyer Boise",
+    description:
+      "Contact Home Buyer Boise for a free cash offer. Call (208) 405-2275 or send us a message.",
+    url: "/contact",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Contact", url: "/contact" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
+  const localBusinessSchema = generateLocalBusinessSchema();
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema, localBusinessSchema]} />
         {/* Hero */}
         <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-16">
           <div className="container px-4">

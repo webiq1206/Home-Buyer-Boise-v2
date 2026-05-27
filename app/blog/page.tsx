@@ -9,6 +9,11 @@ import {
   type BlogPostData 
 } from "@/shared/blogContent";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Blog | Home Buyer Boise - Real Estate Tips & Advice",
@@ -60,8 +65,24 @@ export default function BlogPage() {
   const remainingPosts = sortedPosts.slice(3);
   const postsByCategory = groupPostsByCategory(sortedPosts);
 
+  const webPageSchema = generateWebPageSchema({
+    name: "Blog | Home Buyer Boise - Real Estate Tips and Advice",
+    description:
+      "Tips on selling your house fast, understanding the Boise real estate market, and making the best decision for your property.",
+    url: "/blog",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Blog", url: "/blog" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+  ]);
+
   return (
     <>
+      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-20">
         <div className="container px-4">

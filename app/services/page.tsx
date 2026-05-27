@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/shared/servicesData";
 import { getBaseUrl } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 import { 
   ArrowRight,
   Zap,
@@ -90,8 +95,24 @@ export function generateMetadata(): Metadata {
 }
 
 export default function ServicesPage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Our Services | Cash Home Buying Solutions | Home Buyer Boise",
+    description:
+      "Explore our cash home buying services. Sell fast, avoid foreclosure, sell an inherited property, and more.",
+    url: "/services",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Services", url: "/services" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services" },
+  ]);
+
   return (
     <>
+      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
         <div className="container px-4">

@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Clock, Shield, DollarSign, Phone } from "lucide-react";
 import { QuoteForm } from "@/components/QuoteForm";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Get a Free Cash Offer | Home Buyer Boise",
@@ -12,8 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function GetQuotePage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Get a Free Cash Offer | Home Buyer Boise",
+    description:
+      "Request a free, no-obligation cash offer on your Boise area home in 24 hours.",
+    url: "/get-quote",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Get Quote", url: "/get-quote" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Get Quote", url: "/get-quote" },
+  ]);
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema]} />
         {/* Hero */}
         <section className="bg-gradient-to-br from-navy to-primary text-white py-12 md:py-16">
           <div className="container px-4">

@@ -24,6 +24,11 @@ import {
   FileCheck,
   HandshakeIcon,
 } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateLocalBusinessSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Home Buyer Boise | Sell Your House Fast for Cash",
@@ -46,7 +51,7 @@ const howItWorksSteps = [
     title: "Property Evaluation",
     description: "We'll assess your property and provide a fair, no-obligation cash offer within 24 hours.",
     features: ["Quick Assessment", "Fair Market Value", "As-Is Condition", "24-Hour Offers"],
-    href: "/how-it-works",
+    href: "/pricing",
   },
   {
     icon: DollarSign,
@@ -104,8 +109,17 @@ const benefits = [
 ];
 
 export default function HomePage() {
+  const localBusinessSchema = generateLocalBusinessSchema();
+  const webPageSchema = generateWebPageSchema({
+    name: "Home Buyer Boise | Sell Your House Fast for Cash",
+    description:
+      "Sell your house fast for cash in Boise and Treasure Valley. No fees, no commissions, close on your timeline.",
+    url: "/",
+  });
+
   return (
     <div className="flex flex-col pb-20">
+      <JsonLd data={[localBusinessSchema, webPageSchema]} />
       {/* Hero Section with Background Image */}
       <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden">
         {/* Background Image - LCP element with priority loading */}

@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { TrendingDown, TrendingUp, Clock, Shield } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Savings Calculator | Compare Cash Sale vs Traditional Listing",
@@ -12,8 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function SavingsCalculatorPage() {
+  const webPageSchema = generateWebPageSchema({
+    name: "Savings Calculator | Compare Cash Sale vs Traditional Listing",
+    description:
+      "Estimate your potential net proceeds from a cash sale versus a traditional listing.",
+    url: "/savings-calculator",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Savings Calculator", url: "/savings-calculator" },
+    ],
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Savings Calculator", url: "/savings-calculator" },
+  ]);
+
   return (
     <>
+        <JsonLd data={[webPageSchema, breadcrumbSchema]} />
         {/* Hero */}
         <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-16">
           <div className="container px-4">

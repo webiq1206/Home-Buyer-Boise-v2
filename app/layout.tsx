@@ -6,6 +6,10 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { StickyBottomNav } from "@/components/StickyBottomNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+} from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,9 +65,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code",
-  },
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
@@ -75,12 +76,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = generateOrganizationSchema();
+  const websiteSchema = generateWebSiteSchema();
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-md focus:bg-background focus:text-foreground focus:border focus:border-border focus:shadow-md focus:outline-none focus:ring-2 focus:ring-ring"
+          data-testid="link-skip-to-content"
+        >
+          Skip to main content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <ScrollToTop />
         <Navigation />
-        <main className="min-h-screen pb-20 lg:pb-0">
+        <main id="main-content" className="min-h-screen pb-20 lg:pb-0">
           {children}
         </main>
         <Footer />

@@ -1,51 +1,52 @@
 import { MetadataRoute } from "next";
 import { getAllCitySlugs } from "@/shared/contentData";
 import { getAllServiceSlugs } from "@/shared/servicesData";
+import { getAllBlogSlugs, getBlogPostBySlug } from "@/shared/blogContent";
 
 const baseUrl = "https://homebuyerboise.com";
 
-// Helper to get clean YYYY-MM-DD date format
-const getCleanDate = () => new Date().toISOString().split('T')[0];
+const getCleanDate = () => new Date().toISOString().split("T")[0];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const citySlugs = getAllCitySlugs();
   const serviceSlugs = getAllServiceSlugs();
+  const blogSlugs = getAllBlogSlugs();
   const lastModified = getCleanDate();
-  
-  // Static pages
-  const staticPages = [
-    "",
-    "/about",
-    "/contact",
-    "/pricing",
-    "/get-quote",
-    "/blog",
-    "/savings-calculator",
-    "/privacy-policy",
-    "/terms-of-service",
-  ];
-
-  // Blog posts (sample - in production, fetch from database)
-  const blogSlugs = [
-    "how-to-sell-house-fast-boise",
-    "cash-offer-vs-traditional-sale",
-    "selling-inherited-property-idaho",
-    "avoid-foreclosure-boise",
-  ];
 
   const routes: MetadataRoute.Sitemap = [];
 
-  // Add static pages
-  for (const page of staticPages) {
+  routes.push({
+    url: `${baseUrl}/`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 1.0,
+  });
+
+  routes.push({
+    url: `${baseUrl}/get-quote`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.95,
+  });
+
+  const hubPages: Array<{ path: string; priority: number; freq: "weekly" | "monthly" }> = [
+    { path: "/services", priority: 0.9, freq: "weekly" },
+    { path: "/areas", priority: 0.9, freq: "weekly" },
+    { path: "/savings-calculator", priority: 0.85, freq: "monthly" },
+    { path: "/pricing", priority: 0.8, freq: "monthly" },
+    { path: "/blog", priority: 0.8, freq: "weekly" },
+    { path: "/about", priority: 0.7, freq: "monthly" },
+    { path: "/contact", priority: 0.7, freq: "monthly" },
+  ];
+  for (const p of hubPages) {
     routes.push({
-      url: `${baseUrl}${page}`,
+      url: `${baseUrl}${p.path}`,
       lastModified,
-      changeFrequency: page === "" ? "weekly" : "monthly",
-      priority: page === "" ? 1 : 0.8,
+      changeFrequency: p.freq,
+      priority: p.priority,
     });
   }
 
-  // Add area pages
   for (const citySlug of citySlugs) {
     routes.push({
       url: `${baseUrl}/areas/${citySlug}`,
@@ -55,16 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Add service pages
   for (const serviceSlug of serviceSlugs) {
     routes.push({
       url: `${baseUrl}/services/${serviceSlug}`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.85,
     });
 
-    // Add service + city combination pages
     for (const citySlug of citySlugs) {
       routes.push({
         url: `${baseUrl}/services/${serviceSlug}/${citySlug}`,
@@ -75,15 +74,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Add blog posts
-  for (const blogSlug of blogSlugs) {
+  for (const slug of blogSlugs) {
+    const post = getBlogPostBySlug(slug);
+    const postDate = post?.publishedAt
+      ? post.publishedAt.split("T")[0]
+      : lastModified;
     routes.push({
-      url: `${baseUrl}/blog/${blogSlug}`,
-      lastModified,
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: postDate,
       changeFrequency: "monthly",
       priority: 0.6,
     });
   }
+
+  routes.push(
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  );
 
   return routes;
 }
