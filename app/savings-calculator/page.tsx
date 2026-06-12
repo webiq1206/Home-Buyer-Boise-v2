@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Savings Calculator | Compare Cash Sale vs Traditional Listing",
-  description: "Use our calculator to compare how much you could save by selling your house for cash versus listing with a realtor. See your potential net proceeds.",
+  description: "See what you'd actually net selling as-is vs. listing traditionally — including negotiation, inspection credits, and costs most sellers forget.",
   alternates: {
     canonical: "https://homebuyerboise.com/savings-calculator",
   },
@@ -41,7 +41,7 @@ export default function SavingsCalculatorPage() {
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Savings Calculator</h1>
               <p className="text-lg md:text-xl text-white/90">
-                Compare how much you could save by selling your house for cash versus listing with a realtor.
+                See what you&apos;d actually net selling as-is vs. listing traditionally — including costs most sellers forget.
               </p>
             </div>
           </div>
@@ -115,6 +115,18 @@ export default function SavingsCalculatorPage() {
                       <li className="flex justify-between">
                         <span>Buyer Concessions</span>
                         <span className="font-medium text-foreground">1-3% typical</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Negotiation Discount</span>
+                        <span className="font-medium text-foreground">3-5% off list price</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Inspection / Repair Credits</span>
+                        <span className="font-medium text-foreground">$5,000 - $20,000</span>
+                      </li>
+                      <li className="flex justify-between">
+                        <span>Price Reductions While Listed</span>
+                        <span className="font-medium text-foreground">Common after 90+ days</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Time on Market</span>

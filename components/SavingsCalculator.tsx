@@ -71,18 +71,24 @@ const CONDITION_OPTIONS: Array<{
   },
 ];
 
+const CONCESSIONS_RATE = 0.02;
+const STAGING_CLEANING = 3000;
+/** 1% of ARV per month after the third month on market */
+const PRICE_REDUCTION_RATE_PER_MONTH = 0.01;
+const PRICE_REDUCTION_STARTS_AFTER_MONTH = 3;
+
 export function SavingsCalculator() {
   const [homeValue, setHomeValue] = useState<number>(400000);
-  const [condition, setCondition] = useState<ConditionKey>('good');
+  const [condition, setCondition] = useState<ConditionKey>('fair');
   const [squareFeet, setSquareFeet] = useState<number>(1800);
-  const [monthsToSell, setMonthsToSell] = useState<number>(3);
+  const [monthsToSell, setMonthsToSell] = useState<number>(6);
   const [monthlyHolding, setMonthlyHolding] = useState<number>(HOLDING_COSTS_PER_MONTH);
 
   // Editable traditional-sale assumptions (Boise / NAR averages by default)
   const [commissionRate, setCommissionRate] = useState<number>(6);
   const [closingRate, setClosingRate] = useState<number>(2.5);
-  const CONCESSIONS_RATE = 0.02;
-  const STAGING_CLEANING = 3000;
+  const [negotiationRate, setNegotiationRate] = useState<number>(3.75);
+  const [inspectionCredits, setInspectionCredits] = useState<number>(8000);
 
   // Suggested repair cost from the same engine used at /get-quote.
   const suggestedRepairs = useMemo(() => {
@@ -104,20 +110,31 @@ export function SavingsCalculator() {
   }, [suggestedRepairs, repairsTouched]);
 
   const calculations = useMemo(() => {
-    // --- Traditional sale ---
-    const traditionalGross = homeValue;
-    const realtorCommission = traditionalGross * (commissionRate / 100);
-    const traditionalClosing = traditionalGross * (closingRate / 100);
+    // --- Traditional sale (realistic: negotiation, price drops, inspection credits) ---
+    const listPrice = homeValue;
+    const monthsWithReduction = Math.max(
+      0,
+      monthsToSell - PRICE_REDUCTION_STARTS_AFTER_MONTH,
+    );
+    const priceReductionWhileListed =
+      monthsWithReduction * homeValue * PRICE_REDUCTION_RATE_PER_MONTH;
+    const salePrice = Math.max(
+      0,
+      homeValue * (1 - negotiationRate / 100) - priceReductionWhileListed,
+    );
+    const realtorCommission = salePrice * (commissionRate / 100);
+    const traditionalClosing = salePrice * (closingRate / 100);
     const holdingCosts = monthlyHolding * monthsToSell;
-    const concessions = traditionalGross * CONCESSIONS_RATE;
+    const concessions = salePrice * CONCESSIONS_RATE;
     const traditionalTotalCosts =
       realtorCommission +
       traditionalClosing +
       repairCosts +
       STAGING_CLEANING +
       holdingCosts +
-      concessions;
-    const traditionalNet = traditionalGross - traditionalTotalCosts;
+      concessions +
+      inspectionCredits;
+    const traditionalNet = salePrice - traditionalTotalCosts;
 
     // --- Cash sale: drive from the real offer engine ---
     const offer = calculateOfferRange({
@@ -140,16 +157,26 @@ export function SavingsCalculator() {
 
     const netDifference = effectiveTraditionalNet - cashNet;
     const closeCallThreshold = Math.max(15000, homeValue * 0.03);
+    const feesAndCostsAvoided =
+      realtorCommission +
+      traditionalClosing +
+      STAGING_CLEANING +
+      concessions +
+      repairCosts +
+      inspectionCredits;
 
     return {
       traditional: {
-        gross: traditionalGross,
+        listPrice,
+        salePrice,
+        priceReductionWhileListed,
         realtorCommission,
         closingCosts: traditionalClosing,
         repairs: repairCosts,
         staging: STAGING_CLEANING,
         holding: holdingCosts,
         concessions,
+        inspectionCredits,
         totalCosts: traditionalTotalCosts,
         net: traditionalNet,
         daysToClose: daysToCloseTraditional,
@@ -174,6 +201,7 @@ export function SavingsCalculator() {
         closeCall: Math.abs(netDifference) <= closeCallThreshold,
         timeSaved: daysToCloseTraditional - daysToCloseCash,
         holdingCostsSaved: holdingCosts,
+        feesAndCostsAvoided,
       },
     };
   }, [
@@ -185,6 +213,8 @@ export function SavingsCalculator() {
     repairCosts,
     commissionRate,
     closingRate,
+    negotiationRate,
+    inspectionCredits,
   ]);
 
   const formatCurrency = (value: number) =>
@@ -455,7 +485,66 @@ export function SavingsCalculator() {
                   data-testid="input-closing-rate"
                 />
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="negotiation" className="flex items-center gap-1">
+                  Negotiation Discount (%)
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button type="button" aria-label="More information" className="cursor-help inline-flex"><Info className="h-3 w-3 text-muted-foreground" /></button>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-xs">
+                      Typical gap between list price and final sale price after
+                      buyer negotiation. Most sellers receive less than their
+                      asking price.
+                    </TooltipContent>
+                  </Tooltip>
+                </Label>
+                <Input
+                  id="negotiation"
+                  type="number"
+                  min={0}
+                  max={15}
+                  step={0.25}
+                  value={negotiationRate}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    if (!Number.isNaN(v)) setNegotiationRate(v);
+                  }}
+                  data-testid="input-negotiation-rate"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="inspection" className="flex items-center gap-1">
+                  Inspection / Repair Credits ($)
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button type="button" aria-label="More information" className="cursor-help inline-flex"><Info className="h-3 w-3 text-muted-foreground" /></button>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-xs">
+                      Credits or price reductions buyers commonly request after
+                      inspection — typically $5,000–$20,000 on older homes.
+                    </TooltipContent>
+                  </Tooltip>
+                </Label>
+                <Input
+                  id="inspection"
+                  type="number"
+                  min={0}
+                  max={50000}
+                  step={500}
+                  value={inspectionCredits}
+                  onChange={(e) => {
+                    const v = Number(e.target.value);
+                    if (!Number.isNaN(v)) setInspectionCredits(v);
+                  }}
+                  data-testid="input-inspection-credits"
+                />
+              </div>
             </div>
+            <p className="text-xs text-muted-foreground">
+              Price reductions of 1% of home value per month are applied after
+              month {PRICE_REDUCTION_STARTS_AFTER_MONTH} on market.
+            </p>
           </CardContent>
         </Card>
 
@@ -475,11 +564,24 @@ export function SavingsCalculator() {
             <CardContent className="space-y-4">
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">List Price</span>
+                  <span className="text-muted-foreground">List Price (ARV)</span>
                   <span className="font-medium">
-                    {formatCurrency(calculations.traditional.gross)}
+                    {formatCurrency(calculations.traditional.listPrice)}
                   </span>
                 </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Expected Sale Price</span>
+                  <span className="font-medium">
+                    {formatCurrency(calculations.traditional.salePrice)}
+                  </span>
+                </div>
+                {calculations.traditional.salePrice < calculations.traditional.listPrice && (
+                  <p className="text-xs text-muted-foreground">
+                    After {negotiationRate}% negotiation
+                    {calculations.traditional.priceReductionWhileListed > 0 &&
+                      ` and ${formatCurrency(calculations.traditional.priceReductionWhileListed)} in price reductions while listed`}
+                  </p>
+                )}
                 <div className="border-t pt-2 mt-2">
                   <p className="font-medium text-destructive mb-2">Deductions:</p>
                 </div>
@@ -506,6 +608,10 @@ export function SavingsCalculator() {
                 <div className="flex justify-between text-destructive">
                   <span>Buyer Concessions (2%)</span>
                   <span>-{formatCurrency(calculations.traditional.concessions)}</span>
+                </div>
+                <div className="flex justify-between text-destructive">
+                  <span>Inspection / Repair Credits</span>
+                  <span>-{formatCurrency(calculations.traditional.inspectionCredits)}</span>
                 </div>
               </div>
               <div className="border-t pt-4">
@@ -643,22 +749,12 @@ export function SavingsCalculator() {
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-sm text-muted-foreground mb-1">Net Difference</p>
-                <p
-                  className={`text-2xl font-bold ${
-                    calculations.comparison.cashIsBetter
-                      ? 'text-primary'
-                      : 'text-green-600'
-                  }`}
-                  data-testid="text-net-difference"
-                >
-                  {calculations.comparison.cashIsBetter ? '+' : ''}
-                  {formatCurrency(Math.abs(calculations.comparison.netDifference))}
+                <p className="text-sm text-muted-foreground mb-1">Fees &amp; Costs Avoided</p>
+                <p className="text-2xl font-bold text-primary" data-testid="text-fees-avoided">
+                  {formatCurrency(calculations.comparison.feesAndCostsAvoided)}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {calculations.comparison.cashIsBetter
-                    ? 'more in your pocket with a cash sale'
-                    : `more with a traditional sale (after ${monthsToSell} months of holding)`}
+                  commission, closing, repairs, staging, and more
                 </p>
               </div>
               <div>
@@ -671,43 +767,63 @@ export function SavingsCalculator() {
                 </p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground mb-1">
-                  Holding Costs Saved
-                </p>
-                <p className="text-2xl font-bold text-green-600">
-                  {formatCurrency(calculations.comparison.holdingCostsSaved)}
+                <p className="text-sm text-muted-foreground mb-1">Estimated Net Difference</p>
+                <p
+                  className={`text-2xl font-bold ${
+                    calculations.comparison.cashIsBetter ||
+                    calculations.comparison.closeCall
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  }`}
+                  data-testid="text-net-difference"
+                >
+                  {calculations.comparison.cashIsBetter ? '+' : ''}
+                  {formatCurrency(Math.abs(calculations.comparison.netDifference))}
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {monthsToSell} months of payments avoided
+                  {calculations.comparison.cashIsBetter
+                    ? 'more in your pocket with a cash sale'
+                    : calculations.comparison.closeCall
+                      ? 'close — factor in time, risk, and hassle'
+                      : `on paper with listing — only if the sale closes smoothly over ${monthsToSell} months`}
                 </p>
               </div>
             </div>
 
-            {(calculations.comparison.cashIsBetter ||
-              calculations.comparison.closeCall) && (
-              <div className="mt-6 p-4 bg-primary/10 rounded-md border border-primary/20">
-                <div className="flex items-start gap-3">
-                  <AlertCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-semibold text-primary">
-                      {calculations.comparison.cashIsBetter
-                        ? 'A cash sale nets you more here'
-                        : 'This is close — consider the time and certainty'}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {calculations.comparison.cashIsBetter
-                        ? `After ${monthsToSell} months of holding payments, agent fees, and repairs, a traditional sale leaves you with ${formatCurrency(
-                            calculations.traditional.net,
-                          )} versus ${formatCurrency(
-                            calculations.cash.net,
-                          )} in cash today.`
-                        : `A traditional sale nets about ${formatCurrency(
+            <div className="mt-6 p-4 bg-primary/10 rounded-md border border-primary/20">
+              <div className="flex items-start gap-3">
+                <AlertCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-primary">
+                    {calculations.comparison.cashIsBetter
+                      ? 'A cash sale nets you more here'
+                      : calculations.comparison.closeCall
+                        ? 'This is close — consider the time and certainty'
+                        : 'Speed and certainty have real value'}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {calculations.comparison.cashIsBetter
+                      ? `After ${monthsToSell} months of holding payments, agent fees, repairs, and negotiation, a traditional sale leaves you with ${formatCurrency(
+                          calculations.traditional.net,
+                        )} versus ${formatCurrency(
+                          calculations.cash.net,
+                        )} in cash today.`
+                      : calculations.comparison.closeCall
+                        ? `A traditional sale nets about ${formatCurrency(
                             Math.abs(calculations.comparison.netDifference),
-                          )} more on paper, but only if everything goes smoothly over ${monthsToSell} months. A cash sale removes the buyer-financing risk, showings, repairs, and listing timeline.`}
-                    </p>
-                  </div>
+                          )} more on paper, but only if everything goes smoothly over ${monthsToSell} months. A cash sale removes buyer-financing risk, showings, repairs, and the listing timeline.`
+                        : `On paper, listing may net slightly more — but only if the sale closes at full price over ${monthsToSell}+ months with no surprises. Cash removes showings, inspection renegotiation, and the 20–25% risk of buyer financing falling through.`}
+                  </p>
                 </div>
               </div>
+            </div>
+
+            {condition === 'excellent' && !calculations.comparison.cashIsBetter && (
+              <p className="text-sm text-muted-foreground mt-4 text-center">
+                For move-in ready homes in hot markets, listing traditionally may
+                net more. Our cash offers are built for sellers who need speed,
+                certainty, or want to skip repairs.
+              </p>
             )}
           </CardContent>
         </Card>
