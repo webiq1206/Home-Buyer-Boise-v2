@@ -55,6 +55,87 @@ function truncateServiceName(serviceName: string, maxLength: number): string {
   return shortened;
 }
 
+const SEO_TITLE_MAX = 60;
+const META_DESC_MAX = 160;
+const BRAND_SUFFIX = "Home Buyer Boise";
+const BRAND_SHORT = "Cash Buyers";
+
+/**
+ * Trim text to max length on a word boundary, optional ellipsis
+ */
+export function truncateToLength(text: string, max: number, ellipsis = false): string {
+  const trimmed = text.trim();
+  if (trimmed.length <= max) return trimmed;
+  const slice = trimmed.substring(0, max);
+  const lastSpace = slice.lastIndexOf(" ");
+  const cut = lastSpace > max * 0.6 ? slice.substring(0, lastSpace) : slice;
+  return ellipsis && cut.length < trimmed.length ? `${cut}...` : cut;
+}
+
+/**
+ * Build a ≤60 char title with brand suffix, falling back to shorter brand
+ */
+export function buildBrandedTitle(topic: string, max = SEO_TITLE_MAX): string {
+  const clean = topic.replace(/\s+/g, " ").trim();
+  const withFull = `${clean} | ${BRAND_SUFFIX}`;
+  if (withFull.length <= max) return withFull;
+  const withShort = `${clean} | ${BRAND_SHORT}`;
+  if (withShort.length <= max) return withShort;
+  const room = max - ` | ${BRAND_SHORT}`.length;
+  return `${truncateServiceName(clean, room)} | ${BRAND_SHORT}`;
+}
+
+/**
+ * Service×city page title — uses shortName for compact, unique titles
+ */
+export function generateServiceCityTitle(
+  service: { shortName: string },
+  city: { name: string }
+): string {
+  return buildBrandedTitle(`${service.shortName} in ${city.name}`);
+}
+
+/**
+ * Blog post SEO title — shortens verbose stored titles to ≤60 chars
+ */
+export function generateBlogSeoTitle(post: {
+  title: string;
+  seoTitle?: string;
+  slug: string;
+}): string {
+  let base = (post.seoTitle || post.title).replace(/2025/g, "2026").trim();
+
+  const verbosePatterns = [
+    /\s*\|\s*Complete (?:\d{4} )?(?:Guide|Comparison)\s*/gi,
+    /\s*\|\s*\d{4} Timeline\s*/gi,
+    /\s+Idaho(?=\s*\|)/gi,
+  ];
+  for (const pattern of verbosePatterns) {
+    if (base.length > SEO_TITLE_MAX) base = base.replace(pattern, " ").replace(/\s+/g, " ").trim();
+  }
+
+  if (base.includes(BRAND_SUFFIX) || base.includes(BRAND_SHORT)) {
+    if (base.length <= SEO_TITLE_MAX) return base;
+    const topic = base.split("|")[0].trim();
+    return buildBrandedTitle(topic);
+  }
+
+  if (base.length <= SEO_TITLE_MAX - ` | ${BRAND_SUFFIX}`.length) {
+    return buildBrandedTitle(base);
+  }
+
+  return buildBrandedTitle(base.split("|")[0].trim());
+}
+
+/**
+ * Meta description capped at 160 chars on word boundary
+ */
+export function truncateMetaDescription(description: string, max = META_DESC_MAX): string {
+  const clean = description.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return truncateToLength(clean, max - 3, true);
+}
+
 /**
  * Generate SEO-optimized page title
  * Format: "Sell House Fast City | Home Buyer Boise" - Natural, city-first approach

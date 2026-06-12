@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-06-12T18:04:59.463Z",
+  "totalBlogPosts": 56,
+  "totalOverlaps": 2,
+  "highRisk": 0,
+  "mediumRisk": 0,
+  "overlaps": [
+    {
+      "blogSlug": "selling-fire-damaged-house-boise",
+      "blogTitle": "Selling a Fire-Damaged House in Boise: Insurance, Repairs, and Cash Sale Options",
+      "targetUrl": "/services/fire-water-damage",
+      "targetTitle": "Sell Fire or Water Damaged House | Boise Distressed Home Buyers",
+      "similarity": 0.259,
+      "risk": "low"
+    },
+    {
+      "blogSlug": "selling-rental-property-with-tenants-boise",
+      "blogTitle": "Selling Your Boise Rental Property with Tenants: A Complete Landlord Exit Guide",
+      "targetUrl": "/services/problem-tenants",
+      "targetTitle": "Sell Rental Property with Problem Tenants | Boise Investor Exit",
+      "similarity": 0.25,
+      "risk": "low"
+    }
+  ]
+}

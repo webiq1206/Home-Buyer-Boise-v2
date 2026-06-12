@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-06-12T18:04:58.965Z",
+  "totalCombos": 136,
+  "maxSimilarity": 0.742,
+  "maxPair": "inherited-property/kuna vs inherited-property/meridian",
+  "pairsAbove70": 7,
+  "pairsAbove80": 0,
+  "pairsAbove90": 0,
+  "pairs": [
+    {
+      "a": "inherited-property/kuna",
+      "b": "inherited-property/meridian",
+      "similarity": 0.742,
+      "threshold": "70"
+    },
+    {
+      "a": "sell-house-divorce/kuna",
+      "b": "sell-house-divorce/meridian",
+      "similarity": 0.738,
+      "threshold": "70"
+    },
+    {
+      "a": "behind-mortgage/kuna",
+      "b": "behind-mortgage/meridian",
+      "similarity": 0.719,
+      "threshold": "70"
+    },
+    {
+      "a": "expired-listing/boise",
+      "b": "expired-listing/middleton",
+      "similarity": 0.706,
+      "threshold": "70"
+    },
+    {
+      "a": "code-violations/boise",
+      "b": "code-violations/middleton",
+      "similarity": 0.704,
+      "threshold": "70"
+    },
+    {
+      "a": "sell-house-fast/star",
+      "b": "relocation-sale/star",
+      "similarity": 0.702,
+      "threshold": "70"
+    },
+    {
+      "a": "relocation-sale/kuna",
+      "b": "fire-water-damage/kuna",
+      "similarity": 0.7,
+      "threshold": "70"
+    }
+  ]
+}

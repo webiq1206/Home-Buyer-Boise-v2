@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import {
   generateWebPageSchema,
   generateBreadcrumbSchema,
+  generateItemListSchema,
 } from "@/lib/schema";
 
 export function generateMetadata(): Metadata {
@@ -72,10 +73,17 @@ export default function AreasPage() {
     { name: "Home", url: "/" },
     { name: "Areas", url: "/areas" },
   ]);
+  const itemListSchema = generateItemListSchema({
+    name: "Treasure Valley Service Areas",
+    items: CITIES.map((c) => ({
+      name: c.name,
+      url: `/areas/${c.slug}`,
+    })),
+  });
 
   return (
     <>
-      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
+      <JsonLd data={[webPageSchema, breadcrumbSchema, itemListSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
         <div className="container px-4">

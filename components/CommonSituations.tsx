@@ -85,6 +85,7 @@ export function CommonSituations() {
           src="/images/superhero-background.png"
           alt="Home Buyer Boise helps homeowners in difficult situations sell their house fast"
           fill
+          sizes="100vw"
           className="object-cover"
           style={{ objectPosition: 'left bottom' }}
           loading="lazy"

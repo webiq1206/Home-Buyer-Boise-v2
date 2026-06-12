@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import {
   generateWebPageSchema,
   generateBreadcrumbSchema,
+  generateItemListSchema,
 } from "@/lib/schema";
 import { 
   ArrowRight,
@@ -109,10 +110,17 @@ export default function ServicesPage() {
     { name: "Home", url: "/" },
     { name: "Services", url: "/services" },
   ]);
+  const itemListSchema = generateItemListSchema({
+    name: "Cash Home Buying Services",
+    items: SERVICES.map((s) => ({
+      name: s.name,
+      url: `/services/${s.slug}`,
+    })),
+  });
 
   return (
     <>
-      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
+      <JsonLd data={[webPageSchema, breadcrumbSchema, itemListSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-16 lg:py-24">
         <div className="container px-4">

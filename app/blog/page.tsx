@@ -13,6 +13,7 @@ import { JsonLd } from "@/components/JsonLd";
 import {
   generateWebPageSchema,
   generateBreadcrumbSchema,
+  generateItemListSchema,
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -79,10 +80,17 @@ export default function BlogPage() {
     { name: "Home", url: "/" },
     { name: "Blog", url: "/blog" },
   ]);
+  const itemListSchema = generateItemListSchema({
+    name: "Home Buyer Boise Blog",
+    items: sortedPosts.slice(0, 20).map((p) => ({
+      name: p.title,
+      url: `/blog/${p.slug}`,
+    })),
+  });
 
   return (
     <>
-      <JsonLd data={[webPageSchema, breadcrumbSchema]} />
+      <JsonLd data={[webPageSchema, breadcrumbSchema, itemListSchema]} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-navy to-primary text-white py-12 lg:py-20">
         <div className="container px-4">

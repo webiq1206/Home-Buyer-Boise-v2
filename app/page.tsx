@@ -189,6 +189,7 @@ export default function HomePage() {
             src="/images/stars-background.png"
             alt="Five star rating background representing Home Buyer Boise customer satisfaction"
             fill
+            sizes="100vw"
             className="object-cover"
             style={{ objectPosition: 'center center' }}
           />
@@ -409,6 +410,7 @@ export default function HomePage() {
             src="/images/smiley-background.png"
             alt="Happy customer testimonial background for Home Buyer Boise reviews"
             fill
+            sizes="100vw"
             className="object-cover"
             style={{ objectPosition: 'right center' }}
           />

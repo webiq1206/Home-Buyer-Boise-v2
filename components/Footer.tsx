@@ -24,6 +24,7 @@ export function Footer() {
                 alt="Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley" 
                 width={192}
                 height={48}
+                sizes="192px"
                 className="h-12 w-auto" 
               />
             </div>
@@ -125,6 +126,16 @@ export function Footer() {
               <li>
                 <Link href="/get-quote" className="text-muted-foreground hover:text-primary transition-colors">
                   Get Cash Offer
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
+                  Success Stories
                 </Link>
               </li>
               <li>

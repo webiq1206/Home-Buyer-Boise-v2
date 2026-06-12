@@ -23,6 +23,8 @@ import {
   generateBreadcrumbSchema,
   generateFAQSchema,
 } from "@/lib/schema";
+import { getAuthorSlugForName } from "@/shared/authorsData";
+import { generateBlogSeoTitle, truncateMetaDescription } from "@/lib/seo";
 
 interface PageProps {
   params: { slug: string };
@@ -41,15 +43,18 @@ export function generateMetadata({ params }: PageProps): Metadata {
     };
   }
 
+  const seoTitle = generateBlogSeoTitle(post);
+  const description = truncateMetaDescription(post.metaDescription || post.excerpt);
+
   return {
-    title: post.seoTitle || `${post.title} | Home Buyer Boise Blog`,
-    description: post.metaDescription || post.excerpt,
+    title: seoTitle,
+    description,
     alternates: {
       canonical: `https://homebuyerboise.com/blog/${params.slug}`,
     },
     openGraph: {
-      title: post.seoTitle || post.title,
-      description: post.metaDescription || post.excerpt,
+      title: seoTitle,
+      description,
       type: 'article',
       publishedTime: post.publishedAt,
       authors: [post.author],
@@ -84,13 +89,16 @@ export default function BlogPostPage({ params }: PageProps) {
 
   const recentPosts = getRecentBlogPosts(4).filter(p => p.slug !== post.slug).slice(0, 3);
 
+  const authorSlug = getAuthorSlugForName(post.author);
+
   const blogPostingSchema = generateBlogPostingSchema({
     title: post.title,
     description: post.metaDescription || post.excerpt,
     slug: post.slug,
     datePublished: post.publishedAt,
-    dateModified: (post as any).updatedAt || post.publishedAt,
+    dateModified: (post as { updatedAt?: string }).updatedAt || post.publishedAt,
     author: post.author,
+    authorSlug,
     keywords: post.tags,
     articleSection: post.category,
   });
@@ -138,10 +146,13 @@ export default function BlogPostPage({ params }: PageProps) {
             </p>
             
             <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
-              <span className="flex items-center gap-1">
+              <Link
+                href={`/authors/${authorSlug}`}
+                className="flex items-center gap-1 hover:text-white"
+              >
                 <User className="h-4 w-4" />
                 {post.author}
-              </span>
+              </Link>
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 {formatDate(post.publishedAt)}

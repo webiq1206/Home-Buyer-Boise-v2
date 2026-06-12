@@ -185,7 +185,7 @@ export default function ServiceCityPage({ params }: PageProps) {
   // Breadcrumb data
   const breadcrumbs = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/pricing" },
+    { name: "Services", href: "/services" },
     { name: service.name, href: `/services/${service.slug}` },
     { name: city.name },
   ];
@@ -196,7 +196,7 @@ export default function ServiceCityPage({ params }: PageProps) {
   const faqSchema = generateFAQSchema(generatedContent.cityFaqs);
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
-    { name: "Services", url: "/pricing" },
+    { name: "Services", url: "/services" },
     { name: service.name, url: `/services/${service.slug}` },
     { name: city.name, url: `/services/${service.slug}/${city.slug}` },
   ]);

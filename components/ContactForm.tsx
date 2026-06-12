@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
+import { trackEvent } from '@/components/Analytics';
 import { Send, Loader2, CheckCircle } from 'lucide-react';
 
 interface ContactFormProps {
@@ -64,13 +65,14 @@ export function ContactForm({ source = 'contact' }: ContactFormProps) {
       });
       
       if (response.ok) {
+        trackEvent('form_submit', { form_name: 'contact', status: 'success' });
         setIsSubmitted(true);
         toast({
           title: "Message Sent!",
           description: "We'll get back to you within 24 hours.",
         });
       } else {
-        // Still show success for UX
+        trackEvent('form_submit', { form_name: 'contact', status: 'api_error' });
         setIsSubmitted(true);
         toast({
           title: "Message Received!",
@@ -78,7 +80,7 @@ export function ContactForm({ source = 'contact' }: ContactFormProps) {
         });
       }
     } catch (error) {
-      // Show success anyway for UX
+      trackEvent('form_submit', { form_name: 'contact', status: 'network_error' });
       setIsSubmitted(true);
       toast({
         title: "Message Received!",

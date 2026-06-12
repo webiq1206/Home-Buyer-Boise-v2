@@ -27,16 +27,25 @@ export const BLOG_POSTS: BlogPostData[] = [
   // ============================================
   {
     slug: "sell-my-house-fast-boise-complete-guide",
-    title: "Sell My House Fast in Boise: The Complete 2025 Homeowner's Guide",
-    seoTitle: "Sell My House Fast Boise | Complete 2025 Guide | Home Buyer Boise",
-    metaDescription: "Need to sell your house fast in Boise? Learn how to get a fair cash offer in 24 hours, close in 7-14 days, and avoid costly repairs. Local Idaho experts explain your options.",
+    title: "Sell My House Fast in Boise: The Complete 2026 Homeowner's Guide",
+    seoTitle: "Sell My House Fast Boise | Home Buyer Boise",
+    metaDescription: "Need to sell your house fast in Boise? Learn how to get a fair cash offer in 24 hours, close in 7-14 days, and avoid costly repairs. Local Idaho experts...",
     excerpt: "Discover how Boise homeowners are selling their houses in as little as 7 days for cash. This comprehensive guide covers everything you need to know about fast home sales in Idaho's capital city.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["sell house fast", "boise real estate", "cash home buyer", "quick sale", "idaho homes"],
     publishedAt: "2025-01-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
-      <h2>Why Boise Homeowners Need Fast Sale Options in 2025</h2>
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
+      <h2>Why Boise Homeowners Need Fast Sale Options in 2026</h2>
       <p>The Boise real estate market has transformed dramatically over the past few years. What was once a sleepy Idaho city has become one of America's fastest-growing metropolitan areas, with home prices rising significantly since 2020. However, this growth has created unique challenges for homeowners who need to sell quickly.</p>
       
       <p>Whether you're facing a job relocation to another state, dealing with an inherited property you can't maintain, or simply need to access your home equity fast, the traditional real estate process often falls short. The average home in Boise sits on the market for 30-60 days before receiving an acceptable offer, and that's before the 30-45 day closing process even begins.</p>
@@ -152,9 +161,9 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>"What If I Change My Mind?"</h3>
       <p>Our offers come with no obligations. Until you sign a purchase agreement, you're free to explore other options or decide not to sell. Even after signing, Idaho law provides certain protections and cooling-off periods.</p>
 
-      <h2>The Boise Real Estate Market in 2025</h2>
+      <h2>The Boise Real Estate Market in 2026</h2>
 
-      <p>Understanding current market conditions helps you make informed decisions about selling. As of early 2025, the Boise market has stabilized from the frenetic pace of 2021-2022, but remains healthy overall.</p>
+      <p>Understanding current market conditions helps you make informed decisions about selling. As of early 2026, the Boise market has stabilized from the frenetic pace of 2021-2022, but remains healthy overall.</p>
 
       <p>Key market indicators:</p>
       <ul>
@@ -226,7 +235,16 @@ export const BLOG_POSTS: BlogPostData[] = [
     category: "Selling Fast",
     tags: ["we buy houses", "cash buyer", "boise", "home selling process", "real estate investing"],
     publishedAt: "2025-01-12T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>What Are "We Buy Houses" Companies?</h2>
       <p>"We Buy Houses" companies are real estate investment firms that purchase properties directly from homeowners using cash. Unlike traditional home sales where you list with an agent and wait for retail buyers, these companies make quick offers and can close within days rather than months.</p>
 
@@ -466,14 +484,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "cash-offer-vs-traditional-sale-comparison",
     title: "Cash Offer vs. Traditional Sale: Which Is Right for Your Boise Home?",
-    seoTitle: "Cash Offer vs Traditional Sale Boise | Complete Comparison | Home Buyer Boise",
+    seoTitle: "Cash Offer vs Traditional Sale Boise | Home Buyer Boise",
     metaDescription: "Compare cash offers with traditional home sales in Boise. Understand the pros, cons, costs, and timelines to make the best decision for your situation.",
     excerpt: "Should you accept a cash offer or list your Boise home traditionally? This comprehensive comparison helps you understand the real costs, timelines, and benefits of each approach.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash offer", "traditional sale", "home selling comparison", "boise real estate", "selling options"],
     publishedAt: "2025-01-10T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/cash-offer",
+      "/areas/boise",
+      "/services/cash-offer/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>The Big Picture: Two Very Different Approaches</h2>
       <p>Selling your home is one of the most significant financial decisions you'll make. In the Boise real estate market, you have two primary paths: accepting a cash offer from an investor like Home Buyer Boise, or listing traditionally with a real estate agent. Each approach has distinct advantages, costs, and considerations.</p>
 
@@ -689,14 +717,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "sell-house-as-is-boise-guide",
     title: "How to Sell a House As-Is in Boise Without Making Repairs",
-    seoTitle: "Sell House As-Is Boise | No Repairs Needed | Home Buyer Boise",
+    seoTitle: "Sell House As-Is Boise | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house as-is without making costly repairs. Discover who buys as-is homes, what to expect, and how to get a fair cash offer.",
     excerpt: "Can you really sell your Boise home without making repairs? Yes! Learn how as-is sales work, who buys these properties, and how to get the best offer for your home in any condition.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["sell as-is", "no repairs", "boise homes", "cash buyer", "property condition"],
     publishedAt: "2025-01-08T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>What Does "Selling As-Is" Actually Mean?</h2>
       <p>When you sell a house "as-is" in Boise or anywhere in Idaho, you're telling potential buyers that you're selling the property in its current condition. You won't make repairs, upgrades, or improvements before closing, and you won't negotiate credits for issues discovered during inspections.</p>
 
@@ -893,15 +931,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   },
   {
     slug: "how-long-to-sell-house-boise",
-    title: "How Long Does It Take to Sell a House in Boise? 2025 Timeline Guide",
-    seoTitle: "How Long to Sell House Boise | 2025 Timeline | Home Buyer Boise",
-    metaDescription: "Learn realistic timelines for selling a house in Boise, Idaho. Compare traditional sales (90-120 days) with cash sales (7-14 days) and understand what affects timing.",
+    title: "How Long Does It Take to Sell a House in Boise? 2026 Timeline Guide",
+    seoTitle: "How Long to Sell House Boise | Home Buyer Boise",
+    metaDescription: "Learn realistic timelines for selling a house in Boise, Idaho. Compare traditional sales (90-120 days) with cash sales (7-14 days) and understand what...",
     excerpt: "Wondering how long it takes to sell a house in Boise? This guide breaks down realistic timelines for traditional sales versus cash sales, plus factors that speed up or slow down the process.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["selling timeline", "boise real estate", "days on market", "quick sale", "home selling"],
     publishedAt: "2025-01-05T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>The Reality of Home Selling Timelines in Boise</h2>
       <p>When you decide to sell your home in the Boise metro area, one of the first questions is inevitably: "How long will this take?" The honest answer depends entirely on which selling method you choose and several property-specific factors.</p>
 
@@ -923,7 +970,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       </ul>
 
       <h3>Phase 2: Active Marketing (30-60 Days Average)</h3>
-      <p>This is the "days on market" figure you see in real estate statistics. In the Boise metro area in 2025:</p>
+      <p>This is the "days on market" figure you see in real estate statistics. In the Boise metro area in 2026:</p>
       <ul>
         <li><strong>Move-in ready homes in desirable areas:</strong> 15-30 days</li>
         <li><strong>Average homes in most areas:</strong> 30-45 days</li>
@@ -1097,14 +1144,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "avoid-foreclosure-boise-options",
     title: "How to Avoid Foreclosure in Boise: Your Complete Options Guide",
-    seoTitle: "Avoid Foreclosure Boise Idaho | Complete Guide | Home Buyer Boise",
-    metaDescription: "Facing foreclosure in Boise? Learn all your options: loan modification, forbearance, short sale, cash sale, and more. Local Idaho experts explain how to protect your home and credit.",
+    seoTitle: "Avoid Foreclosure Boise Idaho | Home Buyer Boise",
+    metaDescription: "Facing foreclosure in Boise? Learn all your options: loan modification, forbearance, short sale, cash sale, and more. Local Idaho experts explain how to...",
     excerpt: "If you're behind on mortgage payments in Boise, you have options. This comprehensive guide explains every foreclosure alternative and how to choose the right path for your situation.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["foreclosure", "avoid foreclosure", "boise", "mortgage help", "distressed property"],
     publishedAt: "2025-01-03T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/avoid-foreclosure",
+      "/areas/boise",
+      "/services/avoid-foreclosure/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Foreclosure in Idaho</h2>
       <p>Foreclosure is a legal process where your lender takes ownership of your home because you've stopped making mortgage payments. In Idaho, foreclosures can happen relatively quickly compared to some states, making early action critical.</p>
 
@@ -1263,14 +1320,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "sell-inherited-house-boise",
     title: "How to Sell an Inherited House in Boise: Complete Probate Guide",
-    seoTitle: "Sell Inherited House Boise | Probate Guide | Home Buyer Boise",
-    metaDescription: "Inherited a house in Boise? Learn how to navigate probate, understand your options, and sell an inherited property quickly. Local Idaho experts guide you through the process.",
+    seoTitle: "Sell Inherited House Boise | Home Buyer Boise",
+    metaDescription: "Inherited a house in Boise? Learn how to navigate probate, understand your options, and sell an inherited property quickly. Local Idaho experts guide you...",
     excerpt: "Inheriting a home in Boise comes with emotional and practical challenges. This guide walks you through probate, taxes, and selling options—including how to sell an inherited house quickly for cash.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["inherited property", "probate", "estate sale", "boise", "inherited house"],
     publishedAt: "2025-01-01T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/inherited-property",
+      "/areas/boise",
+      "/services/inherited-property/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>The Emotional and Practical Challenges of Inherited Property</h2>
       <p>Inheriting a home is bittersweet. While it represents a gift from a loved one, it also comes during a time of grief and brings unexpected responsibilities. You're suddenly dealing with property maintenance, insurance, taxes, and major financial decisions while processing loss.</p>
 
@@ -1459,14 +1526,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-divorce-boise",
     title: "Selling Your House During Divorce in Boise: A Complete Guide",
-    seoTitle: "Sell House During Divorce Boise | Complete Guide | Home Buyer Boise",
-    metaDescription: "Going through divorce in Boise and need to sell your house? Learn about your options, how to divide proceeds, and why a fast cash sale may help you move forward.",
+    seoTitle: "Sell House During Divorce Boise | Home Buyer Boise",
+    metaDescription: "Going through divorce in Boise and need to sell your house? Learn about your options, how to divide proceeds, and why a fast cash sale may help you move...",
     excerpt: "Divorce is difficult enough without the stress of selling a home. Learn how Boise couples navigate property division, selling options, and how a quick sale can help both parties move forward.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["divorce", "selling house", "property division", "boise", "marriage dissolution"],
     publishedAt: "2024-12-28T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-house-divorce",
+      "/areas/boise",
+      "/services/sell-house-divorce/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>The Challenge of Selling During Divorce</h2>
       <p>Divorce forces difficult decisions about many aspects of life, and the marital home is often the most significant and emotionally charged. For many Boise couples, the home represents not just financial investment but years of memories—both good and painful during separation.</p>
 
@@ -1620,24 +1697,33 @@ export const BLOG_POSTS: BlogPostData[] = [
   },
   {
     slug: "boise-real-estate-market-update-2025",
-    title: "Boise Real Estate Market 2025: What Sellers Need to Know",
-    seoTitle: "Boise Real Estate Market 2025 | Seller's Guide | Home Buyer Boise",
+    title: "Boise Real Estate Market 2026: What Sellers Need to Know",
+    seoTitle: "Boise Real Estate Market 2026 | Home Buyer Boise",
     metaDescription: "Get the latest on Boise's 2025 real estate market. Understand current prices, trends, and what they mean if you're thinking about selling your Idaho home.",
     excerpt: "The Boise real estate market has evolved significantly since the pandemic boom. Here's what's happening in 2025 and how current conditions affect your home selling options.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["boise market", "real estate trends", "home prices", "2025 market", "idaho real estate"],
     publishedAt: "2024-12-25T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
-      <h2>Boise's Market Evolution: 2020 to 2025</h2>
-      <p>The Boise real estate market has been on quite a journey. From the pandemic-era frenzy of 2020-2022, when homes sold in days with multiple offers well over asking price, to the more balanced market of 2023-2025, understanding this evolution helps sellers set realistic expectations.</p>
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
+      <h2>Boise's Market Evolution: 2020 to 2026</h2>
+      <p>The Boise real estate market has been on quite a journey. From the pandemic-era frenzy of 2020-2022, when homes sold in days with multiple offers well over asking price, to the more balanced market of 2023-2026, understanding this evolution helps sellers set realistic expectations.</p>
 
       <p>During the peak in 2021-2022, Boise was the hottest real estate market in America. Homes received 10-20+ offers within days of listing. Buyers waived inspections, paid cash over asking, and still lost bidding wars. Those days are now history, replaced by a market that still favors sellers overall but with far more reasonable dynamics.</p>
 
-      <h2>Current Market Conditions (2025)</h2>
+      <h2>Current Market Conditions (2026)</h2>
 
       <h3>Home Prices</h3>
-      <p>The Ada County median home price sits at approximately $475,000 as of early 2025, down from the peak of around $550,000 in mid-2022 but still dramatically higher than pre-pandemic levels of approximately $325,000 in early 2020.</p>
+      <p>The Ada County median home price sits at approximately $475,000 as of early 2026, down from the peak of around $550,000 in mid-2022 but still dramatically higher than pre-pandemic levels of approximately $325,000 in early 2020.</p>
 
       <p>This means most homeowners who purchased before 2022 have substantial equity, while those who bought at the peak may have seen modest value declines but typically aren't underwater.</p>
 
@@ -1648,7 +1734,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Housing inventory has increased from the extreme lows of 2021-2022. Buyers now have choices, which means sellers must price competitively and present their homes well to attract offers.</p>
 
       <h3>Interest Rates</h3>
-      <p>Mortgage rates in 2025 remain elevated compared to the 3% rates of 2021, hovering in the 6-7% range. This affects buyer purchasing power and has cooled the frenetic pace of the boom years.</p>
+      <p>Mortgage rates in 2026 remain elevated compared to the 3% rates of 2021, hovering in the 6-7% range. This affects buyer purchasing power and has cooled the frenetic pace of the boom years.</p>
 
       <h3>What This Means for Sellers</h3>
       <p>Today's market is healthy but not the slam-dunk seller's market of 2021-2022. Success requires:</p>
@@ -1783,14 +1869,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-foundation-problems-boise",
     title: "Selling a House with Foundation Problems in Boise: Complete Guide for Idaho Homeowners",
-    seoTitle: "Sell House with Foundation Problems Boise | Cash Buyers | Home Buyer Boise",
+    seoTitle: "Sell House with Foundation Problems Boise | Home Buyer Boise",
     metaDescription: "Need to sell a house with foundation issues in Boise? Learn about repair costs, disclosure requirements, and how to get a fair cash offer for your home as-is.",
     excerpt: "Foundation problems can make selling your Boise home feel impossible. Learn your options for selling a house with foundation issues, from costly repairs to as-is cash sales.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["foundation problems", "structural issues", "sell house as-is", "boise real estate", "cash home buyer"],
     publishedAt: "2024-12-01T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>Understanding Foundation Problems in Boise Area Homes</h2>
       <p>Foundation issues are among the most serious problems a Boise homeowner can face. Whether you've noticed cracks in your walls, doors that won't close properly, or uneven floors, these symptoms often point to underlying foundation problems that can significantly impact your home's value and saleability.</p>
       
@@ -2021,14 +2117,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-mold-boise",
     title: "How to Sell a House with Mold in Boise: Your Complete Idaho Guide",
-    seoTitle: "Sell House with Mold Boise | Mold Remediation Options | Home Buyer Boise",
+    seoTitle: "Sell House with Mold Boise | Home Buyer Boise",
     metaDescription: "Selling a house with mold in Boise? Learn about remediation costs, Idaho disclosure requirements, and how cash buyers can help you sell as-is quickly.",
     excerpt: "Mold can make selling your Boise home challenging. This guide covers remediation costs, disclosure requirements, and your options for selling a house with mold problems.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["mold problems", "mold remediation", "sell house as-is", "boise real estate", "property condition"],
     publishedAt: "2024-12-03T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>Understanding Mold Problems in Boise Area Homes</h2>
       <p>Discovering mold in your home can be alarming, especially when you're trying to sell. While Boise's relatively dry climate might seem like protection against mold, the reality is that mold problems occur in Idaho homes more often than many people realize. From bathroom moisture issues to hidden leaks in walls, mold can develop in any home under the right conditions.</p>
       
@@ -2263,14 +2369,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-fire-damaged-house-boise",
     title: "Selling a Fire-Damaged House in Boise: Insurance, Repairs, and Cash Sale Options",
-    seoTitle: "Sell Fire Damaged House Boise | Insurance Claims | Home Buyer Boise",
+    seoTitle: "Sell Fire Damaged House Boise | Home Buyer Boise",
     metaDescription: "Need to sell a fire-damaged house in Boise? Learn about insurance claims, repair costs, and how to sell your property as-is for cash without rebuilding.",
     excerpt: "After a house fire in Boise, you have options. Learn about navigating insurance claims, repair decisions, and selling your fire-damaged property as-is for cash.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["fire damage", "house fire", "insurance claims", "sell house as-is", "boise real estate"],
     publishedAt: "2024-12-05T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>After a House Fire: Understanding Your Situation</h2>
       <p>Experiencing a house fire is one of the most traumatic events a homeowner can face. Beyond the immediate shock and emotional toll, you're suddenly dealing with insurance claims, temporary housing, and decisions about your property's future. If you're considering selling your fire-damaged Boise home, this guide will help you understand your options.</p>
       
@@ -2499,14 +2615,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-bad-roof-boise",
     title: "Selling a House with Roof Problems in Boise: Costs, Challenges, and Solutions",
-    seoTitle: "Sell House with Bad Roof Boise | Roof Problems | Home Buyer Boise",
+    seoTitle: "Sell House with Bad Roof Boise | Home Buyer Boise",
     metaDescription: "Need to sell a Boise house with roof problems? Learn about replacement costs, buyer financing challenges, and how to sell as-is to cash buyers.",
     excerpt: "A bad roof can complicate selling your Boise home. Learn about repair costs, why traditional buyers struggle to finance, and your options for selling a house with roof problems.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["roof problems", "roof replacement", "sell house as-is", "boise real estate", "home repairs"],
     publishedAt: "2024-12-07T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>The Impact of Roof Problems on Selling Your Boise Home</h2>
       <p>Your roof is one of the most critical components of your home. It protects everything beneath it from Idaho's weather—scorching summer sun, heavy winter snow, spring rains, and occasional hail. When roof problems develop, they create both immediate concerns and significant challenges when it's time to sell.</p>
       
@@ -2761,14 +2887,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-outdated-systems-boise",
     title: "Selling a House with Outdated Plumbing, Electrical, and HVAC in Boise",
-    seoTitle: "Sell House with Old Systems Boise | Outdated Plumbing Electrical | Home Buyer Boise",
+    seoTitle: "Sell House with Old Systems Boise | Home Buyer Boise",
     metaDescription: "Selling a Boise home with outdated plumbing, electrical, or HVAC? Learn about update costs, inspection issues, and how to sell as-is to cash buyers.",
     excerpt: "Outdated home systems can complicate selling in Boise. Learn about the challenges of selling with old plumbing, electrical, and HVAC systems—and your options for selling as-is.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["outdated systems", "old plumbing", "electrical problems", "hvac issues", "sell house as-is"],
     publishedAt: "2024-12-09T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>The Challenge of Selling Homes with Outdated Systems</h2>
       <p>Boise has many wonderful older homes—from historic North End craftsmen to mid-century ranches across the valley. These homes have character and charm, but they often come with a significant challenge: outdated mechanical systems that can complicate a sale.</p>
       
@@ -3031,14 +3167,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-hoarder-house-boise",
     title: "Selling a Hoarder House in Boise: A Compassionate Guide for Families",
-    seoTitle: "Sell Hoarder House Boise | Discreet Cash Sales | Home Buyer Boise",
+    seoTitle: "Sell Hoarder House Boise | Home Buyer Boise",
     metaDescription: "Need to sell a hoarder house in Boise? Learn about cleanout costs, discreet sale options, and how to sell as-is with compassion for difficult situations.",
     excerpt: "Selling a hoarder property requires sensitivity and practical solutions. Learn about cleanout costs, condition concerns, and discreet cash sale options for Boise families.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["hoarder house", "estate sale", "cleanout services", "sell house as-is", "discreet sale"],
     publishedAt: "2024-12-11T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>Understanding Hoarder Properties: A Sensitive Situation</h2>
       <p>Hoarding is a recognized mental health condition that affects an estimated 2-6% of the population. If you're dealing with a hoarding situation—whether a family member's home, an inherited property, or your own home—you're not alone, and there's no shame in seeking help.</p>
       
@@ -3266,14 +3412,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-termite-damage-boise",
     title: "Selling a House with Termite Damage in Boise: Treatment, Disclosure, and Options",
-    seoTitle: "Sell House with Termite Damage Boise | Wood Pest Problems | Home Buyer Boise",
+    seoTitle: "Sell House with Termite Damage Boise | Home Buyer Boise",
     metaDescription: "Need to sell a house with termite damage in Boise? Learn about treatment costs, Idaho disclosure requirements, and how to sell as-is to cash buyers.",
     excerpt: "Termite damage can complicate selling your Boise home. Learn about treatment options, repair costs, disclosure requirements, and your options for selling as-is.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["termite damage", "wood pest", "pest inspection", "sell house as-is", "property condition"],
     publishedAt: "2024-12-13T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>Termite Issues in the Boise Area</h2>
       <p>While Idaho isn't known as a high-risk termite state like those in the South, termite infestations do occur in the Treasure Valley. Subterranean termites are the most common species in our area, typically entering homes through soil contact with wood elements and causing damage that can go undetected for years.</p>
       
@@ -3511,14 +3667,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-needs-major-repairs-boise",
     title: "Selling a House That Needs Major Repairs in Boise: The Complete Guide",
-    seoTitle: "Sell House Needs Major Repairs Boise | Fixer-Upper Options | Home Buyer Boise",
+    seoTitle: "Sell House Needs Major Repairs Boise | Home Buyer Boise",
     metaDescription: "Need to sell a Boise house that needs major repairs? Learn about repair costs, financing challenges, and how to sell your fixer-upper as-is for cash.",
     excerpt: "Selling a house that needs extensive work can feel overwhelming. Learn about your options for selling a fixer-upper in Boise without spending thousands on repairs.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["major repairs", "fixer-upper", "handyman special", "sell house as-is", "cash home buyer"],
     publishedAt: "2024-12-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>When Your Boise Home Needs More Work Than You Can Handle</h2>
       <p>Every home needs maintenance and occasional repairs. But some homes reach a point where the needed work goes far beyond routine upkeep. Whether from deferred maintenance, aging systems, storm damage, or simply the accumulated wear of decades, you may find yourself with a house that needs major repairs—and no desire or ability to make them.</p>
       
@@ -3778,14 +3944,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-vacant-house-boise",
     title: "Selling a Vacant House in Boise: Carrying Costs, Security, and Fast Sale Options",
-    seoTitle: "Sell Vacant House Boise | Empty Property Solutions | Home Buyer Boise",
+    seoTitle: "Sell Vacant House Boise | Home Buyer Boise",
     metaDescription: "Own a vacant house in Boise? Learn about carrying costs, security risks, insurance challenges, and how to sell your empty property quickly for cash.",
     excerpt: "Vacant houses create ongoing expenses and risks. Learn about the hidden costs of owning an empty home in Boise and your options for selling quickly.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["vacant house", "empty property", "carrying costs", "property security", "fast sale"],
     publishedAt: "2024-12-17T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>The Hidden Burden of Vacant Properties</h2>
       <p>Owning an empty house might seem like a simple holding situation, but vacant properties in Boise come with significant ongoing costs and risks. Whether you've inherited a home, moved for a job, or are in between tenants, every month your house sits empty costs you money and creates potential problems.</p>
       
@@ -4006,14 +4181,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-code-violations-boise",
     title: "Selling a House with Code Violations in Boise: Resolution, Disclosure, and Options",
-    seoTitle: "Sell House with Code Violations Boise | Permit Issues | Home Buyer Boise",
+    seoTitle: "Sell House with Code Violations Boise | Home Buyer Boise",
     metaDescription: "Need to sell a house with code violations in Boise? Learn about violation resolution, disclosure requirements, and how to sell as-is to cash buyers.",
     excerpt: "Code violations can complicate selling your Boise home. Learn about common violations, resolution costs, disclosure requirements, and your options for selling as-is.",
     author: "Home Buyer Boise Team",
     category: "Property Issues",
     tags: ["code violations", "permit issues", "building codes", "sell house as-is", "property issues"],
     publishedAt: "2024-12-19T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> In 2026, Boise-area buyers remain picky about condition while repair costs stay elevated — selling as-is to a cash buyer is a practical path when fixes are not realistic.</p>
+
       <h2>Understanding Code Violations and Their Impact on Selling</h2>
       <p>Building codes exist to ensure safety, and violations can range from minor issues to serious structural concerns. If your Boise home has code violations—whether from unpermitted work, failed inspections, or property maintenance issues—selling becomes more complicated.</p>
       
@@ -4274,14 +4459,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-inherited-house-boise",
     title: "Selling an Inherited House in Boise: Complete Guide to Probate, Taxes & Quick Sales",
-    seoTitle: "Selling Inherited House Boise | Probate Guide | Home Buyer Boise",
+    seoTitle: "Selling Inherited House Boise | Home Buyer Boise",
     metaDescription: "Inherited a house in Boise? Learn about Idaho probate, capital gains taxes, and how to sell quickly for cash. Expert guidance for Ada & Canyon County heirs.",
     excerpt: "Navigating the sale of an inherited property in Boise involves understanding probate, tax implications, and timing. This comprehensive guide helps heirs make informed decisions about their inherited Idaho real estate.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["inherited property", "probate sale", "boise real estate", "estate sale", "capital gains tax"],
     publishedAt: "2024-11-01T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/inherited-property",
+      "/areas/boise",
+      "/services/inherited-property/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>Understanding Inherited Property Sales in Boise</h2>
       <p>Inheriting a house in Boise or the greater Treasure Valley comes with both emotional weight and practical responsibilities. While dealing with the loss of a loved one, you're suddenly faced with decisions about property taxes, maintenance, insurance, and ultimately whether to keep or sell the home. For many heirs, especially those who live out of state or already own their own home, selling makes the most sense—but the process can feel overwhelming.</p>
 
@@ -4545,14 +4740,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-during-divorce-boise",
     title: "Selling Your House During Divorce in Boise: A Complete Guide to Fair, Fast Home Sales",
-    seoTitle: "Selling House During Divorce Boise | Quick Resolution | Home Buyer Boise",
-    metaDescription: "Going through divorce in Boise? Learn how to sell your house quickly and fairly. Understand Idaho equitable distribution, timeline options, and how cash sales simplify the process.",
+    seoTitle: "Selling House During Divorce Boise | Home Buyer Boise",
+    metaDescription: "Going through divorce in Boise? Learn how to sell your house quickly and fairly. Understand Idaho equitable distribution, timeline options, and how cash...",
     excerpt: "Divorce is challenging enough without adding a complicated home sale. This guide helps Boise couples understand their options for selling the marital home quickly and equitably during divorce proceedings.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["divorce sale", "boise real estate", "equitable distribution", "quick home sale", "marital property"],
     publishedAt: "2024-11-03T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-house-divorce",
+      "/areas/boise",
+      "/services/sell-house-divorce/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>Navigating Home Sales During Boise Divorce Proceedings</h2>
       <p>When a marriage ends, the family home often becomes one of the most challenging assets to address. In Boise and throughout Idaho, divorcing couples must decide what to do with their most valuable possession while managing emotions, legal proceedings, and the practical need to move forward with separate lives.</p>
 
@@ -4784,14 +4989,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-after-death-spouse-boise",
     title: "Selling Your House After the Death of a Spouse in Boise: A Compassionate Guide",
-    seoTitle: "Selling House After Death of Spouse Boise | Widow Guide | Home Buyer Boise",
-    metaDescription: "Lost your spouse and need to sell your Boise home? This compassionate guide covers title transfer, timing considerations, tax implications, and stress-free sale options.",
+    seoTitle: "Selling House After Death of Spouse Boise | Home Buyer Boise",
+    metaDescription: "Lost your spouse and need to sell your Boise home? This compassionate guide covers title transfer, timing considerations, tax implications, and stress-free...",
     excerpt: "Losing a spouse is devastating, and dealing with the family home adds practical stress to emotional grief. This guide helps widows and widowers in Boise navigate home sales with sensitivity and clarity.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["widow", "widower", "spouse death", "boise real estate", "grieving homeowner"],
     publishedAt: "2024-11-05T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>Understanding Your Home Sale Options After Losing a Spouse</h2>
       <p>The death of a spouse changes everything. Beyond the profound grief, you're suddenly facing practical decisions about finances, living arrangements, and the family home—often while still in shock. If you're considering selling your Boise home after losing your husband or wife, this guide is designed to help you understand your options and make decisions at your own pace.</p>
 
@@ -4980,14 +5194,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-for-job-relocation-boise",
     title: "Selling Your Boise House for Job Relocation: Beat the Clock and Avoid Two Mortgages",
-    seoTitle: "Selling House for Job Relocation Boise | Fast Sale | Home Buyer Boise",
+    seoTitle: "Selling House for Job Relocation Boise | Home Buyer Boise",
     metaDescription: "Relocating from Boise for work? Learn how to sell your house quickly to meet employer timelines, avoid paying two mortgages, and make your move stress-free.",
     excerpt: "Job relocations don't wait for your house to sell. This guide helps Boise homeowners navigate relocation sales with strategies for meeting employer deadlines and avoiding the financial strain of two homes.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["job relocation", "boise real estate", "quick home sale", "corporate transfer", "moving"],
     publishedAt: "2024-11-07T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/relocation-sale",
+      "/areas/boise",
+      "/services/relocation-sale/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>The Relocation Home Sale Challenge</h2>
       <p>You've received an exciting job offer—maybe a promotion, a new opportunity, or a chance to move to a city you've always dreamed of living in. There's just one problem: you need to be there in 30 days, and you own a house in Boise that's not going anywhere fast.</p>
 
@@ -5244,14 +5468,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-to-avoid-foreclosure-boise",
     title: "Selling Your Boise House to Avoid Foreclosure: Protect Your Credit and Your Future",
-    seoTitle: "Sell House to Avoid Foreclosure Boise | Protect Credit | Home Buyer Boise",
-    metaDescription: "Facing foreclosure in Boise? Learn how to sell your house fast to pay off your mortgage, protect your credit score, and potentially walk away with equity. Idaho foreclosure prevention options explained.",
+    seoTitle: "Sell House to Avoid Foreclosure Boise | Home Buyer Boise",
+    metaDescription: "Facing foreclosure in Boise? Learn how to sell your house fast to pay off your mortgage, protect your credit score, and potentially walk away with equity....",
     excerpt: "Foreclosure doesn't have to be inevitable. This guide explains how Boise homeowners can sell their homes quickly to stop foreclosure, protect their credit, and preserve their financial future.",
     author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["foreclosure prevention", "boise real estate", "protect credit", "quick home sale", "mortgage help"],
     publishedAt: "2024-11-09T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/avoid-foreclosure",
+      "/areas/boise",
+      "/services/avoid-foreclosure/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Ada and Canyon County foreclosure timelines still move quickly once notices are filed — acting before auction protects credit and preserves equity.</p>
+
       <h2>Understanding Foreclosure in Idaho</h2>
       <p>When you fall behind on mortgage payments, your lender can eventually take your home through foreclosure. But foreclosure isn't instantaneous—and that window of time represents your opportunity to sell the home, pay off your mortgage, and potentially walk away with your credit and some equity intact.</p>
 
@@ -5496,14 +5730,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-behind-on-payments-boise",
     title: "Selling Your Boise House When You're Behind on Mortgage Payments",
-    seoTitle: "Selling House Behind on Payments Boise | Options Guide | Home Buyer Boise",
-    metaDescription: "Behind on your mortgage in Boise? Learn your options before foreclosure begins. Discover how to sell your house quickly, protect your credit, and get back on solid ground.",
+    seoTitle: "Selling House Behind on Payments Boise | Home Buyer Boise",
+    metaDescription: "Behind on your mortgage in Boise? Learn your options before foreclosure begins. Discover how to sell your house quickly, protect your credit, and get back...",
     excerpt: "Falling behind on mortgage payments is stressful, but you have options before foreclosure. This guide helps Boise homeowners understand how to sell quickly and avoid the worst consequences of default.",
     author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["behind on mortgage", "boise real estate", "mortgage default", "quick home sale", "financial hardship"],
     publishedAt: "2024-11-11T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/avoid-foreclosure",
+      "/areas/boise",
+      "/services/avoid-foreclosure/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Ada and Canyon County foreclosure timelines still move quickly once notices are filed — acting before auction protects credit and preserves equity.</p>
+
       <h2>You're Behind on Payments—Now What?</h2>
       <p>Missing mortgage payments happens to more people than you might think. Job loss, medical emergencies, divorce, business failures, reduced income—any number of life circumstances can make keeping up with your mortgage impossible. If you're behind on your Boise home mortgage, you're not alone, and you're not without options.</p>
 
@@ -5752,14 +5996,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-rental-property-with-tenants-boise",
     title: "Selling Your Boise Rental Property with Tenants: A Complete Landlord Exit Guide",
-    seoTitle: "Sell Rental Property with Tenants Boise | Landlord Guide | Home Buyer Boise",
-    metaDescription: "Want to sell your Boise rental property with tenants in place? Learn your options for exiting the landlord business, handling leases, and getting a fair price quickly.",
+    seoTitle: "Sell Rental Property with Tenants Boise | Home Buyer Boise",
+    metaDescription: "Want to sell your Boise rental property with tenants in place? Learn your options for exiting the landlord business, handling leases, and getting a fair...",
     excerpt: "Tired of being a landlord in Boise? This guide explains how to sell your rental property—even with tenants in place—while handling leases properly and getting a fair price for your investment.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["rental property", "landlord", "tenant occupied", "boise real estate", "investment property"],
     publishedAt: "2024-11-13T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/problem-tenants",
+      "/areas/boise",
+      "/services/problem-tenants/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>When It's Time to Exit the Landlord Business</h2>
       <p>Being a landlord in Boise isn't for everyone—and sometimes circumstances change. Whether you're tired of the hassle, moving away, facing problematic tenants, or simply ready to cash out your investment, selling a rental property with tenants presents unique challenges.</p>
 
@@ -6018,14 +6272,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-for-medical-expenses-boise",
     title: "Selling Your Boise House to Pay for Medical Expenses: Accessing Your Home Equity Fast",
-    seoTitle: "Sell House for Medical Expenses Boise | Quick Cash | Home Buyer Boise",
-    metaDescription: "Facing major medical bills in Boise? Learn how to sell your house quickly to access equity for healthcare costs. Understand your options for fast, stress-free home sales during health crises.",
+    seoTitle: "Sell House for Medical Expenses Boise | Home Buyer Boise",
+    metaDescription: "Facing major medical bills in Boise? Learn how to sell your house quickly to access equity for healthcare costs. Understand your options for fast,...",
     excerpt: "Medical emergencies don't wait for your house to sell. This guide helps Boise homeowners understand how to quickly access home equity when facing overwhelming healthcare costs.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["medical expenses", "healthcare costs", "boise real estate", "quick home sale", "home equity"],
     publishedAt: "2024-11-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>When Medical Costs Exceed Your Resources</h2>
       <p>A serious illness or injury can devastate finances in ways few other life events can match. Even with insurance, cancer treatment, major surgery, extended hospitalization, or chronic disease management can cost tens or hundreds of thousands of dollars. When medical bills exceed savings, retirement accounts, and available credit, your home equity may be your largest remaining resource.</p>
 
@@ -6292,14 +6555,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-moving-to-assisted-living-boise",
     title: "Selling Your Boise House When Moving to Assisted Living: A Senior Transition Guide",
-    seoTitle: "Sell House for Assisted Living Boise | Senior Guide | Home Buyer Boise",
-    metaDescription: "Transitioning to assisted living in Boise? Learn how to sell your house quickly to fund care costs. Complete guide for seniors and families navigating this major life change.",
+    seoTitle: "Sell House for Assisted Living Boise | Home Buyer Boise",
+    metaDescription: "Transitioning to assisted living in Boise? Learn how to sell your house quickly to fund care costs. Complete guide for seniors and families navigating this...",
     excerpt: "Moving to assisted living is a major transition. This compassionate guide helps Boise seniors and their families navigate home sales during this significant life change.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["assisted living", "senior living", "downsizing", "boise real estate", "elder care"],
     publishedAt: "2024-11-17T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/downsizing",
+      "/areas/boise",
+      "/services/downsizing/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>When It's Time for Assisted Living</h2>
       <p>The decision to move to assisted living is rarely easy, but it's often the right choice for safety, health, and quality of life. Whether you're a senior making this transition yourself or an adult child helping a parent, selling the family home is typically part of the process.</p>
 
@@ -6557,14 +6830,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-bad-neighbors-boise",
     title: "Selling Your Boise House When You Have Bad Neighbors: Disclosure and Strategy Guide",
-    seoTitle: "Sell House with Bad Neighbors Boise | Disclosure Guide | Home Buyer Boise",
-    metaDescription: "Dealing with difficult neighbors in Boise? Learn how neighbor issues affect your home sale, what you must disclose, and how to sell quickly despite neighbor problems.",
+    seoTitle: "Sell House with Bad Neighbors Boise | Home Buyer Boise",
+    metaDescription: "Dealing with difficult neighbors in Boise? Learn how neighbor issues affect your home sale, what you must disclose, and how to sell quickly despite neighbor...",
     excerpt: "Bad neighbors can make selling your Boise home challenging. This guide explains your disclosure obligations, strategies for managing neighbor issues, and how to sell successfully despite difficult next-door situations.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["bad neighbors", "neighbor disputes", "boise real estate", "property disclosure", "quick home sale"],
     publishedAt: "2024-11-19T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>When Neighbors Make You Want to Move</h2>
       <p>Everyone dreams of friendly neighbors who wave hello and respect boundaries. But reality doesn't always match that ideal. Whether it's constant noise, property disputes, hostile behavior, or simply incompatible lifestyles, bad neighbors can turn your Boise home into a place you desperately want to leave.</p>
 
@@ -6821,14 +7103,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-liens-boise",
     title: "Selling a House with Liens in Boise: Tax, Mechanic's, and Judgment Liens Explained",
-    seoTitle: "Selling House with Liens Boise | Tax & Judgment Lien Guide | Home Buyer Boise",
-    metaDescription: "Learn how to sell a house with liens in Boise. Understand tax liens, mechanic's liens, and judgment liens. Get expert guidance on resolving liens to sell your Idaho home.",
+    seoTitle: "Selling House with Liens Boise | Home Buyer Boise",
+    metaDescription: "Learn how to sell a house with liens in Boise. Understand tax liens, mechanic's liens, and judgment liens. Get expert guidance on resolving liens to sell...",
     excerpt: "Discover your options for selling a Boise home with liens attached. This comprehensive guide explains the different types of liens, how they affect your sale, and strategies for resolution.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["liens", "tax liens", "judgment liens", "mechanic liens", "boise real estate", "title issues"],
     publishedAt: "2024-10-01T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/tax-liens",
+      "/areas/boise",
+      "/services/tax-liens/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Liens and How They Affect Your Boise Home Sale</h2>
       <p>Discovering liens on your property can feel overwhelming, especially when you're trying to sell your Boise home. A lien is a legal claim against your property that must typically be satisfied before you can transfer clear title to a buyer. However, having liens doesn't mean you can't sell—it just means you need to understand your options and plan accordingly.</p>
 
@@ -7078,14 +7370,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "capital-gains-tax-selling-house-boise",
     title: "Capital Gains Tax When Selling Your Boise House: What Idaho Homeowners Need to Know",
-    seoTitle: "Capital Gains Tax Selling House Boise | Tax Exemptions Guide | Home Buyer Boise",
-    metaDescription: "Understand capital gains tax when selling your Boise home. Learn about the $250K/$500K exclusion, Idaho state taxes, and strategies to minimize your tax burden.",
+    seoTitle: "Capital Gains Tax Selling House Boise | Home Buyer Boise",
+    metaDescription: "Understand capital gains tax when selling your Boise home. Learn about the Understand capital gains tax when selling your Boise home. Learn about the $250K/$500K exclusion, Idaho state taxes, and strategies to minimize your tax burden.50K/$500K exclusion, Idaho state taxes, and strategies to minimize your tax burden.",
     excerpt: "Worried about capital gains tax on your Boise home sale? This comprehensive guide explains federal and Idaho tax implications, exemptions, and strategies for keeping more of your sale proceeds.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["capital gains tax", "home sale taxes", "boise real estate", "tax exemptions", "idaho taxes"],
     publishedAt: "2024-10-03T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Capital Gains Tax on Home Sales</h2>
       <p>When you sell your Boise home for more than you paid, that profit is considered a capital gain. While capital gains are generally taxable, the tax code provides generous exemptions for primary residences that allow many homeowners to pay little or no tax on their home sale profits.</p>
 
@@ -7353,14 +7654,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-without-realtor-boise",
     title: "Selling Your House Without a Realtor in Boise: FSBO Guide and Alternatives",
-    seoTitle: "Selling House Without Realtor Boise | FSBO Guide | Home Buyer Boise",
+    seoTitle: "Selling House Without Realtor Boise | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house without a realtor. Compare FSBO vs agent vs cash buyer options. Understand the pros, cons, and costs of each approach.",
     excerpt: "Thinking about selling your Boise home without a real estate agent? This guide explores FSBO selling, its challenges, and alternatives like cash buyers that offer simplicity without commission.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["FSBO", "sell without realtor", "boise real estate", "for sale by owner", "cash buyer"],
     publishedAt: "2024-10-05T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Why Boise Homeowners Consider Selling Without a Realtor</h2>
       <p>Real estate commissions represent a significant expense when selling your home. In the Boise market, agents typically charge 5-6% of the sale price, split between the listing agent and buyer's agent. On a $450,000 home, that's $22,500 to $27,000 paid to agents at closing.</p>
 
@@ -7677,14 +7987,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-reverse-mortgage-boise",
     title: "Selling a House with a Reverse Mortgage in Boise: Options for Homeowners and Heirs",
-    seoTitle: "Selling House with Reverse Mortgage Boise | Heirs Guide | Home Buyer Boise",
-    metaDescription: "Learn how to sell a Boise house with a reverse mortgage. Understand payoff requirements, heir options, and what happens when the loan comes due. Expert Idaho guidance.",
+    seoTitle: "Selling House with Reverse Mortgage Boise | Home Buyer Boise",
+    metaDescription: "Learn how to sell a Boise house with a reverse mortgage. Understand payoff requirements, heir options, and what happens when the loan comes due. Expert...",
     excerpt: "Navigating the sale of a home with a reverse mortgage can be confusing. This guide explains how reverse mortgages work, what happens when you sell, and options for heirs who inherit properties with these loans.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["reverse mortgage", "HECM", "senior homeowners", "inherited property", "boise real estate"],
     publishedAt: "2024-10-07T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/inherited-property",
+      "/areas/boise",
+      "/services/inherited-property/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Reverse Mortgages in Boise</h2>
       <p>Reverse mortgages have become increasingly common in the Boise area as seniors look for ways to access their home equity while remaining in their homes. However, when it comes time to sell—whether by choice or necessity—the reverse mortgage adds complexity to the transaction.</p>
 
@@ -7912,14 +8232,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "closing-costs-when-selling-house-boise",
     title: "Closing Costs When Selling a House in Boise: Complete Breakdown for Sellers",
-    seoTitle: "Closing Costs Selling House Boise | Seller Fee Guide | Home Buyer Boise",
+    seoTitle: "Closing Costs Selling House Boise | Home Buyer Boise",
     metaDescription: "Learn exactly what closing costs you'll pay when selling your Boise home. Detailed breakdown of seller fees, who pays what, and how to reduce your costs.",
     excerpt: "Understand every fee you'll encounter when selling your Boise home. This comprehensive guide breaks down seller closing costs in Ada and Canyon County, explaining what to expect at the closing table.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["closing costs", "seller fees", "boise real estate", "home selling costs", "title fees"],
     publishedAt: "2024-10-09T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Seller Closing Costs in Boise</h2>
       <p>When you sell your Boise home, the sale price isn't what you'll walk away with. Closing costs reduce your net proceeds, and understanding these expenses in advance helps you plan accurately. In the Boise market, seller closing costs typically range from 7-10% of the sale price, with the largest portion being real estate agent commissions.</p>
 
@@ -8192,14 +8521,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "how-much-is-my-house-worth-boise",
     title: "How Much Is My House Worth in Boise? Valuation Guide for Idaho Homeowners",
-    seoTitle: "How Much Is My House Worth Boise | Home Valuation Guide | Home Buyer Boise",
-    metaDescription: "Learn how to determine your Boise home's market value. Understand the difference between appraisals, assessments, and market value. Free valuation resources for Idaho homeowners.",
+    seoTitle: "How Much Is My House Worth Boise | Home Buyer Boise",
+    metaDescription: "Learn how to determine your Boise home's market value. Understand the difference between appraisals, assessments, and market value. Free valuation resources...",
     excerpt: "Wondering what your Boise home is worth? This comprehensive guide explains different valuation methods, what affects your home's value, and how to get accurate estimates in today's Idaho market.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["home value", "property valuation", "boise real estate", "home appraisal", "market value"],
     publishedAt: "2024-10-11T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Home Values in Boise's Dynamic Market</h2>
       <p>The Boise real estate market has experienced remarkable changes over the past decade. What was once an affordable alternative to coastal cities has become one of America's most sought-after markets. If you're wondering "how much is my house worth?" you're not alone—and getting an accurate answer is more important than ever.</p>
 
@@ -8529,14 +8867,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-underwater-boise",
     title: "Selling a House Underwater in Boise: Options When You Owe More Than It's Worth",
-    seoTitle: "Selling House Underwater Boise | Short Sale Options | Home Buyer Boise",
-    metaDescription: "Learn your options for selling a Boise house when you owe more than it's worth. Understand short sales, alternatives to foreclosure, and how to minimize financial damage.",
+    seoTitle: "Selling House Underwater Boise | Home Buyer Boise",
+    metaDescription: "Learn your options for selling a Boise house when you owe more than it's worth. Understand short sales, alternatives to foreclosure, and how to minimize...",
     excerpt: "Owing more than your home is worth creates difficult decisions. This guide explains your options for selling an underwater house in Boise, including short sales and foreclosure alternatives.",
     author: "Home Buyer Boise Team",
     category: "Foreclosure Prevention",
     tags: ["underwater mortgage", "short sale", "negative equity", "foreclosure prevention", "boise real estate"],
     publishedAt: "2024-10-13T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/avoid-foreclosure",
+      "/areas/boise",
+      "/services/avoid-foreclosure/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Ada and Canyon County foreclosure timelines still move quickly once notices are filed — acting before auction protects credit and preserves equity.</p>
+
       <h2>Understanding Underwater Mortgages in Boise</h2>
       <p>Being "underwater" on your mortgage means you owe more than your home is currently worth. This situation—also called negative equity or being upside down—can happen when home values decline after purchase, or when a homeowner borrowed heavily and home appreciation hasn't kept pace.</p>
 
@@ -8866,14 +9214,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-with-unpaid-property-taxes-boise",
     title: "Selling a House with Unpaid Property Taxes in Boise: Resolution Guide",
-    seoTitle: "Selling House Unpaid Property Taxes Boise | Tax Lien Guide | Home Buyer Boise",
+    seoTitle: "Selling House Unpaid Property Taxes Boise | Home Buyer Boise",
     metaDescription: "Learn how to sell your Boise house with unpaid property taxes. Understand tax liens, payment plans, and how to resolve back taxes before a tax sale.",
     excerpt: "Behind on property taxes in Ada or Canyon County? This guide explains how tax liens work, your options for resolution, and how to sell your property before losing it to a tax sale.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["property taxes", "tax liens", "back taxes", "ada county", "canyon county", "boise real estate"],
     publishedAt: "2024-10-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/tax-liens",
+      "/areas/boise",
+      "/services/tax-liens/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Property Taxes in Boise and the Treasure Valley</h2>
       <p>Property taxes fund essential local services in Ada and Canyon Counties—schools, roads, police, fire protection, and more. When property taxes go unpaid, counties have legal mechanisms to collect, including placing liens on your property and eventually selling it to recover the debt.</p>
 
@@ -9156,14 +9514,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "title-issues-when-selling-house-boise",
     title: "Title Issues When Selling a House in Boise: Common Problems and Solutions",
-    seoTitle: "Title Issues Selling House Boise | Resolution Guide | Home Buyer Boise",
-    metaDescription: "Learn about common title issues that can delay or prevent your Boise home sale. Understand liens, encumbrances, boundary disputes, and how to resolve title problems.",
+    seoTitle: "Title Issues Selling House Boise | Home Buyer Boise",
+    metaDescription: "Learn about common title issues that can delay or prevent your Boise home sale. Understand liens, encumbrances, boundary disputes, and how to resolve title...",
     excerpt: "Title issues can derail your home sale at the worst possible moment. This comprehensive guide explains common title problems in Idaho, how they're discovered, and strategies for resolution.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["title issues", "title search", "clear title", "liens", "encumbrances", "boise real estate"],
     publishedAt: "2024-10-17T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/tax-liens",
+      "/areas/boise",
+      "/services/tax-liens/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Title Issues in Boise Real Estate</h2>
       <p>When you sell your home, the buyer expects to receive "clear title"—ownership free of unexpected claims, liens, or other encumbrances. Title issues are problems that cloud this clear ownership, potentially delaying or preventing your sale.</p>
 
@@ -9470,14 +9838,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-in-probate-boise",
     title: "Selling a House in Probate in Boise: Idaho Probate Process and Timeline",
-    seoTitle: "Selling House in Probate Boise | Idaho Probate Guide | Home Buyer Boise",
-    metaDescription: "Learn how to sell a house during Idaho probate. Understand court requirements, timelines, and options for personal representatives selling estate property in Boise.",
+    seoTitle: "Selling House in Probate Boise | Home Buyer Boise",
+    metaDescription: "Learn how to sell a house during Idaho probate. Understand court requirements, timelines, and options for personal representatives selling estate property...",
     excerpt: "Navigating the sale of a house through probate can be overwhelming. This guide explains the Idaho probate process, court requirements for selling estate property, and how to streamline the sale.",
     author: "Home Buyer Boise Team",
     category: "Legal & Financial",
     tags: ["probate", "estate sale", "inherited property", "personal representative", "boise real estate"],
     publishedAt: "2024-10-19T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/inherited-property",
+      "/areas/boise",
+      "/services/inherited-property/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Idaho title, tax, and probate rules have not changed the core fact: liens and legal complexity slow traditional sales — cash buyers who work with local title partners can close cleanly.</p>
+
       <h2>Understanding Probate in Idaho</h2>
       <p>When someone passes away, their assets—including real estate—typically go through probate, the legal process of settling an estate. If you're the personal representative (executor) of an estate that includes a Boise-area home, understanding the probate process helps you fulfill your duties and sell the property appropriately.</p>
 
@@ -9839,14 +10217,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "best-time-to-sell-house-boise",
     title: "Best Time to Sell a House in Boise: Seasonal Trends & Market Timing Guide",
-    seoTitle: "Best Time to Sell a House in Boise | 2024 Seasonal Guide | Home Buyer Boise",
-    metaDescription: "Discover the best time to sell your house in Boise. Learn about seasonal trends, Idaho-specific market factors, and when you'll get the highest price for your home.",
+    seoTitle: "Best Time to Sell a House in Boise | Home Buyer Boise",
+    metaDescription: "Discover the best time to sell your house in Boise. Learn about seasonal trends, Idaho-specific market factors, and when you'll get the highest price for...",
     excerpt: "Timing can significantly impact your home sale. Learn when Boise homes sell fastest, which seasons bring the best prices, and how Idaho's unique market affects your selling strategy.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["best time to sell", "boise real estate", "market timing", "seasonal trends", "idaho housing market"],
     publishedAt: "2024-09-01T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-house-fast",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>Understanding Boise's Real Estate Seasons</h2>
       <p>The Boise real estate market follows predictable seasonal patterns that can significantly impact how quickly your home sells and at what price. Understanding these cycles helps you time your sale strategically—or decide whether timing matters for your specific situation.</p>
 
@@ -10087,14 +10475,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "how-long-to-close-on-house-boise",
     title: "How Long Does It Take to Close on a House in Boise? Complete Timeline Guide",
-    seoTitle: "How Long to Close on a House in Boise | Timeline Guide | Home Buyer Boise",
-    metaDescription: "Learn how long it takes to close on a house sale in Boise. Understand traditional vs. cash closing timelines, factors that cause delays, and how to speed up your sale.",
+    seoTitle: "How Long to Close on a House in Boise | Home Buyer Boise",
+    metaDescription: "Learn how long it takes to close on a house sale in Boise. Understand traditional vs. cash closing timelines, factors that cause delays, and how to speed up...",
     excerpt: "Closing timelines in Boise vary dramatically depending on your sale type. Learn what affects your timeline and how to close faster when time matters.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["closing timeline", "home sale process", "boise real estate", "how long to close", "cash closing"],
     publishedAt: "2024-09-03T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>Understanding Closing Timelines in Boise</h2>
       <p>One of the most common questions from Boise home sellers is: "How long will it take to close?" The answer depends significantly on whether you're selling through traditional channels or working with a cash buyer. Let's break down both scenarios and the factors that influence each timeline.</p>
 
@@ -10321,14 +10718,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "what-happens-at-closing-boise",
     title: "What Happens at Closing When Selling a House in Boise: Seller's Complete Guide",
-    seoTitle: "What Happens at Closing Boise | Home Seller's Guide | Home Buyer Boise",
+    seoTitle: "What Happens at Closing Boise | Home Buyer Boise",
     metaDescription: "Learn exactly what happens at closing when selling your Boise house. Step-by-step guide to closing day documents, costs, and what sellers need to know.",
     excerpt: "Closing day can feel overwhelming if you don't know what to expect. This guide walks Boise home sellers through every step of the closing process.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["closing process", "home closing", "boise real estate", "selling house", "closing costs"],
     publishedAt: "2024-09-05T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>What Is "Closing" in Real Estate?</h2>
       <p>Closing (also called settlement) is the final step in selling your home. It's when legal ownership transfers from you to the buyer, and you receive payment for your property. In the <a href="/areas/boise">Boise</a> area, closings typically take place at a local title company office, though some can be handled remotely.</p>
 
@@ -10524,14 +10930,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "preparing-house-for-sale-boise",
     title: "Preparing Your House for Sale in Boise: Complete Seller's Checklist",
-    seoTitle: "Preparing House for Sale Boise | Seller's Checklist | Home Buyer Boise",
+    seoTitle: "Preparing House for Sale Boise | Home Buyer Boise",
     metaDescription: "Get your Boise house ready to sell with this comprehensive preparation checklist. Learn staging tips, curb appeal improvements, and what buyers expect in Idaho.",
     excerpt: "A well-prepared home sells faster and for more money. Use this complete checklist to get your Boise house ready for buyers—or learn when selling as-is makes more sense.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["preparing to sell", "home staging", "curb appeal", "boise real estate", "selling checklist"],
     publishedAt: "2024-09-07T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/sell-as-is",
+      "/areas/boise",
+      "/services/sell-as-is/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>Why Preparation Matters When Selling Your Home</h2>
       <p>The condition of your home directly impacts both how quickly it sells and the price you receive. In the competitive <a href="/areas/boise">Boise</a> market, well-prepared homes attract more showings, more offers, and often sell above asking price. Conversely, homes that appear neglected or cluttered may sit on the market for months.</p>
 
@@ -10829,14 +11245,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "home-inspection-before-selling-boise",
     title: "Home Inspection Before Selling in Boise: Should You Get a Pre-Listing Inspection?",
-    seoTitle: "Home Inspection Before Selling Boise | Pre-Listing Inspection Guide | Home Buyer Boise",
+    seoTitle: "Home Inspection Before Selling Boise | Home Buyer Boise",
     metaDescription: "Learn whether a pre-listing home inspection is worth it before selling your Boise house. Understand costs, benefits, and common issues found in Idaho homes.",
     excerpt: "A pre-listing home inspection can help or hurt your sale. Learn when it makes sense for Boise sellers and what inspectors typically find in Treasure Valley homes.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["home inspection", "pre-listing inspection", "boise real estate", "selling house", "property condition"],
     publishedAt: "2024-09-09T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>What Is a Pre-Listing Inspection?</h2>
       <p>A pre-listing (or pre-sale) inspection is a home inspection you order before putting your property on the market. Unlike the buyer's inspection that typically happens after an offer is accepted, a pre-listing inspection gives you advance knowledge of your home's condition and potential issues.</p>
 
@@ -11060,14 +11485,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "steps-to-sell-house-boise",
     title: "Steps to Sell Your House in Boise: Complete Guide from Start to Close",
-    seoTitle: "Steps to Sell Your House in Boise | Complete Selling Guide | Home Buyer Boise",
+    seoTitle: "Steps to Sell Your House in Boise | Home Buyer Boise",
     metaDescription: "Learn every step to sell your house in Boise from preparation to closing. Complete guide covering pricing, listing, showings, offers, and closing the sale.",
     excerpt: "Selling a house involves many steps. This comprehensive guide walks Boise homeowners through the entire process, from deciding to sell through receiving your closing funds.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["how to sell house", "selling steps", "boise real estate", "home selling process", "selling guide"],
     publishedAt: "2024-09-11T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>Overview: The Home Selling Journey</h2>
       <p>Selling a house in <a href="/areas/boise">Boise</a> involves multiple steps, each with its own considerations and potential pitfalls. Whether this is your first time selling or you've done it before, understanding the full process helps you navigate it successfully.</p>
 
@@ -11364,14 +11798,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-quickly-boise",
     title: "Selling Your House Quickly in Boise: Speed Strategies That Actually Work",
-    seoTitle: "Selling House Quickly Boise | Fast Sale Strategies | Home Buyer Boise",
+    seoTitle: "Selling House Quickly Boise | Home Buyer Boise",
     metaDescription: "Need to sell your Boise house quickly? Learn proven strategies to speed up your sale, compare timeline options, and discover how cash buyers close in 7-14 days.",
     excerpt: "When time is critical, you need a sale strategy that works fast. Compare your options for selling quickly in Boise and learn which approach fits your timeline.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["sell house fast", "quick sale", "boise real estate", "cash buyer", "fast closing"],
     publishedAt: "2024-09-13T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>When Speed Matters More Than Maximum Price</h2>
       <p>Sometimes life doesn't wait for the "perfect" sale. Job relocations, financial pressures, divorce, inherited properties, or simply wanting to move on—many situations require selling faster than the traditional 3-6 month process allows.</p>
 
@@ -11642,14 +12085,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "house-not-selling-boise-what-to-do",
     title: "House Not Selling in Boise? Here's What to Do When Your Listing Goes Stale",
-    seoTitle: "House Not Selling in Boise | What to Do Next | Home Buyer Boise",
-    metaDescription: "Is your Boise house sitting on the market with no offers? Learn why homes don't sell, how to fix common problems, and alternatives when traditional selling isn't working.",
+    seoTitle: "House Not Selling in Boise | Home Buyer Boise",
+    metaDescription: "Is your Boise house sitting on the market with no offers? Learn why homes don't sell, how to fix common problems, and alternatives when traditional selling...",
     excerpt: "A stale listing can be frustrating and costly. Discover why Boise homes fail to sell and what options you have when your house won't move.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["house not selling", "stale listing", "boise real estate", "price reduction", "selling alternatives"],
     publishedAt: "2024-09-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>When Your Listing Becomes a Problem</h2>
       <p>You've had your <a href="/areas/boise">Boise</a> home on the market for weeks or months, but serious offers aren't materializing. Every day it sits, you're paying mortgage, insurance, taxes, and utilities. You're stuck in limbo, unable to move forward with your life.</p>
 
@@ -11911,14 +12363,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "accepting-cash-offer-on-house-boise",
     title: "Accepting a Cash Offer on Your Boise House: What You Need to Know",
-    seoTitle: "Accepting Cash Offer on House Boise | Complete Guide | Home Buyer Boise",
-    metaDescription: "Considering a cash offer on your Boise house? Learn how to evaluate cash offers, compare to financed offers, and understand the pros and cons of selling for cash.",
+    seoTitle: "Accepting Cash Offer on House Boise | Home Buyer Boise",
+    metaDescription: "Considering a cash offer on your Boise house? Learn how to evaluate cash offers, compare to financed offers, and understand the pros and cons of selling for...",
     excerpt: "Cash offers are becoming more common in Boise. Learn how to evaluate them, what makes them different from financed offers, and when accepting cash is the smart choice.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash offer", "selling house", "boise real estate", "cash buyer", "home sale"],
     publishedAt: "2024-09-17T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/cash-offer",
+      "/areas/boise",
+      "/services/cash-offer/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>Understanding Cash Offers in Real Estate</h2>
       <p>A cash offer means the buyer has funds available to purchase your home without needing a mortgage. This fundamentally changes the transaction—eliminating lender requirements, appraisals (as a contingency), and financing delays.</p>
 
@@ -12147,14 +12609,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "negotiating-house-sale-boise",
     title: "Negotiating Your House Sale in Boise: Strategies for Sellers",
-    seoTitle: "Negotiating House Sale Boise | Seller Strategies | Home Buyer Boise",
+    seoTitle: "Negotiating House Sale Boise | Home Buyer Boise",
     metaDescription: "Master the art of negotiating your Boise home sale. Learn counteroffer strategies, when to hold firm, when to compromise, and how to maximize your sale price.",
     excerpt: "Negotiation skills can mean thousands of dollars in your pocket. Learn proven strategies for negotiating offers, counteroffers, and inspection requests on your Boise home sale.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["negotiating home sale", "counteroffer strategies", "boise real estate", "selling house", "real estate negotiation"],
     publishedAt: "2024-09-19T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>The Art of Real Estate Negotiation</h2>
       <p>Selling a house isn't just about accepting or rejecting offers—it's about skillfully navigating negotiations to achieve the best outcome for your situation. In the <a href="/areas/boise">Boise</a> market, good negotiation can mean thousands of extra dollars or better terms that make your transition smoother.</p>
 
@@ -12415,14 +12886,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "cash-home-buyers-vs-realtors-boise",
     title: "Cash Home Buyers vs. Realtors in Boise: Which Option Is Right for You?",
-    seoTitle: "Cash Home Buyers vs Realtors Boise | Comparison Guide | Home Buyer Boise",
+    seoTitle: "Cash Home Buyers vs Realtors Boise | Home Buyer Boise",
     metaDescription: "Comparing cash home buyers vs realtors in Boise? Discover when each selling option makes sense, true costs, timelines, and which approach fits your situation.",
     excerpt: "Not sure whether to sell to a cash buyer or list with a realtor in Boise? This comprehensive comparison breaks down both options honestly so you can make the best decision for your unique situation.",
     author: "Home Buyer Boise Team",
     category: "Selling Fast",
     tags: ["cash buyers vs realtors", "boise real estate", "selling options", "home selling comparison", "idaho homes"],
     publishedAt: "2024-08-15T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Treasure Valley homeowners still face tight timelines in 2026 — job moves, estate deadlines, and equity needs do not wait on a 90-day listing cycle.</p>
+
       <h2>The Two Main Paths to Selling Your Boise Home</h2>
       <p>When you decide to sell your Boise home, you essentially have two primary paths: listing with a real estate agent or selling directly to a cash home buyer. Both options have their place, and the right choice depends entirely on your specific circumstances, timeline, and priorities.</p>
       
@@ -12650,14 +13130,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-meridian-idaho",
     title: "Selling Your House in Meridian, Idaho: Complete 2024 Market Guide",
-    seoTitle: "Sell House Meridian Idaho | 2024 Market Guide | Home Buyer Boise",
-    metaDescription: "Selling a house in Meridian, Idaho? Get insider knowledge on Meridian neighborhoods, home values, market trends, and how to sell fast for cash in Idaho's fastest-growing city.",
+    seoTitle: "Sell House Meridian | 2024 Market Guide | Home Buyer Boise",
+    metaDescription: "Selling a house in Meridian, Idaho? Get insider knowledge on Meridian neighborhoods, home values, market trends, and how to sell fast for cash in Idaho's...",
     excerpt: "Meridian is Idaho's fastest-growing city with unique real estate dynamics. This comprehensive guide covers everything you need to know about selling your Meridian home, from neighborhood trends to fast cash sale options.",
     author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["meridian idaho", "sell house meridian", "meridian real estate", "treasure valley", "idaho homes"],
     publishedAt: "2024-08-17T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/meridian",
+      "/services/sell-house-fast/meridian"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Each Treasure Valley city has its own buyer pool and days-on-market profile in 2026 — local strategy beats a one-size-fits-all listing plan.</p>
+
       <h2>Why Meridian Is One of Idaho's Hottest Real Estate Markets</h2>
       <p>Meridian isn't just a suburb of Boise—it's officially Idaho's fastest-growing city and one of the fastest-growing in the entire nation. With a population that has more than doubled since 2010, Meridian represents the heart of the Treasure Valley's explosive growth.</p>
       
@@ -12844,14 +13333,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-eagle-idaho",
     title: "Selling Your House in Eagle, Idaho: Luxury Market & Horse Property Guide",
-    seoTitle: "Sell House Eagle Idaho | Luxury & Horse Property Guide | Home Buyer Boise",
-    metaDescription: "Selling a house in Eagle, Idaho? Expert guide to Eagle's luxury market, horse properties, acreage sales, and fast cash options for upscale Treasure Valley homes.",
+    seoTitle: "Sell House Eagle | Home Buyer Boise",
+    metaDescription: "Selling a house in Eagle, Idaho? Expert guide to Eagle's luxury market, horse properties, acreage sales, and fast cash options for upscale Treasure Valley...",
     excerpt: "Eagle represents the Treasure Valley's premium real estate market with luxury homes, horse properties, and expansive estates. This guide covers everything Eagle homeowners need to know about selling in this unique market.",
     author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["eagle idaho", "sell house eagle", "luxury homes idaho", "horse property", "treasure valley"],
     publishedAt: "2024-08-19T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/eagle",
+      "/services/sell-house-fast/eagle"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Each Treasure Valley city has its own buyer pool and days-on-market profile in 2026 — local strategy beats a one-size-fits-all listing plan.</p>
+
       <h2>Understanding Eagle's Unique Real Estate Position</h2>
       <p>Eagle, Idaho stands apart in the Treasure Valley. While neighboring cities focus on growth and affordability, Eagle has cultivated a reputation for larger lots, upscale living, and preserved rural character. For homeowners, this means your Eagle property exists in a market with different dynamics than the broader Boise metro.</p>
       
@@ -13037,14 +13535,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-nampa-idaho",
     title: "Selling Your House in Nampa, Idaho: Canyon County Market Guide",
-    seoTitle: "Sell House Nampa Idaho | Canyon County Guide | Home Buyer Boise",
-    metaDescription: "Selling a house in Nampa, Idaho? Complete guide to Nampa's affordable market, Canyon County trends, neighborhood values, and fast cash sale options for Idaho homeowners.",
+    seoTitle: "Sell House Nampa | Canyon County Guide | Home Buyer Boise",
+    metaDescription: "Selling a house in Nampa, Idaho? Complete guide to Nampa's affordable market, Canyon County trends, neighborhood values, and fast cash sale options for...",
     excerpt: "Nampa offers the Treasure Valley's most accessible home prices while experiencing rapid growth. This comprehensive guide helps Nampa homeowners understand their market and explore all selling options.",
     author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["nampa idaho", "sell house nampa", "canyon county", "treasure valley", "idaho homes"],
     publishedAt: "2024-08-21T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/nampa",
+      "/services/sell-house-fast/nampa"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Each Treasure Valley city has its own buyer pool and days-on-market profile in 2026 — local strategy beats a one-size-fits-all listing plan.</p>
+
       <h2>Nampa: The Treasure Valley's Affordability Anchor</h2>
       <p>Nampa has emerged as the Treasure Valley's answer to housing affordability. As Boise and Meridian prices climbed beyond reach for many buyers, Nampa became the destination for first-time buyers, growing families, and anyone seeking more house for their dollar. This positioning creates unique dynamics for Nampa homeowners considering a sale.</p>
       
@@ -13236,14 +13743,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "selling-house-kuna-idaho",
     title: "Selling Your House in Kuna, Idaho: Family Community & Rural Property Guide",
-    seoTitle: "Sell House Kuna Idaho | Rural & Family Home Guide | Home Buyer Boise",
+    seoTitle: "Sell House Kuna | Home Buyer Boise",
     metaDescription: "Selling a house in Kuna, Idaho? Expert guide to Kuna's family-friendly market, rural properties, acreage sales, and fast cash options for Treasure Valley homes.",
     excerpt: "Kuna has transformed from a small farming community to one of Idaho's fastest-growing cities. This comprehensive guide helps Kuna homeowners understand their evolving market and explore all selling options.",
     author: "Home Buyer Boise Team",
     category: "Local Markets",
     tags: ["kuna idaho", "sell house kuna", "rural property", "treasure valley", "family homes idaho"],
     publishedAt: "2024-08-23T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/kuna",
+      "/services/sell-house-fast/kuna"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Each Treasure Valley city has its own buyer pool and days-on-market profile in 2026 — local strategy beats a one-size-fits-all listing plan.</p>
+
       <h2>Kuna's Remarkable Transformation</h2>
       <p>Kuna has undergone one of the most dramatic transformations in the Treasure Valley. What was once a quiet agricultural community has become a thriving family-oriented city while somehow maintaining its small-town character. For homeowners, this evolution has created significant equity gains—and interesting decisions when it's time to sell.</p>
       
@@ -13429,14 +13945,24 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "downsizing-home-boise-seniors",
     title: "Downsizing Your Home in Boise: A Senior's Complete Guide to Transitioning",
-    seoTitle: "Downsizing Home Boise Seniors | Transition Guide | Home Buyer Boise",
-    metaDescription: "Thinking about downsizing your Boise home? Complete guide for seniors on accessing home equity, simplifying life, and making smooth transitions. Local Idaho expertise.",
+    seoTitle: "Downsizing Home Boise Seniors | Home Buyer Boise",
+    metaDescription: "Thinking about downsizing your Boise home? Complete guide for seniors on accessing home equity, simplifying life, and making smooth transitions. Local Idaho...",
     excerpt: "Downsizing doesn't have to be overwhelming. This comprehensive guide helps Boise area seniors navigate the emotional and practical aspects of selling a family home and transitioning to a simpler lifestyle.",
     author: "Home Buyer Boise Team",
     category: "Life Situations",
     tags: ["downsizing", "seniors", "boise real estate", "retirement", "home equity"],
     publishedAt: "2024-08-25T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/services/downsizing",
+      "/areas/boise",
+      "/services/downsizing/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Divorce, relocation, and family transitions in the Treasure Valley rarely align with a perfect listing season — flexible closing dates matter as much as price in 2026.</p>
+
       <h2>When It's Time to Downsize in Boise</h2>
       <p>After decades in your family home, the thought of downsizing can feel overwhelming. The house where you raised your children, celebrated holidays, and built countless memories holds more than just equity—it holds your history. Yet for many Boise area seniors, the practical realities eventually outweigh the emotional attachment.</p>
       
@@ -13659,14 +14185,23 @@ export const BLOG_POSTS: BlogPostData[] = [
   {
     slug: "first-time-home-seller-guide-boise",
     title: "First-Time Home Seller Guide for Boise: Everything New Sellers Need to Know",
-    seoTitle: "First-Time Home Seller Guide Boise | New Seller Tips | Home Buyer Boise",
-    metaDescription: "Selling your first home in Boise? Complete guide covering timelines, costs, common mistakes, and all your selling options. Local Idaho expertise for first-time sellers.",
+    seoTitle: "First-Time Home Seller Guide Boise | Home Buyer Boise",
+    metaDescription: "Selling your first home in Boise? Complete guide covering timelines, costs, common mistakes, and all your selling options. Local Idaho expertise for...",
     excerpt: "Selling your first home can feel overwhelming. This comprehensive guide walks Boise first-time sellers through every step of the process, from preparation to closing, including options you might not know exist.",
     author: "Home Buyer Boise Team",
     category: "Process & Timing",
     tags: ["first-time seller", "boise real estate", "selling process", "home selling tips", "idaho homes"],
     publishedAt: "2024-08-27T08:00:00.000Z",
+    relatedLinks: [
+      "/get-quote",
+      "/pricing",
+      "/areas/boise",
+      "/services/sell-house-fast/boise"
+    ],
     content: `
+      
+      <p class="blog-freshness-2026"><strong>Updated June 2026.</strong> Boise metro closings in 2026 still average 30–45 days with financed buyers; cash purchases routinely close in 7–21 days when title is clear.</p>
+
       <h2>Your First Home Sale: What to Expect</h2>
       <p>Selling your first home is a significant milestone—and for most Boise homeowners, their largest financial transaction. Unlike buying, where you had guidance from agents and lenders, selling can feel like stepping into unknown territory. The good news? With proper preparation and understanding, first-time sellers can navigate the process confidently.</p>
       

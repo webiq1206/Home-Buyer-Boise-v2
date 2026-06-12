@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { getAllCitySlugs } from "@/shared/contentData";
 import { getAllServiceSlugs } from "@/shared/servicesData";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/shared/blogContent";
+import { getAllProjectSlugs } from "@/shared/projectsData";
+import { getAllAuthorSlugs } from "@/shared/authorsData";
 
 const baseUrl = "https://homebuyerboise.com";
 
@@ -37,6 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog", priority: 0.8, freq: "weekly" },
     { path: "/about", priority: 0.7, freq: "monthly" },
     { path: "/contact", priority: 0.7, freq: "monthly" },
+    { path: "/projects", priority: 0.75, freq: "monthly" },
+    { path: "/faq", priority: 0.75, freq: "monthly" },
+    { path: "/authors", priority: 0.6, freq: "monthly" },
   ];
   for (const p of hubPages) {
     routes.push({
@@ -72,6 +77,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
       });
     }
+  }
+
+  for (const slug of getAllAuthorSlugs()) {
+    routes.push({
+      url: `${baseUrl}/authors/${slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    });
+  }
+
+  for (const slug of getAllProjectSlugs()) {
+    routes.push({
+      url: `${baseUrl}/projects/${slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    });
   }
 
   for (const slug of blogSlugs) {

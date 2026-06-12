@@ -6,6 +6,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { StickyBottomNav } from "@/components/StickyBottomNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { Analytics } from "@/components/Analytics";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 512,
-        height: 512,
+        width: 1200,
+        height: 630,
         alt: "Home Buyer Boise - Cash Home Buyers",
       },
     ],
@@ -97,6 +98,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <Analytics />
         <ScrollToTop />
         <Navigation />
         <main id="main-content" className="min-h-screen pb-20 lg:pb-0">

@@ -11,6 +11,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { trackEvent } from '@/components/Analytics';
 import { CITIES } from '@/shared/contentData';
 import { 
   Home, 
@@ -193,13 +194,14 @@ export function QuoteForm() {
       });
       
       if (response.ok) {
+        trackEvent('form_submit', { form_name: 'quote', status: 'success' });
         setIsSubmitted(true);
         toast({
           title: "Request Submitted!",
           description: "We'll contact you within 24 hours with your cash offer.",
         });
       } else {
-        // Even if API fails, show success (form data can be captured later)
+        trackEvent('form_submit', { form_name: 'quote', status: 'api_error' });
         setIsSubmitted(true);
         toast({
           title: "Request Received!",
@@ -207,7 +209,7 @@ export function QuoteForm() {
         });
       }
     } catch (error) {
-      // Show success message anyway - user experience matters
+      trackEvent('form_submit', { form_name: 'quote', status: 'network_error' });
       setIsSubmitted(true);
       toast({
         title: "Request Received!",
@@ -256,6 +258,9 @@ export function QuoteForm() {
 
   return (
     <div className="space-y-6">
+      <p className="text-sm text-muted-foreground text-center" role="note">
+        Free, no-obligation request. Every property is manually reviewed — we never issue automated binding offers.
+      </p>
       {/* Progress Steps */}
       <div className="flex justify-between items-center mb-8">
         {steps.map((step, index) => (

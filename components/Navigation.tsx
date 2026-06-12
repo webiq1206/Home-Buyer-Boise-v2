@@ -128,6 +128,19 @@ export function Navigation() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/projects">
+                  <span
+                    className={`px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
+                      pathname === "/projects" || pathname.startsWith("/projects/") ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                    }`}
+                    data-testid="nav-projects"
+                  >
+                    Stories
+                  </span>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <Link href="/about">
                   <span
                     className={`px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${

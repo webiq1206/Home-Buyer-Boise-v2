@@ -9,8 +9,19 @@
     "start": "next start --port 5000",
     "lint": "next lint",
     "db:push": "drizzle-kit push",
-    "links:build": "tsx scripts/internal-links.ts",
-    "links:audit": "tsx scripts/audit-internal-links.ts"
+    "links:build": "npx tsx scripts/internal-links.ts",
+    "links:audit": "npx tsx scripts/audit-internal-links.ts",
+    "seo:crawl": "npx tsx scripts/seo-audit-crawl.ts",
+    "seo:similarity": "npx tsx scripts/content-similarity.ts",
+    "seo:blog-cannibalization": "npx tsx scripts/blog-cannibalization.ts",
+    "seo:image-audit": "npx tsx scripts/image-audit.ts",
+    "seo:broken-links": "npx tsx scripts/broken-link-check.ts",
+    "seo:metadata-check": "npx tsx scripts/seo-metadata-check.ts",
+    "seo:audit": "npm run seo:crawl && npm run seo:similarity && npm run seo:blog-cannibalization && npm run seo:image-audit && npm run seo:broken-links",
+    "seo:docs": "npx tsx scripts/generate-audit-docs.ts",
+    "og:generate": "python3 scripts/generate-og-image.py",
+    "blog:remediate": "npx tsx scripts/blog-remediation.ts && npx tsx scripts/blog-content-freshness.ts",
+    "images:compress": "python3 scripts/compress-image.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

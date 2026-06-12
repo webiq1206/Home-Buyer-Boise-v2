@@ -1,8 +1,10 @@
 // Comprehensive content for all 136 service+city combination pages
-// Each combination gets unique, SEO-optimized content
+// Each combination gets unique, SEO-optimized content via serviceCityMatrix
 
 import { SERVICES } from "./servicesData";
 import { CITIES } from "./contentData";
+import { getServiceCityMatrixEntry, hasMatrixEntry } from "./serviceCityMatrix";
+import { generateServiceCityTitle, truncateMetaDescription } from "../lib/seo";
 
 export interface ServiceCityContent {
   // SEO Metadata
@@ -50,6 +52,9 @@ export interface ServiceCityContent {
   
   // Call to Action
   ctaText: string;
+
+  // Optional pinned internal links from matrix
+  relatedLinks?: Array<string | { url: string; anchor?: string }>;
 }
 
 // Helper function to generate content for any service+city combination
@@ -67,9 +72,11 @@ export function generateServiceCityContent(
   const cityName = city.name;
   const serviceName = service.name;
   
-  // Generate SEO-optimized metadata
-  const title = `${serviceName} in ${cityName}, Idaho | Fast Cash Home Buyers | Home Buyer Boise`;
-  const metaDescription = `${serviceName} in ${cityName}? Get a fair cash offer in 24 hours. We buy houses throughout ${cityName} - ${city.neighborhoods?.slice(0, 3).join(', ')}. No fees, close fast.`;
+  // Generate SEO-optimized metadata (≤60 char title, ≤160 char description)
+  const title = generateServiceCityTitle(service, city);
+  const metaDescription = truncateMetaDescription(
+    `${service.shortName} in ${cityName}? Fair cash offer in 24 hours. We buy throughout ${cityName} — ${city.neighborhoods?.slice(0, 2).join(", ") || "all neighborhoods"}. No fees, close fast.`
+  );
   const h1 = `${serviceName} in ${cityName}, Idaho`;
   
   // City-specific intro combining service context + local market
@@ -83,9 +90,12 @@ export function generateServiceCityContent(
     localConsiderations: city.serviceConsiderations || `${cityName} real estate market features diverse properties across various neighborhoods and price points.`
   };
   
-  // Generate city-specific FAQs
-  const cityFaqs = generateCitySpecificFAQs(service, city);
-  
+  const matrix = hasMatrixEntry(serviceSlug, citySlug)
+    ? getServiceCityMatrixEntry(serviceSlug, citySlug)
+    : undefined;
+
+  const cityFaqs = matrix?.cityFaqs ?? generateCitySpecificFAQs(service, city);
+
   return {
     title,
     metaDescription,
@@ -93,13 +103,17 @@ export function generateServiceCityContent(
     keywords: generateKeywords(serviceName, cityName),
     canonical: `https://homebuyerboise.com/services/${serviceSlug}/${citySlug}`,
     heroSubtitle: `Get a fair cash offer on your ${cityName} home in 24 hours. ${service.metaDescription.split('.')[1] || 'No fees, no repairs, close on your timeline.'}`,
-    citySpecificIntro,
-    whyChooseLocal: generateLocalBenefits(service, city),
-    marketInsights,
-    localProcessNotes: generateLocalProcessNotes(service, city),
-    localSuccessStory: generateLocalSuccessStory(service, city),
+    citySpecificIntro: matrix?.citySpecificIntro ?? citySpecificIntro,
+    whyChooseLocal: matrix?.whyChooseLocal ?? generateLocalBenefits(service, city),
+    marketInsights: {
+      ...marketInsights,
+      localConsiderations: matrix?.localConsiderations ?? marketInsights.localConsiderations,
+    },
+    localProcessNotes: matrix?.localProcessNotes ?? generateLocalProcessNotes(service, city),
+    localSuccessStory: matrix?.localSuccessStory ?? generateLocalSuccessStory(service, city),
     cityFaqs,
-    ctaText: `Ready to ${serviceName.toLowerCase()} in ${cityName}? Get your cash offer today.`
+    ctaText: `Ready to ${serviceName.toLowerCase()} in ${cityName}? Get your cash offer today.`,
+    relatedLinks: matrix?.relatedLinks,
   };
 }
 

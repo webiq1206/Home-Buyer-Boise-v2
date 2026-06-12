@@ -170,7 +170,7 @@ export default function ServicePage({ params }: PageProps) {
   // Breadcrumb data
   const breadcrumbs = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/pricing" },
+    { name: "Services", href: "/services" },
     { name: service.name },
   ];
 
@@ -179,7 +179,7 @@ export default function ServicePage({ params }: PageProps) {
   const faqSchema = content?.faqs ? generateFAQSchema(content.faqs) : null;
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: "/" },
-    { name: "Services", url: "/pricing" },
+    { name: "Services", url: "/services" },
     { name: service.name, url: `/services/${service.slug}` },
   ]);
 

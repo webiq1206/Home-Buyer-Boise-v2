@@ -3,9 +3,11 @@
 // every pair, and returns deterministic ranked candidates per source page.
 
 import { BLOG_POSTS } from "@/shared/blogContent";
+import { getDefaultBlogRelatedLinks } from "@/shared/blogRelatedLinks";
 import { SERVICES } from "@/shared/servicesData";
 import { CITIES } from "@/shared/contentData";
 import { generateServiceCityContent } from "@/shared/serviceCityContent";
+import { PROJECTS } from "@/shared/projectsData";
 
 export type PageType =
   | "blog"
@@ -129,7 +131,7 @@ function buildPages(): LinkablePage[] {
       isMoneyPage: false,
       tokens: new Set(raw),
       rawTokens: raw,
-      inlineOverrides: post.relatedLinks,
+      inlineOverrides: post.relatedLinks ?? getDefaultBlogRelatedLinks(post),
     });
   }
 
@@ -198,6 +200,7 @@ function buildPages(): LinkablePage[] {
         parentCity: city.slug,
         tokens: new Set(raw),
         rawTokens: raw,
+        inlineOverrides: content.relatedLinks,
       });
     }
   }
@@ -224,6 +227,34 @@ function buildPages(): LinkablePage[] {
     ),
   });
 
+  for (const project of PROJECTS) {
+    const raw = tokenize(
+      project.title,
+      project.metaDescription,
+      project.situation,
+      project.neighborhood
+    );
+    pages.push({
+      url: `/projects/${project.slug}`,
+      type: "static",
+      title: project.title,
+      isMoneyPage: false,
+      parentService: project.serviceSlug,
+      parentCity: project.citySlug,
+      tokens: new Set(raw),
+      rawTokens: raw,
+    });
+  }
+
+  pages.push({
+    url: "/projects",
+    type: "static",
+    title: "Success Stories",
+    isMoneyPage: false,
+    tokens: new Set(tokenize("Success Stories case studies projects testimonials")),
+    rawTokens: tokenize("Success Stories case studies projects testimonials"),
+  });
+
   // Static pages
   const staticPages: Array<{ url: string; title: string }> = [
     { url: "/", title: "Home Buyer Boise" },
@@ -231,6 +262,9 @@ function buildPages(): LinkablePage[] {
     { url: "/contact", title: "Contact Home Buyer Boise" },
     { url: "/pricing", title: "How Our Cash Offer Process Works" },
     { url: "/blog", title: "Home Buyer Boise Blog" },
+    { url: "/faq", title: "Frequently Asked Questions" },
+    { url: "/authors", title: "Our Authors" },
+    { url: "/projects", title: "Success Stories" },
     { url: "/privacy-policy", title: "Privacy Policy" },
     { url: "/terms-of-service", title: "Terms of Service" },
   ];

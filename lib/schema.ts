@@ -338,14 +338,6 @@ export function generateWebSiteSchema(): SchemaContext {
     publisher: {
       '@id': `${baseUrl}#organization`,
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -404,12 +396,15 @@ export function generateBlogPostingSchema(params: {
   datePublished: string;
   dateModified?: string;
   author?: string;
+  authorSlug?: string;
   image?: string;
   keywords?: string[];
   articleSection?: string;
 }): SchemaContext {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/blog/${params.slug}`;
+  const authorSlug = params.authorSlug ?? "home-buyer-boise-team";
+  const authorName = params.author || BUSINESS_INFO.name;
 
   return {
     '@context': 'https://schema.org',
@@ -421,9 +416,9 @@ export function generateBlogPostingSchema(params: {
     datePublished: params.datePublished,
     dateModified: params.dateModified || params.datePublished,
     author: {
-      '@type': 'Organization',
-      name: params.author || BUSINESS_INFO.name,
-      url: baseUrl,
+      '@type': 'Person',
+      name: authorName,
+      url: `${baseUrl}/authors/${authorSlug}`,
     },
     publisher: {
       '@type': 'Organization',
@@ -446,6 +441,53 @@ export function generateBlogPostingSchema(params: {
     isPartOf: {
       '@id': `${baseUrl}#website`,
     },
+  };
+}
+
+/**
+ * Generate Person schema for team and author pages
+ */
+export function generatePersonSchema(params: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  url: string;
+  expertise?: string[];
+}): SchemaContext {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${baseUrl}${params.url}#person`,
+    name: params.name,
+    jobTitle: params.jobTitle,
+    description: params.description,
+    url: `${baseUrl}${params.url}`,
+    worksFor: {
+      '@id': `${baseUrl}#organization`,
+    },
+    ...(params.expertise?.length ? { knowsAbout: params.expertise } : {}),
+  };
+}
+
+/**
+ * Generate ItemList schema for hub/index pages
+ */
+export function generateItemListSchema(params: {
+  name: string;
+  items: Array<{ name: string; url: string }>;
+}): SchemaContext {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: params.name,
+    itemListElement: params.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: `${baseUrl}${item.url}`,
+    })),
   };
 }
 
