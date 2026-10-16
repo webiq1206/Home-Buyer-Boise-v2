@@ -377,7 +377,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
     `;
 
     // Send email to business owners
-    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co'];
+    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co', 'jb@timberandlove.com'];
     console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     
     const adminResult = await resend.emails.send({

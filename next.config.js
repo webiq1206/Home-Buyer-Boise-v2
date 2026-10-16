@@ -27,6 +27,11 @@ const nextConfig = {
         destination: '/pricing',
         permanent: true,
       },
+      {
+        source: '/authors/jared-brost',
+        destination: '/authors/luke-caldwell',
+        permanent: true,
+      },
     ]
   },
   async headers() {

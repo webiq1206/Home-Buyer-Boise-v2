@@ -28,17 +28,11 @@ export const AUTHORS: AuthorData[] = [
     ],
   },
   {
-    slug: "jared-brost",
-    name: "Jared Brost",
-    jobTitle: "Founder & Acquisitions Director",
-    bio:
-      "Jared founded Home Buyer Boise to give Idaho homeowners a transparent alternative to stressful traditional listings. He oversees property evaluations and ensures every offer is manually reviewed — never automated.",
-    expertise: [
-      "Residential acquisitions",
-      "Distressed property evaluation",
-      "Treasure Valley real estate markets",
-      "Seller advocacy and education",
-    ],
+    slug: "luke-caldwell",
+    name: "Luke Caldwell",
+    jobTitle: "Founder",
+    bio: "",
+    expertise: [],
   },
 ];
 
@@ -51,6 +45,6 @@ export function getAllAuthorSlugs(): string[] {
 }
 
 export function getAuthorSlugForName(name: string): string {
-  if (name.toLowerCase().includes("jared")) return "jared-brost";
+  if (name.toLowerCase().includes("luke")) return "luke-caldwell";
   return "home-buyer-boise-team";
 }
