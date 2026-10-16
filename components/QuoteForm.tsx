@@ -257,7 +257,7 @@ export function QuoteForm() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" data-clarity-mask="true">
       <p className="text-sm text-muted-foreground text-center" role="note">
         Free, no-obligation request. Every property is manually reviewed — we never issue automated binding offers.
       </p>

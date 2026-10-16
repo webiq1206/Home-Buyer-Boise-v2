@@ -106,7 +106,7 @@ export function ContactForm({ source = 'contact' }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" data-clarity-mask="true">
       <div>
         <Label htmlFor="name">Full Name *</Label>
         <Input
