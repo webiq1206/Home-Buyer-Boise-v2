@@ -20,6 +20,7 @@
     "seo:audit": "npm run seo:crawl && npm run seo:similarity && npm run seo:blog-cannibalization && npm run seo:image-audit && npm run seo:broken-links",
     "seo:docs": "npx tsx scripts/generate-audit-docs.ts",
     "og:generate": "python3 scripts/generate-og-image.py",
+    "indexnow": "node scripts/submit-indexnow.mjs",
     "blog:remediate": "npx tsx scripts/blog-remediation.ts && npx tsx scripts/blog-content-freshness.ts",
     "images:compress": "python3 scripts/compress-image.py"
   },
