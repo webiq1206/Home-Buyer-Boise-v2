@@ -26,7 +26,7 @@ Chronological log of every change made under Task #8. Each entry is one commit-w
 | 20 | static pages | SP1 | `app/privacy-policy/page.tsx` | Added WebPage + BreadcrumbList JSON-LD. |
 | 21 | static pages | SP1 | `app/terms-of-service/page.tsx` | Added WebPage + BreadcrumbList JSON-LD. |
 | 22 | blog template | B1, B2, B3 | `app/blog/[slug]/page.tsx` | Added BlogPosting + BreadcrumbList + (conditional) FAQPage JSON-LD on all 56 posts. |
-| 23 | sitewide | S8, S9 | `public/llms.txt` | Rewrote: removed `/how-it-works` line, fixed phone to (208) 405-2275, fixed email to connect@buymyhouse.co, removed all automated-valuation claims, removed placeholder licensing claim, aligned to /pricing language. |
+| 23 | sitewide | S8, S9 | `public/llms.txt` | Rewrote: removed `/how-it-works` line, fixed phone to (208) 405-2274, fixed email to connect@buymyhouse.co, removed all automated-valuation claims, removed placeholder licensing claim, aligned to /pricing language. |
 | 24 | sitewide | S8 | `next.config.js` | Added second redirect `/how-it-works/:slug* -> /pricing` to catch trailing-slash and subpath variants. |
 
 ## Untouched (verified, no changes required)

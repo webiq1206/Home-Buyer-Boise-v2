@@ -245,9 +245,9 @@ export function QuoteForm() {
               Return to Home
             </Button>
             <Button asChild>
-              <a href="tel:2084052275">
+              <a href="tel:2084052274">
                 <Phone className="mr-2 h-4 w-4" />
-                Call (208) 405-2275
+                Call (208) 405-2274
               </a>
             </Button>
           </div>

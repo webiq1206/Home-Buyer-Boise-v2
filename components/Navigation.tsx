@@ -188,8 +188,8 @@ export function Navigation() {
               asChild 
               data-testid="button-phone-desktop"
             >
-              <a href="tel:2084052275">
-                (208) 405-2275
+              <a href="tel:2084052274">
+                (208) 405-2274
               </a>
             </Button>
 

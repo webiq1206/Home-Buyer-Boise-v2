@@ -358,7 +358,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
 
             <div style="text-align: center; margin: 30px 0;">
               <p style="color: #4b5563; margin: 0 0 10px 0;"><strong>Have questions?</strong></p>
-              <p style="color: #6b7280; font-size: 14px; margin: 0;">You can reply to this email or call us at (208) 405-2275</p>
+              <p style="color: #6b7280; font-size: 14px; margin: 0;">You can reply to this email or call us at (208) 405-2274</p>
             </div>
           </div>
 
@@ -366,7 +366,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
             <p class="footer-brand">Home Buyer Boise</p>
             <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
             <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
-            <p class="footer-contact">Phone: (208) 405-2275</p>
+            <p class="footer-contact">Phone: (208) 405-2274</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
             <p style="font-size: 12px; color: #9ca3af; margin: 15px 0 0 0;">Serving Boise, Meridian, Eagle, Kuna, Star & Middleton</p>

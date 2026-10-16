@@ -228,7 +228,7 @@ export default function ServicePage({ params }: PageProps) {
                 <Link href="/get-quote">Get Your Cash Offer</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8" asChild>
-                <a href="tel:2084052275">(208) 405-2275</a>
+                <a href="tel:2084052274">(208) 405-2274</a>
               </Button>
             </div>
           </div>
@@ -523,7 +523,7 @@ export default function ServicePage({ params }: PageProps) {
               <Link href="/get-quote">Get Your Cash Offer</Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8" asChild>
-              <a href="tel:2084052275">Call (208) 405-2275</a>
+              <a href="tel:2084052274">Call (208) 405-2274</a>
             </Button>
           </div>
         </div>

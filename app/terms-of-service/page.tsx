@@ -76,7 +76,7 @@ export default function TermsOfServicePage() {
               </p>
               <ul>
                 <li>Email: connect@buymyhouse.co</li>
-                <li>Phone: (208) 405-2275</li>
+                <li>Phone: (208) 405-2274</li>
                 <li>Address: 3024 W Fairview Ave, Boise, ID 83702</li>
               </ul>
             </div>

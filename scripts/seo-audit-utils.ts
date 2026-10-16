@@ -82,7 +82,7 @@ export function enumerateAllPages(): PageAuditRecord[] {
   const staticPages = [
     { url: "/", title: "Home Buyer Boise | Sell Your Boise House Fast for Cash", metaDescription: "", h1: "Sell Your House Fast for Cash", type: "static" },
     { url: "/about", title: "About Home Buyer Boise | Local Cash Home Buyers Since 2018", metaDescription: "", h1: "About Home Buyer Boise", type: "static" },
-    { url: "/contact", title: "Contact Home Buyer Boise | Call (208) 405-2275", metaDescription: "", h1: "Contact Us", type: "static" },
+    { url: "/contact", title: "Contact Home Buyer Boise | Call (208) 405-2274", metaDescription: "", h1: "Contact Us", type: "static" },
     { url: "/get-quote", title: "Get a Free Cash Offer", metaDescription: "", h1: "Get Your Free Cash Offer", type: "tool" },
     { url: "/pricing", title: "Pricing", metaDescription: "", h1: "Pricing", type: "static" },
     { url: "/services", title: "Services", metaDescription: "", h1: "Our Services", type: "static" },

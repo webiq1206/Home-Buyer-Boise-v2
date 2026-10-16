@@ -15,7 +15,7 @@ interpretation across two or more files, LOW when assumptions were made.
 | Legal name | Home Buyer Boise LLC | `lib/seo.ts:345` | HIGH |
 | Domain | homebuyerboise.com | `app/layout.tsx:27`, `app/sitemap.ts:5`, `lib/seo.ts:199` | HIGH |
 | Canonical base URL | https://homebuyerboise.com | `app/layout.tsx:27` | HIGH |
-| Phone | (208) 405-2275 | `lib/seo.ts:346` | HIGH |
+| Phone | (208) 405-2274 | `lib/seo.ts:346` | HIGH |
 | Primary email | connect@buymyhouse.co | `lib/seo.ts:347` | HIGH |
 | Lead notification emails | connect@buymyhouse.co AND admin@timberandlove.com | `replit.md` (Lead Notification Emails), referenced from `lib/services/email.ts` | HIGH |
 | Street | 3024 W Fairview Ave | `lib/seo.ts:349` | HIGH |
@@ -184,7 +184,7 @@ Per `replit.md` and source scan:
 - `lib/db/` and Drizzle ORM connections: database persistence.
 - The "estimate, not an offer" disclaimer language on the savings
   calculator (no automated estimates policy).
-- Phone number `(208) 405-2275` and the `tel:` link in Navigation,
+- Phone number `(208) 405-2274` and the `tel:` link in Navigation,
   Footer, and StickyBottomNav.
 
 ---

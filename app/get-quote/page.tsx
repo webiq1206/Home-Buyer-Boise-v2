@@ -103,11 +103,11 @@ export default function GetQuotePage() {
                       Call us directly to speak with a local expert.
                     </p>
                     <a 
-                      href="tel:2084052275" 
+                      href="tel:2084052274" 
                       className="inline-flex items-center text-xl font-bold text-primary hover:underline"
                     >
                       <Phone className="mr-2 h-5 w-5" />
-                      (208) 405-2275
+                      (208) 405-2274
                     </a>
                   </CardContent>
                 </Card>

@@ -137,7 +137,7 @@ def main():
     strip = Image.new("RGBA", (W, strip_h), (255, 255, 255, 28))
     base.paste(strip, (0, H - strip_h), strip)
     font_small = load_font(17, bold=True)
-    trust = "Licensed & Insured  •  (208) 405-2275  •  homebuyerboise.com"
+    trust = "Licensed & Insured  •  (208) 405-2274  •  homebuyerboise.com"
     bbox_tr = draw.textbbox((0, 0), trust, font=font_small)
     twtr = bbox_tr[2] - bbox_tr[0]
     draw.text(((W - twtr) // 2, H - strip_h + 18), trust, fill=(255, 255, 255, 220), font=font_small)

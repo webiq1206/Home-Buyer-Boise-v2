@@ -12,8 +12,8 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact Home Buyer Boise | Call (208) 405-2275",
-  description: "Contact Home Buyer Boise today for a free cash offer on your house. Call (208) 405-2275 or fill out our form. We serve Boise, Meridian, Eagle, Kuna and more.",
+  title: "Contact Home Buyer Boise | Call (208) 405-2274",
+  description: "Contact Home Buyer Boise today for a free cash offer on your house. Call (208) 405-2274 or fill out our form. We serve Boise, Meridian, Eagle, Kuna and more.",
   alternates: {
     canonical: "https://homebuyerboise.com/contact",
   },
@@ -23,7 +23,7 @@ export default function ContactPage() {
   const webPageSchema = generateWebPageSchema({
     name: "Contact Home Buyer Boise",
     description:
-      "Contact Home Buyer Boise for a free cash offer. Call (208) 405-2275 or send us a message.",
+      "Contact Home Buyer Boise for a free cash offer. Call (208) 405-2274 or send us a message.",
     url: "/contact",
     breadcrumbs: [
       { name: "Home", url: "/" },
@@ -63,8 +63,8 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6 text-primary flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold mb-1">Phone</h3>
-                        <a href="tel:2084052275" className="text-primary hover:underline text-lg">
-                          (208) 405-2275
+                        <a href="tel:2084052274" className="text-primary hover:underline text-lg">
+                          (208) 405-2274
                         </a>
                         <p className="text-sm text-muted-foreground mt-1">Call or text anytime</p>
                       </div>

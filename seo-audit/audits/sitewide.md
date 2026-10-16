@@ -51,7 +51,7 @@ Reference: Master SEO Audit playbook, sitewide section.
 ### S9: Stale and contradictory facts in `public/llms.txt`
 - Severity: medium-high (LLM-facing surface, contradicted the no-automated-offer business rule)
 - Symptom: `public/llms.txt` advertised an "AI-powered valuation system" providing offers "within 24 hours" at "70 to 85 percent of estimated value", listed the wrong phone number `(208) 405-CASH (2274)`, listed the wrong email `hello@homebuyerboise.com`, and asserted "Licensed Idaho real estate investors" without verified license numbers. All four are inconsistent with current business facts and with the sitewide remediation we just completed.
-- Fix: rewrote `public/llms.txt` end to end. Correct phone `(208) 405-2275`. Correct primary email `connect@buymyhouse.co`. Removed every "AI" or "automated valuation" claim and replaced with explicit human-underwriting language matching the no-automated-offer rule. Removed the placeholder licensing claim. Aligned the FAQ block and Competitive Advantages to the same language used on `/pricing`.
+- Fix: rewrote `public/llms.txt` end to end. Correct phone `(208) 405-2274`. Correct primary email `connect@buymyhouse.co`. Removed every "AI" or "automated valuation" claim and replaced with explicit human-underwriting language matching the no-automated-offer rule. Removed the placeholder licensing claim. Aligned the FAQ block and Competitive Advantages to the same language used on `/pricing`.
 
 ## Decisions left as-is (with rationale)
 
