@@ -841,7 +841,7 @@ export function SavingsCalculator() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="tel:2084052275">Call (208) 405-2275</a>
+              <a href="tel:2084052274">Call (208) 405-2274</a>
             </Button>
           </div>
         </div>

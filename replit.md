@@ -6,7 +6,7 @@ Home Buyer Boise (homebuyerboise.com) is a professional cash home buying platfor
 ## Branding
 - **Business Name**: Home Buyer Boise (display text with spaces)
 - **Domain**: homebuyerboise.com (URLs without spaces)
-- **Phone**: (208) 405-2275
+- **Phone**: (208) 405-2274
 - **Primary Email**: connect@buymyhouse.co
 - **Lead Notification Emails**: connect@buymyhouse.co AND admin@timberandlove.com
 - **Address**: 3024 W Fairview Ave, Boise, Idaho 83702

@@ -7,7 +7,7 @@ Generated: 2026-06-12
 - **Name:** Home Buyer Boise
 - **Legal:** Home Buyer Boise LLC
 - **Founded:** 2018
-- **Phone:** (208) 405-2275
+- **Phone:** (208) 405-2274
 - **Email:** connect@buymyhouse.co
 
 ## Services (17)

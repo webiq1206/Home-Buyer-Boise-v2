@@ -18,7 +18,7 @@ const INTRO_VARIANTS = [
   (svc: string, city: string, situation: string, market: string, process: string) =>
     `${svc} in ${city} often starts with ${situation}. ${market} Home Buyer Boise has purchased homes across the area since 2018 — ${process} Every offer is reviewed by our local team (not an automated algorithm), and you pay zero agent commissions or closing costs.`,
   (svc: string, city: string, situation: string, market: string, process: string) =>
-    `Homeowners searching for ${svc.toLowerCase()} in ${city} frequently face ${situation}. ${market} We specialize in private, as-is purchases throughout ${city} with flexible closing dates. ${process} Call (208) 405-2275 for a no-obligation conversation — offers are prepared by a real person after reviewing your property.`,
+    `Homeowners searching for ${svc.toLowerCase()} in ${city} frequently face ${situation}. ${market} We specialize in private, as-is purchases throughout ${city} with flexible closing dates. ${process} Call (208) 405-2274 for a no-obligation conversation — offers are prepared by a real person after reviewing your property.`,
   (svc: string, city: string, situation: string, market: string, process: string) =>
     `If you need ${svc.toLowerCase()} in ${city}, you are not alone — many neighbors have sold to us when ${situation}. ${market} ${process} We are local cash buyers (not a national wholesaler), and ${city} sellers choose us for transparent numbers and timelines they control.`,
 ];

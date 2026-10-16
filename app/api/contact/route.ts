@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="content">
                 <p>We've received your message and will get back to you within 24 hours.</p>
-                <p>If you need immediate assistance, feel free to call us at <strong>(208) 405-2275</strong>.</p>
+                <p>If you need immediate assistance, feel free to call us at <strong>(208) 405-2274</strong>.</p>
                 <p>Best regards,<br>The Home Buyer Boise Team</p>
               </div>
               <div class="footer">
