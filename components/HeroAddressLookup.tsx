@@ -151,7 +151,7 @@ export function HeroAddressLookup() {
   };
 
   return (
-    <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-2xl overflow-visible">
+    <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-2xl overflow-visible" data-clarity-mask="true">
       <CardContent className="pt-8 pb-8 px-6 md:px-8 overflow-visible">
         <div className="space-y-6">
           <div className="flex items-start gap-4">
@@ -168,7 +168,7 @@ export function HeroAddressLookup() {
             </div>
           </div>
 
-          <form onSubmit={handleLookup} className="space-y-4">
+          <form onSubmit={handleLookup} className="space-y-4" data-clarity-mask="true">
             <div ref={wrapperRef} className="relative">
               <div className="relative">
                 <Input
