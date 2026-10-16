@@ -195,7 +195,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're considering selling your Boise area home quickly, we're here to help you understand your options with no pressure or obligations. Our process is simple:</p>
 
       <ol>
-        <li>Request your free cash offer through our <a href="/get-quote">online form</a> or call (208) 314-2458</li>
+        <li>Request your free cash offer through our <a href="/get-quote">online form</a> or call (208) 405-2274</li>
         <li>Receive a fair offer within 24 hours</li>
         <li>Close on your timeline—as fast as 7 days or whenever works for you</li>
       </ol>
@@ -449,7 +449,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're considering selling your Boise area home for cash, we'd love to provide a no-obligation offer. Our process is simple:</p>
 
       <ol>
-        <li>Contact us through our <a href="/get-quote">online form</a> or call (208) 314-2458</li>
+        <li>Contact us through our <a href="/get-quote">online form</a> or call (208) 405-2274</li>
         <li>Tell us about your property and situation</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>Accept or decline with no pressure</li>
@@ -807,7 +807,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>The As-Is Selling Process</h2>
 
       <h3>Step 1: Contact a Cash Buyer</h3>
-      <p>Reach out to Home Buyer Boise through our <a href="/get-quote">online form</a> or by calling (208) 314-2458. Be honest about your property's condition—it helps us make an accurate offer quickly.</p>
+      <p>Reach out to Home Buyer Boise through our <a href="/get-quote">online form</a> or by calling (208) 405-2274. Be honest about your property's condition—it helps us make an accurate offer quickly.</p>
 
       <h3>Step 2: Property Evaluation</h3>
       <p>We'll research your property using county records and may schedule a brief walkthrough. During the walkthrough, we assess the scope of repairs needed to bring the property to market-ready condition.</p>
@@ -900,7 +900,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <ul>
         <li><a href="/get-quote">Request your free cash offer online</a></li>
-        <li>Call us at (208) 314-2458</li>
+        <li>Call us at (208) 405-2274</li>
         <li>Email admin@timberandlove.com</li>
       </ul>
 
@@ -1113,7 +1113,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <ul>
         <li><a href="/get-quote">Request your free offer online</a></li>
-        <li>Call us at (208) 314-2458</li>
+        <li>Call us at (208) 405-2274</li>
       </ul>
 
       <p>We can provide an offer within 24 hours and close in as little as 7 days. Your timeline is in your hands.</p>
@@ -1288,7 +1288,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <ul>
         <li><a href="/get-quote">Request a free cash offer</a> within 24 hours</li>
-        <li>Call (208) 314-2458 to speak with us immediately</li>
+        <li>Call (208) 405-2274 to speak with us immediately</li>
         <li>Learn more about our <a href="/services/avoid-foreclosure">foreclosure assistance program</a></li>
       </ul>
 
@@ -1494,7 +1494,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <ul>
         <li><a href="/get-quote">Request your free cash offer online</a></li>
-        <li>Call (208) 314-2458 to discuss your situation</li>
+        <li>Call (208) 405-2274 to discuss your situation</li>
         <li>Learn more about our <a href="/services/inherited-property">inherited property program</a></li>
       </ul>
 
@@ -1663,7 +1663,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're going through a divorce and need to sell your Boise area home, we can help. Our process is simple, fast, and designed to minimize conflict:</p>
 
       <ol>
-        <li><a href="/get-quote">Request a cash offer</a> online or call (208) 314-2458</li>
+        <li><a href="/get-quote">Request a cash offer</a> online or call (208) 405-2274</li>
         <li>Receive an offer within 24 hours</li>
         <li>Both parties review and decide</li>
         <li>Close in as few as 7-14 days</li>
@@ -1835,7 +1835,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <ul>
         <li><a href="/get-quote">Request your free offer online</a></li>
-        <li>Call (208) 314-2458</li>
+        <li>Call (208) 405-2274</li>
       </ul>
 
       <p>Compare our offer to estimated net proceeds from a traditional sale. Then make an informed decision that's right for your situation.</p>
@@ -2053,7 +2053,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're dealing with foundation problems and want to explore your options, getting a cash offer is free and carries no obligation. Here's how to start:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property information online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property information online</a> or call (208) 405-2274</li>
         <li>We'll research your property and provide a preliminary offer within 24 hours</li>
         <li>If you're interested, we'll schedule a brief property visit</li>
         <li>You receive a final written offer with no obligations</li>
@@ -2322,7 +2322,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Ready to explore your options? Getting a cash offer from Home Buyer Boise is simple and free:</p>
 
       <ol>
-        <li><a href="/get-quote">Request your free offer online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Request your free offer online</a> or call (208) 405-2274</li>
         <li>Tell us about your property and the mold situation</li>
         <li>Receive a preliminary offer within 24 hours</li>
         <li>Schedule a property visit if you'd like a final offer</li>
@@ -2575,7 +2575,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're dealing with a fire-damaged property in Boise, Meridian, Nampa, or anywhere in the Treasure Valley, we're here to help you understand your options:</p>
 
       <ol>
-        <li><a href="/get-quote">Request your free cash offer online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Request your free cash offer online</a> or call (208) 405-2274</li>
         <li>Tell us about your property and the fire damage</li>
         <li>Receive a no-obligation offer within 24-48 hours</li>
         <li>Compare your options and decide what's best for you</li>
@@ -2840,7 +2840,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Ready to explore selling your Boise area home with roof problems? Here's how to get started:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property information online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property information online</a> or call (208) 405-2274</li>
         <li>Tell us about your property and the roof condition</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>No obligation—take time to compare your options</li>
@@ -3120,7 +3120,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If your Boise area home has outdated plumbing, electrical, or HVAC systems, we'd like to make you a fair cash offer:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property details online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property details online</a> or call (208) 405-2274</li>
         <li>Tell us about your home's systems and condition</li>
         <li>Receive a no-obligation offer within 24 hours</li>
         <li>Compare your options and decide what's best</li>
@@ -3369,7 +3369,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're dealing with a hoarding situation and considering selling, here's how to explore your options:</p>
 
       <ol>
-        <li><a href="/get-quote">Request a confidential consultation</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Request a confidential consultation</a> or call (208) 405-2274</li>
         <li>Tell us about the property and situation (as much or as little as you're comfortable sharing)</li>
         <li>If you'd like, we'll schedule a discreet property visit</li>
         <li>Receive a fair, no-obligation cash offer</li>
@@ -3620,7 +3620,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you're dealing with termite damage in your Boise area home, we're here to help:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property information</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property information</a> or call (208) 405-2274</li>
         <li>Tell us about the termite situation and any inspection reports you have</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>Compare your options with no obligation</li>
@@ -3895,7 +3895,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>Ready to explore your options? Here's how to get started:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property details online</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property details online</a> or call (208) 405-2274</li>
         <li>Tell us about the repairs needed (as best you know)</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>No obligation—take time to compare your options</li>
@@ -4147,7 +4147,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If you own a vacant property in Boise, Meridian, Nampa, or anywhere in the Treasure Valley, stop the bleeding on carrying costs:</p>
 
       <ol>
-        <li><a href="/get-quote">Request your free cash offer</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Request your free cash offer</a> or call (208) 405-2274</li>
         <li>Tell us about your property and situation</li>
         <li>Receive a fair offer within 24 hours</li>
         <li>Close on your timeline and move on</li>
@@ -4408,7 +4408,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>If your Boise area property has code violations, we're here to help:</p>
 
       <ol>
-        <li><a href="/get-quote">Submit your property information</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property information</a> or call (208) 405-2274</li>
         <li>Tell us about known violations or unpermitted work</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>Compare your options with no obligation</li>
@@ -4676,7 +4676,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h3>Step 4: Get Your Cash Offer</h3>
       <p>If a quick, hassle-free sale makes sense for your situation:</p>
       <ol>
-        <li><a href="/get-quote">Submit your property information</a> or call (208) 314-2458</li>
+        <li><a href="/get-quote">Submit your property information</a> or call (208) 405-2274</li>
         <li>Tell us about the property condition and probate status</li>
         <li>Receive a fair cash offer within 24 hours</li>
         <li>Close on your timeline once probate allows</li>
