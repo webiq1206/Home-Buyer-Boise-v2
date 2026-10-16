@@ -461,7 +461,7 @@ export function generatePersonSchema(params: {
     '@id': `${baseUrl}${params.url}#person`,
     name: params.name,
     jobTitle: params.jobTitle,
-    description: params.description,
+    ...(params.description ? { description: params.description } : {}),
     url: `${baseUrl}${params.url}`,
     worksFor: {
       '@id': `${baseUrl}#organization`,
