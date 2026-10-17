@@ -11,13 +11,11 @@ import { SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
 
 const ABOUT_TITLE = "About Home Buyer Boise | Local Cash Home Buyers Since 2018";
 const ABOUT_DESCRIPTION = "Learn about Home Buyer Boise, your trusted local cash home buyers serving the Treasure Valley since 2018. We buy houses fast with no fees or repairs needed.";
+const ABOUT_DESCRIPTION_VISIBLE = "Learn about Home Buyer Boise, local cash home buyers serving the Treasure Valley. We buy houses fast with no fees or repairs needed.";
 
 export const metadata: Metadata = {
   title: SHOW_UNVERIFIED_TRUST ? ABOUT_TITLE : ABOUT_TITLE.replace(" Since 2018", ""),
-  description: unverifiedTrustText(
-    ABOUT_DESCRIPTION,
-    ABOUT_DESCRIPTION.replace(" since 2018", ""),
-  ),
+  description: unverifiedTrustText(ABOUT_DESCRIPTION, ABOUT_DESCRIPTION_VISIBLE),
   alternates: {
     canonical: "https://homebuyerboise.com/about",
   },
