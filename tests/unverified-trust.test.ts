@@ -39,7 +39,7 @@ import { GET as getLlmsFull } from "../app/llms-full.txt/route";
 import { GET as getTestimonials } from "../app/api/testimonials/route";
 import { SERVICE_CONTENT, SERVICES } from "../shared/servicesData";
 import { metadata as aboutMetadata } from "../app/about/page";
-import { areaHeroOffer, localCashBuyerHeading } from "../app/areas/[city]/page";
+import { areaHeroOffer, localCashBuyerHeading } from "../lib/areaCopy";
 
 const ROOT = path.resolve(__dirname, "..");
 
@@ -345,8 +345,9 @@ test("testimonials API returns an empty list while the flag is off", async () =>
 
 test("area pages do not render You Can Trust", () => {
   const source = readFileSync(path.join(ROOT, "app/areas/[city]/page.tsx"), "utf8");
-  assert.match(source, /You Can Trust/);
-  assert.match(source, /Trust us with your/);
+  const copy = readFileSync(path.join(ROOT, "lib/areaCopy.ts"), "utf8");
+  assert.match(copy, /You Can Trust/);
+  assert.match(copy, /Trust us with your/);
   assert.match(source, /\{localCashBuyerHeading\(city\.name\)\}/);
   assert.match(source, /\{areaHeroOffer\(city\.name\)\}/);
   for (const city of CITIES) {
