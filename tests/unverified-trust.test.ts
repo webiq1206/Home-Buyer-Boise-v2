@@ -39,6 +39,7 @@ import { GET as getLlmsFull } from "../app/llms-full.txt/route";
 import { GET as getTestimonials } from "../app/api/testimonials/route";
 import { SERVICE_CONTENT, SERVICES } from "../shared/servicesData";
 import { metadata as aboutMetadata } from "../app/about/page";
+import { areaHeroOffer, localCashBuyerHeading } from "../app/areas/[city]/page";
 
 const ROOT = path.resolve(__dirname, "..");
 
@@ -340,6 +341,27 @@ test("llms files do not serve unverified trust lines", async () => {
 test("testimonials API returns an empty list while the flag is off", async () => {
   const response = await getTestimonials(new Request("http://localhost/api/testimonials"));
   assert.deepEqual(await response.json(), []);
+});
+
+test("area pages do not render You Can Trust", () => {
+  const source = readFileSync(path.join(ROOT, "app/areas/[city]/page.tsx"), "utf8");
+  assert.match(source, /You Can Trust/);
+  assert.match(source, /Trust us with your/);
+  assert.match(source, /\{localCashBuyerHeading\(city\.name\)\}/);
+  assert.match(source, /\{areaHeroOffer\(city\.name\)\}/);
+  for (const city of CITIES) {
+    const html = renderToStaticMarkup(
+      createElement(
+        "article",
+        null,
+        createElement("h2", null, localCashBuyerHeading(city.name)),
+        createElement("p", null, areaHeroOffer(city.name)),
+      ),
+    );
+    assert.equal(html.includes("You Can Trust"), false, city.slug);
+    assert.equal(html.includes(`Trust us with your ${city.name} home`), false, city.slug);
+    assert.match(html, new RegExp(`Local ${city.name} Cash Home Buyers</h2>`));
+  }
 });
 
 test("desktop grids match the visible card count", () => {
