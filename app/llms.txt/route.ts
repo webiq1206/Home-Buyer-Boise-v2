@@ -3,7 +3,7 @@ import { getAllCitySlugs } from "@/shared/contentData";
 import { getAllServiceSlugs, SERVICES } from "@/shared/servicesData";
 import { PROJECTS } from "@/shared/projectsData";
 import { ORGANIZATION_ENTITY, SERVICE_ENTITIES, LOCATION_ENTITIES } from "@/shared/entityGraph";
-import { BUSINESS_INFO } from "@/lib/seo";
+import { BUSINESS_INFO, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 export async function GET() {
   const citySlugs = getAllCitySlugs();
@@ -17,10 +17,10 @@ export async function GET() {
 ${ORGANIZATION_ENTITY.description}
 
 ## Entity Graph Summary
-- Organization: ${ORGANIZATION_ENTITY.name} (founded ${ORGANIZATION_ENTITY.founded})
+- Organization: ${ORGANIZATION_ENTITY.name}${SHOW_UNVERIFIED_TRUST ? ` (founded ${ORGANIZATION_ENTITY.founded})` : ""}
 - Services: ${SERVICE_ENTITIES.length} cash home buying situations
 - Locations: ${LOCATION_ENTITIES.map((l) => l.name).join(", ")}
-- Projects: ${PROJECTS.length} published success stories
+- Projects: ${PROJECTS.length}${SHOW_UNVERIFIED_TRUST ? " published success stories" : ""}
 
 ## Contact Information
 - Phone: ${BUSINESS_INFO.phone}
@@ -37,7 +37,7 @@ ${citySlugs.map((slug) => `- ${slug.charAt(0).toUpperCase() + slug.slice(1)}, Id
 ## Services Offered
 ${SERVICES.map((s) => `- ${s.name} (${baseUrl}/services/${s.slug})`).join("\n")}
 
-## Success Stories
+${SHOW_UNVERIFIED_TRUST ? "## Success Stories" : "## Projects"}
 ${PROJECTS.map((p) => `- ${p.title} (${baseUrl}/projects/${p.slug})`).join("\n")}
 
 ## Key Benefits

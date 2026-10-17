@@ -1,4 +1,5 @@
 import type { ServiceLayer } from "./types";
+import { unverifiedTrustText } from "@/lib/seo";
 
 export const SERVICE_LAYERS: Record<string, ServiceLayer> = {
   "sell-house-fast": {
@@ -46,7 +47,10 @@ export const SERVICE_LAYERS: Record<string, ServiceLayer> = {
       {
         question: "Are you a national franchise or local buyers?",
         answer:
-          "We are local Idaho buyers operating since 2018 — not a call-center franchise. You work directly with our Treasure Valley team.",
+          unverifiedTrustText(
+            "We are local Idaho buyers operating since 2018 — not a call-center franchise. You work directly with our Treasure Valley team.",
+            "We are local Idaho buyers — not a call-center franchise. You work directly with our Treasure Valley team.",
+          ),
       },
     ],
     successSituation: "could not find a retail buyer willing to purchase as-is",

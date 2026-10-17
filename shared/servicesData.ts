@@ -1,4 +1,6 @@
 // High-value service pages optimized for local SEO
+import { SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
+
 export const SERVICES = [
   {
     slug: "sell-house-fast",
@@ -187,7 +189,7 @@ export function getServiceBySlug(slug: string): Service | undefined {
 export const SERVICE_CONTENT = {
   "sell-house-fast": {
     heroSubtitle: "Get a fair cash offer in 24 hours. Close in as little as 7 days or take your time - you choose the timeline.",
-    intro: "When you need to sell your house fast in the Boise metro area, Home Buyer Boise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
+    intro: "When you need to sell your house fast in the Boise metro area, Home Buyer Boise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. " + unverifiedTrustText("We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. ", "") + "Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
     whyChoose: [
       "Cash offer in 24 hours or less",
       "Close in 7 days or on your timeline",
@@ -197,7 +199,7 @@ export const SERVICE_CONTENT = {
       "Direct sale - no showings or open houses",
       "No buyer financing contingencies",
       "Avoid months of uncertainty",
-      "Local Boise company since 2018",
+      ...(SHOW_UNVERIFIED_TRUST ? ["Local Boise company since 2018"] : []),
       "Close on YOUR schedule",
     ],
     situations: [
@@ -304,7 +306,10 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "Are you a legitimate company or a scam?",
-        answer: "We're a legitimate Idaho LLC that's been buying houses in Boise since 2018. We're licensed, insured, and use reputable local title companies for all closings. You can verify our business status with Idaho Secretary of State. We have real reviews, real track records, and real local presence."
+        answer: unverifiedTrustText(
+          "We're a legitimate Idaho LLC that's been buying houses in Boise since 2018. We're licensed, insured, and use reputable local title companies for all closings. You can verify our business status with Idaho Secretary of State. We have real reviews, real track records, and real local presence.",
+          "We use reputable local title companies for all closings.",
+        )
       },
       {
         question: "What happens after I sell to you?",
@@ -366,7 +371,7 @@ export const SERVICE_CONTENT = {
       "No contingencies or financing delays",
       "Transparent, fair pricing",
       "Local company, not a franchise",
-      "Proven track record since 2018",
+      ...(SHOW_UNVERIFIED_TRUST ? ["Proven track record since 2018"] : []),
       "Close on your schedule",
     ],
     situations: [
@@ -375,7 +380,10 @@ export const SERVICE_CONTENT = {
       { title: "Any Timeline", description: "Close in 7 days or take 60+ days" },
       { title: "Any Price Range", description: "We buy properties at all price points" },
     ],
-    process: "We're not like other 'we buy houses' companies. We're local, licensed, and have been serving Boise families since 2018. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+    process: unverifiedTrustText(
+      "We're not like other 'we buy houses' companies. We're local, licensed, and have been serving Boise families since 2018. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+      "We're not like other 'we buy houses' companies. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+    ),
     detailedProcess: [
       { step: 1, title: "Contact Us", description: "Call (208) 405-2274 or fill out our online form. Tell us about your property and situation.", timeline: "2 minutes" },
       { step: 2, title: "Property Walkthrough", description: "We schedule a quick visit at your convenience to assess the property. No judgment, just evaluation.", timeline: "30 minutes" },
@@ -387,7 +395,10 @@ export const SERVICE_CONTENT = {
     faqs: [
       {
         question: "Are 'We Buy Houses' companies legitimate?",
-        answer: "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references."
+        answer: unverifiedTrustText(
+          "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references.",
+          "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references.",
+        )
       },
       {
         question: "How do 'We Buy Houses' companies make money?",
@@ -415,7 +426,10 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "What makes Home Buyer Boise different from other house buyers?",
-        answer: "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We've been buying homes since 2018 with a 4.9-star rating from over 189 reviews. We're transparent, fair, and treat every homeowner with respect."
+        answer: unverifiedTrustText(
+          "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We've been buying homes since 2018 with a 4.9-star rating from over 189 reviews. We're transparent, fair, and treat every homeowner with respect.",
+          "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We're transparent, fair, and treat every homeowner with respect.",
+        )
       }
     ],
     successStories: [

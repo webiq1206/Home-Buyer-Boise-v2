@@ -14,7 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { generateLocalBusinessSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { getBaseUrl } from "@/lib/seo";
+import { getBaseUrl, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 import { 
   CheckCircle, 
   MapPin, 
@@ -173,7 +173,8 @@ const trustFeatures = [
   {
     icon: Shield,
     title: "Licensed & Insured",
-    description: "Professional, legitimate business you can trust. We're accountable to you and our community."
+    description: "Professional, legitimate business you can trust. We're accountable to you and our community.",
+    unverified: true,
   },
   {
     icon: Clock,
@@ -529,11 +530,13 @@ export default function AreaPage({ params }: PageProps) {
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
             Why {city.name} Homeowners Trust Home Buyer Boise
           </h2>
+          {SHOW_UNVERIFIED_TRUST && (
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
             We've helped hundreds of homeowners sell their properties quickly and fairly
           </p>
+          )}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {trustFeatures.map((feature, index) => (
+            {trustFeatures.filter((feature) => SHOW_UNVERIFIED_TRUST || !("unverified" in feature && feature.unverified)).map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">

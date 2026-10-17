@@ -1,4 +1,5 @@
 // Blog Content Data for Home Buyer Boise
+import { unverifiedTrustText } from "@/lib/seo";
 // 57 SEO-optimized blog posts for cash home buying in the Boise metro area
 // Each post: 1,800-2,400 words, complete with FAQs, schema markup support, and internal linking
 
@@ -156,7 +157,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>This is the most common concern we hear, and it's completely valid. The truth is that a cash offer will typically be below full retail value—but that's not the complete picture. When you factor in the costs you're avoiding (repairs, commissions, carrying costs, and uncertainty), many sellers find they net a similar amount while gaining speed and certainty.</p>
 
       <h3>"Is This a Scam?"</h3>
-      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, and never ask for money upfront. We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.</p>
+      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, and never ask for money upfront. ${unverifiedTrustText("We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.", "")}</p>
 
       <h3>"What If I Change My Mind?"</h3>
       <p>Our offers come with no obligations. Until you sign a purchase agreement, you're free to explore other options or decide not to sell. Even after signing, Idaho law provides certain protections and cooling-off periods.</p>
@@ -3879,7 +3880,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>At <a href="/about">Home Buyer Boise</a>, we built our business around purchasing homes that need work. Here's why we're a good fit for major repair situations:</p>
 
       <h3>Renovation Experience</h3>
-      <p>We've renovated hundreds of homes in the Treasure Valley. We know actual repair costs, have relationships with reliable contractors, and can accurately assess what work is truly needed.</p>
+      <p>${unverifiedTrustText("We've renovated hundreds of homes in the Treasure Valley. ", "")}We know actual repair costs, have relationships with reliable contractors, and can accurately assess what work is truly needed.</p>
 
       <h3>Fair, Realistic Offers</h3>
       <p>Our offers reflect real repair costs—not inflated worst-case estimates. You'll understand exactly how we calculated our offer.</p>
@@ -3933,7 +3934,10 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How do you calculate offers on fixer-uppers?",
-        answer: "We calculate offers based on after-repair value minus actual repair costs. Our experience renovating hundreds of Boise homes allows us to accurately estimate what work is needed. You'll understand exactly how we arrived at our offer number."
+        answer: unverifiedTrustText(
+          "We calculate offers based on after-repair value minus actual repair costs. Our experience renovating hundreds of Boise homes allows us to accurately estimate what work is needed. You'll understand exactly how we arrived at our offer number.",
+          "We calculate offers based on after-repair value minus actual repair costs. You'll understand exactly how we arrived at our offer number.",
+        )
       },
       {
         question: "How quickly can I sell a house that needs major repairs?",
@@ -4480,7 +4484,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Understanding Inherited Property Sales in Boise</h2>
       <p>Inheriting a house in Boise or the greater Treasure Valley comes with both emotional weight and practical responsibilities. While dealing with the loss of a loved one, you're suddenly faced with decisions about property taxes, maintenance, insurance, and ultimately whether to keep or sell the home. For many heirs, especially those who live out of state or already own their own home, selling makes the most sense—but the process can feel overwhelming.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've helped hundreds of families navigate inherited property sales throughout Ada and Canyon Counties. This comprehensive guide covers everything you need to know about selling an inherited house in Idaho, from probate requirements to tax implications to quick sale options.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've helped hundreds of families navigate inherited property sales throughout Ada and Canyon Counties. ", "")}This comprehensive guide covers everything you need to know about selling an inherited house in Idaho, from probate requirements to tax implications to quick sale options.</p>
 
       <h2>The Idaho Probate Process Explained</h2>
 
@@ -12581,7 +12585,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> from Home Buyer Boise. See exactly what we'll pay for your home, compare it to your other options, and make the informed decision that's right for you.</p>
 
-      <p>We've helped hundreds of Treasure Valley homeowners sell quickly and move forward with their lives. Whether you accept our offer or choose another path, we're here to help you understand your options.</p>
+      <p>${unverifiedTrustText("We've helped hundreds of Treasure Valley homeowners sell quickly and move forward with their lives. ", "")}Whether you accept our offer or choose another path, we're here to help you understand your options.</p>
     `,
     faqs: [
       {
@@ -13290,7 +13294,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Working with Home Buyer Boise in Meridian</h2>
 
-      <p>We've purchased dozens of homes throughout Meridian, from original downtown properties to newer subdivision homes. Our team knows Meridian's neighborhoods, values, and market dynamics intimately.</p>
+      <p>${unverifiedTrustText("We've purchased dozens of homes throughout Meridian, from original downtown properties to newer subdivision homes. ", "")}Our team knows Meridian's neighborhoods, values, and market dynamics intimately.</p>
 
       <p>When you contact us about your Meridian property, we'll:</p>
       <ul>

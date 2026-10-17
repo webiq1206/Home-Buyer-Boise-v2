@@ -2,7 +2,7 @@
  * Canonical entity registry for knowledge graph, schema, and AI surfaces.
  */
 
-import { BUSINESS_INFO } from "@/lib/seo";
+import { BUSINESS_INFO, SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
 import { SERVICES } from "@/shared/servicesData";
 import { CITIES } from "@/shared/contentData";
 
@@ -46,15 +46,21 @@ export const ORGANIZATION_ENTITY: OrganizationEntity = {
   id: "#organization",
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
-  description:
+  description: unverifiedTrustText(
     "Local cash home buyers serving the Boise Treasure Valley since 2018. Fair, human-reviewed offers with no fees or commissions.",
+    "Local cash home buyers serving the Boise Treasure Valley. Fair, human-reviewed offers with no fees or commissions.",
+  ),
   founded: BUSINESS_INFO.founded,
   phone: BUSINESS_INFO.phone,
   email: BUSINESS_INFO.email,
   trustSignals: [
-    BUSINESS_INFO.insurance,
-    ...BUSINESS_INFO.certifications,
-    `${BUSINESS_INFO.rating}/5 from ${BUSINESS_INFO.reviewCount} reviews`,
+    ...(SHOW_UNVERIFIED_TRUST
+      ? [
+          BUSINESS_INFO.insurance,
+          ...BUSINESS_INFO.certifications,
+          `${BUSINESS_INFO.rating}/5 from ${BUSINESS_INFO.reviewCount} reviews`,
+        ]
+      : []),
     "No automated offers — every property manually reviewed",
   ],
   sameAs: [
@@ -143,8 +149,10 @@ export const TEAM_ENTITIES: TeamEntity[] = [
       "Pre-foreclosure and distressed sales",
       "As-is property evaluation",
     ],
-    contributesToEEAT:
+    contributesToEEAT: unverifiedTrustText(
       "Local team with direct experience closing hundreds of Treasure Valley transactions since 2018.",
+      "",
+    ),
   },
 ];
 

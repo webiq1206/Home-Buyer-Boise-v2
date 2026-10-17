@@ -4,6 +4,17 @@
  * for cash home buying services across the Boise metro area
  */
 
+/**
+ * Unverified trust copy stays in source. Pages and schema emit it only when this is true.
+ * Typed as boolean so the hidden branches stay reachable if the flag is turned on.
+ */
+export const SHOW_UNVERIFIED_TRUST: boolean = false;
+
+/** Keep `claim` in the repo. Render it only while SHOW_UNVERIFIED_TRUST is on. */
+export function unverifiedTrustText(claim: string, visible = ""): string {
+  return SHOW_UNVERIFIED_TRUST ? claim : visible;
+}
+
 interface SEOMetaData {
   title: string;
   description: string;
@@ -203,11 +214,15 @@ export function generateMetaDescription(params: ServiceSEOParams): string {
   
   if (city) {
     // Natural city-focused description for cash home buyers
-    return `Sell your house fast for cash in ${city}, Idaho. Fair offers in 24 hours, close on your timeline. No fees, no commissions, no repairs needed. Licensed cash home buyers serving ${city} & Treasure Valley.`;
+    const cityDescription = `Sell your house fast for cash in ${city}, Idaho. Fair offers in 24 hours, close on your timeline. No fees, no commissions, no repairs needed.`;
+    const licensedClaim = ` Licensed cash home buyers serving ${city} & Treasure Valley.`;
+    return SHOW_UNVERIFIED_TRUST ? `${cityDescription}${licensedClaim}` : cityDescription;
   }
   
   // Service-focused description for cash home buying
-  return `Cash home buyers in Boise metro area. Fast closings, fair offers, no fees or commissions. We buy houses in any condition. Licensed, insured, trusted by Treasure Valley homeowners.`;
+  const serviceDescription = `Cash home buyers in Boise metro area. Fast closings, fair offers, no fees or commissions. We buy houses in any condition.`;
+  const licensedClaim = ` Licensed, insured, trusted by Treasure Valley homeowners.`;
+  return SHOW_UNVERIFIED_TRUST ? `${serviceDescription}${licensedClaim}` : serviceDescription;
 }
 
 /**

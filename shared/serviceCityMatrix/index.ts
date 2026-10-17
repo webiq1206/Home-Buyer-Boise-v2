@@ -1,4 +1,5 @@
 import { SERVICES } from "@/shared/servicesData";
+import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 import { CITIES } from "@/shared/contentData";
 import { CITY_LAYERS } from "./cityLayers";
 import { SERVICE_LAYERS } from "./serviceLayers";
@@ -16,7 +17,7 @@ function hashPair(serviceSlug: string, citySlug: string): number {
 
 const INTRO_VARIANTS = [
   (svc: string, city: string, situation: string, market: string, process: string) =>
-    `${svc} in ${city} often starts with ${situation}. ${market} Home Buyer Boise has purchased homes across the area since 2018 — ${process} Every offer is reviewed by our local team (not an automated algorithm), and you pay zero agent commissions or closing costs.`,
+    `${svc} in ${city} often starts with ${situation}. ${market}${SHOW_UNVERIFIED_TRUST ? " Home Buyer Boise has purchased homes across the area since 2018 —" : ""} ${process} Every offer is reviewed by our local team (not an automated algorithm), and you pay zero agent commissions or closing costs.`,
   (svc: string, city: string, situation: string, market: string, process: string) =>
     `Homeowners searching for ${svc.toLowerCase()} in ${city} frequently face ${situation}. ${market} We specialize in private, as-is purchases throughout ${city} with flexible closing dates. ${process} Call (208) 405-2274 for a no-obligation conversation — offers are prepared by a real person after reviewing your property.`,
   (svc: string, city: string, situation: string, market: string, process: string) =>
@@ -134,10 +135,12 @@ function buildEntry(serviceSlug: string, citySlug: string): ServiceCityMatrixEnt
       question: `How much can I net from ${service.name.toLowerCase()} in ${city.name}?`,
       answer: `Your net depends on mortgage payoff, liens, and condition. We provide an itemized estimate before you sign — the ${city.name} offer amount minus payoffs is your walk-away cash.`,
     },
-    {
-      question: `Is Home Buyer Boise licensed to buy in ${city.name}, Idaho?`,
-      answer: `We are established local buyers serving ${city.name} and the Treasure Valley since 2018 — fully insured with documented proof of funds available before you commit.`,
-    },
+    ...(SHOW_UNVERIFIED_TRUST
+      ? [{
+          question: `Is Home Buyer Boise licensed to buy in ${city.name}, Idaho?`,
+          answer: `We are established local buyers serving ${city.name} and the Treasure Valley since 2018 — fully insured with documented proof of funds available before you commit.`,
+        }]
+      : []),
   ];
 
   const relatedLinks: ServiceCityMatrixEntry["relatedLinks"] = [

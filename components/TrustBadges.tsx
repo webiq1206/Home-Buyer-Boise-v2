@@ -1,5 +1,6 @@
+import React from "react";
 import { Shield, Award, MapPin, Clock, Home, Star, CheckCircle, Users } from "lucide-react";
-import { BUSINESS_INFO } from "@/lib/seo";
+import { BUSINESS_INFO, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 interface TrustBadgesProps {
   variant?: "default" | "compact" | "hero";
@@ -8,7 +9,8 @@ interface TrustBadgesProps {
 }
 
 export function TrustBadges({ variant = "default", cityName, className = "" }: TrustBadgesProps) {
-  const yearsSince = new Date().getFullYear() - parseInt(BUSINESS_INFO.founded);
+  if (!SHOW_UNVERIFIED_TRUST) return null;
+
   const locationText = cityName || BUSINESS_INFO.address.city;
 
   const badges = [
@@ -77,6 +79,8 @@ interface TrustStatsProps {
 }
 
 export function TrustStats({ className = "" }: TrustStatsProps) {
+  if (!SHOW_UNVERIFIED_TRUST) return null;
+
   const yearsSince = new Date().getFullYear() - parseInt(BUSINESS_INFO.founded);
   
   const stats = [
@@ -118,24 +122,28 @@ export function CompanyCredentials({ className = "" }: CompanyCredentialsProps) 
     { 
       icon: Shield, 
       title: "Licensed & Insured",
-      description: `Fully licensed real estate investment company in the State of Idaho. ${BUSINESS_INFO.insurance}`
+      description: `Fully licensed real estate investment company in the State of Idaho. ${BUSINESS_INFO.insurance}`,
+      unverified: true,
     },
     { 
       icon: Award, 
       title: "BBB Accredited Business",
-      description: "Better Business Bureau accredited with an A+ rating. Zero unresolved complaints."
+      description: "Better Business Bureau accredited with an A+ rating. Zero unresolved complaints.",
+      unverified: true,
     },
     { 
       icon: MapPin, 
       title: "Local Boise Company",
-      description: `Not a national franchise. We're locally owned, headquartered at ${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.city}.`
+      description: `Not a national franchise. We're locally owned, headquartered at ${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.city}.`,
+      unverified: false,
     },
     { 
       icon: Users, 
       title: "Professional Network",
-      description: `${BUSINESS_INFO.certifications.join('. ')}. Member of local and national investor associations.`
+      description: `${BUSINESS_INFO.certifications.join('. ')}. Member of local and national investor associations.`,
+      unverified: true,
     },
-  ];
+  ].filter((credential) => SHOW_UNVERIFIED_TRUST || !credential.unverified);
 
   return (
     <section className={`py-16 md:py-24 ${className}`} data-testid="credentials-section">
@@ -169,6 +177,8 @@ export function CompanyCredentials({ className = "" }: CompanyCredentialsProps) 
 }
 
 export function ReviewHighlight({ className = "" }: { className?: string }) {
+  if (!SHOW_UNVERIFIED_TRUST) return null;
+
   return (
     <div className={`flex items-center gap-3 ${className}`} data-testid="review-highlight">
       <div className="flex">

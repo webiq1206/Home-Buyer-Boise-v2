@@ -95,7 +95,7 @@ export default function AuthorPage({ params }: PageProps) {
           </div>
           )}
 
-          {author.credentials && (
+          {author.credentials && author.credentials.length > 0 && (
             <div>
               <h2 className="text-2xl font-bold mb-3">Credentials</h2>
               <ul className="list-disc pl-5 space-y-1 text-muted-foreground">

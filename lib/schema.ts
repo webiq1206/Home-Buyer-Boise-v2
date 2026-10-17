@@ -4,7 +4,7 @@
  * Optimized for cash home buying / real estate investor business
  */
 
-import { BUSINESS_INFO, CITY_SEO_DATA, getBaseUrl } from './seo';
+import { BUSINESS_INFO, CITY_SEO_DATA, getBaseUrl, SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from './seo';
 
 interface SchemaContext {
   '@context': string;
@@ -27,7 +27,7 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
     '@type': ['LocalBusiness', 'RealEstateAgent'],
     '@id': `${baseUrl}#organization`,
     name: BUSINESS_INFO.name,
-    legalName: BUSINESS_INFO.legalName,
+    ...(SHOW_UNVERIFIED_TRUST ? { legalName: BUSINESS_INFO.legalName } : {}),
     description: `Professional cash home buyers serving ${city || 'the Boise metro area'}. We buy houses in any condition with fair cash offers in 24 hours. No fees, no commissions, close on your timeline.`,
     image: `${baseUrl}/og-image.png`,
     logo: `${baseUrl}/og-image.png`,
@@ -68,14 +68,8 @@ export function generateLocalBusinessSchema(city?: string): SchemaContext {
       addressRegion: 'ID',
       addressCountry: 'US',
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: BUSINESS_INFO.rating,
-      reviewCount: BUSINESS_INFO.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    foundingDate: BUSINESS_INFO.founded,
+    // rating and reviewCount stay on BUSINESS_INFO and are not emitted.
+    ...(SHOW_UNVERIFIED_TRUST ? { foundingDate: BUSINESS_INFO.founded } : {}),
     slogan: 'Sell Your House Fast for Cash in Boise',
     paymentAccepted: 'Cash, Wire Transfer, Certified Check',
     currenciesAccepted: 'USD',
@@ -199,11 +193,14 @@ export function generateOrganizationSchema(): SchemaContext {
     '@type': 'Organization',
     '@id': `${baseUrl}#organization`,
     name: BUSINESS_INFO.name,
-    legalName: BUSINESS_INFO.legalName,
+    ...(SHOW_UNVERIFIED_TRUST ? { legalName: BUSINESS_INFO.legalName } : {}),
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
-    description: 'Professional cash home buyers serving the Boise Treasure Valley since 2018. We buy houses in any condition with fair cash offers. Licensed, insured, and committed to helping homeowners sell fast.',
-    foundingDate: BUSINESS_INFO.founded,
+    description: unverifiedTrustText(
+      'Professional cash home buyers serving the Boise Treasure Valley since 2018. We buy houses in any condition with fair cash offers. Licensed, insured, and committed to helping homeowners sell fast.',
+      'Professional cash home buyers serving the Boise Treasure Valley. We buy houses in any condition with fair cash offers and are committed to helping homeowners sell fast.',
+    ),
+    ...(SHOW_UNVERIFIED_TRUST ? { foundingDate: BUSINESS_INFO.founded } : {}),
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
     address: {
@@ -231,41 +228,16 @@ export function generateOrganizationSchema(): SchemaContext {
 }
 
 /**
- * Generate Review schema for testimonials
+ * Formerly built testimonial review markup. It emits nothing so pages cannot
+ * serve star ratings or review objects. The function stays callable.
  */
-export function generateReviewSchema(reviews: Array<{
+export function generateReviewSchema(_reviews: Array<{
   author: string;
   rating: number;
   text: string;
   date: string;
-}>): SchemaContext {
-  const baseUrl = getBaseUrl();
-  
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${baseUrl}#organization`,
-    name: BUSINESS_INFO.name,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: BUSINESS_INFO.rating,
-      reviewCount: BUSINESS_INFO.reviewCount,
-    },
-    review: reviews.map(review => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: review.author,
-      },
-      datePublished: review.date,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating,
-        bestRating: 5,
-      },
-      reviewBody: review.text,
-    })),
-  };
+}>): null {
+  return null;
 }
 
 /**
