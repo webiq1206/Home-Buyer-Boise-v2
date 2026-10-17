@@ -170,7 +170,9 @@ test("trust badges, stats, and review highlight render nothing", () => {
 test("about title drops Since 2018 and keeps the rest", () => {
   assert.equal(aboutMetadata.title, "About Home Buyer Boise | Local Cash Home Buyers");
   assert.equal(String(aboutMetadata.description).includes("since 2018"), false);
+  assert.equal(String(aboutMetadata.description).toLowerCase().includes("trusted"), false);
   assert.match(String(aboutMetadata.description), /Treasure Valley/);
+  assert.match(String(aboutMetadata.description), /local cash home buyers/);
 });
 
 test("rendered copy omits unverified trust phrases", () => {
@@ -229,6 +231,7 @@ test("rendered copy omits unverified trust phrases", () => {
     "renovated hundreds",
     "dozens of homes throughout Meridian",
     "dozens of Boise homeowners",
+    "a trusted cash home buying company",
     "numerous properties",
     "many families in foreclosure",
     "many homeowners in tax-troubled",
@@ -331,6 +334,7 @@ test("llms files do not serve unverified trust lines", async () => {
   const quotePage = readFileSync(path.join(ROOT, "app/get-quote/page.tsx"), "utf8");
   assert.match(quotePage, /Over 500 homes purchased/);
   assert.match(quotePage, /SHOW_UNVERIFIED_TRUST && <li>✓ Over 500 homes purchased<\/li>/);
+  assert.match(quotePage, /SHOW_UNVERIFIED_TRUST && <li>✓ Local, family-owned company<\/li>/);
 });
 
 test("testimonials API returns an empty list while the flag is off", async () => {
@@ -349,8 +353,10 @@ test("desktop grids match the visible card count", () => {
   assert.match(about, /lg:grid-cols-3 gap-8/);
   assert.match(about, /lg:grid-cols-4 gap-8/);
   assert.match(areas, /lg:grid-cols-5 gap-6/);
-  assert.match(city, /lg:grid-cols-5 gap-6/);
+  assert.match(city, /md:grid-cols-3 lg:grid-cols-5 gap-6/);
   assert.match(city, /lg:grid-cols-3 gap-6/);
+  assert.match(city, /Why \$\{city\.name\} Homeowners Trust Home Buyer Boise/);
+  assert.match(city, /Cash Home Buyers in \$\{city\.name\}/);
   const footer = readFileSync(path.join(ROOT, "components/Footer.tsx"), "utf8");
   assert.match(footer, /Trusted Cash Home Buyers Serving the Boise Metro Area/);
   assert.match(footer, /Cash Home Buyers in Boise/);

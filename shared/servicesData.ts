@@ -191,7 +191,10 @@ export const SERVICE_CONTENT = {
   },
   "we-buy-houses": {
     heroSubtitle: "We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, and Middleton. No fees, no repairs, fair cash offers.",
-    intro: "Home Buyer Boise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+    intro: unverifiedTrustText(
+      "Home Buyer Boise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+      "Home Buyer Boise is a cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+    ),
     whyChoose: [
       "Buy houses in any condition",
       "No contingencies or financing delays",

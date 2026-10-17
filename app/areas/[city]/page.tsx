@@ -528,7 +528,9 @@ export default function AreaPage({ params }: PageProps) {
       <section className="py-12 lg:py-16">
         <div className="container px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
-            Why {city.name} Homeowners Trust Home Buyer Boise
+            {SHOW_UNVERIFIED_TRUST
+              ? `Why ${city.name} Homeowners Trust Home Buyer Boise`
+              : `Cash Home Buyers in ${city.name}`}
           </h2>
           {SHOW_UNVERIFIED_TRUST && (
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -537,7 +539,7 @@ export default function AreaPage({ params }: PageProps) {
           )}
           <div className={SHOW_UNVERIFIED_TRUST
             ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
-            : "grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"}>
+            : "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"}>
             {trustFeatures.filter((feature) => SHOW_UNVERIFIED_TRUST || !("unverified" in feature && feature.unverified)).map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
