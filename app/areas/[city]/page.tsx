@@ -535,7 +535,9 @@ export default function AreaPage({ params }: PageProps) {
             We've helped hundreds of homeowners sell their properties quickly and fairly
           </p>
           )}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className={SHOW_UNVERIFIED_TRUST
+            ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+            : "grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"}>
             {trustFeatures.filter((feature) => SHOW_UNVERIFIED_TRUST || !("unverified" in feature && feature.unverified)).map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">

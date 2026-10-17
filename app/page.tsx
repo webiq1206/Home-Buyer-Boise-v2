@@ -189,23 +189,25 @@ export default function HomePage() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="relative py-12 md:py-16 overflow-hidden">
-        {/* Stars Background */}
+      <section className={`relative py-12 md:py-16 overflow-hidden ${SHOW_UNVERIFIED_TRUST ? "" : "bg-muted"}`}>
+        {SHOW_UNVERIFIED_TRUST && (
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/stars-background.png"
-            alt={SHOW_UNVERIFIED_TRUST ? "Five star rating background representing Home Buyer Boise customer satisfaction" : ""}
+            alt="Five star rating background representing Home Buyer Boise customer satisfaction"
             fill
             sizes="100vw"
             className="object-cover"
             style={{ objectPosition: 'center center' }}
           />
         </div>
-        {/* Light overlay for text readability */}
-        <div className="absolute inset-0 z-[1] bg-white/40"></div>
+        )}
+        {SHOW_UNVERIFIED_TRUST && <div className="absolute inset-0 z-[1] bg-white/40"></div>}
         <div className="container px-4 md:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className={SHOW_UNVERIFIED_TRUST
+              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+              : "grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6"}>
               {trustIndicators.map((indicator, index) => (
                 <Card key={index} className="text-center" data-testid={`card-trust-${index}`}>
                   <CardContent className="pt-5 pb-5 md:pt-6 md:pb-6 space-y-2 md:space-y-3 px-4 md:px-6">

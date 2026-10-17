@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { MapPin } from "lucide-react";
+import { PinIcon } from "@/components/SafeIcons";
 
 interface City {
   name: string;
@@ -49,7 +49,7 @@ export function ServiceAreaMap({ coverageNote = "" }: { coverageNote?: string })
     <Card data-testid="card-service-area-map">
       <CardHeader>
         <CardTitle className="flex items-center gap-2" data-testid="heading-map">
-          <MapPin className="h-5 w-5" />
+          <PinIcon className="h-5 w-5" />
           Our Service Area
         </CardTitle>
         <CardDescription data-testid="desc-map">
@@ -147,7 +147,7 @@ export function ServiceAreaMap({ coverageNote = "" }: { coverageNote?: string })
                   data-testid={`link-city-${area.slug}`}
                 >
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-primary" />
+                    <PinIcon className="h-4 w-4 text-primary" />
                     <span className="font-medium">{area.name}, ID</span>
                   </div>
                   <span className="text-sm text-muted-foreground group-hover:text-foreground">

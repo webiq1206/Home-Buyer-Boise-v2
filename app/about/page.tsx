@@ -82,7 +82,9 @@ export default function AboutPage() {
         <section className="py-16 lg:py-24 bg-muted">
           <div className="container px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Why Homeowners Choose Us</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className={SHOW_UNVERIFIED_TRUST
+              ? "grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              : "grid md:grid-cols-3 lg:grid-cols-3 gap-8"}>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Home className="h-8 w-8 text-primary" />

@@ -1,0 +1,32 @@
+aggregateRating
+ratingValue
+reviewCount
+"@type":"Review"
+legalName
+foundingDate
+4\.9
+\b189\b
+\bA\+
+\$3M|3,000,000|3M E&O|E&O
+\b85\+|85 plus
+\b2018\b
+[Ll]icensed
+LICENSED
+BBB|Better Business
+[Ss]uccess [Ss]tor
+[Tt]rusted
+[Hh]undreds
+[Dd]ozens
+[Cc]ertifi
+[Tt]estimonial
+What Our (Clients|Customers) Say
+Michael R\.|Sarah & Tom K\.|Jennifer L\.|David M\.|Linda & James P\.|Robert H\.|The M\. Family|Relocated Meridian Seller|Nampa Homeowner|Eagle Sellers|Crimson Point Seller|Estate Executor
+[Ii]nsured
+[Mm]any (homeowners|families|sellers|clients|customers)
+[Cc]ountless
+[Nn]umerous
+[Tt]housands
+\b[Oo]ver [0-9][0-9,]*\+? ?(homes|houses|families|homeowners|sellers|clients|customers|transactions|deals|properties|reviews)
+\b[0-9][0-9,]*\+ (homes|houses|families|homeowners|sellers|clients|customers|transactions|deals|properties|reviews)
+five-star|5-star|five star|★
+They\ made\ a\ stressful\ inheri|After\ inheriting\ my\ parents'|We\ had\ to\ relocate\ for\ work\ |I\ was\ behind\ on\ payments\ and|After\ years\ of\ dealing\ with\ |We\ needed\ to\ downsize\ quickl|Going\ through\ a\ divorce\ is\ h

@@ -8,7 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { trackEvent } from '@/components/Analytics';
-import { Send, Loader2, CheckCircle } from 'lucide-react';
+import { Loader2, CheckCircle } from 'lucide-react';
+import { SendIcon } from '@/components/SafeIcons';
 
 interface ContactFormProps {
   source?: string;
@@ -188,7 +189,7 @@ export function ContactForm({ source = 'contact' }: ContactFormProps) {
           </>
         ) : (
           <>
-            <Send className="mr-2 h-4 w-4" />
+            <SendIcon className="mr-2 h-4 w-4" />
             Send Message
           </>
         )}

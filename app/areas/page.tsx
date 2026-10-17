@@ -117,7 +117,7 @@ export default function AreasPage() {
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
             We buy houses throughout Ada County, including these cities
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {adaCountyCities.map((city) => (
               <Link
                 key={city.slug}

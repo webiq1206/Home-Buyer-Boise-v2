@@ -1,6 +1,6 @@
 import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
-/** Exact lines kept in public/llms*.txt. Omitted from the served body while the flag is off. */
+/** Exact lines kept in content/llms*.txt. Omitted from the served body while the flag is off. */
 export const HIDDEN_LLMS_SNIPPETS = [
   "Licensed Idaho real estate investors",
   "Bonded and insured ($3M E&O coverage)",
@@ -17,6 +17,8 @@ const INSURED_OPERATORS = "6. **Professional Team**: Insured and experienced loc
 const OPERATORS_WITHOUT_INSURANCE_CLAIM = "6. **Professional Team**: experienced local operators";
 const PURCHASED_CONDITION_CLAIM =
   "We've purchased homes with severe fire damage, extensive water damage, foundation issues, mold, hoarding situations, and complete gut rehab needs. ";
+const TRUSTED_LOCAL_BUYER = "the trusted local cash home buyer";
+const LOCAL_BUYER = "the local cash home buyer";
 
 export function hideUnverifiedLlms(text: string): string {
   if (SHOW_UNVERIFIED_TRUST) return text;
@@ -25,7 +27,7 @@ export function hideUnverifiedLlms(text: string): string {
     .filter((line) => !HIDDEN_LLMS_SNIPPETS.some((snippet) => line.includes(snippet)))
     .map((line) => {
       if (line.includes(INSURED_OPERATORS)) return OPERATORS_WITHOUT_INSURANCE_CLAIM;
-      return line.replace(PURCHASED_CONDITION_CLAIM, "");
+      return line.replace(PURCHASED_CONDITION_CLAIM, "").replace(TRUSTED_LOCAL_BUYER, LOCAL_BUYER);
     })
     .join("\n");
 }

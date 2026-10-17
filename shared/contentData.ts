@@ -1,4 +1,6 @@
-// City content data for Treasure Valley area pages
+// City content data for Treasure Valley area pages.
+// Server-only claim copy. Client components must import citiesCatalog instead.
+import "server-only";
 import { unverifiedTrustText } from "@/lib/seo";
 
 export interface CityData {

@@ -145,6 +145,8 @@ export function CompanyCredentials({ className = "" }: CompanyCredentialsProps) 
     },
   ].filter((credential) => SHOW_UNVERIFIED_TRUST || !credential.unverified);
 
+  if (credentials.length < 2) return null;
+
   return (
     <section className={`py-16 md:py-24 ${className}`} data-testid="credentials-section">
       <div className="container px-4">

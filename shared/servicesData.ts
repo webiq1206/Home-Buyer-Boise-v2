@@ -1,4 +1,6 @@
-// High-value service pages optimized for local SEO
+// High-value service pages optimized for local SEO.
+// Server-only claim copy. Client components must import servicesCatalog instead.
+import "server-only";
 import { SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
 
 export {

@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Home, MapPin, Loader2 } from "lucide-react";
+import { Home, Loader2 } from "lucide-react";
+import { PinIcon } from "@/components/SafeIcons";
 
 interface AddressResult {
   label: string;
@@ -180,7 +181,7 @@ export function HeroAddressLookup() {
                   className="h-14 pl-12 pr-10 text-base border-border/50 focus:border-primary"
                   data-testid="input-hero-address"
                 />
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <PinIcon className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 {isLoading && (
                   <Loader2 className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground animate-spin" />
                 )}
@@ -200,7 +201,7 @@ export function HeroAddressLookup() {
                         className="w-full flex items-center gap-2 px-3 py-2 text-left text-sm hover:bg-primary/5 rounded-md transition-colors"
                         data-testid={`address-suggestion-${index}`}
                       >
-                        <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
+                        <PinIcon className="h-4 w-4 text-primary flex-shrink-0" />
                         <span className="truncate">{result.label}</span>
                       </button>
                     ))}

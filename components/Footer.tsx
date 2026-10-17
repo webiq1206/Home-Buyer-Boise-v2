@@ -22,7 +22,9 @@ export function Footer() {
             <div className="mb-4">
               <Image 
                 src="/logo.png" 
-                alt="Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley" 
+                alt={SHOW_UNVERIFIED_TRUST
+                  ? "Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley"
+                  : "Home Buyer Boise - Cash Home Buyers in Boise"} 
                 width={192}
                 height={48}
                 sizes="192px"
@@ -30,7 +32,9 @@ export function Footer() {
               />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              Trusted Cash Home Buyers Serving the Boise Metro Area
+              {SHOW_UNVERIFIED_TRUST
+                ? "Trusted Cash Home Buyers Serving the Boise Metro Area"
+                : "Cash Home Buyers in Boise"}
             </p>
             <div className="space-y-2">
               <a href="tel:2084052274" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-phone-footer">

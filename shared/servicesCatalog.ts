@@ -182,3 +182,10 @@ export function getAllServiceSlugs(): string[] {
 export function getServiceBySlug(slug: string): Service | undefined {
   return SERVICES.find(service => service.slug === slug);
 }
+
+/** Slug, label, and blurb for the header menu. No claim copy. */
+export const NAV_SERVICES = SERVICES.map((service) => ({
+  slug: service.slug,
+  name: service.name,
+  metaDescription: service.metaDescription,
+}));

@@ -14,8 +14,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, FileText, MapPin } from "lucide-react";
-import { SERVICES } from "@/shared/servicesCatalog";
+import { Menu, FileText } from "lucide-react";
+import { PinIcon } from "@/components/SafeIcons";
+import { NAV_SERVICES } from "@/shared/servicesCatalog";
 import { NAV_CITIES } from "@/shared/citiesCatalog";
 
 export function Navigation() {
@@ -61,7 +62,7 @@ export function Navigation() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                    {SERVICES.map((service) => (
+                    {NAV_SERVICES.map((service) => (
                       <li key={service.slug}>
                         <Link href={`/services/${service.slug}`}>
                           <NavigationMenuLink asChild>
@@ -90,7 +91,7 @@ export function Navigation() {
                         <Link href={`/areas/${city.slug}`}>
                           <NavigationMenuLink asChild>
                             <div className="flex items-center gap-2 select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover-elevate active-elevate-2" data-testid={`nav-area-${city.slug}`}>
-                              <MapPin className="h-4 w-4 text-primary" />
+                              <PinIcon className="h-4 w-4 text-primary" />
                               <div className="text-sm font-medium">{city.name}, ID</div>
                             </div>
                           </NavigationMenuLink>
@@ -231,7 +232,7 @@ export function Navigation() {
                   <div className="px-4 py-2 text-xs font-semibold text-muted-foreground">
                     SERVICES
                   </div>
-                  {SERVICES.map((service) => (
+                  {NAV_SERVICES.map((service) => (
                     <Link key={service.slug} href={`/services/${service.slug}`} onClick={() => setMobileOpen(false)}>
                       <div className="px-4 py-2 text-sm rounded-md hover-elevate active-elevate-2 transition-colors" data-testid={`link-service-${service.slug}-mobile`}>
                         {service.name}
@@ -248,7 +249,7 @@ export function Navigation() {
                   {NAV_CITIES.map((city) => (
                     <Link key={city.slug} href={`/areas/${city.slug}`} onClick={() => setMobileOpen(false)}>
                       <div className="px-4 py-2 text-sm rounded-md hover-elevate active-elevate-2 transition-colors flex items-center gap-2" data-testid={`link-area-${city.slug}-mobile`}>
-                        <MapPin className="h-3 w-3" />
+                        <PinIcon className="h-3 w-3" />
                         {city.name}, ID
                       </div>
                     </Link>

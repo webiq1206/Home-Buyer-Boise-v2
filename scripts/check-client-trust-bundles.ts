@@ -1,37 +1,24 @@
 /**
  * Fail the build when hidden Home Buyer Boise claims ship in client JavaScript.
- * Scans .next/static (the browser bundles). Server RSC output is out of scope.
+ * Scans every .js file under .next/static with scripts/hbb-pr6-grep-terms.txt.
  *
- * Short tokens only fail when the surrounding text is a claim (reviews, star
- * rating, BBB). That skips React error 189, leaflet keycodes, minified `A+`
- * arithmetic, and SVG path data such as the map-pin "4.993".
+ * Next, React, webpack, Leaflet, and Radix ship a few identifiers that match
+ * those terms but are not claims. Those exact library fingerprints are masked
+ * before the scan. Every other hit fails the build.
  */
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
-import { PROJECTS } from "../shared/projectsData";
 
 const ROOT = path.resolve(__dirname, "..");
 const STATIC_DIR = path.join(ROOT, ".next/static");
+const TERMS_FILE = path.join(ROOT, "scripts/hbb-pr6-grep-terms.txt");
 
-const PROSE_PHRASES = [
-  "since 2018",
-  "$3m",
-  "e&o",
-  "85+",
-  "certified real estate investor",
-  "cash buyer network",
-  "hundreds of",
-  "dozens of",
-  ...PROJECTS.flatMap((project) =>
-    [project.customerName, project.testimonialQuote].filter((value): value is string => Boolean(value)),
-  ),
-];
-
-const QUOTED_TOKENS: Array<{ label: string; pattern: RegExp; near: RegExp }> = [
-  { label: "189", pattern: /(?<!\d)189(?!\d)/g, near: /review|rating|star|customer/i },
-  { label: "4.9", pattern: /4\.9(?!\d)/g, near: /star|rating|review/i },
-  { label: "BBB", pattern: /BBB/g, near: /accredit|rating|business|A\+/i },
-  { label: "A+", pattern: /A\+/g, near: /rating|BBB|accredit/i },
+const LIBRARY_FINGERPRINTS = [
+  "trustedTypes",
+  "__unsafeCreateTrustedScriptURL",
+  "isTrusted",
+  "zoomOut:[189",
+  "E-A+y.offsetTop",
 ];
 
 function walkJs(dir: string, acc: string[] = []): string[] {
@@ -44,70 +31,79 @@ function walkJs(dir: string, acc: string[] = []): string[] {
   return acc;
 }
 
+function maskLibraryFingerprints(text: string): string {
+  let out = text;
+  for (const fingerprint of LIBRARY_FINGERPRINTS) {
+    out = out.split(fingerprint).join(" ".repeat(fingerprint.length));
+  }
+  return out.replace(/Error\([A-Za-z]\(189\)\)/g, (match) => " ".repeat(match.length));
+}
+
+function loadTerms(): RegExp[] {
+  return readFileSync(TERMS_FILE, "utf8")
+    .split("\n")
+    .map((line) => line.replace(/\s+$/, ""))
+    .filter((line) => line.length > 0)
+    .map((line) => new RegExp(line, "g"));
+}
+
 interface Hit {
   file: string;
-  label: string;
+  term: string;
   context: string;
 }
 
 function contextAt(text: string, index: number, length: number): string {
-  const start = Math.max(0, index - 70);
-  const end = Math.min(text.length, index + length + 70);
+  const start = Math.max(0, index - 60);
+  const end = Math.min(text.length, index + length + 60);
   return text.slice(start, end).replace(/\s+/g, " ");
 }
 
-function scanFile(file: string): Hit[] {
-  const text = readFileSync(file, "utf8");
-  const lower = text.toLowerCase();
+function scan(text: string, terms: RegExp[], file: string): Hit[] {
   const hits: Hit[] = [];
-  const rel = path.relative(ROOT, file);
-
-  for (const phrase of PROSE_PHRASES) {
-    const needle = phrase.toLowerCase();
-    let from = 0;
-    while (from < lower.length) {
-      const index = lower.indexOf(needle, from);
-      if (index === -1) break;
-      hits.push({ file: rel, label: phrase, context: contextAt(text, index, phrase.length) });
-      from = index + needle.length;
-    }
-  }
-
-  for (const token of QUOTED_TOKENS) {
-    token.pattern.lastIndex = 0;
+  for (const term of terms) {
+    term.lastIndex = 0;
     let match: RegExpExecArray | null;
-    while ((match = token.pattern.exec(text))) {
-      const windowText = text.slice(Math.max(0, match.index - 48), match.index + match[0].length + 48);
-      if (!token.near.test(windowText)) continue;
+    while ((match = term.exec(text))) {
       hits.push({
-        file: rel,
-        label: token.label,
+        file,
+        term: term.source,
         context: contextAt(text, match.index, match[0].length),
       });
+      if (match[0].length === 0) term.lastIndex += 1;
     }
   }
-
   return hits;
 }
 
 function main() {
-  if (!statSync(STATIC_DIR, { throwIfNoEntry: false })?.isDirectory()) {
-    console.error(`Missing ${STATIC_DIR}. Run next build before this check.`);
+  const terms = loadTerms();
+  const files = walkJs(STATIC_DIR);
+  const claimHits: Hit[] = [];
+  let libraryHits = 0;
+
+  for (const file of files) {
+    const raw = readFileSync(file, "utf8");
+    const rel = path.relative(ROOT, file);
+    const rawHits = scan(raw, terms, rel);
+    const maskedHits = scan(maskLibraryFingerprints(raw), terms, rel);
+    libraryHits += rawHits.length - maskedHits.length;
+    claimHits.push(...maskedHits);
+  }
+
+  console.log(
+    `client trust bundle check: ${files.length} files, ${terms.length} terms, ${libraryHits} library-fingerprint hits ignored`,
+  );
+
+  if (claimHits.length > 0) {
+    for (const hit of claimHits) {
+      console.error(`${hit.file}: /${hit.term}/ ${hit.context}`);
+    }
+    console.error(`client trust bundle check: ${claimHits.length} claim hits`);
     process.exit(1);
   }
 
-  const files = walkJs(STATIC_DIR);
-  const hits = files.flatMap(scanFile);
-  if (hits.length === 0) {
-    console.log(`client trust bundle check: no hidden claims in ${files.length} files under .next/static`);
-    return;
-  }
-
-  console.error(`client trust bundle check: ${hits.length} hidden claim match(es)`);
-  for (const hit of hits) {
-    console.error(`\n${hit.file}\n  ${hit.label}\n  ${hit.context}`);
-  }
-  process.exit(1);
+  console.log("client trust bundle check: no claim hits in .next/static");
 }
 
 main();

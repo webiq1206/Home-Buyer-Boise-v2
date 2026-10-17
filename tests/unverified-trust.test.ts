@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -33,7 +33,10 @@ import { ORGANIZATION_ENTITY } from "../shared/entityGraph";
 import { getSitewideFaqs } from "../shared/faqData";
 import { generateServiceCityContent } from "../shared/serviceCityContent";
 import { NAV_CITIES } from "../shared/citiesCatalog";
-import { SERVICES as CATALOG_SERVICES } from "../shared/servicesCatalog";
+import { NAV_SERVICES, SERVICES as CATALOG_SERVICES } from "../shared/servicesCatalog";
+import { GET as getLlms } from "../app/llms.txt/route";
+import { GET as getLlmsFull } from "../app/llms-full.txt/route";
+import { GET as getTestimonials } from "../app/api/testimonials/route";
 import { SERVICE_CONTENT, SERVICES } from "../shared/servicesData";
 import { metadata as aboutMetadata } from "../app/about/page";
 
@@ -155,7 +158,13 @@ test("trust badges, stats, and review highlight render nothing", () => {
   ]) {
     assert.equal(html.includes(phrase), false, phrase);
   }
-  assert.match(html, /Local Boise Company/);
+  assert.equal(html.includes("Local Boise Company"), false);
+  assert.equal(html.includes("Why Trust"), false);
+  assert.equal(html.includes("credentials to back up our promises"), false);
+  const credentialsSource = readFileSync(path.join(ROOT, "components/TrustBadges.tsx"), "utf8");
+  assert.match(credentialsSource, /Local Boise Company/);
+  assert.match(credentialsSource, /Why Trust \{BUSINESS_INFO\.name\}\?/);
+  assert.match(credentialsSource, /credentials to back up our promises/);
 });
 
 test("about title drops Since 2018 and keeps the rest", () => {
@@ -256,11 +265,28 @@ test("client components do not import claim-bearing data modules", () => {
     CATALOG_SERVICES.map((service) => service.slug),
     SERVICES.map((service) => service.slug),
   );
+  assert.deepEqual(
+    NAV_SERVICES.map((service) => service.slug),
+    SERVICES.map((service) => service.slug),
+  );
+
+  const navigation = readFileSync(path.join(ROOT, "components/Navigation.tsx"), "utf8");
+  assert.match(navigation, /NAV_SERVICES/);
+  assert.equal(navigation.includes("servicesData"), false);
+
+  const testimonials = readFileSync(path.join(ROOT, "components/Testimonials.tsx"), "utf8");
+  assert.equal(testimonials.includes("use client"), false);
+  assert.equal(testimonials.includes("Michael R."), false);
+  assert.match(testimonials, /SHOW_UNVERIFIED_TRUST/);
+  assert.match(readFileSync(path.join(ROOT, "shared/fallbackSellerNotes.ts"), "utf8"), /Michael R\./);
 
   for (const relativePath of [
     "components/Navigation.tsx",
     "components/QuoteForm.tsx",
     "components/ServiceAreaMap.tsx",
+    "components/Testimonials.tsx",
+    "components/HeroAddressLookup.tsx",
+    "components/ContactForm.tsx",
   ]) {
     const source = readFileSync(path.join(ROOT, relativePath), "utf8");
     for (const forbidden of [
@@ -277,29 +303,58 @@ test("client components do not import claim-bearing data modules", () => {
   }
 });
 
-test("llms files do not serve unverified trust lines", () => {
-  const full = hideUnverifiedLlms(readFileSync(path.join(ROOT, "public/llms-full.txt"), "utf8"));
-  const plain = hideUnverifiedLlms(readFileSync(path.join(ROOT, "public/llms.txt"), "utf8"));
-  const served = `${full}\n${plain}`;
-  for (const phrase of [
-    "$3M",
-    "189",
-    "4.9",
-    "Better Business Bureau",
-    "Licensed Idaho real estate investors",
-    "85+",
-    "85 plus",
-    "Founded 2018",
-    "Insured and experienced",
-  ]) {
-    assert.equal(served.includes(phrase), false, phrase);
+test("llms files do not serve unverified trust lines", async () => {
+  assert.equal(existsSync(path.join(ROOT, "public/llms.txt")), false);
+  assert.equal(existsSync(path.join(ROOT, "public/llms-full.txt")), false);
+  const fullRaw = readFileSync(path.join(ROOT, "content/llms-full.txt"), "utf8");
+  const plainRaw = readFileSync(path.join(ROOT, "content/llms.txt"), "utf8");
+  const servedFull = hideUnverifiedLlms(fullRaw);
+  const servedPlain = hideUnverifiedLlms(plainRaw);
+  const served = `${servedPlain}\n${servedFull}`;
+  assert.equal(await (await getLlms()).text(), servedPlain);
+  assert.equal(await (await getLlmsFull()).text(), servedFull);
+  const terms = readFileSync(path.join(ROOT, "scripts/hbb-pr6-grep-terms.txt"), "utf8")
+    .split("\n")
+    .map((line) => line.replace(/\s+$/, ""))
+    .filter((line) => line.length > 0);
+  for (const term of terms) {
+    assert.equal(new RegExp(term).test(served), false, term);
   }
-  assert.match(readFileSync(path.join(ROOT, "public/llms-full.txt"), "utf8"), /\$3M E&O/);
-  assert.match(readFileSync(path.join(ROOT, "public/llms-full.txt"), "utf8"), /We've purchased homes with severe fire damage/);
+  assert.match(fullRaw, /\$3M E&O/);
+  assert.match(fullRaw, /We've purchased homes with severe fire damage/);
+  assert.match(plainRaw, /the trusted local cash home buyer/);
   assert.equal(served.includes("We've purchased homes with severe fire damage"), false);
+  assert.equal(served.includes("trusted local cash home buyer"), false);
   assert.match(served, /no condition we won't consider/);
   assert.match(served, /experienced local operators/);
+  assert.match(served, /the local cash home buyer/);
   const quotePage = readFileSync(path.join(ROOT, "app/get-quote/page.tsx"), "utf8");
   assert.match(quotePage, /Over 500 homes purchased/);
   assert.match(quotePage, /SHOW_UNVERIFIED_TRUST && <li>✓ Over 500 homes purchased<\/li>/);
+});
+
+test("testimonials API returns an empty list while the flag is off", async () => {
+  const response = await getTestimonials(new Request("http://localhost/api/testimonials"));
+  assert.deepEqual(await response.json(), []);
+});
+
+test("desktop grids match the visible card count", () => {
+  const home = readFileSync(path.join(ROOT, "app/page.tsx"), "utf8");
+  const about = readFileSync(path.join(ROOT, "app/about/page.tsx"), "utf8");
+  const areas = readFileSync(path.join(ROOT, "app/areas/page.tsx"), "utf8");
+  const city = readFileSync(path.join(ROOT, "app/areas/[city]/page.tsx"), "utf8");
+  assert.match(home, /grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6/);
+  assert.match(home, /lg:grid-cols-4 gap-4 md:gap-6/);
+  assert.match(home, /stars-background\.png/);
+  assert.match(about, /lg:grid-cols-3 gap-8/);
+  assert.match(about, /lg:grid-cols-4 gap-8/);
+  assert.match(areas, /lg:grid-cols-5 gap-6/);
+  assert.match(city, /lg:grid-cols-5 gap-6/);
+  assert.match(city, /lg:grid-cols-3 gap-6/);
+  const footer = readFileSync(path.join(ROOT, "components/Footer.tsx"), "utf8");
+  assert.match(footer, /Trusted Cash Home Buyers Serving the Boise Metro Area/);
+  assert.match(footer, /Cash Home Buyers in Boise/);
+  const email = readFileSync(path.join(ROOT, "lib/services/email.ts"), "utf8");
+  assert.match(email, /Treasure Valley's Most Trusted Cash Home Buyers/);
+  assert.match(email, /Treasure Valley's Cash Home Buyers/);
 });

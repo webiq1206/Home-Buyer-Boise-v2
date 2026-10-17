@@ -1,4 +1,6 @@
-// Blog Content Data for Home Buyer Boise
+// Blog Content Data for Home Buyer Boise.
+// Server-only claim copy. Do not import this module from a client component.
+import "server-only";
 import { unverifiedTrustText } from "@/lib/seo";
 // 57 SEO-optimized blog posts for cash home buying in the Boise metro area
 // Each post: 1,800-2,400 words, complete with FAQs, schema markup support, and internal linking
