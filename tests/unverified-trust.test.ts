@@ -32,6 +32,8 @@ import { CITIES } from "../shared/contentData";
 import { ORGANIZATION_ENTITY } from "../shared/entityGraph";
 import { getSitewideFaqs } from "../shared/faqData";
 import { generateServiceCityContent } from "../shared/serviceCityContent";
+import { NAV_CITIES } from "../shared/citiesCatalog";
+import { SERVICES as CATALOG_SERVICES } from "../shared/servicesCatalog";
 import { SERVICE_CONTENT, SERVICES } from "../shared/servicesData";
 import { metadata as aboutMetadata } from "../app/about/page";
 
@@ -243,6 +245,36 @@ test("rendered copy omits unverified trust phrases", () => {
   assert.match(rendered, /Check Better Business Bureau ratings/);
   assert.match(rendered, /licensed title compan/i);
   assert.match(rendered, /many homeowners prefer/i);
+});
+
+test("client components do not import claim-bearing data modules", () => {
+  assert.deepEqual(
+    NAV_CITIES.map((city) => `${city.slug}:${city.name}`),
+    CITIES.map((city) => `${city.slug}:${city.name}`),
+  );
+  assert.deepEqual(
+    CATALOG_SERVICES.map((service) => service.slug),
+    SERVICES.map((service) => service.slug),
+  );
+
+  for (const relativePath of [
+    "components/Navigation.tsx",
+    "components/QuoteForm.tsx",
+    "components/ServiceAreaMap.tsx",
+  ]) {
+    const source = readFileSync(path.join(ROOT, relativePath), "utf8");
+    for (const forbidden of [
+      "servicesData",
+      "contentData",
+      "blogContent",
+      "projectsData",
+      "since 2018",
+      "hundreds of",
+      "dozens of",
+    ]) {
+      assert.equal(source.includes(forbidden), false, `${relativePath} contains ${forbidden}`);
+    }
+  }
 });
 
 test("llms files do not serve unverified trust lines", () => {

@@ -6,6 +6,7 @@
     "dev": "next dev --port 5000",
     "prebuild": "npm run links:build && npm run links:audit",
     "build": "next build",
+    "postbuild": "tsx scripts/check-client-trust-bundles.ts",
     "start": "next start --port 5000",
     "lint": "next lint",
     "test": "tsx --test tests/unverified-trust.test.ts",

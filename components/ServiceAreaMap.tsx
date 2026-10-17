@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
-import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 interface City {
   name: string;
@@ -32,7 +31,7 @@ const serviceAreas = [
   { name: "Middleton", slug: "middleton" },
 ];
 
-export function ServiceAreaMap() {
+export function ServiceAreaMap({ coverageNote = "" }: { coverageNote?: string }) {
   const router = useRouter();
   
   const handleCityClick = (slug: string) => {
@@ -159,7 +158,7 @@ export function ServiceAreaMap() {
             ))}
             <div className="pt-4 border-t">
               <p className="text-sm text-muted-foreground" data-testid="text-coverage">
-                {SHOW_UNVERIFIED_TRUST ? "Serving the greater Treasure Valley region since 2018. " : ""}Professional cash home buying services available in all areas.
+                {coverageNote}Professional cash home buying services available in all areas.
               </p>
             </div>
           </div>

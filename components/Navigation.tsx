@@ -15,8 +15,8 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Menu, FileText, MapPin } from "lucide-react";
-import { SERVICES } from "@/shared/servicesData";
-import { CITIES } from "@/shared/contentData";
+import { SERVICES } from "@/shared/servicesCatalog";
+import { NAV_CITIES } from "@/shared/citiesCatalog";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -85,7 +85,7 @@ export function Navigation() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[300px] gap-3 p-4">
-                    {CITIES.map((city) => (
+                    {NAV_CITIES.map((city) => (
                       <li key={city.slug}>
                         <Link href={`/areas/${city.slug}`}>
                           <NavigationMenuLink asChild>
@@ -245,7 +245,7 @@ export function Navigation() {
                   <div className="px-4 py-2 text-xs font-semibold text-muted-foreground">
                     SERVICE AREAS
                   </div>
-                  {CITIES.map((city) => (
+                  {NAV_CITIES.map((city) => (
                     <Link key={city.slug} href={`/areas/${city.slug}`} onClick={() => setMobileOpen(false)}>
                       <div className="px-4 py-2 text-sm rounded-md hover-elevate active-elevate-2 transition-colors flex items-center gap-2" data-testid={`link-area-${city.slug}-mobile`}>
                         <MapPin className="h-3 w-3" />

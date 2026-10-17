@@ -12,7 +12,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { trackEvent } from '@/components/Analytics';
-import { CITIES } from '@/shared/contentData';
+import { NAV_CITIES } from '@/shared/citiesCatalog';
 import { 
   Home, 
   MapPin, 
@@ -319,7 +319,7 @@ export function QuoteForm() {
                     <SelectValue placeholder="Select city" />
                   </SelectTrigger>
                   <SelectContent>
-                    {CITIES.map(city => (
+                    {NAV_CITIES.map(city => (
                       <SelectItem key={city.slug} value={city.name}>
                         {city.name}, ID
                       </SelectItem>

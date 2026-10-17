@@ -458,7 +458,13 @@ export default function HomePage() {
                 Cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, Middleton and surrounding Treasure Valley areas
               </p>
             </div>
-            <ServiceAreaMap />
+            <ServiceAreaMap
+              coverageNote={
+                SHOW_UNVERIFIED_TRUST
+                  ? "Serving the greater Treasure Valley region since 2018. "
+                  : ""
+              }
+            />
           </div>
         </div>
       </section>
