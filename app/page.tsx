@@ -29,6 +29,7 @@ import {
   generateLocalBusinessSchema,
   generateWebPageSchema,
 } from "@/lib/schema";
+import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Home Buyer Boise | Sell Your House Fast for Cash",
@@ -67,23 +68,27 @@ const trustIndicators = [
     icon: Award,
     title: "Established 2018",
     description: "Six years buying homes in the Treasure Valley",
+    unverified: true,
   },
   {
     icon: Shield,
     title: "Licensed & Insured",
     description: "Fully licensed real estate investors",
+    unverified: true,
   },
   {
     icon: Wallet,
     title: "No Fees or Commissions",
     description: "We pay all closing costs and fees",
+    unverified: false,
   },
   {
     icon: Clock,
     title: "Close on Your Timeline",
     description: "Fast closings or take your time - you choose",
+    unverified: false,
   },
-];
+].filter((indicator) => SHOW_UNVERIFIED_TRUST || !indicator.unverified);
 
 const benefits = [
   {
@@ -141,10 +146,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column - Hero Content */}
               <div className="text-center lg:text-left space-y-6 md:space-y-8">
+                {SHOW_UNVERIFIED_TRUST && (
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                   <Shield className="h-4 w-4 text-white" />
                   <span className="text-sm font-medium text-white">Licensed & Insured Cash Home Buyers</span>
                 </div>
+                )}
                 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
                   Sell Your Boise House
@@ -182,8 +189,8 @@ export default function HomePage() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="relative py-12 md:py-16 overflow-hidden">
-        {/* Stars Background */}
+      <section className={`relative py-12 md:py-16 overflow-hidden ${SHOW_UNVERIFIED_TRUST ? "" : "bg-muted"}`}>
+        {SHOW_UNVERIFIED_TRUST && (
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/stars-background.png"
@@ -194,11 +201,13 @@ export default function HomePage() {
             style={{ objectPosition: 'center center' }}
           />
         </div>
-        {/* Light overlay for text readability */}
-        <div className="absolute inset-0 z-[1] bg-white/40"></div>
+        )}
+        {SHOW_UNVERIFIED_TRUST && <div className="absolute inset-0 z-[1] bg-white/40"></div>}
         <div className="container px-4 md:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className={SHOW_UNVERIFIED_TRUST
+              ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+              : "grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6"}>
               {trustIndicators.map((indicator, index) => (
                 <Card key={index} className="text-center" data-testid={`card-trust-${index}`}>
                   <CardContent className="pt-5 pb-5 md:pt-6 md:pb-6 space-y-2 md:space-y-3 px-4 md:px-6">
@@ -403,6 +412,7 @@ export default function HomePage() {
 
 
       {/* Testimonials */}
+      {SHOW_UNVERIFIED_TRUST && (
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Smiley Face Background */}
         <div className="absolute inset-0 z-0">
@@ -433,6 +443,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Trust Stats Section */}
       <TrustStats />
@@ -449,7 +460,13 @@ export default function HomePage() {
                 Cash home buyers serving Boise, Meridian, Eagle, Kuna, Star, Middleton and surrounding Treasure Valley areas
               </p>
             </div>
-            <ServiceAreaMap />
+            <ServiceAreaMap
+              coverageNote={
+                SHOW_UNVERIFIED_TRUST
+                  ? "Serving the greater Treasure Valley region since 2018. "
+                  : ""
+              }
+            />
           </div>
         </div>
       </section>
@@ -474,7 +491,7 @@ export default function HomePage() {
               Ready to get started?
             </h2>
             <p className="text-xl text-primary-foreground leading-relaxed">
-              Get your free cash offer today and discover why we&apos;re the Treasure Valley&apos;s most trusted home buyers.
+              Get your free cash offer today{SHOW_UNVERIFIED_TRUST ? " and discover why we're the Treasure Valley's most trusted home buyers" : ""}.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" variant="secondary" asChild data-testid="button-final-cta-quote">

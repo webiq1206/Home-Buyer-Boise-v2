@@ -16,7 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { getBaseUrl, BUSINESS_INFO } from "@/lib/seo";
+import { getBaseUrl, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 import { 
   CheckCircle, 
   ArrowRight, 
@@ -449,6 +449,7 @@ export default function ServicePage({ params }: PageProps) {
       )}
 
       {/* Testimonials Section */}
+      {SHOW_UNVERIFIED_TRUST && (
       <section className="py-16 lg:py-20 bg-muted/50">
         <div className="container px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
@@ -462,6 +463,7 @@ export default function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Other Services - Improved Design */}
       <section className="py-16 lg:py-20">

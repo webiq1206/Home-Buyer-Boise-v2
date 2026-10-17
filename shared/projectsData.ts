@@ -1,3 +1,6 @@
+// Server-only case-study copy. Do not import this module from a client component.
+import "server-only";
+
 export interface ProjectData {
   slug: string;
   title: string;

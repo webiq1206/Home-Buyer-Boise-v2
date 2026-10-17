@@ -16,6 +16,7 @@ import {
   generateBreadcrumbSchema,
 } from "@/lib/schema";
 import { Quote } from "lucide-react";
+import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 interface PageProps {
   params: { slug: string };
@@ -90,7 +91,7 @@ export default function ProjectPage({ params }: PageProps) {
             <p className="mt-2 font-medium">Timeline: {project.timeline}</p>
           </div>
 
-          {project.testimonialQuote && (
+          {SHOW_UNVERIFIED_TRUST && project.testimonialQuote && (
             <Card>
               <CardContent className="pt-6">
                 <Quote className="h-8 w-8 text-primary mb-3" />

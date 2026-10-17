@@ -12,10 +12,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { trackEvent } from '@/components/Analytics';
-import { CITIES } from '@/shared/contentData';
+import { NAV_CITIES } from '@/shared/citiesCatalog';
+import { PinIcon } from '@/components/SafeIcons';
 import { 
   Home, 
-  MapPin, 
   User, 
   CheckCircle, 
   ArrowRight, 
@@ -111,7 +111,7 @@ const timelines = [
 ];
 
 const steps = [
-  { id: 1, title: 'Property Address', icon: MapPin },
+  { id: 1, title: 'Property Address', icon: PinIcon },
   { id: 2, title: 'Property Details', icon: Home },
   { id: 3, title: 'Your Situation', icon: HelpCircle },
   { id: 4, title: 'Contact Info', icon: User },
@@ -291,7 +291,7 @@ export function QuoteForm() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
+              <PinIcon className="h-5 w-5" />
               Property Address
             </CardTitle>
             <CardDescription>
@@ -319,7 +319,7 @@ export function QuoteForm() {
                     <SelectValue placeholder="Select city" />
                   </SelectTrigger>
                   <SelectContent>
-                    {CITIES.map(city => (
+                    {NAV_CITIES.map(city => (
                       <SelectItem key={city.slug} value={city.name}>
                         {city.name}, ID
                       </SelectItem>

@@ -2,8 +2,13 @@ import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { testimonials } from '@/shared/schema';
 import { eq } from 'drizzle-orm';
+import { SHOW_UNVERIFIED_TRUST } from '@/lib/seo';
 
 export async function GET(request: Request) {
+  if (!SHOW_UNVERIFIED_TRUST) {
+    return NextResponse.json([]);
+  }
+
   try {
     const { searchParams } = new URL(request.url);
     const serviceType = searchParams.get('serviceType');
