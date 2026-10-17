@@ -232,7 +232,10 @@ export const SERVICE_LAYERS: Record<string, ServiceLayer> = {
   },
   "probate-sale": {
     slug: "probate-sale",
-    opener: "Probate sales demand title clarity, court awareness, and patience — we have closed dozens across Ada and Canyon Counties.",
+    opener: unverifiedTrustText(
+      "Probate sales demand title clarity, court awareness, and patience — we have closed dozens across Ada and Canyon Counties.",
+      "Probate sales demand title clarity, court awareness, and patience.",
+    ),
     sellerSituations: [
       "executors managing estate liquidation",
       "multiple heirs with conflicting timelines",

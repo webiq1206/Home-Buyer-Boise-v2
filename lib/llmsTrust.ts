@@ -15,12 +15,17 @@ export const HIDDEN_LLMS_SNIPPETS = [
 
 const INSURED_OPERATORS = "6. **Professional Team**: Insured and experienced local operators";
 const OPERATORS_WITHOUT_INSURANCE_CLAIM = "6. **Professional Team**: experienced local operators";
+const PURCHASED_CONDITION_CLAIM =
+  "We've purchased homes with severe fire damage, extensive water damage, foundation issues, mold, hoarding situations, and complete gut rehab needs. ";
 
 export function hideUnverifiedLlms(text: string): string {
   if (SHOW_UNVERIFIED_TRUST) return text;
   return text
     .split("\n")
     .filter((line) => !HIDDEN_LLMS_SNIPPETS.some((snippet) => line.includes(snippet)))
-    .map((line) => (line.includes(INSURED_OPERATORS) ? OPERATORS_WITHOUT_INSURANCE_CLAIM : line))
+    .map((line) => {
+      if (line.includes(INSURED_OPERATORS)) return OPERATORS_WITHOUT_INSURANCE_CLAIM;
+      return line.replace(PURCHASED_CONDITION_CLAIM, "");
+    })
     .join("\n");
 }

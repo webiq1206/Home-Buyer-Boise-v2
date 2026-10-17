@@ -157,7 +157,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>This is the most common concern we hear, and it's completely valid. The truth is that a cash offer will typically be below full retail value—but that's not the complete picture. When you factor in the costs you're avoiding (repairs, commissions, carrying costs, and uncertainty), many sellers find they net a similar amount while gaining speed and certainty.</p>
 
       <h3>"Is This a Scam?"</h3>
-      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, and never ask for money upfront. ${unverifiedTrustText("We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.", "")}</p>
+      <p>The cash home buying industry does have some bad actors, which is why due diligence matters. Legitimate companies like Home Buyer Boise ${unverifiedTrustText("have verifiable track records, provide references from past sellers, ", "")}use licensed title companies for closings, and never ask for money upfront. ${unverifiedTrustText("We encourage you to verify our reputation through the Better Business Bureau and local real estate professionals.", "")}</p>
 
       <h3>"What If I Change My Mind?"</h3>
       <p>Our offers come with no obligations. Until you sign a purchase agreement, you're free to explore other options or decide not to sell. Even after signing, Idaho law provides certain protections and cooling-off periods.</p>
@@ -210,7 +210,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "Do you buy houses in any condition?",
-        answer: "Yes, we buy houses in any condition throughout the Boise metro area. Whether your home needs minor cosmetic updates or major structural repairs, we're interested. We've purchased homes with roof damage, foundation issues, outdated systems, and more."
+        answer: "Yes, we buy houses in any condition throughout the Boise metro area. Whether your home needs minor cosmetic updates or major structural repairs, we're interested. " + unverifiedTrustText("We've purchased homes with roof damage, foundation issues, outdated systems, and more.", "")
       },
       {
         question: "How is your cash offer calculated?",
@@ -885,9 +885,9 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Why Choose Home Buyer Boise for Your As-Is Sale?</h2>
 
-      <p>We've built our business buying as-is properties in the Treasure Valley. Our advantages include:</p>
+      <p>${unverifiedTrustText("We've built our business buying as-is properties in the Treasure Valley. ", "")}Our advantages include:</p>
       <ul>
-        <li><strong>Experience:</strong> We've purchased homes in every condition imaginable</li>
+        <li><strong>Experience:</strong> ${unverifiedTrustText("We've purchased homes in every condition imaginable", "We buy homes in any condition")}</li>
         <li><strong>Contractor relationships:</strong> Our renovation costs are lower than retail</li>
         <li><strong>Fair pricing:</strong> We make competitive offers based on accurate repair estimates</li>
         <li><strong>Fast closing:</strong> We can close in as little as 7 days</li>
@@ -1121,8 +1121,14 @@ export const BLOG_POSTS: BlogPostData[] = [
     `,
     faqs: [
       {
-        question: "What's the fastest you've ever closed on a Boise home?",
-        answer: "We've closed in as little as 5 days when the seller had an urgent need and there were no title complications. Typical fast closings are 7-10 days, with 14 days being common when sellers want a bit more time to prepare for their move."
+        question: unverifiedTrustText(
+          "What's the fastest you've ever closed on a Boise home?",
+          "How fast can a cash sale close?",
+        ),
+        answer: unverifiedTrustText(
+          "We've closed in as little as 5 days when the seller had an urgent need and there were no title complications. Typical fast closings are 7-10 days, with 14 days being common when sellers want a bit more time to prepare for their move.",
+          "Typical fast closings are 7-10 days, with 14 days being common when sellers want a bit more time to prepare for their move.",
+        )
       },
       {
         question: "Why do traditional sales take so long?",
@@ -1285,7 +1291,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Get Help Today</h2>
 
-      <p>At Home Buyer Boise, we've helped many Treasure Valley homeowners avoid foreclosure through fast cash sales. We understand the stress you're under and work quickly to provide solutions.</p>
+      <p>At Home Buyer Boise, ${unverifiedTrustText("we've helped many Treasure Valley homeowners avoid foreclosure through fast cash sales. ", "")}We understand the stress you're under and work quickly to provide solutions.</p>
 
       <ul>
         <li><a href="/get-quote">Request a free cash offer</a> within 24 hours</li>
@@ -1375,7 +1381,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>If probate is nearly complete, transfer to heirs can happen first</li>
       </ul>
 
-      <p>We recommend consulting with a probate attorney to understand your specific situation. At Home Buyer Boise, we've worked with many estate sales and can coordinate with your attorney throughout the process.</p>
+      <p>We recommend consulting with a probate attorney to understand your specific situation. ${unverifiedTrustText("At Home Buyer Boise, we've worked with many estate sales and can coordinate with your attorney throughout the process.", "At Home Buyer Boise, we can coordinate with your attorney throughout the process.")}</p>
 
       <h2>Your Options for an Inherited Boise Home</h2>
 
@@ -2588,7 +2594,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       
       <p>A house fire disrupts every aspect of life. While you can't undo the damage, you can control how you move forward. Whether you choose to rebuild, repair and sell, or sell as-is, the goal is the same: to get your life back on track as quickly and smoothly as possible.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many Treasure Valley families move on after fire damage. We understand this isn't just a transaction—it's about helping you close a difficult chapter and start fresh. Contact us today to explore your options.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've helped many Treasure Valley families move on after fire damage. ", "")}We understand this isn't just a transaction—it's about helping you close a difficult chapter and start fresh. Contact us today to explore your options.</p>
     `,
     faqs: [
       {
@@ -3351,7 +3357,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>At <a href="/about">Home Buyer Boise</a>, we approach hoarder properties with understanding and professionalism:</p>
 
       <h3>Non-Judgmental Evaluation</h3>
-      <p>We've seen every level of hoarding situation. We're here to help, not judge. Our property visits are professional and confidential.</p>
+      <p>${unverifiedTrustText("We've seen every level of hoarding situation. ", "")}We're here to help, not judge. Our property visits are professional and confidential.</p>
 
       <h3>Contents-Included Purchase</h3>
       <p>You don't need to clear anything. We purchase the property with all contents and handle cleanup after closing. Take what personal items you want; leave the rest.</p>
@@ -4396,7 +4402,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <p>At <a href="/about">Home Buyer Boise</a>, we regularly purchase properties with code violations of all types. Here's our approach:</p>
 
       <h3>Experience with Resolution</h3>
-      <p>We've worked with Boise, Meridian, Nampa, and other local code departments on numerous properties. We know the resolution process and can accurately estimate costs.</p>
+      <p>${unverifiedTrustText("We've worked with Boise, Meridian, Nampa, and other local code departments on numerous properties. ", "")}We know the resolution process and can accurately estimate costs.</p>
 
       <h3>Fair, Transparent Offers</h3>
       <p>Our offers account for actual resolution costs—not worst-case estimates. You'll understand exactly how we calculated our number.</p>
@@ -4765,7 +4771,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>Navigating Home Sales During Boise Divorce Proceedings</h2>
       <p>When a marriage ends, the family home often becomes one of the most challenging assets to address. In Boise and throughout Idaho, divorcing couples must decide what to do with their most valuable possession while managing emotions, legal proceedings, and the practical need to move forward with separate lives.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many divorcing couples sell their homes quickly and fairly. This guide provides the information you need to make informed decisions about your marital home during this difficult time.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've helped many divorcing couples sell their homes quickly and fairly. ", "")}This guide provides the information you need to make informed decisions about your marital home during this difficult time.</p>
 
       <h2>Understanding Idaho's Equitable Distribution Laws</h2>
 
@@ -5421,7 +5427,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>The Treasure Valley to Anywhere</h2>
 
-      <p>We've helped Boise homeowners relocate to:</p>
+      <p>${unverifiedTrustText("We've helped Boise homeowners relocate to:", "Common relocation destinations include:")}</p>
       <ul>
         <li>Seattle and the Pacific Northwest</li>
         <li>California (Bay Area, LA, San Diego)</li>
@@ -5700,7 +5706,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <p>Financial difficulties happen to good people. Job loss, medical emergencies, divorce, death of a spouse—life events beyond your control can make mortgage payments impossible. You're not a failure for facing foreclosure, and seeking solutions is exactly the right thing to do.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many families in foreclosure sell their homes quickly and move forward with dignity. We approach every situation with discretion and respect.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've helped many families in foreclosure sell their homes quickly and move forward with dignity. ", "")}We approach every situation with discretion and respect.</p>
 
       <h2>Take the First Step Today</h2>
 
@@ -6580,7 +6586,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When It's Time for Assisted Living</h2>
       <p>The decision to move to assisted living is rarely easy, but it's often the right choice for safety, health, and quality of life. Whether you're a senior making this transition yourself or an adult child helping a parent, selling the family home is typically part of the process.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've helped many Boise area seniors and their families navigate this transition with patience and compassion. This guide covers what you need to know about selling your home when moving to assisted living.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've helped many Boise area seniors and their families navigate this transition with patience and compassion. ", "")}This guide covers what you need to know about selling your home when moving to assisted living.</p>
 
       <h2>Understanding the Assisted Living Decision</h2>
 
@@ -6854,7 +6860,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>When Neighbors Make You Want to Move</h2>
       <p>Everyone dreams of friendly neighbors who wave hello and respect boundaries. But reality doesn't always match that ideal. Whether it's constant noise, property disputes, hostile behavior, or simply incompatible lifestyles, bad neighbors can turn your Boise home into a place you desperately want to leave.</p>
 
-      <p>At <a href="/about">Home Buyer Boise</a>, we've purchased many homes from sellers dealing with difficult neighbor situations. This guide explains how neighbor problems affect your sale, what you must disclose, and strategies for selling successfully.</p>
+      <p>At <a href="/about">Home Buyer Boise</a>, ${unverifiedTrustText("we've purchased many homes from sellers dealing with difficult neighbor situations. ", "")}This guide explains how neighbor problems affect your sale, what you must disclose, and strategies for selling successfully.</p>
 
       <h2>Types of Neighbor Problems</h2>
 
@@ -7047,7 +7053,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <h2>How Home Buyer Boise Handles Neighbor Situations</h2>
 
       <h3>No Judgment</h3>
-      <p>We've seen every type of neighbor situation. We evaluate properties objectively and don't judge you for circumstances you didn't create.</p>
+      <p>${unverifiedTrustText("We've seen every type of neighbor situation. ", "")}We evaluate properties objectively and don't judge you for circumstances you didn't create.</p>
 
       <h3>Accurate Assessment</h3>
       <p>We consider neighbor issues in our offer, but we also understand that:</p>
@@ -9188,7 +9194,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Explore Your Options?</h2>
 
-      <p>If you're underwater on your Boise mortgage and need to sell, understanding your options is the first step. At <a href="/about">Home Buyer Boise</a>, we've worked with homeowners in all kinds of situations, including short sales and distressed properties.</p>
+      <p>If you're underwater on your Boise mortgage and need to sell, understanding your options is the first step.${unverifiedTrustText(' At <a href="/about">Home Buyer Boise</a>, we\'ve worked with homeowners in all kinds of situations, including short sales and distressed properties.', "")}</p>
 
       <p><a href="/get-quote">Request your free, no-obligation consultation</a> today. We'll help you understand your property's value, calculate your equity position, and explain what options might work for your situation. There's no pressure—just honest information to help you make the best decision.</p>
     `,
@@ -9488,7 +9494,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Need to Sell Your Property?</h2>
 
-      <p>Don't let unpaid property taxes cost you your home. Whether you're a few months behind or facing a tax sale, there are solutions. At <a href="/about">Home Buyer Boise</a>, we've helped many homeowners in tax-troubled situations sell their properties quickly and move forward.</p>
+      <p>Don't let unpaid property taxes cost you your home. Whether you're a few months behind or facing a tax sale, there are solutions.${unverifiedTrustText(' At <a href="/about">Home Buyer Boise</a>, we\'ve helped many homeowners in tax-troubled situations sell their properties quickly and move forward.', "")}</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We'll evaluate your property, help you understand your tax situation, and show you how a quick sale can resolve your tax issues before they get worse. Time matters when dealing with property taxes—let's explore your options together.</p>
     `,
@@ -10188,7 +10194,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Ready to Sell an Estate Property?</h2>
 
-      <p>Serving as personal representative is a significant responsibility, and selling estate property adds complexity to an already challenging time. At <a href="/about">Home Buyer Boise</a>, we've helped many personal representatives sell probate properties quickly and efficiently.</p>
+      <p>Serving as personal representative is a significant responsibility, and selling estate property adds complexity to an already challenging time.${unverifiedTrustText(' At <a href="/about">Home Buyer Boise</a>, we\'ve helped many personal representatives sell probate properties quickly and efficiently.', "")}</p>
 
       <p><a href="/get-quote">Request your free, no-obligation cash offer</a> today. We understand probate requirements and can work within your timeline and constraints. Whether you need a fast sale to pay estate debts or simply want to minimize the burden of managing a property from afar, we're here to help you fulfill your duties as personal representative.</p>
     `,
@@ -12055,7 +12061,7 @@ export const BLOG_POSTS: BlogPostData[] = [
         <li>Doesn't use a legitimate title company</li>
       </ul>
 
-      <p>Legitimate buyers like Home Buyer Boise have verifiable track records, never charge fees, use licensed title companies, and welcome your questions.</p>
+      <p>Legitimate buyers like Home Buyer Boise ${unverifiedTrustText("have verifiable track records, ", "")}never charge fees, use licensed title companies, and welcome your questions.</p>
 
       <h2>Get Your Fast Cash Offer Today</h2>
 
@@ -13115,7 +13121,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       },
       {
         question: "How do I know if a cash buyer is legitimate?",
-        answer: "Legitimate cash buyers like Home Buyer Boise have verifiable track records, provide references from past sellers, use licensed title companies for closings, never ask for money upfront, and don't pressure you to sign immediately. Check reviews, ask for proof of funds, and verify they're actually closing transactions in your area."
+        answer: "Legitimate cash buyers like Home Buyer Boise " + unverifiedTrustText("have verifiable track records, provide references from past sellers, ", "") + "use licensed title companies for closings, never ask for money upfront, and don't pressure you to sign immediately. Check reviews, ask for proof of funds, and verify they're actually closing transactions in your area."
       },
       {
         question: "Can I list with a realtor and still get a cash offer?",
@@ -13705,7 +13711,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Working with Home Buyer Boise in Nampa</h2>
 
-      <p>We've purchased numerous properties throughout Nampa and Canyon County. Our team understands:</p>
+      <p>${unverifiedTrustText("We've purchased numerous properties throughout Nampa and Canyon County. ", "")}Our team understands:</p>
       <ul>
         <li>Nampa's neighborhood-by-neighborhood value differences</li>
         <li>How condition impacts Nampa's price-sensitive market</li>
@@ -13907,7 +13913,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>Working with Home Buyer Boise in Kuna</h2>
 
-      <p>We've purchased properties throughout Kuna, from newer subdivision homes to original farmhouses, from small lots to significant acreage. Our team understands:</p>
+      <p>${unverifiedTrustText("We've purchased properties throughout Kuna, from newer subdivision homes to original farmhouses, from small lots to significant acreage. ", "")}Our team understands:</p>
       <ul>
         <li>Kuna's neighborhood-by-neighborhood dynamics</li>
         <li>How to value rural properties fairly</li>
@@ -14145,7 +14151,7 @@ export const BLOG_POSTS: BlogPostData[] = [
 
       <h2>How Home Buyer Boise Helps Downsizing Seniors</h2>
 
-      <p>We've helped many Treasure Valley seniors navigate downsizing with compassion and professionalism. Our approach:</p>
+      <p>${unverifiedTrustText("We've helped many Treasure Valley seniors navigate downsizing with compassion and professionalism. ", "")}Our approach:</p>
       <ul>
         <li>Respect your timeline and decision-making process</li>
         <li>Never pressure you to sell before you're ready</li>

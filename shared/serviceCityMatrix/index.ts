@@ -1,5 +1,5 @@
 import { SERVICES } from "@/shared/servicesData";
-import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
+import { SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
 import { CITIES } from "@/shared/contentData";
 import { CITY_LAYERS } from "./cityLayers";
 import { SERVICE_LAYERS } from "./serviceLayers";
@@ -21,7 +21,7 @@ const INTRO_VARIANTS = [
   (svc: string, city: string, situation: string, market: string, process: string) =>
     `Homeowners searching for ${svc.toLowerCase()} in ${city} frequently face ${situation}. ${market} We specialize in private, as-is purchases throughout ${city} with flexible closing dates. ${process} Call (208) 405-2274 for a no-obligation conversation — offers are prepared by a real person after reviewing your property.`,
   (svc: string, city: string, situation: string, market: string, process: string) =>
-    `If you need ${svc.toLowerCase()} in ${city}, you are not alone — many neighbors have sold to us when ${situation}. ${market} ${process} We are local cash buyers (not a national wholesaler), and ${city} sellers choose us for transparent numbers and timelines they control.`,
+    `If you need ${svc.toLowerCase()} in ${city}, ${unverifiedTrustText(`you are not alone — many neighbors have sold to us when ${situation}.`, `sellers often face ${situation}.`)} ${market} ${process} We are local cash buyers (not a national wholesaler), and ${city} sellers choose us for transparent numbers and timelines they control.`,
 ];
 
 const COMBO_FAQ_BUILDERS: Array<

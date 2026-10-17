@@ -294,7 +294,7 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "What condition of houses do you buy?",
-        answer: "Any condition. We've purchased everything from pristine move-in ready homes to properties with fire damage, foundation issues, hoarding situations, and complete tear-downs. If it's real estate in the Treasure Valley, we'll make you an offer."
+        answer: "Any condition. " + unverifiedTrustText("We've purchased everything from pristine move-in ready homes to properties with fire damage, foundation issues, hoarding situations, and complete tear-downs. ", "") + "If it's real estate in the Treasure Valley, we'll make you an offer."
       },
       {
         question: "Can you help if I'm going through divorce?",
@@ -765,7 +765,7 @@ export const SERVICE_CONTENT = {
   },
   "avoid-foreclosure": {
     heroSubtitle: "Facing foreclosure? Sell your house fast and protect your credit. Confidential assistance with fair cash offers.",
-    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.",
+    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. " + unverifiedTrustText("We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.", ""),
     whyChoose: [
       "Stop foreclosure proceedings",
       "Protect your credit score",
@@ -816,7 +816,7 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "Can you help if I've already received a foreclosure notice?",
-        answer: "Yes, but time is critical. We've helped homeowners sell even after receiving Notice of Default or Notice of Sale. The key is acting immediately. Call us today and we'll assess your timeline and options."
+        answer: "Yes, but time is critical. " + unverifiedTrustText("We've helped homeowners sell even after receiving Notice of Default or Notice of Sale. ", "") + "The key is acting immediately. Call us today and we'll assess your timeline and options."
       },
       {
         question: "What happens to my credit after selling vs foreclosure?",

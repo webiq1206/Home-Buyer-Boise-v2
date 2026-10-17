@@ -32,7 +32,7 @@ import { CITIES } from "../shared/contentData";
 import { ORGANIZATION_ENTITY } from "../shared/entityGraph";
 import { getSitewideFaqs } from "../shared/faqData";
 import { generateServiceCityContent } from "../shared/serviceCityContent";
-import { SERVICE_CONTENT } from "../shared/servicesData";
+import { SERVICE_CONTENT, SERVICES } from "../shared/servicesData";
 import { metadata as aboutMetadata } from "../app/about/page";
 
 const ROOT = path.resolve(__dirname, "..");
@@ -173,7 +173,6 @@ test("rendered copy omits unverified trust phrases", () => {
       .map((content) =>
         [
           content.intro,
-          content.process,
           ...(content.whyChoose ?? []),
           ...(content.faqs ?? []).map((faq) => `${faq.question} ${faq.answer}`),
         ].join("\n"),
@@ -184,13 +183,15 @@ test("rendered copy omits unverified trust phrases", () => {
     generateMetaDescription({ serviceName: "Sell House Fast", serviceSlug: "sell-house-fast" }),
   ];
 
-  for (const service of ["sell-house-fast", "we-buy-houses", "cash-offer"]) {
-    for (const city of ["boise", "meridian", "nampa"]) {
-      const content = generateServiceCityContent(service, city);
+  for (const service of SERVICES) {
+    for (const city of CITIES) {
+      const content = generateServiceCityContent(service.slug, city.slug);
       chunks.push(
         [
           content.citySpecificIntro,
+          content.localProcessNotes,
           content.whyChooseLocal.join("\n"),
+          content.heroSubtitle,
           content.cityFaqs.map((faq) => `${faq.question} ${faq.answer}`).join("\n"),
         ].join("\n"),
       );
@@ -216,9 +217,32 @@ test("rendered copy omits unverified trust phrases", () => {
     "hundreds of homeowners",
     "renovated hundreds",
     "dozens of homes throughout Meridian",
+    "dozens of Boise homeowners",
+    "numerous properties",
+    "many families in foreclosure",
+    "many homeowners in tax-troubled",
+    "many neighbors have sold to us",
+    "closed dozens",
+    "verifiable track records",
+    "We've purchased homes in every condition",
+    "We've helped homeowners sell even after",
+    "We've closed in as little as 5 days",
+    "fastest you've ever closed",
+    "We've seen every level",
+    "We've seen every type",
+    "We've built our business buying",
+    "We've purchased properties throughout Kuna",
+    "We've helped Boise homeowners relocate",
+    "we've worked with many estate sales",
+    "we've purchased many homes",
+    "we've helped many",
+    "Proven track record in",
   ]) {
     assert.equal(rendered.toLowerCase().includes(phrase.toLowerCase()), false, phrase);
   }
+  assert.match(rendered, /Check Better Business Bureau ratings/);
+  assert.match(rendered, /licensed title compan/i);
+  assert.match(rendered, /many homeowners prefer/i);
 });
 
 test("llms files do not serve unverified trust lines", () => {
@@ -239,5 +263,11 @@ test("llms files do not serve unverified trust lines", () => {
     assert.equal(served.includes(phrase), false, phrase);
   }
   assert.match(readFileSync(path.join(ROOT, "public/llms-full.txt"), "utf8"), /\$3M E&O/);
+  assert.match(readFileSync(path.join(ROOT, "public/llms-full.txt"), "utf8"), /We've purchased homes with severe fire damage/);
+  assert.equal(served.includes("We've purchased homes with severe fire damage"), false);
+  assert.match(served, /no condition we won't consider/);
   assert.match(served, /experienced local operators/);
+  const quotePage = readFileSync(path.join(ROOT, "app/get-quote/page.tsx"), "utf8");
+  assert.match(quotePage, /Over 500 homes purchased/);
+  assert.match(quotePage, /SHOW_UNVERIFIED_TRUST && <li>✓ Over 500 homes purchased<\/li>/);
 });

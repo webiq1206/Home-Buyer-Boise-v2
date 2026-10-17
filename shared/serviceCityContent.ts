@@ -222,7 +222,7 @@ function generateLocalBenefits(service: any, city: any): string[] {
     `Flexible timelines that accommodate ${cityName} sellers`,
     `No fees or commissions - maximize your proceeds`,
     ...(SHOW_UNVERIFIED_TRUST ? [`Licensed and insured Idaho home buyers`] : []),
-    `Proven track record in ${cityName} and across Treasure Valley`
+    ...(SHOW_UNVERIFIED_TRUST ? [`Proven track record in ${cityName} and across Treasure Valley`] : []),
   ];
 }
 
@@ -276,7 +276,10 @@ function generateCitySpecificFAQs(service: any, city: any) {
     },
     {
       question: `Can you help if I'm behind on payments on my ${cityName} property?`,
-      answer: `Yes. We've helped many ${cityName} homeowners who are behind on mortgage payments. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`
+      answer: unverifiedTrustText(
+        `Yes. We've helped many ${cityName} homeowners who are behind on mortgage payments. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`,
+        `Yes. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`,
+      )
     },
     {
       question: `What if my ${cityName} house needs repairs?`,
