@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/accordion";
 import { generateLocalBusinessSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
 import { getBaseUrl, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
+import { areaHeroOffer, localCashBuyerHeading } from "@/lib/areaCopy";
 import { 
   CheckCircle, 
   MapPin, 
@@ -274,7 +275,7 @@ export default function AreaPage({ params }: PageProps) {
                 Sell Your {city.name} House Fast for Cash
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6">
-                Get a fair cash offer in 24 hours. No repairs, no fees, no commissions. Close on your timeline. Trust us with your {city.name} home.
+                {areaHeroOffer(city.name)}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="bg-gold text-black hover:bg-gold/90 font-semibold" asChild>
@@ -297,7 +298,7 @@ export default function AreaPage({ params }: PageProps) {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-              Local {city.name} Cash Home Buyers You Can Trust
+              {localCashBuyerHeading(city.name)}
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="text-base md:text-lg leading-relaxed">
