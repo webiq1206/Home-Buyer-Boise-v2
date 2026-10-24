@@ -1,4 +1,9 @@
 import { getResendClient, delay } from './resend';
+import { SHOW_UNVERIFIED_TRUST } from '@/lib/seo';
+
+const emailFooterTagline = SHOW_UNVERIFIED_TRUST
+  ? "Treasure Valley's Most Trusted Cash Home Buyers"
+  : "Treasure Valley's Cash Home Buyers";
 
 interface PropertyOfferEmailData {
   customerName: string;
@@ -285,7 +290,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
 
           <div class="footer">
             <p class="footer-brand">Home Buyer Boise</p>
-            <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
+            <p class="footer-tagline">${emailFooterTagline}</p>
             <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
           </div>
@@ -364,7 +369,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
 
           <div class="footer">
             <p class="footer-brand">Home Buyer Boise</p>
-            <p class="footer-tagline">Treasure Valley's Most Trusted Cash Home Buyers</p>
+            <p class="footer-tagline">${emailFooterTagline}</p>
             <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
             <p class="footer-contact">Phone: (208) 405-2274</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
@@ -377,7 +382,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
     `;
 
     // Send email to business owners
-    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co'];
+    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co', 'jb@timberandlove.com'];
     console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     
     const adminResult = await resend.emails.send({

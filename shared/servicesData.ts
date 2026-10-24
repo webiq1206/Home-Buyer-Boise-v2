@@ -1,193 +1,21 @@
-// High-value service pages optimized for local SEO
-export const SERVICES = [
-  {
-    slug: "sell-house-fast",
-    name: "Sell House Fast",
-    shortName: "Sell Fast",
-    title: "Sell Your House Fast in Boise Metro | Cash Offer in 24 Hours",
-    metaDescription: "Need to sell your house fast in Boise, Meridian, Eagle, or Kuna? Get a fair cash offer in 24 hours. No fees, no repairs, close on your timeline.",
-    h1: "Sell Your House Fast for Cash",
-    keywords: ["sell house fast", "sell my house fast", "quick house sale", "fast home sale"],
-    icon: "Zap",
-  },
-  {
-    slug: "we-buy-houses",
-    name: "We Buy Houses",
-    shortName: "We Buy Houses",
-    title: "We Buy Houses for Cash in Boise Metro | Any Condition",
-    metaDescription: "We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, and Middleton. Fair cash offers, no realtor fees, close fast.",
-    h1: "We Buy Houses in the Treasure Valley",
-    keywords: ["we buy houses", "buy my house", "house buyers", "cash for houses"],
-    icon: "Home",
-  },
-  {
-    slug: "cash-offer",
-    name: "Cash Offer",
-    shortName: "Cash Offer",
-    title: "Get a Cash Offer on Your House | Boise Cash Home Buyers",
-    metaDescription: "Get a fair, no-obligation cash offer on your Boise area home in 24 hours. No repairs, no fees, close when you're ready.",
-    h1: "Get a Fair Cash Offer Today",
-    keywords: ["cash offer", "cash home offer", "instant cash offer", "fair cash offer"],
-    icon: "DollarSign",
-  },
-  {
-    slug: "sell-as-is",
-    name: "Sell As-Is",
-    shortName: "Sell As-Is",
-    title: "Sell Your House As-Is in Boise | No Repairs Needed",
-    metaDescription: "Sell your house as-is in Boise without making any repairs. We buy houses in any condition - foundation issues, outdated kitchens, fire damage, and more.",
-    h1: "Sell Your House As-Is - No Repairs Required",
-    keywords: ["sell as is", "sell house as is", "no repairs needed", "any condition"],
-    icon: "Wrench",
-  },
-  {
-    slug: "inherited-property",
-    name: "Inherited Property",
-    shortName: "Inherited",
-    title: "Sell Inherited Property Fast | Boise Estate Home Buyers",
-    metaDescription: "Inherited a house in Boise? Sell it quickly without repairs or clean-out. Fair cash offers for inherited properties. Probate assistance available.",
-    h1: "Sell Your Inherited Property Quickly",
-    keywords: ["inherited property", "inherited house", "estate sale", "probate house sale"],
-    icon: "Key",
-  },
-  {
-    slug: "avoid-foreclosure",
-    name: "Avoid Foreclosure",
-    shortName: "Stop Foreclosure",
-    title: "Stop Foreclosure with a Quick Sale | Boise Foreclosure Help",
-    metaDescription: "Facing foreclosure in Boise? We can help you sell fast and avoid foreclosure. Get a fair cash offer and protect your credit. Confidential assistance.",
-    h1: "Avoid Foreclosure - Sell Your House Fast",
-    keywords: ["avoid foreclosure", "stop foreclosure", "foreclosure help", "pre-foreclosure"],
-    icon: "Shield",
-  },
-  {
-    slug: "sell-house-divorce",
-    name: "Sell House During Divorce",
-    shortName: "Divorce Sale",
-    title: "Sell House During Divorce in Boise | Fast Fair Settlement",
-    metaDescription: "Going through divorce in Boise? Sell your house quickly for fair market value. Split proceeds fairly, close fast, move forward with your life.",
-    h1: "Sell Your House During Divorce - Quick & Fair",
-    keywords: ["divorce house sale", "sell house divorce", "divorce property settlement", "split house divorce"],
-    icon: "Heart",
-  },
-  {
-    slug: "relocation-sale",
-    name: "Sell for Relocation",
-    shortName: "Relocation",
-    title: "Sell House for Job Relocation | Boise Fast Home Sale",
-    metaDescription: "Relocating for work? Sell your Boise house fast without the stress. Cash offer in 24 hours, close before you move. No showings while packing.",
-    h1: "Relocating? Sell Your House Fast",
-    keywords: ["relocation house sale", "job transfer", "moving quickly", "sell before relocating"],
-    icon: "Plane",
-  },
-  {
-    slug: "problem-tenants",
-    name: "Problem Tenants / Tired Landlord",
-    shortName: "Tired Landlord",
-    title: "Sell Rental with Problem Tenants | Boise Cash Buyers",
-    metaDescription: "Tired of being a landlord? Sell your rental property even with problem tenants. We handle evictions and buy occupied properties in Boise.",
-    h1: "Tired of Landlord Headaches? Sell to Us",
-    keywords: ["problem tenants", "tired landlord", "sell rental property", "bad tenants"],
-    icon: "Users",
-  },
-  {
-    slug: "probate-sale",
-    name: "Probate Property Sale",
-    shortName: "Probate",
-    title: "Sell Probate Property in Boise | Estate Home Buyers",
-    metaDescription: "Selling a probate property in Boise? We buy estate homes fast, work with attorneys, and simplify the probate process. Fair cash offers.",
-    h1: "Sell Your Probate Property Quickly",
-    keywords: ["probate sale", "probate property", "estate sale", "executor property sale"],
-    icon: "FileText",
-  },
-  {
-    slug: "tax-liens",
-    name: "Sell House with Tax Liens",
-    shortName: "Tax Liens",
-    title: "Sell House with Tax Liens in Boise | We Pay Off Liens",
-    metaDescription: "House has tax liens or IRS debt? We buy houses with liens in Boise and pay them off at closing. Get out from under tax debt fast.",
-    h1: "Sell Your House with Tax Liens",
-    keywords: ["tax liens", "IRS lien", "property tax debt", "sell with liens"],
-    icon: "Receipt",
-  },
-  {
-    slug: "downsizing",
-    name: "Downsizing / Empty Nesters",
-    shortName: "Downsizing",
-    title: "Downsize Your Boise Home Fast | Empty Nester Home Buyers",
-    metaDescription: "Ready to downsize in Boise? Sell your large family home fast without the hassle. No repairs, no staging, fair cash offer.",
-    h1: "Downsize Without the Hassle",
-    keywords: ["downsizing", "empty nester", "sell large home", "retire downsize"],
-    icon: "Home",
-  },
-  {
-    slug: "fire-water-damage",
-    name: "Fire or Water Damage",
-    shortName: "Damaged Home",
-    title: "Sell Fire or Water Damaged House | Boise Cash Buyers",
-    metaDescription: "House damaged by fire or water in Boise? Sell it as-is without repairs. We buy damaged homes, handle insurance claims, close fast.",
-    h1: "Sell Your Fire or Water Damaged House",
-    keywords: ["fire damage", "water damage", "flood damage", "smoke damage"],
-    icon: "Flame",
-  },
-  {
-    slug: "hoarder-house",
-    name: "Hoarder House",
-    shortName: "Hoarder Home",
-    title: "Buy Hoarder Houses in Boise | Clean-Out Assistance Available",
-    metaDescription: "Need to sell a hoarder house in Boise? We buy hoarded properties as-is and can assist with clean-out. Compassionate, judgment-free service.",
-    h1: "We Buy Hoarder Houses - Compassionate Service",
-    keywords: ["hoarder house", "hoarding cleanup", "cluttered house", "estate clean-out"],
-    icon: "Package",
-  },
-  {
-    slug: "expired-listing",
-    name: "Expired Listing / Can't Sell",
-    shortName: "Expired Listing",
-    title: "Expired Listing? Sell for Cash | Boise Cash Buyers",
-    metaDescription: "Listing expired and house won't sell in Boise? Get a guaranteed cash offer. No more showings, price reductions, or waiting. Sell now.",
-    h1: "Can't Sell Your House? We'll Buy It",
-    keywords: ["expired listing", "house won't sell", "can't sell house", "failed listing"],
-    icon: "XCircle",
-  },
-  {
-    slug: "behind-mortgage",
-    name: "Behind on Mortgage Payments",
-    shortName: "Behind Payments",
-    title: "Behind on Mortgage? Sell Before Foreclosure | Boise Help",
-    metaDescription: "Behind on mortgage payments in Boise? Sell your house fast before foreclosure starts. Catch up on payments or pay off loan completely.",
-    h1: "Behind on Payments? Sell Fast",
-    keywords: ["behind on mortgage", "missed payments", "mortgage default", "can't afford mortgage"],
-    icon: "AlertCircle",
-  },
-  {
-    slug: "code-violations",
-    name: "Code Violations",
-    shortName: "Code Issues",
-    title: "Sell House with Code Violations | Boise Municipal Issues",
-    metaDescription: "House has code violations in Boise? We buy properties with municipal violations, unpermitted work, and compliance issues. Sell as-is.",
-    h1: "Sell Your House with Code Violations",
-    keywords: ["code violations", "municipal violations", "unpermitted work", "compliance issues"],
-    icon: "AlertTriangle",
-  },
-] as const;
+// High-value service pages optimized for local SEO.
+// Server-only claim copy. Client components must import servicesCatalog instead.
+import "server-only";
+import { SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "@/lib/seo";
 
-export type Service = typeof SERVICES[number];
+export {
+  SERVICES,
+  getAllServiceSlugs,
+  getServiceBySlug,
+} from "./servicesCatalog";
+export type { Service } from "./servicesCatalog";
 
-// Helper functions for Next.js pages
-export function getAllServiceSlugs(): string[] {
-  return SERVICES.map(service => service.slug);
-}
-
-export function getServiceBySlug(slug: string): Service | undefined {
-  return SERVICES.find(service => service.slug === slug);
-}
 
 // SEO-optimized content for each service
 export const SERVICE_CONTENT = {
   "sell-house-fast": {
     heroSubtitle: "Get a fair cash offer in 24 hours. Close in as little as 7 days or take your time - you choose the timeline.",
-    intro: "When you need to sell your house fast in the Boise metro area, Home Buyer Boise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
+    intro: "When you need to sell your house fast in the Boise metro area, Home Buyer Boise offers the quickest, most straightforward solution. Whether you're facing relocation, financial difficulties, divorce, or simply need to move quickly, we provide fair cash offers within 24 hours. Unlike traditional real estate transactions that take 30-60 days (or longer), our streamlined cash buying process can close in as little as 7 days. " + unverifiedTrustText("We've helped hundreds of Boise homeowners sell quickly without the stress of repairs, showings, or uncertain buyer financing. ", "") + "Our local team understands the Treasure Valley market and provides competitive offers based on current market conditions, your home's location, and its as-is condition. No hidden fees, no commission deductions, no surprise costs - just a straightforward cash transaction that puts money in your pocket fast.",
     whyChoose: [
       "Cash offer in 24 hours or less",
       "Close in 7 days or on your timeline",
@@ -197,7 +25,7 @@ export const SERVICE_CONTENT = {
       "Direct sale - no showings or open houses",
       "No buyer financing contingencies",
       "Avoid months of uncertainty",
-      "Local Boise company since 2018",
+      ...(SHOW_UNVERIFIED_TRUST ? ["Local Boise company since 2018"] : []),
       "Close on YOUR schedule",
     ],
     situations: [
@@ -292,7 +120,7 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "What condition of houses do you buy?",
-        answer: "Any condition. We've purchased everything from pristine move-in ready homes to properties with fire damage, foundation issues, hoarding situations, and complete tear-downs. If it's real estate in the Treasure Valley, we'll make you an offer."
+        answer: "Any condition. " + unverifiedTrustText("We've purchased everything from pristine move-in ready homes to properties with fire damage, foundation issues, hoarding situations, and complete tear-downs. ", "") + "If it's real estate in the Treasure Valley, we'll make you an offer."
       },
       {
         question: "Can you help if I'm going through divorce?",
@@ -304,7 +132,10 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "Are you a legitimate company or a scam?",
-        answer: "We're a legitimate Idaho LLC that's been buying houses in Boise since 2018. We're licensed, insured, and use reputable local title companies for all closings. You can verify our business status with Idaho Secretary of State. We have real reviews, real track records, and real local presence."
+        answer: unverifiedTrustText(
+          "We're a legitimate Idaho LLC that's been buying houses in Boise since 2018. We're licensed, insured, and use reputable local title companies for all closings. You can verify our business status with Idaho Secretary of State. We have real reviews, real track records, and real local presence.",
+          "We use reputable local title companies for all closings.",
+        )
       },
       {
         question: "What happens after I sell to you?",
@@ -360,13 +191,16 @@ export const SERVICE_CONTENT = {
   },
   "we-buy-houses": {
     heroSubtitle: "We buy houses in any condition across Boise, Meridian, Eagle, Kuna, Star, and Middleton. No fees, no repairs, fair cash offers.",
-    intro: "Home Buyer Boise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+    intro: unverifiedTrustText(
+      "Home Buyer Boise is a trusted cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+      "Home Buyer Boise is a cash home buying company serving the entire Treasure Valley. We buy houses in any condition - from pristine properties to homes needing major repairs. Unlike traditional buyers, we make the process simple, fast, and certain.",
+    ),
     whyChoose: [
       "Buy houses in any condition",
       "No contingencies or financing delays",
       "Transparent, fair pricing",
       "Local company, not a franchise",
-      "Proven track record since 2018",
+      ...(SHOW_UNVERIFIED_TRUST ? ["Proven track record since 2018"] : []),
       "Close on your schedule",
     ],
     situations: [
@@ -375,7 +209,10 @@ export const SERVICE_CONTENT = {
       { title: "Any Timeline", description: "Close in 7 days or take 60+ days" },
       { title: "Any Price Range", description: "We buy properties at all price points" },
     ],
-    process: "We're not like other 'we buy houses' companies. We're local, licensed, and have been serving Boise families since 2018. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+    process: unverifiedTrustText(
+      "We're not like other 'we buy houses' companies. We're local, licensed, and have been serving Boise families since 2018. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+      "We're not like other 'we buy houses' companies. Our offers are based on genuine market analysis, and we're transparent about how we calculate our offers.",
+    ),
     detailedProcess: [
       { step: 1, title: "Contact Us", description: "Call (208) 405-2274 or fill out our online form. Tell us about your property and situation.", timeline: "2 minutes" },
       { step: 2, title: "Property Walkthrough", description: "We schedule a quick visit at your convenience to assess the property. No judgment, just evaluation.", timeline: "30 minutes" },
@@ -387,7 +224,10 @@ export const SERVICE_CONTENT = {
     faqs: [
       {
         question: "Are 'We Buy Houses' companies legitimate?",
-        answer: "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references."
+        answer: unverifiedTrustText(
+          "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. We're a licensed Idaho LLC that's been operating since 2018. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references.",
+          "Yes, reputable cash home buyers like Home Buyer Boise are legitimate businesses. However, you should always verify a company's credentials, check reviews, and use a reputable title company for closing. We use established local title companies and are happy to provide references.",
+        )
       },
       {
         question: "How do 'We Buy Houses' companies make money?",
@@ -415,7 +255,10 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "What makes Home Buyer Boise different from other house buyers?",
-        answer: "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We've been buying homes since 2018 with a 4.9-star rating from over 189 reviews. We're transparent, fair, and treat every homeowner with respect."
+        answer: unverifiedTrustText(
+          "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We've been buying homes since 2018 with a 4.9-star rating from over 189 reviews. We're transparent, fair, and treat every homeowner with respect.",
+          "We're a local Boise company, not a national franchise or out-of-state investor. Our team lives here and knows the Treasure Valley market intimately. We're transparent, fair, and treat every homeowner with respect.",
+        )
       }
     ],
     successStories: [
@@ -751,7 +594,7 @@ export const SERVICE_CONTENT = {
   },
   "avoid-foreclosure": {
     heroSubtitle: "Facing foreclosure? Sell your house fast and protect your credit. Confidential assistance with fair cash offers.",
-    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.",
+    intro: "If you're behind on mortgage payments and facing foreclosure, time is critical. Home Buyer Boise can help you sell your house quickly, pay off your mortgage, and avoid the credit damage of foreclosure. " + unverifiedTrustText("We've helped dozens of Boise homeowners navigate this difficult situation with dignity and speed.", ""),
     whyChoose: [
       "Stop foreclosure proceedings",
       "Protect your credit score",
@@ -802,7 +645,7 @@ export const SERVICE_CONTENT = {
       },
       {
         question: "Can you help if I've already received a foreclosure notice?",
-        answer: "Yes, but time is critical. We've helped homeowners sell even after receiving Notice of Default or Notice of Sale. The key is acting immediately. Call us today and we'll assess your timeline and options."
+        answer: "Yes, but time is critical. " + unverifiedTrustText("We've helped homeowners sell even after receiving Notice of Default or Notice of Sale. ", "") + "The key is acting immediately. Call us today and we'll assess your timeline and options."
       },
       {
         question: "What happens to my credit after selling vs foreclosure?",

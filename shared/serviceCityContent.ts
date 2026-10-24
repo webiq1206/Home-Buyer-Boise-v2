@@ -4,7 +4,7 @@
 import { SERVICES } from "./servicesData";
 import { CITIES } from "./contentData";
 import { getServiceCityMatrixEntry, hasMatrixEntry } from "./serviceCityMatrix";
-import { generateServiceCityTitle, truncateMetaDescription } from "../lib/seo";
+import { generateServiceCityTitle, truncateMetaDescription, SHOW_UNVERIFIED_TRUST, unverifiedTrustText } from "../lib/seo";
 
 export interface ServiceCityContent {
   // SEO Metadata
@@ -124,7 +124,7 @@ function generateCitySpecificIntro(service: any, city: any): string {
   const neighborhoods = city.neighborhoods?.slice(0, 4).join(', ') || 'all neighborhoods';
   const population = city.population || 'thousands of residents';
   
-  return `Home Buyer Boise specializes in ${serviceName.toLowerCase()} throughout ${cityName}, Idaho. With ${population}, ${cityName} is ${getCityDescription(city.slug)}. We buy houses in all ${cityName} neighborhoods including ${neighborhoods}, providing fair cash offers regardless of your property's location or condition. Whether you own a newer construction home in ${cityName}'s growing subdivisions or an older property in established neighborhoods, we make selling fast and simple. ${getServiceCityContext(service.slug, city.slug)} Our local team understands ${cityName}'s unique real estate market, including property values, neighborhood characteristics, and common seller situations. We've helped dozens of ${cityName} homeowners ${getServiceAction(service.slug)} without the stress of traditional listings, repairs, or uncertain buyer financing. ${getCityMarketContext(city.slug)} As a local Idaho company, we provide personalized service with deep knowledge of ${cityName} and the surrounding Treasure Valley. Get your no-obligation cash offer today and discover why ${cityName} homeowners trust Home Buyer Boise for ${serviceName.toLowerCase()}.`;
+  return `Home Buyer Boise specializes in ${serviceName.toLowerCase()} throughout ${cityName}, Idaho. With ${population}, ${cityName} is ${getCityDescription(city.slug)}. We buy houses in all ${cityName} neighborhoods including ${neighborhoods}, providing fair cash offers regardless of your property's location or condition. Whether you own a newer construction home in ${cityName}'s growing subdivisions or an older property in established neighborhoods, we make selling fast and simple. ${getServiceCityContext(service.slug, city.slug)} Our local team understands ${cityName}'s unique real estate market, including property values, neighborhood characteristics, and common seller situations. ${unverifiedTrustText(`We've helped dozens of ${cityName} homeowners ${getServiceAction(service.slug)} without the stress of traditional listings, repairs, or uncertain buyer financing. `, "")}${getCityMarketContext(city.slug)} As a local Idaho company, we provide personalized service with deep knowledge of ${cityName} and the surrounding Treasure Valley. Get your no-obligation cash offer today and discover why ${cityName} homeowners trust Home Buyer Boise for ${serviceName.toLowerCase()}.`;
 }
 
 // City descriptions
@@ -221,8 +221,8 @@ function generateLocalBenefits(service: any, city: any): string[] {
     `Cash offers based on current ${cityName} market comparables`,
     `Flexible timelines that accommodate ${cityName} sellers`,
     `No fees or commissions - maximize your proceeds`,
-    `Licensed and insured Idaho home buyers`,
-    `Proven track record in ${cityName} and across Treasure Valley`
+    ...(SHOW_UNVERIFIED_TRUST ? [`Licensed and insured Idaho home buyers`] : []),
+    ...(SHOW_UNVERIFIED_TRUST ? [`Proven track record in ${cityName} and across Treasure Valley`] : []),
   ];
 }
 
@@ -276,7 +276,10 @@ function generateCitySpecificFAQs(service: any, city: any) {
     },
     {
       question: `Can you help if I'm behind on payments on my ${cityName} property?`,
-      answer: `Yes. We've helped many ${cityName} homeowners who are behind on mortgage payments. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`
+      answer: unverifiedTrustText(
+        `Yes. We've helped many ${cityName} homeowners who are behind on mortgage payments. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`,
+        `Yes. We'll calculate your exact payoff amount and make an offer accordingly. If there's equity after paying off the mortgage, you receive the difference in cash.`,
+      )
     },
     {
       question: `What if my ${cityName} house needs repairs?`,
@@ -288,7 +291,10 @@ function generateCitySpecificFAQs(service: any, city: any) {
     },
     {
       question: `Are you actually local to ${cityName}?`,
-      answer: `Yes! We're a local Idaho company that's been buying houses in ${cityName} and across the Treasure Valley since 2018. We're not a national franchise - we're your neighbors who understand the ${cityName} market personally.`
+      answer: unverifiedTrustText(
+        `Yes! We're a local Idaho company that's been buying houses in ${cityName} and across the Treasure Valley since 2018. We're not a national franchise - we're your neighbors who understand the ${cityName} market personally.`,
+        `Yes! We're a local Idaho company. We're not a national franchise - we're your neighbors who understand the ${cityName} market personally.`,
+      )
     },
     {
       question: `What happens after I sell my ${cityName} house to you?`,

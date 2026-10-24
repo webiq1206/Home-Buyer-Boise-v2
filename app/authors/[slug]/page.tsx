@@ -28,7 +28,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!author) return {};
   return {
     title: `${author.name} | Home Buyer Boise`,
-    description: author.bio.substring(0, 160),
+    ...(author.bio ? { description: author.bio.substring(0, 160) } : {}),
     alternates: {
       canonical: `https://homebuyerboise.com/authors/${author.slug}`,
     },
@@ -78,12 +78,13 @@ export default function AuthorPage({ params }: PageProps) {
         <div className="container px-4 max-w-3xl">
           <p className="text-white/80 text-sm mb-2">{author.jobTitle}</p>
           <h1 className="text-3xl md:text-4xl font-bold mb-4">{author.name}</h1>
-          <p className="text-lg text-white/90">{author.bio}</p>
+          {author.bio ? <p className="text-lg text-white/90">{author.bio}</p> : null}
         </div>
       </section>
 
       <section className="py-12">
         <div className="container px-4 max-w-3xl space-y-8">
+          {author.expertise.length > 0 && (
           <div>
             <h2 className="text-2xl font-bold mb-3">Expertise</h2>
             <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
@@ -92,8 +93,9 @@ export default function AuthorPage({ params }: PageProps) {
               ))}
             </ul>
           </div>
+          )}
 
-          {author.credentials && (
+          {author.credentials && author.credentials.length > 0 && (
             <div>
               <h2 className="text-2xl font-bold mb-3">Credentials</h2>
               <ul className="list-disc pl-5 space-y-1 text-muted-foreground">

@@ -7,6 +7,7 @@ import {
   generateWebPageSchema,
   generateBreadcrumbSchema,
 } from "@/lib/schema";
+import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Get a Free Cash Offer | Home Buyer Boise",
@@ -116,8 +117,8 @@ export default function GetQuotePage() {
                   <CardContent className="pt-6">
                     <h4 className="font-semibold mb-3">Why Home Buyer Boise?</h4>
                     <ul className="text-sm text-muted-foreground space-y-2">
-                      <li>✓ Local, family-owned company</li>
-                      <li>✓ Over 500 homes purchased</li>
+                      {SHOW_UNVERIFIED_TRUST && <li>✓ Local, family-owned company</li>}
+                      {SHOW_UNVERIFIED_TRUST && <li>✓ Over 500 homes purchased</li>}
                       <li>✓ Close in as fast as 7 days</li>
                       <li>✓ We buy in any condition</li>
                       <li>✓ Transparent, honest process</li>

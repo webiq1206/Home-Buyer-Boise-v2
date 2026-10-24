@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Navigation } from "@/components/Navigation";
@@ -7,6 +8,7 @@ import { Footer } from "@/components/Footer";
 import { StickyBottomNav } from "@/components/StickyBottomNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { Analytics } from "@/components/Analytics";
+import { GA_MEASUREMENT_ID } from "@/lib/ga";
 import {
   generateOrganizationSchema,
   generateWebSiteSchema,
@@ -82,6 +84,36 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="beforeInteractive"
+        />
+        <Script id="ga4-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = window.gtag || gtag;
+            if (!window.__hbbGa4Init) {
+              window.__hbbGa4Init = '${GA_MEASUREMENT_ID}';
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                send_page_view: false,
+                page_location: window.location.origin + window.location.pathname
+              });
+            }
+          `}
+        </Script>
+        <Script id="microsoft-clarity" strategy="beforeInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "yyqqenu9ik");
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <a
           href="#main-content"

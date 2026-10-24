@@ -14,7 +14,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { generateLocalBusinessSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/schema";
-import { getBaseUrl } from "@/lib/seo";
+import { getBaseUrl, SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
+import { areaHeroOffer, localCashBuyerHeading } from "@/lib/areaCopy";
 import { 
   CheckCircle, 
   MapPin, 
@@ -173,7 +174,8 @@ const trustFeatures = [
   {
     icon: Shield,
     title: "Licensed & Insured",
-    description: "Professional, legitimate business you can trust. We're accountable to you and our community."
+    description: "Professional, legitimate business you can trust. We're accountable to you and our community.",
+    unverified: true,
   },
   {
     icon: Clock,
@@ -273,7 +275,7 @@ export default function AreaPage({ params }: PageProps) {
                 Sell Your {city.name} House Fast for Cash
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6">
-                Get a fair cash offer in 24 hours. No repairs, no fees, no commissions. Close on your timeline. Trust us with your {city.name} home.
+                {areaHeroOffer(city.name)}
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="bg-gold text-black hover:bg-gold/90 font-semibold" asChild>
@@ -296,7 +298,7 @@ export default function AreaPage({ params }: PageProps) {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-              Local {city.name} Cash Home Buyers You Can Trust
+              {localCashBuyerHeading(city.name)}
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="text-base md:text-lg leading-relaxed">
@@ -527,13 +529,19 @@ export default function AreaPage({ params }: PageProps) {
       <section className="py-12 lg:py-16">
         <div className="container px-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
-            Why {city.name} Homeowners Trust Home Buyer Boise
+            {SHOW_UNVERIFIED_TRUST
+              ? `Why ${city.name} Homeowners Trust Home Buyer Boise`
+              : `Cash Home Buyers in ${city.name}`}
           </h2>
+          {SHOW_UNVERIFIED_TRUST && (
           <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
             We've helped hundreds of homeowners sell their properties quickly and fairly
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {trustFeatures.map((feature, index) => (
+          )}
+          <div className={SHOW_UNVERIFIED_TRUST
+            ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+            : "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"}>
+            {trustFeatures.filter((feature) => SHOW_UNVERIFIED_TRUST || !("unverified" in feature && feature.unverified)).map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">

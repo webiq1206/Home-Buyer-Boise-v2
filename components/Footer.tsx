@@ -6,6 +6,7 @@ import { CITIES } from "@/shared/contentData";
 import { SERVICES } from "@/shared/servicesData";
 import graph from "@/data/internal-links.json";
 import type { LinkGraph } from "@/lib/internalLinks";
+import { SHOW_UNVERIFIED_TRUST } from "@/lib/seo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,7 +22,9 @@ export function Footer() {
             <div className="mb-4">
               <Image 
                 src="/logo.png" 
-                alt="Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley" 
+                alt={SHOW_UNVERIFIED_TRUST
+                  ? "Home Buyer Boise - Trusted Cash Home Buyers Serving the Treasure Valley"
+                  : "Home Buyer Boise - Cash Home Buyers in Boise"} 
                 width={192}
                 height={48}
                 sizes="192px"
@@ -29,7 +32,9 @@ export function Footer() {
               />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              Trusted Cash Home Buyers Serving the Boise Metro Area
+              {SHOW_UNVERIFIED_TRUST
+                ? "Trusted Cash Home Buyers Serving the Boise Metro Area"
+                : "Cash Home Buyers in Boise"}
             </p>
             <div className="space-y-2">
               <a href="tel:2084052274" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-phone-footer">
@@ -133,11 +138,13 @@ export function Footer() {
                   FAQ
                 </Link>
               </li>
+              {SHOW_UNVERIFIED_TRUST && (
               <li>
                 <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors">
                   Success Stories
                 </Link>
               </li>
+              )}
               <li>
                 <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacy-policy-footer">
                   Privacy Policy
@@ -225,10 +232,10 @@ export function Footer() {
             <strong>Legal Disclaimer:</strong> Home Buyer Boise is a professional real estate investment company. All offers are subject to property inspection and market analysis.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>© {currentYear} Home Buyer Boise. All rights reserved. Serving the Treasure Valley since 2018.</p>
+            <p>© {currentYear} Home Buyer Boise. All rights reserved.{SHOW_UNVERIFIED_TRUST ? " Serving the Treasure Valley since 2018." : ""}</p>
             <div className="flex gap-4 text-xs">
-              <span>Licensed & Insured</span>
-              <span>•</span>
+              {SHOW_UNVERIFIED_TRUST && <span>Licensed & Insured</span>}
+              {SHOW_UNVERIFIED_TRUST && <span>•</span>}
               <span>No Fees or Commissions</span>
               <span>•</span>
               <span>Free Cash Offers</span>

@@ -1,5 +1,6 @@
 import { SERVICE_CONTENT, SERVICES } from "./servicesData";
 import { CITIES } from "./contentData";
+import { unverifiedTrustText } from "@/lib/seo";
 
 export interface FaqItem {
   question: string;
@@ -30,7 +31,10 @@ export function getSitewideFaqs(): FaqItem[] {
     {
       question: "Is Home Buyer Boise a local company?",
       answer:
-        "Yes. We are local Idaho cash buyers serving the Treasure Valley since 2018 — not a national call-center franchise.",
+        unverifiedTrustText(
+          "Yes. We are local Idaho cash buyers serving the Treasure Valley since 2018 — not a national call-center franchise.",
+          "Yes. We are local Idaho cash buyers serving the Treasure Valley — not a national call-center franchise.",
+        ),
       source: "About",
     },
   ];

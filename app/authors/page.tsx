@@ -63,7 +63,11 @@ export default function AuthorsIndexPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-2">{author.jobTitle}</p>
-                  <p className="text-sm">{author.bio.substring(0, 180)}...</p>
+                  {author.bio ? (
+                    <p className="text-sm">
+                      {author.bio.length > 180 ? `${author.bio.substring(0, 180)}...` : author.bio}
+                    </p>
+                  ) : null}
                 </CardContent>
               </Card>
             ))}
