@@ -19,11 +19,12 @@ export async function POST(request: NextRequest) {
     // Send email notification
     try {
       const { client: resend, fromEmail } = await getResendClient();
+      const contactToEmail = process.env.CONTACT_TO_EMAIL || 'hello@webiq.co';
       
       // Email to business
       await resend.emails.send({
         from: `Home Buyer Boise <${fromEmail}>`,
-        to: ['connect@buymyhouse.co', 'admin@timberandlove.com', 'jb@timberandlove.com'],
+        to: [contactToEmail],
         subject: `Contact Form: ${name}`,
         html: `
           <!DOCTYPE html>

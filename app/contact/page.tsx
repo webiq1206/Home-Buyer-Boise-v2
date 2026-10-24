@@ -76,8 +76,8 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-primary flex-shrink-0" />
                       <div>
                         <h3 className="font-semibold mb-1">Email</h3>
-                        <a href="mailto:connect@buymyhouse.co" className="text-primary hover:underline">
-                          connect@buymyhouse.co
+                        <a href="mailto:hello@webiq.co" className="text-primary hover:underline">
+                          hello@webiq.co
                         </a>
                         <p className="text-sm text-muted-foreground mt-1">We respond within 24 hours</p>
                       </div>

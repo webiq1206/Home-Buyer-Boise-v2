@@ -139,6 +139,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
 
   try {
     const { client: resend, fromEmail } = await getResendClient();
+    const notifyToEmail = process.env.CONTACT_TO_EMAIL || 'hello@webiq.co';
     console.log('[EMAIL] Got Resend client, from email:', fromEmail);
 
     // Email to business owner
@@ -291,7 +292,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
           <div class="footer">
             <p class="footer-brand">Home Buyer Boise</p>
             <p class="footer-tagline">${emailFooterTagline}</p>
-            <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
+            <p class="footer-contact">Email: <a href="mailto:${notifyToEmail}">${notifyToEmail}</a></p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
           </div>
         </div>
@@ -370,7 +371,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
           <div class="footer">
             <p class="footer-brand">Home Buyer Boise</p>
             <p class="footer-tagline">${emailFooterTagline}</p>
-            <p class="footer-contact">Email: <a href="mailto:connect@buymyhouse.co">connect@buymyhouse.co</a></p>
+            <p class="footer-contact">Email: <a href="mailto:${notifyToEmail}">${notifyToEmail}</a></p>
             <p class="footer-contact">Phone: (208) 405-2274</p>
             <p class="footer-contact">Address: 3024 W Fairview Ave, Boise, ID 83702</p>
             <p class="footer-contact">Web: <a href="https://homebuyerboise.com">www.homebuyerboise.com</a></p>
@@ -382,7 +383,7 @@ export async function sendPropertyOfferNotification(data: PropertyOfferEmailData
     `;
 
     // Send email to business owners
-    const adminEmails = ['admin@timberandlove.com', 'connect@buymyhouse.co', 'jb@timberandlove.com'];
+    const adminEmails = [notifyToEmail];
     console.log('[EMAIL] Sending admin notification to:', adminEmails.join(', '));
     
     const adminResult = await resend.emails.send({

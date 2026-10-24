@@ -904,7 +904,7 @@ export const BLOG_POSTS: BlogPostData[] = [
       <ul>
         <li><a href="/get-quote">Request your free cash offer online</a></li>
         <li>Call us at (208) 405-2274</li>
-        <li>Email admin@timberandlove.com</li>
+        <li>Email hello@webiq.co</li>
       </ul>
 
       <p>Learn more about our <a href="/services/sell-as-is">as-is buying program</a> or see <a href="/pricing">how our pricing works</a>.</p>

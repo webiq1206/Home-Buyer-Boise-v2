@@ -8,7 +8,7 @@ Generated: 2026-06-12
 - **Legal:** Home Buyer Boise LLC
 - **Founded:** 2018
 - **Phone:** (208) 405-2274
-- **Email:** connect@buymyhouse.co
+- **Email:** hello@webiq.co
 
 ## Services (17)
 
