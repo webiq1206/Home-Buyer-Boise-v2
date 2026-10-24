@@ -75,7 +75,7 @@ export default function TermsOfServicePage() {
                 If you have questions about these terms, please contact us at:
               </p>
               <ul>
-                <li>Email: connect@buymyhouse.co</li>
+                <li>Email: hello@webiq.co</li>
                 <li>Phone: (208) 405-2274</li>
                 <li>Address: 3024 W Fairview Ave, Boise, ID 83702</li>
               </ul>

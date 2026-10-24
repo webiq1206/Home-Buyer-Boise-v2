@@ -440,7 +440,7 @@ export const BUSINESS_INFO = {
   name: 'Home Buyer Boise',
   legalName: 'Home Buyer Boise LLC',
   phone: '(208) 405-2274',
-  email: 'connect@buymyhouse.co',
+  email: 'hello@webiq.co',
   address: {
     street: '3024 W Fairview Ave',
     city: 'Boise',

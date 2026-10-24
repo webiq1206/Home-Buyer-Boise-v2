@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
                 If you have questions about this privacy policy, please contact us at:
               </p>
               <ul>
-                <li>Email: connect@buymyhouse.co</li>
+                <li>Email: hello@webiq.co</li>
                 <li>Phone: (208) 405-2274</li>
                 <li>Address: 3024 W Fairview Ave, Boise, ID 83702</li>
               </ul>

@@ -41,9 +41,9 @@ export function Footer() {
                 <Phone className="h-4 w-4" />
                 <span>(208) 405-2274</span>
               </a>
-              <a href="mailto:connect@buymyhouse.co" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
+              <a href="mailto:hello@webiq.co" className="flex items-center gap-2 text-sm hover:text-primary transition-colors" data-testid="link-email-footer">
                 <Mail className="h-4 w-4" />
-                <span>connect@buymyhouse.co</span>
+                <span>hello@webiq.co</span>
               </a>
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />

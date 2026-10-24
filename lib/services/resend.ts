@@ -1,5 +1,8 @@
 import { Resend } from 'resend';
 
+/** Sender when RESEND_FROM_EMAIL and the Replit connector from_email are unset. */
+const DEFAULT_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'hello@webiq.co';
+
 /**
  * Get Resend credentials from environment variables or Replit connectors
  */
@@ -8,7 +11,7 @@ async function getCredentials() {
   if (process.env.RESEND_API_KEY) {
     return {
       apiKey: process.env.RESEND_API_KEY,
-      fromEmail: process.env.RESEND_FROM_EMAIL || 'admin@timberandlove.com'
+      fromEmail: DEFAULT_FROM_EMAIL
     };
   }
 
@@ -43,7 +46,7 @@ async function getCredentials() {
 
   return {
     apiKey: connectionSettings.settings.api_key,
-    fromEmail: connectionSettings.settings.from_email || 'admin@timberandlove.com'
+    fromEmail: connectionSettings.settings.from_email || DEFAULT_FROM_EMAIL
   };
 }
 

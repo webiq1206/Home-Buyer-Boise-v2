@@ -1,14 +1,14 @@
 # Home Buyer Boise Website
 
 ## Overview
-Home Buyer Boise (homebuyerboise.com) is a professional cash home buying platform serving the Boise metro area and Treasure Valley. The site features a fintech-inspired design (deep blue #0E4DA4 and gold #D4A12A) and serves as a lead generation platform for cash home buying services. **CRITICAL: All leads are routed to connect@buymyhouse.co and admin@timberandlove.com for manual evaluation - NO automated estimates are provided.**
+Home Buyer Boise (homebuyerboise.com) is a professional cash home buying platform serving the Boise metro area and Treasure Valley. The site features a fintech-inspired design (deep blue #0E4DA4 and gold #D4A12A) and serves as a lead generation platform for cash home buying services. **CRITICAL: All leads are routed to hello@webiq.co for manual evaluation - NO automated estimates are provided.**
 
 ## Branding
 - **Business Name**: Home Buyer Boise (display text with spaces)
 - **Domain**: homebuyerboise.com (URLs without spaces)
 - **Phone**: (208) 405-2274
-- **Primary Email**: connect@buymyhouse.co
-- **Lead Notification Emails**: connect@buymyhouse.co AND admin@timberandlove.com
+- **Primary Email**: hello@webiq.co
+- **Lead Notification Emails**: hello@webiq.co only (`CONTACT_TO_EMAIL`, default `hello@webiq.co`)
 - **Address**: 3024 W Fairview Ave, Boise, Idaho 83702
 
 ## User Preferences
@@ -38,7 +38,7 @@ Preferred communication style: Simple, everyday language.
   - City-specific metadata and schema markup
   - E-E-A-T trust signals throughout
 - **Image Performance**: Next.js Image component with automatic optimization, lazy loading, and responsive sizes.
-- **Email System**: Resend integration with dual notifications to connect@buymyhouse.co AND admin@timberandlove.com.
+- **Email System**: Resend integration. Business notifications go to `CONTACT_TO_EMAIL` or `hello@webiq.co`. Sender is `RESEND_FROM_EMAIL` or `hello@webiq.co` unless the Replit Resend connector sets `from_email`.
 
 ### Key Files
 - `lib/seo.ts` - BUSINESS_INFO constant for NAP consistency, SEO data
