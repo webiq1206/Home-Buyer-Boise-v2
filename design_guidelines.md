@@ -40,7 +40,7 @@
 
 **Neutrals:**
 - Background: Pure white `hsl(0, 0%, 100%)`
-- Foreground: Near black `hsl(0, 0%, 8%)`
+- Foreground: Brand charcoal `hsl(60, 0.9%, 21.8%)` (`#383837`)
 - Borders: Light gray `hsl(0, 0%, 88%)`
 - Muted text: Medium gray `hsl(0, 0%, 40%)`
 - Dark gray: `hsl(0, 0%, 20%)` for secondary text

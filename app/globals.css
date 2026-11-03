@@ -67,27 +67,30 @@ html, body {
   --elevate-1: rgba(0,0,0, .02);
   --elevate-2: rgba(0,0,0, .06);
   
+  /* Brand charcoal #383837. Near-black ink and dark surfaces use this. */
+  --charcoal: 60 0.9% 21.8%;
+
   /* Clean white and neutral backgrounds */
   --background: 0 0% 100%;
-  --foreground: 0 0% 8%;
+  --foreground: 60 0.9% 21.8%; /* #383837 */
   --border: 0 0% 88%;
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 8%;
+  --card-foreground: 60 0.9% 21.8%; /* #383837 */
   --card-border: 0 0% 91%;
   
   /* Sidebar light blue accents */
   --sidebar: 214 40% 96%;
-  --sidebar-foreground: 0 0% 8%;
+  --sidebar-foreground: 60 0.9% 21.8%; /* #383837 */
   --sidebar-border: 214 30% 85%;
   --sidebar-primary: 214 84% 35%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 214 40% 92%;
-  --sidebar-accent-foreground: 0 0% 8%;
+  --sidebar-accent-foreground: 60 0.9% 21.8%; /* #383837 */
   --sidebar-ring: 214 84% 35%;
   
   /* Popover clean white */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 8%;
+  --popover-foreground: 60 0.9% 21.8%; /* #383837 */
   --popover-border: 0 0% 88%;
   
   /* Deep blue primary (trustworthy fintech blue) */
@@ -96,7 +99,7 @@ html, body {
   
   /* Light blue secondary */
   --secondary: 214 40% 93%;
-  --secondary-foreground: 0 0% 8%;
+  --secondary-foreground: 60 0.9% 21.8%; /* #383837 */
   
   /* Muted light blue backgrounds */
   --muted: 214 40% 95%;
@@ -104,7 +107,7 @@ html, body {
   
   /* Subtle blue accent */
   --accent: 214 40% 94%;
-  --accent-foreground: 0 0% 8%;
+  --accent-foreground: 60 0.9% 21.8%; /* #383837 */
   
   /* Rich navy accent (for overlays/hero sections) */
   --navy: 214 50% 25%;
@@ -112,7 +115,7 @@ html, body {
   
   /* Warm gold accent for highlights */
   --gold: 38 70% 55%;
-  --gold-foreground: 0 0% 8%;
+  --gold-foreground: 60 0.9% 21.8%; /* #383837 */
   
   /* Destructive unchanged */
   --destructive: 0 72% 42%;
@@ -186,26 +189,29 @@ html, body {
   --elevate-1: rgba(255,255,255, .03);
   --elevate-2: rgba(255,255,255, .07);
   
+  /* Brand charcoal #383837 for dark surfaces */
+  --charcoal: 60 0.9% 21.8%;
+
   /* Deep backgrounds */
-  --background: 214 20% 8%;
+  --background: 60 0.9% 21.8%; /* #383837 */
   --foreground: 0 0% 96%;
   --border: 214 15% 18%;
-  --card: 214 20% 10%;
+  --card: 60 0.9% 21.8%; /* #383837 */
   --card-foreground: 0 0% 96%;
   --card-border: 214 15% 15%;
   
   /* Sidebar deep blue tones */
-  --sidebar: 214 20% 11%;
+  --sidebar: 60 0.9% 21.8%; /* #383837 */
   --sidebar-foreground: 0 0% 96%;
   --sidebar-border: 214 15% 16%;
   --sidebar-primary: 214 70% 55%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 214 15% 16%;
+  --sidebar-accent: 60 0.9% 21.8%; /* #383837 */
   --sidebar-accent-foreground: 0 0% 96%;
   --sidebar-ring: 214 70% 55%;
   
   /* Popover */
-  --popover: 214 20% 13%;
+  --popover: 60 0.9% 21.8%; /* #383837 */
   --popover-foreground: 0 0% 96%;
   --popover-border: 214 15% 18%;
   
@@ -214,15 +220,15 @@ html, body {
   --primary-foreground: 0 0% 100%;
   
   /* Dark blue secondary */
-  --secondary: 214 15% 18%;
+  --secondary: 60 0.9% 21.8%; /* #383837 */
   --secondary-foreground: 0 0% 96%;
   
   /* Muted dark tones */
-  --muted: 214 15% 16%;
+  --muted: 60 0.9% 21.8%; /* #383837 */
   --muted-foreground: 0 0% 68%;
   
   /* Subtle dark accent */
-  --accent: 214 15% 16%;
+  --accent: 60 0.9% 21.8%; /* #383837 */
   --accent-foreground: 0 0% 96%;
   
   /* Deep navy for overlays */
@@ -231,7 +237,7 @@ html, body {
   
   /* Warm gold for dark mode */
   --gold: 38 65% 60%;
-  --gold-foreground: 0 0% 8%;
+  --gold-foreground: 60 0.9% 21.8%; /* #383837 */
   
   /* Destructive */
   --destructive: 0 68% 48%;

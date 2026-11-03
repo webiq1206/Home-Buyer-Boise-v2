@@ -98,6 +98,7 @@ export default {
           foreground: "hsl(var(--gold-foreground) / <alpha-value>)",
           border: "var(--gold-border)",
         },
+        charcoal: "hsl(var(--charcoal) / <alpha-value>)",
         status: {
           online: "rgb(34 197 94)",
           away: "rgb(245 158 11)",
